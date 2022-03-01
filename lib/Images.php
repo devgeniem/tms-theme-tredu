@@ -54,7 +54,7 @@ class Images implements Interfaces\Controller {
         $version_from_db = \get_option( 'images_version_number' );
 
         // Only update options if version is changed manually.
-        // This prevents unnecessary datatredu queries.
+        // This prevents unnecessary base queries.
         if ( $version_from_db !== self::VERSION ) {
             \update_option( 'images_version_number', self::VERSION );
 

@@ -4,4 +4,4 @@
  */
 
 import './main.js';
-import 'styles/theme-tredu.scss';
+import '../styles/theme-tredu.scss';

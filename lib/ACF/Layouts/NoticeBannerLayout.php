@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class NoticeBannerLayout extends TreduLayout {
+class NoticeBannerLayout extends BaseLayout {
 
     /**
      * Layout key

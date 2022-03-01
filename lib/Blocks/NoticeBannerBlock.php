@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\NoticeBannerFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class NoticeBannerBlock extends TreduBlock {
+class NoticeBannerBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

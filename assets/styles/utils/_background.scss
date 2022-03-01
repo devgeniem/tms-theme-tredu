@@ -14,10 +14,6 @@
     }
 }
 
-.has-background-gray {
-    background-color: $color-vaalean-harmaa;
-}
-
 $color-background-primary-light--opaque-light: rgba($primary-light, .05) !default;
 .has-background-primary-light {
     &--opaque-light {

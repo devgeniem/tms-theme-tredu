@@ -83,7 +83,7 @@ class Admin implements Interfaces\Controller {
 
     /**
      * Modify TinyMCE
-     * Tredud on https://gist.github.com/psorensen/ab45d9408be658b6f90dfeabf1c9f4e6
+     * Based on https://gist.github.com/psorensen/ab45d9408be658b6f90dfeabf1c9f4e6
      *
      * @param array $tags TinyMCE tags.
      *

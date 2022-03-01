@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class SitemapLayout extends TreduLayout {
+class SitemapLayout extends BaseLayout {
 
     /**
      * Layout key

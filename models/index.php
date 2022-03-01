@@ -1,6 +1,6 @@
 <?php
 /**
- * Define the tredu index file.
+ * Define the base index file.
  */
 
 /**

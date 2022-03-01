@@ -95,7 +95,7 @@ class PostTypeController implements Interfaces\Controller {
      */
     protected function get_post_type_instances() : array {
         return array_map( function ( $field_class ) {
-            $field_class = treduname( $field_class, '.' . pathinfo( $field_class )['extension'] );
+            $field_class = basename( $field_class, '.' . pathinfo( $field_class )['extension'] );
             $class_name  = $this->get_namespace() . '\PostType\\' . $field_class;
 
             if ( ! \class_exists( $class_name ) ) {

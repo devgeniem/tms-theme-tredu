@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class SocialMediaLayout extends TreduLayout {
+class SocialMediaLayout extends BaseLayout {
 
     /**
      * Layout key

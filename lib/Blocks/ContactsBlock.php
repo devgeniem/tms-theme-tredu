@@ -19,7 +19,7 @@ use WP_Query;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class ContactsBlock extends TreduBlock {
+class ContactsBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

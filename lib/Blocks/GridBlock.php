@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\GridFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class GridBlock extends TreduBlock {
+class GridBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

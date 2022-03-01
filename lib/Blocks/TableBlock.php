@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\TableFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class TableBlock extends TreduBlock {
+class TableBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

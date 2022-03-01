@@ -12,7 +12,7 @@ use TMS\Theme\Tredu\ACF\Fields\ImageBannerFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class ImageBannerBlock extends TreduBlock {
+class ImageBannerBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

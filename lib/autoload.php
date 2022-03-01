@@ -27,7 +27,7 @@ function theme_library_loader( $class = '' ) {
     // Get the relative class name.
     $relative_class = substr( $class, $len );
 
-    // Replace the namespace prefix with the tredu directory, replace namespace
+    // Replace the namespace prefix with the base directory, replace namespace
     // separators with directory separators in the relative class name, append
     // with .php.
     $file = __DIR__ . '/' . str_replace( '\\', '/', $relative_class ) . '.php';

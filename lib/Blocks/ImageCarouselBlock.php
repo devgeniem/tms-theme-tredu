@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\ImageCarouselFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class ImageCarouselBlock extends TreduBlock {
+class ImageCarouselBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

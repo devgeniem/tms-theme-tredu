@@ -57,7 +57,7 @@ class BlocksController implements Interfaces\Controller {
      */
     private function require_block_files() : void {
         $files         = scandir( __DIR__ . '/Blocks' );
-        $cleaned_files = array_diff( $files, [ '.', '..', 'TreduBlock.php' ] );
+        $cleaned_files = array_diff( $files, [ '.', '..', 'BaseBlock.php' ] );
 
         array_walk( $cleaned_files, function ( $block ) {
             $block_class_name = str_replace( '.php', '', $block );

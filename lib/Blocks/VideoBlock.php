@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\VideoFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class VideoBlock extends TreduBlock {
+class VideoBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

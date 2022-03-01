@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class ImageCarouselLayout extends TreduLayout {
+class ImageCarouselLayout extends BaseLayout {
 
     /**
      * Layout key

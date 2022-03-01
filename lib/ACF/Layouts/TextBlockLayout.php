@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class TextBlockLayout extends TreduLayout {
+class TextBlockLayout extends BaseLayout {
 
     /**
      * Layout key

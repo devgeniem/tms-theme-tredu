@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\ImageGalleryFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class ImageGalleryBlock extends TreduBlock {
+class ImageGalleryBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

@@ -72,7 +72,7 @@ class Security implements Interfaces\Controller {
     }
 
     /**
-     * Check password against HaveIBeenPwned.com datatredu.
+     * Check password against HaveIBeenPwned.com database.
      *
      * @param bool       $check    Password is users real password.
      * @param string     $password Plaintext password.

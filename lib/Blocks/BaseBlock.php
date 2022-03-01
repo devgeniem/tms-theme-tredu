@@ -12,11 +12,11 @@ use \Geniem\ACF\Renderer\Dust;
 use \Geniem\ACF\Renderer\CallableRenderer;
 
 /**
- * Class TreduBlock.
+ * Class BaseBlock.
  *
  * @property string title Block title.
  */
-class TreduBlock {
+class BaseBlock {
 
     /**
      * The block name, or actually the slug that is used to

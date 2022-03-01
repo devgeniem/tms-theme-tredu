@@ -3,12 +3,7 @@
  */
 
 .has-divider {
-    &-dark-grey {
-        > * {
-            border-color: $color-tumma-harmaa;
-        }
-    }
-
+   
     &-x-1 {
         > * {
             border-right: 1px solid;

@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\KeyFiguresFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class KeyFiguresBlock extends TreduBlock {
+class KeyFiguresBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

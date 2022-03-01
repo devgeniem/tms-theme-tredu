@@ -33,24 +33,24 @@ class ACFController implements Interfaces\Controller {
      */
     protected function require_acf_files() : void {
         $files = array_diff(
-            scandir( $this->get_tredu_dir() ),
+            scandir( $this->get_base_dir() ),
             [ '.', '..', 'Field', 'Fields', 'Layouts' ]
         );
 
         array_walk(
             $files,
             function ( $file ) {
-                require_once $this->get_tredu_dir() . '/' . treduname( $file );
+                require_once $this->get_base_dir() . '/' . basename( $file );
             }
         );
     }
 
     /**
-     * Get ACF tredu dir
+     * Get ACF base dir
      *
      * @return string
      */
-    protected function get_tredu_dir() : string {
+    protected function get_base_dir() : string {
         return __DIR__ . '/ACF';
     }
 }

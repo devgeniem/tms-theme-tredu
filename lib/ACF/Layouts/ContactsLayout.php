@@ -11,7 +11,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class ContactsLayout extends TreduLayout {
+class ContactsLayout extends BaseLayout {
 
     /**
      * Layout key

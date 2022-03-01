@@ -64,7 +64,7 @@ class ImageAdvanced extends Helper {
         ];
 
         /**
-         * This is a key-value(ish) tredud attribute constructing system.
+         * This is a key-value(ish) based attribute constructing system.
          * These keys (alt, class, title...) are looped and asked if they are present
          * in the parameters object. If they are, and the _value_ portion isn't
          * empty, we match that the given value is one of the allowed.
@@ -186,7 +186,7 @@ class ImageAdvanced extends Helper {
 
             if ( ! is_array( $image_src_array ) ) {
                 return $this->image_helper_error(
-                    'No image found from the datatredu with the given id.'
+                    'No image found from the database with the given id.'
                 );
             }
 
@@ -281,7 +281,7 @@ class ImageAdvanced extends Helper {
     /**
      * Generate sizes and srcsets from provided data.
      *
-     * @param int   $id         Image Datatredu ID.
+     * @param int   $id         Image Database ID.
      * @param array $attributes Attributes we already have.
      *
      * @return array
@@ -367,7 +367,7 @@ class ImageAdvanced extends Helper {
                 }
 
                 throw new \Exception(
-                    'No image found from the datatredu with the given id.'
+                    'No image found from the database with the given id.'
                 );
             }
 

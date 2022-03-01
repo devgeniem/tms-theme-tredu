@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\AccessibilityIconLinksFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class AccessibilityIconLinksBlock extends TreduBlock {
+class AccessibilityIconLinksBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

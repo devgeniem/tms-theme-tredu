@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class AccessibilityIconLinksLayout extends TreduLayout {
+class AccessibilityIconLinksLayout extends BaseLayout {
 
     /**
      * Layout key

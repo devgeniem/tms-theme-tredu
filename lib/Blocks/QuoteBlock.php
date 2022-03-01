@@ -16,7 +16,7 @@ use TMS\Theme\Tredu\PostType\Post;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class QuoteBlock extends TreduBlock {
+class QuoteBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

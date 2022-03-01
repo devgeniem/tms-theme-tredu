@@ -15,7 +15,7 @@ use TMS\Theme\Tredu\PostType;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class AccordionTableLayout extends TreduLayout {
+class AccordionTableLayout extends BaseLayout {
 
     /**
      * Layout key

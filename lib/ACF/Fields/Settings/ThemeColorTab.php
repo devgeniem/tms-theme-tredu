@@ -43,14 +43,7 @@ class ThemeColorTab extends \Geniem\ACF\Field\Tab {
      * @var array
      */
     public static array $available_themes = [
-        'tunnelma'        => 'Tunnelma (Värimalli on käytössä oletuksena. Punainen ja vaalea siniharmaa.)',
-        'tummavesi'       => 'Tumma Vesi (Tumma vesi ja vaalea petrooli)',
-        'tyo'             => 'Työ (Sininen ja vaalean sininen)',
-        'havu'            => 'Havu (Tumman vihreä)',
-        'teraksensininen' => 'Teräksen sininen (Teräksen sininen ja vaalea "muutos"-pinkki)',
-        'paahde'          => 'Paahde (Keltaoranssi)',
-        'kokemus'         => 'Kokemus (Vaalean vihreä)',
-        'neutraali'       => 'Neutraali (Vaalea, neutraali värimalli, jossa korkea kontrasti)',
+        'tredu'            => 'Tredu',
     ];
 
     /**

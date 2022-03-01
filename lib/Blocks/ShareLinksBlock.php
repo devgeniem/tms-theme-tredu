@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\ShareLinksFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class ShareLinksBlock extends TreduBlock {
+class ShareLinksBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

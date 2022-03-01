@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\SubpageFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class SubpagesBlock extends TreduBlock {
+class SubpagesBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

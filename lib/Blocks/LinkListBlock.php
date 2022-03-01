@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\LinkListFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class LinkListBlock extends TreduBlock {
+class LinkListBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

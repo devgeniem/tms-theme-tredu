@@ -13,7 +13,7 @@ use TMS\Theme\Tredu\ACF\Fields\AccordionFields;
  *
  * @package TMS\Theme\Tredu\Blocks
  */
-class AccordionBlock extends TreduBlock {
+class AccordionBlock extends BaseBlock {
 
     /**
      * The block name (slug, not shown in admin).

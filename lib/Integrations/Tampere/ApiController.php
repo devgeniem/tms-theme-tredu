@@ -13,11 +13,11 @@ use TMS\Theme\Tredu\Logger;
 abstract class ApiController {
 
     /**
-     * Get API tredu url
+     * Get API base url
      *
      * @return string|null
      */
-    protected function get_api_tredu_url() : ?string {
+    protected function get_api_base_url() : ?string {
         return env( 'TAMPERE_API_URL' );
     }
 
@@ -38,9 +38,9 @@ abstract class ApiController {
      * @return bool|mixed
      */
     public function do_request( $path, array $params = [], array $request_args = [] ) {
-        $tredu_url = $this->get_api_tredu_url();
+        $base_url = $this->get_api_base_url();
 
-        if ( empty( $tredu_url ) ) {
+        if ( empty( $base_url ) ) {
             return false;
         }
 
@@ -52,7 +52,7 @@ abstract class ApiController {
             $params,
             sprintf(
                 '%s/%s?',
-                $tredu_url,
+                $base_url,
                 $path
             )
         );
@@ -100,7 +100,7 @@ abstract class ApiController {
         $basic_auth_key = env( 'TAMPERE_API_AUTH' );
 
         if ( ! empty( $basic_auth_key ) ) {
-            $args['headers']['Authorization'] = 'Basic ' . tredu64_encode( $basic_auth_key ); // phpcs:ignore
+            $args['headers']['Authorization'] = 'Basic ' . base64_encode( $basic_auth_key ); // phpcs:ignore
         }
 
         $results = $this->do_get( $this->get_slug(), [], [], $args );

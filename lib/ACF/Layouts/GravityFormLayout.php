@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class GravityFormLayout extends TreduLayout {
+class GravityFormLayout extends BaseLayout {
 
     /**
      * Layout key

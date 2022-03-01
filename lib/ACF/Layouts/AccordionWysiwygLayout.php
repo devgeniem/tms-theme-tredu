@@ -14,7 +14,7 @@ use TMS\Theme\Tredu\Logger;
  *
  * @package TMS\Theme\Tredu\ACF\Layouts
  */
-class AccordionWysiwygLayout extends TreduLayout {
+class AccordionWysiwygLayout extends BaseLayout {
 
     /**
      * Layout key

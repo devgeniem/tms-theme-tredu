@@ -13,15 +13,15 @@ const plugins = [
     require( 'autoprefixer' ),
 
     // Magically generate all @font-face rules for self hosted fonts.
-    require( 'postcss-font-magician' )({
+    require( 'postcss-font-magician' )( {
         hosted: [ fontsPath ],
-        foundries: [ 'hosted' ]
-    }),
+        foundries: [ 'hosted' ],
+    } ),
 
     // Pack same CSS media query rules into one.
-    require( 'css-mqpacker' )({
-        sort: true
-    })
+    require( 'css-mqpacker' )( {
+        sort: true,
+    } ),
 ];
 
 // Use only for production build.
@@ -29,16 +29,16 @@ if ( isProduction ) {
 
     // Optimize and minify CSS.
     plugins.push(
-        require( 'cssnano' )({
+        require( 'cssnano' )( {
             preset: [
                 'default',
                 {
                     discardComments: {
-                        removeAll: true
-                    }
-                }
-            ]
-        })
+                        removeAll: true,
+                    },
+                },
+            ],
+        } )
     );
 }
 

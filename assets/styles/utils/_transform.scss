@@ -1,0 +1,81 @@
+.has-transform {
+    &-y-50 {
+        transform: translateY(50%);
+
+        &-tablet {
+            @include from($tablet) {
+                transform: translateY(50%);
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                transform: translateY(50%);
+            }
+        }
+    }
+
+    &-y-100 {
+        transform: translateY(100%);
+
+        &-tablet {
+            @include from($tablet) {
+                transform: translateY(100%);
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                transform: translateY(100%);
+            }
+        }
+    }
+
+    &-y--50 {
+        transform: translateY(-50%);
+
+        &-tablet {
+            @include from($tablet) {
+                transform: translateY(-50%);
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &-x--50 {
+        transform: translateX(-50%);
+
+        &-tablet {
+            @include from($tablet) {
+                transform: translateX(-50%);
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &-xy--50 {
+        transform: translate(-50%, -50%);
+
+        &-tablet {
+            @include from($tablet) {
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

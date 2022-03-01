@@ -1,0 +1,39 @@
+<!doctype html>
+    <html class="no-js {#WP.document_class}{.}{@sep} {/sep}{/WP.document_class}" lang="{WP.language}">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            {@wphead /}
+
+            {?Header.head_custom_scripts}
+                {Header.head_custom_scripts|s}
+            {/Header.head_custom_scripts}
+        </head>
+
+        <body class="{#WP.body_class}{.}{@sep} {/sep}{/WP.body_class}">
+
+        <header id="top" class="site-header">
+            <a href="#main-content" class="skip-to-content">
+                {Strings.s.header.skip_to_content|s}
+            </a>
+
+            {?Header.exception_notice}
+                {>"shared/header-notice" /}
+            {/Header.exception_notice}
+
+            {>"shared/header-inner" /}
+        </header>
+
+        {>"ui/menu/fly-out-nav" /}
+
+        {?Header.breadcrumbs}
+        {?Header.show_breadcrumbs_in_header}
+        <div class="breadcrumbs-container section pt-6 pb-7">
+            <div class="container">
+                {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs /}
+            </div>
+        </div>
+        {/Header.show_breadcrumbs_in_header}
+        {/Header.breadcrumbs}

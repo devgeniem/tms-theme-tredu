@@ -1,0 +1,14 @@
+{?link.url}
+    {?link.title}
+        <a href="{link.url}" {?link.target}target="{link.target}"{/link.target} class="button {?icon}button--icon{/icon} {classes|s}">
+            <span class="has-width-100">
+                {link.title|s}
+            </span>
+
+
+            {?icon}
+                {>"ui/icon" class=icon_classes /}
+            {/icon}
+        </a>
+    {/link.title}
+{/link.url}

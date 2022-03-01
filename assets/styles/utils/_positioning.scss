@@ -1,0 +1,215 @@
+.is-absolute {
+    position: absolute !important;
+
+    &-tablet {
+        @include from($tablet) {
+            position: absolute !important;
+        }
+    }
+
+    &-desktop {
+        @include from($desktop) {
+            position: absolute !important;
+        }
+    }
+}
+
+.has-top {
+    &-0 {
+        top: 0 !important;
+
+        &-tablet {
+            @include from($tablet) {
+                top: 0 !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                top: 0 !important;
+            }
+        }
+    }
+
+    &-1 {
+        top: 1rem !important;
+
+        &-tablet {
+            @include from($tablet) {
+                top: 1rem !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                top: 1rem !important;
+            }
+        }
+    }
+
+    &-50 {
+        top: 50% !important;
+
+        &-tablet {
+            @include from($tablet) {
+                top: 50% !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                top: 50% !important;
+            }
+        }
+    }
+
+    &-100 {
+        top: 100% !important;
+
+        &-tablet {
+            @include from($tablet) {
+                top: 100% !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                top: 100% !important;
+            }
+        }
+    }
+}
+
+.has-right {
+    &-0 {
+        right: 0 !important;
+
+        &-tablet {
+            @include from($tablet) {
+                right: 0 !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                right: 0 !important;
+            }
+        }
+    }
+
+    &-50 {
+        right: 50% !important;
+
+        &-tablet {
+            @include from($tablet) {
+                right: 50% !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                right: 50% !important;
+            }
+        }
+    }
+}
+
+.has-left {
+    &-0 {
+        left: 0 !important;
+
+        &-tablet {
+            @include from($tablet) {
+                left: 0 !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                left: 0 !important;
+            }
+        }
+    }
+
+    &-1 {
+        left: 1rem !important;
+
+        &-tablet {
+            @include from($tablet) {
+                left: 1rem !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                left: 1rem !important;
+            }
+        }
+    }
+
+    &-2 {
+        left: 2rem !important;
+
+        &-tablet {
+            @include from($tablet) {
+                left: 2rem !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                left: 2rem !important;
+            }
+        }
+    }
+
+    &-50 {
+        left: 50% !important;
+
+        &-tablet {
+            @include from($tablet) {
+                left: 50% !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                left: 50% !important;
+            }
+        }
+    }
+}
+
+.has-bottom {
+    &-0 {
+        bottom: 0 !important;
+
+        &-tablet {
+            @include from($tablet) {
+                bottom: 0 !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                bottom: 0 !important;
+            }
+        }
+    }
+
+    &-2 {
+        bottom: 2rem !important;
+
+        &-tablet {
+            @include from($tablet) {
+                bottom: 2rem !important;
+            }
+        }
+
+        &-desktop {
+            @include from($desktop) {
+                bottom: 2rem !important;
+            }
+        }
+    }
+}

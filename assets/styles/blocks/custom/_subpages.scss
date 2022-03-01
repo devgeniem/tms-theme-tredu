@@ -1,0 +1,18 @@
+.subpages {
+    &__items {
+        display: grid;
+        grid-gap: $theme-spacing;
+        grid-template-columns: repeat(1, 1fr);
+
+        @include from($desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    a {
+        &:focus {
+            outline: .0625rem solid $text;
+            outline-offset: .25rem;
+        }
+    }
+}

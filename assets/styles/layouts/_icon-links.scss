@@ -1,0 +1,41 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+.icon-links {
+    &__grid {
+        @include from($tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        max-width: 90%;
+        margin: 0 auto 3rem;
+
+        @include from($tablet) {
+            flex: 40%;
+            flex-grow: 0;
+            margin-right: 1.5rem;
+            margin-left: 1.5rem;
+        }
+
+        @include from($desktop) {
+            flex: 19rem;
+            flex-grow: 0;
+            margin-right: 3rem;
+            margin-left: 3rem;
+
+        }
+    }
+
+    &__item-description {
+        @include tablet-only {
+            max-width: 70%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}

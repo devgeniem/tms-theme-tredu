@@ -9,8 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- Theme changer buttons attach to stylesheets with title -->
-    <link rel="stylesheet" href="dist/theme_taidemuseo.css" title="taidemuseo" />
-    <link rel="stylesheet" href="https://use.typekit.net/gzr1cri.css"/>
+    <link rel="stylesheet" href="dist/theme_tunnelma.css" title="tunnelma" />
+    <link rel="stylesheet" href="dist/theme_tummavesi.css" title="tummavesi">
+    <link rel="stylesheet" href="dist/theme_tyo.css" title="tyo" />
+    <link rel="stylesheet" href="dist/theme_havu.css" title="havu" />
+    <link rel="stylesheet" href="dist/theme_teraksensininen.css" title="teraksensininen" />
+    <link rel="stylesheet" href="dist/theme_paahde.css" title="paahde" />
+    <link rel="stylesheet" href="dist/theme_kokemus.css" title="kokemus" />
+    <link rel="stylesheet" href="dist/theme_neutraali.css" title="neutraali" />
 
     <style>
     #switcher {
@@ -48,7 +54,28 @@
     <h2>Theme options</h2>
     <ul id="switcher">
         <li>
-            <button rel="taidemuseo" class="switcher button is-primary">Taidemuseo</button>
+            <button rel="tunnelma" class="switcher button is-primary">Tunnelma</button>
+        </li>
+        <li>
+            <button rel="tummavesi" class="switcher button is-primary">Tumma Vesi</button>
+        </li>
+        <li>
+            <button rel="tyo" class="switcher button is-primary">Työ</button>
+        </li>
+        <li>
+            <button rel="havu" class="switcher button is-primary">Havu</button>
+        </li>
+        <li>
+            <button rel="teraksensininen" class="switcher button is-primary">Teräksen sininen</button>
+        </li>
+        <li>
+            <button rel="paahde" class="switcher button is-primary">Paahde</button>
+        </li>
+        <li>
+            <button rel="kokemus" class="switcher button is-primary">Kokemus</button>
+        </li>
+        <li>
+            <button rel="neutraali" class="switcher button is-primary">Neutraali</button>
         </li>
     </ul>
 
@@ -165,106 +192,6 @@
                 </svg>
             </td>
         </tr>
-    </table>
-
-    <table>
-        <caption><h2 id="accent-colors">Accent Colors</h2></caption>
-        <thead>
-            <tr>
-                <th scope="col" class="p-3">Name</th>
-                <th scope="col" class="p-3">Normal</th>
-                <th scope="col" class="p-3">Inverted</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row" class="p-3"><code>.has-colors-accent</code></th>
-                <th scope="row">
-                    <div class="p-3 has-colors-accent">
-                        normal
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-                <th scope="row">
-                    <div class="p-3 has-colors-accent-invert">
-                        invert
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-            </tr>
-            <tr>
-                <th scope="row" class="p-3"><code>.has-colors-accent-secondary</code></th>
-                <th scope="row">
-                    <div class="p-3 has-colors-accent-secondary">normal
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-                <th scope="row">
-                    <div class="p-3 has-colors-accent-secondary-invert">
-                        invert
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-            </tr>
-            <tr>
-                <th scope="row" class="p-3"><code>.has-colors-accent-tertiary</code></th>
-                <th scope="row">
-                    <div class="p-3 has-colors-accent-tertiary">
-                        normal
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-                <th scope="row">
-                    <div class="p-3 has-colors-accent-tertiary-invert">
-                        invert
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-            </tr>
-            <tr>
-                <th scope="row" class="p-3"><code>.has-colors-transparent</code></th>
-                <th scope="row">
-                    <div class="p-3 has-colors-transparent">
-                        normal
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-                <th scope="row">(transparent text and icon)</th>
-            </tr>
-            <tr>
-                <th scope="row" class="p-3"><code>.has-colors-light</code></th>
-                <th scope="row">
-                    <div class="p-3 has-colors-light">
-                        normal
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-                <th scope="row">
-                    <div class="p-3 has-colors-light-invert">
-                        invert
-                        <svg class="icon icon--small">
-                            <use xlink:href="#chevron" />
-                        </svg>
-                    </div>
-                </th>
-            </tr>
-        </tbody>
     </table>
 
     <table>
@@ -1184,25 +1111,25 @@
             <div class="columns pt-6 pb-6 pt-8-desktop pb-10-desktop">
                 <div class="column sibling-navigation__items">
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large">Title
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black">Title
                         1</a>
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large">Title
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black">Title
                         2</a>
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large">Title
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black">Title
                         3</a>
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large">Title
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black">Title
                         4</a>
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large">Title
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black">Title
                         5</a>
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large">Title
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black">Title
                         6</a>
                     <a href="#"
-                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large is-current"
+                       class="sibling-navigation__item h6 pt-3 pr-4 pb-3 pl-4 has-border-radius has-border-radius-large has-text-black is-current"
                        aria-hidden="true">
                         Current page title
                     </a>
@@ -1313,17 +1240,17 @@ rapiunt;
 <script>
 $( document ).ready( function () {
     $( '.switcher' ).click( function () {
-        let rel = this.getAttribute('rel');
+        let rel = this.getAttribute( 'rel' );
 
-        $('link[rel*=style][title]').each((i, n) => {
-            n.disabled = n.getAttribute('title') !== rel;
+        $( 'link[rel*=style][title]' ).each( ( i, n ) => {
+            n.disabled = n.getAttribute( 'title' ) !== rel;
             return true;
-        });
+        } );
 
-        $('.switcher').each((i, btn) => {
-            $(btn).removeClass('is-secondary');
-        });
-        $(this).addClass('is-secondary');
+        $( '.switcher' ).each( ( i, btn ) => {
+            $( btn ).removeClass( 'is-secondary' );
+        } );
+        $( this ).addClass( 'is-secondary' );
 
         return false;
     } );

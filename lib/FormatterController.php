@@ -1,15 +1,36 @@
 <?php
+/**
+ * Copyright (c) 2021. Geniem Oy
+ */
 
 namespace TMS\Theme\Tredu;
 
-use TMS\Theme\Base\Formatters\HeroFormatter;
+use TMS\Theme\Tredu\Interfaces\Formatter;
 
 /**
  * Class FormatterController
  *
  * @package TMS\Theme\Tredu
  */
-class FormatterController extends \TMS\Theme\Base\FormatterController implements \TMS\Theme\Base\Interfaces\Controller {
+class FormatterController implements Interfaces\Controller {
+
+    /**
+     * The post type class instances
+     *
+     * @var Formatter[]
+     */
+    private array $classes = [];
+
+    /**
+     * Get a single class instance from Theme Controller
+     *
+     * @param string|null $class Class name to get.
+     *
+     * @return Formatter|null
+     */
+    public function get_class( ?string $class ) : ?Interfaces\Formatter {
+        return $this->classes[ $class ] ?? null;
+    }
 
     /**
      * Add hooks and filters from this controller
@@ -21,8 +42,6 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
             'init',
             \Closure::fromCallable( [ $this, 'register_formatters' ] )
         );
-
-        add_filter( 'tms/theme/base/formatters', [ $this, 'remove_formatters' ] );
     }
 
     /**
@@ -44,20 +63,40 @@ class FormatterController extends \TMS\Theme\Base\FormatterController implements
     }
 
     /**
-     * Remove formatters.
+     * This registers all custom post types.
      *
-     * @param array $classes Formatter classes.
-     *
-     * @return array
+     * @return void
      */
-    public function remove_formatters( array $classes ) : array {
-        $formatters_to_remove = [
-            HeroFormatter::class,
-        ];
+    protected function register_formatters() : void {
+        $classes = array_map( function ( $field_class ) {
+            $field_class = treduname( $field_class, '.' . pathinfo( $field_class )['extension'] );
+            $class_name  = $this->get_namespace() . '\Formatters\\' . $field_class;
 
-        return array_filter(
-            $classes,
-            fn( $class ) => ! in_array( $class, $formatters_to_remove, true )
-        );
+            if ( ! \class_exists( $class_name ) ) {
+                return null;
+            }
+
+            return $class_name;
+        }, $this->get_formatter_files() ?? [] );
+
+        $classes = apply_filters( 'tms/theme/tredu/formatters', $classes );
+
+        if ( empty( $classes ) ) {
+            return;
+        }
+
+        foreach ( $classes as $class ) {
+            if ( empty( $class ) ) {
+                continue;
+            }
+
+            $instance = new $class();
+
+            if ( $instance instanceof Interfaces\Formatter ) {
+                $instance->hooks();
+
+                $this->classes[ $instance::NAME ] = $instance;
+            }
+        }
     }
 }

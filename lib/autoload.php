@@ -1,9 +1,12 @@
 <?php
+/**
+ * Theme library autoloader.
+ */
 
 namespace TMS\Theme\Tredu;
 
 /**
- * Autoloader for theme library classes.
+ * Autoloader for theme library files.
  *
  * @link https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
  * @param string $class The fully-qualified class name.
@@ -24,17 +27,16 @@ function theme_library_loader( $class = '' ) {
     // Get the relative class name.
     $relative_class = substr( $class, $len );
 
-    // Replace the namespace prefix with the base directory, replace namespace
+    // Replace the namespace prefix with the tredu directory, replace namespace
     // separators with directory separators in the relative class name, append
     // with .php.
-    $child_theme_file = __DIR__ . '/' . str_replace( '\\', '/', $relative_class ) . '.php';
+    $file = __DIR__ . '/' . str_replace( '\\', '/', $relative_class ) . '.php';
 
     // If the file exists, require it.
-    if ( file_exists( $child_theme_file ) ) {
-        require_once $child_theme_file;
+    if ( file_exists( $file ) ) {
+        require_once $file;
     }
 }
 
 // Register the theme autoloader.
 spl_autoload_register( __NAMESPACE__ . '\\theme_library_loader' );
-

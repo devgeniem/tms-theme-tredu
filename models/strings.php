@@ -1,0 +1,236 @@
+<?php
+/**
+ * Class Strings
+ * UI Strings
+ */
+
+/**
+ * Class Strings
+ */
+class Strings extends \DustPress\Model {
+
+    /**
+     * Constructor
+     *
+     * @param array $args   Model arguments.
+     * @param mixed $parent Set model parent.
+     */
+    public function __construct( $args = [], $parent = null ) {
+        parent::__construct( $args, $parent );
+
+        $this->hooks();
+    }
+
+    /**
+     * Hooks
+     */
+    public function hooks() : void {
+        add_filter(
+            'dustpress/pagination/data',
+            \Closure::fromCallable( [ $this, 'add_pagination_translations' ] )
+        );
+    }
+
+    /**
+     * Translated strings
+     *
+     * @return array
+     */
+    public function s() : array {
+        return [
+            'header'             => [
+                'skip_to_content'          => _x( 'Skip to content', 'theme-frontend', 'tms-theme-tredu' ),
+                'main_navigation'          => _x( 'Main navigation', 'theme-frontend', 'tms-theme-tredu' ),
+                'open_menu'                => _x( 'Open menu', 'theme-frontend', 'tms-theme-tredu' ),
+                'close_menu'               => _x( 'Close menu', 'theme-frontend', 'tms-theme-tredu' ),
+                'language_navigation'      => _x( 'Language navigation', 'theme-frontend', 'tms-theme-tredu' ),
+                'open_search'              => _x( 'Open search form', 'theme-frontend', 'tms-theme-tredu' ),
+                'open_lang_nav'            => _x( 'Open language navigation', 'theme-frontend', 'tms-theme-tredu' ),
+                'current_lang'             => _x( 'Current language: ', 'theme-frontend', 'tms-theme-tredu' ),
+                'search'                   => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
+                'search_title'             => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
+                'search_input_label'       => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
+                'search_input_placeholder' => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
+                'exception_close_button'   => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
+                'home'                     => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            '404'                => [
+                'title'         => _x( 'Page not found', 'theme-frontend', 'tms-theme-tredu' ),
+                'subtitle'      => _x(
+                    'The content were looking for was not found',
+                    'theme-frontend',
+                    'tms-theme-tredu'
+                ),
+                'home_link_txt' => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'video'              => [
+                'skip_embed' => _x( 'Skip video embed', 'theme-frontend', 'tms-theme-tredu' ),
+                'play'       => _x( 'Play video', 'theme-frontend', 'tms-theme-tredu' ),
+                'pause'      => _x( 'Pause video', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'social_media'       => [
+                'skip_embed' => _x( 'Skip social media embed', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'share'              => [
+                'share_article'         => _x( 'Share Article', 'theme-frontend', 'tms-theme-tredu' ),
+                'share_event'           => _x( 'Share Event', 'theme-frontend', 'tms-theme-tredu' ),
+                'share_to_social_media' => _x( 'Share to social media', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'gallery'            => [
+                'close'          => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
+                'next'           => _x( 'Next', 'theme-frontend', 'tms-theme-tredu' ),
+                'open'           => _x( 'Open', 'theme-frontend', 'tms-theme-tredu' ),
+                'previous'       => _x( 'Previous', 'theme-frontend', 'tms-theme-tredu' ),
+                'goto'           => _x( 'Go to slide', 'theme-frontend', 'tms-theme-tredu' ),
+                'centered'       => _x( 'Centered', 'theme-frontend', 'tms-theme-tredu' ),
+                'slide'          => _x( 'Slide', 'theme-frontend', 'tms-theme-tredu' ),
+                'image_carousel' => _x( 'Image carousel', 'theme-frontend', 'tms-theme-tredu' ),
+                'modal_carousel' => _x( 'Modal image carousel', 'theme-frontend', 'tms-theme-tredu' ),
+                'main_carousel'  => _x( 'Main image carousel', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'footer'             => [
+                'to_main_site' => _x( 'Move to tampere.fi', 'theme-frontend', 'tms-theme-tredu' ),
+                'back_to_top'  => _x( 'Back to top', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'common'             => [
+                'target_blank' => _x( 'Opens in a new window', 'theme-frontend', 'tms-theme-tredu' ),
+                'all'          => _x( 'All', 'theme-frontend', 'tms-theme-tredu' ),
+                'read_more'    => _x( 'Read more', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'single'             => [
+                'image_credits'   => _x( 'Image:', 'theme-frontend', 'tms-theme-tredu' ),
+                'writing_credits' => _x( 'Text:', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'home'               => [
+                'month'              => _x( 'Month', 'theme-frontend', 'tms-theme-tredu' ),
+                'year'               => _x( 'Year', 'theme-frontend', 'tms-theme-tredu' ),
+                'no_results'         => _x( 'No results', 'theme-frontend', 'tms-theme-tredu' ),
+                'filter_by_category' => _x( 'Filter by Category', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'months'             => [
+                'january'   => _x( 'January', 'theme-frontend', 'tms-theme-tredu' ),
+                'february'  => _x( 'February', 'theme-frontend', 'tms-theme-tredu' ),
+                'march'     => _x( 'March', 'theme-frontend', 'tms-theme-tredu' ),
+                'april'     => _x( 'April', 'theme-frontend', 'tms-theme-tredu' ),
+                'may'       => _x( 'May', 'theme-frontend', 'tms-theme-tredu' ),
+                'june'      => _x( 'June', 'theme-frontend', 'tms-theme-tredu' ),
+                'july'      => _x( 'July', 'theme-frontend', 'tms-theme-tredu' ),
+                'august'    => _x( 'August', 'theme-frontend', 'tms-theme-tredu' ),
+                'september' => _x( 'September', 'theme-frontend', 'tms-theme-tredu' ),
+                'october'   => _x( 'October', 'theme-frontend', 'tms-theme-tredu' ),
+                'november'  => _x( 'November', 'theme-frontend', 'tms-theme-tredu' ),
+                'december'  => _x( 'December', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'password_protected' => [
+                'input_label' => _x( 'Password:', 'theme-frontend', 'tms-theme-tredu' ),
+                'button_text' => _x( 'Enter', 'theme-frontend', 'tms-theme-tredu' ),
+                'message'     => _x(
+                    'This content is password protected. To view it please enter your password below:',
+                    'theme-frontend',
+                    'tms-theme-tredu'
+                ),
+            ],
+            'sibling_navigation' => [
+                'sibling_navigation' => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'comments'           => [
+                'comments_title' => _x( 'Comments', 'theme-frontend', 'tms-theme-tredu' ),
+                'close_notice'   => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'blog_article'       => [
+                'toggle_details'    => _x( 'Show description', 'theme-frontend', 'tms-theme-tredu' ),
+                'archive_link_text' => _x( 'All articles', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'event'              => [
+                'date'     => _x( 'Event date', 'theme-frontend', 'tms-theme-tredu' ),
+                'time'     => _x( 'Event time', 'theme-frontend', 'tms-theme-tredu' ),
+                'location' => _x( 'Event location', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'sitemap'            => [
+                'open'  => _x( 'Open', 'theme-frontend', 'tms-theme-tredu' ),
+                'close' => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'contact_search'     => [
+                'label'             => _x( 'Search contacts', 'theme-frontend', 'tms-theme-tredu' ),
+                'input_placeholder' => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
+                'submit_value'      => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'artist'             => [
+                'open'            => _x( 'Open', 'theme-frontend', 'tms-theme-tredu' ),
+                'close'           => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
+                'related_artwork' => _x( 'Related artwork', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'artwork'            => [
+                'artist_link'     => _x( 'Show artist', 'theme-frontend', 'tms-theme-tredu' ),
+                'related_art'     => _x( 'Artwork by the same artist', 'theme-frontend', 'tms-theme-tredu' ),
+                'related_artwork' => _x( 'Related artwork', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'search'             => [
+                'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
+                'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            // Use the Duet Date Picker keys for strings
+            'datepicker'         => [
+                'buttonLabel'         => _x( 'Pick a date', 'theme-frontend', 'tms-theme-tredu' ),
+                'placeholder'         => _x( 'dd.mm.yyyy', 'theme-frontend', 'tms-theme-tredu' ),
+                'selectedDateMessage' => _x( 'The chosen date is', 'theme-frontend', 'tms-theme-tredu' ),
+                'prevMonthLabel'      => _x( 'Previous month', 'theme-frontend', 'tms-theme-tredu' ),
+                'nextMonthLabel'      => _x( 'Next month', 'theme-frontend', 'tms-theme-tredu' ),
+                'monthSelectLabel'    => _x( 'Month', 'theme-frontend', 'tms-theme-tredu' ),
+                'yearSelectLabel'     => _x( 'Year', 'theme-frontend', 'tms-theme-tredu' ),
+                'closeLabel'          => _x( 'Close window', 'theme-frontend', 'tms-theme-tredu' ),
+                'calendarHeading'     => _x( 'Pick a date', 'theme-frontend', 'tms-theme-tredu' ),
+                'dayNames'            => [
+                    _x( 'Sunday', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Monday', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Tuesday', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Wednesday', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Thursday', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Friday', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Saturday', 'theme-frontend', 'tms-theme-tredu' ),
+                ],
+                'monthNames'          => [
+                    _x( 'January', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'February', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'March', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'April', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'May', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'June', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'July', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'August', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'September', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'October', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'November', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'December', 'theme-frontend', 'tms-theme-tredu' ),
+                ],
+                'monthNamesShort'     => [
+                    _x( 'Jan', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Feb', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Mar', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Apr', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'May', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Jun', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Jul', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Aug', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Sept', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Oct', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Nov', 'theme-frontend', 'tms-theme-tredu' ),
+                    _x( 'Dec', 'theme-frontend', 'tms-theme-tredu' ),
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * Add translations to pagination
+     *
+     * @param object $data Pagination data.
+     *
+     * @return object
+     */
+    public function add_pagination_translations( $data ) {
+        $data->S->aria_label = __( 'Pagination', 'tms-theme-tredu' );
+
+        return $data;
+    }
+}

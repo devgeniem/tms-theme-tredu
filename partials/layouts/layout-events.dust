@@ -1,0 +1,29 @@
+<section {?anchor}id="{anchor|s}"{/anchor} class="events section">
+    <div class="container">
+        {?title}
+            <div class="columns">
+                <div class="column is-8 is-offset-2 has-text-centered">
+                    <h2 class="mt-0 mb-6">
+                        {title|s}
+                    </h2>
+                </div>
+            </div>
+        {/title}
+
+        <div class="columns is-multiline">
+            {#events}
+                {>"ui/event-highlight" /}
+            {/events}
+        </div>
+
+        {?all_events_link}
+            <div class="columns">
+                <div class="column is-12 has-text-right">
+                    <div class="mt-0 mb-6">
+                        {>"ui/button-link" link=all_events_link classes="is-primary events__more" icon="chevron-right" icon_classes="icon--medium"  /}
+                    </div>
+                </div>
+            </div>
+        {/all_events_link}
+    </div>
+</section>

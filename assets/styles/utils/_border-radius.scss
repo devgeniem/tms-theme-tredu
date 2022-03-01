@@ -1,0 +1,13 @@
+.has-border-radius {
+    &-small {
+        border-radius: $theme-spacing-quarter !important;
+    }
+
+    &-large {
+        border-radius: 1.8rem !important;
+    }
+
+    &-50 {
+        border-radius: 50%;
+    }
+}

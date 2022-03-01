@@ -1,0 +1,26 @@
+.has-background-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.has-background-transparent {
+    background-color: transparent !important; // sass-lint:disable-line no-important
+}
+
+.has-background-secondary {
+    &--opaque {
+        background-color: rgba($secondary, .5) !important;
+    }
+}
+
+.has-background-gray {
+    background-color: $color-vaalean-harmaa;
+}
+
+$color-background-primary-light--opaque-light: rgba($primary-light, .05) !default;
+.has-background-primary-light {
+    &--opaque-light {
+        background-color: $color-background-primary-light--opaque-light !important;
+    }
+}

@@ -1,0 +1,111 @@
+/*!*
+ * Copyright (c) 2021. Geniem Oy
+ */
+$gravityform-input-focus: .125rem solid $color-black !default;
+$gravityform-input-focus-offset: .25rem !default;
+
+form {
+    label {
+        margin-bottom: $theme-spacing-quarter;
+    }
+
+    select,
+    input,
+    textarea {
+        line-height: 1;
+        padding: $theme-spacing-half;
+        border: 1px solid $secondary;
+        border-radius: $theme-spacing-quarter;
+
+        &::placeholder {
+            color: lighten($black, 10%);
+        }
+    }
+}
+
+/**
+ * GravityForms related
+ */
+.container {
+    // GForms inside a wrapper need a different layout
+    .gform_wrapper {
+        @extend .is-align-wide;
+        margin: $theme-spacing-two -1 * $theme-spacing-oneandhalf;
+        padding: $theme-spacing-oneandhalf;
+        background: $secondary;
+
+        @include from($desktop) {
+            margin: $theme-spacing-two 0;
+            padding: 3rem 0;
+        }
+
+        > * {
+            @include from($desktop) {
+                padding: 0 3.95rem;
+            }
+
+            @include from($widescreen) {
+                padding: 0 3rem;
+            }
+        }
+    }
+
+    .gform {
+        &_heading {
+            h2 {
+                @include from($desktop) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.gform {
+    &_heading {
+        margin-bottom: $theme-spacing;
+    }
+
+    &_wrapper {
+        .gf_progressbar_wrapper {
+            margin-top: $theme-spacing;
+            margin-bottom: $theme-spacing-half;
+        }
+
+        .gform_validation_errors {
+            > h2 {
+                font-size: $body-font-size !important;
+            }
+        }
+
+        .gfield_required {
+            font-style: normal !important; // sass-lint:disable-line no-important
+            color: $black;
+        }
+
+        .gchoice {
+            display: flex;
+            // To make checkradio click not lose position
+            position: relative;
+        }
+
+        select,
+        input,
+        textarea {
+            &:focus {
+                outline: $gravityform-input-focus;
+                outline-offset: $gravityform-input-focus-offset;
+            }
+        }
+    }
+
+    &_page {
+        &_footer {
+            padding-top: $theme-spacing-twoandhalf;
+
+            .button {
+                max-width: 45%;
+            }
+        }
+    }
+}

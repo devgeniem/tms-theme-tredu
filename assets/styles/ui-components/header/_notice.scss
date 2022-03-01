@@ -1,0 +1,39 @@
+.site-header-notice {
+    .js & {
+        display: none;
+    }
+
+    .notice-banner__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include from($tablet) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .icon {
+            @include mobile {
+                margin-left: -.75rem;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include from($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__button-wrapper {
+        @include from($tablet) {
+            text-align: right;
+        }
+    }
+}

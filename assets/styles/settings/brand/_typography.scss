@@ -5,18 +5,14 @@
 @import "../fonts";
 
 $base-sizes: (
-    "mobile": ("base_size": 16px, "scale_value": 1.135, "break_point": 0),
-    "tablet": ("base_size": 17px, "scale_value": 1.145, "break_point": $tablet),
-    "desktop": ("base_size": 17px, "scale_value": 1.165, "break_point": $desktop)
+    "mobile": ("base_size": 17px, "scale_value": 1.2, "break_point": 0),
+    "tablet": ("base_size": 17px, "scale_value": 1.2, "break_point": $tablet),
+    "desktop": ("base_size": 18px, "scale_value": 1.2, "break_point": $desktop)
 ) !default;
 
-// $family-sans-serif: "Quicksand", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
-// $family-primary: "Open Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-// $family-secondary: $family-sans-serif;
-
-$family-primary: 'Quicksand';
-$family-secondary: 'Inter';
+$family-primary: 'Quicksand', blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-secondary: 'Inter',  blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 $font-family-header: $family-primary;
 $font-family-text: $family-primary;
@@ -93,7 +89,7 @@ h6,
     .h1 {
         font-size: map-get($calculated_sizes, "h1") !important;
         font-family: $font-family-header;
-        font-weight: 400;
+        font-weight: 700;
         line-height: 1.22;
     }
 

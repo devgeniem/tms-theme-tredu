@@ -9,7 +9,7 @@
     @return #{math.div(stripUnit($pxValue), stripUnit($body-font-size))}rem;
 }
 
-@function get_calculated_sizes($base_size: 17px, $scale_value: 1.165, $as_list: false) {
+@function get_calculated_sizes($base_size: 17px, $scale_value: 1.2, $as_list: false) {
     $size-h6: $base_size * $scale_value;
     $size-h5: $size-h6 * $scale_value;
     $size-h4: $size-h5 * $scale_value;

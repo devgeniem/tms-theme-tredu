@@ -4,6 +4,22 @@ require( 'laravel-mix-eslint' );
 
 // TODO: extract() shoud be fixed. Polyfills, aliases. Different setup for dev and prod builds
 
+// eslint-disable-next-line no-undef
+Config.svgSprite = {
+    /*
+     * @see https://github.com/kisenka/svg-sprite-loader#configuration
+     */
+    loaderOptions: {
+        symbolId: 'icon-[name]',
+    },
+    /*
+     * @see https://github.com/kisenka/svg-sprite-loader#configuration
+     */
+    // pluginOptions: {
+    //     plainSprite: true,
+    // },
+};
+
 mix.webpackConfig( {
     externals: { jquery: 'jQuery' },
 } )
@@ -38,8 +54,6 @@ mix.webpackConfig( {
     .svgSprite(
         'assets/icons', // The directory containing your SVG files
         'icons.svg' // The output path for the sprite
-        // [loaderOptions], // Optional, see https://github.com/kisenka/svg-sprite-loader#configuration
-        // [pluginOptions] // Optional, see https://github.com/kisenka/svg-sprite-loader#configuration
     )
     .version()
     .setPublicPath( 'assets/dist' );

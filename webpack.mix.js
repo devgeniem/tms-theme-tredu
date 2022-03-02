@@ -1,4 +1,5 @@
 let mix = require( 'laravel-mix' );
+require( 'laravel-mix-svg-sprite' );
 
 mix.webpackConfig( {
     externals: { jquery: 'jQuery' },
@@ -13,11 +14,11 @@ mix.js( 'assets/scripts/theme-tredu.js', 'theme_tredu.js' )
     .options( {
         processCssUrls: false,
     } )
-    // .svgSprite(
-    //     'src/icons', // The directory containing your SVG files
-    //     'output/sprite.svg', // The output path for the sprite
-    //     [loaderOptions], // Optional, see https://github.com/kisenka/svg-sprite-loader#configuration
-    //     [pluginOptions] // Optional, see https://github.com/kisenka/svg-sprite-loader#configuration
-    // );
+    .svgSprite(
+        'assets/icons', // The directory containing your SVG files
+        'icons.svg' // The output path for the sprite
+        // [loaderOptions], // Optional, see https://github.com/kisenka/svg-sprite-loader#configuration
+        // [pluginOptions] // Optional, see https://github.com/kisenka/svg-sprite-loader#configuration
+    )
     .version()
     .setPublicPath( 'assets/dist' );

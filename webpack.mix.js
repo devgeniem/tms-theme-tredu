@@ -4,6 +4,15 @@ require( 'laravel-mix-eslint' );
 
 // TODO: extract() shoud be fixed. Polyfills, aliases. Different setup for dev and prod builds
 
+// TODO: Get rid of these ugly Config. ...
+
+// eslint-disable-next-line no-undef
+Config.imgLoaderOptions.svgo = {
+    plugins: [
+        { removeTitle: true },
+        { removeAttrs: { attrs: [ 'path:fill', 'path:class' ] } },
+    ],
+};
 // eslint-disable-next-line no-undef
 Config.svgSprite = {
     /*

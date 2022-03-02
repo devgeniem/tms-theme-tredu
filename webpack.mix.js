@@ -1,14 +1,15 @@
 let mix = require( 'laravel-mix' );
 
-// mix.webpackConfig({
-//     module: allModules
-// });
-// mix.js( 'assets/scripts/theme-tredu.js', 'theme_tredu.js' )
-//     .autoload( {
-//         jquery: [ '$', 'window.jQuery' ],
-//     } )
+mix.webpackConfig( {
+    externals: { jquery: 'jQuery' },
+} );
+
+mix.js( 'assets/scripts/theme-tredu.js', 'theme_tredu.js' )
+    .autoload( {
+        jquery: [ '$', 'window.jQuery' ],
+    } )
     // .extract() // this breaks all JS without errors
-mix.sass( 'assets/styles/theme-tredu.scss', 'theme_tredu.css' )
+    .sass( 'assets/styles/theme-tredu.scss', 'theme_tredu.css' )
     .options( {
         processCssUrls: false,
     } )

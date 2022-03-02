@@ -41,7 +41,6 @@
     "image-webpack-loader": "^6.0.0",
     "laravel-mix": "^6.0.43",
     "laravel-mix-eslint": "^0.2.0",
-    "laravel-mix-purgecss": "^6.0.0",
     "laravel-mix-svg-sprite": "^2.0.0",
     "lint-staged": "^11.2.6",
     "lodash": "^4.17.21",
@@ -60,9 +59,12 @@
     "lint": "eslint assets/scripts",
     "lint-fix": "eslint assets/scripts --fix",
     "lint-ci": "eslint assets/scripts --format checkstyle",
-    "watch": "cross-env webpack --progress --watch --mode development",
-    "dev": "cross-env webpack --progress --mode development",
-    "build": "cross-env NODE_ENV=production webpack --progress --mode production"
+    "watch":"cross-env mix watch",
+    "dev": "cross-env mix",
+    "build": "cross-env NODE_ENV=production mix --production",
+    "webpackp-watch": "cross-env webpack --progress --watch --mode development",
+    "webpack-dev": "cross-env webpack --progress --mode development",
+    "webpack-build": "cross-env NODE_ENV=production webpack --progress --mode production"
   },
   "browserslist": [
     "> 1%",

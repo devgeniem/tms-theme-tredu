@@ -4,7 +4,7 @@
 
 .site-header {
     position: relative;
-
+    box-shadow: 0 .0588rem .5rem rgba($black, .1); // sass-lint:disable-line no-color-literals
     &__nav {
         > .container {
             position: static;
@@ -34,7 +34,6 @@
 
         img {
             display: block;
-            vertical-align: middle;
         }
 
         a {

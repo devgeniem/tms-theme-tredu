@@ -2,8 +2,6 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-$lang-nav-link-border: $primary !default;
-
 .lang-nav {
     .dropdown-menu {
         z-index: 25;
@@ -15,11 +13,10 @@ $lang-nav-link-border: $primary !default;
         a {
             width: 2.375rem;
             height: 2.375rem;
-            border: 2px solid $lang-nav-link-border;
 
             @include from($tablet) {
-                width: 2.2359rem;
-                height: 2.2359rem;
+                width: rem(50);
+                height: rem(50);
             }
         }
     }

@@ -2,18 +2,16 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-$navbar-item-navbar-link-color: $primary-invert !default;
-$navbar-item-grid-item-border-color: #d9dde1 !default;
-$navbar-item-has-dropdown-active: $primary-invert !default;
-$navbar-item-dropdown-accent-color: $primary-dark !default;
-$navbar-item-navbar-active-bg-color: rgba($navbar-item-navbar-link-color, .05) !default;
+$navbar-item-navbar-link-color: $primary !default;
+$navbar-item-grid-item-border-color: $secondary !default;
+$navbar-item-has-dropdown-active: $primary !default;
+$navbar-item-dropdown-accent-color: $primary !default;
 
 .primary-nav {
     @include list-reset;
-    font-family: $family-secondary;
+    font-family: $family-primary;
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
 
     .navbar-item {
         padding: $theme-spacing-three-quarters 0;
@@ -31,7 +29,7 @@ $navbar-item-navbar-active-bg-color: rgba($navbar-item-navbar-link-color, .05) !
         }
 
         .navbar-dropdown-control {
-            color: $navbar-item-navbar-link-color;
+            color: $secondary;
 
             > .dropdown-toggler {
                 color: inherit;
@@ -45,8 +43,7 @@ $navbar-item-navbar-active-bg-color: rgba($navbar-item-navbar-link-color, .05) !
 
         &.current-menu-item,
         &.current-menu-parent {
-            background: $navbar-item-navbar-active-bg-color !important; // sass-lint:disable-line no-important
-            border-bottom-color: $navbar-item-navbar-link-color;
+            border-bottom-color: $secondary;
         }
     }
 
@@ -61,7 +58,6 @@ $navbar-item-navbar-active-bg-color: rgba($navbar-item-navbar-link-color, .05) !
         padding-right: 1.1764rem;
         padding-left: 1.1764rem;
         color: $navbar-item-navbar-link-color !important; // sass-lint:disable-line no-important
-        text-transform: uppercase;
         background-color: transparent !important; // sass-lint:disable-line no-important
 
         &:hover,
@@ -92,8 +88,7 @@ $navbar-item-navbar-active-bg-color: rgba($navbar-item-navbar-link-color, .05) !
         .navbar-dropdown {
             padding: 3rem 0 2rem;
             border-radius: 0;
-            box-shadow: 0 .0588rem .5rem rgba($black, .1); // sass-lint:disable-line no-color-literals
-
+            border-top: 0;
             &__parent-link {
                 font-weight: 600;
                 color: $navbar-item-dropdown-accent-color !important; // sass-lint:disable-line no-important

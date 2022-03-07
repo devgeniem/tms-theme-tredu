@@ -70,4 +70,3 @@ mix.webpackConfig( {
     )
     .version()
     .setPublicPath( 'assets/dist' );
-

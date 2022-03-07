@@ -61,7 +61,7 @@
 </div>
 
 {^Header.hide_main_nav}
-    <div class="site-header__nav is-relative is-hidden-touch is-hidden-desktop-only {Header.colors.nav|s}">
+    <div class="site-header__nav is-relative is-hidden-touch is-hidden-desktop-only has-border has-border-top-1 has-border-secondary {Header.colors.nav|s}">
         <div class="container">
             <div class="columns mt-0 mb-0">
                 <div class="column pt-0 pb-0">

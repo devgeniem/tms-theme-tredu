@@ -355,7 +355,7 @@ class Header extends Model {
                 'search_button'          => 'is-primary',
                 'search_popup_container' => 'has-background-secondary has-text-secondary-invert',
                 'nav'                    => [
-                    'container' => 'has-background-primary',
+                    'container' => 'has-background-white has-text-primary',
                 ],
                 'fly_out_nav'            => [
                     'inner'            => 'has-background-primary has-text-secondary-invert',
@@ -366,8 +366,8 @@ class Header extends Model {
                 ],
                 'lang_nav'               => [
                     'dropdown_toggle' => 'is-primary is-outlined',
-                    'link'            => 'has-border-radius-small',
-                    'link__default'   => 'has-text-accent',
+                    'link'            => 'has-border-radius-50',
+                    'link__default'   => 'has-text-primary has-border-2 has-border-secondary',
                     'link__active'    => 'has-background-primary has-text-primary-invert',
                 ],
             ]

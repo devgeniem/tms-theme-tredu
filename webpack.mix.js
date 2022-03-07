@@ -20,13 +20,17 @@ Config.svgSprite = {
      */
     loaderOptions: {
         symbolId: 'icon-[name]',
+        extract: true,
+        spriteFilename: 'icons.svg',
+        spriteAttrs: { style: 'display: none;' },
     },
     /*
      * @see https://github.com/kisenka/svg-sprite-loader#configuration
      */
-    // pluginOptions: {
-    //     plainSprite: true,
-    // },
+    pluginOptions: {
+        plainSprite: true,
+        spriteAttrs: { style: 'display: none;' },
+    },
 };
 
 mix.webpackConfig( {

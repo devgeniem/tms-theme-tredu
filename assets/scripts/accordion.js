@@ -62,8 +62,8 @@ export default class Accordion {
         this.toggleAriaExpanded( clickedToggler );
         dropDownContent.classList.toggle( 'is-hidden' );
 
-        if ( ! clickedToggler.classList.contains( 'is-hidden' )
-        && ! clickedToggler.classList.contains( 'accordion--table-initialized' ) ) {
+        if ( ! clickedToggler.classList.contains( 'is-hidden' ) &&
+        ! clickedToggler.classList.contains( 'accordion--table-initialized' ) ) {
 
             const accordionTables = dropDownContent.getElementsByTagName( 'table' );
 

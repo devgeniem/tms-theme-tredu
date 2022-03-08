@@ -280,7 +280,7 @@ $button-transition-speed: $speed !default;
                 &:hover,
                 &:focus,
                 &.is-hovered {
-                    @include button_colors($btn-pair-primary, $btn-pair-primary-text-invert, $btn-pair-primary-text-invert);
+                    @include button_colors($btn-pair-primary, $white, $btn-pair-primary);
                 }
 
                 @extend .button-states;

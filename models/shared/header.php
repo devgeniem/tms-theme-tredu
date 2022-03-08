@@ -352,7 +352,7 @@ class Header extends Model {
         return apply_filters(
             'tms/theme/header/colors',
             [
-                'search_button'          => 'is-primary',
+                'search_button'          => 'is-secondary is-outlined',
                 'search_popup_container' => 'has-background-secondary has-text-secondary-invert',
                 'nav'                    => [
                     'container' => 'has-background-white has-text-primary',

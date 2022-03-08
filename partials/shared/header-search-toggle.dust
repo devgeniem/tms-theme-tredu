@@ -4,6 +4,6 @@
         aria-expanded="false"
         aria-label="{Strings.s.header.search|s}: {Strings.s.header.open_search|s}"
         data-duration="225">
-    {Strings.s.header.search|s}
+    {Strings.s.header.search_from_site|s}
     {>"ui/icon" icon="search" class="icon--large is-primary-invert"  /}
 </button>

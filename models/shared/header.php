@@ -353,7 +353,7 @@ class Header extends Model {
             'tms/theme/header/colors',
             [
                 'search_button'          => 'is-secondary is-outlined',
-                'search_popup_container' => 'has-background-secondary has-text-secondary-invert',
+                'search_popup_container' => 'has-background-light-gray has-text-secondary-invert',
                 'nav'                    => [
                     'container' => 'has-background-white has-text-primary',
                 ],

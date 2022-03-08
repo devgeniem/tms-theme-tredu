@@ -52,9 +52,9 @@ export default class Hero {
             return;
         }
 
-        const margin = $( window ).width() < this.BOX_BREAKPOINT ?
-            this.container.find( '.hero__box' ).outerHeight() / 2 :
-            0;
+        const margin = $( window ).width() < this.BOX_BREAKPOINT
+            ? this.container.find( '.hero__box' ).outerHeight() / 2
+            : 0;
 
         this.container.css( 'marginBottom', margin );
     }
@@ -126,9 +126,9 @@ export default class Hero {
     getVideoElement() {
         const $video = this.container.find( '.hero__video' );
 
-        return $video.length === 0 ?
-            false :
-            $video.get( 0 );
+        return $video.length === 0
+            ? false
+            : $video.get( 0 );
     }
 
     /**

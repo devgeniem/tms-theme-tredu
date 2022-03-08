@@ -363,11 +363,11 @@ export default class Common {
      * @return {boolean} True or false.
      */
     static empty( param ) {
-        return typeof param === 'undefined'
-            || param === ''
-            || param === null
-            || param === false
-            || param.length === 0;
+        return typeof param === 'undefined' ||
+            param === '' ||
+            param === null ||
+            param === false ||
+            param.length === 0;
     }
 
     /**
@@ -384,9 +384,9 @@ export default class Common {
         const regex = new RegExp( '[\\?&]' + paramName + '=([^&#]*)' );
         const results = regex.exec( location.search );
 
-        return results === null
-            ? false
-            : decodeURIComponent(
+        return results === null ?
+            false :
+            decodeURIComponent(
                 results[ 1 ].replace( /\+/g, ' ' )
             );
     }

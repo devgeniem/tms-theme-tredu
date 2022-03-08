@@ -41,8 +41,18 @@ mix.webpackConfig( {
         jquery: [ '$', 'window.jQuery' ],
     } )
     .eslint( {
-        fix: true,
-        extensions: [ 'js' ],
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'eslint-loader',
+            options: {
+                configFile: '.eslintrc.json',
+                fix: false,
+                failOnWarning: false,
+                failOnError: true,
+            },
+        },
     } )
     //.extract() // this breaks all JS without errors
     .sass( 'assets/styles/theme-tredu.scss', 'theme_tredu.css' )

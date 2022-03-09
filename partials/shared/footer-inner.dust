@@ -19,7 +19,7 @@
                         {/contact_info.title}
 
                         {?contact_info.address}
-                            <div class="mt-4 mb-4 keep-vertical-spacing">
+                            <div class="mt-4 mb-4 keep-vertical-spacing has-text-weight-semibold">
                                 {contact_info.address|s}
                             </div>
                         {/contact_info.address}

@@ -9,7 +9,7 @@
                 </div>
             {/logo}
 
-            <div class="columns is-multiline">
+            <div class="columns is-multiline mb-12">
                 {?contact_info}
                     <div class="column {column_class|s} has-text-small">
                         {?contact_info.title}
@@ -47,7 +47,7 @@
                 {/link_columns}
             </div>
 
-            <div class="columns is-multiline is-vcentered mt-4 mt-0-desktop">
+            <div class="columns is-multiline is-vcentered mt-4 mt-0-desktop has-border has-border-top-1 has-border-divider">
                 <div class="column is-10-desktop">
                     <ul class="site-footer__copy-links is-flex is-flex-wrap-wrap is-unstyled has-text-xsmall">
                         <li class="site-footer__copy-text is-relative pr-3">
@@ -74,7 +74,7 @@
                 <div class="column is-12 is-2-desktop mt-6 mt-0-desktop has-text-centered has-text-right-desktop">
                     <a href="{brand_logo_url}" class="site-footer__tampere-vaakuna is-block">
                         <span class="is-sr-only">{Strings.s.footer.to_main_site|s}</span>
-                        {>"ui/icon" icon="tampere-vaakuna" class="brand-logo {Footer.colors.link_icon|s}" /}
+                        {>"ui/icon" icon="tampere-vaakuna" class="brand-logo has-text-white" /}
                     </a>
                 </div>
             </div>

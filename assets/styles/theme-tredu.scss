@@ -31,8 +31,8 @@ $light: $primary-light;
 $light-invert: $primary-light-invert;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
-$divider: $color-black;
-$divider-invert: $color-black;
+$divider: $color-dark-grey;
+$divider-invert: $color-dark-grey;
 
 $text: $black;
 $link: $primary;
@@ -50,7 +50,7 @@ $colors: (
 
 $button-colors: (
     "primary": ($primary, $color-white, $primary, $color-white),
-    "secondary": ($secondary, $secondary-invert, $color-white, $color-black),
+    "secondary": ($secondary, $secondary-invert, $color-white, $color-white),
 );
 
 $color-background-primary-light--opaque-light: $secondary;

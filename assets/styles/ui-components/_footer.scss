@@ -2,8 +2,6 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-$footer-copy-link-border-color: $primary-invert !default;
-
 .site-footer {
     &__link {
         .icon {
@@ -34,7 +32,7 @@ $footer-copy-link-border-color: $primary-invert !default;
                     bottom: .3rem;
                     display: block;
                     width: 1px;
-                    background-color: $footer-copy-link-border-color;
+                    background-color: $secondary;
                 }
             }
         }
@@ -52,7 +50,7 @@ $footer-copy-link-border-color: $primary-invert !default;
         height: 2.5rem;
 
         @include from($desktop) {
-            height: auto;
+            height: 5.5rem;
         }
     }
 

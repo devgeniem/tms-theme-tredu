@@ -361,7 +361,7 @@ class Header extends Model {
                     'inner'            => 'has-background-primary has-text-secondary-invert',
                     'close_menu'       => 'is-primary-invert',
                     'search_title'     => 'has-text-primary-invert',
-                    'search_button'    => 'is-primary is-inverted',
+                    'search_button'    => 'is-secondary',
                     'brand_icon_color' => 'is-primary-invert',
                 ],
                 'lang_nav'               => [

@@ -16,6 +16,16 @@ $fly-out-nav-search-button-icon: $primary !default;
     z-index: 50;
     display: none;
 
+
+    a,
+    button {
+        &:focus,
+        &.is-focused {
+            @extend .button-state-focus;
+            outline-color: $white;
+        }
+    }
+
     @include from($desktop) {
         display: none;
     }
@@ -241,6 +251,11 @@ $fly-out-nav-search-button-icon: $primary !default;
         &__input {
             border: none;
             border-radius: .25rem;
+            &:focus,
+            &.is-focused {
+                @extend .button-state-focus;
+                outline-color: $white;
+            }
         }
 
         &__button {

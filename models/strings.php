@@ -49,7 +49,7 @@ class Strings extends \DustPress\Model {
                 'current_lang'             => _x( 'Current language: ', 'theme-frontend', 'tms-theme-tredu' ),
                 'search'                   => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_from_site'         => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
-                'search_title'             => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
+                'search_title'             => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_input_label'       => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_input_placeholder' => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'exception_close_button'   => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),

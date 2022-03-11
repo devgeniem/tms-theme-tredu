@@ -70,7 +70,8 @@
         }
     }
 
-    a{
+    a,
+    button {
         &:active,
         &:focus{
             @extend .button-state-focus;

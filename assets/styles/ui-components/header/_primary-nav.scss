@@ -3,7 +3,7 @@
  */
 
 $navbar-item-navbar-link-color: $primary !default;
-$navbar-item-grid-item-border-color: $secondary !default;
+$navbar-item-grid-item-border-color: $color-grey !default;
 $navbar-item-has-dropdown-active: $primary !default;
 $navbar-item-dropdown-accent-color: $primary !default;
 
@@ -93,6 +93,7 @@ $navbar-item-dropdown-accent-color: $primary !default;
                 font-weight: 600;
                 color: $navbar-item-dropdown-accent-color !important; // sass-lint:disable-line no-important
                 text-transform: none;
+                border-bottom: 1px solid $navbar-item-grid-item-border-color;
             }
 
             .icon {
@@ -101,16 +102,16 @@ $navbar-item-dropdown-accent-color: $primary !default;
         }
 
         .navbar-grid {
-            font-size: .8823rem;
+            font-size: 1rem;
             font-weight: 600;
             display: grid;
-            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-column-gap: $gap;
             text-transform: none;
 
             .navbar-item {
                 padding: 1.411rem 0;
-                border-bottom: 2px solid $navbar-item-grid-item-border-color;
+                border-bottom: 1px solid $navbar-item-grid-item-border-color;
 
                 &:hover,
                 &:focus {

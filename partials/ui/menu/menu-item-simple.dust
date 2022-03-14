@@ -2,6 +2,10 @@
     {title|s}
 
     {?icon}
-        {>"ui/icon" class="icon--medium ml-2" /}
+        {?icon-classes}
+            {>"ui/icon" class="icon--medium ml-2 {icon-classes}" /}
+        {:else}
+            {>"ui/icon" class="icon--medium ml-2" /}
+        {/icon-classes}
     {/icon}
 </a>

@@ -2,15 +2,15 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                <a href="{url}" class="navbar-dropdown__parent-link is-inline-block mb-2 has-text-black has-text-large">
+                <a href="{url}" class="navbar-dropdown__parent-link is-inline-block pb-6 has-text-black has-text-large has-width-100">
                     {title|s}
-                    {>"ui/icon" icon="chevron-right" class="icon--medium ml-2" /}
+                    {>"ui/icon" icon="arrow-right" class="icon--medium ml-2 is-secondary" /}
                 </a>
 
                 <div class="navbar-dropdown-items">
                     <div class="navbar-grid">
                         {#sub_menu}
-                            {>"ui/menu/menu-item-simple" icon="chevron-right" /}
+                            {>"ui/menu/menu-item-simple" icon="arrow-right" classes="is-justify-content-space-between" icon-classes="is-secondary" /}
                         {/sub_menu}
                     </div>
                 </div>

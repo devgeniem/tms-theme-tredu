@@ -3,6 +3,16 @@
  */
 
 .site-footer {
+
+    a,
+    button {
+        &:focus,
+        &.is-focused {
+            @extend .button-state-focus;
+            outline-color: $white;
+        }
+    }
+    
     &__link {
         .icon {
             transition: transform $easing $speed;

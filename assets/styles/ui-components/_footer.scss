@@ -55,13 +55,9 @@
         }
     }
 
-    .brand-logo {
-        width: 75%;
-        height: 2.5rem;
-
-        @include from($desktop) {
-            height: 5.5rem;
-        }
+    .footer-logo {
+        width: 100%;
+        max-width: 200px;
     }
 
     &__tampere-vaakuna {

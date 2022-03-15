@@ -13,11 +13,22 @@
         }
 
         select {
+            appearance: none;
+            font-size: 85%;
             width: 100%;
+            min-width: 170px;
             color: inherit;
+            background-image: url('../icons/chevron-down.svg');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 20px) 50%;
+            background-size: 15px 10px;
 
             @include until($desktop) {
                 font-size: 1em;
+            }
+
+            &:focus-visible {
+                border-radius: 0;
             }
         }
     }

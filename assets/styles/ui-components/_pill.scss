@@ -1,4 +1,4 @@
-$pill-background-color: $secondary !default;
+$pill-background-color: $secondary-light !default;
 $pill-color: $secondary-invert !default;
 $pill-color-active: $primary-invert !default;
 $pill-color-active-hover: $primary-invert !default;
@@ -12,7 +12,7 @@ $pill-background-color-active: $dark !default;
 $pill-background-color-focus: $dark !default;
 $pill-border-color: transparent !default;
 $pill-border-color-hover: transparent !default;
-$pill-border-radius: $theme-spacing-quarter !default;
+$pill-border-radius: 55px !default;
 $pill-border-color-focus: $black !default;
 $pill-default-border-color-focus: transparent !default;
 
@@ -31,9 +31,8 @@ $pill-hover-shadow-size: 0 4px 8px !default;
 $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
 
 .pill {
-    font-family: $family-secondary;
     font-size: 85%;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.1;
     display: inline-block;
     padding: $theme-spacing-half $theme-spacing-three-quarters;

@@ -59,10 +59,14 @@ $navbar-item-dropdown-accent-color: $primary !default;
         padding-left: 1.1764rem;
         color: $navbar-item-navbar-link-color !important; // sass-lint:disable-line no-important
         background-color: transparent !important; // sass-lint:disable-line no-important
-
-        &:hover,
-        &:focus {
+        
+        &:hover {
             text-decoration: underline;
+        }
+
+        &:active,
+        &:focus{
+            outline-offset: 0;
         }
     }
 

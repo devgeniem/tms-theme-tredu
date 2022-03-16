@@ -6,6 +6,7 @@
 
     a,
     button {
+        position:relative;
         &:focus,
         &.is-focused {
             @extend .button-state-focus;
@@ -64,6 +65,10 @@
         &:focus {
             outline-style: solid;
             outline-color: $primary-invert;
+        }
+
+        .icon {
+            max-width: 100%;
         }
     }
 }

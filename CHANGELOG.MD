@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-673: Content page hero
 - TMS-662: Breadcrumb in header
 - TMS-672: 404 Page styles
+- TMS-686: Accordion block

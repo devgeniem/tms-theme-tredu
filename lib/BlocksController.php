@@ -171,14 +171,14 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Post::SLUG,
             //     ],
             // ],
-            // 'acf/accordion'      => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
+            'acf/accordion'      => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
             // 'acf/video'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,

@@ -1,12 +1,5 @@
 .accordion {
-    &__description {
-        @include from($tablet) {
-            max-width: 75%;
-            margin-right: auto;
-            margin-left: auto;
-        }
-    }
-
+   
     &__content {
         p {
             clear: both;
@@ -15,9 +8,9 @@
     }
 
     &__row {
-        border: 1px solid $secondary-light;
-        border-radius: $theme-spacing-quarter;
-
+        // border: 1px solid $secondary-light;
+        // border-radius: $theme-spacing-quarter;
+        background-color: $color-light-gray;
         &:hover {
             border-color: darken($secondary-light, 15%);
         }
@@ -46,4 +39,28 @@
             transition: transform ease-in .2s;
         }
     }
+
+    
+    button {
+        position:relative;
+        &:focus,
+        &.is-focused,
+        &:focus-visible {
+            @extend .button-state-focus;
+
+        }
+    }
+    a {
+        text-decoration: underline;
+        position:relative;
+        font-weight: 600;
+        &:focus,
+        &.is-focused,
+        &:focus-visible {
+            @extend .button-state-focus;
+            outline-offset: 0.125rem;
+
+        }
+    }
+
 }

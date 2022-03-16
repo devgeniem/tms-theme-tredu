@@ -75,7 +75,8 @@
     a,
     button {
         &:active,
-        &:focus{
+        &:focus,
+        &:focus-visible {
             @extend .button-state-focus;
         }
         

@@ -20,7 +20,8 @@ $fly-out-nav-search-button-icon: $primary !default;
     a,
     button {
         &:focus,
-        &.is-focused {
+        &.is-focused,
+        &:focus-visible {
             @extend .button-state-focus;
             outline-color: $white;
         }
@@ -252,7 +253,8 @@ $fly-out-nav-search-button-icon: $primary !default;
             border: none;
             border-radius: .25rem;
             &:focus,
-            &.is-focused {
+            &.is-focused,
+            &:focus-visible {
                 @extend .button-state-focus;
                 outline-color: $white;
             }

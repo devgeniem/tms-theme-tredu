@@ -79,26 +79,43 @@ class SingleProgram extends BaseModel {
         return array_filter( $info, fn( $item ) => ! empty( $item['text'] ) );
     }
 
+    /**
+     * Get delivery method
+     *
+     * @return string|null
+     */
     protected function get_delivery_method() : ?string {
         $terms = get_the_terms( get_queried_object(), DeliveryMethod::SLUG );
 
-        if ( empty( $terms ) ) {
+        if ( empty( $terms ) || is_wp_error( $terms ) ) {
             return null;
         }
 
         return implode( ', ', array_map( fn( $item ) => $item->name, $terms ) );
     }
 
+    /**
+     * Get location
+     *
+     * @return string|null
+     */
     protected function get_location() : ?string {
         $terms = get_the_terms( get_queried_object(), Location::SLUG );
 
-        if ( empty( $terms ) ) {
+        if ( empty( $terms ) || is_wp_error( $terms ) ) {
             return null;
         }
 
         return implode( ', ', array_map( fn( $item ) => $item->name, $terms ) );
     }
 
+    /**
+     * Get start date
+     *
+     * @param array $fields Meta fields.
+     *
+     * @return string|null
+     */
     protected function get_start_date( $fields ) : ?string {
         if ( ! empty( $fields['start_info'] ) ) {
             $start_info = $fields['start_info'];

@@ -1,18 +1,16 @@
 $pagination-item-color: $secondary-invert !default;
 $pagination-item-color-current: $primary-invert !default;
-$pagination-item-color-hover: $pagination-item-color !default;
-$pagination-item-color-focus: $pagination-item-color !default;
+$pagination-item-color-hover: $secondary !default;
+$pagination-item-color-focus: $secondary !default;
 
-$pagination-item-background-color: $secondary !default;
-$pagination-item-background-color-hover: opacify($secondary-light, .75) !default;
-$pagination-item-background-color-focus: $secondary-light !default;
+$pagination-item-background-color-hover: $primary;
+$pagination-item-background-color-focus: $primary;
 $pagination-item-background-color-current: $primary !default;
 $pagination-item-background-color-current-hover: $primary-dark !default;
 $pagination-item-background-color-current-focus: $primary-dark !default;
 
 $pagination-item-hover-shadow-size: 0 4px 8px !default;
 $pagination-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
-$pagination-item-border-radius: $theme-spacing-quarter !default;
 
 $pagination-item-transition-easing: $easing !default;
 $pagination-item-transition-speed: $speed !default;
@@ -29,17 +27,31 @@ $pagination-item-transition-speed: $speed !default;
             height: 2.2352rem;
             padding: $theme-spacing-quarter $theme-spacing-half;
             color: $pagination-item-color;
-            background-color: $pagination-item-background-color;
-            border-radius: $pagination-item-border-radius;
+            border: 2px solid $secondary;
 
             &:focus {
                 color: $pagination-item-color-focus;
                 background-color: $pagination-item-background-color-focus;
+                border-color: transparent;
+                outline-style: dashed;
+                outline-offset: -2px;
+                outline-color: $secondary;
+                outline-width: 2px;
+                text-decoration: none;
             }
 
             &:hover {
                 color: $pagination-item-color-hover;
                 background-color: $pagination-item-background-color-hover;
+                border-color: transparent;
+                text-decoration: none;
+            }
+
+            &:active {
+                color: $pagination-item-color;
+                background-color: transparent;
+                border: 2px solid $secondary;
+                outline: none;
             }
 
             &:not(.hellip) {
@@ -55,6 +67,7 @@ $pagination-item-transition-speed: $speed !default;
             a {
                 color: $pagination-item-color-current;
                 background-color: $pagination-item-background-color-current;
+                border-color: transparent;
 
                 &:hover {
                     background-color: $pagination-item-background-color-current-hover;

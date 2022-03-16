@@ -47,4 +47,16 @@ $sibling-navigation-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
             transition: box-shadow $sibling-navigation-item-transition-easing $sibling-navigation-item-transition-speed;
         }
     }
+
+    a,
+    button {
+        position:relative;
+        &:focus,
+        &.is-focused,
+        &:focus-visible {
+            @extend .button-state-focus;
+            outline-color: $black;
+        }
+    }
+
 }

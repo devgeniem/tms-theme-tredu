@@ -135,152 +135,152 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            // 'acf/image-banner'   => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/key-figures'    => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/link-list'      => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/quote'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/grid'           => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //     ],
-            // ],
-            // 'acf/accordion'      => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/video'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/image'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/video'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/image-gallery'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/image-carousel' => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/share-links'    => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/table'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/material'       => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/subpages'       => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //     ],
-            // ],
-            // 'acf/notice-banner'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'acf/map'            => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/contacts'       => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/acc-icon-links' => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
-            //     ],
-            // ],
-            // 'gravityforms/form'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\Contact::SLUG,
-            //     ],
-            // ],
+            'acf/image-banner'   => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/key-figures'    => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/link-list'      => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/quote'          => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/grid'           => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                ],
+            ],
+            'acf/accordion'      => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/video'          => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/image'          => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/video'          => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/image-gallery'  => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/image-carousel' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/share-links'    => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/table'          => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/material'       => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/subpages'       => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                ],
+            ],
+            'acf/notice-banner'  => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'acf/map'            => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/contacts'       => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/acc-icon-links' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\DynamicEvent::SLUG,
+                ],
+            ],
+            'gravityforms/form'  => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\Contact::SLUG,
+                ],
+            ],
         ];
 
         $blocks = apply_filters(

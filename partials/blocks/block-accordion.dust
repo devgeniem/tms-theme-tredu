@@ -1,6 +1,6 @@
 <div class="accordion pt-6 pb-6 is-align-wide" {?anchor}id="{anchor|s}"{/anchor}>
     <header class="accordion__header">
-        <h2 class="accordion__title h3 mt-0 mb-6">
+        <h2 class="accordion__title h3 mt-0 mb-6 has-text-weight-semibold">
             {title|s}
         </h2>
 
@@ -31,7 +31,7 @@
                             </button>
                         </h3>
 
-                        <div id="accordion-content-{ID}" class="accordion__content pr-4 pl-4 pb-4 pr-6-tablet pl-6-tablet pb-6-tablet keep-vertical-spacing">
+                        <div id="accordion-content-{ID}" class="accordion__content pr-4 pl-4 pb-4 pt-4 pr-6-tablet pl-6-tablet pb-6-tablet keep-vertical-spacing">
                             {#section_content}
                                 {>"{partial}" /}
                             {/section_content}

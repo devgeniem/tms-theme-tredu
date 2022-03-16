@@ -9,7 +9,7 @@
         {/featured_image}
 
         <h2 class="entry__title h4 mt-0 mb-5">
-            <a href="{permalink|url}" class="has-text-black">
+            <a href="{permalink|url}">
                 {post_title|html}
             </a>
         </h2>

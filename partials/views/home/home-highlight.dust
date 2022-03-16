@@ -13,7 +13,7 @@
             <div class="highlight-article__fields p-5 pt-9-desktop pr-6-desktop pb-9-desktop pl-9-desktop">
                 {?highlight.post_title}
                     <h2 class="mt-0 mt-3-desktop mb-4 mb-5-desktop">
-                        <a href="{highlight.permalink}" class="has-text-black has-text-weight-semibold">
+                        <a href="{highlight.permalink}" class="has-text-weight-semibold">
                             {highlight.post_title|html}
                         </a>
                     </h2>

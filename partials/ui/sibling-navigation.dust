@@ -2,7 +2,7 @@
     <div class="container sibling-navigation__container">
         <div class="columns is-flex-wrap-wrap pt-4 pb-6 pb-10-desktop">
             <div class="column is-12 pb-4 pb-6-desktop">
-                <h3 class="mb-0 pb-4 pb-6-desktop has-border has-border-bottom-1">
+                <h3 class="siblings-nav-heading mb-0 pb-4 pb-6-desktop">
                     {?post_siblings_heading} 
                         {post_siblings_heading|s}
                     {:else}

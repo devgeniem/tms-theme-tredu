@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
 "POT-Creation-Date: 2022-03-16 15:55+0200\n"
-"PO-Revision-Date: 2022-03-16 15:56+0200\n"
+"PO-Revision-Date: 2022-03-16 16:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -766,7 +766,7 @@ msgstr "Sisarsivut"
 #: models/strings.php:135
 msgctxt "theme-frontend"
 msgid "You might also be interested in"
-msgstr "Sinua voisi myös kiinostaa"
+msgstr "Sinua voisi myös kiinnostaa"
 
 #: models/strings.php:138
 msgctxt "theme-frontend"

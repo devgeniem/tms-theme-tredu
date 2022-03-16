@@ -1,16 +1,19 @@
 $sibling-navigation-item-background-color: transparent !default;
-$sibling-navigation-item-active-background-color: $secondary !default;
-$sibling-navigation-item-border-color: $primary !default;
-$sibling-navigation-item-active-border-color: $secondary !default;
+$sibling-navigation-item-active-background-color: $primary !default;
+$sibling-navigation-item-border-color: $secondary !default;
+$sibling-navigation-item-active-border-color: $primary !default;
 $sibling-navigation-item-color: $black !default;
-$sibling-navigation-item-active-color: $black !default;
+$sibling-navigation-item-active-color: $white !default;
 $sibling-navigation-item-transition-easing: $easing !default;
 $sibling-navigation-item-transition-speed: $speed !default;
 $sibling-navigation-item-hover-shadow-size: 0 4px 8px !default;
 $sibling-navigation-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
 
 .sibling-navigation {
-    
+
+    .siblings-nav-heading {
+        border-bottom: rem(1) solid $color-grey;
+    }
 
     &__items {
         display: flex;
@@ -26,7 +29,7 @@ $sibling-navigation-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
         margin: $theme-spacing-half;
         color: $sibling-navigation-item-color;
         background-color: $sibling-navigation-item-background-color;
-        border: 1px solid $sibling-navigation-item-border-color;
+        border: rem(2) solid $sibling-navigation-item-border-color;
 
         @include from($desktop) {
             margin: $theme-spacing-three-quarters;

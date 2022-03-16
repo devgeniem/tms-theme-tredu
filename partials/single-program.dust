@@ -1,0 +1,26 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content" id="main-content">
+        {#SingleProgram}
+            <article class="entry">
+                {>"views/single-program/hero" /}
+                {>"views/single-program/info" /}
+
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-10 is-offset-1">
+                                <div class="entry__content is-content-grid keep-vertical-spacing">
+                                    {@content /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            {>"ui/components" components=components /}
+        {/SingleProgram}
+    </main>
+{/content}

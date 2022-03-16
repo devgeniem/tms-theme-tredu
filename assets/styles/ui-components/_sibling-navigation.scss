@@ -30,6 +30,7 @@ $sibling-navigation-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
         color: $sibling-navigation-item-color;
         background-color: $sibling-navigation-item-background-color;
         border: rem(2) solid $sibling-navigation-item-border-color;
+        line-height: rem(20);
 
         @include from($desktop) {
             margin: $theme-spacing-three-quarters;

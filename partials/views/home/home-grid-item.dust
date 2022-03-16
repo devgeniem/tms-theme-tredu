@@ -14,9 +14,9 @@
             </a>
         </h2>
 
-        <div class="entry__excerpt mt-4 mb-4 has-text-small">
+        <div class="entry__excerpt mt-4 mb-4">
             <p>
-                <span class="has-text-weight-semibold has-text-black is-family-secondary">{@strtodate value=post_date /}</span>
+                <span class="has-text-weight-semibold has-text-black is-family-secondary has-text-xsmall">{@strtodate value=post_date /}</span>
                 {excerpt|html}
             </p>
         </div>

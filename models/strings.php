@@ -132,6 +132,7 @@ class Strings extends \DustPress\Model {
             ],
             'sibling_navigation' => [
                 'sibling_navigation' => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
+                'sibling_navigation_heading' => _x( 'You might also be interested in', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'comments'           => [
                 'comments_title' => _x( 'Comments', 'theme-frontend', 'tms-theme-tredu' ),

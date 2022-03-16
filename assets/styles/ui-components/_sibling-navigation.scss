@@ -10,15 +10,13 @@ $sibling-navigation-item-hover-shadow-size: 0 4px 8px !default;
 $sibling-navigation-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
 
 .sibling-navigation {
-    &__container {
-        border-top: 1px solid $secondary;
-    }
+    
 
     &__items {
         display: flex;
         flex-wrap: wrap;
         margin: -$theme-spacing-half;
-
+        
         @include from($desktop) {
             margin: -$theme-spacing-three-quarters;
         }

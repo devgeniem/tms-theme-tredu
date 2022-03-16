@@ -2,14 +2,13 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-$table-row-background-color-even: $white !default;
-$table-row-background-color-odd: $secondary !default;
-$table-row-background-color-even-hover: darken($table-row-background-color-even, 1) !default;
-$table-row-background-color-odd-hover: darken($table-row-background-color-odd, 4) !default;
+$table-row-background-color-even: $color-light-blueishgray !default;
+$table-row-background-color-odd: $white !default;
+$table-row-background-color-even-hover: darken($table-row-background-color-odd, 1) !default;
+$table-row-background-color-odd-hover: darken($table-row-background-color-even, 1) !default;
 
 .tablepress {
     font-size: .9375rem;
-
     @include from($tablet) {
         font-size: .88235rem;
     }

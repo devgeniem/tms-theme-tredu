@@ -32,6 +32,7 @@ $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
 .pill {
     font-size: 85%;
     font-weight: 600;
+    font-family: $font-family-header;
     line-height: 1.1;
     display: inline-block;
     padding: $theme-spacing-half $theme-spacing-three-quarters;

@@ -22,6 +22,7 @@
             background-repeat: no-repeat;
             background-position: calc(100% - 20px) 50%;
             background-size: 15px 10px;
+            line-height: calc( 25 / 15 );
 
             @include until($desktop) {
                 font-size: 1em;

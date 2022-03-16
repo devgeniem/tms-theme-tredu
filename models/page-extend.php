@@ -70,6 +70,25 @@ class PageExtend extends BaseModel {
     }
 
     /**
+     * Get post siblings heading.
+     *
+     * @return string|false
+     */
+    public function post_siblings_heading() {
+        // $current_post_id = get_the_ID();
+        // $parent_post_id  = wp_get_post_parent_id( $current_post_id );
+
+        $siblings_heading_setting = Settings::get_setting( 'sibling_navigation_heading' );
+
+        if ( empty( $siblings_heading_setting ) ) {
+            return false;
+        }
+
+        return $siblings_heading_setting;
+       
+    }
+
+    /**
      * Use overlay
      *
      * @return bool

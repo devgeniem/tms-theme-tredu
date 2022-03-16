@@ -10,6 +10,14 @@ $tms-breadcrumb-item-color-separator: $secondary !default;
 .breadcrumb {
     hyphens: auto;
     white-space: normal;
+    a,
+    button {
+        position:relative;
+        &:focus,
+        &.is-focused {
+            @extend .button-state-focus;
+        }
+    }
 
     .breadcrumbs {
         &__nav {

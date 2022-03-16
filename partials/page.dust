@@ -7,7 +7,7 @@
                 <div class="container">
                     <div class="columns">
                         <div class="column">
-                            {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs bc_icon="chevron-right" icon_classes="icon--small is-secondary ml-2 mr-2" /}
+                            {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs bc_icon="chevron-right" icon_classes="icon--small is-secondary ml-2 mr-0" /}
                         </div>
                     </div>
                 </div>

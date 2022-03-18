@@ -19,11 +19,11 @@ $fly-out-nav-search-button-icon: $primary !default;
 
     a,
     button {
-        &:focus,
-        &.is-focused,
-        &:focus-visible {
-            @extend .button-state-focus;
-            outline-color: $white;
+        &:focus{
+            text-decoration: underline;
+            outline: .125rem solid $color-white;
+            outline-offset: .25rem;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
         }
     }
 

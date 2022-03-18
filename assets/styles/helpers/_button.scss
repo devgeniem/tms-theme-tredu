@@ -23,9 +23,11 @@ $button-transition-easing: $easing !default;
 $button-transition-speed: $speed !default;
  
  .button-state-focus {
-     outline: .125rem solid $color-black;
-     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+     outline-width: .125rem;
+     outline-style: solid;
+     outline-color: $color-black;
      outline-offset: .25rem;
+     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
  }
 
  .gform_wrapper button,

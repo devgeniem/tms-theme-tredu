@@ -10,6 +10,7 @@ $tms-breadcrumb-item-color-separator: $secondary !default;
 .breadcrumb {
     hyphens: auto;
     white-space: normal;
+    color: $black;
     a,
     button {
         position:relative;

@@ -13,7 +13,7 @@
             <div class="column sibling-navigation__items is-12">
                 {#post_siblings}
                     <a href="{permalink}"
-                       class="sibling-navigation__item has-text-weight-semibold pt-3 pr-6 pb-3 pl-6 has-border-radius has-border-radius-small {?is_current}is-current{/is_current}"
+                       class="sibling-navigation__item has-text-weight-semibold pt-4 pr-6 pb-3 pl-6 has-border-radius has-border-radius-small {?is_current}is-current{/is_current}"
                        {?is_active}aria-hidden="true"{/is_active}>{post_title|s}</a>
                 {/post_siblings}
             </div>

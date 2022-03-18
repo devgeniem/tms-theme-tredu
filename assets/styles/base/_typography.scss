@@ -23,7 +23,7 @@ a {
     &:focus,
     &.is-focused {
         text-decoration: underline;
-        outline: .0625rem dotted;
+        @extend .button-state-focus;
     }
 
     &.has-background-primary {

@@ -3,19 +3,17 @@
  */
 
 .site-footer {
-
-    a,
-    button {
-        position:relative;
-        &:focus,
-        &.is-focused,
-        &:focus-visible {
-            @extend .button-state-focus;
-            outline-color: $white;
-        }
-        &.button--icon {
-            span {
-                padding-top: rem(2);
+    .container {
+        a,
+        button {
+            position:relative;
+            &:focus {
+                outline-color: $white !important;
+            }
+            &.button--icon {
+                span {
+                    padding-top: rem(2);
+                }
             }
         }
     }
@@ -51,13 +49,6 @@
                     width: 1px;
                     background-color: $secondary;
                 }
-            }
-        }
-
-        a {
-            &:hover,
-            &:focus {
-                text-decoration: none !important; // sass-lint:disable-line no-important
             }
         }
     }

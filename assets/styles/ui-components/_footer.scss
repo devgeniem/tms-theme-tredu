@@ -3,21 +3,23 @@
  */
 
 .site-footer {
-
-    a,
-    button {
-        position:relative;
-        &:focus,
-        &.is-focused,
-        &:focus-visible {
-            @extend .button-state-focus;
-            outline-color: $white;
-        }
-        &.button--icon {
-            span {
-                padding-top: rem(2);
+    .container {
+        a,
+        button {
+            position:relative;  
+            &:focus {
+                outline: .125rem solid $color-white;
+                outline-offset: .25rem;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            &.button--icon {
+                span {
+                    padding-top: rem(2);
+                }
             }
         }
+
+
     }
     
     &__link {
@@ -51,13 +53,6 @@
                     width: 1px;
                     background-color: $secondary;
                 }
-            }
-        }
-
-        a {
-            &:hover,
-            &:focus {
-                text-decoration: none !important; // sass-lint:disable-line no-important
             }
         }
     }

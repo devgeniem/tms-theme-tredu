@@ -23,9 +23,8 @@ $button-transition-easing: $easing !default;
 $button-transition-speed: $speed !default;
  
  .button-state-focus {
-     outline-width: .125rem;
-     outline-style: solid;
-     outline-color: $color-black;
+     text-decoration: underline;
+     outline: .125rem solid $color-black;
      outline-offset: .25rem;
      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
  }
@@ -65,13 +64,7 @@ $button-transition-speed: $speed !default;
      &.is-rounded {
          border-radius: 999px;
      }
- 
-     &:focus,
-     &.is-focused,
-     &:focus-visible {
-         @extend .button-state-focus;
-     }
- 
+
      &--icon {
          .icon {
              margin-left: .75rem !important;
@@ -110,10 +103,17 @@ $button-transition-speed: $speed !default;
         border-color: $secondary;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         text-decoration: underline;
     }
+
+    &:focus{
+        text-decoration: underline;
+        outline: .125rem solid $color-black;
+        outline-offset: .25rem;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
  
 
  }

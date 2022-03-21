@@ -111,6 +111,7 @@ class PageProgram extends BaseModel {
         return [
             'input_search_name' => self::SEARCH_QUERY_VAR,
             'current_search'    => $this->search_data->query,
+            'new_search_link'   => get_permalink(),
             // 'action'            => get_permalink(),
         ];
     }
@@ -320,7 +321,7 @@ class PageProgram extends BaseModel {
      * @return void
      */
     protected function set_pagination_data( $wp_query ) : void {
-        $per_page = get_option( 'posts_per_page' );
+        $per_page = 20;
         $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
         $this->pagination           = new stdClass();

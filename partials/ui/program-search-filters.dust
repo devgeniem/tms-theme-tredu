@@ -1,0 +1,36 @@
+<form role="search" method="get" class="search-form columns is-flex-wrap-wrap" action="">
+   <div class="column is-12 search-form is-flex is-flex-wrap-wrap is-align-items-center">
+    <label class="mb-2 mb-0-tablet mr-2 is-flex-grow-1">
+        <span class="is-sr-only"> {Strings.s.header.search_input_label|s} </span>
+        <input type="search" class="search-form__input has-border-radius-small has-background-light p-3 has-width-100"
+               placeholder="{Strings.s.search.write_search_terms|s}" value="{search_query|s}" name="{search.input_search_name}">
+    </label>
+
+    <button type="submit" class="search-form__button button button--icon {button_class|s}">
+        {Strings.s.header.search|s}
+        {>"ui/icon" icon="search" class="icon--medium"  /}
+    </button>
+    </div>
+
+    {?filters.locations.terms}
+        <div class="column is-12 locations">
+            <select name="{filters.locations.query_var}">
+                <option selected="true" value="">{Strings.s.program.location}</option>
+                {#filters.locations.terms}
+                    <option value="{term_id}">{name|s}</option>
+                {/filters.locations.terms}
+            </select>
+        </div>
+    {/filters.locations.terms}
+
+     {?filters.delivery_methods.terms}
+        <div class="column is-12 delivery_methods">
+            <select name="{filters.delivery_methods.query_var}">
+                <option selected="true" value="">{Strings.s.program.delivery_method}</option>
+                {#filters.delivery_methods.terms}
+                    <option value="{term_id}">{name|s}</option>
+                {/filters.delivery_methods.terms}
+            </select>
+        </div>
+    {/filters.delivery_methods.terms}
+</form>

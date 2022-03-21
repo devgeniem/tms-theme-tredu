@@ -165,9 +165,19 @@ class Strings extends \DustPress\Model {
                 'related_art'     => _x( 'Artwork by the same artist', 'theme-frontend', 'tms-theme-tredu' ),
                 'related_artwork' => _x( 'Related artwork', 'theme-frontend', 'tms-theme-tredu' ),
             ],
+            'program' => [
+                'search' => [
+                    'search_studies' => _x( 'Search studies', 'theme-frontend', 'tms-theme-tredu' ),
+                    'results_shown' => _x( 'Results shown', 'theme-frontend', 'tms-theme-tredu' ),
+                    'commit_new_search' => _x( 'Commit new search', 'theme-frontend', 'tms-theme-tredu' ),
+                ],
+                'location' => _x( 'Location', 'theme-frontend', 'tms-theme-tredu' ),
+                'delivery_method' =>  _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' )
+            ],
             'search'             => [
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),
+                'write_search_terms' => _x( 'Write search terms', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             // Use the Duet Date Picker keys for strings
             'datepicker'         => [

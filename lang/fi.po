@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-01-12 10:08+0200\n"
-"PO-Revision-Date: 2022-01-12 10:09+0200\n"
+"POT-Creation-Date: 2022-03-21 19:45+0200\n"
+"PO-Revision-Date: 2022-03-21 19:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4821
+#: assets/dist/theme_tredu.js:4770
 msgctxt "text direction"
 msgid "ltr"
 msgstr ""
@@ -46,22 +46,17 @@ msgctxt "theme ACF"
 msgid "Blogikirjoittaja"
 msgstr ""
 
-#: lib/ACF/DynamicEventGroup.php:55
-msgctxt "theme ACF"
-msgid "Tiedot"
-msgstr ""
-
 #: lib/ACF/Fields/Settings/MapSettingsTab.php:77
 msgid "Open map"
 msgstr "Avaa kartta"
 
-#: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:70
+#: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:71
 #: lib/ACF/PageGroup.php:39
 msgctxt "theme ACF"
 msgid "Page Components"
 msgstr "Sivun komponentit"
 
-#: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:123
+#: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:124
 #: lib/ACF/PageGroup.php:140 lib/ACF/PostGroup.php:173
 msgctxt "theme ACF"
 msgid "Components"
@@ -77,6 +72,11 @@ msgctxt "theme ACF"
 msgid "Kalenterin asetukset"
 msgstr ""
 
+#: lib/ACF/PageEventsSearchGroup.php:33
+msgctxt "theme ACF"
+msgid "Asetukset"
+msgstr ""
+
 #: lib/ACF/PostGroup.php:129
 msgid "Related posts"
 msgstr "Liittyvät sisällöt"
@@ -86,11 +86,11 @@ msgctxt "theme ACF"
 msgid "Site settings"
 msgstr "Sivuston asetukset"
 
-#: lib/Admin.php:89
+#: lib/Admin.php:94
 msgid "Paragraph"
 msgstr "Tekstikappale"
 
-#: lib/Admin.php:90
+#: lib/Admin.php:95
 msgid "Header"
 msgstr "Ylätunniste"
 
@@ -149,19 +149,19 @@ msgstr "Hinta"
 msgid "Organizer"
 msgstr "Järjestäjä"
 
-#: lib/LinkedEvents.php:213 lib/LinkedEvents.php:265
+#: lib/LinkedEvents.php:216 lib/LinkedEvents.php:268
 msgid "Additional information"
 msgstr "Lisätiedot"
 
-#: lib/LinkedEvents.php:258
+#: lib/LinkedEvents.php:261
 msgid "Free"
 msgstr "Maksuton"
 
-#: lib/LinkedEvents.php:288
+#: lib/LinkedEvents.php:291
 msgid "Additional info"
 msgstr "Lisätiedot"
 
-#: lib/LinkedEvents.php:338
+#: lib/LinkedEvents.php:343
 msgid "Virtual event"
 msgstr "Verkkotapahtuma"
 
@@ -203,6 +203,20 @@ msgctxt "theme CPT"
 msgid "Blog authors"
 msgstr ""
 
+#: lib/PostType/BlogAuthor.php:96
+#, fuzzy
+#| msgid "Blog author"
+msgctxt "theme CPT"
+msgid "Blog Authors"
+msgstr "Blogin kirjoittaja"
+
+#: lib/PostType/BlogAuthor.php:97
+#, fuzzy
+#| msgid "Blog author"
+msgctxt "theme CPT"
+msgid "Blog Author"
+msgstr "Blogin kirjoittaja"
+
 #: lib/PostType/Contact.php:55
 msgctxt "theme CPT slugs"
 msgid "contact"
@@ -213,9 +227,9 @@ msgctxt "theme CPT"
 msgid "contact"
 msgstr ""
 
-#: lib/PostType/DynamicEvent.php:60
+#: lib/PostType/Program.php:52
 msgctxt "theme CPT"
-msgid "dynamic-event"
+msgid "program"
 msgstr ""
 
 #: lib/PostType/Settings.php:60
@@ -243,17 +257,17 @@ msgctxt "wp-geniem-roles"
 msgid "Site Manager"
 msgstr ""
 
-#: lib/Roles.php:530
+#: lib/Roles.php:532
 msgctxt "wp-geniem-roles"
 msgid "Author"
 msgstr ""
 
-#: lib/Roles.php:598
+#: lib/Roles.php:600
 msgctxt "wp-geniem-roles"
 msgid "Contributor"
 msgstr ""
 
-#: lib/Roles.php:618
+#: lib/Roles.php:620
 msgctxt "wp-geniem-roles"
 msgid "Subscriber"
 msgstr ""
@@ -389,17 +403,18 @@ msgstr "Jaa Linessä"
 msgid "All"
 msgstr "Kaikki"
 
-#: models/error404.php:78
+#: models/error404.php:81
 msgctxt "theme-frontend"
 msgid "Go to search"
 msgstr "Siirry hakuun"
 
-#: models/error404.php:95
+#: models/error404.php:98
 msgctxt "theme-frontend"
 msgid "Return to home"
 msgstr "Palaa etusivulle"
 
 #: models/page-events-calendar.php:39 models/page-events-search.php:118
+#: models/page-program.php:77
 msgid "No results"
 msgstr "Ei tuloksia"
 
@@ -423,13 +438,51 @@ msgstr "Päättymispäivä"
 msgid "No search term given"
 msgstr "Hakusanaa ei annettu"
 
-#: models/page-events-search.php:190 models/search.php:228
+#: models/page-events-search.php:190 models/search.php:236
 #, php-format
 msgctxt "search results summary"
 msgid "%1$1s result found for \"%2$2s\""
 msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] "%1$1s tulos haulle “%2$2s”"
 msgstr[1] "%1$1s tulosta haulle “%2$2s”"
+
+#: models/page-program.php:70
+#, fuzzy
+#| msgctxt "theme-frontend"
+#| msgid "Search from site"
+msgid "Search for program"
+msgstr "Hae sivustolta"
+
+#: models/page-program.php:71
+#, fuzzy
+#| msgctxt "theme-frontend"
+#| msgid "Search"
+msgid "Search"
+msgstr "Hae"
+
+#: models/page-program.php:72
+#, fuzzy
+#| msgid "Search term"
+msgid "Search query"
+msgstr "Hakusana"
+
+#: models/page-program.php:75
+msgid "Show All"
+msgstr ""
+
+#: models/page-program.php:78
+#, fuzzy
+#| msgid "Filter by date"
+msgid "Filter"
+msgstr "Rajaa päivämäärän mukaan"
+
+#: models/page-program.php:79
+msgid "Sort"
+msgstr ""
+
+#: models/page-program.php:80
+msgid "Categories"
+msgstr ""
 
 #: models/search.php:46
 msgid "Search results"
@@ -451,9 +504,43 @@ msgstr "Rajaa hakua"
 msgid "Looking for events? Use the event search!"
 msgstr "Etsitkö tapahtumia? Käytä tapahtumahakua!"
 
-#: models/search.php:239
+#: models/search.php:247
 msgid "No search results"
 msgstr "Ei hakutuloksia"
+
+#: models/single-program.php:45
+msgctxt "program info"
+msgid "Apply period"
+msgstr ""
+
+#: models/single-program.php:51
+msgctxt "program info"
+msgid "Audience"
+msgstr ""
+
+#: models/single-program.php:57
+msgctxt "program info"
+msgid "Delivery method"
+msgstr ""
+
+#: models/single-program.php:63
+#, fuzzy
+#| msgid "Location"
+msgctxt "program info"
+msgid "Location"
+msgstr "Sijainti"
+
+#: models/single-program.php:69
+msgctxt "program info"
+msgid "Program starts"
+msgstr ""
+
+#: models/single-program.php:75
+#, fuzzy
+#| msgid "Price"
+msgctxt "program info"
+msgid "Price"
+msgstr "Hinta"
 
 #: models/strings.php:42
 msgctxt "theme-frontend"
@@ -510,7 +597,7 @@ msgid "Search from site"
 msgstr "Hae sivustolta"
 
 #: models/strings.php:54 models/strings.php:80 models/strings.php:138
-#: models/strings.php:151
+#: models/strings.php:151 models/strings.php:160
 msgctxt "theme-frontend"
 msgid "Close"
 msgstr "Sulje"
@@ -565,7 +652,7 @@ msgctxt "theme-frontend"
 msgid "Next"
 msgstr "Seuraava"
 
-#: models/strings.php:82 models/strings.php:150
+#: models/strings.php:82 models/strings.php:150 models/strings.php:159
 msgctxt "theme-frontend"
 msgid "Open"
 msgstr "Avaa"
@@ -640,12 +727,12 @@ msgctxt "theme-frontend"
 msgid "Text:"
 msgstr "Teksti:"
 
-#: models/strings.php:105 models/strings.php:174
+#: models/strings.php:105 models/strings.php:189
 msgctxt "theme-frontend"
 msgid "Month"
 msgstr "Kuukausi"
 
-#: models/strings.php:106 models/strings.php:175
+#: models/strings.php:106 models/strings.php:190
 msgctxt "theme-frontend"
 msgid "Year"
 msgstr "Vuosi"
@@ -660,62 +747,62 @@ msgctxt "theme-frontend"
 msgid "Filter by Category"
 msgstr "Rajaa tyypin mukaan"
 
-#: models/strings.php:111 models/strings.php:188
+#: models/strings.php:111 models/strings.php:203
 msgctxt "theme-frontend"
 msgid "January"
 msgstr "tammikuu"
 
-#: models/strings.php:112 models/strings.php:189
+#: models/strings.php:112 models/strings.php:204
 msgctxt "theme-frontend"
 msgid "February"
 msgstr "helmikuu"
 
-#: models/strings.php:113 models/strings.php:190
+#: models/strings.php:113 models/strings.php:205
 msgctxt "theme-frontend"
 msgid "March"
 msgstr "maaliskuu"
 
-#: models/strings.php:114 models/strings.php:191
+#: models/strings.php:114 models/strings.php:206
 msgctxt "theme-frontend"
 msgid "April"
 msgstr "huhtikuu"
 
-#: models/strings.php:115 models/strings.php:192 models/strings.php:206
+#: models/strings.php:115 models/strings.php:207 models/strings.php:221
 msgctxt "theme-frontend"
 msgid "May"
 msgstr "toukokuu"
 
-#: models/strings.php:116 models/strings.php:193
+#: models/strings.php:116 models/strings.php:208
 msgctxt "theme-frontend"
 msgid "June"
 msgstr "kesäkuu"
 
-#: models/strings.php:117 models/strings.php:194
+#: models/strings.php:117 models/strings.php:209
 msgctxt "theme-frontend"
 msgid "July"
 msgstr "heinäkuu"
 
-#: models/strings.php:118 models/strings.php:195
+#: models/strings.php:118 models/strings.php:210
 msgctxt "theme-frontend"
 msgid "August"
 msgstr "elokuu"
 
-#: models/strings.php:119 models/strings.php:196
+#: models/strings.php:119 models/strings.php:211
 msgctxt "theme-frontend"
 msgid "September"
 msgstr "syyskuu"
 
-#: models/strings.php:120 models/strings.php:197
+#: models/strings.php:120 models/strings.php:212
 msgctxt "theme-frontend"
 msgid "October"
 msgstr "lokakuu"
 
-#: models/strings.php:121 models/strings.php:198
+#: models/strings.php:121 models/strings.php:213
 msgctxt "theme-frontend"
 msgid "November"
 msgstr "marraskuu"
 
-#: models/strings.php:122 models/strings.php:199
+#: models/strings.php:122 models/strings.php:214
 msgctxt "theme-frontend"
 msgid "December"
 msgstr "joulukuu"
@@ -779,152 +866,184 @@ msgctxt "theme-frontend"
 msgid "Search contacts"
 msgstr "Etsi yhteystietoja"
 
-#: models/strings.php:159
-msgctxt "theme-frontend"
-msgid "Show artist"
-msgstr "Näytä taiteilija"
-
-#: models/strings.php:160
-msgctxt "theme-frontend"
-msgid "Artwork by the same artist"
-msgstr "Taiteilijan muut teokset"
-
-#: models/strings.php:161
+#: models/strings.php:161 models/strings.php:166
 msgctxt "theme-frontend"
 msgid "Related artwork"
 msgstr "Liittyvät teokset"
 
 #: models/strings.php:164
 msgctxt "theme-frontend"
+msgid "Show artist"
+msgstr "Näytä taiteilija"
+
+#: models/strings.php:165
+msgctxt "theme-frontend"
+msgid "Artwork by the same artist"
+msgstr "Taiteilijan muut teokset"
+
+#: models/strings.php:170
+msgctxt "theme-frontend"
+msgid "Search studies"
+msgstr "Hae opiskelemaan"
+
+#: models/strings.php:171
+msgctxt "theme-frontend"
+msgid "Results shown"
+msgstr "Näytetään"
+
+#: models/strings.php:172
+msgctxt "theme-frontend"
+msgid "Commit new search"
+msgstr "Tee uusi haku"
+
+#: models/strings.php:174
+msgctxt "theme-frontend"
+msgid "Location"
+msgstr "Sijainti"
+
+#: models/strings.php:175
+msgctxt "theme-frontend"
+msgid "Delivery method"
+msgstr "Toteutustapa"
+
+#: models/strings.php:178
+msgctxt "theme-frontend"
 msgid "Filter by type"
 msgstr "Rajaa tyypin mukaan"
 
-#: models/strings.php:165
+#: models/strings.php:179
 msgctxt "theme-frontend"
 msgid "Publish date"
 msgstr "Julkaisupäivä"
 
-#: models/strings.php:169 models/strings.php:177
+#: models/strings.php:180
+#, fuzzy
+#| msgid "Search term"
+msgctxt "theme-frontend"
+msgid "Write search terms"
+msgstr "Hakusana"
+
+#: models/strings.php:184 models/strings.php:192
 msgctxt "theme-frontend"
 msgid "Pick a date"
 msgstr "Valitse päivämäärä"
 
-#: models/strings.php:170
+#: models/strings.php:185
 msgctxt "theme-frontend"
 msgid "dd.mm.yyyy"
 msgstr "pp.kk.vvvv"
 
-#: models/strings.php:171
+#: models/strings.php:186
 msgctxt "theme-frontend"
 msgid "The chosen date is"
 msgstr "Valittu päivämäärä on"
 
-#: models/strings.php:172
+#: models/strings.php:187
 msgctxt "theme-frontend"
 msgid "Previous month"
 msgstr "Edellinen kuukausi"
 
-#: models/strings.php:173
+#: models/strings.php:188
 msgctxt "theme-frontend"
 msgid "Next month"
 msgstr "Seuraava kuukausi"
 
-#: models/strings.php:176
+#: models/strings.php:191
 msgctxt "theme-frontend"
 msgid "Close window"
 msgstr "Sulje ikkuna"
 
-#: models/strings.php:179
+#: models/strings.php:194
 msgctxt "theme-frontend"
 msgid "Sunday"
 msgstr "Sunnuntai"
 
-#: models/strings.php:180
+#: models/strings.php:195
 msgctxt "theme-frontend"
 msgid "Monday"
 msgstr "Maanantai"
 
-#: models/strings.php:181
+#: models/strings.php:196
 msgctxt "theme-frontend"
 msgid "Tuesday"
 msgstr "Tiistai"
 
-#: models/strings.php:182
+#: models/strings.php:197
 msgctxt "theme-frontend"
 msgid "Wednesday"
 msgstr "Keskiviikko"
 
-#: models/strings.php:183
+#: models/strings.php:198
 msgctxt "theme-frontend"
 msgid "Thursday"
 msgstr "Torstai"
 
-#: models/strings.php:184
+#: models/strings.php:199
 msgctxt "theme-frontend"
 msgid "Friday"
 msgstr "Perjantai"
 
-#: models/strings.php:185
+#: models/strings.php:200
 msgctxt "theme-frontend"
 msgid "Saturday"
 msgstr "Lauantai"
 
-#: models/strings.php:202
+#: models/strings.php:217
 msgctxt "theme-frontend"
 msgid "Jan"
 msgstr "Tam"
 
-#: models/strings.php:203
+#: models/strings.php:218
 msgctxt "theme-frontend"
 msgid "Feb"
 msgstr "Hel"
 
-#: models/strings.php:204
+#: models/strings.php:219
 msgctxt "theme-frontend"
 msgid "Mar"
 msgstr "Maa"
 
-#: models/strings.php:205
+#: models/strings.php:220
 msgctxt "theme-frontend"
 msgid "Apr"
 msgstr "Huh"
 
-#: models/strings.php:207
+#: models/strings.php:222
 msgctxt "theme-frontend"
 msgid "Jun"
 msgstr "Kes"
 
-#: models/strings.php:208
+#: models/strings.php:223
 msgctxt "theme-frontend"
 msgid "Jul"
 msgstr "Hei"
 
-#: models/strings.php:209
+#: models/strings.php:224
 msgctxt "theme-frontend"
 msgid "Aug"
 msgstr "Elo"
 
-#: models/strings.php:210
+#: models/strings.php:225
 msgctxt "theme-frontend"
 msgid "Sept"
 msgstr "Syys"
 
-#: models/strings.php:211
+#: models/strings.php:226
 msgctxt "theme-frontend"
 msgid "Oct"
 msgstr "Loka"
 
-#: models/strings.php:212
+#: models/strings.php:227
 msgctxt "theme-frontend"
 msgid "Nov"
 msgstr "Mar"
 
-#: models/strings.php:213
+#: models/strings.php:228
 msgctxt "theme-frontend"
 msgid "Dec"
 msgstr "Jou"
 
-#: models/strings.php:227
+#: models/strings.php:242
 msgid "Pagination"
 msgstr "Sivutus"
 
@@ -969,79 +1088,12 @@ msgid ""
 "defined in the admin side."
 msgstr ""
 
-#: wp-content/plugins/dustpress-comments/classes/comments.php:57
-#, fuzzy
-#| msgctxt "theme-frontend"
-#| msgid "Skip to content"
-msgid "Reply to comment"
-msgstr "Siirry sisältöön"
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:58
-msgid "Your browser does not support this type of form handling."
-msgstr ""
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:185
-#, fuzzy
-#| msgid "Comments"
-msgid "comment-page"
-msgstr "Kommentit"
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:238
-msgid ""
-"DustPress Comments: The 'get_comments_args' function is not defined in the "
-"model."
-msgstr ""
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:244
-msgid ""
-"DustPress Comments: The 'get_form_args' function is not defined in the model."
-msgstr ""
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:248
-msgid "DustPress Comments: The model class {"
-msgstr ""
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:264
-msgid ""
-"DustPress Comments: The 'get_comments_args' filter return value is not an "
-"array or it is empty."
-msgstr ""
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:268
-msgid ""
-"DustPress Comments: The 'get_form_args' filter return value is not an array "
-"or it is empty."
-msgstr ""
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:297
-#, fuzzy
-#| msgid "Comments"
-msgid "Comment sent."
-msgstr "Kommentit"
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:299
-#, fuzzy
-#| msgid "Your comment is awaiting moderation"
-msgid "Comment is waiting for approval."
-msgstr "Kommentti odottaa hyväksyntää"
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:344
-#: wp-content/plugins/dustpress-comments/classes/comments.php:676
-#, fuzzy
-#| msgid "Comments"
-msgid "all-comments"
-msgstr "Kommentit"
-
-#: wp-content/plugins/dustpress-comments/classes/comments.php:574
-msgid "Processing comments..."
-msgstr ""
-
 #. Theme Name of the plugin/theme
-msgid "TMS Theme Base"
+msgid "TMS Theme Tredu"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Tampere Multisite Base Theme"
+msgid "Tampere Multisite Tredu Theme"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1051,3 +1103,29 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://geniem.fi"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "theme-frontend"
+#~| msgid "Skip to content"
+#~ msgid "Reply to comment"
+#~ msgstr "Siirry sisältöön"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "comment-page"
+#~ msgstr "Kommentit"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "Comment sent."
+#~ msgstr "Kommentit"
+
+#, fuzzy
+#~| msgid "Your comment is awaiting moderation"
+#~ msgid "Comment is waiting for approval."
+#~ msgstr "Kommentti odottaa hyväksyntää"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "all-comments"
+#~ msgstr "Kommentit"

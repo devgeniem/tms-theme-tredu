@@ -7,7 +7,7 @@
                <!-- {>"shared/archive-view-title" /}
                 {>"shared/archive-filters" filters_container_classes="is-12-tablet is-4-desktop" /} -->
 
-                <h1>Näkyyx</h1>
+                <h1>Koulutushaku</h1>
 
                 {?results.summary}
                     <p role="status">{results.summary|s}</p>
@@ -20,23 +20,41 @@
                                 <div class="column">
                                     <div
                                         class="inner p-4 p-5-desktop keep-vertical-spacing has-border has-border-1 has-border-gray">
-                                        <h2 class="h4 mt-4 mb-1 has-line-height-tight">
-                                            {?link}
-                                                <a href="{link.url|s}" class="has-text-black">
-                                                    {fields.first_name|s}
-                                                    {fields.last_name|s}
-                                                </a>
-                                            {:else}
-                                                {fields.first_name|s}
-                                                {fields.last_name|s}
-                                            {/link}
-                                        </h2>
 
-                                        {?years}
-                                            <div class="mt-1 has-text-small has-text-primary">
-                                                {years|s}
-                                            </div>
-                                        {/years}
+                                       <!-- kuva
+                                        programtype -->
+ 
+                                        {?post_title}
+                                            <h2 class="h4 mt-4 mb-1 has-line-height-tight">
+                                            {post_title|s}
+                                            </h2>
+                                        {/post_title}
+
+                                        {?fields.program_name}
+                                            <p>{fields.program_name|s}</p>
+                                        {/fields.program_name}
+
+                                        {?fields.start_date}
+                                            <p>{fields.start_date|s}</p>
+                                        {/fields.start_date}
+
+                                        {?location}
+                                            <p>{location|s}</p>
+                                        {/location}
+                                        
+                                        <!--lätkä tähän -->
+                                         {?fields.apply_end}
+                                            <p>{fields.apply_end|s}</p>
+                                        {/fields.apply_end}
+                                        
+                                        <!-- kehitystä varten -->
+                                    
+                                         {?delivery_methods}
+                                            <p>delivery_methods: {delivery_methods|s}</p>
+                                        {/delivery_methods}
+
+
+                                        <p></p>
                                     </div>
                                 </div>
                             </div>

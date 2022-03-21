@@ -7,6 +7,7 @@ use TMS\Theme\Tredu\Traits\Pagination;
 use TMS\Theme\Tredu\PostType\Program;
 // use TMS\Theme\Taidemuseo\PostType\Artwork;
 use TMS\Theme\Tredu\Taxonomy\Location;
+use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 // use TMS\Theme\Taidemuseo\Taxonomy\ArtworkType;
 
 /**
@@ -29,7 +30,7 @@ class PageProgram extends BaseModel {
     /**
      * Artist category filter name.
      */
-    const FILTER_QUERY_VAR = 'program-filter';
+    const FILTER_PROGRAM_LOCATION_QUERY_VAR = 'program-location';
 
     /**
      * Get search query var value
@@ -45,9 +46,9 @@ class PageProgram extends BaseModel {
      *
      * @return int|null
      */
-    protected static function get_filter_query_var() {
-        $value = get_query_var( self::FILTER_QUERY_VAR, false );
-
+    protected static function get_filter_query_var( $query_var = '') {
+        // self::FILTER_PROGRAM_LOCATION_QUERY_VAR
+        $value = get_query_var( $query_var, false );
         return ! $value
             ? null
             : intval( $value );
@@ -105,7 +106,7 @@ class PageProgram extends BaseModel {
         return [
             'input_search_name' => self::SEARCH_QUERY_VAR,
             'current_search'    => $this->search_data->query,
-            'action'            => get_the_permalink(),
+            'action'            => get_post_type_archive_link( Program::SLUG ),
         ];
     }
 
@@ -127,11 +128,11 @@ class PageProgram extends BaseModel {
         //         'name'      => $item->name,
         //         'url'       => add_query_arg(
         //             [
-        //                 self::FILTER_QUERY_VAR => $item->term_id,
+        //                 self::FILTER_PROGRAM_LOCATION_QUERY_VAR => $item->term_id,
         //             ],
         //             $base_url
         //         ),
-        //         'is_active' => $item->term_id === self::get_filter_query_var(),
+        //         'is_active' => $item->term_id === self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR ),
         //     ];
         // }, $categories );
 
@@ -140,7 +141,7 @@ class PageProgram extends BaseModel {
         //     [
         //         'name'      => __( 'All', 'tms-theme-base' ),
         //         'url'       => $base_url,
-        //         'is_active' => null === self::get_filter_query_var(),
+        //         'is_active' => null === self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR ),
         //     ]
         // );
 
@@ -160,19 +161,22 @@ class PageProgram extends BaseModel {
             'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
         ];
 
-        $categories = self::get_filter_query_var();
+        $locations = self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
+        // if ( empty( $locations ) ) {
+        //     $locations = get_field( 'location' );
+        //     $locations = ! empty( $locations ) ? array_map( fn( $c ) => $c->term_id, $locations ) : [];
+        // }
+        // error_log( 'TÄSSÄ TOKA' );
+        // error_log( print_r( $categories, true ) );
 
-        if ( empty( $categories ) ) {
-            $categories = get_field( 'artwork_types' );
-            $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
+        if ( ! empty( $locations ) ) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => Location::SLUG,
+                    'terms'    => $locations,
+                ],
+            ];
         }
-
-        // $args['tax_query'] = [
-        //     [
-        //         'taxonomy' => ArtworkType::SLUG,
-        //         'terms'    => $categories,
-        //     ],
-        // ];
 
         $s = self::get_search_query_var();
 
@@ -185,12 +189,12 @@ class PageProgram extends BaseModel {
         // $this->set_pagination_data( $the_query );
 
         $search_clause = self::get_search_query_var();
-        $is_filtered   = $search_clause || self::get_filter_query_var();
+        $is_filtered   = $search_clause || self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
 
         return [
             'posts'       => $this->format_posts( $the_query->get_posts() ),
             'is_filtered' => $is_filtered,
-            'summary'     => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
+            // 'summary'     => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
         ];
     }
 
@@ -200,10 +204,10 @@ class PageProgram extends BaseModel {
      * @return string[]
      */
     public function active_filter_data() : ?array {
-        $active_filter = self::get_filter_query_var();
+        $active_filter = self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
 
         return $active_filter ? [
-            'name'  => self::FILTER_QUERY_VAR,
+            'name'  => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
             'value' => $active_filter,
         ] : null;
     }
@@ -227,27 +231,33 @@ class PageProgram extends BaseModel {
     protected function format_posts( array $posts ) : array {
         // $artist_map = $this->get_artist_map();
 
-        // return array_map( function ( $item ) use ( $artist_map ) {
-        //     if ( has_post_thumbnail( $item->ID ) ) {
-        //         $item->image = get_post_thumbnail_id( $item->ID );
-        //     }
+        return array_map( function ( $item ) {
+            if ( has_post_thumbnail( $item->ID ) ) {
+                $item->image = get_post_thumbnail_id( $item->ID );
+            }
 
-        //     $item->permalink = get_the_permalink( $item->ID );
-        //     $item->fields    = get_fields( $item->ID );
-        //     // $item->types     = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
+            $item->permalink = get_the_permalink( $item->ID );
+            $item->fields    = get_fields( $item->ID );
+            // $item->types     = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
 
-        //     $locations = wp_get_post_terms( $item->ID, Location::SLUG, [ 'fields' => 'names' ] );
+            $locations = wp_get_post_terms( $item->ID, Location::SLUG, [ 'fields' => 'names' ] );
 
-        //     if ( ! empty( $locations ) ) {
-        //         $item->location = $locations[0];
-        //     }
+            if ( ! empty( $locations ) ) {
+                $item->location = $locations[0];
+            }
 
-        //     if ( isset( $artist_map[ $item->ID ] ) ) {
-        //         $item->artist = implode( ', ', $artist_map[ $item->ID ] );
-        //     }
+            $delivery_methods = $locations = wp_get_post_terms( $item->ID, DeliveryMethod::SLUG, [ 'fields' => 'names' ]  );
 
-        //     return $item;
-        // }, $posts );
+            if ( ! empty( $delivery_methods ) ) {
+                $item->delivery_methods = $delivery_methods[0];
+            }
+
+            // if ( isset( $artist_map[ $item->ID ] ) ) {
+            //     $item->artist = implode( ', ', $artist_map[ $item->ID ] );
+            // }
+
+            return $item;
+        }, $posts );
 
         return $posts;
     }

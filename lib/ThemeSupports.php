@@ -8,6 +8,7 @@ namespace TMS\Theme\Tredu;
 use Closure;
 use PageContacts;
 use PageEventsSearch;
+use PageProgram;
 use Search;
 use function add_action;
 use function add_filter;
@@ -130,6 +131,10 @@ class ThemeSupports implements Interfaces\Controller {
         $vars[] = PageEventsSearch::EVENT_SEARCH_TEXT;
         $vars[] = PageEventsSearch::EVENT_SEARCH_START_DATE;
         $vars[] = PageEventsSearch::EVENT_SEARCH_END_DATE;
+
+        $vars[] = PageProgram::SEARCH_QUERY_VAR;
+        $vars[] = PageProgram::FILTER_PROGRAM_LOCATION_QUERY_VAR;
+        //$vars[] = PageProgram::ORDERBY_QUERY_VAR;
 
         return $vars;
     }

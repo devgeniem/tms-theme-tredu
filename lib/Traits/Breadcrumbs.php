@@ -52,7 +52,7 @@ trait Breadcrumbs {
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
                 break;
-            case PostType\DynamicEvent::SLUG:
+            case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_page( $current_id, $home_url, $breadcrumbs );
                 break;
         }

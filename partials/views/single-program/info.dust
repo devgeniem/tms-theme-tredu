@@ -1,0 +1,25 @@
+<div class="section single-program__info has-text-centered">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-10-desktop is-offset-1-desktop">
+                <div class="single-program__info-container is-flex is-justify-content-space-evenly is-flex-wrap-wrap ">
+                    {#program_info}
+                        {?text}
+                            <div class="single-program__info-item is-flex is-flex-direction-column is-align-items-center">
+                                {>"ui/icon" /}
+
+                                <div class="single-program__info-item-label">
+                                    {label|html}
+                                </div>
+
+                                <div class="single-program__info-item-text">
+                                    {text|html}
+                                </div>
+                            </div>
+                        {/text}
+                    {/program_info}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

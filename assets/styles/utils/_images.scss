@@ -4,4 +4,10 @@
             padding-top: 133.3333%;
         }
     }
+
+    &.is-3by2-mobile {
+        @include mobile() {
+            padding-top: 66.6666%;
+        }
+    }
 }

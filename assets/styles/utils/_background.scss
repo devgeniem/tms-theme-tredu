@@ -8,6 +8,10 @@
     background-color: transparent !important; // sass-lint:disable-line no-important
 }
 
+.has-background-primary {
+    background-color: $primary;
+}
+
 .has-background-secondary {
     &--opaque {
         background-color: rgba($secondary, .5) !important;

@@ -292,7 +292,21 @@ class PageProgram extends BaseModel {
 
             $item->permalink = get_the_permalink( $item->ID );
             $item->fields    = get_fields( $item->ID );
-            // $item->types     = wp_get_post_terms( $item->ID, ArtworkType::SLUG, [ 'fields' => 'names' ] );
+            // error_log( print_r( $item->fields, true ) );
+
+            if ( ! empty ( $item->fields ) ) {
+                
+                if ( ! empty( $item->fields['start_info'] ) ) {
+                    $item->fields['start_date'] = $item->fields['start_info'];
+                }
+
+                if ( ! empty( $item->fields['apply_info'] ) ) {
+                    $item->fields['apply_end'] = $item->fields['apply_info'];
+                }
+                else if ( ! empty( $item->fields['apply_end'] ) ) {
+                    $item->fields['apply_end'] = date('d.m.Y', strtotime( $item->fields['apply_end'] ) );
+                }
+            }
 
             $locations = wp_get_post_terms( $item->ID, Location::SLUG, [ 'fields' => 'names' ] );
 

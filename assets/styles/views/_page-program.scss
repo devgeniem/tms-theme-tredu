@@ -1,0 +1,10 @@
+.program-list {
+    display: grid;
+    
+    // grid-template-columns: 50% 50%;
+    grid-gap: rem(24);
+
+    @include from($widescreen) {
+        grid-template-columns: 50% 50%;
+    }
+}

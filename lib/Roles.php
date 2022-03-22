@@ -131,24 +131,24 @@ class Roles implements Controller {
     ];
 
     /**
-     * Dynamic Event / dynamic-event-cpt.
+     * Program / program-cpt
      *
      * @var array
      */
-    private $dynamic_event_all_capabilities = [
-        'edit_dynamic_event',
-        'read_dynamic_event',
-        'delete_dynamic_event',
-        'edit_others_dynamic_events',
-        'delete_dynamic_events',
-        'publish_dynamic_events',
-        'read_private_dynamic_events',
-        'delete_private_dynamic_events',
-        'delete_published_dynamic_events',
-        'delete_others_dynamic_events',
-        'edit_private_dynamic_events',
-        'edit_published_dynamic_events',
-        'edit_dynamic_events',
+    private $program_all_capabilities = [
+        'edit_program',
+        'read_program',
+        'delete_program',
+        'edit_others_programs',
+        'delete_programs',
+        'publish_programs',
+        'read_private_programs',
+        'delete_private_programs',
+        'delete_published_programs',
+        'delete_others_programs',
+        'edit_private_programs',
+        'edit_published_programs',
+        'edit_programs',
     ];
 
     /**
@@ -398,7 +398,7 @@ class Roles implements Controller {
         $role->add_caps( $this->pages_all_capabilities );
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
-        $role->add_caps( $this->dynamic_event_all_capabilities );
+        $role->add_caps( $this->program_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -455,7 +455,7 @@ class Roles implements Controller {
         $role->add_caps( $this->materials_all_capabilities );
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
-        $role->add_caps( $this->dynamic_event_all_capabilities );
+        $role->add_caps( $this->program_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -507,7 +507,7 @@ class Roles implements Controller {
         $role->add_caps( $this->pages_all_capabilities );
         $role->add_caps( $this->materials_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
-        $role->add_caps( $this->dynamic_event_all_capabilities );
+        $role->add_caps( $this->program_all_capabilities );
 
         // Taxonomies
         $role->add_caps( [ 'assign_categories', 'assign_post_tags', 'assign_material_types' ] );

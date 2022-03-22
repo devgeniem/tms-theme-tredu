@@ -7,6 +7,9 @@ namespace TMS\Theme\Tredu;
 
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
 use TMS\Theme\Tredu\Taxonomy\BlogTag;
+use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
+use TMS\Theme\Tredu\Taxonomy\Location;
+use TMS\Theme\Tredu\Taxonomy\Profession;
 
 /**
  * Class Localization
@@ -107,11 +110,11 @@ class Localization implements Interfaces\Controller {
             return $post_types;
         }
 
-        $post_types[ PostType\Settings::SLUG ]     = PostType\Settings::SLUG;
-        $post_types[ PostType\Contact::SLUG ]      = PostType\Contact::SLUG;
-        $post_types[ PostType\DynamicEvent::SLUG ] = PostType\DynamicEvent::SLUG;
-        $post_types[ PostType\BlogArticle::SLUG ]  = PostType\BlogArticle::SLUG;
-        $post_types[ PostType\BlogAuthor::SLUG ]   = PostType\BlogAuthor::SLUG;
+        $post_types[ PostType\Settings::SLUG ]    = PostType\Settings::SLUG;
+        $post_types[ PostType\Contact::SLUG ]     = PostType\Contact::SLUG;
+        $post_types[ PostType\BlogArticle::SLUG ] = PostType\BlogArticle::SLUG;
+        $post_types[ PostType\BlogAuthor::SLUG ]  = PostType\BlogAuthor::SLUG;
+        $post_types[ PostType\Program::SLUG ]     = PostType\Program::SLUG;
 
         return $post_types;
     }
@@ -125,8 +128,11 @@ class Localization implements Interfaces\Controller {
      * @return array The modified tax_types -array.
      */
     protected function add_tax_to_polylang( $tax_types, $is_settings ) : array { // phpcs:ignore
-        $tax_types[ BlogCategory::SLUG ] = BlogCategory::SLUG;
-        $tax_types[ BlogTag::SLUG ]      = BlogTag::SLUG;
+        $tax_types[ BlogCategory::SLUG ]   = BlogCategory::SLUG;
+        $tax_types[ BlogTag::SLUG ]        = BlogTag::SLUG;
+        $tax_types[ Location::SLUG ]       = Location::SLUG;
+        $tax_types[ Profession::SLUG ]     = Profession::SLUG;
+        $tax_types[ DeliveryMethod::SLUG ] = DeliveryMethod::SLUG;
 
         return $tax_types;
     }

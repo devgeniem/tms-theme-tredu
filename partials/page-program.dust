@@ -18,76 +18,78 @@
 
                 <div class="program-list">
                     {#results.posts}
-                        <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold">
-                            <div class="columns has-width-100 mt-0 mr-0 mb-0 ml-0">
+                        <a href="{permalink|s}">
+                            <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold has-height-100">
+                                <div class="columns has-width-100 mt-0 mr-0 mb-0 ml-0">
 
-                                <div class="column is-5 program-list__image-container is-relative image is-3by2-until-desktop">
-                                    {?image}
-                                        <div class="program-list__image has-background-cover is-absolute has-top-0 has-bottom-0 has-right-0 has-left-0" {@inlinebg id=image size="large" /}>
-                                        <span class="is-relative is-inline-block has-background-primary has-text-white is-uppercase has-line-height-1 p-2">Programtype tähän</span>
-                                        </div>
-                                    {/image}
-                                </div>
+                                    <div class="column is-5 program-list__image-container is-relative image is-3by2-until-desktop">
+                                        {?image}
+                                            <div class="program-list__image has-background-cover is-absolute has-top-0 has-bottom-0 has-right-0 has-left-0" {@inlinebg id=image size="large" /}>
+                                            <span class="is-relative is-inline-block has-background-primary has-text-white is-uppercase has-line-height-1 p-2">Programtype tähän</span>
+                                            </div>
+                                        {/image}
+                                    </div>
 
-                                <div class="column is-7 has-background-light-gray pl-4 pr-4">
-                                    <div class="inner columns is-multiline has-text-primary m-0">
+                                    <div class="column is-7 has-background-light-gray pl-4 pr-4">
+                                        <div class="inner columns is-multiline has-text-primary m-0">
 
-                                        <div class="column is-12 pt-0 pb-0">
-                                            {?post_title}
-                                                <h2 class="h5 mt-4 mb-1 has-line-height-tight">
-                                                    {post_title|s}
-                                                </h2>
-                                            {/post_title}
+                                            <div class="column is-12 pt-0 pb-0">
+                                                {?post_title}
+                                                    <h2 class="h5 mt-4 mb-1 has-line-height-tight">
+                                                        {post_title|s}
+                                                    </h2>
+                                                {/post_title}
 
-                                            {?fields.program_name}
-                                                <span class="is-block has-text-xsmall has-line-height-tight has-text-trout has-text-weight-medium">{fields.program_name|s}</span>
-                                            {/fields.program_name}
-                                        </div>
+                                                {?fields.program_name}
+                                                    <span class="is-block has-text-xsmall has-line-height-tight has-text-trout has-text-weight-medium">{fields.program_name|s}</span>
+                                                {/fields.program_name}
+                                            </div>
 
-                                        <div class="column is-6">
-                                            {?fields.start_date}
-                                                <span class="is-inline-block has-text-small has-line-height-tight">{fields.start_date|s}</span>
-                                            {/fields.start_date}
-                                        </div>
+                                            <div class="column is-6">
+                                                {?fields.start_date}
+                                                    <span class="is-inline-block has-text-small has-line-height-tight">{fields.start_date|s}</span>
+                                                {/fields.start_date}
+                                            </div>
 
-                                         <div class="column is-6">
-                                            {?location}
-                                                <span class="is-inline-block has-text-small has-line-height-tight">{location|s}</span>
-                                            {/location}
-                                        </div>
+                                            <div class="column is-6">
+                                                {?location}
+                                                    <span class="is-inline-block has-text-small has-line-height-tight">{location|s}</span>
+                                                {/location}
+                                            </div>
 
+                                            
+                                            <div class="column is-narrow">
+                                                <!--lätkä tähän -->
+                                                <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">Lätkä</span>
+                                            </div>
+
+                                            <div class="column">
+                                            {?fields.apply_end}
+                                                <span class="is-inline-block has-text-small has-line-height-tight">{fields.apply_end|s}</span>
+                                            {/fields.apply_end}
+                                            </div>
                                         
-                                        <div class="column is-narrow">
-                                            <!--lätkä tähän -->
-                                            <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">Lätkä</span>
+                                            <!-- kehitystä varten 
+                                            <div class="column is-12">
+                                            
+                                                {?delivery_methods}
+                                                    <span>delivery_methods: {delivery_methods|s}</span>
+                                                {/delivery_methods}
+                                            </div>
+                                            -->
+
+
                                         </div>
-
-                                        <div class="column">
-                                        {?fields.apply_end}
-                                            <span class="is-inline-block has-text-small has-line-height-tight">{fields.apply_end|s}</span>
-                                        {/fields.apply_end}
-                                        </div>
-                                       
-                                        <!-- kehitystä varten 
-                                         <div class="column is-12">
-                                          
-                                            {?delivery_methods}
-                                                <span>delivery_methods: {delivery_methods|s}</span>
-                                            {/delivery_methods}
-                                         </div>
-                                         -->
-
-
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {:else}
-                        <div class="column pt-8 pb-8 is-text-centered is-size-5">
-                            <h2 class="no-results-title">
-                                {Strings.s.home.no_results|s}
-                            </h2>
-                        </div>
+                        {:else}
+                            <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                                <h2 class="no-results-title">
+                                    {Strings.s.home.no_results|s}
+                                </h2>
+                            </div>
+                        </a>
                     {/results.posts}
                 </div>
 

@@ -1,0 +1,77 @@
+.single-program {
+    &__hero {
+        position: relative;
+        min-height: 500px;
+        color: $white;
+
+        .container {
+            @include from($desktop) {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        .overlay {
+            background: linear-gradient(0deg, rgba(4, 37, 70, .55), rgba(4, 37, 70, .55));
+        }
+    }
+
+    &__hero-box {
+        position: relative;
+        margin: 3rem 0;
+        text-align: center;
+
+        @include from($desktop) {
+            margin: 0;
+            text-align: left;
+        }
+    }
+
+    &__sub-title {
+        font-size: 1.4111rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    &__lead {
+        font-size: 1.0588rem;
+        font-weight: 600;
+        line-height: 2;
+    }
+
+    &__info {
+        background-color: $color-light-blueishgray;
+        color: $color-dark-blue;
+    }
+
+    &__info-item {
+        flex: 145px;
+        max-width: 195px;
+        padding: .5rem;
+        font-weight: 600;
+
+        @include from($tablet) {
+            flex: 185px;
+        }
+
+        .icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    &__info-item-label {
+        margin: .25rem 0;
+        color: $color-trout;
+        font-size: .77777rem;
+        letter-spacing: .04rem;
+    }
+
+    &__info-item-text {
+        font-size: .94444444rem;
+        line-height: 1.7;
+    }
+}

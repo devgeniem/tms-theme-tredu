@@ -1,28 +1,40 @@
-<form role="search" method="get" class="search-form columns is-flex-wrap-wrap has-background-light-gray m-0 p-6" action="">
-   <div class="column is-12 search-form is-flex is-flex-wrap-wrap is-align-items-center">
-    <label class="mb-2 mb-0-tablet mr-2 is-flex-grow-1">
-        <span class="is-sr-only"> {Strings.s.search.write_search_terms|s} </span>
-        <input type="search" class="search-form__input has-background-light p-3 has-width-100"
-               placeholder="{Strings.s.search.write_search_terms|s}" value="{search_query|s}" name="{search.input_search_name}">
-    </label>
-
-    <button type="submit" class="search-form__button button button--icon is-secondary">
-        {Strings.s.header.search|s}
-        {>"ui/icon" icon="search" class="icon--medium"  /}
-    </button>
+<form role="search" method="get" class="search-form columns is-multiline has-background-light-gray m-0 p-6" action="">
+    <div class="column is-12">
+            <div class="columns is-multiline">
+                <div class="column is-two-fifths search-form is-flex is-flex-wrap-wrap is-align-items-center">
+                    <label class="mr-2">
+                        <span class="is-sr-only"> {Strings.s.search.write_search_terms|s} </span>
+                        <input type="search" class="search-form__input has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
+                            placeholder="{Strings.s.search.write_search_terms|s}" value="{search_query|s}" name="{search.input_search_name}">
+                    </label>
+                </div>
+                 <div class="column is-two-fifths">
+                    <span>Näytä vain nyt haussa olevat</span>
+                </div>
+                <div class="column is-one-fifth is-align-items-center">
+                    <button type="submit" class="search-form__button button button--icon is-secondary has-border-radius-small has-width-100">
+                        {Strings.s.header.search|s}
+                        {>"ui/icon" icon="search" class="icon--medium"  /}
+                    </button>
+                </div>
+            </div>
     </div>
 
     {?filters}
-        {#filters}
-         <div class="column is-12 delivery_methods">
-            <select name="{query_var}">
-                <option selected="true" value="">{name}</option>
-                {#terms}
-                    <option value="{term_id}">{name|s}</option>
-                {/terms}
-            </select>
+        <div class="column is-12">
+            <div class="columns is-multiline">
+                {#filters}
+                <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
+                    <select name="{query_var}" class="is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold">
+                        <option selected="true" value="" class="has-text-primary">{name}</option>
+                        {#terms}
+                            <option value="{term_id}" class="has-text-primary">{name|s}</option>
+                        {/terms}
+                    </select>
+                </div>
+                {/filters}
+            </div>
         </div>
-        {/filters}
     {/filters}
-    
+
 </form>

@@ -5,11 +5,13 @@
 
 use TMS\Theme\Tredu\Traits\Pagination;
 use TMS\Theme\Tredu\PostType\Program;
-// use TMS\Theme\Taidemuseo\PostType\Artwork;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
-// use TMS\Theme\Taidemuseo\Taxonomy\ArtworkType;
-use TMS\Theme\Tredu\strings;
+use TMS\Theme\Tredu\Taxonomy\Profession;
+use TMS\Theme\Tredu\Taxonomy\ProgramType;
+use TMS\Theme\Tredu\Taxonomy\EducationalBackground;
+
+// use TMS\Theme\Tredu\strings;
 
 /**
  * PageArtwork
@@ -34,9 +36,28 @@ class PageProgram extends BaseModel {
     const FILTER_PROGRAM_LOCATION_QUERY_VAR = 'program-location';
 
     /**
-     * Location taxonomy filter name.
+     * Delivery method taxonomy filter name.
      */
     const FILTER_DELIVERY_METHODS_QUERY_VAR = 'delivery-method';
+
+    /**
+     * Profession taxonomy filter name.
+     */
+    const FILTER_PROFESSION_QUERY_VAR = 'profession';
+
+     /**
+     * Program type taxonomy filter name.
+     */
+    const FILTER_PROGRAM_TYPE_QUERY_VAR = 'program-type';
+
+    /**
+     * Educational background taxonomy filter name.
+     */
+    const FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR = 'educational-background';
+
+    
+
+    
 
     /**
      * Get search query var value
@@ -60,6 +81,24 @@ class PageProgram extends BaseModel {
     }
 
     /**
+     * Get taxonomy slugs with query vars
+     *
+     * @return array
+     */
+    protected static function get_taxonomies_with_slugs() {
+
+        $taxonomies_with_slugs = [ 
+            Profession::SLUG => self::FILTER_PROFESSION_QUERY_VAR,
+            ProgramType::SLUG => self::FILTER_PROGRAM_TYPE_QUERY_VAR,
+            Location::SLUG => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
+            EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
+            DeliveryMethod::SLUG => self::FILTER_DELIVERY_METHODS_QUERY_VAR, 
+        ];
+        
+        return $taxonomies_with_slugs;
+    }
+
+    /**
      * Return translated strings.
      *
      * @return array[]
@@ -77,7 +116,7 @@ class PageProgram extends BaseModel {
             'no_results'     => __( 'No results', 'tms-theme-tredu' ),
             'filter'         => __( 'Filter', 'tms-theme-tredu' ),
             'sort'           => __( 'Sort', 'tms-theme-tredu' ),
-            'art_categories' => __( 'Categories', 'tms-theme-tredu' ),
+            'program'        => ( new \Strings() )->s()['program'],
         ];
     }
 
@@ -125,59 +164,32 @@ class PageProgram extends BaseModel {
 
         $filters = [];
 
-        $location_terms = get_terms( [
-            'taxonomy' => Location::SLUG,
-            'hide_empty' => true,
-            ],
-        );
+        $taxonomies = $this->get_taxonomies_with_slugs();
 
-        $delivery_methods_terms = get_terms( [
-            'taxonomy' => DeliveryMethod::SLUG,
-            'hide_empty' => true,
-            ],
-        );
+        foreach ($taxonomies as $tax_slug =>  $qv) {
 
-        // error_log( print_r( $location_terms, true ) );
-        if ( ! empty( $location_terms ) ) {
-            $filters['locations'] = [
-                'query_var' => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
-                'terms' => array_map( function( $term ) {
-                    return [
-                        'term_id' => $term->term_id,
-                        'name' => $term->name,
-                        'slug' => $term->slug
-                     ];
-                 } ,$location_terms )
-                ];
-        } 
+            $terms = get_terms( [
+                'taxonomy' => $tax_slug,
+                'hide_empty' => true,
+                ],
+            );
 
-        if ( ! empty( $delivery_methods_terms ) ) {
-            $filters['delivery_methods'] = [
-                'query_var' => self::FILTER_DELIVERY_METHODS_QUERY_VAR,
-                'terms' => array_map( function( $term ) {
-                    return [
-                        'term_id' => $term->term_id,
-                        'name' => $term->name,
-                        'slug' => $term->slug
-                     ];
-                 } ,$delivery_methods_terms )
-                ];
-        } 
+            if ( ! empty( $terms ) ) {
+                $filters[] = [
+                    'name' => $this->strings()['program'][$tax_slug],
+                    'query_var' => $qv,
+                    'terms' => array_map( function( $term ) {
+                        return [
+                            'term_id' => $term->term_id,
+                            'name' => $term->name,
+                            'slug' => $term->slug
+                         ];
+                     } , $terms )
+                    ];
+            } 
 
-        // $locations = array_map( function ( $item ) {
-        //     return [
-        //         'name'      => $item->name,
-        //         // 'url'       => add_query_arg(
-        //         //     [
-        //         //         self::FILTER_PROGRAM_LOCATION_QUERY_VAR => $item->term_id,
-        //         //     ],
-        //         //     $base_url
-        //         // ),
-        //         // 'is_active' => $item->term_id === self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR ),
-        //     ];
-        // }, $taxonomies );
-        
-        
+           
+        }        
 
         // array_unshift(
         //     $taxonomies,
@@ -204,33 +216,24 @@ class PageProgram extends BaseModel {
             'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
         ];
 
-       
-
         // Add taxonomies to tax query from request's query vars
 
-        $locations = self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
-        $delivery_methods = self::get_filter_query_var( self::FILTER_DELIVERY_METHODS_QUERY_VAR );
-        
-        // if ( empty( $locations ) ) {
-        //     $locations = get_field( 'location' );
-        //     $locations = ! empty( $locations ) ? array_map( fn( $c ) => $c->term_id, $locations ) : [];
-        // }
-        
         $args['tax_query'] = [
             'relation' => 'AND' 
         ];
-        if ( ! empty( $locations ) ) {
-            $args['tax_query'][] = [
-                'taxonomy' => Location::SLUG,
-                'terms'    => $locations,
-            ];
-        }
 
-        if ( ! empty( $delivery_methods ) ) {
-            $args['tax_query'][] = [
-                'taxonomy' => DeliveryMethod::SLUG,
-                'terms'    => $delivery_methods,
-            ];
+    
+        $query_vars = $this->get_taxonomies_with_slugs();
+
+        foreach ( $query_vars as $slug => $qv ) {      
+
+            $terms = self::get_filter_query_var( $qv );
+            if ( ! empty( $terms ) ) {
+                $args['tax_query'][] = [
+                    'taxonomy' => $slug,
+                    'terms'    => $terms,
+                ];
+            }
         }
 
         $s = self::get_search_query_var();
@@ -292,7 +295,6 @@ class PageProgram extends BaseModel {
 
             $item->permalink = get_the_permalink( $item->ID );
             $item->fields    = get_fields( $item->ID );
-            // error_log( print_r( $item->fields, true ) );
 
             if ( ! empty ( $item->fields ) ) {
                 
@@ -356,7 +358,7 @@ class PageProgram extends BaseModel {
     protected function results_summary( $result_count ) {
 
         $count_posts = wp_count_posts( Program::SLUG )->publish;
-        $shown_txt = ( new \Strings() )->s()['program']['search']['results_shown'];
+        $shown_txt = $this->strings()['program']['search']['results_shown'];
 
         $results_text = sprintf( '%1$s %2$s / %3$s',
             $shown_txt,

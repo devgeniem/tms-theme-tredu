@@ -171,8 +171,11 @@ class Strings extends \DustPress\Model {
                     'results_shown' => _x( 'Results shown', 'theme-frontend', 'tms-theme-tredu' ),
                     'commit_new_search' => _x( 'Commit new search', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
+                'profession' =>  _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
+                'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),
                 'location' => _x( 'Location', 'theme-frontend', 'tms-theme-tredu' ),
-                'delivery_method' =>  _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' )
+                'educational-background' =>  _x( 'Educational background', 'theme-frontend', 'tms-theme-tredu' ),
+                'delivery-method' =>  _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' )
             ],
             'search'             => [
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),

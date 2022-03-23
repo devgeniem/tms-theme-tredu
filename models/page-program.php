@@ -316,7 +316,7 @@ class PageProgram extends BaseModel {
                 $item->location = $locations[0];
             }
 
-            $delivery_methods = $locations = wp_get_post_terms( $item->ID, DeliveryMethod::SLUG, [ 'fields' => 'names' ]  );
+            $delivery_methods = wp_get_post_terms( $item->ID, DeliveryMethod::SLUG, [ 'fields' => 'names' ]  );
 
             if ( ! empty( $delivery_methods ) ) {
                 $item->delivery_methods = $delivery_methods[0];

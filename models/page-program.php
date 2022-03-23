@@ -187,7 +187,6 @@ class PageProgram extends BaseModel {
                      } , $terms )
                     ];
             } 
-
            
         }        
 
@@ -310,17 +309,40 @@ class PageProgram extends BaseModel {
                 }
             }
 
-            $locations = wp_get_post_terms( $item->ID, Location::SLUG, [ 'fields' => 'names' ] );
+            // Profession::SLUG => self::FILTER_PROFESSION_QUERY_VAR,
+            // ProgramType::SLUG => self::FILTER_PROGRAM_TYPE_QUERY_VAR,
+            // Location::SLUG => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
+            // EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
+            // DeliveryMethod::SLUG => self::FILTER_DELIVERY_METHODS_QUERY_VAR, 
 
+            $professions = wp_get_post_terms( $item->ID, Profession::SLUG, [ 'fields' => 'names' ]  );
+            if ( ! empty( $professions ) ) {
+                $item->profession = $professions[0];
+            }
+ 
+            $program_types = wp_get_post_terms( $item->ID, ProgramType::SLUG, [ 'fields' => 'names' ]  );
+            if ( ! empty( $program_types ) ) {
+                $item->program_type = $program_types[0];
+            }
+
+            $locations = wp_get_post_terms( $item->ID, Location::SLUG, [ 'fields' => 'names' ] );
             if ( ! empty( $locations ) ) {
                 $item->location = $locations[0];
             }
 
-            $delivery_methods = wp_get_post_terms( $item->ID, DeliveryMethod::SLUG, [ 'fields' => 'names' ]  );
-
-            if ( ! empty( $delivery_methods ) ) {
-                $item->delivery_methods = $delivery_methods[0];
+            $educational_backgrounds = wp_get_post_terms( $item->ID, EducationalBackground::SLUG, [ 'fields' => 'names' ]  );
+            if ( ! empty( $educational_backgrounds ) ) {
+                $item->educational_background = $educational_backgrounds[0];
             }
+
+            $delivery_methods = wp_get_post_terms( $item->ID, DeliveryMethod::SLUG, [ 'fields' => 'names' ]  );
+            if ( ! empty( $delivery_methods ) ) {
+                $item->delivery_method = $delivery_methods[0];
+            }
+
+            
+           
+
 
             return $item;
         }, $posts );

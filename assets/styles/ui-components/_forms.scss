@@ -21,6 +21,15 @@ form {
             color: lighten($black, 10%);
         }
     }
+   
+
+    .is-checkradio {
+        &[type=checkbox]+label:before {
+            border-radius: 0;
+            border: 2px solid $black;
+        }
+    }
+
 }
 
 /**

@@ -55,6 +55,10 @@ class PageProgram extends BaseModel {
      */
     const FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR = 'educational-background';
 
+     /**
+     * Ongoing filter name.
+     */
+    const FILTER_ONGOING_QUERY_VAR = 'ongoing';
     
 
     
@@ -66,6 +70,16 @@ class PageProgram extends BaseModel {
      */
     protected static function get_search_query_var() {
         return get_query_var( self::SEARCH_QUERY_VAR, false );
+    }
+
+    /**
+     * Get ongoing query var value
+     *
+     * @return mixed
+     */
+    protected static function get_ongoing_query_var() {
+       
+        return get_query_var( self::FILTER_ONGOING_QUERY_VAR, false );
     }
 
     /**
@@ -146,10 +160,12 @@ class PageProgram extends BaseModel {
     public function search() : array {
         $this->search_data        = new stdClass();
         $this->search_data->query = get_query_var( self::SEARCH_QUERY_VAR );
-
+        $this->search_data->ongoing = get_query_var( self::FILTER_ONGOING_QUERY_VAR );
         return [
             'input_search_name' => self::SEARCH_QUERY_VAR,
             'current_search'    => $this->search_data->query,
+            'checkbox_search_name' => self::FILTER_ONGOING_QUERY_VAR,
+            'only_ongoing' => $this->search_data->ongoing,
             'new_search_link'   => get_permalink(),
             // 'action'            => get_permalink(),
         ];
@@ -214,7 +230,32 @@ class PageProgram extends BaseModel {
             'order'     => 'ASC',
             'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
         ];
+        
+        $only_ongoing = $this->get_ongoing_query_var(); 
 
+        if ( ! empty( $only_ongoing ) ) {
+
+            $today = date('Y-m-d');
+
+            $args['meta_query'] = [
+                [
+                    'relation' => 'AND',
+                    [
+                     'key' => 'apply_start',
+                     'value' =>  $today,
+                     'compare' => '<=',
+                     'type' => 'DATE'
+                    ],
+                    [
+                     'key' => 'apply_end',
+                     'value' => $today,
+                     'compare' => '>=',
+                     'type' => 'DATE'
+                    ],
+                 ],
+             ];
+        }
+        
         // Add taxonomies to tax query from request's query vars
 
         $args['tax_query'] = [

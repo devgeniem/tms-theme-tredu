@@ -70,6 +70,23 @@ class PageExtend extends BaseModel {
     }
 
     /**
+     * Get post siblings heading.
+     *
+     * @return string|false
+     */
+    public function post_siblings_heading() {
+
+        $siblings_heading_setting = Settings::get_setting( 'sibling_navigation_heading' );
+
+        if ( empty( $siblings_heading_setting ) ) {
+            return false;
+        }
+
+        return $siblings_heading_setting;
+       
+    }
+
+    /**
      * Use overlay
      *
      * @return bool

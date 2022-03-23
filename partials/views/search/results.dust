@@ -8,7 +8,7 @@
             <div class="search-item__inner">
                 {?breadcrumbs}
                     <div class="search-item__meta-container has-text-weight-medium">
-                        {>"breadcrumbs" /}
+                        {>"breadcrumbs" bc_icon="chevron-right" icon_classes="icon--small is-primary" /}
                     </div>
                 {/breadcrumbs}
 

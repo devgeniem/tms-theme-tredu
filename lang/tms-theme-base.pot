@@ -733,6 +733,11 @@ msgctxt "theme-frontend"
 msgid "Sibling pages"
 msgstr ""
 
+#: models/strings.php:135
+msgctxt "theme-frontend"
+msgid "You might also be interested in"
+msgstr ""
+
 #: models/strings.php:137
 msgctxt "theme-frontend"
 msgid "Comments"

@@ -31,10 +31,6 @@ class SitemapSettingsTab extends Tab {
      */
     protected $strings = [
         'tab'                       => 'Sivukartta',
-        'enable_sibling_navigation' => [
-            'title'        => 'Sivukartan osoitteet',
-            'instructions' => 'Syötä osoitteet, jotka lisätään sivukarttaan.',
-        ],
         'sitemap_links'             => [
             'title'        => 'Sivukartan linkit',
             'instructions' => 'Linkit jotka lisätään sivukarttaan Cookiebottia varten.',

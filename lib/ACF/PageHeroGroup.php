@@ -21,6 +21,8 @@ class PageHeroGroup {
 
     /**
      * PageHeroGroup constructor.
+     *
+     * @return void
      */
     public function __construct() {
         add_action(
@@ -31,6 +33,8 @@ class PageHeroGroup {
 
     /**
      * Register fields
+     *
+     * @return void
      */
     protected function register_fields() : void {
         try {
@@ -59,23 +63,25 @@ class PageHeroGroup {
     }
 
 
-     /**
+    /**
      * This returns fields for the group.
+     *
+     * @param string $key Field key.
      *
      * @return array
      * @throws \Geniem\ACF\Exception In case of invalid ACF option.
      */
     protected function get_page_hero_fields( $key ) : array {
+
         $strings = [
             'page_hero_overlay' => [
                 'label'        => 'Heron tummennus',
                 'instructions' => 'Jos kuvalla on tummennus, sivun otsikko on heron päällä. Muutoin otsikko näytetään heron alla.
                 ',
                 'off' => 'Pois',
-                'on' => 'Päällä'
-            ]
+                'on' => 'Päällä',
+            ],
         ];
-
 
         $page_hero_overlay_field = ( new Field\TrueFalse( $strings['page_hero_overlay']['label'] ) )
             ->set_key( "${key}_page_hero_overlay" )
@@ -87,15 +93,10 @@ class PageHeroGroup {
             ->set_ui_on_text( $strings['page_hero_overlay']['on'] )
             ->set_instructions( $strings['page_hero_overlay']['instructions'] );
 
-        
-
         return [
-            $page_hero_overlay_field
+            $page_hero_overlay_field,
         ];
     }
-
-
-   
 }
 
 ( new PageHeroGroup() );

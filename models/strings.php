@@ -43,10 +43,10 @@ class Strings extends \DustPress\Model {
                 'main_navigation'          => _x( 'Main navigation', 'theme-frontend', 'tms-theme-tredu' ),
                 'open_menu'                => _x( 'Open menu', 'theme-frontend', 'tms-theme-tredu' ),
                 'close_menu'               => _x( 'Close menu', 'theme-frontend', 'tms-theme-tredu' ),
-                'language_navigation'      => 'Kielivalikko, Language navigation',
+                'language_navigation'      => _x( 'Language navigation', 'theme-frontend', 'tms-theme-tredu' ),
                 'open_search'              => _x( 'Open search form', 'theme-frontend', 'tms-theme-tredu' ),
-                'open_lang_nav'            => 'Avaa kielivalikko, Open language navigation',
-                'current_lang'             => 'Valittu kieli, Current language: ',
+                'open_lang_nav'            => _x( 'Open language navigation', 'theme-frontend', 'tms-theme-tredu' ),
+                'current_lang'             => _x( 'Current language: ', 'theme-frontend', 'tms-theme-tredu' ),
                 'search'                   => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_from_site'         => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_title'             => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
@@ -54,7 +54,7 @@ class Strings extends \DustPress\Model {
                 'search_input_placeholder' => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'exception_close_button'   => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
                 'home'                     => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
-                'breadcrumbs'              => _x( 'Breadcrumbs', 'theme-frontend', 'tms-theme-tredu' )
+                'breadcrumbs'              => _x( 'Breadcrumbs', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             '404'                => [
                 'title'         => _x( 'Page not found', 'theme-frontend', 'tms-theme-tredu' ),

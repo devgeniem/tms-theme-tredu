@@ -85,13 +85,14 @@ class PageProgram extends BaseModel {
     /**
      * Get filter query var values
      *
-     * @return int|null
+     * @return array|null
      */
     protected static function get_filter_query_var( $query_var = '') {
         $values = get_query_var( $query_var, false );
-        return ! $values
+        $values = is_array( $values ) ? array_filter( $values ) : false;
+        return empty( $values ) 
         ? null
-        : array_map( fn( $value ) => intval( $value ), explode( ',', $values) );
+        : $values;
     }
 
     /**
@@ -194,17 +195,26 @@ class PageProgram extends BaseModel {
                 $filters[] = [
                     'name' => $this->strings()['program'][$tax_slug],
                     'query_var' => $qv,
-                    'terms' => array_map( function( $term ) {
+                    'terms' => array_map( function( $term ) use ( $qv ) {
+                        $active_terms = $this->get_filter_query_var( $qv );
+
+                        if ( ! empty( $active_terms ) && is_array( $active_terms ) && in_array( $term->term_id, $active_terms )) {
+                            $is_active = true;
+                        }
+                        else{
+                            $is_active = false;
+                        }
                         return [
                             'term_id' => $term->term_id,
                             'name' => $term->name,
-                            'slug' => $term->slug
+                            'slug' => $term->slug,
+                            'active' => $is_active,
                          ];
                      } , $terms )
                     ];
             } 
            
-        }        
+        }     
 
         // array_unshift(
         //     $taxonomies,
@@ -217,6 +227,46 @@ class PageProgram extends BaseModel {
 
         return $filters;
     }
+
+    //  /**
+    //  * Supply data for active filter hidden input.
+    //  *
+    //  * @return string[]
+    //  */
+    // public function active_filters() {
+    //     // $active_filter = self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
+
+    //     // return $active_filter ? [
+    //     //     'name'  => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
+    //     //     'value' => $active_filter,
+    //     // ] : null;
+    //     $taxonomies = $this->get_taxonomies_with_slugs();
+
+    //     foreach ($taxonomies as $tax_slug =>  $qv) {
+
+    //         $terms = get_terms( [
+    //             'taxonomy' => $tax_slug,
+    //             'hide_empty' => true,
+    //             ],
+    //         );
+
+    //         if ( ! empty( $terms ) ) {
+    //             $filters[] = [
+    //                 'name' => $this->strings()['program'][$tax_slug],
+    //                 'query_var' => $qv,
+    //                 'terms' => array_map( function( $term ) {
+    //                     return [
+    //                         'term_id' => $term->term_id,
+    //                         'name' => $term->name,
+    //                         'slug' => $term->slug
+    //                      ];
+    //                  } , $terms )
+    //                 ];
+    //         } 
+           
+    //     }     
+    //     return 'Jee';
+    // }
 
     /**
      * View results
@@ -268,6 +318,7 @@ class PageProgram extends BaseModel {
         foreach ( $query_vars as $slug => $qv ) {      
 
             $terms = self::get_filter_query_var( $qv );
+        
             if ( ! empty( $terms ) ) {
                 $args['tax_query'][] = [
                     'taxonomy' => $slug,
@@ -295,20 +346,6 @@ class PageProgram extends BaseModel {
             'summary'     => $this->results_summary( $the_query->found_posts ),
         ];
     }
-
-    /**
-     * Supply data for active filter hidden input.
-     *
-     * @return string[]
-     */
-    // public function active_filter_data() : ?array {
-    //     $active_filter = self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
-
-    //     return $active_filter ? [
-    //         'name'  => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
-    //         'value' => $active_filter,
-    //     ] : null;
-    // }
 
     /**
      * Sort options

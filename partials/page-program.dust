@@ -9,13 +9,6 @@
 
                 {>"ui/program-search-filters" /}
 
-                <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between is-align-items-center pt-4 pb-4">
-                    {?results.summary}
-                        <p role="status" class="has-text-weight-semibold">{results.summary|s}</p>
-                    {/results.summary}
-                    <a class="is-block pill is-primary" href="{search.new_search_link}">{Strings.s.program.search.commit_new_search}</a>
-                </div>
-
                 <div class="program-list">
                     {#results.posts}
                         <a href="{permalink|s}">

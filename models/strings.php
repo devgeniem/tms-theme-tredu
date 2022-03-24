@@ -172,6 +172,7 @@ class Strings extends \DustPress\Model {
                     'search_studies' => _x( 'Search studies', 'theme-frontend', 'tms-theme-tredu' ),
                     'results_shown' => _x( 'Results shown', 'theme-frontend', 'tms-theme-tredu' ),
                     'commit_new_search' => _x( 'Commit new search', 'theme-frontend', 'tms-theme-tredu' ),
+                    'show_only_ongoing' => _x( 'Show only programs that can be applied now', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
                 'profession' =>  _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
                 'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),

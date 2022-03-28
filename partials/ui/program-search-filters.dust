@@ -1,4 +1,4 @@
-<form role="search" method="get" class="search-form" action="">
+<form id="program-search" role="search" method="get" class="search-form" action="">
     <div class="columns is-multiline has-background-light-gray m-0 p-6">
         <div class="column is-12">
                 <div class="columns is-multiline">
@@ -22,7 +22,7 @@
                     <div class="column is-one-fifth is-align-items-center">
                         <button type="submit" class="search-form__button button button--icon is-secondary has-border-radius-small has-width-100">
                             {Strings.s.header.search|s}
-                            {>"ui/icon" icon="search" class="icon--medium"  /}
+                            {>"ui/icon" icon="search" class="icon--medium is-white"  /}
                         </button>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                 <div class="columns is-multiline">
                     {#filters}
                     <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
-                        <select name="{query_var}[]" class="is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold">
+                        <select name="{query_var}[]" class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold">
                             <option selected="true" value="" class="has-text-primary">{name}</option>
                             {#terms}
                                 {^active}
@@ -53,22 +53,27 @@
             <p role="status" class="has-text-weight-semibold">{results.summary|s}</p>
         {/results.summary}
         {?filters}
-            <div>
+            <div id="active-filters" class="is-flex-grow-1 pt-4 pb-4 pl-6 pr-6">
             {#filters}
                 {#terms}
                     {?active}
-                        <span 
-                        class="is-inline-block p-2 has-background-light-blueishgray
+                    <button type="button" class="remove-filter is-inline-flex is-align-items-center pt-2 pl-2 pr-3 pb-2 has-background-light-blueishgray
                         has-border-radius-large has-line-height-1 has-text-weight-semibold 
-                        has-text-primary has-text-small">
-                        {name}
-                        </span>
+                        has-text-primary has-text-small has-border-0">
+                        {>"ui/icon" icon="remove" class="icon--large mr-1" /}
+                        <span>{name}</span>
                         <input type="hidden" name="{query_var|s}[]" value="{term_id}" />
+                    </button>    
                     {/active}
                 {/terms}
             {/filters}
             </div>
         {/filters}
-        <a class="is-block pill is-primary" href="{search.new_search_link}">{Strings.s.program.search.commit_new_search}</a>
+        <div class="is-flex is-justify-content-end is-flex-grow-1">
+            <a class="is-inline-flex is-align-items-center pill is-primary pr-4 pl-4 pt-3 pb-3 mt-4 mb-4" href="{search.new_search_link}">
+                {Strings.s.program.search.commit_new_search}
+                {>"ui/icon" icon="update" class="icon--medium ml-2" /}
+            </a>
+        </div>
     </div>
 </form>

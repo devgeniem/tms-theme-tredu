@@ -33,7 +33,7 @@ $button-transition-speed: $speed !default;
     border-color: $button-color-mixin-border !important;
 
     .icon {
-        fill: $button-color-mixin-text !important;
+        fill: $button-color-mixin-text;
     }
 }
 

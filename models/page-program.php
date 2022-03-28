@@ -60,7 +60,10 @@ class PageProgram extends BaseModel {
      */
     const FILTER_ONGOING_QUERY_VAR = 'ongoing';
     
-
+    /**
+     * Posts per page
+     */
+    const POSTS_PER_PAGE = 2;
     
 
     /**
@@ -281,6 +284,7 @@ class PageProgram extends BaseModel {
                 'title'      => 'ASC', 
             ),
             'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
+            'posts_per_page' => self::POSTS_PER_PAGE,
         ];
         
         $only_ongoing = $this->get_ongoing_query_var(); 
@@ -435,7 +439,7 @@ class PageProgram extends BaseModel {
      * @return void
      */
     protected function set_pagination_data( $wp_query ) : void {
-        $per_page = 2;
+        $per_page = self::POSTS_PER_PAGE;
         $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
         $this->pagination           = new stdClass();

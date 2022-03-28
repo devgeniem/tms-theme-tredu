@@ -10,6 +10,7 @@ use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Profession;
 use TMS\Theme\Tredu\Taxonomy\ProgramType;
 use TMS\Theme\Tredu\Taxonomy\EducationalBackground;
+use TMS\Theme\Tredu\Images;
 
 // use TMS\Theme\Tredu\strings;
 
@@ -63,7 +64,7 @@ class PageProgram extends BaseModel {
     /**
      * Posts per page
      */
-    const POSTS_PER_PAGE = 2;
+    const POSTS_PER_PAGE = 1;
     
 
     /**
@@ -374,6 +375,9 @@ class PageProgram extends BaseModel {
         return array_map( function ( $item ) {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
+            } 
+            else {
+                $item->image = Images::get_default_image_id();
             }
 
             $item->permalink = get_the_permalink( $item->ID );

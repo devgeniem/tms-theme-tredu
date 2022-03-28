@@ -3,7 +3,7 @@ $pagination-item-color-current: $primary-invert !default;
 $pagination-item-color-hover: $pagination-item-color !default;
 $pagination-item-color-focus: $pagination-item-color !default;
 
-$pagination-item-background-color: $secondary !default;
+$pagination-item-background-color: $white !default;
 $pagination-item-background-color-hover: opacify($secondary-light, .75) !default;
 $pagination-item-background-color-focus: $secondary-light !default;
 $pagination-item-background-color-current: $primary !default;
@@ -12,7 +12,7 @@ $pagination-item-background-color-current-focus: $primary-dark !default;
 
 $pagination-item-hover-shadow-size: 0 4px 8px !default;
 $pagination-item-hover-shadow-color: rgba(0, 0, 0, .15) !default;
-$pagination-item-border-radius: $theme-spacing-quarter !default;
+$pagination-item-border-radius: 50% !default;
 
 $pagination-item-transition-easing: $easing !default;
 $pagination-item-transition-speed: $speed !default;
@@ -30,11 +30,13 @@ $pagination-item-transition-speed: $speed !default;
             padding: $theme-spacing-quarter $theme-spacing-half;
             color: $pagination-item-color;
             background-color: $pagination-item-background-color;
+            border: solid 2px $secondary;
             border-radius: $pagination-item-border-radius;
 
             &:focus {
                 color: $pagination-item-color-focus;
                 background-color: $pagination-item-background-color-focus;
+                @extend .button-state-focus;
             }
 
             &:hover {
@@ -55,6 +57,7 @@ $pagination-item-transition-speed: $speed !default;
             a {
                 color: $pagination-item-color-current;
                 background-color: $pagination-item-background-color-current;
+                border: 2px solid $primary;
 
                 &:hover {
                     background-color: $pagination-item-background-color-current-hover;
@@ -71,6 +74,12 @@ $pagination-item-transition-speed: $speed !default;
     .unavailable,
     .arrow {
         margin: 0 .35rem .7rem;
+    }
+
+    a {
+        &:focus {
+            @extend .button-state-focus;
+        }
     }
 
     .paginate {

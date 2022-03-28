@@ -11,7 +11,7 @@
 
                 <div class="program-list">
                     {#results.posts}
-                        <a href="{permalink|s}">
+                        <a href="{permalink|s}" aria-label="{post_title|s}">
                             <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold has-height-100">
                                 <div class="columns has-width-100 mt-0 mr-0 mb-0 ml-0">
 

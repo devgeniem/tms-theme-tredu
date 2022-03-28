@@ -276,8 +276,10 @@ class PageProgram extends BaseModel {
     public function results() {
         $args = [
             'post_type' => Program::SLUG,
-            'orderby'   => 'title',
-            'order'     => 'ASC',
+            'orderby' => array( 
+                'menu_order' => 'ASC',
+                'title'      => 'ASC', 
+            ),
             'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
         ];
         
@@ -418,10 +420,6 @@ class PageProgram extends BaseModel {
                 $item->delivery_method = $delivery_methods[0];
             }
 
-            
-           
-
-
             return $item;
         }, $posts );
 
@@ -437,7 +435,7 @@ class PageProgram extends BaseModel {
      * @return void
      */
     protected function set_pagination_data( $wp_query ) : void {
-        $per_page = 20;
+        $per_page = 2;
         $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
         $this->pagination           = new stdClass();

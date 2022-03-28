@@ -341,9 +341,7 @@ class PageProgram extends BaseModel {
         }
 
         $the_query = new WP_Query( $args );
-
         $this->set_pagination_data( $the_query );
-
         $search_clause = self::get_search_query_var();
         $is_filtered   = $search_clause || self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
        

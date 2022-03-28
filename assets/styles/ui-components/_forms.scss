@@ -20,6 +20,10 @@ form {
         &::placeholder {
             color: lighten($black, 10%);
         }
+
+        &:focus {
+            @extend .button-state-focus;
+        }
     }
    
 
@@ -30,6 +34,11 @@ form {
         }
     }
 
+    button {
+        &:focus {
+            @extend .button-state-focus;
+        }
+    }
 }
 
 /**

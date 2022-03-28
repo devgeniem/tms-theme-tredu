@@ -7,4 +7,10 @@
     @include from($widescreen) {
         grid-template-columns: 1fr 1fr;
     }
+
+    a {
+        &:focus {
+            @extend .button-state-focus;
+        }
+    }
 }

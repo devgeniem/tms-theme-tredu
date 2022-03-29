@@ -42,6 +42,7 @@
         "image-webpack-loader": "^6.0.0",
         "laravel-mix": "^6.0.43",
         "laravel-mix-eslint": "^0.2.0",
+        "laravel-mix-eslint-config": "^0.1.7",
         "laravel-mix-svg-sprite": "^2.0.0",
         "lint-staged": "^11.2.6",
         "lodash": "^4.17.21",

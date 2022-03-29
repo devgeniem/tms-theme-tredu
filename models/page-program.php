@@ -60,12 +60,11 @@ class PageProgram extends BaseModel {
      * Ongoing filter name.
      */
     const FILTER_ONGOING_QUERY_VAR = 'ongoing';
-    
+
     /**
      * Posts per page
      */
-    const POSTS_PER_PAGE = 2;
-    
+    const POSTS_PER_PAGE = 20;
 
     /**
      * Get search query var value
@@ -82,19 +81,20 @@ class PageProgram extends BaseModel {
      * @return mixed
      */
     protected static function get_ongoing_query_var() {
-       
         return get_query_var( self::FILTER_ONGOING_QUERY_VAR, false );
     }
 
     /**
      * Get filter query var values
      *
+     * @param string $query_var Query var for taxonomy.
+     *
      * @return array|null
      */
-    protected static function get_filter_query_var( $query_var = '') {
+    protected static function get_filter_query_var( $query_var = '' ) {
         $values = get_query_var( $query_var, false );
         $values = is_array( $values ) ? array_filter( $values ) : false;
-        return empty( $values ) 
+        return empty( $values )
         ? null
         : $values;
     }
@@ -106,14 +106,14 @@ class PageProgram extends BaseModel {
      */
     protected static function get_taxonomies_with_slugs() {
 
-        $taxonomies_with_slugs = [ 
+        $taxonomies_with_slugs = [
             Profession::SLUG => self::FILTER_PROFESSION_QUERY_VAR,
             ProgramType::SLUG => self::FILTER_PROGRAM_TYPE_QUERY_VAR,
             Location::SLUG => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
             EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
-            DeliveryMethod::SLUG => self::FILTER_DELIVERY_METHODS_QUERY_VAR, 
+            DeliveryMethod::SLUG => self::FILTER_DELIVERY_METHODS_QUERY_VAR,
         ];
-        
+
         return $taxonomies_with_slugs;
     }
 
@@ -124,18 +124,18 @@ class PageProgram extends BaseModel {
      */
     public function strings() : array {
         return [
-            'search'         => [
+            'search'     => [
                 'label'             => __( 'Search for program', 'tms-theme-tredu' ),
                 'submit_value'      => __( 'Search', 'tms-theme-tredu' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-tredu' ),
             ],
-            'terms'          => [
+            'terms'      => [
                 'show_all' => __( 'Show All', 'tms-theme-tredu' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-tredu' ),
-            'filter'         => __( 'Filter', 'tms-theme-tredu' ),
-            'sort'           => __( 'Sort', 'tms-theme-tredu' ),
-            'program'        => ( new \Strings() )->s()['program'],
+            'no_results' => __( 'No results', 'tms-theme-tredu' ),
+            'filter'     => __( 'Filter', 'tms-theme-tredu' ),
+            'sort'       => __( 'Sort', 'tms-theme-tredu' ),
+            'program'    => ( new \Strings() )->s()['program'],
         ];
     }
 
@@ -172,7 +172,6 @@ class PageProgram extends BaseModel {
             'checkbox_search_name' => self::FILTER_ONGOING_QUERY_VAR,
             'only_ongoing' => $this->search_data->ongoing,
             'new_search_link'   => get_permalink(),
-            // 'action'            => get_permalink(),
         ];
     }
 
@@ -186,90 +185,41 @@ class PageProgram extends BaseModel {
         $filters = [];
 
         $taxonomies = $this->get_taxonomies_with_slugs();
-        foreach ($taxonomies as $tax_slug =>  $qv) {
+        foreach ( $taxonomies as $tax_slug => $qv ) {
 
-            $terms = get_terms( [
-                'taxonomy' => $tax_slug,
-                'hide_empty' => true,
+            $terms = get_terms(
+                [
+                    'taxonomy'   => $tax_slug,
+                    'hide_empty' => true,
                 ],
             );
 
             if ( ! empty( $terms ) ) {
                 $filters[] = [
-                    'name' => $this->strings()['program'][$tax_slug],
+                    'name'      => $this->strings()['program'][ $tax_slug ],
                     'query_var' => $qv,
-                    'terms' => array_map( function( $term ) use ( $qv ) {
+                    'terms'     => array_map( function( $term ) use ( $qv ) {
                         $active_terms = $this->get_filter_query_var( $qv );
 
-                        if ( ! empty( $active_terms ) && is_array( $active_terms ) && in_array( $term->term_id, $active_terms )) {
+                        if ( ! empty( $active_terms ) && is_array( $active_terms ) && in_array( $term->term_id, $active_terms ) ) { // phpcs:ignore
                             $is_active = true;
                         }
-                        else{
+                        else {
                             $is_active = false;
                         }
                         return [
                             'term_id' => $term->term_id,
-                            'name' => $term->name,
-                            'slug' => $term->slug,
-                            'active' => $is_active,
-                         ];
-                     } , $terms )
-                    ];
-            } 
-           
-        }     
-
-        // array_unshift(
-        //     $taxonomies,
-        //     [
-        //         'name'      => __( 'All', 'tms-theme-base' ),
-        //         'url'       => $base_url,
-        //         'is_active' => null === self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR ),
-        //     ]
-        // );
+                            'name'    => $term->name,
+                            'slug'    => $term->slug,
+                            'active'  => $is_active,
+                        ];
+                    }, $terms ),
+                ];
+            }
+        }
 
         return $filters;
     }
-
-    //  /**
-    //  * Supply data for active filter hidden input.
-    //  *
-    //  * @return string[]
-    //  */
-    // public function active_filters() {
-    //     // $active_filter = self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
-
-    //     // return $active_filter ? [
-    //     //     'name'  => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
-    //     //     'value' => $active_filter,
-    //     // ] : null;
-    //     $taxonomies = $this->get_taxonomies_with_slugs();
-
-    //     foreach ($taxonomies as $tax_slug =>  $qv) {
-
-    //         $terms = get_terms( [
-    //             'taxonomy' => $tax_slug,
-    //             'hide_empty' => true,
-    //             ],
-    //         );
-
-    //         if ( ! empty( $terms ) ) {
-    //             $filters[] = [
-    //                 'name' => $this->strings()['program'][$tax_slug],
-    //                 'query_var' => $qv,
-    //                 'terms' => array_map( function( $term ) {
-    //                     return [
-    //                         'term_id' => $term->term_id,
-    //                         'name' => $term->name,
-    //                         'slug' => $term->slug
-    //                      ];
-    //                  } , $terms )
-    //                 ];
-    //         } 
-           
-    //     }     
-    //     return 'Jee';
-    // }
 
     /**
      * View results
@@ -278,53 +228,52 @@ class PageProgram extends BaseModel {
      */
     public function results() {
         $args = [
-            'post_type' => Program::SLUG,
-            'orderby' => array( 
+            'post_type'      => Program::SLUG,
+            'orderby'        => [
                 'menu_order' => 'ASC',
-                'title'      => 'ASC', 
-            ),
-            'paged'     => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
+                'title'      => 'ASC',
+            ],
+            'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
             'posts_per_page' => self::POSTS_PER_PAGE,
         ];
-        
-        $only_ongoing = $this->get_ongoing_query_var(); 
+
+        $only_ongoing = $this->get_ongoing_query_var();
 
         if ( ! empty( $only_ongoing ) ) {
 
-            $today = date('Y-m-d');
+            $today = date( 'Y-m-d' );
 
             $args['meta_query'] = [
                 [
                     'relation' => 'AND',
                     [
-                     'key' => 'apply_start',
-                     'value' =>  $today,
-                     'compare' => '<=',
-                     'type' => 'DATE'
+                        'key'     => 'apply_start',
+                        'value'   => $today,
+                        'compare' => '<=',
+                        'type'    => 'DATE',
                     ],
                     [
-                     'key' => 'apply_end',
-                     'value' => $today,
-                     'compare' => '>=',
-                     'type' => 'DATE'
+                        'key'     => 'apply_end',
+                        'value'   => $today,
+                        'compare' => '>=',
+                        'type'    => 'DATE',
                     ],
-                 ],
-             ];
+                ],
+            ];
         }
-        
+
         // Add taxonomies to tax query from request's query vars
 
         $args['tax_query'] = [
-            'relation' => 'AND' 
+            'relation' => 'AND',
         ];
 
-    
         $query_vars = $this->get_taxonomies_with_slugs();
 
-        foreach ( $query_vars as $slug => $qv ) {      
+        foreach ( $query_vars as $slug => $qv ) {
 
             $terms = self::get_filter_query_var( $qv );
-        
+
             if ( ! empty( $terms ) ) {
                 $args['tax_query'][] = [
                     'taxonomy' => $slug,
@@ -343,7 +292,7 @@ class PageProgram extends BaseModel {
         $this->set_pagination_data( $the_query );
         $search_clause = self::get_search_query_var();
         $is_filtered   = $search_clause || self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
-       
+
         return [
             'posts'       => $this->format_posts( $the_query->get_posts() ),
             'is_filtered' => $is_filtered,
@@ -372,7 +321,7 @@ class PageProgram extends BaseModel {
         return array_map( function ( $item ) {
             if ( has_post_thumbnail( $item->ID ) ) {
                 $item->image = get_post_thumbnail_id( $item->ID );
-            } 
+            }
             else {
                 $item->image = Images::get_default_image_id();
             }
@@ -380,8 +329,8 @@ class PageProgram extends BaseModel {
             $item->permalink = get_the_permalink( $item->ID );
             $item->fields    = get_fields( $item->ID );
 
-            if ( ! empty ( $item->fields ) ) {
-                
+            if ( ! empty( $item->fields ) ) {
+
                 if ( ! empty( $item->fields['start_info'] ) ) {
                     $item->fields['start_date'] = $item->fields['start_info'];
                 }
@@ -389,43 +338,40 @@ class PageProgram extends BaseModel {
                 if ( ! empty( $item->fields['apply_info'] ) ) {
                     $item->fields['apply_end'] = $item->fields['apply_info'];
                 }
-                else if ( ! empty( $item->fields['apply_end'] ) ) {
-                    $item->fields['apply_end'] = date('d.m.Y', strtotime( $item->fields['apply_end'] ) );
+                elseif ( ! empty( $item->fields['apply_end'] ) ) {
+                    $item->fields['apply_end'] = date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) );
                 }
             }
 
             $taxonomies = $this->get_taxonomies_with_slugs();
 
-            foreach ($taxonomies as $tax_slug =>  $qv) { 
+            foreach ( $taxonomies as $tax_slug => $qv ) {
 
                 $primary_term_id = get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
 
                 $term_id = 0;
                 if ( ! empty( $primary_term_id ) ) {
-                    $primary_term = get_term( $primary_term_id );
+                    $primary_term      = get_term( $primary_term_id );
                     $item->{$tax_slug} = $primary_term->name;
-                    $term_id = $primary_term_id;
-                } else {
+                    $term_id           = $primary_term_id;
+                }
+                else {
                     $terms = wp_get_post_terms( $item->ID, $tax_slug );
                     if ( ! empty( $terms ) ) {
                         $item->{$tax_slug} = $terms[0]->name;
-                        $term_id = $terms[0]->term_id;
+                        $term_id           = $terms[0]->term_id;
                     }
                 }
 
-                if ( $tax_slug === ProgramType::SLUG) {
-                    $program_type_color = get_term_meta( $term_id, 'color', true ) ?? '';
-                    $item->program_type_color = $program_type_color;
+                if ( $tax_slug === ProgramType::SLUG ) {
+                    $program_type_color           = get_term_meta( $term_id, 'color', true ) ?? '';
+                    $item->program_type_color     = $program_type_color;
                     $item->program_type_txt_color = $program_type_color === 'primary' ? 'white' : 'primary';
                 }
-                
-
             }
 
             return $item;
         }, $posts );
-
-        return $posts;
     }
 
 
@@ -450,8 +396,7 @@ class PageProgram extends BaseModel {
     /**
      * Get results summary text.
      *
-     * @param int    $result_count  Result count.
-     * @param string $search_clause Search clause.
+     * @param int $result_count  Result count.
      *
      * @return string|bool
      */
@@ -468,5 +413,4 @@ class PageProgram extends BaseModel {
 
         return $results_text;
     }
-
 }

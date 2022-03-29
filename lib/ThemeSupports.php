@@ -139,7 +139,6 @@ class ThemeSupports implements Interfaces\Controller {
         $vars[] = PageProgram::FILTER_PROGRAM_TYPE_QUERY_VAR;
         $vars[] = PageProgram::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR;
         $vars[] = PageProgram::FILTER_ONGOING_QUERY_VAR;
-        //$vars[] = PageProgram::ORDERBY_QUERY_VAR;
 
         return $vars;
     }

@@ -53,14 +53,14 @@ class Strings extends \DustPress\Model {
                 'search_input_placeholder' => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'exception_close_button'   => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
                 'home'                     => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
-                'breadcrumbs'              => _x( 'Breadcrumbs', 'theme-frontend', 'tms-theme-tredu' )
+                'breadcrumbs'              => _x( 'Breadcrumbs', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             '404'                => [
                 'title'         => _x( 'Page not found', 'theme-frontend', 'tms-theme-tredu' ),
                 'subtitle'      => _x(
                     'The content were looking for was not found',
                     'theme-frontend',
-                    'tms-theme-tredu'
+                    'tms-theme-tredu',
                 ),
                 'home_link_txt' => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
             ],
@@ -174,11 +174,11 @@ class Strings extends \DustPress\Model {
                     'commit_new_search' => _x( 'Commit new search', 'theme-frontend', 'tms-theme-tredu' ),
                     'show_only_ongoing' => _x( 'Show only programs that can be applied now', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
-                'profession' =>  _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
+                'profession' => _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
                 'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),
                 'location' => _x( 'Location', 'theme-frontend', 'tms-theme-tredu' ),
-                'educational-background' =>  _x( 'Educational background', 'theme-frontend', 'tms-theme-tredu' ),
-                'delivery-method' =>  _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' )
+                'educational-background' => _x( 'Educational background', 'theme-frontend', 'tms-theme-tredu' ),
+                'delivery-method' => _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'search'             => [
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),

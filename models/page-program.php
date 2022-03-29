@@ -64,7 +64,7 @@ class PageProgram extends BaseModel {
     /**
      * Posts per page
      */
-    const POSTS_PER_PAGE = 1;
+    const POSTS_PER_PAGE = 2;
     
 
     /**
@@ -186,7 +186,6 @@ class PageProgram extends BaseModel {
         $filters = [];
 
         $taxonomies = $this->get_taxonomies_with_slugs();
-
         foreach ($taxonomies as $tax_slug =>  $qv) {
 
             $terms = get_terms( [
@@ -395,35 +394,21 @@ class PageProgram extends BaseModel {
                 }
             }
 
-            // Profession::SLUG => self::FILTER_PROFESSION_QUERY_VAR,
-            // ProgramType::SLUG => self::FILTER_PROGRAM_TYPE_QUERY_VAR,
-            // Location::SLUG => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
-            // EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
-            // DeliveryMethod::SLUG => self::FILTER_DELIVERY_METHODS_QUERY_VAR, 
+            $taxonomies = $this->get_taxonomies_with_slugs();
 
-            $professions = wp_get_post_terms( $item->ID, Profession::SLUG, [ 'fields' => 'names' ]  );
-            if ( ! empty( $professions ) ) {
-                $item->profession = $professions[0];
-            }
- 
-            $program_types = wp_get_post_terms( $item->ID, ProgramType::SLUG, [ 'fields' => 'names' ]  );
-            if ( ! empty( $program_types ) ) {
-                $item->program_type = $program_types[0];
-            }
+            foreach ($taxonomies as $tax_slug =>  $qv) { 
 
-            $locations = wp_get_post_terms( $item->ID, Location::SLUG, [ 'fields' => 'names' ] );
-            if ( ! empty( $locations ) ) {
-                $item->location = $locations[0];
-            }
+                $primary_term_id = get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
 
-            $educational_backgrounds = wp_get_post_terms( $item->ID, EducationalBackground::SLUG, [ 'fields' => 'names' ]  );
-            if ( ! empty( $educational_backgrounds ) ) {
-                $item->educational_background = $educational_backgrounds[0];
-            }
-
-            $delivery_methods = wp_get_post_terms( $item->ID, DeliveryMethod::SLUG, [ 'fields' => 'names' ]  );
-            if ( ! empty( $delivery_methods ) ) {
-                $item->delivery_method = $delivery_methods[0];
+                if( ! empty( $primary_term_id ) ) {
+                    $primary_term = get_term( $primary_term_id );
+                    $item->{$tax_slug} = $primary_term->name;
+                } else {
+                    $terms = wp_get_post_terms( $item->ID, $tax_slug, [ 'fields' => 'names' ] );
+                    if ( ! empty( $terms ) ) {
+                        $item->{$tax_slug} = $terms[0];
+                    }
+                }
             }
 
             return $item;

@@ -1,4 +1,4 @@
-<form id="program-search" role="search" method="get" class="search-form" action="">
+<form id="program-search" role="search" method="get" class="search-form" action="{search.new_search_link|s}">
     <div class="columns is-multiline has-background-light-gray m-0 p-6">
         <div class="column is-12">
                 <div class="columns is-multiline">
@@ -33,7 +33,9 @@
                 <div class="columns is-multiline">
                     {#filters}
                     <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
-                        <select name="{query_var}[]" class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold">
+                        <select name="{query_var}[]" 
+                        class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold"
+                        aria-label="{Strings.s.program.search.select|s} {name|s}">
                             <option selected="true" value="" class="has-text-primary">{name}</option>
                             {#terms}
                                 {^active}

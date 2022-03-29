@@ -1,6 +1,6 @@
 <div class="column {column_class|s}">
     {?column_title}
-        <h2 class="h4 mt-4 mb-4">
+        <h2 class="h4 mt-4 mb-4 has-text-white">
             {column_title|s}
         </h2>
     {/column_title}
@@ -9,7 +9,7 @@
         {#link_column}
             <li class="mb-2">
                 <a href="{link.url}" target="{link.target}"
-                   class="site-footer__link is-flex is-align-items-center {Footer.colors.link|s}">
+                   class="site-footer__link is-flex is-align-items-center {Footer.colors.link|s} has-text-white">
                     {>"ui/icon" icon="chevron-right" class="icon--small {Footer.colors.link_icon|s} mr-2" /}
                     <span>{link.title|s}</span>
                 </a>

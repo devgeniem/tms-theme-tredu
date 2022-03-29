@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-760: Add default filter image filter for material images #7
 - TMS-672: 404 Page styles
 - TMS-660: Header, Footer, Navgation
 - TMS-661: Siblings navigation for page

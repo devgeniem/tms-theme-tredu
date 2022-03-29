@@ -400,15 +400,24 @@ class PageProgram extends BaseModel {
 
                 $primary_term_id = get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
 
-                if( ! empty( $primary_term_id ) ) {
+                $term_id = 0;
+                if ( ! empty( $primary_term_id ) ) {
                     $primary_term = get_term( $primary_term_id );
                     $item->{$tax_slug} = $primary_term->name;
+                    $term_id = $primary_term_id;
                 } else {
-                    $terms = wp_get_post_terms( $item->ID, $tax_slug, [ 'fields' => 'names' ] );
+                    $terms = wp_get_post_terms( $item->ID, $tax_slug );
                     if ( ! empty( $terms ) ) {
-                        $item->{$tax_slug} = $terms[0];
+                        $item->{$tax_slug} = $terms[0]->name;
+                        $term_id = $terms[0]->term_id;
                     }
                 }
+
+                if ( $tax_slug === ProgramType::SLUG) {
+                    $item->program_type_color = get_term_meta( $term_id, 'color', true ) ?? '';
+                }
+                
+
             }
 
             return $item;

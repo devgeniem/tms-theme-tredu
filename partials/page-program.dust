@@ -19,7 +19,11 @@
                                         {?image}
                                             <div class="program-list__image has-background-cover is-absolute has-top-0 has-bottom-0 has-right-0 has-left-0" {@inlinebg id=image size="large" /}>
                                             {?program-type}
-                                                <span class="is-relative is-inline-block has-background-primary has-text-white is-uppercase has-line-height-1 p-2">{program-type|s}</span>
+                                                <span 
+                                                class="is-relative is-inline-block has-text-white is-uppercase has-line-height-1 p-2"
+                                                {?program_type_color} style="background-color:{program_type_color|s}"{/program_type_color}>
+                                                    {program-type|s}
+                                                </span>
                                             {/program-type}
                                             </div>
                                         {/image}

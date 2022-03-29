@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-03-23 15:54+0200\n"
-"PO-Revision-Date: 2022-03-23 15:54+0200\n"
+"POT-Creation-Date: 2022-03-29 12:27+0300\n"
+"PO-Revision-Date: 2022-03-29 12:29+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -194,25 +194,22 @@ msgid "Blog Article"
 msgstr "Blogiartikkeli"
 
 #: lib/PostType/BlogAuthor.php:60
+#, fuzzy
 msgctxt "theme CPT slugs"
 msgid "blog-author"
-msgstr ""
+msgstr "Blogin kirjoittaja"
 
 #: lib/PostType/BlogAuthor.php:61
 msgctxt "theme CPT"
 msgid "Blog authors"
-msgstr ""
+msgstr "Blogin kirjoittajat"
 
 #: lib/PostType/BlogAuthor.php:96
-#, fuzzy
-#| msgid "Blog author"
 msgctxt "theme CPT"
 msgid "Blog Authors"
-msgstr "Blogin kirjoittaja"
+msgstr "Blogin kirjoittajat"
 
 #: lib/PostType/BlogAuthor.php:97
-#, fuzzy
-#| msgid "Blog author"
 msgctxt "theme CPT"
 msgid "Blog Author"
 msgstr "Blogin kirjoittaja"
@@ -228,14 +225,16 @@ msgid "contact"
 msgstr ""
 
 #: lib/PostType/Program.php:52
+#, fuzzy
 msgctxt "theme CPT"
 msgid "program"
-msgstr ""
+msgstr "Koulutustyyppi"
 
 #: lib/PostType/Settings.php:60
+#, fuzzy
 msgctxt "theme CPT slugs"
 msgid "site-settings"
-msgstr ""
+msgstr "Sivuston asetukset"
 
 #: lib/PostType/Settings.php:61
 msgctxt "theme CPT"
@@ -253,14 +252,16 @@ msgid "Administrator"
 msgstr ""
 
 #: lib/Roles.php:486
+#, fuzzy
 msgctxt "wp-geniem-roles"
 msgid "Site Manager"
-msgstr ""
+msgstr "Sivuston asetukset"
 
 #: lib/Roles.php:532
+#, fuzzy
 msgctxt "wp-geniem-roles"
 msgid "Author"
-msgstr ""
+msgstr "Blogin kirjoittaja"
 
 #: lib/Roles.php:600
 msgctxt "wp-geniem-roles"
@@ -472,21 +473,19 @@ msgstr "Ei hakutuloksia"
 #: models/single-program.php:45
 msgctxt "program info"
 msgid "Apply period"
-msgstr ""
+msgstr "Hakuaika"
 
 #: models/single-program.php:51
 msgctxt "program info"
 msgid "Audience"
-msgstr ""
+msgstr "Kenelle"
 
 #: models/single-program.php:57
 msgctxt "program info"
 msgid "Delivery method"
-msgstr ""
+msgstr "Toteutustapa"
 
 #: models/single-program.php:63
-#, fuzzy
-#| msgid "Location"
 msgctxt "program info"
 msgid "Location"
 msgstr "Sijainti"
@@ -494,11 +493,9 @@ msgstr "Sijainti"
 #: models/single-program.php:69
 msgctxt "program info"
 msgid "Program starts"
-msgstr ""
+msgstr "Opinnot alkavat"
 
 #: models/single-program.php:75
-#, fuzzy
-#| msgid "Price"
 msgctxt "program info"
 msgid "Price"
 msgstr "Hinta"
@@ -581,14 +578,16 @@ msgid "Skip video embed"
 msgstr "Ohita video"
 
 #: models/strings.php:70
+#, fuzzy
 msgctxt "theme-frontend"
 msgid "Play video"
-msgstr ""
+msgstr "Ohita video"
 
 #: models/strings.php:71
+#, fuzzy
 msgctxt "theme-frontend"
 msgid "Pause video"
-msgstr ""
+msgstr "Ohita video"
 
 #: models/strings.php:74
 msgctxt "theme-frontend"
@@ -989,8 +988,9 @@ msgid "Add Row"
 msgstr ""
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
+#, fuzzy
 msgid "Multisite Post Object"
-msgstr ""
+msgstr "Rajaa tyypin mukaan"
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
 msgid "Multisite Relationship"
@@ -1034,34 +1034,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Geniem"
-msgstr ""
+msgstr "Geniem"
 
 #. Author URI of the plugin/theme
 msgid "https://geniem.fi"
 msgstr ""
-
-#, fuzzy
-#~| msgctxt "theme-frontend"
-#~| msgid "Skip to content"
-#~ msgid "Reply to comment"
-#~ msgstr "Siirry sisältöön"
-
-#, fuzzy
-#~| msgid "Comments"
-#~ msgid "comment-page"
-#~ msgstr "Kommentit"
-
-#, fuzzy
-#~| msgid "Comments"
-#~ msgid "Comment sent."
-#~ msgstr "Kommentit"
-
-#, fuzzy
-#~| msgid "Your comment is awaiting moderation"
-#~ msgid "Comment is waiting for approval."
-#~ msgstr "Kommentti odottaa hyväksyntää"
-
-#, fuzzy
-#~| msgid "Comments"
-#~ msgid "all-comments"
-#~ msgstr "Kommentit"

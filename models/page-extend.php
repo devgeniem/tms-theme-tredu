@@ -91,6 +91,9 @@ class PageExtend extends BaseModel {
      * @return bool
      */
     public function use_overlay() {
-        return true;
+
+        $darken_hero = get_field( 'fg_page_hero_fields_page_hero_overlay', get_the_ID() ) ?? true;
+
+        return $darken_hero;
     }
 }

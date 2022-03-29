@@ -13,20 +13,20 @@
                 {?contact_info}
                     <div class="column {column_class|s} has-text-small">
                         {?contact_info.title}
-                            <h2 class="h4 mt-4 mb-4">
+                            <h2 class="h4 mt-4 mb-4 has-text-white">
                                 {contact_info.title|s}
                             </h2>
                         {/contact_info.title}
 
                         {?contact_info.address}
-                            <div class="mt-4 mb-4 keep-vertical-spacing has-text-weight-semibold">
+                            <div class="mt-4 mb-4 keep-vertical-spacing has-text-weight-semibold has-text-white">
                                 {contact_info.address|s}
                             </div>
                         {/contact_info.address}
 
                         {?contact_info.email}
                             <a href="mailto:{contact_info.email|s}"
-                               class="is-flex is-align-items-center mb-2 {Footer.colors.link|s}">
+                               class="is-flex is-align-items-center mb-2 {Footer.colors.link|s} has-text-white">
                                 {>"ui/icon" icon="email" class="icon--large {Footer.colors.link_icon|s} mr-2" /}
                                 <span>{contact_info.email|s}</span>
                             </a>
@@ -34,7 +34,7 @@
 
                         {?contact_info.phone}
                             <a href="tel:{contact_info.phone|s}"
-                               class="is-flex is-align-items-center {Footer.colors.link|s}">
+                               class="is-flex is-align-items-center {Footer.colors.link|s} has-text-white">
                                 {>"ui/icon" icon="phone" class="icon--large {Footer.colors.link_icon|s} mr-2" /}
                                 <span>{contact_info.phone|s}</span>
                             </a>

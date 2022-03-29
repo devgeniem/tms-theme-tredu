@@ -19,10 +19,11 @@ $fly-out-nav-search-button-icon: $primary !default;
 
     a,
     button {
-        &:focus,
-        &.is-focused {
-            @extend .button-state-focus;
-            outline-color: $white;
+        &:focus{
+            text-decoration: underline;
+            outline: .125rem solid $color-white;
+            outline-offset: .25rem;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
         }
     }
 
@@ -117,7 +118,7 @@ $fly-out-nav-search-button-icon: $primary !default;
         padding-left: 2rem;
 
         > .navbar-item {
-            font-family: $family-secondary;
+            font-family: $family-primary;
             font-size: 1.223rem;
             font-weight: 600;
             padding-left: 0;
@@ -252,7 +253,8 @@ $fly-out-nav-search-button-icon: $primary !default;
             border: none;
             border-radius: .25rem;
             &:focus,
-            &.is-focused {
+            &.is-focused,
+            &:focus-visible {
                 @extend .button-state-focus;
                 outline-color: $white;
             }

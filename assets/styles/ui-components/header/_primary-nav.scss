@@ -59,10 +59,14 @@ $navbar-item-dropdown-accent-color: $primary !default;
         padding-left: 1.1764rem;
         color: $navbar-item-navbar-link-color !important; // sass-lint:disable-line no-important
         background-color: transparent !important; // sass-lint:disable-line no-important
-
-        &:hover,
-        &:focus {
+        
+        &:hover {
             text-decoration: underline;
+        }
+
+        &:active,
+        &:focus{
+            outline-offset: 0;
         }
     }
 
@@ -83,6 +87,12 @@ $navbar-item-dropdown-accent-color: $primary !default;
 
         .dropdown-toggler {
             margin-right: 0 !important; // sass-lint:disable-line no-important
+            &:focus{
+                text-decoration: underline;
+                outline: .125rem solid $color-black;
+                outline-offset: .25rem;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
         }
 
         .navbar-dropdown {
@@ -124,4 +134,13 @@ $navbar-item-dropdown-accent-color: $primary !default;
             }
         }
     }
+}
+
+#js-search-toggle {
+    &:focus,
+    &.is-focused,
+    &:focus-visible {
+        @extend .button-state-focus;
+    }
+
 }

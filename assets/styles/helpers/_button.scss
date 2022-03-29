@@ -17,14 +17,16 @@ $button-border-radius: .25rem !default;
 $button-font-size: .9375rem !default;
 $button-font-size-tablet: .88235rem !default;
 
-$button-font-weight: $weight-medium !default;
+$button-font-weight: 600 !default;
 
 $button-transition-easing: $easing !default;
 $button-transition-speed: $speed !default;
  
  .button-state-focus {
+     text-decoration: underline;
      outline: .125rem solid $color-black;
      outline-offset: .25rem;
+     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
  }
 
  .gform_wrapper button,
@@ -37,7 +39,7 @@ $button-transition-speed: $speed !default;
     border-radius: $button-border-radius;
     cursor: pointer;
     font-weight: $button-font-weight;
-    font-family: $family-secondary;
+    font-family: $family-primary;
     font-size: $button-font-size;
 
     justify-content: center;
@@ -62,12 +64,7 @@ $button-transition-speed: $speed !default;
      &.is-rounded {
          border-radius: 999px;
      }
- 
-     &:focus,
-     &.is-focused {
-         @extend .button-state-focus;
-     }
- 
+
      &--icon {
          .icon {
              margin-left: .75rem !important;
@@ -106,10 +103,17 @@ $button-transition-speed: $speed !default;
         border-color: $secondary;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
         text-decoration: underline;
     }
+
+    &:focus{
+        text-decoration: underline;
+        outline: .125rem solid $color-black;
+        outline-offset: .25rem;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
  
 
  }

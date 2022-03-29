@@ -3,14 +3,23 @@
  */
 
 .site-footer {
-
-    a,
-    button {
-        &:focus,
-        &.is-focused {
-            @extend .button-state-focus;
-            outline-color: $white;
+    .container {
+        a,
+        button {
+            position:relative;  
+            &:focus {
+                outline: .125rem solid $color-white;
+                outline-offset: .25rem;
+                box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+            &.button--icon {
+                span {
+                    padding-top: rem(2);
+                }
+            }
         }
+
+
     }
     
     &__link {
@@ -46,13 +55,6 @@
                 }
             }
         }
-
-        a {
-            &:hover,
-            &:focus {
-                text-decoration: none !important; // sass-lint:disable-line no-important
-            }
-        }
     }
 
     .footer-logo {
@@ -64,6 +66,10 @@
         &:focus {
             outline-style: solid;
             outline-color: $primary-invert;
+        }
+
+        .icon {
+            max-width: 100%;
         }
     }
 }

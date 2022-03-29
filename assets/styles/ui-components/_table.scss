@@ -255,7 +255,6 @@ $table-row-background-color-odd-hover: darken($table-row-background-color-odd, 4
 table.idc-element {
     
     &:focus {
-        outline: 0.0625rem dotted;
-        outline-offset: -0.0625rem;
+       @extend .button-state-focus;
     }
 }

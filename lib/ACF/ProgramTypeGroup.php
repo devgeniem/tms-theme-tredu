@@ -86,12 +86,12 @@ class ProgramTypeGroup {
             ->set_key( "${key}_color" )
             ->set_name( 'color' )
             ->set_choices( [
-                '#06B3EF'   => 'Sininen',
-                '#ABC872'  => 'Vihreä',
-                '#EB5E58' => 'Punainen',
-                '#042546' => 'Tumman sininen',
+                'primary' => 'Tumman sininen',
+                'blue'   => 'Sininen',
+                'green'  => 'Vihreä',
+                'red' => 'Punainen',
             ] )
-            ->set_default_value( '#06B3EF' )
+            ->set_default_value( 'primary' )
             ->set_wrapper_width( 30 )
             ->set_instructions( $strings['color']['instructions'] );
 

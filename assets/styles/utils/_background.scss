@@ -25,6 +25,18 @@ $color-background-primary-light--opaque-light: rgba($primary-light, .05) !defaul
     }
 }
 
+.has-background-red {
+    background-color: $color-red;
+}
+
+.has-background-blue {
+    background-color: $color-blue;
+}
+
+.has-background-green {
+    background-color: $color-green;
+}
+
 .has-background-light-gray {
     background-color: $color-light-gray !important;
 }

@@ -414,7 +414,9 @@ class PageProgram extends BaseModel {
                 }
 
                 if ( $tax_slug === ProgramType::SLUG) {
-                    $item->program_type_color = get_term_meta( $term_id, 'color', true ) ?? '';
+                    $program_type_color = get_term_meta( $term_id, 'color', true ) ?? '';
+                    $item->program_type_color = $program_type_color;
+                    $item->program_type_txt_color = $program_type_color === 'primary' ? 'white' : 'primary';
                 }
                 
 

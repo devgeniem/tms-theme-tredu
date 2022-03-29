@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-672: 404 Page styles
+- TMS-660: Header, Footer, Navgation
 - TMS-661: Siblings navigation for page
 - TMS-662: Breadcrumb in header
 

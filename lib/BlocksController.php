@@ -118,7 +118,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\DynamicEvent::SLUG,
                 ],
                 'templates'  => [
                     '',
@@ -129,7 +128,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\DynamicEvent::SLUG,
                 ],
                 'templates'  => [
                     '',
@@ -138,7 +136,6 @@ class BlocksController implements Interfaces\Controller {
             // 'acf/image-banner'   => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/key-figures'    => [
@@ -146,7 +143,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/link-list'      => [
@@ -154,7 +150,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/quote'          => [
@@ -162,7 +157,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/grid'           => [
@@ -176,7 +170,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\DynamicEvent::SLUG,
                 ],
             ],
             // 'acf/video'          => [
@@ -184,7 +177,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/image'          => [
@@ -192,14 +184,12 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/video'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
@@ -208,7 +198,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/image-carousel' => [
@@ -216,19 +205,16 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/share-links'    => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/table'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/material'       => [
@@ -236,7 +222,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/subpages'       => [
@@ -247,14 +232,12 @@ class BlocksController implements Interfaces\Controller {
             // 'acf/notice-banner'  => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'acf/map'            => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
@@ -262,7 +245,6 @@ class BlocksController implements Interfaces\Controller {
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
@@ -271,7 +253,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
-            //         PostType\DynamicEvent::SLUG,
             //     ],
             // ],
             // 'gravityforms/form'  => [

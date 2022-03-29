@@ -1,7 +1,4 @@
 <?php
-/**
- * Copyright (c) 2021. Geniem Oy
- */
 
 namespace TMS\Theme\Tredu;
 
@@ -158,14 +155,6 @@ class Assets implements Interfaces\Controller {
         ] );
 
         \wp_dequeue_style( 'wp-block-library' );
-
-        \wp_enqueue_style(
-            'fontawesome',
-            'https://pro.fontawesome.com/releases/v5.13.0/css/all.css',
-            [],
-            '5.13.0',
-            false
-        );
     }
 
     /**

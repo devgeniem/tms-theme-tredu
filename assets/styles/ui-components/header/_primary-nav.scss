@@ -9,7 +9,7 @@ $navbar-item-dropdown-accent-color: $primary !default;
 
 .primary-nav {
     @include list-reset;
-    font-family: $family-secondary;
+    font-family: $family-primary;
     display: flex;
     justify-content: center;
 

@@ -75,8 +75,6 @@ class PageExtend extends BaseModel {
      * @return string|false
      */
     public function post_siblings_heading() {
-        // $current_post_id = get_the_ID();
-        // $parent_post_id  = wp_get_post_parent_id( $current_post_id );
 
         $siblings_heading_setting = Settings::get_setting( 'sibling_navigation_heading' );
 

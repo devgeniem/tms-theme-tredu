@@ -82,7 +82,7 @@ class PageSettingsTab extends Tab {
 
             $this->add_fields( [
                 $display_siblings,
-                $siblings_heading
+                $siblings_heading,
             ] );
         }
         catch ( Exception $e ) {

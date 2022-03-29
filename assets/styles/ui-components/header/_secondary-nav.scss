@@ -24,11 +24,22 @@ $secondary-navbar-item-font-weight: 600 !default;
     a {
         font-weight: $secondary-navbar-item-font-weight;
         color: $secondary-navbar-item-navbar-link-color;
-
+        display: inline-block;
         &:hover,
         &:focus {
             color: $secondary-navbar-item-navbar-link-color-hover;
             text-decoration: underline;
         }
     }
+
+    a,
+    button {
+        &:active,
+        &:focus,
+        &:focus-visible {
+            @extend .button-state-focus;
+        }
+        
+    }
 }
+

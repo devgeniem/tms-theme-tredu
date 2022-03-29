@@ -11,8 +11,7 @@
 
     a {
         &:focus {
-            outline: .0625rem solid $text;
-            outline-offset: .25rem;
+            @extend .button-state-focus;
         }
     }
 }

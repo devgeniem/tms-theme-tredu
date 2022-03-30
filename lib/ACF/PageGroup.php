@@ -76,6 +76,11 @@ class PageGroup {
                         'value'    => \PageEventsSearch::TEMPLATE,
                     ],
                     [
+                        'param'    => 'page_template',
+                        'operator' => '!=',
+                        'value'    => \PageProgram::TEMPLATE,
+                    ],
+                    [
                         'param'    => 'page_type',
                         'operator' => '!=',
                         'value'    => 'posts_page',

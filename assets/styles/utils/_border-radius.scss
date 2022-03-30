@@ -11,7 +11,8 @@
         border-radius: 50%;
     }
 
-    &-0 {
+    &-0,
+    &-none {
         border-radius: 0;
     }
 }

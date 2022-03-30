@@ -22,7 +22,6 @@ export default class ProgramSearch {
         const removeFilterBtns = document.querySelectorAll( '#program-search .remove-filter' );
         removeFilterBtns.forEach( ( button ) => {
             button.addEventListener( 'click', () => {
-                // console.log( button.querySelector( 'input[type="hidden"]' ) );
                 button.querySelector( 'input[type="hidden"]' ).setAttribute( 'disabled', 'disabled' );
                 form.submit();
             } );
@@ -39,9 +38,13 @@ export default class ProgramSearch {
 
         $( '#program-search input[type="search"]' )
             .autocomplete( {
+                minLength: 1,
                 source: wordList,
-                autoFocus: true,
-                // classes: {}
+                // autoFocus: true,
+                classes: {
+                    // eslint-disable-next-line max-len
+                    'ui-autocomplete': 'has-background-white has-border-primary has-border-2 is-absolute is-unstyled p-3 has-text-weight-semibold',
+                },
             } );
     }
 

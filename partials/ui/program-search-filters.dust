@@ -2,7 +2,7 @@
     <div class="columns is-multiline has-background-light-gray m-0 p-6">
         <div class="column is-12">
                 <div class="columns is-multiline">
-                    <div class="column is-two-fifths search-form is-flex is-flex-wrap-wrap is-align-items-center">
+                    <div class="column is-two-fifths search-form is-flex is-flex-wrap-wrap is-align-items-center ui-front">
                         <label class="mr-2">
                             <span class="is-sr-only"> {Strings.s.search.write_search_terms|s} </span>
                             <input type="search" 

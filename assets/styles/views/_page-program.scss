@@ -14,3 +14,15 @@
         }
     }
 }
+
+#program-search {
+    input[type="search"],
+    select {
+        &:focus {
+            text-decoration: underline;
+            outline: .125rem solid $color-black;
+            outline-offset: .25rem;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }
+}

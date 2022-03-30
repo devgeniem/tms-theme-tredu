@@ -36,4 +36,10 @@
             text-align: right;
         }
     }
+
+    .button {
+        &:focus {
+            outline-color: $primary-invert;
+        }
+    }
 }

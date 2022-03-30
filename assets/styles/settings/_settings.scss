@@ -8,7 +8,7 @@ $colors: (
 
 $button-colors: (
     "primary": ($primary, $color-white, $text, $text),
-    "secondary": ($secondary, $secondary-invert, $color-white, $color-black),
+    "secondary": ($secondary, $color-green, $color-white, $color-black),
 ) !default;
 
 $navbar-colors: (

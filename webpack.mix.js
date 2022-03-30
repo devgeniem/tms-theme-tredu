@@ -1,10 +1,9 @@
 const mix = require( 'laravel-mix' );
 require( 'laravel-mix-svg-sprite' );
 require( 'laravel-mix-eslint' );
+require( 'laravel-mix-eslint-config' );
 
 // TODO: extract() shoud be fixed. Polyfills, aliases. Different setup for dev and prod builds
-
-// TODO: Get rid of these ugly Config. ...
 
 // eslint-disable-next-line no-undef
 Config.imgLoaderOptions.svgo = {
@@ -41,8 +40,17 @@ mix.webpackConfig( {
         jquery: [ '$', 'window.jQuery' ],
     } )
     .eslint( {
-        fix: true,
-        extensions: [ 'js' ],
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+            configFile: '.eslintrc.json',
+            fix: true,
+            cache: false,
+            failOnWarning: false,
+            failOnError: true,
+        },
     } )
     //.extract() // this breaks all JS without errors
     .sass( 'assets/styles/theme-tredu.scss', 'theme_tredu.css' )

@@ -5,6 +5,7 @@
 .lang-nav {
     .dropdown-menu {
         z-index: 25;
+       
     }
 
     &--horizontal {
@@ -19,5 +20,12 @@
                 height: rem(50);
             }
         }
+    }
+}
+
+.language-nav {
+    .dropdown-menu {
+        min-width: initial;
+        width: 100%;
     }
 }

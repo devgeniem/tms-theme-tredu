@@ -1,5 +1,5 @@
 <li class="menu-item-secondary is-family-primary">
-    <a class="menu-item-secondary__link has-text-primary" href="{url}">
+    <a class="menu-item-secondary__link" href="{url}">
         {title|s}
     </a>
 </li>

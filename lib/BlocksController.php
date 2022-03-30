@@ -113,7 +113,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/heading'       => [
+            'core/heading'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -123,7 +123,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/paragraph'     => [
+            'core/paragraph'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -133,11 +133,11 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            // 'acf/image-banner'   => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //     ],
-            // ],
+            'acf/image-banner' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                ],
+            ],
             // 'acf/key-figures'    => [
             //     'post_types' => [
             //         PostType\Page::SLUG,

@@ -5,6 +5,7 @@
 
 // Use jQuery as $ within this file scope.
 const $ = jQuery; // eslint-disable-line no-unused-vars
+import 'jquery-ui/ui/widgets/autocomplete';
 
 export default class ProgramSearch {
 
@@ -30,8 +31,23 @@ export default class ProgramSearch {
 
     }
 
+    autocompleteOnInput() {
+
+        const wordList = JSON.parse( $( '#program-search-words' ).html() );
+        console.log( 'wordList' );
+        console.log( wordList );
+
+        $( '#program-search input[type="search"]' )
+            .autocomplete( {
+                source: wordList,
+                autoFocus: true,
+                // classes: {}
+            } );
+    }
+
     docReady() {
         this.programSearch();
+        this.autocompleteOnInput();
     }
 
 }

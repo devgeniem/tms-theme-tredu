@@ -12,6 +12,7 @@ form {
     select,
     input,
     textarea {
+        font-family: $family-secondary;
         line-height: 1;
         padding: $theme-spacing-half;
         border: 1px solid $secondary;

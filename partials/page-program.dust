@@ -7,12 +7,16 @@
                 
                 <h1 class="h1">{Strings.s.program.search.search_studies|s}</h1>
 
+                {?page_description}
+                    <p class="has-text-black mb-6">{page_description}</p>
+                {/page_description}
+
                 {>"ui/program-search-filters" /}
 
                 <div class="program-list">
                     {#results.posts}
                         <a href="{permalink|s}" aria-label="{post_title|s}">
-                            <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold has-height-100">
+                            <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold has-height-100 is-family-secondary">
                                 <div class="columns has-width-100 mt-0 mr-0 mb-0 ml-0">
 
                                     <div class="column is-5 program-list__image-container is-relative image is-3by2-until-desktop">
@@ -55,10 +59,13 @@
                                                 {/location}
                                             </div>
 
-                                            
+                                            {?degree_type}
                                             <div class="column is-narrow">
-                                                <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">Tutkintotyyppi</span>
+                                                <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">
+                                                    {degree_type}
+                                                </span>
                                             </div>
+                                            {/degree_type}
 
                                             <div class="column">
                                             {?fields.apply_end}

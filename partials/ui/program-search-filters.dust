@@ -3,7 +3,7 @@
         <div class="column is-12">
                 <div class="columns is-multiline">
                     <div class="column is-two-fifths search-form is-flex is-flex-wrap-wrap is-align-items-center ui-front">
-                        <label class="mr-2">
+                        <label class="mr-2 has-width-100">
                             <span class="is-sr-only"> {Strings.s.search.write_search_terms|s} </span>
                             <input type="search" 
                                 class="search-form__input has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
@@ -18,7 +18,7 @@
                                 class="is-checkradio" value="true"
                                 id="{search.checkbox_search_name|s}"
                                 {?search.only_ongoing}checked{/search.only_ongoing}>
-                        <label class="is-block mr-4 ml-0 mb-2 has-text-weight-semibold" for="{search.checkbox_search_name|s}">
+                        <label class="is-block mr-4 ml-0 mb-2 has-text-weight-semibold has-text-black" for="{search.checkbox_search_name|s}">
                             {Strings.s.program.search.show_only_ongoing}
                         </label>
                     </div>
@@ -55,7 +55,7 @@
 
      <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between is-align-items-center pt-4 pb-4">
         {?results.summary}
-            <p role="status" class="has-text-weight-semibold">{results.summary|s}</p>
+            <p role="status" class="has-text-weight-semibold has-text-black">{results.summary|s}</p>
         {/results.summary}
         {?filters}
             <div id="active-filters" class="is-flex-grow-1 pt-4 pb-4 pl-6 pr-6">
@@ -64,7 +64,7 @@
                     {?active}
                     <button type="button" class="remove-filter is-inline-flex is-align-items-center pt-2 pl-2 pr-3 pb-2 has-background-light-blueishgray
                         has-border-radius-large has-line-height-1 has-text-weight-semibold 
-                        has-text-primary has-text-small has-border-0">
+                        has-text-primary has-text-small has-border-0 is-family-secondary">
                         {>"ui/icon" icon="remove" class="icon--large mr-1" /}
                         <span>{name}</span>
                         <input type="hidden" name="{query_var|s}[]" value="{term_id}" />
@@ -75,7 +75,7 @@
             </div>
         {/filters}
         <div class="is-flex is-justify-content-end is-flex-grow-1">
-            <a class="is-inline-flex is-align-items-center pill is-primary pr-4 pl-4 pt-3 pb-3 mt-4 mb-4" href="{search.new_search_link}">
+            <a class="is-inline-flex is-align-items-center pill has-border-radius-small is-primary pr-4 pl-4 pt-3 pb-3 mt-4 mb-4 ml-auto" href="{search.new_search_link}">
                 {Strings.s.program.search.commit_new_search}
                 {>"ui/icon" icon="update" class="icon--medium ml-2" /}
             </a>

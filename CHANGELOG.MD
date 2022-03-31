@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-699: Image banner #10
+- TMS-700: Header notice #8
 - TMS-679: Enable map layout & block #11
 - TMS-665: Add article archive.
 - TMS-760: Add default filter image filter for material images #7

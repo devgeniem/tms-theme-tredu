@@ -13,7 +13,7 @@
             position: absolute;
             width: 9rem;
             height: 9rem;
-            background-image: url('images/hero-stripes.svg');
+            background-image: url('../images/hero-stripes.svg');
             background-repeat: no-repeat;
 
             @include from($widescreen) {

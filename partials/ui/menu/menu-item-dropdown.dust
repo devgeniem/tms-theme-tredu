@@ -13,7 +13,7 @@
                 <span class="is-sr-only">{data.open_menu|s}</span>
                 {Strings.s}
 
-                <span aria-hidden="true">
+                <span aria-hidden="true" class="is-flex is-flex-direction-row is-align-items-center">
                     {>"ui/icon" icon="chevron-down" class="icon--medium" /}
                 </span>
             </button>

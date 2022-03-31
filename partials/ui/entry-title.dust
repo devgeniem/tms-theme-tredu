@@ -2,4 +2,11 @@
     <h1 class="entry__title{?class} {class}{/class}">
         {@title /}
     </h1>
+    {:else}
+        {^Page.use_overlay}
+            <h1 class="entry__title{?class} {class}{/class}">
+                {@title /}
+            </h1>
+        {/Page.use_overlay}
 {/hero_image}
+

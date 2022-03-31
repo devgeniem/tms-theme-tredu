@@ -48,11 +48,13 @@ class Strings extends \DustPress\Model {
                 'open_lang_nav'            => _x( 'Open language navigation', 'theme-frontend', 'tms-theme-tredu' ),
                 'current_lang'             => _x( 'Current language: ', 'theme-frontend', 'tms-theme-tredu' ),
                 'search'                   => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
-                'search_title'             => _x( 'Search', 'theme-frontend', 'tms-theme-tredu' ),
+                'search_from_site'         => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
+                'search_title'             => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_input_label'       => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'search_input_placeholder' => _x( 'Search from site', 'theme-frontend', 'tms-theme-tredu' ),
                 'exception_close_button'   => _x( 'Close', 'theme-frontend', 'tms-theme-tredu' ),
                 'home'                     => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
+                'breadcrumbs'              => _x( 'Breadcrumbs', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             '404'                => [
                 'title'         => _x( 'Page not found', 'theme-frontend', 'tms-theme-tredu' ),
@@ -132,6 +134,7 @@ class Strings extends \DustPress\Model {
             ],
             'sibling_navigation' => [
                 'sibling_navigation' => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
+                'sibling_navigation_heading' => _x( 'You might also be interested in', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'comments'           => [
                 'comments_title' => _x( 'Comments', 'theme-frontend', 'tms-theme-tredu' ),

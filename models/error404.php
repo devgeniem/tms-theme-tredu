@@ -80,7 +80,7 @@ class Error404 extends BaseModel {
             [
                 'title'   => _x( 'Go to search', 'theme-frontend', 'tms-theme-tredu' ),
                 'url'     => "$home_url?s",
-                'classes' => 'is-inverted',
+                'classes' => 'is-primary',
                 'icon'    => 'search',
             ]
         );
@@ -97,7 +97,8 @@ class Error404 extends BaseModel {
             [
                 'title' => _x( 'Return to home', 'theme-frontend', 'tms-theme-tredu' ),
                 'url'   => $this->get_home_url(),
-                'icon'  => 'chevron-right',
+                'classes' => 'is-primary',
+                'icon'  => 'arrow-right',
             ]
         );
     }

@@ -140,9 +140,9 @@ class Footer extends Model {
             'tms/theme/footer/colors',
             [
                 'container'   => 'has-background-primary has-text-primary-invert',
-                'back_to_top' => 'is-primary is-inverted',
+                'back_to_top' => 'is-secondary',
                 'link'        => 'has-text-primary-invert',
-                'link_icon'   => 'is-primary-invert',
+                'link_icon'   => 'has-text-secondary',
             ],
         );
     }

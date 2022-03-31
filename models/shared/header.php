@@ -352,8 +352,8 @@ class Header extends Model {
         return apply_filters(
             'tms/theme/header/colors',
             [
-                'search_button'          => 'is-primary',
-                'search_popup_container' => 'has-background-secondary has-text-secondary-invert',
+                'search_button'          => 'is-secondary is-outlined',
+                'search_popup_container' => 'has-background-light-gray has-text-secondary-invert',
                 'nav'                    => [
                     'container' => 'has-background-white has-text-primary',
                 ],
@@ -361,7 +361,7 @@ class Header extends Model {
                     'inner'            => 'has-background-primary has-text-secondary-invert',
                     'close_menu'       => 'is-primary-invert',
                     'search_title'     => 'has-text-primary-invert',
-                    'search_button'    => 'is-primary is-inverted',
+                    'search_button'    => 'is-secondary',
                     'brand_icon_color' => 'is-primary-invert',
                 ],
                 'lang_nav'               => [

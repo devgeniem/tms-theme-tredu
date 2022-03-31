@@ -70,11 +70,31 @@ class PageExtend extends BaseModel {
     }
 
     /**
+     * Get post siblings heading.
+     *
+     * @return string|false
+     */
+    public function post_siblings_heading() {
+
+        $siblings_heading_setting = Settings::get_setting( 'sibling_navigation_heading' );
+
+        if ( empty( $siblings_heading_setting ) ) {
+            return false;
+        }
+
+        return $siblings_heading_setting;
+
+    }
+
+    /**
      * Use overlay
      *
      * @return bool
      */
     public function use_overlay() {
-        return true;
+
+        $darken_hero = get_field( 'fg_page_hero_fields_page_hero_overlay', get_the_ID() ) ?? true;
+
+        return $darken_hero;
     }
 }

@@ -51,7 +51,7 @@
                                 {Strings.s.header.search_title|s}
                             </div>
 
-                            {>"ui/search-form" button_class="{Header.colors.search_button} mb-2 mb-0-tablet" /}
+                            {>"ui/search-form" button_class="is-primary mb-2 mb-0-tablet" /}
                         </div>
                     </div>
                 </div>

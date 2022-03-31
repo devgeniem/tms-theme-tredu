@@ -154,13 +154,10 @@ class PageGroup {
                 // Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
                 // Layouts\LogoWallLayout::class,
-<<<<<<< HEAD
                 Layouts\MapLayout::class,
                 // Layouts\IconLinksLayout::class,
-=======
                 // Layouts\MapLayout::class,
                 Layouts\IconLinksLayout::class,
->>>>>>> TMS-676
                 // Layouts\SocialMediaLayout::class,
                 // Layouts\ImageCarouselLayout::class,
                 // Layouts\SubpageLayout::class,

@@ -76,10 +76,10 @@ class PageProgram extends BaseModel {
         }, 10, 2 );
 
         add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
-    
+
     }
 
-     /**
+    /**
      * Get posts per page value
      *
      * @return mixed

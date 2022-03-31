@@ -33,12 +33,10 @@ export default class ProgramSearch {
     autocompleteOnInput() {
 
         const wordList = JSON.parse( $( '#program-search-words' ).html() );
-        console.log( 'wordList' );
-        console.log( wordList );
 
         $( '#program-search input[type="search"]' )
             .autocomplete( {
-                minLength: 1,
+                minLength: 3,
                 source: wordList,
                 // autoFocus: true,
                 classes: {

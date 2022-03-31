@@ -8,7 +8,7 @@
             {#filters.categories}
                 <a href="{url}" class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
                     {?is_active}
-                        {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
+                        {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-secondary" /}
                     {/is_active}
 
                     {name|s}
@@ -30,7 +30,7 @@
                     </label>
 
                     <select name="filter-year" id="filter-year"
-                            class="js-trigger-form-submit p-2 has-background-invert has-border-radius-small has-border-gray has-border-1">
+                            class="js-trigger-form-submit p-3 has-border-primary has-border-radius-0 has-border-2 has-text-black">
                         <option value="">{Strings.s.common.all|s}</option>
 
                         {#filters.years}
@@ -47,7 +47,7 @@
                     </label>
 
                     <select name="filter-month" id="filter-month"
-                            class="js-trigger-form-submit p-2 has-border-radius-small has-border-gray has-border-1">
+                            class="js-trigger-form-submit p-3 has-border-primary has-border-radius-0 has-border-2 has-text-black">
                         <option value="">{Strings.s.common.all|s}</option>
                         {#filters.months}
                             <option value="{key}" {is_selected|s}>

@@ -115,4 +115,8 @@ $accent-invert: $primary-invert !default;
     &.is-accent-invert {
         fill: $accent-invert !important; // sass-lint:disable-line no-important
     }
+
+    &.is-secondary {
+        fill: $secondary !important;
+    }
 }

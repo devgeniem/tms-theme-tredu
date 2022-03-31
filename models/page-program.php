@@ -11,6 +11,7 @@ use TMS\Theme\Tredu\Taxonomy\Profession;
 use TMS\Theme\Tredu\Taxonomy\ProgramType;
 use TMS\Theme\Tredu\Taxonomy\EducationalBackground;
 use TMS\Theme\Tredu\Images;
+use TMS\Theme\Tredu\Settings;
 
 /**
  * PageArtwork
@@ -60,11 +61,6 @@ class PageProgram extends BaseModel {
     const FILTER_ONGOING_QUERY_VAR = 'ongoing';
 
     /**
-     * Posts per page
-     */
-    const POSTS_PER_PAGE = 20;
-
-    /**
      * Setup hooks.
      */
     public function hooks() {
@@ -78,6 +74,38 @@ class PageProgram extends BaseModel {
 
             return false;
         }, 10, 2 );
+
+        add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
+    
+    }
+
+     /**
+     * Get posts per page value
+     *
+     * @return mixed
+     */
+    protected static function get_posts_per_page() {
+        return Settings::get_setting( 'programs_per_page' ) ?? 20;
+    }
+
+    /**
+     * Add custom query vars to the list of ignored query vars list for RediPress.
+     *
+     * @param array $vars Ignored query vars.
+     *
+     * @return array
+     */
+    public static function set_ignored_query_vars(
+        array $vars
+    ) : array {
+        $vars[] = self::SEARCH_QUERY_VAR;
+        $vars[] = self::FILTER_PROGRAM_LOCATION_QUERY_VAR;
+        $vars[] = self::FILTER_DELIVERY_METHODS_QUERY_VAR;
+        $vars[] = self::FILTER_PROFESSION_QUERY_VAR;
+        $vars[] = self::FILTER_PROGRAM_TYPE_QUERY_VAR;
+        $vars[] = self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR;
+        $vars[] = self::FILTER_ONGOING_QUERY_VAR;
+        return $vars;
     }
 
     /**
@@ -248,7 +276,7 @@ class PageProgram extends BaseModel {
                 'title'      => 'ASC',
             ],
             'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
-            'posts_per_page' => self::POSTS_PER_PAGE,
+            'posts_per_page' => $this->get_posts_per_page(),
         ];
 
         $only_ongoing = $this->get_ongoing_query_var();
@@ -401,7 +429,7 @@ class PageProgram extends BaseModel {
      * @return void
      */
     protected function set_pagination_data( $wp_query ) : void {
-        $per_page = self::POSTS_PER_PAGE;
+        $per_page = $this->get_posts_per_page();
         $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
         $this->pagination           = new stdClass();

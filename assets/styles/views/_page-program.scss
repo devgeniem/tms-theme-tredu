@@ -17,7 +17,9 @@
 
 #program-search {
     input[type="search"],
-    select {
+    select,
+    button,
+    a {
         &:focus {
             text-decoration: underline;
             outline: .125rem solid $color-black;

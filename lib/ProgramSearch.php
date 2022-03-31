@@ -52,14 +52,14 @@ class ProgramSearch implements Interfaces\Controller {
 
             if ( ! empty( $key_words ) ) {
                 // Clean extra whitespace and remove commas
-                $cleaned_text      = trim( preg_replace( '/[\t\n\r\s]+/', ' ', str_replace( ',', ' ',$key_words ) ) );
+                $cleaned_text      = mb_strtolower( trim( preg_replace( '/[\t\n\r\s]+/', ' ', str_replace( ',', ' ',$key_words ) ) ) );
                 $str_array         = explode( ' ', $cleaned_text );
                 $search_keywords[] = $str_array;
             }
         }
 
-        // Flatten array
-        $search_keywords = array_merge( ...array_values( $search_keywords ) );
+        // Flatten array and remove duplicates
+        $search_keywords = array_unique( array_merge( ...array_values( $search_keywords ) ) );
         // Combine titles and search keywords
         $words = array_merge( $titles, $search_keywords );
 

@@ -11,16 +11,16 @@
             {/prev_page}
             {?hellip_start}
                 <li class="pagination-item">
-                    <a class="pagination-item__link" href="{page_link}1{hash}" data-page="{first_page}">{first_page}</a>
+                    <a class="pagination-item__link is-small is-family-secondary has-text-small has-text-weight-semibold has-border-radius-50" href="{page_link}1{hash}" data-page="{first_page}">{first_page}</a>
                 </li>
 
                 <li class="unavailable" aria-disabled="true">
-                    <a class="pagination-item__link hellip" href="#" tabindex="-1">&hellip;</a>
+                    <a class="pagination-item__link is-small is-family-secondary has-text-secondary hellip" href="#" tabindex="-1">&hellip;</a>
                 </li>
             {/hellip_start}
             {#pages}
-                <li class="pagination-item{?active} is-current unavailable{/active} has-text-weight-semibold">
-                    <a class="pagination-item__link{^active} clickable{/active} is-inline-flex is-align-items-center" href="{page_link}{page}{hash}"
+                <li class="pagination-item{?active} is-current unavailable{/active}">
+                    <a class="pagination-item__link is-small is-family-secondary has-text-small has-text-weight-semibold has-border-radius-50{^active} clickable{/active}" href="{page_link}{page}{hash}"
                        {?active}aria-current="true" {/active}
                        aria-label="{S.page_aria_label|s} {page}"
                        data-page="{page}">
@@ -30,11 +30,11 @@
             {/pages}
             {?hellip_end}
                 <li class="unavailable" aria-disabled="true">
-                    <span class="pagination-item__link hellip" href="#" tabindex="-1">&hellip;</span>
+                    <span class="pagination-item__link is-small is-family-secondary has-text-secondary hellip" href="#" tabindex="-1">&hellip;</span>
                 </li>
 
                 <li class="pagination-item">
-                    <a class="pagination-item__link" href="{page_link}{last_page}{hash}" data-page="{last_page}">
+                    <a class="pagination-item__link is-small is-family-secondary has-text-small has-text-weight-semibold has-border-radius-50" href="{page_link}{last_page}{hash}" data-page="{last_page}">
                         {last_page}
                     </a>
                 </li>

@@ -1,4 +1,4 @@
-$pill-background-color: $secondary !default;
+$pill-background-color: $secondary-light !default;
 $pill-color: $secondary-invert !default;
 $pill-color-active: $primary-invert !default;
 $pill-color-active-hover: $primary-invert !default;
@@ -6,13 +6,12 @@ $pill-color-hover: $secondary-invert !default;
 $pill-background-active: $primary !default;
 
 $pill-background-active-focus: $primary-dark !default;
-$pill-background-color-hover: opacify($secondary-light, .75) !default;
-$pill-background-color-focus: $secondary-light !default;
+$pill-background-color-hover: $color-light-blueishgray !default;
+$pill-background-color-focus: $color-light-blueishgray !default;
 $pill-background-color-active: $dark !default;
-$pill-background-color-focus: $dark !default;
 $pill-border-color: transparent !default;
 $pill-border-color-hover: transparent !default;
-$pill-border-radius: $theme-spacing-quarter !default;
+$pill-border-radius: 55px !default;
 $pill-border-color-focus: $black !default;
 $pill-default-border-color-focus: transparent !default;
 
@@ -31,9 +30,9 @@ $pill-hover-shadow-size: 0 4px 8px !default;
 $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
 
 .pill {
-    font-family: $family-secondary;
     font-size: 85%;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: $font-family-header;
     line-height: 1.1;
     display: inline-block;
     padding: $theme-spacing-half $theme-spacing-three-quarters;
@@ -43,10 +42,12 @@ $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
     border-radius: $pill-border-radius;
 
     &:not(span) {
-        &.is-active,
-        &:focus,
-        &:hover {
-            text-decoration: none;
+        &.is-active {
+            &,
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
         }
 
         &:focus,

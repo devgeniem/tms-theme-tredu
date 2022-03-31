@@ -42,7 +42,7 @@ class ArchiveSettingsTab extends Tab {
         'program_post_per_page' => [
             'title' => 'Koulutusten määrä per sivu',
             'instructions' => '',
-        ]
+        ],
     ];
 
     /**
@@ -95,7 +95,7 @@ class ArchiveSettingsTab extends Tab {
                 ->set_max( 30 )
                 ->set_default_value( 20 )
                 ->set_wrapper_width( 50 )
-                ->set_instructions( $strings['program_post_per_page']['instructions'] );    
+                ->set_instructions( $strings['program_post_per_page']['instructions'] );
 
             $this->add_fields( [
                 $use_images_field,

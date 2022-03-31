@@ -384,6 +384,10 @@ class PageProgram extends BaseModel {
                 }
             }
 
+            // Replace this when degree type done
+            $degree_type = $this->strings()['program']['degree-type'];
+            $item->degree_type = $degree_type;
+            
             return $item;
         }, $posts );
     }

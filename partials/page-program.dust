@@ -59,10 +59,13 @@
                                                 {/location}
                                             </div>
 
-                                            
+                                            {?degree_type}
                                             <div class="column is-narrow">
-                                                <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">Tutkintotyyppi</span>
+                                                <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">
+                                                    {degree_type}
+                                                </span>
                                             </div>
+                                            {/degree_type}
 
                                             <div class="column">
                                             {?fields.apply_end}

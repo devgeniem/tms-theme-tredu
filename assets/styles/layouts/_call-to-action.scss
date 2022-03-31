@@ -4,6 +4,12 @@
             .call-to-action__title {
                 color: $primary-invert;
             }
+
+            .button {
+                &:focus {
+                    outline-color: $white;
+                }
+            }
         }
 
         &.has-colors-primary-light {

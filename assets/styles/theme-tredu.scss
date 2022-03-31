@@ -10,13 +10,14 @@ $color-green: #ABC872;
 $color-red: #EB5E58;
 $color-dark-blue: #042546;
 $color-blue: #06B3EF;
+$color-semidark-blue: #0099CC;
 $color-dark-grey: #626E7A;
 $color-grey: #C9D5DB;
 $color-trout: #525C65;
 
 $primary: $color-dark-blue;
 $primary-invert: $color-white;
-$primary-light: bulmaLighten($primary, 15);
+$primary-light: $color-light-blueishgray;
 $primary-light-invert: $color-white;
 $primary-dark: bulmaDarken($primary, 15);
 $primary-dark-invert: $color-white;
@@ -38,8 +39,8 @@ $divider-invert: $color-dark-grey;
 $text: #525C65;
 $link: $primary;
 
-$colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
-$colors-palette-secondary: ($secondary, $secondary-invert, $secondary-dark, $secondary-light);
+$colors-palette-primary: ($primary, $primary-invert, $primary-light, $primary-dark);
+$colors-palette-secondary: ($secondary, $secondary-invert, $secondary-light, $secondary-dark);
 
 $colors: (
     "primary": $colors-palette-primary,

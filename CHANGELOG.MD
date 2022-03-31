@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-700: Header notice #8
+- TMS-676: Icon links #12
 - TMS-665: Add article archive.
 - TMS-760: Add default filter image filter for material images #7
 - TMS-672: 404 Page styles

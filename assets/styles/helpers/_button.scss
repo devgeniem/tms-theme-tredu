@@ -88,6 +88,16 @@ $button-transition-speed: $speed !default;
 
         &.is-outlined {
             color: $primary;
+
+            &.is-inverted {
+                color: $white !important;
+                background-color: $color-dark-blue !important;
+                border-color: $color-blue !important;
+
+                .icon {
+                    fill: $color-blue !important;
+                }
+            }
         }
 
         .icon {

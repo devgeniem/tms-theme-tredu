@@ -65,6 +65,22 @@ class PageProgram extends BaseModel {
     const POSTS_PER_PAGE = 20;
 
     /**
+     * Setup hooks.
+     */
+    public function hooks() {
+        add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
+            unset( $formatted, $original, $object );
+            return [];
+        }, 10, 3 );
+
+        add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', function ( $status, $context ) {
+            unset( $context, $status );
+
+            return false;
+        }, 10, 2 );
+    }
+
+    /**
      * Get search query var value
      *
      * @return mixed
@@ -152,7 +168,7 @@ class PageProgram extends BaseModel {
      * @return string
      */
     public function page_description() : string {
-        return get_field( 'description' ) ?? '';
+        return get_field( 'page_program_description' ) ?? '';
     }
 
     /**

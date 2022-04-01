@@ -101,9 +101,9 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'         => [],
-            'core/template'      => [],
-            'core/list'          => [
+            'core/block'       => [],
+            'core/template'    => [],
+            'core/list'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -138,6 +138,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                 ],
             ],
+            'acf/quote'        => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
             // 'acf/key-figures'    => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
@@ -146,13 +153,6 @@ class BlocksController implements Interfaces\Controller {
             //     ],
             // ],
             // 'acf/link-list'      => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/quote'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
@@ -234,7 +234,7 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //     ],
             // ],
-            'acf/map' => [
+            'acf/map'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

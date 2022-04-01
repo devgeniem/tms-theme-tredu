@@ -1,8 +1,8 @@
-<div class="link-list is-relative mt-8 mb-8 p-8 has-background-secondary has-text-secondary-invert">
+<div class="link-list is-relative mt-8 mb-8 p-8 has-background-primary has-text-primary-invert">
     {>"shared/layout-before-main-content" /}
 
     {?title}
-        <h2 class="link-list__title h5 mt-0 mb-6">
+        <h2 class="link-list__title h3 mt-0 mb-6 has-text-primary-invert">
             {title|s}
         </h2>
     {/title}
@@ -17,13 +17,14 @@
         <ul class="link-list__links is-unstyled mt-6 keep-vertical-spacing">
             {#links}
                 <li class="mb-2">
-                    <a href="{link.url}" target="{link.target}" class="is-flex is-align-items-center">
-                        {>"ui/icon" icon="chevron-right" class="icon--small is-primary mr-2" /}
+                    <a href="{link.url}" target="{link.target}"
+                       class="is-flex is-align-items-center has-text-primary-invert">
+                        {>"ui/icon" icon="arrow-right" class="icon--small is-secondary mr-2" /}
 
                         <span>{link.title|s}</span>
 
                         {?link.is_external}
-                            {>"ui/icon" icon="external" class="icon--medium is-primary ml-1" /}
+                            {>"ui/icon" icon="external" class="icon--medium is-secondary ml-1" /}
                         {/link.is_external}
                     </a>
                 </li>

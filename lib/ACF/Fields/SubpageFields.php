@@ -67,10 +67,9 @@ class SubpageFields extends \Geniem\ACF\Field\Group {
             ->set_key( "${key}_background_color" )
             ->set_name( 'background_color' )
             ->set_choices( [
-                'black'     => 'Musta',
-                'white'     => 'Valkoinen',
-                'primary'   => 'Pääväri',
-                'secondary' => 'Toissijainen väri',
+                'black'   => 'Musta',
+                'white'   => 'Valkoinen',
+                'primary' => 'Pääväri',
             ] )
             ->set_default_value( 'has-background-black' )
             ->set_wrapper_width( 50 )

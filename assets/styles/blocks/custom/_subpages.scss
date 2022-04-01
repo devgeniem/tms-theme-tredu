@@ -13,5 +13,28 @@
         &:focus {
             @extend .button-state-focus;
         }
+
+        &.has-background-primary {
+            &:hover,
+            &:focus {
+                background-color: $primary !important;
+            }
+        }
+
+        &.has-background-white {
+            border: .25rem solid $color-blue;
+
+            .icon {
+                fill: $color-blue !important;
+            }
+        }
+    }
+
+    h3 {
+        color: inherit;
+    }
+
+    .has-background-black {
+        color: $white !important;
     }
 }

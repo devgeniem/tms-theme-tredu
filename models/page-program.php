@@ -381,7 +381,8 @@ class PageProgram extends BaseModel {
                     $item->fields['apply_end'] = $item->fields['apply_info'];
                 }
                 else if ( ! empty( $item->fields['apply_end'] ) ) {
-                    $item->fields['apply_end'] = date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) );
+                    $item->fields['apply_end'] =  $this->strings()['program']['application-period-ends'] . ' ' . date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) ); // phpcs:ignore
+                    
                 }
             }
 
@@ -453,7 +454,7 @@ class PageProgram extends BaseModel {
             $count_posts = wp_count_posts( Program::SLUG )->publish;
         }
 
-        $shown_txt   = $this->strings()['program']['search']['results_shown'];
+        $shown_txt = $this->strings()['program']['search']['results_shown'];
 
         $results_text = sprintf( '%1$s %2$s / %3$s',
             $shown_txt,

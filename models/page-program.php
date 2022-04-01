@@ -449,6 +449,14 @@ class PageProgram extends BaseModel {
     protected function results_summary( $result_count ) {
 
         $count_posts = wp_count_posts( Program::SLUG )->publish;
+        if ( function_exists( 'pll_count_posts' ) ) {
+            $count_posts = pll_count_posts( pll_current_language(),
+            [ 'post_type' => Program::SLUG ] );
+        }
+        else {
+            $count_posts = wp_count_posts( Program::SLUG )->publish;
+        }
+
         $shown_txt   = $this->strings()['program']['search']['results_shown'];
 
         $results_text = sprintf( '%1$s %2$s / %3$s',

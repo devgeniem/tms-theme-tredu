@@ -76,21 +76,16 @@ class QuoteBlock extends BaseBlock {
      * @return array The block data.
      */
     public function filter_data( $data, $instance, $block, $content, $is_preview, $post_id ) : array {
+        $background_color = $data['background_color'] ?? 'white';
+
         $classes = [
             'container' => [
-                'has-background-secondary',
-                'has-text-secondary-invert',
+                "has-background-$background_color",
                 'mt-9',
                 'mb-9',
             ],
-            'quote'     => [
-                'is-family-secondary',
-                'has-text-weight-medium',
-                'is-size-5',
-                is_singular( [ Page::SLUG, Post::SLUG, BlogArticle::SLUG ] ) ? 'is-size-1' : 'is-size-5',
-            ],
             'author'    => [
-                'has-text-weight-medium',
+                'has-text-weight-semibold',
                 'is-family-secondary ',
             ],
         ];

@@ -107,3 +107,5 @@ import './vkontakte.svg';
 import './whatsapp.svg';
 import './update.svg';
 import './remove.svg';
+import './place.svg';
+import './date-range.svg';

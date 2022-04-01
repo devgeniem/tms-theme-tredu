@@ -35,7 +35,7 @@
                                     <div class="column is-7 has-background-light-gray pl-4 pr-4">
                                         <div class="inner columns is-multiline has-text-primary m-0">
 
-                                            <div class="column is-12 pt-0 pb-0">
+                                            <div class="column is-12 pt-0">
                                                 {?post_title}
                                                     <h2 class="h5 mt-4 mb-1 has-line-height-tight">
                                                         {post_title|s}
@@ -47,25 +47,19 @@
                                                 {/fields.program_name}
                                             </div>
 
-                                            <div class="column is-6">
+                                            <div class="column is-6 is-flex is-align-items-center">
                                                 {?fields.start_date}
-                                                    <span class="is-inline-block has-text-small has-line-height-tight">{fields.start_date|s}</span>
+                                                  {>"ui/icon" icon="date-range" class="icon--xlarge is-primary mr-2"  /}
+                                                    <span class="is-inline-block has-text-small has-line-height-1">{fields.start_date|s}</span>
                                                 {/fields.start_date}
                                             </div>
 
-                                            <div class="column is-6">
+                                            <div class="column is-6 is-flex is-align-items-center">
                                                 {?location}
-                                                    <span class="is-inline-block has-text-small has-line-height-tight">{location|s}</span>
+                                                {>"ui/icon" icon="place" class="icon--xlarge is-primary mr-2"  /}
+                                                    <span class="is-inline-block has-text-small has-line-height-1">{location|s}</span>
                                                 {/location}
                                             </div>
-
-                                            {?degree_type}
-                                            <div class="column is-narrow">
-                                                <span class="is-inline-block has-background-secondary has-text-small has-text-primary is-uppercase has-line-height-1 p-2">
-                                                    {degree_type}
-                                                </span>
-                                            </div>
-                                            {/degree_type}
 
                                             <div class="column">
                                             {?fields.apply_end}

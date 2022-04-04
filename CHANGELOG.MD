@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-687: Quote block #20
 - TMS-689: Add link list #21
 - TMS-690: Add subpages #22
+- TMS-686: Accordion block
 - TMS-699: Image banner #10
 - TMS-700: Header notice #8
 - TMS-735: Program Search

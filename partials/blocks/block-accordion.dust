@@ -21,7 +21,7 @@
                                     class="accordion__title-button is-flex is-align-items-center pt-5 pb-5 pr-4 pl-4 pr-6-tablet pl-6-tablet has-background-transparent"
                                     aria-expanded="false"
                                     aria-controls="accordion-content-{ID}">
-                                <span class="accordion__row-title-text h6 has-text-left has-text-paragraph">
+                                <span class="accordion__row-title-text h6 has-text-left has-text-black">
                                     {section_title|s}
                                 </span>
 

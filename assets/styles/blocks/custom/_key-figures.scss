@@ -1,0 +1,59 @@
+.key-figures {
+    &__number {
+        font-family: $family-tertiary;
+
+        &.is-text-huge {
+            @include from($widescreen) {
+                font-size: 9.6875rem !important;
+            }
+        }
+
+        &.is-text-bigger {
+            @include from($widescreen) {
+                font-size: 7.75rem !important;
+            }
+        }
+    }
+
+    &__description {
+        letter-spacing: .05rem;
+    }
+
+    &__row {
+        &--light {
+            background-color: $color-light-blueishgray;
+            color: $color-blue;
+
+            .key-figures__description {
+                color: $text;
+            }
+        }
+
+        &--accent {
+            background-color: $color-green;
+            color: $color-black;
+
+            .key-figures__description {
+                color: $text;
+            }
+        }
+
+        &--primary {
+            background-color: $primary;
+            color: $color-blue;
+
+            .key-figures__description {
+                color: $color-white;
+            }
+        }
+
+        &--secondary {
+            background-color: $secondary;
+            color: $color-white;
+
+            .key-figures__description {
+                color: $color-black;
+            }
+        }
+    }
+}

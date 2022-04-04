@@ -2,12 +2,27 @@
     &.has-background-primary {
         .quote__content {
             color: $color-blue;
-            font-size: $size-3;
             font-family: $family-secondary;
+            font-size: $size-3;
+            letter-spacing: -.03em;
             line-height: 1.5;
-            letter-spacing: -0.03em;
+
+            > p {
+                &::before,
+                &::after {
+                    content: "“";
+                }
+
+                &::before {
+                    margin-right: .25ch;
+                }
+
+                &::after {
+                    margin-left: .25ch;
+                }
+            }
         }
-        
+
         .quote__author {
             color: $color-light-blueishgray;
         }
@@ -15,11 +30,11 @@
 
     &.has-background-white {
         .quote__content {
-            color: $color-blue;
-            font-size: $size-1;
+            color: $color-blue-semidark;
             font-family: $family-tertiary;
+            font-size: $size-1;
+            letter-spacing: -.03em;
             line-height: 1;
-            letter-spacing: -0.03em;
         }
     }
 
@@ -29,6 +44,6 @@
 
     &__author {
         font-size: .9rem;
-        letter-spacing: 0.05rem;
+        letter-spacing: .05rem;
     }
 }

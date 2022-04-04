@@ -10,6 +10,7 @@ $color-green: #ABC872;
 $color-red: #EB5E58;
 $color-dark-blue: #042546;
 $color-blue: #06B3EF;
+$color-blue-semidark: #0099CC;
 $color-dark-grey: #626E7A;
 $color-grey: #C9D5DB;
 $color-trout: #525C65;
@@ -25,7 +26,7 @@ $secondary: $color-blue;
 $secondary-invert: $color-dark-blue;
 $secondary-light: $color-light-gray;
 $secondary-light-invert: $color-dark-blue;
-$secondary-dark: bulmaDarken($secondary, 10);
+$secondary-dark: $color-blue-semidark;
 $secondary-dark-invert: $color-dark-blue;
 
 $light: $primary-light;

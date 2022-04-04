@@ -35,10 +35,6 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
      * @return array
      */
     public function format( array $layout ) : array {
-        $button_classes = [ 'mt-4' ];
-        $box_classes    = [
-            'is-' . $layout['align'],
-        ];
 
         if ( $layout['use_box'] && $this->has_filled_text_fields( $layout ) ) {
             $layout['container_class'] = 'hero--box';
@@ -53,9 +49,6 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             $box_classes[]         = 'has-text-white';
             $button_classes[]      = 'is-primary';
         }
-
-        $layout['button_classes'] = implode( ' ', $button_classes );
-        $layout['box_classes']    = implode( ' ', $box_classes );
 
         return $layout;
     }

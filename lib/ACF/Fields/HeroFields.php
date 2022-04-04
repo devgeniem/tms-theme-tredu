@@ -45,10 +45,6 @@ class HeroFields extends \Geniem\ACF\Field\Group {
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
-            'video'       => [
-                'label'        => 'Videon URL',
-                'instructions' => '',
-            ],
             'title'       => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
@@ -80,43 +76,22 @@ class HeroFields extends \Geniem\ACF\Field\Group {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['image']['instructions'] );
 
-        $video_field = ( new Field\URL( $strings['video']['label'] ) )
-            ->set_key( "${key}_video" )
-            ->set_name( 'video' )
-            ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['video']['instructions'] );
-
         $title_field = ( new Field\Text( $strings['title']['label'] ) )
             ->set_key( "${key}_title" )
             ->set_name( 'title' )
+            ->set_maxlength( 90 )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['title']['instructions'] );
 
         $description_field = ( new Field\Textarea( $strings['description']['label'] ) )
             ->set_key( "${key}_description" )
             ->set_name( 'description' )
+            ->set_maxlength( 200 )
             ->set_rows( 4 )
             ->set_new_lines( 'wpautop' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['description']['instructions'] );
 
-        $link_field = ( new Field\Link( $strings['link']['label'] ) )
-            ->set_key( "${key}_link" )
-            ->set_name( 'link' )
-            ->set_wrapper_width( 40 )
-            ->set_instructions( $strings['link']['instructions'] );
-
-        $align_field = ( new Field\Select( $strings['align']['label'] ) )
-            ->set_key( "${key}_align" )
-            ->set_name( 'align' )
-            ->set_choices( [
-                'left'   => 'Vasen',
-                'right'  => 'Oikea',
-                'center' => 'Keskitetty',
-            ] )
-            ->set_default_value( 'has-text-centered-desktop' )
-            ->set_wrapper_width( 30 )
-            ->set_instructions( $strings['align']['instructions'] );
 
         $use_box_field = ( new Field\TrueFalse( $strings['use_box']['label'] ) )
             ->set_key( "${key}_use_box" )
@@ -125,14 +100,32 @@ class HeroFields extends \Geniem\ACF\Field\Group {
             ->set_wrapper_width( 30 )
             ->set_instructions( $strings['use_box']['instructions'] );
 
+        $link_field = ( new Field\Link( $strings['link']['label'] ) )
+            ->set_key( "${key}_link" )
+            ->set_name( 'link' )
+            ->set_wrapper_width( 40 )
+            ->set_instructions( $strings['link']['instructions'] );
+
+        $rows_field = ( new Field\Repeater( 'Repeateri' ) )
+            ->set_key( "${key}_rows" )
+            ->set_name( 'rows' )
+            ->set_min( 0 )
+            ->set_max( 4 )
+            ->set_layout( 'block' )
+            ->set_button_label( 'Buttoni' )
+            ->set_instructions('ohjeet' );
+
+        $rows_field->add_fields( [
+                $link_field
+            ] );
+    
+
         return [
             $image_field,
-            $video_field,
             $title_field,
             $description_field,
-            $link_field,
-            $align_field,
             $use_box_field,
+            $rows_field,
         ];
     }
 }

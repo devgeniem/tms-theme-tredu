@@ -21,8 +21,8 @@
 
     &__row {
         &--light {
-            background-color: $color-light-blueishgray;
-            color: $color-blue;
+            background-color: #EFF6FF;
+            color: $color-semidark-blue;
 
             .key-figures__description {
                 color: $color-black;
@@ -40,7 +40,7 @@
 
         &--primary {
             background-color: $primary;
-            color: $color-blue;
+            color: $color-semidark-blue;
 
             .key-figures__description {
                 color: $color-white;
@@ -48,7 +48,7 @@
         }
 
         &--secondary {
-            background-color: $secondary;
+            background-color: $color-semidark-blue;
             color: $color-white;
 
             .key-figures__description {

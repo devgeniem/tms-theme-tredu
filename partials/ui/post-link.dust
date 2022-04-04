@@ -5,5 +5,5 @@
 
     <h3 class="h6 m-0 is-relative">{title|s}</h3>
 
-    {>"ui/icon" icon="chevron-right" class="icon--large is-relative ml-4 ml-8-desktop icon--medium {icon_classes|s}" /}
+    {>"ui/icon" icon="arrow-right" class="icon--large is-relative ml-4 ml-8-desktop icon--medium {icon_classes|s}" /}
 </a>

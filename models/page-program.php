@@ -382,7 +382,6 @@ class PageProgram extends BaseModel {
                 }
                 else if ( ! empty( $item->fields['apply_end'] ) ) {
                     $item->fields['apply_end'] =  $this->strings()['program']['application-period-ends'] . ' ' . date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) ); // phpcs:ignore
-                    
                 }
             }
 

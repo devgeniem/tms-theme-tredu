@@ -37,13 +37,10 @@
                     {#filters}
                     <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
                         <div class="select-wrapper is-relative">
-                        <label>
-                            <span class="is-sr-only">
-                            {Strings.s.program.search.filter_instructions}
-                            </span>
+                        <label aria-label="{Strings.s.program.search.add_filter|s} {name|s} {Strings.s.program.search.and_commit_new_search|s}">
                             <select name="{query_var}[]" 
                             class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black has-line-height-tight p-3">
-                                <option selected="true" value="" class="has-text-black">{name}</option>
+                                <option selected="true" value="" class="has-text-black">{name|s}</option>
                                 {#terms}
                                     {^active}
                                         <option value="{term_id}" class="has-text-black">{name|s}</option>
@@ -62,7 +59,7 @@
 
      <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between is-align-items-center pt-4 pb-4">
         {?results.summary}
-            <p role="status" class="has-text-weight-semibold has-text-black" aria-label="{results.summary|s}" tabindex="0">{results.summary|s}</p>
+            <p role="status" class="has-text-weight-semibold has-text-black" aria-label="{results.summary|s}">{results.summary|s}</p>
         {/results.summary}
         {?filters}
             <div id="active-filters" class="is-flex-grow-1 pt-4 pb-4 pl-6 pr-6">

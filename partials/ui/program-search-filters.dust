@@ -37,9 +37,12 @@
                     {#filters}
                     <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
                         <div class="select-wrapper is-relative">
+                        <label>
+                            <span class="is-sr-only">
+                            {Strings.s.program.search.filter_instructions}
+                            </span>
                             <select name="{query_var}[]" 
-                            class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black has-line-height-tight p-3"
-                            aria-label="{Strings.s.program.search.select|s} {name|s}">
+                            class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black has-line-height-tight p-3">
                                 <option selected="true" value="" class="has-text-black">{name}</option>
                                 {#terms}
                                     {^active}
@@ -47,6 +50,7 @@
                                     {/active}
                                 {/terms}
                             </select>
+                            </label>
                             {>"ui/icon" icon="chevron-down" class="icon--medium is-black is-absolute" /}
                         </div>
                     </div>

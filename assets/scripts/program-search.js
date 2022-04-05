@@ -37,6 +37,7 @@ export default class ProgramSearch {
         const noResultsStr = strings.home.no_results;
         const resultsStr = strings.program.search.results;
         const resultStr = strings.program.search.result;
+        const navWithKeyStr = strings.program.search.key_to_navigate;
         $( '#program-search input[type="search"]' )
             .autocomplete( {
                 minLength: 3,
@@ -48,7 +49,7 @@ export default class ProgramSearch {
                 messages: {
                     noResults: noResultsStr,
                     results: ( count ) => {
-                        return count + ( count > 1 ? ' ' + resultsStr : ' ' + resultStr );
+                        return count + ( count > 1 ? ' ' + resultsStr : ' ' + resultStr ) + ', ' + navWithKeyStr;
                     },
                 },
             } );

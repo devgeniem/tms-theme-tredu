@@ -156,6 +156,7 @@ class PageGroup {
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
                 Layouts\ImageBannerLayout::class,
+                Layouts\GridLayout::class,
                 // Layouts\CallToActionLayout::class,
                 // Layouts\ImageBannerLayout::class,
                 Layouts\CallToActionLayout::class,
@@ -169,7 +170,6 @@ class PageGroup {
                 // Layouts\ImageCarouselLayout::class,
                 Layouts\SubpageLayout::class,
                 // Layouts\TextBlockLayout::class,
-                // Layouts\GridLayout::class,
                 // Layouts\EventsLayout::class,
                 // Layouts\ArticlesLayout::class,
                 // Layouts\BlogArticlesLayout::class,

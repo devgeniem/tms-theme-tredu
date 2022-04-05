@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-693: Grid
+
+## [2022-04-04] - 0.2.0
+
 ### Added
 
 - TMS-700: Header notice #8

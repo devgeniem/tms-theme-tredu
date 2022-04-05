@@ -17,7 +17,8 @@
         {/description}
 
         {?link}
-            <a href="{link.url}" target="{link.target}" class="button is-small has-width-fit-content is-primary ml-0 mt-4 mt-5-tablet">{link.title}</a>
+
+            {>"ui/button-link" classes="is-secondary has-width-fit-content ml-0 mt-4 mt-5-tablet" icon="arrow-right" icon_classes="icon--medium is-primary-invert"  /}
         {/link}
     </div>
 </div>

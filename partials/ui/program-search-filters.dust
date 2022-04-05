@@ -37,12 +37,12 @@
                     {#filters}
                     <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
                         <select name="{query_var}[]" 
-                        class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold"
+                        class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black"
                         aria-label="{Strings.s.program.search.select|s} {name|s}">
-                            <option selected="true" value="" class="has-text-primary">{name}</option>
+                            <option selected="true" value="" class="has-text-black">{name}</option>
                             {#terms}
                                 {^active}
-                                    <option value="{term_id}" class="has-text-primary">{name|s}</option>
+                                    <option value="{term_id}" class="has-text-black">{name|s}</option>
                                 {/active}
                             {/terms}
                         </select>
@@ -55,7 +55,7 @@
 
      <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between is-align-items-center pt-4 pb-4">
         {?results.summary}
-            <p role="status" class="has-text-weight-semibold has-text-black">{results.summary|s}</p>
+            <p role="status" class="has-text-weight-semibold has-text-black" aria-label="{results.summary|s}" tabindex="0">{results.summary|s}</p>
         {/results.summary}
         {?filters}
             <div id="active-filters" class="is-flex-grow-1 pt-4 pb-4 pl-6 pr-6">
@@ -66,6 +66,7 @@
                         has-border-radius-large has-line-height-1 has-text-weight-semibold 
                         has-text-primary has-text-small has-border-0 is-family-secondary">
                         {>"ui/icon" icon="remove" class="icon--large mr-1" /}
+                        <span class="is-sr-only">{Strings.s.program.search.remove_filter|s}</span>
                         <span>{name}</span>
                         <input type="hidden" name="{query_var|s}[]" value="{term_id}" />
                     </button>    

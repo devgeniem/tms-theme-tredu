@@ -172,6 +172,25 @@
                 margin-left: auto;
             }
         }
+
+        .search-form {
+
+            &__input {
+                border-width: 2px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: .25rem;
+                border-bottom-left-radius: .25rem;
+            }
+
+            &__button {
+                border-width: 2px;
+                border-top-right-radius: .25rem;
+                border-bottom-right-radius: .25rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
     }
 }
 

@@ -33,15 +33,24 @@ export default class ProgramSearch {
     autocompleteOnInput() {
 
         const wordList = JSON.parse( $( '#program-search-words' ).html() );
-
+        const strings = window.s;
+        const noResultsStr = strings.home.no_results;
+        const resultsStr = strings.program.search.results;
+        const resultStr = strings.program.search.result;
+        const navWithKeyStr = strings.program.search.key_to_navigate;
         $( '#program-search input[type="search"]' )
             .autocomplete( {
                 minLength: 3,
                 source: wordList,
-                // autoFocus: true,
                 classes: {
                     // eslint-disable-next-line max-len
                     'ui-autocomplete': 'has-background-white has-border-primary has-border-2 is-absolute is-unstyled p-3 has-text-weight-semibold',
+                },
+                messages: {
+                    noResults: noResultsStr,
+                    results: ( count ) => {
+                        return count + ( count > 1 ? ' ' + resultsStr : ' ' + resultStr ) + ', ' + navWithKeyStr;
+                    },
                 },
             } );
     }

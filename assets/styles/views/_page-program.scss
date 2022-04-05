@@ -26,5 +26,20 @@
             outline-offset: .25rem;
             box-shadow: 0 0 0 rgba(0, 0, 0, 0);
         }
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+    select {
+        appearance: none;
+    }
+    .select-wrapper {
+       .icon{
+           transform: translateY(-50%);
+           top: 50%;
+           right: 10px;
+           pointer-events: none;
+       }
     }
 }

@@ -1,7 +1,20 @@
 /*!
  *  Copyright (c) 2021. Geniem Oy
  */
-@mixin hero-height {
+// @mixin hero-height {
+//     height: 31.25rem;
+
+//     @include from($tablet) {
+//         height: 29.411rem;
+//     }
+
+//     @include from($desktop) {
+//         height: 43.7rem;
+//     }
+// }
+
+.hero {
+
     height: 31.25rem;
 
     @include from($tablet) {
@@ -11,10 +24,6 @@
     @include from($desktop) {
         height: 43.7rem;
     }
-}
-
-.hero {
-    @include hero-height;
 
     &--box {
         .hero__inner {
@@ -121,3 +130,48 @@
         }
     }
 }
+
+// Front page hero
+
+.home {
+    .hero {
+        height: auto;
+
+        @include from($desktop) {
+            height: 43.7rem;
+        }
+    
+        .hero__inner {
+            transform: none;
+            position: static;
+            @include from($desktop) {
+                position: absolute;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+            }
+        }
+
+        &__box-wrapper{
+            background-size: cover;
+            background-position: center;
+            @include from($desktop) {
+                background: none !important;
+            }
+        }
+
+        &__links {
+            background-color: $white;
+            @include from($desktop) {
+                background-color: transparent;
+            }
+
+            .column {
+                max-width: 42rem;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+}
+

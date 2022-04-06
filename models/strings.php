@@ -180,7 +180,7 @@ class Strings extends \DustPress\Model {
                     'remove_filter' => _x( 'Remove filter', 'theme-frontend', 'tms-theme-tredu' ),
                     'key_to_navigate' => _x( 'Use arrow key to navigate', 'theme-frontend', 'tms-theme-tredu' ),
                     'add_filter' => _x( 'Add filter', 'theme-frontend', 'tms-theme-tredu' ),
-                    'and_commit_new_search' => _x( 'and commit a new search', 'theme-frontend', 'tms-theme-tredu' ),
+                    'commits_new_search' => _x( 'Selecting filter commits new search', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
                 'profession' => _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
                 'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),

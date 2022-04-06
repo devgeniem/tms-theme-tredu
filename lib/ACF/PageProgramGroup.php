@@ -42,8 +42,7 @@ class PageProgramGroup {
                 ->set_key( 'fg_page_program_fields' );
 
             $page_program_rule_group = ( new RuleGroup() )
-                ->add_rule( 'post_type', '==', PostType\Page::SLUG );
-                // ->add_rule( 'page_template', '==', \PageProgram::TEMPLATE );
+                ->add_rule( 'page_template', '==', \PageProgram::TEMPLATE );
 
             $field_group
                 ->add_rule_group( $page_program_rule_group )

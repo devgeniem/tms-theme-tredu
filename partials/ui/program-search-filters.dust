@@ -59,7 +59,7 @@
 
      <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between is-align-items-center pt-4 pb-4">
         {?results.summary}
-            <p class="has-text-weight-semibold has-text-black">{results.summary|s}</p>
+            <p class="has-text-weight-semibold has-text-black" aria-live="assertive" role="alert">{results.summary|s}</p>
         {/results.summary}
         {?filters}
             <div id="active-filters" class="is-flex-grow-1 pt-4 pb-4 pl-6 pr-6">

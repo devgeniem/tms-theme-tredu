@@ -14,10 +14,6 @@
                 {>"ui/program-search-filters" /}
 
                 <div class="program-list">
-                    {?results.summary}
-                        <span role="alert" class="is-sr-only">{results.summary|s}</span>
-                    {/results.summary}
-
                     {?results.posts}
                         {#results.posts}
                             

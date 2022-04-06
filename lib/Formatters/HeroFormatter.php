@@ -4,6 +4,8 @@
  */
 
 namespace TMS\Theme\Tredu\Formatters;
+use TMS\Theme\Tredu\Settings;
+
 
 /**
  * Class HeroFormatter
@@ -50,6 +52,8 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             $button_classes[]      = 'is-primary';
         }
 
+        $layout['form_action'] = $this->form_action();
+
         return $layout;
     }
 
@@ -74,5 +78,21 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
         }
 
         return false;
+    }
+
+     /**
+     * Get form action from settings
+     *
+     * @return string
+     */
+    private function form_action() : string {
+
+        $program_page = Settings::get_setting( 'program_page' );
+
+        if ( is_int( $program_page ) ) {
+           return get_permalink( $program_page );
+        }
+
+        return '';
     }
 }

@@ -1,13 +1,13 @@
 <section {?anchor}id="{anchor|s}"{/anchor}
-         class="icon-links section pt-12 pb-7 has-background-primary-light--opaque-light has-text-centered">
-    <div class="container">
+         class="icon-links section has-text-centered">
+    <div class="container pt-7 pt-12-desktop pb-7 has-background-primary-light">
         <div class="columns">
             <div class="column">
-                <div class="icon-links__grid">
+                <div class="icon-links__grid keep-vertical-spacing">
                     {#rows}
                         <div class="icon-links__item keep-vertical-spacing">
                             {?icon}
-                                {>"ui/icon" class="icon--xxxlarge has-background-primary is-primary-invert icon--rounded mb-4 has-background-accent is-accent-invert" /}
+                                {>"ui/icon" class="icon--xxxlarge is-primary mb-4" /}
                             {/icon}
 
                             {?title}
@@ -22,7 +22,7 @@
                                 </div>
                             {/description}
 
-                            {>"ui/button-link" classes="is-small is-primary is-outlined" icon=link.icon /}
+                            {>"ui/button-link" classes="is-primary" icon="arrow-right" icon_classes="icon--medium" /}
                         </div>
                     {/rows}
                 </div>

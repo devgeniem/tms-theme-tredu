@@ -109,9 +109,8 @@ class KeyFiguresBlock extends BaseBlock {
 
                 // Setup accent color override.
                 $background_color = $altered['rows'][ $row ]['numbers'][ $number ]['background_color'];
-                $extra_class      = $background_color === 'primary' ? 'has-colors-accent' : '';
 
-                $altered['rows'][ $row ]['numbers'][ $number ]['extra_class'] = $extra_class;
+                $altered['rows'][ $row ]['numbers'][ $number ]['extra_class'] = "key-figures__row--$background_color";
 
                 // Count the chars in the number field to determine the longest number in the component
                 $num_len = strlen( $numbers_data['number'] );
@@ -120,7 +119,7 @@ class KeyFiguresBlock extends BaseBlock {
         }
 
         // Set the number text class according to the length of the number field
-        if ( $chars <= 4 ) {
+        if ( $chars <= 3 ) {
             $altered['num_class'] = 'is-text-huge';
         }
         elseif ( $chars <= 6 ) {

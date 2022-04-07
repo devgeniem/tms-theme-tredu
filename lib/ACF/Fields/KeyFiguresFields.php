@@ -118,10 +118,10 @@ class KeyFiguresFields extends Field\Group {
             ->set_key( "${key}_background_color" )
             ->set_name( 'background_color' )
             ->set_choices( [
-                'black'     => 'Musta',
-                'white'     => 'Valkoinen',
-                'primary'   => 'Pääväri',
-                'secondary' => 'Toissijainen väri',
+                'primary'   => 'Sininen',
+                'secondary' => 'Vaalean sininen',
+                'light'     => 'Vaalea',
+                'accent'    => 'Vihreä',
             ] )
             ->set_default_value( 'has-background-black' )
             ->set_instructions( $strings['background_color']['instructions'] );

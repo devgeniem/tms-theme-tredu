@@ -2,14 +2,17 @@
     {#rows}
         <div class="key-figures__row columns is-multiline is-gapless mb-0">
             {#numbers}
-                <div class="column {column_class|s} has-colors-{background_color|s} {extra_class}">
-                    <div class="key-figures__item is-flex p-9 p-12-desktop is-align-items-center is-justify-content-center is-flex-direction-column">
-                        <div class="key-figures__number {num_class} is-family-secondary has-text-weight-bold has-line-height-tight">
-                            {number|s}
+                <div class="column {column_class|attr} {extra_class|attr}">
+                    <div
+                        class="key-figures__item is-flex p-9 p-12-desktop is-align-items-center is-justify-content-center is-flex-direction-column">
+                        <div
+                            class="key-figures__number {num_class|attr} has-text-weight-bold has-line-height-tight">
+                            {number|html}
                         </div>
 
-                        <div class="key-figures__description pt-2 has-text-weight-medium is-size-7 is-uppercase is-family-secondary">
-                            {description|s}
+                        <div
+                            class="key-figures__description pt-2 pt-4-desktop pt-6-fullhd has-text-weight-medium is-size-7 is-uppercase is-family-secondary">
+                            {description|html}
                         </div>
                     </div>
                 </div>

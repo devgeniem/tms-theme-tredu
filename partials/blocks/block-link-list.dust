@@ -3,13 +3,13 @@
 
     {?title}
         <h2 class="link-list__title h3 mt-0 mb-6 has-text-primary-invert">
-            {title|s}
+            {title|html}
         </h2>
     {/title}
 
     {?description}
         <div class="link-list__description mt-6">
-            {description|s}
+            {description|html}
         </div>
     {/description}
 
@@ -17,11 +17,11 @@
         <ul class="link-list__links is-unstyled mt-6 keep-vertical-spacing">
             {#links}
                 <li class="mb-2">
-                    <a href="{link.url}" target="{link.target}"
+                    <a href="{link.url|url}" target="{link.target|attr}"
                        class="is-flex is-align-items-center has-text-primary-invert">
-                        {>"ui/icon" icon="arrow-right" class="icon--small is-secondary mr-2" /}
+                        {>"ui/icon" icon="chevron-right" class="icon--small is-secondary mr-2" /}
 
-                        <span>{link.title|s}</span>
+                        <span>{link.title|html}</span>
 
                         {?link.is_external}
                             {>"ui/icon" icon="external" class="icon--medium is-secondary ml-1" /}

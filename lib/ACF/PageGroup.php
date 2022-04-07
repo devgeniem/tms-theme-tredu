@@ -163,7 +163,7 @@ class PageGroup {
                 Layouts\LogoWallLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\MapLayout::class,
-                // Layouts\SocialMediaLayout::class,
+                Layouts\SocialMediaLayout::class,
                 // Layouts\ImageCarouselLayout::class,
                 Layouts\SubpageLayout::class,
                 // Layouts\TextBlockLayout::class,

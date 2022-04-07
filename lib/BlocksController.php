@@ -190,13 +190,13 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
-            // 'acf/image'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
+            'acf/image'        => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
             // 'acf/video'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,

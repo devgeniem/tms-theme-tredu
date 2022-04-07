@@ -7,12 +7,12 @@
                         class="key-figures__item is-flex p-9 p-12-desktop is-align-items-center is-justify-content-center is-flex-direction-column">
                         <div
                             class="key-figures__number {num_class|attr} has-text-weight-bold has-line-height-tight">
-                            {number|s}
+                            {number|html}
                         </div>
 
                         <div
                             class="key-figures__description pt-2 pt-4-desktop pt-6-fullhd has-text-weight-medium is-size-7 is-uppercase is-family-secondary">
-                            {description|s}
+                            {description|html}
                         </div>
                     </div>
                 </div>

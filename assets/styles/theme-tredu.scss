@@ -17,7 +17,7 @@ $color-trout: #525C65;
 
 $primary: $color-dark-blue;
 $primary-invert: $color-white;
-$primary-light: bulmaLighten($primary, 15);
+$primary-light: $color-light-blueishgray;
 $primary-light-invert: $color-white;
 $primary-dark: bulmaDarken($primary, 15);
 $primary-dark-invert: $color-white;
@@ -26,7 +26,7 @@ $secondary: $color-blue;
 $secondary-invert: $color-dark-blue;
 $secondary-light: $color-light-gray;
 $secondary-light-invert: $color-dark-blue;
-$secondary-dark: bulmaDarken($secondary, 10);
+$secondary-dark: $color-semidark-blue;
 $secondary-dark-invert: $color-dark-blue;
 
 $light: $primary-light;
@@ -39,8 +39,8 @@ $divider-invert: $color-dark-grey;
 $text: #525C65;
 $link: $primary;
 
-$colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
-$colors-palette-secondary: ($secondary, $secondary-invert, $secondary-dark, $secondary-light);
+$colors-palette-primary: ($primary, $primary-invert, $primary-light, $primary-dark);
+$colors-palette-secondary: ($secondary, $secondary-invert, $secondary-light, $secondary-dark);
 
 $colors: (
     "primary": $colors-palette-primary,

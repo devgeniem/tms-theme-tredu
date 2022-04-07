@@ -25,7 +25,7 @@
                         {skip_text|html}
                     </a>
                     <div class="social-media__flocker-embed">
-                        {flocker_embed|html}
+                        {flocker_embed|s}
                     </div>
                     {! Skip embed target !}
                     <div id="{id|attr}"></div>

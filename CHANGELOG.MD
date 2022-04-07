@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-674: Image.
+
 ## [2022-04-07] - 0.3.0
+
+### Added
 
 - TMS-693: Grid
 - TMS-665: Color fix.

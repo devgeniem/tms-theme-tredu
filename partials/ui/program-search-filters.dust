@@ -37,7 +37,7 @@
                     {#filters}
                     <div class="column is-one-fifth-widescreen is-3-desktop is-4-tablet is-12-mobile">
                         <div class="select-wrapper is-relative">
-                        <label aria-label="{name|s}, {Strings.s.program.search.commits_new_search|s}">
+                        <label>
                             <select name="{query_var}[]" 
                             class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black has-line-height-tight p-3">
                                 <option selected="true" value="" class="has-text-black">{name|s}</option>
@@ -47,6 +47,7 @@
                                     {/active}
                                 {/terms}
                             </select>
+                            <span class="is-sr-only">{Strings.s.program.search.commits_new_search|s}</span>
                             </label>
                             {>"ui/icon" icon="chevron-down" class="icon--medium is-black is-absolute" /}
                         </div>

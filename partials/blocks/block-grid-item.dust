@@ -3,11 +3,11 @@
     <div
         class="grid__item__details details is-flex is-flex-direction-column is-justify-content-center has-text-centered p-2 p-4-desktop">
         {?title}
-            <h3 class="h5 mb-0">{title}</h3>
+            <h3 class="h5 mb-0">{title|html}</h3>
         {/title}
 
         {?description}
-            <p class="has-text-small mt-3 mb-0 mt-4-tablet pl-2 pr-2">{description|s}</p>
+            <p class="has-text-small mt-3 mb-0 mt-4-tablet pl-2 pr-2">{description|html}</p>
         {/description}
 
         {?link}

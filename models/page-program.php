@@ -61,6 +61,13 @@ class PageProgram extends BaseModel {
     const FILTER_ONGOING_QUERY_VAR = 'ongoing';
 
     /**
+     * This holds the search results title.
+     *
+     * @var string
+     */
+    private static $search_results_title = '';
+
+    /**
      * Setup hooks.
      */
     public function hooks() {
@@ -77,6 +84,21 @@ class PageProgram extends BaseModel {
 
         add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
 
+        add_filter( 'the_seo_framework_title_from_generation', Closure::fromCallable( [ __CLASS__, 'alter_title' ] ) );
+
+    }
+
+    /**
+     * This is hooked to TSF's actions.
+     *
+     * @param string $title original title.
+     * @return string Modified title.
+     */
+    protected static function alter_title( $title ) : string {
+
+        $title = static::$search_results_title;
+
+        return $title;
     }
 
     /**
@@ -335,6 +357,8 @@ class PageProgram extends BaseModel {
         $search_clause = self::get_search_query_var();
         $is_filtered   = $search_clause || self::get_filter_query_var( self::FILTER_PROGRAM_LOCATION_QUERY_VAR );
 
+        $this->set_search_results_title( $the_query->found_posts );
+
         return [
             'posts'       => $this->format_posts( $the_query->get_posts() ),
             'is_filtered' => $is_filtered,
@@ -462,5 +486,22 @@ class PageProgram extends BaseModel {
         );
 
         return $results_text;
+    }
+
+    /**
+     * Set search results title.
+     *
+     * @param int $result_count Search result count, defaults to 0.
+     *
+     * @return string Search results title.
+     */
+    protected function set_search_results_title( int $result_count = 0 ) : string {
+
+        $search_strings = $this->strings()['program']['search'];
+        $suffix = ' ' . $search_strings['results'];
+
+        static::$search_results_title = $this->page_title() . ' - ' . $this->results_summary( $result_count ) . ' ' . $suffix;
+
+        return static::$search_results_title;
     }
 }

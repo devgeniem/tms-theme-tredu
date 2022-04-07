@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-05 16:49+0300\n"
-"PO-Revision-Date: 2022-04-05 16:52+0300\n"
+"POT-Creation-Date: 2022-04-06 17:07+0300\n"
+"PO-Revision-Date: 2022-04-07 17:11+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -930,8 +930,8 @@ msgstr "Lisää suodatin"
 
 #: models/strings.php:183
 msgctxt "theme-frontend"
-msgid "and commit a new search"
-msgstr "ja tee uusi haku"
+msgid "Selecting filter commits new search"
+msgstr "Rajauksen valinta suorittaa haun"
 
 #: models/strings.php:185
 msgctxt "theme-frontend"

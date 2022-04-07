@@ -9,15 +9,15 @@
 
     <div class="grid__item__details is-order-0 has-text-left is-absolute has-bottom-0 pb-7 pr-6 pl-6 has-text-white">
         {?title}
-            <h3 class="h4 mb-0 has-text-white">{title}</h3>
+            <h3 class="h4 mb-0 has-text-white">{title|html}</h3>
         {/title}
 
         {?description}
-            <p class="has-text-small has-text-white mt-3 mb-0 mt-5-tablet">{description|s}</p>
+            <p class="has-text-small has-text-white mt-3 mb-0 mt-5-tablet">{description|html}</p>
         {/description}
 
         {?link}
-            <a href="{link.url}" target="{link.target}" class="button is-small has-width-fit-content is-primary ml-0 mt-4 mt-5-tablet">{link.title}</a>
+            {>"ui/button-link" classes="is-secondary has-width-fit-content ml-0 mt-4 mt-5-tablet" icon="arrow-right" icon_classes="icon--medium is-primary-invert"  /}
         {/link}
     </div>
 </div>

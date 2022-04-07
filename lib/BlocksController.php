@@ -138,36 +138,36 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                 ],
             ],
-            'acf/link-list'    => [
+            'acf/link-list'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/subpages'     => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                ],
-            ],
-            'acf/quote'        => [
+            'acf/quote'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/key-figures'  => [
+            'acf/key-figures' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/grid'         => [
+            'acf/grid'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
+                ],
+            ],
+            'acf/subpages'    => [
+                'post_types' => [
+                    PostType\Page::SLUG,
                 ],
             ],
             // 'acf/grid'           => [
@@ -176,7 +176,7 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Post::SLUG,
             //     ],
             // ],
-            'acf/accordion'    => [
+            'acf/accordion'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-693: Grid
+- TMS-665: Add Logo Wall
+- TMS-665: Color fix.
 
 ## [2022-04-04] - 0.2.0
 
@@ -19,6 +21,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-689: Add link list #21
 - TMS-690: Add subpages #22
 - TMS-686: Accordion block
+- TMS-690: Add subpages #22
+- TMS-689: Add link list #21
+- TMS-687: Quote block #20
 - TMS-676: Icon links #12
 - TMS-699: Image banner #10
 - TMS-700: Header notice #8

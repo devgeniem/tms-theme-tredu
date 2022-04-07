@@ -153,7 +153,7 @@ class PageGroup {
                 Layouts\ImageBannerLayout::class,
                 // Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
-                // Layouts\LogoWallLayout::class,
+                Layouts\LogoWallLayout::class,
                 // Layouts\MapLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\MapLayout::class,

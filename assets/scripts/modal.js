@@ -211,7 +211,7 @@ export default class Modal {
             useIcons: true,
             nextIcon: 'chevron-right',
             prevIcon: 'chevron-left',
-            buttonClass: 'gallery-button button is-primary',
+            buttonClass: 'gallery-button button is-secondary',
         } );
 
         // Set current using setSlide and currentIndex

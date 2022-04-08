@@ -39,15 +39,7 @@
 
                                     {@content /}
 
-                                    {?share_links}
-                                        <div class="entry__share-links">
-                                            <h2 class="h6 mt-6 mb-6">
-                                                {Strings.s.share.share_article|s}
-                                            </h2>
-
-                                            {>"ui/share-links" share_links=share_links li_class="mr-4" /}
-                                        </div>
-                                    {/share_links}
+                                    {>"ui/entry-share-links" /}
                                 </div>
                             </article>
                         {/SingleBlogArticle}

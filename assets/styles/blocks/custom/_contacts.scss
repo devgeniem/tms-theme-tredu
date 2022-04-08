@@ -4,10 +4,34 @@
 
 .contacts {
     &__icon-container {
-        font-size: $base-size;
         display: flex;
         justify-content: center;
         width: 2rem;
         min-width: 2rem;
+        font-size: $base-size;
+    }
+
+    &__item-inner {
+        background-color: $color-light-gray;
+    }
+
+    &__additional-info-top {
+        .has-no-image & {
+            @extend .h5;
+        }
+
+        .has-image & {
+            @extend .h6;
+        }
+    }
+
+    &__name {
+        .has-no-image & {
+            @extend .h4;
+        }
+
+        .has-image & {
+            @extend .h6;
+        }
     }
 }

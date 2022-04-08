@@ -169,7 +169,7 @@ class PageGroup {
                 // Layouts\SitemapLayout::class,
                 // Layouts\NoticeBannerLayout::class,
                 // Layouts\GravityFormLayout::class,
-                // Layouts\ContactsLayout::class,
+                Layouts\ContactsLayout::class,
                 // Layouts\AccessibilityIconLinksLayout::class,
                 // Layouts\ShareLinksLayout::class,
             ],

@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-
+- TMS-694: Image gallery
+- TMS-693: Grid
+- TMS-665: Color fix.
 - TMS-693: Grid
 - TMS-665: Add Logo Wall
 - TMS-674: Image.

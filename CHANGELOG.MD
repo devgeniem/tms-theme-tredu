@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- TMS-697: Contacts
 - TMS-697: Share links
 - TMS-684: Video embed
 - TMS-685: Materials

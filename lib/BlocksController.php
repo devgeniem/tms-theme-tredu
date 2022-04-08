@@ -190,21 +190,21 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Post::SLUG,
             //     ],
             // ],
-            'acf/accordion' => [
+            'acf/accordion'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/video'     => [
+            'acf/video'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/image'     => [
+            'acf/image'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -225,7 +225,7 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
-            'acf/share-links'  => [
+            'acf/share-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
@@ -235,7 +235,7 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //     ],
             // ],
-            'acf/material' => [
+            'acf/material'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -247,20 +247,20 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Page::SLUG,
             //     ],
             // ],
-            'acf/map'      => [
+            'acf/map'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            // 'acf/contacts'       => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
+            'acf/contacts'    => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
             // 'acf/acc-icon-links' => [
             //     'post_types' => [
             //         PostType\Page::SLUG,

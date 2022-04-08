@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- TMS-685: Materials
 - TMS-694: Image gallery
 - TMS-693: Grid
 - TMS-665: Color fix.

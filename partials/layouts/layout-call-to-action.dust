@@ -12,7 +12,7 @@
                         </div>
                         {?display_artist}
                             {?author_name}
-                                <div class="pt-2 pr-5 pl-5 p-0-tablet">
+                                <div class="pt-2 pr-5 pl-5 p-0-desktop">
                                     <small>{author_name|html}</small>
                                 </div>
                             {/author_name}

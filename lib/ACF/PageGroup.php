@@ -157,7 +157,6 @@ class PageGroup {
             [
                 Layouts\ImageBannerLayout::class,
                 Layouts\GridLayout::class,
-                // Layouts\CallToActionLayout::class,
                 Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
                 Layouts\LogoWallLayout::class,

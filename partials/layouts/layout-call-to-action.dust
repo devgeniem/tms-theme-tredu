@@ -4,7 +4,7 @@
 
         {#rows}
             <div
-                class="call-to-action__item mt-6 mb-6 columns is-variable is-6 is-vcentered is-align-items-stretch {container_class|s}">
+                class="call-to-action__item mt-6 mb-6 {?display_artist}mb-8-tablet{/display_artist} columns is-variable is-6 is-vcentered is-align-items-stretch {container_class|s}">
                 {?image}
                     <div class="column p-0 is-6-desktop">
                         <div class="image {image_class|s}">
@@ -12,7 +12,9 @@
                         </div>
                         {?display_artist}
                             {?author_name}
-                                <small>{author_name|html}</small>
+                                <div class="pt-2 pr-5 pl-5 p-0-tablet">
+                                    <small>{author_name|html}</small>
+                                </div>
                             {/author_name}
                         {/display_artist}
                     </div>

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- TMS-684: Video embed
 - TMS-685: Materials
 - TMS-694: Image gallery
 - TMS-693: Grid

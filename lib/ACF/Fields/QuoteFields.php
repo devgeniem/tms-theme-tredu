@@ -42,16 +42,20 @@ class QuoteFields extends Field\Group {
      */
     protected function sub_fields() : array {
         $strings = [
-            'quote'   => [
+            'quote'            => [
                 'label'        => 'Lainaus',
                 'instructions' => '',
             ],
-            'author'  => [
+            'author'           => [
                 'label'        => 'Sitaatin antaja',
                 'instructions' => '',
             ],
-            'is_wide' => [
+            'is_wide'          => [
                 'label'        => 'Näytä leveänä',
+                'instructions' => '',
+            ],
+            'background_color' => [
+                'label'        => 'Taustaväri',
                 'instructions' => '',
             ],
         ];
@@ -75,12 +79,25 @@ class QuoteFields extends Field\Group {
             ->set_name( 'is_wide' )
             ->use_ui()
             ->set_default_value( false )
+            ->set_wrapper_width( 50 )
             ->set_instructions( $strings['is_wide']['instructions'] );
+
+        $background_color_field = ( new Field\Select( $strings['background_color']['label'] ) )
+            ->set_key( "${key}_background_color" )
+            ->set_name( 'background_color' )
+            ->set_choices( [
+                'white'   => 'Valkoinen',
+                'primary' => 'Tumma',
+            ] )
+            ->set_default_value( 'white' )
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['background_color']['instructions'] );
 
         return [
             $quote_field,
             $author_field,
             $is_wide_field,
+            $background_color_field,
         ];
     }
 }

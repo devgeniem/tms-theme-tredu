@@ -104,6 +104,7 @@ class ProgramGroup {
         $search_keywords_field = ( new Field\Textarea( $strings['search_keywords']['title'] ) )
             ->set_key( "${key}_search_keywords" )
             ->set_name( 'search_keywords' )
+            ->redipress_include_search()
             ->set_instructions( $strings['search_keywords']['instructions'] );
 
         $tab->add_fields( [

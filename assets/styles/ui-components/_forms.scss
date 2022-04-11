@@ -12,6 +12,7 @@ form {
     select,
     input,
     textarea {
+        font-family: $family-secondary;
         line-height: 1;
         padding: $theme-spacing-half;
         border: 1px solid $secondary;
@@ -19,6 +20,24 @@ form {
 
         &::placeholder {
             color: lighten($black, 10%);
+        }
+
+        &:focus {
+            @extend .button-state-focus;
+        }
+    }
+   
+
+    .is-checkradio {
+        &[type=checkbox]+label:before {
+            border-radius: 0;
+            border: 2px solid $black;
+        }
+    }
+
+    button {
+        &:focus {
+            @extend .button-state-focus;
         }
     }
 }

@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-686: Accordion block
 - TMS-699: Image banner #10
 - TMS-700: Header notice #8
 - TMS-679: Enable map layout & block #11

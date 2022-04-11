@@ -11,10 +11,6 @@
         font-size: $base-size;
     }
 
-    &__item-inner {
-        background-color: $color-light-gray;
-    }
-
     &__additional-info-top {
         .has-no-image & {
             @extend .h5;
@@ -32,6 +28,39 @@
 
         .has-image & {
             @extend .h6;
+        }
+    }
+
+    &__inner-columns {
+        @include until($desktop) {
+            background-color: $color-light-gray;
+        }
+    }
+
+    &__item-inner {
+        @include from($desktop) {
+            position: relative;
+        }
+
+        &::before {
+            @include from($desktop) {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $color-light-gray;
+            }
+        }
+
+        > * {
+            @include from($desktop) {
+                position: relative;
+                z-index: 1;
+            }
         }
     }
 }

@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-768: Duet Date Picker from CDN to prevent build issues that sometimes break JS
 - TMS-766: Fix displaying image author on Call to Action.
+- TMS-735: Program Search
 
 ## [2022-04-07] - 0.3.0
 
@@ -53,7 +54,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-686: Accordion block
 - TMS-699: Image banner #10
 - TMS-700: Header notice #8
+<<<<<<< HEAD
 - TMS-735: Program Search
+=======
+>>>>>>> TMS-735
 - TMS-679: Enable map layout & block #11
 - TMS-665: Add article archive.
 - TMS-760: Add default filter image filter for material images #7

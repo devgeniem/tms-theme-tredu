@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-665: Add Logo Wall
+- TMS-675: Add Logo Wall
 
 ## [2022-04-07] - 0.3.0
 

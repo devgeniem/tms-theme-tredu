@@ -28,7 +28,7 @@
                                     {title|s}
 
                                     {?is_full_view}
-                                        {>"ui/icon" icon="download" class="ml-2 icon--medium is-secondary" /}
+                                        {>"ui/icon" icon="download" class="ml-2 icon--large is-secondary" /}
                                     {/is_full_view}
                                 </a>
 
@@ -52,6 +52,7 @@
                            class="button is-primary mt-4"
                            download>
                             {button_text|s}
+
                             {>"ui/icon" icon="download" /}
                         </a>
                     </div>

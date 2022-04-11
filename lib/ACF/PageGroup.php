@@ -157,7 +157,6 @@ class PageGroup {
             [
                 Layouts\ImageBannerLayout::class,
                 Layouts\GridLayout::class,
-                // Layouts\CallToActionLayout::class,
                 Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
                 Layouts\LogoWallLayout::class,
@@ -173,9 +172,10 @@ class PageGroup {
                 // Layouts\SitemapLayout::class,
                 // Layouts\NoticeBannerLayout::class,
                 // Layouts\GravityFormLayout::class,
-                // Layouts\ContactsLayout::class,
+                Layouts\ContactsLayout::class,
                 // Layouts\AccessibilityIconLinksLayout::class,
-                // Layouts\ShareLinksLayout::class,
+                Layouts\ShareLinksLayout::class,
+                Layouts\CountdownLayout::class,
             ],
             $key
         );

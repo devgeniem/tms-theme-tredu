@@ -1,5 +1,9 @@
 .call-to-action {
     &__item {
+        .author-text {
+            color: $color-black;
+        }
+
         &.has-colors-primary {
             .call-to-action__title {
                 color: $primary-invert;
@@ -8,6 +12,12 @@
             .button {
                 &:focus {
                     outline-color: $white;
+                }
+            }
+
+            .author-text {
+                @include until($tablet) {
+                    color: $primary-invert;
                 }
             }
         }

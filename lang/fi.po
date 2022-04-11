@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-06 17:07+0300\n"
-"PO-Revision-Date: 2022-04-07 17:11+0300\n"
+"POT-Creation-Date: 2022-04-11 11:54+0300\n"
+"PO-Revision-Date: 2022-04-11 11:54+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -1103,7 +1103,17 @@ msgctxt "theme-frontend"
 msgid "Dec"
 msgstr "Jou"
 
-#: models/strings.php:258
+#: models/strings.php:225
+msgctxt "theme-frontend"
+msgid "Dialog Window - Close (Press escape to close)"
+msgstr "Dialogi-ikkuna - sulje (Sulje painamalla Esc -näppäintä)"
+
+#: models/strings.php:226
+msgctxt "theme-frontend"
+msgid "Close (Press escape to close)"
+msgstr "Sulje (Sulje painamalla Esc -näppäintä)"
+
+#: models/strings.php:239
 msgid "Pagination"
 msgstr "Sivutus"
 
@@ -1168,3 +1178,29 @@ msgstr ""
 #~ msgctxt "theme-frontend"
 #~ msgid "Degree type"
 #~ msgstr "Tutkintotyyppi"
+
+#, fuzzy
+#~| msgctxt "theme-frontend"
+#~| msgid "Skip to content"
+#~ msgid "Reply to comment"
+#~ msgstr "Siirry sisältöön"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "comment-page"
+#~ msgstr "Kommentit"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "Comment sent."
+#~ msgstr "Kommentit"
+
+#, fuzzy
+#~| msgid "Your comment is awaiting moderation"
+#~ msgid "Comment is waiting for approval."
+#~ msgstr "Kommentti odottaa hyväksyntää"
+
+#, fuzzy
+#~| msgid "Comments"
+#~ msgid "all-comments"
+#~ msgstr "Kommentit"

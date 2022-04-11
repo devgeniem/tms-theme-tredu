@@ -9,7 +9,7 @@
 
     {?description}
         <div class="link-list__description mt-6">
-            {description|html}
+            {description|kses}
         </div>
     {/description}
 
@@ -19,11 +19,7 @@
                 <li class="mb-2">
                     <a href="{link.url|url}" target="{link.target|attr}"
                        class="is-flex is-align-items-center has-text-primary-invert">
-<<<<<<< HEAD
-                        {>"ui/icon" icon="chevron-right" class="icon--small is-secondary mr-2" /}
-=======
                         {>"ui/icon" icon="arrow-right" class="icon--small is-secondary mr-2" /}
->>>>>>> TMS-675
 
                         <span>{link.title|html}</span>
 

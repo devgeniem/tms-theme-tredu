@@ -8,7 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-
+- TMS-769: Countdown block
+- TMS-697: Contacts
+- TMS-697: Share links
+- TMS-684: Video embed
+- TMS-685: Materials
+- TMS-694: Image gallery
+- TMS-693: Grid
+- TMS-665: Color fix.
 - TMS-693: Grid
 - TMS-665: Add Logo Wall
 - TMS-674: Image.
@@ -19,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - TMS-768: Duet Date Picker from CDN to prevent build issues that sometimes break JS
+- TMS-766: Fix displaying image author on Call to Action.
 
 ## [2022-04-07] - 0.3.0
 
@@ -42,6 +50,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-686: Accordion block
 - TMS-699: Image banner #10
 - TMS-700: Header notice #8
 - TMS-735: Program Search

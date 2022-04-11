@@ -19,6 +19,14 @@
         @include from($widescreen) {
             top: -7% !important;
         }
+
+        &:hover,
+        &:focus {
+            &::before,
+            &::after {
+                background-color: $secondary !important;
+            }
+        }
     }
 
     .modaal-gallery-item {

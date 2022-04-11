@@ -7,7 +7,6 @@
     "dependencies": {
         "@accessible360/accessible-slick": "^1.0.1",
         "@babel/polyfill": "^7.12.1",
-        "@duetds/date-picker": "^1.4.0",
         "@wordpress/keycodes": "^3.3.1",
         "eslint": "^7.32.0",
         "eslint-loader": "^4.0.2",

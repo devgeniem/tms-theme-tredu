@@ -1,0 +1,18 @@
+.link-list {
+    &__description {
+        strong,
+        a {
+            color: inherit;
+        }
+
+        a {
+            outline-offset: .15ch;
+            text-decoration: underline;
+        }
+    }
+
+    a:focus {
+        outline-color: currentColor;
+        outline-style: dotted;
+    }
+}

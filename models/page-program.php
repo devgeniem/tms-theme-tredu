@@ -117,9 +117,7 @@ class PageProgram extends BaseModel {
      *
      * @return array
      */
-    public static function set_ignored_query_vars(
-        array $vars
-    ) : array {
+    public static function set_ignored_query_vars( array $vars ) : array {
         $vars[] = self::SEARCH_QUERY_VAR;
         $vars[] = self::FILTER_PROGRAM_LOCATION_QUERY_VAR;
         $vars[] = self::FILTER_DELIVERY_METHODS_QUERY_VAR;

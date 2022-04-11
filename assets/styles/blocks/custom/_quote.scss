@@ -1,0 +1,49 @@
+.quote {
+    &.has-background-primary {
+        .quote__content {
+            color: $color-blue;
+            font-family: $family-secondary;
+            font-size: $size-3;
+            letter-spacing: -.03em;
+            line-height: 1.5;
+
+            > p {
+                &::before,
+                &::after {
+                    content: "“";
+                }
+
+                &::before {
+                    margin-right: .125ch;
+                }
+
+                &::after {
+                    margin-left: .125ch;
+                }
+            }
+        }
+
+        .quote__author {
+            color: $color-light-blueishgray;
+        }
+    }
+
+    &.has-background-white {
+        .quote__content {
+            color: $color-semidark-blue;
+            font-family: $family-tertiary;
+            font-size: $size-1;
+            letter-spacing: -.03em;
+            line-height: 1;
+        }
+    }
+
+    &__content {
+        text-align: center;
+    }
+
+    &__author {
+        font-size: .9rem;
+        letter-spacing: .05rem;
+    }
+}

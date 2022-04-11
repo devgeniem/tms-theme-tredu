@@ -3,7 +3,7 @@
         {#share_links}
             <li class="{li_class|s}">
                 <a href="{link}"
-                   class="is-relative is-flex is-align-items-center is-justify-content-center box box--medium box--circle has-background-primary-invert has-border-1 has-border-secondary"
+                   class="is-relative is-flex is-align-items-center is-justify-content-center box box--medium box--circle has-background-primary-invert has-border-2 has-border-secondary {#extra_classes}{.} {/extra_classes}"
                    data-callback-text="{callback_text|s}">
                     <span class="is-sr-only">{sr_text|s}</span>
                     {>"ui/icon" class="icon--large icon--xlarge-tablet-only" /}

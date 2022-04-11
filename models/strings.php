@@ -133,7 +133,7 @@ class Strings extends \DustPress\Model {
                 ),
             ],
             'sibling_navigation' => [
-                'sibling_navigation' => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
+                'sibling_navigation'         => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
                 'sibling_navigation_heading' => _x( 'You might also be interested in', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'comments'           => [
@@ -220,6 +220,10 @@ class Strings extends \DustPress\Model {
                     _x( 'Nov', 'theme-frontend', 'tms-theme-tredu' ),
                     _x( 'Dec', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
+            ],
+            'modaal'             => [
+                'accessible_title' => _x( 'Dialog Window - Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
+                'close'            => _x( 'Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
             ],
         ];
     }

@@ -25,7 +25,7 @@
                                 <a href="{url}"
                                    class="materials__item-title h4 has-text-black mb-2 is-inline-flex hyphenate is-align-items-center has-text-weight-semibold is-family-secondary"
                                    download>
-                                    {title|s}
+                                    {title|html}
 
                                     {?is_full_view}
                                         {>"ui/icon" icon="download" class="ml-2 icon--large is-secondary" /}

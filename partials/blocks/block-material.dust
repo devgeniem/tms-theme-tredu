@@ -22,7 +22,7 @@
                     <div class="has-width-100">
                         <div class="is-flex is-flex-wrap-wrap">
                             <div class="has-width-100-until-tablet">
-                                <a href="{url}"
+                                <a href="{url|url}"
                                    class="materials__item-title h4 has-text-black mb-2 is-inline-flex hyphenate is-align-items-center has-text-weight-semibold is-family-secondary"
                                    download>
                                     {title|html}
@@ -48,7 +48,7 @@
                             {/description}
                         {/is_full_view}
 
-                        <a href="{url}"
+                        <a href="{url|url}"
                            class="button is-primary mt-4"
                            download>
                             {button_text|html}

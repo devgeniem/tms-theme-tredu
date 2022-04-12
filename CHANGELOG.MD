@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-692-2: Change accent key figure color #29
 - TMS-685: Materials #33
 - TMS-674: Image #28
 - TMS-675: Add Logo Wall #27

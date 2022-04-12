@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-
 - TMS-674: Image.
+- TMS-735: Program Search
 
 ## [2022-04-07] - 0.3.0
 

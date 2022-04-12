@@ -9,7 +9,7 @@
 
     {?description}
         <div class="link-list__description mt-6">
-            {description|html}
+            {description|kses}
         </div>
     {/description}
 

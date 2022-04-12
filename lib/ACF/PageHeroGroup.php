@@ -42,7 +42,8 @@ class PageHeroGroup {
                 ->set_key( 'fg_page_hero_fields' );
 
             $page_hero_rule_group = ( new RuleGroup() )
-                ->add_rule( 'post_type', '==', PostType\Page::SLUG );
+                ->add_rule( 'post_type', '==', PostType\Page::SLUG )
+                ->add_rule( 'page_template', '!=', \PageProgram::TEMPLATE );
 
             $field_group
                 ->add_rule_group( $page_hero_rule_group )

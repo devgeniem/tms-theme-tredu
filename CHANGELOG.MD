@@ -7,14 +7,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 ### Added
 
 - TMS-684: Video embed
+=======
+- TMS-769: Countdown block #37
+- TMS-735: Program Search #38
+- TMS-697: Share links #35
+- TMS-766: Fix displaying image author on Call to Action.
+- TMS-691: Enable social media block #30
+- TMS-692-2: Change accent key figure color #29
+- TMS-685: Materials #33
+- TMS-674: Image #28
+- TMS-675: Add Logo Wall #27
+- TMS-694: Image gallery #26
+>>>>>>> master
 
 ## [2022-04-07] - 0.3.0
 
-- TMS-693: Grid
-- TMS-665: Color fix.
+- TMS-693: Grid #24
+- TMS-665: Color fix. #25
 - TMS-690: Add subpages #22
 - TMS-689: Add link list #21
 - TMS-687: Quote block #20

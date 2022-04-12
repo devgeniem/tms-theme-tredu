@@ -53,6 +53,7 @@ $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
         &:focus,
         &.is-focused {
             border-color: $pill-default-border-color-focus;
+            outline-style: solid;
         }
 
         &:hover {
@@ -93,8 +94,8 @@ $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
             &:focus,
             &.is-focused {
                 color: $primary;
-                background-color: $primary-invert;
-                border-color: $color-black;
+                background-color: $secondary;
+                border-color: $primary;
             }
         }
 

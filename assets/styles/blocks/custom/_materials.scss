@@ -1,0 +1,34 @@
+.materials {
+    &.is-full-view {
+        ul {
+            @include from($fullhd) {
+                display: flex;
+                flex-wrap: wrap;
+                gap: $theme-spacing;
+            }
+
+            > li {
+                @include from($fullhd) {
+                    max-width: calc(50% - #{$theme-spacing});
+                    flex-basis: calc(50% - #{$theme-spacing});
+                    margin: 0 !important;
+                }
+
+                .button {
+                    .icon {
+                        margin-left: $theme-spacing !important;
+                        fill: $color-semidark-blue !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        background-color: $color-light-gray;
+    }
+
+    &__item-title {
+        word-break: break-all;
+    }
+}

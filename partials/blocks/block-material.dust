@@ -1,0 +1,63 @@
+<div class="materials {?is_full_view}is-align-full is-full-view{/is_full_view} mt-6 mb-6" {?anchor}
+     id="{anchor|attr}"{/anchor}>
+    {?items}
+        <ul class="is-unstyled keep-vertical-spacing">
+            {#items}
+                <li class="materials__item is-flex mt-6 mb-6 p-4 p-6-desktop">
+                    {?is_full_view}
+                        <div
+                            class="image is-180x180 is-hidden-touch is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 mr-4 mr-6-desktop">
+                            {?image}
+                                {@image id=image size="medium" class="objectfit-image" alt="" /}
+                            {:else}
+                                {>"ui/icon" icon="file" class="icon--xlarge is-gray" /}
+                            {/image}
+                        </div>
+                    {:else}
+                        <div class="image is-64x64 is-hidden-touch is-flex is-align-items-center">
+                            {>"ui/icon" icon="file" class="icon--xlarge is-gray" /}
+                        </div>
+                    {/is_full_view}
+
+                    <div class="has-width-100">
+                        <div class="is-flex is-flex-wrap-wrap">
+                            <div class="has-width-100-until-tablet">
+                                <a href="{url}"
+                                   class="materials__item-title h4 has-text-black mb-2 is-inline-flex hyphenate is-align-items-center has-text-weight-semibold is-family-secondary"
+                                   download>
+                                    {title|html}
+
+                                    {?is_full_view}
+                                        {>"ui/icon" icon="download" class="ml-2 icon--large is-secondary" /}
+                                    {/is_full_view}
+                                </a>
+
+                                <div
+                                    class="mt-1 has-text-black has-line-height-tight is-family-secondary has-text-weight-medium has-text-small has-divider-x-1 has-divider-x-1">
+                                    <span class="is-inline-block pr-3 is-uppercase">{filetype|html}</span>
+                                    <span class="is-inline-block ml-2">{filesize|html}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {?is_full_view}
+                            {?description}
+                                <div class="mt-4 has-text-small keep-vertical-spacing has-text-black">
+                                    {description|kses}
+                                </div>
+                            {/description}
+                        {/is_full_view}
+
+                        <a href="{url}"
+                           class="button is-primary mt-4"
+                           download>
+                            {button_text|html}
+
+                            {>"ui/icon" icon="download" /}
+                        </a>
+                    </div>
+                </li>
+            {/items}
+        </ul>
+    {/items}
+</div>

@@ -19,11 +19,26 @@
         @include from($widescreen) {
             top: -7% !important;
         }
+
+        &:hover,
+        &:focus {
+            &::before,
+            &::after {
+                background-color: $secondary !important;
+            }
+        }
     }
 
     .modaal-gallery-item {
         img {
             max-height: 75vh;
+        }
+
+        &:focus {
+            img {
+                outline: .125rem dashed $color-white;
+                outline-offset: .25rem;
+            }
         }
     }
 }

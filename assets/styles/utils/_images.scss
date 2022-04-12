@@ -4,4 +4,15 @@
             padding-top: 133.3333%;
         }
     }
+
+
+
+    &.is-3by2-until-desktop {
+        @include mobile {
+            padding-top: 66.6666%;
+        }
+        @include until($og_tablet) {
+            padding-top: 66.6666%;
+        }
+    }
 }

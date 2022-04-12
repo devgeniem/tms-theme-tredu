@@ -1,0 +1,10 @@
+.image {
+    a.has-modal {
+        &:focus {
+            img {
+                outline: .125rem dashed $primary;
+                outline-offset: .25rem;
+            }
+        }
+    }
+}

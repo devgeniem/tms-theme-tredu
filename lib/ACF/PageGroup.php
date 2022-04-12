@@ -155,11 +155,13 @@ class PageGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
+                // Layouts\ImageBannerLayout::class,
+                Layouts\CallToActionLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\GridLayout::class,
                 // Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
-                // Layouts\LogoWallLayout::class,
+                Layouts\LogoWallLayout::class,
                 // Layouts\MapLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\MapLayout::class,

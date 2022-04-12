@@ -8,15 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-- TMS-674: Image.
-- TMS-735: Program Search
+
+- TMS-674: Image #28
+- TMS-675: Add Logo Wall #27
+- TMS-694: Image gallery #26
+- TMS-735: Program Search #38
 
 ## [2022-04-07] - 0.3.0
 
-### Added
-
-- TMS-693: Grid
-- TMS-665: Color fix.
+- TMS-693: Grid #24
+- TMS-665: Color fix. #25
 - TMS-690: Add subpages #22
 - TMS-689: Add link list #21
 - TMS-687: Quote block #20

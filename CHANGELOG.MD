@@ -7,11 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-<<<<<<< HEAD
+
 ### Added
 
-- TMS-684: Video embed
-=======
+- TMS-684: Video embed #39
 - TMS-769: Countdown block #37
 - TMS-735: Program Search #38
 - TMS-697: Share links #35
@@ -22,7 +21,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-674: Image #28
 - TMS-675: Add Logo Wall #27
 - TMS-694: Image gallery #26
->>>>>>> master
 
 ## [2022-04-07] - 0.3.0
 

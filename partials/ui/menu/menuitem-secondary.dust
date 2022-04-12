@@ -1,4 +1,4 @@
-<li class="menu-item-secondary is-family-primary">
+<li class="menu-item-secondary is-family-secondary">
     <a class="menu-item-secondary__link" href="{url}">
         {title|s}
     </a>

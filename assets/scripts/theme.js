@@ -25,6 +25,7 @@ import Sitemap from './sitemap';
 import ExternalLinks from './external-links';
 import DatePicker from './date-picker';
 import GravityFormsPatch from './gravity-forms-patch';
+import Countdown from './countdown';
 import ProgramSearch from './program-search';
 
 const globalControllers = {
@@ -50,6 +51,7 @@ const globalControllers = {
     ExternalLinks,
     DatePicker,
     GravityFormsPatch,
+    Countdown,
     ProgramSearch,
 };
 

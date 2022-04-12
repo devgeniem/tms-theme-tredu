@@ -263,6 +263,13 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Contact::SLUG,
             //     ],
             // ],
+            'acf/countdown' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
         ];
 
         $blocks = apply_filters(

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-691: Enable social media block #30
 - TMS-692-2: Change accent key figure color #29
 - TMS-685: Materials #33
 - TMS-674: Image #28

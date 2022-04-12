@@ -6,7 +6,7 @@
                         <label class="mr-2 has-width-100">
                             <span class="is-sr-only"> {Strings.s.search.write_search_terms|s} </span>
                             <input type="search" 
-                                class="search-form__input has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
+                                class="search-form__input program-search has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
                                 placeholder="{Strings.s.search.write_search_terms|s}" 
                                 value="{search.current_search|s}" 
                                 name="{search.input_search_name|s}" 

@@ -1,5 +1,5 @@
 <div class="materials {?is_full_view}is-align-full is-full-view{/is_full_view} mt-6 mb-6" {?anchor}
-     id="{anchor}"{/anchor}>
+     id="{anchor|attr}"{/anchor}>
     {?items}
         <ul class="is-unstyled keep-vertical-spacing">
             {#items}
@@ -22,10 +22,10 @@
                     <div class="has-width-100">
                         <div class="is-flex is-flex-wrap-wrap">
                             <div class="has-width-100-until-tablet">
-                                <a href="{url}"
+                                <a href="{url|url}"
                                    class="materials__item-title h4 has-text-black mb-2 is-inline-flex hyphenate is-align-items-center has-text-weight-semibold is-family-secondary"
                                    download>
-                                    {title|s}
+                                    {title|html}
 
                                     {?is_full_view}
                                         {>"ui/icon" icon="download" class="ml-2 icon--large is-secondary" /}
@@ -34,8 +34,8 @@
 
                                 <div
                                     class="mt-1 has-text-black has-line-height-tight is-family-secondary has-text-weight-medium has-text-small has-divider-x-1 has-divider-x-1">
-                                    <span class="is-inline-block pr-3 is-uppercase">{filetype}</span>
-                                    <span class="is-inline-block ml-2">{filesize|s}</span>
+                                    <span class="is-inline-block pr-3 is-uppercase">{filetype|html}</span>
+                                    <span class="is-inline-block ml-2">{filesize|html}</span>
                                 </div>
                             </div>
                         </div>
@@ -43,15 +43,15 @@
                         {?is_full_view}
                             {?description}
                                 <div class="mt-4 has-text-small keep-vertical-spacing has-text-black">
-                                    {description|s}
+                                    {description|kses}
                                 </div>
                             {/description}
                         {/is_full_view}
 
-                        <a href="{url}"
+                        <a href="{url|url}"
                            class="button is-primary mt-4"
                            download>
-                            {button_text|s}
+                            {button_text|html}
 
                             {>"ui/icon" icon="download" /}
                         </a>

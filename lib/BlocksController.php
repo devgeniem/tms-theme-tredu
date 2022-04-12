@@ -171,71 +171,64 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                 ],
             ],
-            'acf/accordion'      => [
+            'acf/accordion'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            // 'acf/video'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/image'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/video'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/image-gallery'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
+            'acf/video'         => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/image'         => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/image-gallery' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
             // 'acf/image-carousel' => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
-            // 'acf/share-links'    => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //     ],
-            // ],
+            'acf/share-links'   => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                ],
+            ],
             // 'acf/table'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
-            //     ],
-            // ],
-            // 'acf/material'       => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
+            'acf/material'      => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
             // 'acf/notice-banner'  => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //     ],
             // ],
-            'acf/map'            => [
+            'acf/map'           => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -263,6 +256,13 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Contact::SLUG,
             //     ],
             // ],
+            'acf/countdown'     => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
         ];
 
         $blocks = apply_filters(

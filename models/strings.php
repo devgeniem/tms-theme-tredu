@@ -61,7 +61,7 @@ class Strings extends \DustPress\Model {
                 'subtitle'      => _x(
                     'The content were looking for was not found',
                     'theme-frontend',
-                    'tms-theme-tredu'
+                    'tms-theme-tredu',
                 ),
                 'home_link_txt' => _x( 'To home page', 'theme-frontend', 'tms-theme-tredu' ),
             ],
@@ -133,7 +133,7 @@ class Strings extends \DustPress\Model {
                 ),
             ],
             'sibling_navigation' => [
-                'sibling_navigation' => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
+                'sibling_navigation'         => _x( 'Sibling pages', 'theme-frontend', 'tms-theme-tredu' ),
                 'sibling_navigation_heading' => _x( 'You might also be interested in', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'comments'           => [
@@ -168,9 +168,32 @@ class Strings extends \DustPress\Model {
                 'related_art'     => _x( 'Artwork by the same artist', 'theme-frontend', 'tms-theme-tredu' ),
                 'related_artwork' => _x( 'Related artwork', 'theme-frontend', 'tms-theme-tredu' ),
             ],
+            'program' => [
+                'search' => [
+                    'search_studies' => _x( 'Search studies', 'theme-frontend', 'tms-theme-tredu' ),
+                    'results_shown' => _x( 'Results shown', 'theme-frontend', 'tms-theme-tredu' ),
+                    'commit_new_search' => _x( 'Commit new search', 'theme-frontend', 'tms-theme-tredu' ),
+                    'show_only_ongoing' => _x( 'Show only programs that can be applied now', 'theme-frontend', 'tms-theme-tredu' ),
+                    'select' => _x( 'Select', 'theme-frontend', 'tms-theme-tredu' ),
+                    'results' => _x( 'Results', 'theme-frontend', 'tms-theme-tredu' ),
+                    'result' => _x( 'Result', 'theme-frontend', 'tms-theme-tredu' ),
+                    'remove_filter' => _x( 'Remove filter', 'theme-frontend', 'tms-theme-tredu' ),
+                    'key_to_navigate' => _x( 'Use arrow key to navigate', 'theme-frontend', 'tms-theme-tredu' ),
+                    'add_filter' => _x( 'Add filter', 'theme-frontend', 'tms-theme-tredu' ),
+                    'commits_new_search' => _x( 'Selecting filter commits new search', 'theme-frontend', 'tms-theme-tredu' ),
+                ],
+                'profession' => _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
+                'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),
+                'location' => _x( 'Location', 'theme-frontend', 'tms-theme-tredu' ),
+                'educational-background' => _x( 'Educational background', 'theme-frontend', 'tms-theme-tredu' ),
+                'delivery-method' => _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' ),
+                'application-period-ends' => _x( 'Application period ends', 'theme-frontend', 'tms-theme-tredu' ),
+                'start-date' => _x( 'Starts', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
             'search'             => [
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),
+                'write_search_terms' => _x( 'Write search terms', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             // Use the Duet Date Picker keys for strings
             'datepicker'         => [
@@ -220,6 +243,10 @@ class Strings extends \DustPress\Model {
                     _x( 'Nov', 'theme-frontend', 'tms-theme-tredu' ),
                     _x( 'Dec', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
+            ],
+            'modaal'             => [
+                'accessible_title' => _x( 'Dialog Window - Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
+                'close'            => _x( 'Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
             ],
         ];
     }

@@ -3,7 +3,7 @@
     <div class="share-links is-flex-tablet is-justify-content-center is-flex-wrap-wrap is-align-items-center mt-6 mb-6">
         {?title}
             <h2 class="h6 mt-0 mr-5-tablet mr-6-desktop mb-0 mt-3 has-text-centered-mobile">
-                {title|s}
+                {title|html}
             </h2>
         {/title}
 

@@ -8,6 +8,10 @@
     background-color: transparent !important; // sass-lint:disable-line no-important
 }
 
+.has-background-primary {
+    background-color: $primary;
+}
+
 .has-background-secondary {
     &--opaque {
         background-color: rgba($secondary, .5) !important;
@@ -21,6 +25,22 @@ $color-background-primary-light--opaque-light: rgba($primary-light, .05) !defaul
     }
 }
 
+.has-background-red {
+    background-color: $color-red;
+}
+
+.has-background-blue {
+    background-color: $color-blue;
+}
+
+.has-background-green {
+    background-color: $color-green;
+}
+
 .has-background-light-gray {
     background-color: $color-light-gray !important;
+}
+
+.has-background-light-blueishgray {
+    background-color: $color-light-blueishgray;
 }

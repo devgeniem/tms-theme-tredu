@@ -83,7 +83,6 @@ class PageExtend extends BaseModel {
         }
 
         return $siblings_heading_setting;
-
     }
 
     /**

@@ -33,7 +33,6 @@ class SingleProgram extends BaseModel {
      * Get program info
      *
      * @return array
-     * @throws Exception
      */
     public function program_info() : array {
         $single = $this->get_post();
@@ -133,7 +132,6 @@ class SingleProgram extends BaseModel {
      * @param array $fields Meta fields.
      *
      * @return string|null
-     * @throws Exception
      */
     protected function get_apply_period( array $fields ) : ?string {
         if ( ! empty( $fields['apply_info'] ) ) {
@@ -170,7 +168,6 @@ class SingleProgram extends BaseModel {
      * Get current post
      *
      * @return array|object|WP_Post|null
-     * @throws Exception
      */
     protected function get_post() {
         return Query::get_acf_post( get_queried_object_id() );

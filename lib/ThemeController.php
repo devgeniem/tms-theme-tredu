@@ -51,6 +51,7 @@ class ThemeController {
             TaxonomyController::class,
             ThemeSupports::class,
             Comments::class,
+            ProgramSearch::class,
         ];
 
         $classes = apply_filters(

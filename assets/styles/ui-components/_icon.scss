@@ -108,6 +108,10 @@ $accent-invert: $primary-invert !default;
         fill: $black !important; // sass-lint:disable-line no-important
     }
 
+    &.is-white {
+        fill: $white !important; // sass-lint:disable-line no-important
+    }
+
     &.is-accent {
         fill: $accent !important; // sass-lint:disable-line no-important
     }

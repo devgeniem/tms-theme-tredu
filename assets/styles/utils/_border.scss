@@ -15,6 +15,10 @@
         border-color: $secondary-invert;
     }
 
+    &-black {
+        border-color: $black;
+    }
+
     &-divider {
         border-color: $divider;
     }
@@ -41,5 +45,8 @@
     &-2 {
         border-width: 2px;
         border-style: solid;
+    }
+    &-0 {
+        border-width: 0;
     }
 }

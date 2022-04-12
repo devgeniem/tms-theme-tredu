@@ -1,16 +1,16 @@
 {?share_links}
-    <ul class="share-links is-flex is-flex-wrap-wrap is-unstyled {ul_class|s}">
+    <ul class="share-links is-flex is-flex-wrap-wrap is-unstyled {ul_class|attr}">
         {#share_links}
-            <li class="mb-4 {li_class|s}">
-                <a href="{link}"
-                   class="is-relative is-flex is-align-items-center is-justify-content-center box box--medium box--circle {share_link_classes.link|s} {#extra_classes}{.} {/extra_classes}"
-                   data-callback-text="{callback_text|s}">
-                    <span class="is-sr-only">{sr_text|s}</span>
-                    {>"ui/icon" class="icon--large icon--xlarge-tablet-only is-primary-invert {share_link_classes.icon|s}" /}
-
+            <li class="{li_class|attr}">
+                <a href="{link|url}"
+                   class="is-relative is-flex is-align-items-center is-justify-content-center box box--medium box--circle has-background-primary-invert has-border-2 has-border-secondary {#extra_classes}{.|attr} {/extra_classes}"
+                   data-callback-text="{callback_text|html}">
+                    <span class="is-sr-only">{sr_text|html}</span>
+                    {>"ui/icon" class="icon--large icon--xlarge-tablet-only" /}
 
                     {?callback_text}
-                        <div class="js-callback-container is-absolute has-top-100 pt-2 is-size-7 has-text-centered is-hidden"></div>
+                        <div
+                            class="js-callback-container is-absolute has-top-100 pt-2 is-size-7 has-text-centered is-hidden"></div>
                     {/callback_text}
                 </a>
             </li>

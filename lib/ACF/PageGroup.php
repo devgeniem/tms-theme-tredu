@@ -76,6 +76,11 @@ class PageGroup {
                         'value'    => \PageEventsSearch::TEMPLATE,
                     ],
                     [
+                        'param'    => 'page_template',
+                        'operator' => '!=',
+                        'value'    => \PageProgram::TEMPLATE,
+                    ],
+                    [
                         'param'    => 'page_type',
                         'operator' => '!=',
                         'value'    => 'posts_page',
@@ -150,6 +155,8 @@ class PageGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
+                // Layouts\ImageBannerLayout::class,
+                Layouts\CallToActionLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\GridLayout::class,
                 // Layouts\CallToActionLayout::class,

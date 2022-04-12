@@ -117,7 +117,7 @@ class Program implements PostType {
             'label'               => $labels['name'],
             'description'         => '',
             'labels'              => $labels,
-            'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions' ],
+            'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ],
             'hierarchical'        => true,
             'public'              => true,
             'show_ui'             => true,

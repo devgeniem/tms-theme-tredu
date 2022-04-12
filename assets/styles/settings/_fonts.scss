@@ -1,93 +1,127 @@
 // Put fonts here, please.
 
+/* caveat-400 - latin */
+@font-face {
+    font-family: "Caveat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/caveat-v14-latin-regular.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/caveat-v14-latin-regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/caveat-v14-latin-regular.woff2") format("woff2"),
+    url("../fonts/caveat-v14-latin-regular.woff") format("woff"),
+    url("../fonts/caveat-v14-latin-regular.ttf") format("truetype"),
+    url("../fonts/caveat-v14-latin-regular.svg#Quicksand") format("svg"); /* Legacy iOS */
+}
+
+/* caveat-700 - latin */
+@font-face {
+    font-family: "Caveat";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/caveat-v14-latin-700.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/caveat-v14-latin-regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/caveat-v14-latin-700.woff2") format("woff2"),
+    url("../fonts/caveat-v14-latin-700.woff") format("woff"),
+    url("../fonts/caveat-v14-latin-700.ttf") format("truetype"),
+    url("../fonts/caveat-v14-latin-700.svg#Quicksand") format("svg"); /* Legacy iOS */
+}
+
 /* quicksand-300 - latin */
 @font-face {
-     font-family: 'Quicksand';
-     font-style: normal;
-     font-weight: 300;
-     src: url('../fonts/quicksand-v28-latin-300.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/quicksand-v28-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/quicksand-v28-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/quicksand-v28-latin-300.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/quicksand-v28-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/quicksand-v28-latin-300.svg#Quicksand') format('svg'); /* Legacy iOS */
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/quicksand-v28-latin-300.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/quicksand-v28-latin-300.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/quicksand-v28-latin-300.woff2") format("woff2"),
+    url("../fonts/quicksand-v28-latin-300.woff") format("woff"),
+    url("../fonts/quicksand-v28-latin-300.ttf") format("truetype"),
+    url("../fonts/quicksand-v28-latin-300.svg#Quicksand") format("svg"); /* Legacy iOS */
 }
+
 /* quicksand-regular - latin */
 @font-face {
-     font-family: 'Quicksand';
-     font-style: normal;
-     font-weight: 400;
-     src: url('../fonts/quicksand-v28-latin-regular.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/quicksand-v28-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/quicksand-v28-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/quicksand-v28-latin-regular.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/quicksand-v28-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/quicksand-v28-latin-regular.svg#Quicksand') format('svg'); /* Legacy iOS */
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/quicksand-v28-latin-regular.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/quicksand-v28-latin-regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/quicksand-v28-latin-regular.woff2") format("woff2"),
+    url("../fonts/quicksand-v28-latin-regular.woff") format("woff"),
+    url("../fonts/quicksand-v28-latin-regular.ttf") format("truetype"),
+    url("../fonts/quicksand-v28-latin-regular.svg#Quicksand") format("svg"); /* Legacy iOS */
 }
+
 /* quicksand-500 - latin */
 @font-face {
-     font-family: 'Quicksand';
-     font-style: normal;
-     font-weight: 500;
-     src: url('../fonts/quicksand-v28-latin-500.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/quicksand-v28-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/quicksand-v28-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/quicksand-v28-latin-500.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/quicksand-v28-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/quicksand-v28-latin-500.svg#Quicksand') format('svg'); /* Legacy iOS */
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/quicksand-v28-latin-500.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/quicksand-v28-latin-500.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/quicksand-v28-latin-500.woff2") format("woff2"),
+    url("../fonts/quicksand-v28-latin-500.woff") format("woff"),
+    url("../fonts/quicksand-v28-latin-500.ttf") format("truetype"),
+    url("../fonts/quicksand-v28-latin-500.svg#Quicksand") format("svg"); /* Legacy iOS */
 }
+
 /* quicksand-600 - latin */
 @font-face {
-     font-family: 'Quicksand';
-     font-style: normal;
-     font-weight: 600;
-     src: url('../fonts/quicksand-v28-latin-600.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/quicksand-v28-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/quicksand-v28-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/quicksand-v28-latin-600.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/quicksand-v28-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/quicksand-v28-latin-600.svg#Quicksand') format('svg'); /* Legacy iOS */
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/quicksand-v28-latin-600.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/quicksand-v28-latin-600.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/quicksand-v28-latin-600.woff2") format("woff2"),
+    url("../fonts/quicksand-v28-latin-600.woff") format("woff"),
+    url("../fonts/quicksand-v28-latin-600.ttf") format("truetype"),
+    url("../fonts/quicksand-v28-latin-600.svg#Quicksand") format("svg"); /* Legacy iOS */
 }
+
 /* quicksand-700 - latin */
 @font-face {
-     font-family: 'Quicksand';
-     font-style: normal;
-     font-weight: 700;
-     src: url('../fonts/quicksand-v28-latin-700.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/quicksand-v28-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/quicksand-v28-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/quicksand-v28-latin-700.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/quicksand-v28-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/quicksand-v28-latin-700.svg#Quicksand') format('svg'); /* Legacy iOS */
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/quicksand-v28-latin-700.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/quicksand-v28-latin-700.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/quicksand-v28-latin-700.woff2") format("woff2"),
+    url("../fonts/quicksand-v28-latin-700.woff") format("woff"),
+    url("../fonts/quicksand-v28-latin-700.ttf") format("truetype"),
+    url("../fonts/quicksand-v28-latin-700.svg#Quicksand") format("svg"); /* Legacy iOS */
 }
+
 /* overpass-regular - latin */
 @font-face {
-     font-family: 'Overpass';
-     font-style: normal;
-     font-weight: 400;
-     src: url('../fonts/overpass-v10-latin-regular.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/overpass-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/overpass-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/overpass-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/overpass-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/overpass-v10-latin-regular.svg#Overpass') format('svg'); /* Legacy iOS */
+    font-family: "Overpass";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/overpass-v10-latin-regular.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/overpass-v10-latin-regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/overpass-v10-latin-regular.woff2") format("woff2"),
+    url("../fonts/overpass-v10-latin-regular.woff") format("woff"),
+    url("../fonts/overpass-v10-latin-regular.ttf") format("truetype"),
+    url("../fonts/overpass-v10-latin-regular.svg#Overpass") format("svg"); /* Legacy iOS */
 }
+
 /* overpass-600 - latin */
 @font-face {
-     font-family: 'Overpass';
-     font-style: normal;
-     font-weight: 600;
-     src: url('../fonts/overpass-v10-latin-600.eot'); /* IE9 Compat Modes */
-     src: local(''),
-          url('../fonts/overpass-v10-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/overpass-v10-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/overpass-v10-latin-600.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/overpass-v10-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/overpass-v10-latin-600.svg#Overpass') format('svg'); /* Legacy iOS */
+    font-family: "Overpass";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/overpass-v10-latin-600.eot"); /* IE9 Compat Modes */
+    src: local(""),
+    url("../fonts/overpass-v10-latin-600.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/overpass-v10-latin-600.woff2") format("woff2"),
+    url("../fonts/overpass-v10-latin-600.woff") format("woff"),
+    url("../fonts/overpass-v10-latin-600.ttf") format("truetype"),
+    url("../fonts/overpass-v10-latin-600.svg#Overpass") format("svg"); /* Legacy iOS */
 }

@@ -1,0 +1,59 @@
+.key-figures {
+    &__number {
+        font-family: $family-tertiary;
+
+        &.is-text-huge {
+            @include from($widescreen) {
+                font-size: 9.6875rem !important;
+            }
+        }
+
+        &.is-text-bigger {
+            @include from($widescreen) {
+                font-size: 7.75rem !important;
+            }
+        }
+    }
+
+    &__description {
+        letter-spacing: .05rem;
+    }
+
+    &__row {
+        &--light {
+            background-color: #eff6ff;
+            color: $color-semidark-blue;
+
+            .key-figures__description {
+                color: $color-black;
+            }
+        }
+
+        &--accent {
+            background-color: $color-green;
+            color: $color-dark-blue;
+
+            .key-figures__description {
+                color: $color-black;
+            }
+        }
+
+        &--primary {
+            background-color: $primary;
+            color: $color-semidark-blue;
+
+            .key-figures__description {
+                color: $color-white;
+            }
+        }
+
+        &--secondary {
+            background-color: $color-semidark-blue;
+            color: $color-white;
+
+            .key-figures__description {
+                color: $color-black;
+            }
+        }
+    }
+}

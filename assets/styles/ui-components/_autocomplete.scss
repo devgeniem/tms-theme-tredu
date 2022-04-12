@@ -1,0 +1,10 @@
+.ui-autocomplete {
+   z-index: 10000;
+
+   .icon:before {
+    position: relative;
+    content: "V";
+    color: red;
+    right: 17px;
+  }
+}

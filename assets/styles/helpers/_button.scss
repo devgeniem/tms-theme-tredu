@@ -14,23 +14,23 @@ $button-background-invert: $button-primary-invert !default;
 $button-border-width: .15rem !default;
 $button-border-radius: .25rem !default;
 
-$button-font-size: .9375rem !default;
-$button-font-size-tablet: .88235rem !default;
+$button-font-size: 1rem !default;
+$button-font-size-tablet: $button-font-size !default;
 
 $button-font-weight: 600 !default;
 
 $button-transition-easing: $easing !default;
 $button-transition-speed: $speed !default;
- 
- .button-state-focus {
-     text-decoration: underline;
-     outline: .125rem solid $color-black;
-     outline-offset: .25rem;
-     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
- }
 
- .gform_wrapper button,
- .button {
+.button-state-focus {
+    text-decoration: underline;
+    outline: .125rem solid $color-black;
+    outline-offset: .25rem;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.gform_wrapper button,
+.button {
     @extend %control;
     @extend %unselectable;
 
@@ -39,7 +39,7 @@ $button-transition-speed: $speed !default;
     border-radius: $button-border-radius;
     cursor: pointer;
     font-weight: $button-font-weight;
-    font-family: $family-primary;
+    font-family: $family-secondary;
     font-size: $button-font-size;
 
     justify-content: center;
@@ -47,58 +47,78 @@ $button-transition-speed: $speed !default;
 
     text-align: center;
     white-space: normal;
- 
-     @include from($tablet) {
-         font-size: $button-font-size-tablet;
-         padding-right: 1.764rem;
-         padding-left: 1.764rem;
-     }
- 
-     .icon {
-         width: 1rem;
-         height: 1rem;
-         margin-left: 1.75rem !important;
-         margin-right: -.5rem !important;
-     }
- 
-     &.is-rounded {
-         border-radius: 999px;
-     }
 
-     &--icon {
-         .icon {
-             margin-left: .75rem !important;
-             margin-right: -.3rem !important;
-         }
-     }
- 
-     &.is-small {
-         padding: .36rem 1.5rem !important;
-         border-radius: 1.7rem !important;
- 
-         .icon {
-             display: none;
-         }
-     }
+    @include from($tablet) {
+        font-size: $button-font-size-tablet;
+        padding-right: 1.764rem;
+        padding-left: 1.764rem;
+    }
 
-     &.is-primary {
+    .icon {
+        width: 1rem;
+        height: 1rem;
+        margin-left: 1.75rem !important;
+        margin-right: -.5rem !important;
+    }
+
+    &.is-rounded {
+        border-radius: 999px;
+    }
+
+    &--icon {
+        .icon {
+            margin-left: .75rem !important;
+            margin-right: -.3rem !important;
+        }
+    }
+
+    &.is-small {
+        padding: .36rem 1.5rem !important;
+        border-radius: 1.7rem !important;
+
+        .icon {
+            display: none;
+        }
+    }
+
+    &.is-primary {
         background-color: $primary;
         border-color: $primary;
         color: $color-white;
+
         &.is-outlined {
             color: $primary;
-        }
-     }
 
-     &.is-secondary {
+            &.is-inverted {
+                color: $white !important;
+                background-color: $color-dark-blue !important;
+                border-color: $color-blue !important;
+
+                .icon {
+                    fill: $color-blue !important;
+                }
+            }
+        }
+
+        .icon {
+            fill: $color-semidark-blue;
+        }
+    }
+
+    &.is-secondary {
         background-color: $secondary;
         color: $primary;
+
         &.is-outlined {
             color: $white;
         }
-     }
 
-     &.is-outlined {
+        .icon {
+            fill: $white;
+        }
+    }
+
+    &.is-outlined {
         background-color: transparent;
         border-color: $secondary;
     }
@@ -107,24 +127,22 @@ $button-transition-speed: $speed !default;
         text-decoration: underline;
     }
 
-    &:focus{
+    &:focus {
         text-decoration: underline;
         outline: .125rem solid $color-black;
         outline-offset: .25rem;
         box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
 
- 
 
- }
- 
- // Disable pointer events for elements inside links and buttons
- // to prevent targeting problems with JavaScript
- a,
- button,
- .button {
-     * {
-         pointer-events: none;
-     }
- }
- 
+}
+
+// Disable pointer events for elements inside links and buttons
+// to prevent targeting problems with JavaScript
+a,
+button,
+.button {
+    * {
+        pointer-events: none;
+    }
+}

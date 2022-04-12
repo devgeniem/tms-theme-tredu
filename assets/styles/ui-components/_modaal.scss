@@ -33,11 +33,12 @@
         img {
             max-height: 75vh;
         }
-    }
-}
 
-.modaal-noscroll {
-    .skip-to-content {
-        display: none !important;
+        &:focus {
+            img {
+                outline: .125rem dashed $color-white;
+                outline-offset: .25rem;
+            }
+        }
     }
 }

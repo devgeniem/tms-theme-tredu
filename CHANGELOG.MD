@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
 - TMS-769: Countdown block #37
 - TMS-735: Program Search #38
+- TMS-697: Share links #35
 - TMS-766: Fix displaying image author on Call to Action.
 - TMS-691: Enable social media block #30
 - TMS-692-2: Change accent key figure color #29

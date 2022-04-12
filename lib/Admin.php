@@ -248,6 +248,7 @@ window.onload = function() {
                 \PageFrontPage::TEMPLATE,
                 \PageEventsCalendar::TEMPLATE,
                 \PageEventsSearch::TEMPLATE,
+                \PageProgram::TEMPLATE,
             ]
         );
 

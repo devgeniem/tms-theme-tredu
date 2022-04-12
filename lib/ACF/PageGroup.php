@@ -76,6 +76,11 @@ class PageGroup {
                         'value'    => \PageEventsSearch::TEMPLATE,
                     ],
                     [
+                        'param'    => 'page_template',
+                        'operator' => '!=',
+                        'value'    => \PageProgram::TEMPLATE,
+                    ],
+                    [
                         'param'    => 'page_type',
                         'operator' => '!=',
                         'value'    => 'posts_page',
@@ -150,16 +155,18 @@ class PageGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
+                // Layouts\ImageBannerLayout::class,
+                Layouts\CallToActionLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\GridLayout::class,
                 // Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
-                // Layouts\LogoWallLayout::class,
+                Layouts\LogoWallLayout::class,
                 // Layouts\MapLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\MapLayout::class,
                 // Layouts\IconLinksLayout::class,
-                // Layouts\SocialMediaLayout::class,
+                Layouts\SocialMediaLayout::class,
                 // Layouts\ImageCarouselLayout::class,
                 Layouts\SubpageLayout::class,
                 // Layouts\TextBlockLayout::class,

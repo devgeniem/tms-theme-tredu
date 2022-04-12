@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
+### Changed
 
+- TMS-766: Fix displaying image author on Call to Action.
 - TMS-691: Enable social media block #30
 - TMS-692-2: Change accent key figure color #29
 - TMS-685: Materials #33

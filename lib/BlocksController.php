@@ -101,9 +101,9 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'        => [],
-            'core/template'     => [],
-            'core/list'         => [
+            'core/block'       => [],
+            'core/template'    => [],
+            'core/list'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -113,7 +113,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/heading'      => [
+            'core/heading'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -123,7 +123,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/paragraph'    => [
+            'core/paragraph'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -133,78 +133,45 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'acf/image-banner'  => [
+            'acf/image-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
             ],
-            'acf/link-list'     => [
+            'acf/grid'         => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                ],
+            ],
+            'acf/link-list'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/quote'         => [
+
+            'acf/quote'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/key-figures'   => [
+            'acf/key-figures'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/grid'          => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                ],
-            ],
-            'acf/subpages'      => [
+            'acf/subpages'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
             ],
-            'acf/image-gallery' => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            // 'acf/link-list'      => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/grid'           => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //     ],
-            // ],
-            'acf/accordion'   => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            'acf/video'       => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            'acf/image'       => [
+            'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -218,6 +185,27 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
+            // 'acf/image'          => [
+            //     'post_types' => [
+            //         PostType\Page::SLUG,
+            //         PostType\Post::SLUG,
+            //         PostType\BlogArticle::SLUG,
+            //     ],
+            // ],
+            // 'acf/video'          => [
+            //     'post_types' => [
+            //         PostType\Page::SLUG,
+            //         PostType\Post::SLUG,
+            //         PostType\BlogArticle::SLUG,
+            //     ],
+            // ],
+            // 'acf/image-gallery'  => [
+            //     'post_types' => [
+            //         PostType\Page::SLUG,
+            //         PostType\Post::SLUG,
+            //         PostType\BlogArticle::SLUG,
+            //     ],
+            // ],
             // 'acf/image-carousel' => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
@@ -225,49 +213,49 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
-            'acf/share-links' => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                ],
-            ],
+            // 'acf/share-links'    => [
+            //     'post_types' => [
+            //         PostType\Page::SLUG,
+            //     ],
+            // ],
             // 'acf/table'          => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //     ],
             // ],
-            'acf/material'    => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            // 'acf/notice-banner'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //     ],
-            // ],
-            'acf/map'         => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            'acf/contacts'    => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            // 'acf/acc-icon-links' => [
+            // 'acf/material'       => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
             //         PostType\Post::SLUG,
             //         PostType\BlogArticle::SLUG,
             //     ],
             // ],
+            // 'acf/notice-banner'  => [
+            //     'post_types' => [
+            //         PostType\Page::SLUG,
+            //     ],
+            // ],
+            'acf/map'            => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            // 'acf/contacts'       => [
+            //     'post_types' => [
+            //         PostType\Page::SLUG,
+            //         PostType\Post::SLUG,
+            //         PostType\BlogArticle::SLUG,
+            //     ],
+            // ],
+            'acf/acc-icon-links' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
             // 'gravityforms/form'  => [
             //     'post_types' => [
             //         PostType\Page::SLUG,
@@ -275,13 +263,6 @@ class BlocksController implements Interfaces\Controller {
             //         PostType\Contact::SLUG,
             //     ],
             // ],
-            'acf/countdown' => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
         ];
 
         $blocks = apply_filters(

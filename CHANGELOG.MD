@@ -23,10 +23,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-692-2: Change accent key figure color from black to darkblue
+
 ### Fixed
 
 - TMS-768: Duet Date Picker from CDN to prevent build issues that sometimes break JS
 - TMS-766: Fix displaying image author on Call to Action.
+- TMS-702: Accessibility icons
 - TMS-735: Program Search
 
 ## [2022-04-07] - 0.3.0

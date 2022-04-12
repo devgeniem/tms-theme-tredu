@@ -11,7 +11,7 @@
                     <div class="hero__box is-relative has-text-white is-left p-6">
                         <div class="overlay overlay--primary-30"></div>
                             {?title}
-                                <h1 class="mt-0 h2 no-hyphens has-text-white is-relative">
+                                <h1 class="mt-0 h1 no-hyphens has-text-white is-relative">
                                     {title|s}
                                 </h1>
                             {/title}
@@ -21,9 +21,13 @@
                             <div class="is-relative">
                                 <form role="search" method="get" class="search-form is-flex is-flex-wrap-wrap is-align-items-stretch" action="{form_action|s}">
                                     <label class="mb-0 is-flex-grow-1">
-                                        <span class="is-sr-only"> {Strings.s.header.search_input_label|s} </span>
-                                        <input type="search" class="search-form__input has-background-light p-3 has-width-100"
-                                            placeholder="{Strings.s.header.search_input_placeholder|s}" value="{search_query|s}" name="program-search">
+                                        <span class="is-sr-only"> {Strings.s.header.write_search_terms|s} </span>
+                                        <input type="search" 
+                                               class="search-form__input program-search has-background-light p-4 has-width-100"
+                                               placeholder="{Strings.s.search.write_search_terms|s}" 
+                                               value="{search_query|s}" 
+                                               name="program-search" 
+                                               autocomplete="off">
                                     </label>
 
                                     <button type="submit" class="search-form__button button button--icon is-secondary is-family-secondary">

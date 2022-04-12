@@ -171,6 +171,15 @@
                 margin-right: auto;
                 margin-left: auto;
             }
+
+            a {
+                border: 1px solid $secondary;
+                &:focus {
+                    .icon {
+                        fill: $primary !important;
+                    }
+                }
+            }
         }
 
         .search-form {
@@ -181,6 +190,13 @@
                 border-bottom-right-radius: 0;
                 border-top-left-radius: .25rem;
                 border-bottom-left-radius: .25rem;
+                border-right-width: rem(10);
+                font-size: 1rem;
+                &:focus {
+                    outline-color: $white;
+                    position: relative;
+                    z-index: 9;
+                }
             }
 
             &__button {
@@ -189,6 +205,11 @@
                 border-bottom-right-radius: .25rem;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
+                &:focus {
+                    outline-color: $white;
+                    position: relative;
+                    z-index: 9;
+                }
             }
         }
     }

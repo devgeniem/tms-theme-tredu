@@ -86,7 +86,7 @@ class SettingsGroup {
                         new BlogArticleSettingsTab( '', $field_group->get_key() ),
                         new ContactsSettingsTab( '', $field_group->get_key() ),
                         new SitemapSettingsTab( '', $field_group->get_key() ),
-                        new ProgramSettingsTab( '', $field_group->get_key() )
+                        new ProgramSettingsTab( '', $field_group->get_key() ),
                     ],
                     $field_group->get_key()
                 )

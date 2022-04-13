@@ -92,7 +92,6 @@ class HeroFields extends \Geniem\ACF\Field\Group {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['description']['instructions'] );
 
-
         $use_box_field = ( new Field\TrueFalse( $strings['use_box']['label'] ) )
             ->set_key( "${key}_use_box" )
             ->set_name( 'use_box' )
@@ -113,12 +112,11 @@ class HeroFields extends \Geniem\ACF\Field\Group {
             ->set_max( 4 )
             ->set_layout( 'block' )
             ->set_button_label( 'Buttoni' )
-            ->set_instructions('ohjeet' );
+            ->set_instructions( 'ohjeet' );
 
         $rows_field->add_fields( [
-                $link_field
-            ] );
-    
+            $link_field,
+        ] );
 
         return [
             $image_field,

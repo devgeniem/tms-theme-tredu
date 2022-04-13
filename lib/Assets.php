@@ -56,7 +56,7 @@ class Assets implements Interfaces\Controller {
 
         \add_filter(
             'tms/theme/acc_icons',
-            \Closure::fromCallable( [ $this, 'get_accessibility_icons' ] ),
+            \Closure::fromCallable( [ __CLASS__, 'get_accessibility_icons' ] ),
             10,
             0
         );
@@ -390,7 +390,7 @@ class Assets implements Interfaces\Controller {
      *
      * @return string[]
      */
-    protected function get_accessibility_icons() {
+    public static function get_accessibility_icons() {
         return [
             'aaniopastus' => 'Ääniopastus',
             'avustaja' => 'Avustaja',

@@ -1,5 +1,5 @@
-<button class="button is-primary button--icon is-small ml-2 {class|s}" type="submit">
-    {text|s}
+<button class="button is-primary button--icon {class|attr}" type="submit">
+    {text|kses}
 
-    {>"ui/icon" icon="search" class="is-primary-invert" /}
+    {>"ui/icon" icon="search" /}
 </button>

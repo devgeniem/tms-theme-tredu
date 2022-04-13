@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<div class="accordion pt-6 pb-6" {?anchor}id="{anchor|s}"{/anchor}>
-=======
 <div class="accordion pt-6 pb-6 is-align-wide" {?anchor}id="{anchor|attr}"{/anchor}>
->>>>>>> TMS-743
     <header class="accordion__header">
         <h2 class="accordion__title h3 mt-0 mb-6 has-text-weight-semibold">
             {title|html}

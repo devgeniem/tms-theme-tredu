@@ -6,6 +6,7 @@
 namespace TMS\Theme\Tredu;
 
 use Geniem\ACF\Block as GeniemBlock;
+use PageContacts;
 
 /**
  * Class BlocksController
@@ -252,8 +253,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
                 ],
             ],
             // 'gravityforms/form'  => [

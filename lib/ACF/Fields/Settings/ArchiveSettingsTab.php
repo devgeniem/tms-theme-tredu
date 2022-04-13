@@ -84,8 +84,6 @@ class ArchiveSettingsTab extends Tab {
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['archive_view_type']['instructions'] );
 
-            
-
             $this->add_fields( [
                 $use_images_field,
                 $view_type_field,

@@ -1,11 +1,8 @@
 <?php
-/**
- *  Copyright (c) 2021. Geniem Oy
- */
 
 namespace TMS\Theme\Tredu\Formatters;
-use TMS\Theme\Tredu\Settings;
 
+use TMS\Theme\Tredu\Settings;
 
 /**
  * Class HeroFormatter
@@ -80,7 +77,7 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
         return false;
     }
 
-     /**
+    /**
      * Get form action from settings
      *
      * @return string
@@ -90,7 +87,7 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
         $program_page = Settings::get_setting( 'program_page' );
 
         if ( is_int( $program_page ) ) {
-           return get_permalink( $program_page );
+            return get_permalink( $program_page );
         }
 
         return '';

@@ -4,18 +4,18 @@
         {#rows}
             <div class="acc-icon-links__item column is-6-tablet keep-vertical-spacing pb-5">
                 {?acc_icon}
-                    {>"ui/icon" icon=acc_icon class="icon--xxxlarge" /}
+                    {>"ui/icon" icon=acc_icon class="acc-icon-links__item-icon" /}
                 {/acc_icon}
 
                 {?title}
                     <h2 class="h4 mt-0 mb-4 mt-4">
-                        {title|s}
+                        {title|html}
                     </h2>
                 {/title}
 
                 {?description}
                     <div class="acc-icon-links__item-description mt-4 mb-4">
-                        {description|s}
+                        {description|kses}
                     </div>
                 {/description}
 

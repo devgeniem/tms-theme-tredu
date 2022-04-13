@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-12 18:06+0300\n"
-"PO-Revision-Date: 2022-04-12 18:06+0300\n"
+"POT-Creation-Date: 2022-04-13 07:51+0300\n"
+"PO-Revision-Date: 2022-04-13 08:15+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -81,9 +81,9 @@ msgstr ""
 
 #: lib/ACF/PostGroup.php:129
 msgid "Related posts"
-msgstr "Liittyvät sisällöt"
+msgstr "Luitko jo nämä?"
 
-#: lib/ACF/SettingsGroup.php:52
+#: lib/ACF/SettingsGroup.php:51
 msgctxt "theme ACF"
 msgid "Site settings"
 msgstr "Sivuston asetukset"

@@ -1,8 +1,8 @@
-<section class="section related-posts has-background-secondary has-background-secondary--opaque pt-10 pb-10">
+<section class="section related-posts pt-10 pb-10">
     <div class="container">
         {?related.title}
             <div class="columns">
-                <div class="column has-text-centered">
+                <div class="column">
                     <h2 class="mt-0 mb-6">
                         {related.title|s}
                     </h2>
@@ -31,14 +31,9 @@
                         {/post_title}
 
                         <div class="related-posts__excerpt mt-5">
-                            <span class="has-text-weight-bold">{@strtodate value=post_date /}</span>
+                            <span class="has-text-weight-semibold has-text-black">{@strtodate value=post_date /}</span>
                             {post_excerpt|s}
                         </div>
-
-                        {?category}
-                            <a href="{category_link}"
-                               class="button is-secondary is-size-7 mt-5 pt-1 pr-4 pb-1 pl-4 has-border-radius-small">{category|s}</a>
-                        {/category}
                     </div>
                 </div>
             {/related.posts}
@@ -48,7 +43,7 @@
             <div class="columns">
                 <div class="column has-text-right-tablet">
                     <a href="{related.link.url}" class="related-posts__read-more is-inline-flex is-align-items-center mt-4-tablet mt-6-desktop">
-                        {>"ui/icon" icon="chevron-right" class="icon--small is-primary mr-2" /}
+                        {>"ui/icon" icon="chevron-right" class="icon--small is-secondary mr-2" /}
                         {related.link.title|s}
                     </a>
                 </div>

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-669: Materials page template
 - TMS-695: Related posts. #42
 
 ## [2022-04-12] - 0.4.0

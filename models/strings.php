@@ -181,7 +181,7 @@ class Strings extends \DustPress\Model {
                     'key_to_navigate' => _x( 'Use arrow key to navigate', 'theme-frontend', 'tms-theme-tredu' ),
                     'add_filter' => _x( 'Add filter', 'theme-frontend', 'tms-theme-tredu' ),
                     'commits_new_search' => _x( 'Selecting filter commits new search', 'theme-frontend', 'tms-theme-tredu' ),
-                    'write_term_profession_program_name' => _x( 'Write search term, profession or program name', 'theme-frontend', 'tms-theme-tredu' )
+                    'write_term_profession_program_name' => _x( 'Write search term, profession or program name', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
                 'profession' => _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
                 'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),

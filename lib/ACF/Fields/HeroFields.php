@@ -65,6 +65,11 @@ class HeroFields extends \Geniem\ACF\Field\Group {
                 'label'        => 'Teksti värilaatikossa',
                 'instructions' => '',
             ],
+            'links'     => [
+                'label'        => 'Linkit',
+                'instructions' => 'Lisää linkkipainikkeita',
+                'add_more_btn' => 'Lisää linkkirivi',
+            ],
         ];
 
         $key = $this->get_key();
@@ -92,27 +97,21 @@ class HeroFields extends \Geniem\ACF\Field\Group {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['description']['instructions'] );
 
-        $use_box_field = ( new Field\TrueFalse( $strings['use_box']['label'] ) )
-            ->set_key( "${key}_use_box" )
-            ->set_name( 'use_box' )
-            ->use_ui()
-            ->set_wrapper_width( 30 )
-            ->set_instructions( $strings['use_box']['instructions'] );
-
         $link_field = ( new Field\Link( $strings['link']['label'] ) )
             ->set_key( "${key}_link" )
             ->set_name( 'link' )
             ->set_wrapper_width( 40 )
             ->set_instructions( $strings['link']['instructions'] );
 
-        $rows_field = ( new Field\Repeater( 'Repeateri' ) )
+        $rows_field = ( new Field\Repeater( $strings['links']['label'] ) )
             ->set_key( "${key}_rows" )
             ->set_name( 'rows' )
             ->set_min( 0 )
             ->set_max( 4 )
             ->set_layout( 'block' )
-            ->set_button_label( 'Buttoni' )
-            ->set_instructions( 'ohjeet' );
+            ->set_button_label( $strings['links']['add_more_btn'] )
+            ->set_wrapper_width( 100 )
+            ->set_instructions( $strings['links']['instructions'] );
 
         $rows_field->add_fields( [
             $link_field,
@@ -122,7 +121,6 @@ class HeroFields extends \Geniem\ACF\Field\Group {
             $image_field,
             $title_field,
             $description_field,
-            $use_box_field,
             $rows_field,
         ];
     }

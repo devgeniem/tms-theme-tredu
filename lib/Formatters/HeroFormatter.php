@@ -35,20 +35,6 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
      */
     public function format( array $layout ) : array {
 
-        if ( $layout['use_box'] && $this->has_filled_text_fields( $layout ) ) {
-            $layout['container_class'] = 'hero--box';
-            $box_classes[]             = 'hero__box--background';
-            $box_classes[]             = 'has-background-primary';
-            $box_classes[]             = 'has-text-primary-invert';
-            $button_classes[]          = 'is-primary-invert';
-            $button_classes[]          = 'is-outlined';
-        }
-        else {
-            $layout['use_overlay'] = ! empty( $layout['description'] );
-            $box_classes[]         = 'has-text-white';
-            $button_classes[]      = 'is-primary';
-        }
-
         $layout['form_action'] = $this->form_action();
 
         return $layout;

@@ -87,6 +87,12 @@ $pagination-item-transition-speed: $speed !default;
         margin: 0 .35rem .7rem;
     }
 
+    a {
+        &:focus {
+            @extend .button-state-focus;
+        }
+    }
+
     .paginate {
         display: flex;
         justify-content: center;

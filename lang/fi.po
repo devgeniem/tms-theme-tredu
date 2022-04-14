@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-13 11:08+0300\n"
-"PO-Revision-Date: 2022-04-13 11:08+0300\n"
+"POT-Creation-Date: 2022-04-14 13:42+0300\n"
+"PO-Revision-Date: 2022-04-14 13:46+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -24,11 +24,10 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
 #: assets/dist/theme_tredu.js:4770
-#, fuzzy
 #| msgid "Filter by date"
 msgctxt "text direction"
 msgid "ltr"
-msgstr "Rajaa päivämäärän mukaan"
+msgstr ""
 
 #: comments.php:14
 msgid "Comments"
@@ -487,7 +486,7 @@ msgstr "Näytä kaikki"
 #, fuzzy
 #| msgid "Filter by date"
 msgid "Filter"
-msgstr "Rajaa päivämäärän mukaan"
+msgstr "Rajaa"
 
 #: models/page-program.php:199
 msgid "Sort"
@@ -1005,12 +1004,15 @@ msgctxt "theme-frontend"
 msgid "Write search terms"
 msgstr "Kirjoita hakusanat"
 
-#: models/strings.php:200
-#, fuzzy
-#| msgid "Filter by date"
+#: models/strings.php:199
 msgctxt "theme-frontend"
 msgid "Filter"
-msgstr "Rajaa päivämäärän mukaan"
+msgstr "Rajaa"
+
+#: models/strings.php:200
+msgctxt "theme-frontend"
+msgid "Clicking the link will download file"
+msgstr "Linkin avaaminen lataa tiedoston"
 
 #: models/strings.php:204 models/strings.php:212
 msgctxt "theme-frontend"

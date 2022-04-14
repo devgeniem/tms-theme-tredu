@@ -197,7 +197,8 @@ class Strings extends \DustPress\Model {
                 'write_search_terms' => _x( 'Write search terms', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'page_materials'     => [
-                'filter' => _x( 'Filter', 'theme-frontend', 'tms-theme-tredu' ),
+                'filter'        => _x( 'Filter', 'theme-frontend', 'tms-theme-tredu' ),
+                'title_sr_text' => _x( 'Clicking the link will download file', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             // Use the Duet Date Picker keys for strings
             'datepicker'         => [

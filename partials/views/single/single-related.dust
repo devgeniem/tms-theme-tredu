@@ -31,7 +31,8 @@
                         {/post_title}
 
                         <div class="related-posts__excerpt mt-5">
-                            <span class="has-text-weight-semibold has-text-black">{@strtodate value=post_date /}</span>
+                            <span
+                                class="has-text-weight-semibold has-text-black has-text-small">{@strtodate value=post_date /}</span>
                             {post_excerpt|kses}
                         </div>
                     </div>
@@ -43,8 +44,8 @@
             <div class="columns">
                 <div class="column has-text-right-tablet">
                     <a href="{related.link.url|url}"
-                       class="related-posts__read-more is-inline-flex is-align-items-center mt-4-tablet mt-6-desktop">
-                        {>"ui/icon" icon="chevron-right" class="icon--small is-secondary mr-2" /}
+                       class="related-posts__read-more is-inline-flex is-align-items-flex-start mt-4-tablet mt-6-desktop has-text-weight-semibold">
+                        {>"ui/icon" icon="chevron-right" class="icon--small is-secondary mt-2 mr-2" /}
                         {related.link.title|html}
                     </a>
                 </div>

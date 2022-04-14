@@ -15,6 +15,7 @@
                        class="page-materials__result-title is-inline-flex is-align-items-center has-text-large has-text-weight-semibold is-family-secondary has-word-break-break-all {layout_classes.page_item_text|s}"
                        download>
                         {title|html}
+                        <span class="is-sr-only">{Strings.s.page_materials.title_sr_text|html}</span>
                         {>"ui/icon" icon="download" class="ml-3 is-secondary icon--large" /}
                     </a>
 
@@ -33,9 +34,12 @@
             {/description}
 
             <a href="{url|url}"
-               class="button is-small is-hidden-touch is-align-self-flex-start ml-auto-tablet mt-4 {layout_classes.page_item_button|attr}"
+               class="button is-primary mt-4"
+               aria-hidden="true"
                download>
                 {button_text|kses}
+
+                {>"ui/icon" icon="download" /}
             </a>
         </div>
     </div>

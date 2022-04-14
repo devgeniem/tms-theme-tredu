@@ -110,7 +110,11 @@ $button-transition-speed: $speed !default;
         color: $primary;
 
         &.is-outlined {
-            color: $white;
+            color: $primary;
+
+            .icon {
+                fill: $primary;
+            }
         }
 
         .icon {

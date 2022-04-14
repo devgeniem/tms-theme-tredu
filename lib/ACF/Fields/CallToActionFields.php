@@ -51,27 +51,31 @@ class CallToActionFields extends Field\Group {
                 'label'        => 'Asettelu',
                 'instructions' => '',
             ],
-            'image'          => [
+            'image'            => [
                 'label'        => 'Kuva',
                 'instructions' => '',
             ],
-            'title'          => [
+            'title'            => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
             ],
-            'description'    => [
+            'description'      => [
                 'label'        => 'Teksti',
                 'instructions' => '',
             ],
-            'link'           => [
+            'link'             => [
                 'label'        => 'Linkki',
                 'instructions' => '',
             ],
-            'display_artist' => [
+            'display_artist'   => [
                 'label'        => 'Kuvan tekijätiedot',
                 'instructions' => 'Näytetäänkö kuvan alla kuvan tekijätiedot?',
                 'on'           => 'Näytetään',
                 'off'          => 'Ei näytetä',
+            ],
+            'background_color' => [
+                'label'        => 'Taustaväri',
+                'instructions' => '',
             ],
         ];
 
@@ -131,6 +135,17 @@ class CallToActionFields extends Field\Group {
             ->set_ui_on_text( $strings['display_artist']['on'] )
             ->set_instructions( $strings['display_artist']['instructions'] );
 
+        $background_color_field = ( new Field\Select( $strings['background_color']['label'] ) )
+            ->set_key( "${key}_background_color" )
+            ->set_name( 'background_color' )
+            ->set_choices( [
+                'primary-light' => 'Vaalea',
+                'primary'       => 'Tumma',
+            ] )
+            ->set_default_value( 'light' )
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['background_color']['instructions'] );
+
         $rows_field->add_fields( [
             $image_field,
             $title_field,
@@ -138,6 +153,7 @@ class CallToActionFields extends Field\Group {
             $link_field,
             $layout_field,
             $display_artist_field,
+            $background_color_field,
         ] );
 
         return [

@@ -71,11 +71,10 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             Settings::get_setting( 'contacts_default_image' )
         );
 
-        $data['column_class'] = 'is-10-mobile is-offset-1-mobile is-6-tablet is-offset-0-tablet';
+        $data['column_class'] = 'is-6-tablet';
 
-        if ( ! in_array( 'image', $field_keys, true ) ) {
-            $data['column_class'] .= ' is-3-desktop';
-        }
+        $has_image            = in_array( 'image', $field_keys, true );
+        $data['column_class'] .= $has_image ? ' has-image' : ' has-no-image';
 
         return $data;
     }

@@ -155,16 +155,14 @@ class PageGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
+                Layouts\CallToActionLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\GridLayout::class,
-                // Layouts\CallToActionLayout::class,
                 // Layouts\ContentColumnsLayout::class,
-                // Layouts\LogoWallLayout::class,
-                // Layouts\MapLayout::class,
+                Layouts\LogoWallLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\MapLayout::class,
-                // Layouts\IconLinksLayout::class,
-                // Layouts\SocialMediaLayout::class,
+                Layouts\SocialMediaLayout::class,
                 // Layouts\ImageCarouselLayout::class,
                 Layouts\SubpageLayout::class,
                 // Layouts\TextBlockLayout::class,
@@ -174,9 +172,10 @@ class PageGroup {
                 // Layouts\SitemapLayout::class,
                 // Layouts\NoticeBannerLayout::class,
                 // Layouts\GravityFormLayout::class,
-                // Layouts\ContactsLayout::class,
-                Layouts\AccessibilityIconLinksLayout::class,
-                // Layouts\ShareLinksLayout::class,
+                Layouts\ContactsLayout::class,
+                // Layouts\AccessibilityIconLinksLayout::class,
+                Layouts\CountdownLayout::class,
+                Layouts\ShareLinksLayout::class,
             ],
             $key
         );

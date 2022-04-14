@@ -69,7 +69,6 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
                 'label'         => 'Näytettävät kentät',
                 'instructions'  => '',
                 'choices'       => [
-                    'image'                     => 'Kuva',
                     'title'                     => 'Titteli',
                     'first_name'                => 'Etunimi',
                     'last_name'                 => 'Sukunimi',

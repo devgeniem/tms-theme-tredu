@@ -162,6 +162,10 @@
                 max-width: 42rem;
                 margin-right: auto;
                 margin-left: auto;
+                @include from($desktop) {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
             }
 
             a {

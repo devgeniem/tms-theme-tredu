@@ -41,7 +41,7 @@
                 {?rows}
                 <div class="hero__links column is-6-desktop is-12">
                     <div class="columns is-justify-content-end">
-                        <div class="column is-10-desktop is-12">
+                        <div class="column is-9-widescreen is-11-desktop is-12">
                         {#rows}
                             {?link.title}{?link.url}
                                 <a href="{link.url|s}" 

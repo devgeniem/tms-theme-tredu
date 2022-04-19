@@ -1,9 +1,8 @@
 <section {?anchor}id="{anchor|s}"{/anchor}
-         class="hero hero__layout is-relative has-background-cover {container_class|s}" {@inlinebg id=image size="fullhd" /}>
-    
-        
-  
-   
+         class="hero hero__layout is-relative has-background-cover {container_class|s}" 
+         {@inlinebg 
+         id=image 
+         size="fullhd" /}>
     <div class="hero__inner">
         <div class="container p-3">
             <div class="columns is-multiline">
@@ -23,12 +22,11 @@
                                 <label for="hero-search" class="mb-0 is-flex-grow-1">
                                 <span aria-hidden="true" class="is-hidden-desktop">{Strings.s.program.search.write_term_profession_program_name|s}:</span>
                                 <span class="is-sr-only">
-                                {Strings.s.program.search.write_term_profession_program_name|s}. 
-                                {Strings.s.program.search.sr_autocomplete_instructions|s}
+                                    {Strings.s.program.search.write_term_profession_program_name|s}. 
+                                    {Strings.s.program.search.sr_autocomplete_instructions|s}
                                 </span>
                                 </label>
                                     <div class="is-flex is-align-items-stretch">
-                                        
                                         <input type="search" 
                                                class="search-form__input program-search has-background-light has-width-100 is-family-primary has-text-weight-semibold"
                                                placeholder="{Strings.s.program.search.write_term_profession_program_name|s}" 
@@ -36,7 +34,6 @@
                                                name="program-search" 
                                                autocomplete="off"
                                                id="hero-search">
-                                        
                                         <button type="submit" class="search-form__button button button--icon is-secondary is-family-secondary">
                                             {Strings.s.header.search|s}
                                             {>"ui/icon" icon="search" class="icon icon--medium is-white"  /}

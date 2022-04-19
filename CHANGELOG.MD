@@ -10,13 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-669: Materials page template
-<<<<<<< HEAD
 - TMS-695: Related posts. #42
 - TMS-743: Hero layout for front page
 - TMS-678: Image carousel
 - TMS-680: Notice banner
-=======
->>>>>>> TMS-669
+- TMS-743: Hero layout for front page
 - TMS-697: Contacts
 
 ## [2022-04-12] - 0.4.0

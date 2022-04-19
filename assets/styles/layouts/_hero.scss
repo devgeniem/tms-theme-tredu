@@ -136,6 +136,8 @@
         .hero__inner {
             transform: none;
             position: static;
+            text-align: left;
+
             @include from($desktop) {
                 position: absolute;
                 top: 50%;
@@ -162,12 +164,17 @@
                 max-width: 42rem;
                 margin-right: auto;
                 margin-left: auto;
+                @include from($desktop) {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
             }
 
             a {
                 border: 1px solid $secondary;
 
                 &:focus {
+                    outline-color: $white;
                     .icon {
                         fill: $primary !important;
                     }
@@ -178,6 +185,9 @@
         .search-form {
 
             &__input {
+                -webkit-appearance: none;
+                -webkit-border-radius: 0;
+                border-radius: 0;
                 border-width: 2px;
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
@@ -186,10 +196,15 @@
                 border-right-width: rem(10);
                 font-size: 1rem;
                 padding: rem(22);
+                padding-right: 0;
+                text-overflow: ellipsis;
 
                 &::placeholder { 
-                    color: $color-dark-grey;
-                  }
+                    color: transparent;
+                    @include from($desktop) {
+                        color: $black;
+                    }
+                }
 
                 &:focus {
                     outline-color: $white;
@@ -211,6 +226,11 @@
                     z-index: 9;
                 }
             }
+        }
+
+        p {
+            margin-right: 0;
+            margin-left:0;
         }
     }
 }

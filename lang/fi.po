@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-19 12:22+0300\n"
-"PO-Revision-Date: 2022-04-19 12:22+0300\n"
+"POT-Creation-Date: 2022-04-19 14:56+0300\n"
+"PO-Revision-Date: 2022-04-19 14:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -957,15 +957,8 @@ msgstr "Kirjoita hakusana, ammatti tai tutkintonimike"
 
 #: models/strings.php:185
 msgctxt "theme-frontend"
-msgid ""
-"Write three or more letter to get results. When results are available, use "
-"up and down arrows to insepct and select. For touchscreen users, inspect by "
-"touching or swiping."
-msgstr ""
-"Kirjoita kolme kirjainta tai enemmän saadaksesi tuloksia.  Kun automaattisen "
-"täydennyksen hakutuloksia on saatavilla, käytä ylös- ja alasnuolinäppäimiä "
-"tarkasteluun ja valintaan. Kosketuslaitteiden käyttäjille, tutki "
-"koskettamalla tai pyyhkäisyeleillä."
+msgid "Write three or more letter to get results. When results are available, use up and down arrows to inspect and select. For touchscreen users, inspect by touching or swiping."
+msgstr "Kirjoita kolme kirjainta tai enemmän saadaksesi tuloksia. Kun automaattisen täydennyksen hakutuloksia on saatavilla, käytä ylös- ja alasnuolinäppäimiä tarkasteluun ja valintaan. Kosketuslaitteiden käyttäjille, tutki koskettamalla tai pyyhkäisyeleillä."
 
 #: models/strings.php:187
 msgctxt "theme-frontend"

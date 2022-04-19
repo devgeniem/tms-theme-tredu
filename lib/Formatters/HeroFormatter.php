@@ -1,9 +1,8 @@
 <?php
-/**
- *  Copyright (c) 2021. Geniem Oy
- */
 
 namespace TMS\Theme\Tredu\Formatters;
+
+use TMS\Theme\Tredu\Settings;
 
 /**
  * Class HeroFormatter
@@ -35,27 +34,8 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
      * @return array
      */
     public function format( array $layout ) : array {
-        $button_classes = [ 'mt-4' ];
-        $box_classes    = [
-            'is-' . $layout['align'],
-        ];
 
-        if ( $layout['use_box'] && $this->has_filled_text_fields( $layout ) ) {
-            $layout['container_class'] = 'hero--box';
-            $box_classes[]             = 'hero__box--background';
-            $box_classes[]             = 'has-background-primary';
-            $box_classes[]             = 'has-text-primary-invert';
-            $button_classes[]          = 'is-primary-invert';
-            $button_classes[]          = 'is-outlined';
-        }
-        else {
-            $layout['use_overlay'] = ! empty( $layout['description'] );
-            $box_classes[]         = 'has-text-white';
-            $button_classes[]      = 'is-primary';
-        }
-
-        $layout['button_classes'] = implode( ' ', $button_classes );
-        $layout['box_classes']    = implode( ' ', $box_classes );
+        $layout['form_action'] = $this->form_action();
 
         return $layout;
     }
@@ -81,5 +61,21 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
         }
 
         return false;
+    }
+
+    /**
+     * Get form action from settings
+     *
+     * @return string
+     */
+    private function form_action() : string {
+
+        $program_page = Settings::get_setting( 'program_page' );
+
+        if ( is_int( $program_page ) ) {
+            return get_permalink( $program_page );
+        }
+
+        return '';
     }
 }

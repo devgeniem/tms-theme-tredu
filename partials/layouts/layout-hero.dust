@@ -19,21 +19,29 @@
                                 {description|s}
                             </div>
                             <div class="is-relative">
-                                <form role="search" method="get" class="search-form is-flex is-align-items-stretch" action="{form_action|s}">
-                                    <label class="mb-0 is-flex-grow-1">
-                                        <span class="is-sr-only"> {Strings.s.program.search.write_term_profession_program_name|s} </span>
+                                <form role="search" method="get" class="search-form " action="{form_action|s}">
+                                <label for="hero-search" class="mb-0 is-flex-grow-1">
+                                <span aria-hidden="true" class="is-hidden-desktop">{Strings.s.program.search.write_term_profession_program_name|s}:</span>
+                                <span class="is-sr-only">
+                                {Strings.s.program.search.write_term_profession_program_name|s}. 
+                                {Strings.s.program.search.sr_autocomplete_instructions|s}
+                                </span>
+                                </label>
+                                    <div class="is-flex is-align-items-stretch">
+                                        
                                         <input type="search" 
-                                               class="search-form__input program-search has-background-light has-width-100 is-family-primary"
+                                               class="search-form__input program-search has-background-light has-width-100 is-family-primary has-text-weight-semibold"
                                                placeholder="{Strings.s.program.search.write_term_profession_program_name|s}" 
                                                value="{search_query|s}" 
                                                name="program-search" 
-                                               autocomplete="off">
-                                    </label>
-
-                                    <button type="submit" class="search-form__button button button--icon is-secondary is-family-secondary">
-                                        {Strings.s.header.search|s}
-                                        {>"ui/icon" icon="search" class="icon icon--medium is-white"  /}
-                                    </button>
+                                               autocomplete="off"
+                                               id="hero-search">
+                                        
+                                        <button type="submit" class="search-form__button button button--icon is-secondary is-family-secondary">
+                                            {Strings.s.header.search|s}
+                                            {>"ui/icon" icon="search" class="icon icon--medium is-white"  /}
+                                        </button>
+                                    </div>
                                 </form>
                             </div>    
                     </div>

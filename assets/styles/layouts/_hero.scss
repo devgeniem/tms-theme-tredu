@@ -136,6 +136,8 @@
         .hero__inner {
             transform: none;
             position: static;
+            text-align: left;
+
             @include from($desktop) {
                 position: absolute;
                 top: 50%;
@@ -172,6 +174,7 @@
                 border: 1px solid $secondary;
 
                 &:focus {
+                    outline-color: $white;
                     .icon {
                         fill: $primary !important;
                     }
@@ -190,10 +193,15 @@
                 border-right-width: rem(10);
                 font-size: 1rem;
                 padding: rem(22);
-
+                padding-right: 0;
+                text-overflow: ellipsis;
+                
                 &::placeholder { 
-                    color: $color-dark-grey;
-                  }
+                    color: transparent;
+                    @include from($desktop) {
+                        color: $black;
+                    }
+                }
 
                 &:focus {
                     outline-color: $white;
@@ -215,6 +223,11 @@
                     z-index: 9;
                 }
             }
+        }
+
+        p {
+            margin-right: 0;
+            margin-left:0;
         }
     }
 }

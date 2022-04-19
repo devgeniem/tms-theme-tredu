@@ -107,7 +107,7 @@ class PageProgram extends BaseModel {
      * @return mixed
      */
     protected static function get_posts_per_page() {
-        return Settings::get_setting( 'programs_per_page' ) ?? 20;
+        return Settings::get_setting( 'program_search_programs_per_page' ) ?? 20;
     }
 
     /**

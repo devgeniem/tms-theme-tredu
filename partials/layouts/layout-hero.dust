@@ -1,8 +1,6 @@
 <section {?anchor}id="{anchor|s}"{/anchor}
          class="hero hero__layout is-relative has-background-cover {container_class|s}" 
-         {@inlinebg 
-         id=image 
-         size="fullhd" /}>
+         {@inlinebg id=image size="fullhd" /}>
     <div class="hero__inner">
         <div class="container p-3">
             <div class="columns is-multiline">

@@ -35,6 +35,7 @@
 
             <a href="{url|url}"
                class="button is-primary mt-4"
+               tabindex="-1"
                aria-hidden="true"
                download>
                 {button_text|kses}

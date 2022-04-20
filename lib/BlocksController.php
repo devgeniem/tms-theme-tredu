@@ -219,6 +219,8 @@ class BlocksController implements Interfaces\Controller {
             'acf/program-call-to-action'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
                 ],
             ],
 

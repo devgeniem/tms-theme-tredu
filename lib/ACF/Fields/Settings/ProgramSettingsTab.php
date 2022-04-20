@@ -86,7 +86,7 @@ class ProgramSettingsTab extends Tab {
 
         try {
             $program_page = ( new Field\PostObject( $strings['program_page']['title'] ) )
-                ->set_key( "program_page" )
+                ->set_key( 'program_page' )
                 ->set_name( 'program_page' )
                 ->set_post_types( [ PostType\Page::SLUG ] )
                 ->set_return_format( 'id' )
@@ -94,7 +94,7 @@ class ProgramSettingsTab extends Tab {
                 ->set_instructions( $strings['program_page']['instructions'] );
 
             $prorgam_post_per_page_field = ( new Field\Number( $strings['program_post_per_page']['title'] ) )
-                ->set_key( "programs_per_page" )
+                ->set_key( 'programs_per_page' )
                 ->set_name( 'programs_per_page' )
                 ->set_min( 1 )
                 ->set_max( 30 )
@@ -102,9 +102,8 @@ class ProgramSettingsTab extends Tab {
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['program_post_per_page']['instructions'] );
 
-
             $cta_title_field = ( new Field\Text( $this->strings['cta_title_field']['title'] ) )
-                ->set_key( "cta_title"  )
+                ->set_key( 'cta_title' )
                 ->set_name( 'cta_title' )
                 ->set_required()
                 ->set_maxlength( 90 )
@@ -112,22 +111,22 @@ class ProgramSettingsTab extends Tab {
                 ->set_default_value( '' );
 
             $cta_description_field = ( new Field\Textarea( $this->strings['cta_description_field']['title'] ) )
-                ->set_key( "cta_desc" )
+                ->set_key( 'cta_desc' )
                 ->set_name( 'cta_description' )
                 ->set_maxlength( 200 )
                 ->set_instructions( $this->strings['cta_description_field']['instructions'] );
 
             $link_field = ( new Field\Link( $strings['cta_link']['title'] ) )
-                ->set_key( "cta_link" )
+                ->set_key( 'cta_link' )
                 ->set_name( 'cta_link' )
                 ->set_required()
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['cta_link']['instructions'] );
-            
+
             $program_cta_group = ( new Field\Group( $strings['program_cta_group']['title'] ) )
                 ->set_key( "${key}_program_call_to_action" )
                 ->set_name( 'program_call_to_action' );
-            
+
             $program_cta_group->add_fields( [
                 $cta_title_field,
                 $cta_description_field,

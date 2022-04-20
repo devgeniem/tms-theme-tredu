@@ -22,7 +22,7 @@
     }
 
     &.has-background-secondary {
-        background-color: $color-light-blueishgray;
+        background-color: $color-light-blueishgray !important;
         color: $color-black;
     }
 
@@ -53,7 +53,11 @@
     }
 
     &__link {
+        color: inherit;
+
         &:focus {
+            outline: none;
+
             > p {
                 outline: .125rem dashed currentColor !important;
                 outline-offset: .25rem;

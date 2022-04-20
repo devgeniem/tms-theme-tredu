@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-743: Hero layout for front page
 - TMS-678: Image carousel
 - TMS-680: Notice banner
+- TMS-708: Program Call to Action
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 

@@ -1,0 +1,20 @@
+{?title}
+    {?link}
+    <div class="program-call-to-action">
+        <div class="columns is-multiline has-background-light-blueishgray">
+            <div class="column is-8 pl-6">
+                <h2 class="h5">{title|s}</h2>
+                {?description}
+                    <p class="has-text-black">{description|s}</p>
+                {/description}
+            </div>
+             <div class="program-call-to-action__btn-column column is-4 is-flex is-align-items-center is-justify-content-start">
+                <a class="button is-primary" href={link.url} {?link.target} target="{link.target}"{/link.target}>
+                    <span class="has-width-100">{link.title|s}</span>
+                    {>"ui/icon" icon="arrow-right" aria_hidden="true" class="icon--medium" /}
+                </a>
+            </div>
+        </div>
+    </div>    
+    {/link}
+{/title}

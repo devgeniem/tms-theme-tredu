@@ -17,9 +17,8 @@
                 </div>
 
                 <div class="columns">
-                    <div class="column is-6"></div>
-                    <div class="column is-6 is-offset-2-fullhd is-4-fullhd">
-                        <form class="p-2" action="{search.action|s}" method="get" role="search">
+                    <div class="column is-6-tablet is-5-desktop is-offset-1-desktop">
+                        <form action="{search.action|s}" method="get" role="search">
                             <label for="materials-search" class="h6 is-block mb-3">
                                 {Strings.s.contact_search.label|html}
                             </label>

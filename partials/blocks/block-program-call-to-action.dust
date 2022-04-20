@@ -1,7 +1,7 @@
 {?title}
     {?link}
-    <div class="program-call-to-action">
-        <div class="columns is-multiline has-background-light-blueishgray">
+    <div class="program-call-to-action has-background-light-blueishgray mt-8 mb-8 p-4">
+        <div class="columns is-multiline">
             <div class="column is-8 pl-6">
                 <h2 class="h5">{title|s}</h2>
                 {?description}

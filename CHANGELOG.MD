@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-678: Image carousel
 - TMS-680: Notice banner
 - TMS-708: Program Call to Action
+- TMS-681: Add articles layout.
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 

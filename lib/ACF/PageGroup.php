@@ -167,7 +167,7 @@ class PageGroup {
                 Layouts\SubpageLayout::class,
                 // Layouts\TextBlockLayout::class,
                 // Layouts\EventsLayout::class,
-                // Layouts\ArticlesLayout::class,
+                Layouts\ArticlesLayout::class,
                 // Layouts\BlogArticlesLayout::class,
                 // Layouts\SitemapLayout::class,
                 Layouts\NoticeBannerLayout::class,

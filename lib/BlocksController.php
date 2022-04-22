@@ -263,16 +263,17 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'gravityforms/form'  => [
+            */
+
+            'gravityforms/form' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
                 ],
             ],
-            */
 
-            'acf/countdown'     => [
+            'acf/countdown' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

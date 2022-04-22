@@ -12,7 +12,7 @@
 
                 <div class="column">
                     {?additional_info_top}
-                        <div class="contacts__additional-info-top mb-3 keep-vertical-spacing">
+                        <div class="h6 contacts__additional-info-top mb-3 keep-vertical-spacing">
                             {additional_info_top|kses}
                         </div>
                     {/additional_info_top}
@@ -24,7 +24,7 @@
                     {/title}
 
                     {@isset key1=first_name key2=last_name method="OR" }
-                        <div class="contacts__name has-text-weight-bold mb-3">
+                        <div class="h4 contacts__name has-text-weight-bold mb-3">
                             {first_name|html} {last_name|html}
                         </div>
                     {/isset}

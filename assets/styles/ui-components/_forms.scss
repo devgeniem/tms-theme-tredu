@@ -26,7 +26,7 @@ form {
             @extend .button-state-focus;
         }
     }
-   
+
 
     .is-checkradio {
         &[type=checkbox]+label:before {
@@ -48,25 +48,7 @@ form {
 .container {
     // GForms inside a wrapper need a different layout
     .gform_wrapper {
-        @extend .is-align-wide;
-        margin: $theme-spacing-two -1 * $theme-spacing-oneandhalf;
-        padding: $theme-spacing-oneandhalf;
-        background: $secondary;
-
-        @include from($desktop) {
-            margin: $theme-spacing-two 0;
-            padding: 3rem 0;
-        }
-
-        > * {
-            @include from($desktop) {
-                padding: 0 3.95rem;
-            }
-
-            @include from($widescreen) {
-                padding: 0 3rem;
-            }
-        }
+        margin: $theme-spacing-two 0;
     }
 
     .gform {
@@ -106,6 +88,10 @@ form {
             display: flex;
             // To make checkradio click not lose position
             position: relative;
+        }
+
+        button {
+            @extend .is-primary;
         }
 
         select,

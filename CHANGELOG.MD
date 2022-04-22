@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-688: Table block
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 

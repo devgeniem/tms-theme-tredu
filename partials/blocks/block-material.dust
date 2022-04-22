@@ -51,7 +51,7 @@
                         <a href="{url|url}"
                            class="button is-primary mt-4"
                            download>
-                            {button_text|html}
+                            {button_text|kses}
 
                             {>"ui/icon" icon="download" /}
                         </a>

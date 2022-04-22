@@ -39,10 +39,6 @@ class ArchiveSettingsTab extends Tab {
             'title'        => 'Listaustyyli',
             'instructions' => '',
         ],
-        'program_post_per_page' => [
-            'title' => 'Koulutusten määrä per sivu',
-            'instructions' => '',
-        ],
     ];
 
     /**
@@ -88,19 +84,9 @@ class ArchiveSettingsTab extends Tab {
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['archive_view_type']['instructions'] );
 
-            $prorgam_post_per_page_field = ( new Field\Number( $strings['program_post_per_page']['title'] ) )
-                ->set_key( "${key}_programs_per_page" )
-                ->set_name( 'programs_per_page' )
-                ->set_min( 1 )
-                ->set_max( 30 )
-                ->set_default_value( 20 )
-                ->set_wrapper_width( 50 )
-                ->set_instructions( $strings['program_post_per_page']['instructions'] );
-
             $this->add_fields( [
                 $use_images_field,
                 $view_type_field,
-                $prorgam_post_per_page_field,
             ] );
         }
         catch ( Exception $e ) {

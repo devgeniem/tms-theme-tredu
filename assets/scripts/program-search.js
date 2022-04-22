@@ -38,7 +38,7 @@ export default class ProgramSearch {
         const resultsStr = strings.program.search.results;
         const resultStr = strings.program.search.result;
         const navWithKeyStr = strings.program.search.key_to_navigate;
-        $( '#program-search input[type="search"]' )
+        $( 'input[type="search"].program-search' )
             .autocomplete( {
                 minLength: 3,
                 source: wordList,

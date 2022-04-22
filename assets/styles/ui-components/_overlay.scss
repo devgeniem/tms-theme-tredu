@@ -23,6 +23,10 @@
         background-color: rgba($black, .3);
     }
 
+    &--primary-30 {
+        background-color: rgba($primary, .75);
+    }
+
     &--dark-gradient {
         background: linear-gradient(rgba($black, 0), rgba($black, .5));
     }

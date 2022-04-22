@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-680: Notice banner
 - TMS-708: Program Call to Action
 - TMS-681: Add articles layout.
+- TMS-804: Add cap copy_posts to editors & authors
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 

@@ -43,8 +43,6 @@ class OnepagerGroup {
                 'call_to_action' => Layouts\CallToActionLayout::class,
                 // 'content_columns' => Layouts\ContentColumnsLayout::class,
                 // 'logo_wall'       => Layouts\LogoWallLayout::class,
-                // 'map'             => Layouts\MapLayout::class,
-                // 'icon_links'      => Layouts\IconLinksLayout::class,
                 'image_carousel' => Layouts\ImageCarouselLayout::class,
                 'image_banner'   => Layouts\ImageBannerLayout::class,
                 // 'content_columns' => Layouts\ContentColumnsLayout::class,
@@ -57,9 +55,9 @@ class OnepagerGroup {
                 'text_block'     => Layouts\TextBlockLayout::class,
                 'grid'           => Layouts\GridLayout::class,
                 // 'events'          => Layouts\EventsLayout::class,
-                // 'articles'        => Layouts\ArticlesLayout::class,
+                'articles'       => Layouts\ArticlesLayout::class,
                 'notice_banner'  => Layouts\NoticeBannerLayout::class,
-                // 'gravityform'     => Layouts\GravityFormLayout::class,
+                'gravityform'    => Layouts\GravityFormLayout::class,
                 // 'textblock'       => false,
             ]
         );

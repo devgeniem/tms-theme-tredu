@@ -201,7 +201,6 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            /*
             'acf/image-carousel' => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -209,7 +208,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            */
 
             'acf/share-links'   => [
                 'post_types' => [
@@ -260,7 +258,6 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            /*
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -268,7 +265,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            */
 
             'gravityforms/form' => [
                 'post_types' => [

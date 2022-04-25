@@ -77,7 +77,7 @@ msgstr ""
 
 #: lib/ACF/PostGroup.php:129
 msgid "Related posts"
-msgstr "Liittyvät sisällöt"
+msgstr "Luitko jo nämä?"
 
 #: lib/ACF/SettingsGroup.php:52
 msgctxt "theme ACF"

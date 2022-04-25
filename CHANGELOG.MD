@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-695: Related posts. #42
 - TMS-669: Materials page template
 - TMS-702: Accessibility icons
 - TMS-735: Program Search

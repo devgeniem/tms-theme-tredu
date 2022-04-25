@@ -81,20 +81,4 @@ class PageContacts extends BaseModel {
             Settings::get_setting( 'contacts_default_image' )
         );
     }
-
-    /**
-     * Get column class
-     *
-     * @return string
-     */
-    public function column_class() : string {
-        $field_keys   = get_field( 'fields' );
-        $column_class = 'is-10-mobile is-offset-1-mobile is-6-tablet is-offset-0-tablet';
-
-        if ( ! in_array( 'image', $field_keys, true ) ) {
-            $column_class .= ' is-3-desktop';
-        }
-
-        return $column_class;
-    }
 }

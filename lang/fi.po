@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-14 13:42+0300\n"
-"PO-Revision-Date: 2022-04-14 13:42+0300\n"
+"POT-Creation-Date: 2022-04-19 14:56+0300\n"
+"PO-Revision-Date: 2022-04-19 14:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Related posts"
 msgstr "Liittyvät sisällöt"
 
-#: lib/ACF/SettingsGroup.php:51
+#: lib/ACF/SettingsGroup.php:52
 msgctxt "theme ACF"
 msgid "Site settings"
 msgstr "Sivuston asetukset"
@@ -950,52 +950,62 @@ msgctxt "theme-frontend"
 msgid "Selecting filter commits new search"
 msgstr "Rajauksen valinta suorittaa haun"
 
+#: models/strings.php:184
+msgctxt "theme-frontend"
+msgid "Write search term, profession or program name"
+msgstr "Kirjoita hakusana, ammatti tai tutkintonimike"
+
 #: models/strings.php:185
+msgctxt "theme-frontend"
+msgid "Write three or more letter to get results. When results are available, use up and down arrows to inspect and select. For touchscreen users, inspect by touching or swiping."
+msgstr "Kirjoita kolme kirjainta tai enemmän saadaksesi tuloksia. Kun automaattisen täydennyksen hakutuloksia on saatavilla, käytä ylös- ja alasnuolinäppäimiä tarkasteluun ja valintaan. Kosketuslaitteiden käyttäjille, tutki koskettamalla tai pyyhkäisyeleillä."
+
+#: models/strings.php:187
 msgctxt "theme-frontend"
 msgid "Profession"
 msgstr "Ammattiala"
 
-#: models/strings.php:186
+#: models/strings.php:188
 msgctxt "theme-frontend"
 msgid "Program type"
 msgstr "Koulutustyyppi"
 
-#: models/strings.php:187
+#: models/strings.php:189
 msgctxt "theme-frontend"
 msgid "Location"
 msgstr "Sijainti"
 
-#: models/strings.php:188
+#: models/strings.php:190
 msgctxt "theme-frontend"
 msgid "Educational background"
 msgstr "Koulutustausta"
 
-#: models/strings.php:189
+#: models/strings.php:191
 msgctxt "theme-frontend"
 msgid "Delivery method"
 msgstr "Toteutustapa"
 
-#: models/strings.php:190
+#: models/strings.php:192
 msgctxt "theme-frontend"
 msgid "Application period ends"
 msgstr "Hakuaika päätyy"
 
-#: models/strings.php:191
+#: models/strings.php:193
 msgctxt "theme-frontend"
 msgid "Starts"
 msgstr "Alkaa"
 
-#: models/strings.php:194
+#: models/strings.php:196
 msgctxt "theme-frontend"
 msgid "Filter by type"
 msgstr "Rajaa tyypin mukaan"
 
-#: models/strings.php:195
+#: models/strings.php:197
 msgctxt "theme-frontend"
 msgid "Publish date"
 msgstr "Julkaisupäivä"
 
-#: models/strings.php:196
+#: models/strings.php:198
 msgctxt "theme-frontend"
 msgid "Write search terms"
 msgstr "Kirjoita hakusanat"

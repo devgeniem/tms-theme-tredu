@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-702: Accessibility icons
 - TMS-735: Program Search
 - TMS-801: Add ApplyType tax
+
+## [2022-04-21] - 0.4.1
+
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 

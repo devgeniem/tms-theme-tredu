@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Tredu;
 
+use DustPress\Model;
 use Geniem\ACF\Block as GeniemBlock;
 
 /**
@@ -214,9 +215,11 @@ class BlocksController implements Interfaces\Controller {
 
             'acf/program-call-to-action'   => [
                 'post_types' => [
-                    PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                ],
+                'templates'  => [
+                    '',
                 ],
             ],
 

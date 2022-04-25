@@ -64,8 +64,6 @@ class ProgramCallToAction extends BaseBlock {
         $data['description'] = Settings::get_setting( 'program_call_to_action_cta_description' ) ?? '';
         $data['link'] = Settings::get_setting( 'program_call_to_action_cta_link' ) ?? '';
 
-        error_log( print_r( $data['link'], true ) );
-
         return apply_filters( 'tms/acf/block/' . self::KEY . '/data', $data );
     }
 

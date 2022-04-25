@@ -77,8 +77,8 @@ class PageHeroGroup {
                 'label'        => 'Heron tummennus',
                 'instructions' => 'Jos kuvalla on tummennus, sivun otsikko on heron päällä. Muutoin otsikko näytetään heron alla.
                 ',
-                'off' => 'Pois',
-                'on' => 'Päällä',
+                'off'          => 'Pois',
+                'on'           => 'Päällä',
             ],
         ];
 

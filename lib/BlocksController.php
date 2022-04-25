@@ -251,7 +251,6 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            /*
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -259,6 +258,8 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
+
+            /*
             'gravityforms/form'  => [
                 'post_types' => [
                     PostType\Page::SLUG,

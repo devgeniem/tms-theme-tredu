@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Tredu;
 
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
 use TMS\Theme\Tredu\Taxonomy\BlogTag;
 use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
@@ -133,6 +134,7 @@ class Localization implements Interfaces\Controller {
         $tax_types[ Location::SLUG ]       = Location::SLUG;
         $tax_types[ Profession::SLUG ]     = Profession::SLUG;
         $tax_types[ DeliveryMethod::SLUG ] = DeliveryMethod::SLUG;
+        $tax_types[ ApplyMethod::SLUG ]    = ApplyMethod::SLUG;
 
         return $tax_types;
     }

@@ -197,6 +197,10 @@ class Strings extends \DustPress\Model {
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),
                 'write_search_terms' => _x( 'Write search terms', 'theme-frontend', 'tms-theme-tredu' ),
             ],
+            'page_materials'     => [
+                'filter'        => _x( 'Filter', 'theme-frontend', 'tms-theme-tredu' ),
+                'title_sr_text' => _x( 'Clicking the link will download file', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
             // Use the Duet Date Picker keys for strings
             'datepicker'         => [
                 'buttonLabel'         => _x( 'Pick a date', 'theme-frontend', 'tms-theme-tredu' ),

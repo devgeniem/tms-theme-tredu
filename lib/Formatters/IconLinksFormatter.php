@@ -40,13 +40,14 @@ class IconLinksFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
         }
 
         foreach ( $layout['rows'] as $key => $row ) {
-            if ( ! empty( $layout['rows'][ $key ]['link']['icon'] ) ) {
-                $layout['rows'][ $key ]['link']['icon'] = '';
-            }
+            $icon = 'arrow-right';
+
             if ( isset( $row['link']['target'] ) && '_blank' === $row['link']['target'] ) {
-                $layout['rows'][ $key ]['link']['icon'] = 'external';
-                $layout['rows'][ $key ]['icon_classes'] = 'icon--medium is-inline-block';
+                $icon = 'external';
             }
+
+            $layout['rows'][ $key ]['icon_classes'] = 'icon--medium is-inline-block';
+            $layout['rows'][ $key ]['link']['icon'] = $icon;
         }
 
         return $layout;

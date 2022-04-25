@@ -11,26 +11,6 @@
         font-size: $base-size;
     }
 
-    &__additional-info-top {
-        .has-no-image & {
-            @extend .h5;
-        }
-
-        .has-image & {
-            @extend .h6;
-        }
-    }
-
-    &__name {
-        .has-no-image & {
-            @extend .h4;
-        }
-
-        .has-image & {
-            @extend .h6;
-        }
-    }
-
     &__inner-columns {
         @include until($desktop) {
             background-color: $color-light-gray;

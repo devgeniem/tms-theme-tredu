@@ -199,8 +199,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-
-            /*
             'acf/image-carousel' => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -208,9 +206,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            */
-
-            'acf/share-links'   => [
+            'acf/share-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
@@ -224,7 +220,7 @@ class BlocksController implements Interfaces\Controller {
             ],
             */
 
-            'acf/material'      => [
+            'acf/material' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -240,14 +236,22 @@ class BlocksController implements Interfaces\Controller {
             ],
             */
 
-            'acf/map'           => [
+            'acf/map'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/contacts'      => [
+            'acf/contacts' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+
+            'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -256,13 +260,6 @@ class BlocksController implements Interfaces\Controller {
             ],
 
             /*
-            'acf/acc-icon-links' => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
             'gravityforms/form'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -272,7 +269,7 @@ class BlocksController implements Interfaces\Controller {
             ],
             */
 
-            'acf/countdown'     => [
+            'acf/countdown' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

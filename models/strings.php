@@ -181,6 +181,8 @@ class Strings extends \DustPress\Model {
                     'key_to_navigate' => _x( 'Use arrow key to navigate', 'theme-frontend', 'tms-theme-tredu' ),
                     'add_filter' => _x( 'Add filter', 'theme-frontend', 'tms-theme-tredu' ),
                     'commits_new_search' => _x( 'Selecting filter commits new search', 'theme-frontend', 'tms-theme-tredu' ),
+                    'write_term_profession_program_name' => _x( 'Write search term, profession or program name', 'theme-frontend', 'tms-theme-tredu' ),
+                    'sr_autocomplete_instructions' => _x( 'Write three or more letter to get results. When results are available, use up and down arrows to inspect and select. For touchscreen users, inspect by touching or swiping.', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
                 'profession' => _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
                 'program-type' => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),
@@ -194,6 +196,10 @@ class Strings extends \DustPress\Model {
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),
                 'write_search_terms' => _x( 'Write search terms', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
+            'page_materials'     => [
+                'filter'        => _x( 'Filter', 'theme-frontend', 'tms-theme-tredu' ),
+                'title_sr_text' => _x( 'Clicking the link will download file', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             // Use the Duet Date Picker keys for strings
             'datepicker'         => [

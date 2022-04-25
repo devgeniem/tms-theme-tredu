@@ -199,64 +199,81 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            // 'acf/image-carousel' => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            'acf/share-links'   => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                ],
-            ],
-            // 'acf/table'          => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //     ],
-            // ],
-            'acf/material'      => [
+
+            /*
+            'acf/image-carousel' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            // 'acf/notice-banner'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //     ],
-            // ],
-            'acf/map'           => [
+            */
+
+            'acf/share-links' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                ],
+            ],
+
+            /*
+            'acf/table'          => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                ],
+            ],
+            */
+
+            'acf/material' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            // 'acf/contacts'       => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'acf/acc-icon-links' => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\BlogArticle::SLUG,
-            //     ],
-            // ],
-            // 'gravityforms/form'  => [
-            //     'post_types' => [
-            //         PostType\Page::SLUG,
-            //         PostType\Post::SLUG,
-            //         PostType\Contact::SLUG,
-            //     ],
-            // ],
-            'acf/countdown'     => [
+
+            /*
+            'acf/notice-banner'  => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                ],
+            ],
+            */
+
+            'acf/map'      => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/contacts' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+
+            'acf/acc-icon-links' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+
+            /*
+            'gravityforms/form'  => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\Contact::SLUG,
+                ],
+            ],
+            */
+
+            'acf/countdown' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

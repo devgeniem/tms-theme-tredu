@@ -71,12 +71,6 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             Settings::get_setting( 'contacts_default_image' )
         );
 
-        $data['column_class'] = 'is-10-mobile is-offset-1-mobile is-6-tablet is-offset-0-tablet';
-
-        if ( ! in_array( 'image', $field_keys, true ) ) {
-            $data['column_class'] .= ' is-3-desktop';
-        }
-
         return $data;
     }
 

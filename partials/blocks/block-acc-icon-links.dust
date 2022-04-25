@@ -1,25 +1,25 @@
 
 {?rows}
-    <div class="acc-icon-links__grid columns is-flex-wrap-wrap">
+    <div class="acc-icon-links__grid columns is-flex-wrap-wrap is-align-full">
         {#rows}
             <div class="acc-icon-links__item column is-6-tablet keep-vertical-spacing pb-5">
                 {?acc_icon}
-                    {>"ui/icon" icon=acc_icon class="icon--xxxlarge" /}
+                    {>"ui/icon" icon=acc_icon class="acc-icon-links__item-icon" /}
                 {/acc_icon}
 
                 {?title}
                     <h2 class="h4 mt-0 mb-4 mt-4">
-                        {title|s}
+                        {title|html}
                     </h2>
                 {/title}
 
                 {?description}
-                    <div class="acc-icon-links__item-description mb-4">
-                        {description|s}
+                    <div class="acc-icon-links__item-description mt-4 mb-4">
+                        {description|kses}
                     </div>
                 {/description}
 
-                {>"ui/link" classes="is-small is-primary" use_icon="true" icon=link.icon /}
+                {>"ui/link" classes="is-small is-primary" use_icon="true" icon="arrow-right" /}
             </div>
         {/rows}
     </div>

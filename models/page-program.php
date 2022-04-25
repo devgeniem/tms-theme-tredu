@@ -3,6 +3,7 @@
  * Template Name: Koulutushaku
  */
 
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 use TMS\Theme\Tredu\Traits\Pagination;
 use TMS\Theme\Tredu\PostType\Program;
 use TMS\Theme\Tredu\Taxonomy\Location;
@@ -174,6 +175,7 @@ class PageProgram extends BaseModel {
             Location::SLUG              => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
             EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
             DeliveryMethod::SLUG        => self::FILTER_DELIVERY_METHODS_QUERY_VAR,
+            ApplyMethod::SLUG           => ApplyMethod::SLUG,
         ];
 
         return $taxonomies_with_slugs;
@@ -257,10 +259,14 @@ class PageProgram extends BaseModel {
             );
 
             if ( ! empty( $terms ) ) {
+                if ( ! isset( $this->strings()['program'][ $tax_slug ] ) ) {
+                    continue;
+                }
+
                 $filters[] = [
                     'name'      => $this->strings()['program'][ $tax_slug ],
                     'query_var' => $qv,
-                    'terms'     => array_map( function( $term ) use ( $qv ) {
+                    'terms'     => array_map( function ( $term ) use ( $qv ) {
                         $active_terms = $this->get_filter_query_var( $qv );
 
                         if ( ! empty( $active_terms ) && is_array( $active_terms ) && in_array( $term->term_id, $active_terms ) ) { // phpcs:ignore
@@ -427,10 +433,10 @@ class PageProgram extends BaseModel {
                     }
                 }
 
-                if ( $tax_slug === ProgramType::SLUG ) {
-                    $program_type_color           = get_term_meta( $term_id, 'color', true ) ?? '';
-                    $item->program_type_color     = $program_type_color;
-                    $item->program_type_txt_color = $program_type_color === 'primary' ? 'white' : 'primary';
+                if ( $tax_slug === ApplyMethod::SLUG ) {
+                    $apply_method_color           = get_term_meta( $term_id, 'color', true ) ?? '';
+                    $item->apply_method_color     = $apply_method_color;
+                    $item->apply_method_txt_color = $apply_method_color === 'primary' ? 'white' : 'primary';
                 }
             }
 

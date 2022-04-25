@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
 "POT-Creation-Date: 2022-04-19 14:56+0300\n"
-"PO-Revision-Date: 2022-04-19 14:56+0300\n"
+"PO-Revision-Date: 2022-04-25 08:24+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -15,9 +15,7 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
@@ -52,14 +50,12 @@ msgstr ""
 msgid "Open map"
 msgstr "Avaa kartta"
 
-#: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:71
-#: lib/ACF/PageGroup.php:39
+#: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:71 lib/ACF/PageGroup.php:39
 msgctxt "theme ACF"
 msgid "Page Components"
 msgstr "Sivun komponentit"
 
-#: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:124
-#: lib/ACF/PageGroup.php:145 lib/ACF/PostGroup.php:173
+#: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:124 lib/ACF/PageGroup.php:145 lib/ACF/PostGroup.php:173
 msgctxt "theme ACF"
 msgid "Components"
 msgstr "Komponentit"
@@ -191,16 +187,14 @@ msgid "Secondary Navigation"
 msgstr "Toissijainen navigaatio"
 
 #: lib/PasswordPolicy.php:93
-msgid ""
-"Salasanan tulee olla vähintään 12 merkkiä pitkä, maksimissaan 128 merkkiä."
+msgid "Salasanan tulee olla vähintään 12 merkkiä pitkä, maksimissaan 128 merkkiä."
 msgstr ""
 
 #: lib/PasswordPolicy.php:104
 msgid "Valittu salasana on vaarantunut. Valitse toinen salasana."
 msgstr ""
 
-#: lib/PostType/BlogArticle.php:65 lib/PostType/BlogArticle.php:93
-#: lib/PostType/BlogArticle.php:95 lib/PostType/BlogArticle.php:96
+#: lib/PostType/BlogArticle.php:65 lib/PostType/BlogArticle.php:93 lib/PostType/BlogArticle.php:95 lib/PostType/BlogArticle.php:96
 msgctxt "theme CPT"
 msgid "Blog Articles"
 msgstr "Blogiartikkelit"
@@ -321,34 +315,23 @@ msgstr "Sivua ei löytynyt"
 
 #: lib/SiteController.php:176
 msgctxt "theme-frontend"
-msgid ""
-"Sorry, the page you requested was not found. Please check that you spelled "
-"the address correctly. Or did you follow a link?"
+msgid "Sorry, the page you requested was not found. Please check that you spelled the address correctly. Or did you follow a link?"
 msgstr "Etsimääsi sivua ei valitettavasti löytynyt sivustoltamme. Mistä kyse?"
 
 #: lib/SiteController.php:177
 msgctxt "theme-frontend"
-msgid ""
-"The page might not exist anymore or its name has changed. You might want to "
-"try to find the page you were looking for by"
+msgid "The page might not exist anymore or its name has changed. You might want to try to find the page you were looking for by"
 msgstr ""
-"– Sivu, jolle pyrit, on voitu poistaa tai sen osoite on voinut muuttua. Voit "
-"yrittää etsiä sivua palaamalla etusivulle tai voit poistaa kirjoittamasi "
-"osoitteen lopusta kaikki merkit viimeiseen kauttaviivaan (/) asti ja "
-"kokeilla tällä lyhyemmällä osoitteella."
+"– Sivu, jolle pyrit, on voitu poistaa tai sen osoite on voinut muuttua. Voit yrittää etsiä sivua palaamalla etusivulle tai voit poistaa kirjoittamasi osoitteen lopusta kaikki merkit viimeiseen kauttaviivaan (/) asti ja kokeilla tällä lyhyemmällä osoitteella."
 
 #: lib/SiteController.php:178
 msgctxt "theme-frontend"
 msgid "– returning to the front page of the site"
-msgstr ""
-"– Tulitko sivuillemme kirjoittamalla suoran osoitteen? Kirjoitithan sen "
-"oikein?"
+msgstr "– Tulitko sivuillemme kirjoittamalla suoran osoitteen? Kirjoitithan sen oikein?"
 
 #: lib/SiteController.php:179
 msgctxt "theme-frontend"
-msgid ""
-"– removing all characters after the last slash (/) in the address and try "
-"the shorter version of the address."
+msgid "– removing all characters after the last slash (/) in the address and try the shorter version of the address."
 msgstr "– Tulitko sivuillemme linkistä? Linkki voi olla ollut rikkinäinen."
 
 #: lib/Taxonomy/BlogCategory.php:51
@@ -416,8 +399,7 @@ msgstr "Jaa Vkontaktessa"
 msgid "Share on Line"
 msgstr "Jaa Linessä"
 
-#: models/archive-blog-article.php:167 models/archive.php:116
-#: models/home.php:269 models/search.php:70
+#: models/archive-blog-article.php:167 models/archive.php:116 models/home.php:269 models/search.php:70
 msgid "All"
 msgstr "Kaikki"
 
@@ -431,8 +413,7 @@ msgctxt "theme-frontend"
 msgid "Return to home"
 msgstr "Palaa etusivulle"
 
-#: models/page-events-calendar.php:39 models/page-events-search.php:118
-#: models/page-program.php:197
+#: models/page-events-calendar.php:39 models/page-events-search.php:118 models/page-program.php:197
 msgid "No results"
 msgstr "Ei tuloksia"
 
@@ -592,14 +573,12 @@ msgctxt "theme-frontend"
 msgid "Search"
 msgstr "Hae"
 
-#: models/strings.php:51 models/strings.php:52 models/strings.php:53
-#: models/strings.php:54
+#: models/strings.php:51 models/strings.php:52 models/strings.php:53 models/strings.php:54
 msgctxt "theme-frontend"
 msgid "Search from site"
 msgstr "Etsi sivustolta"
 
-#: models/strings.php:55 models/strings.php:82 models/strings.php:141
-#: models/strings.php:154 models/strings.php:163
+#: models/strings.php:55 models/strings.php:82 models/strings.php:141 models/strings.php:154 models/strings.php:163
 msgctxt "theme-frontend"
 msgid "Close"
 msgstr "Sulje"
@@ -828,12 +807,8 @@ msgstr "Lähetä"
 
 #: models/strings.php:130
 msgctxt "theme-frontend"
-msgid ""
-"This content is password protected. To view it please enter your password "
-"below:"
-msgstr ""
-"Tämä sisältö on suojattu salasanalla. Syötä salasana nähdäksesi suojattu "
-"sisältö:"
+msgid "This content is password protected. To view it please enter your password below:"
+msgstr "Tämä sisältö on suojattu salasanalla. Syötä salasana nähdäksesi suojattu sisältö:"
 
 #: models/strings.php:136
 msgctxt "theme-frontend"
@@ -1143,19 +1118,18 @@ msgstr "Jou"
 #: models/strings.php:252
 msgctxt "theme-frontend"
 msgid "Dialog Window - Close (Press escape to close)"
-msgstr ""
+msgstr "Dialogi-ikkuna - sulje (Sulje painamalla Esc -näppäintä)"
 
 #: models/strings.php:253
 msgctxt "theme-frontend"
 msgid "Close (Press escape to close)"
-msgstr ""
+msgstr "Sulje (Sulje painamalla Esc -näppäintä)"
 
 #: models/strings.php:266
 msgid "Pagination"
 msgstr "Sivutus"
 
-#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
-#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
+#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67 wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
 msgid "Add Row"
 msgstr ""
 
@@ -1191,9 +1165,7 @@ msgid "Instructions"
 msgstr ""
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
-msgid ""
-"This field can only be used with ACF Codifier. Doesn't do anything if "
-"defined in the admin side."
+msgid "This field can only be used with ACF Codifier. Doesn't do anything if defined in the admin side."
 msgstr ""
 
 #. Theme Name of the plugin/theme

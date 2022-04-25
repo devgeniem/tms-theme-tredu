@@ -260,7 +260,6 @@ class ProgramGroup {
                 Layouts\IconLinksLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\TextBlockLayout::class,
-                Layouts\NoticeBannerLayout::class,
             ],
             $key
         );

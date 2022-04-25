@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-04-25] - 0.5.0
+
 ### Added
 
 - TMS-804: Add cap copy_posts to editors & authors

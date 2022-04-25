@@ -199,8 +199,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-
-            /*
             'acf/image-carousel' => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -208,8 +206,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            */
-
             'acf/share-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,

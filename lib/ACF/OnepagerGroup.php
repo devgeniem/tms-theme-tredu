@@ -48,7 +48,7 @@ class OnepagerGroup {
                 'icon_links'     => Layouts\IconLinksLayout::class,
                 'acc_links'      => Layouts\AccessibilityIconLinksLayout::class,
                 'social_media'   => Layouts\SocialMediaLayout::class,
-                // 'image_carousel'  => Layouts\ImageCarouselLayout::class,
+                'image_carousel' => Layouts\ImageCarouselLayout::class,
                 'text_block'     => Layouts\TextBlockLayout::class,
                 'grid'           => Layouts\GridLayout::class,
                 // 'events'          => Layouts\EventsLayout::class,

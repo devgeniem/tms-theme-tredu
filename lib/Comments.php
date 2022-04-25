@@ -70,8 +70,8 @@ class Comments implements Interfaces\Controller {
         return sprintf(
             '<button name="submit" type="submit" id="submit" class="button button--icon is-primary" >%s %s</button>',
             __( 'Send Comment', 'tms-theme-tredu' ),
-            '<svg class="icon icon--chevron-right icon--large is-primary-invert">
-                <use xlink:href="#icon-chevron-right"></use>
+            '<svg class="icon icon--chevron-right icon--medium">
+                <use xlink:href="#icon-arrow-right"></use>
             </svg>'
         );
     }

@@ -24,7 +24,7 @@
                         {/blog_subtitle}
 
                         {@isset key1=blog_description key2=blog_authors method="or"}
-                            {>"ui/button-toggle" class="is-block-desktop mt-8-desktop mr-auto-desktop ml-auto-desktop" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
+                            {>"ui/button-toggle" class="is-block-desktop mt-8-desktop" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
                         {/isset}
                     </div>
 

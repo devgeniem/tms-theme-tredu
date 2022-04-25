@@ -19,10 +19,11 @@
 
     &__modal-control {
         &.slick-arrow {
+            border-radius: 50% !important;
             background-color: $white;
 
             .icon {
-                fill: $black;
+                fill: $primary;
             }
 
             &:hover {

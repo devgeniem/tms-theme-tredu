@@ -52,7 +52,7 @@ class ProgramSearch implements Interfaces\Controller {
 
             if ( ! empty( $key_words ) ) {
                 // Clean extra whitespace and remove commas
-                $cleaned_text      = mb_strtolower( trim( preg_replace( '/[\t\n\r\s]+/', ' ', str_replace( ',', ' ',$key_words ) ) ) );
+                $cleaned_text      = mb_strtolower( trim( preg_replace( '/[\t\n\r\s]+/', ' ', str_replace( ',', ' ',$key_words ) ) ) ); // phpcs:ignore
                 $str_array         = explode( ' ', $cleaned_text );
                 $search_keywords[] = $str_array;
             }

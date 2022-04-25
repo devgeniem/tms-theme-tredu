@@ -32,31 +32,31 @@ class ProgramSettingsTab extends Tab {
      * @var array
      */
     protected $strings = [
-        'tab'  => 'Koulutusten asetukset',
-        'program_search_group' => [
-            'title'        => 'Koulutushaun asetukset',
+        'tab'                   => 'Koulutusten asetukset',
+        'program_search_group'  => [
+            'title' => 'Koulutushaun asetukset',
         ],
-        'program_page' => [
+        'program_page'          => [
             'title'        => 'Koulutushaun sivu',
-            'instructions' => 'Sivu, jolle on valittu Koulutushaku-sivupohja. Käytetään pikahaussa hakulomakkeen lähettämisessä koulutusten hakusivulle',
+            'instructions' => 'Sivu, jolle on valittu Koulutushaku-sivupohja. Käytetään pikahaussa hakulomakkeen lähettämisessä koulutusten hakusivulle', // phpcs:ignore
         ],
         'program_post_per_page' => [
-            'title' => 'Koulutusten määrä per sivu',
+            'title'        => 'Koulutusten määrä per sivu',
             'instructions' => '',
         ],
-        'program_cta_group' => [
-            'title'        => 'Koulutushaun asetukset',
+        'program_cta_group'     => [
+            'title' => 'Koulutushaun asetukset',
         ],
-        'cta_title_field' => [
-            'title' => 'Toimintakehotteen otsikko',
+        'cta_title_field'       => [
+            'title'        => 'Toimintakehotteen otsikko',
             'instructions' => 'Enimmäismerkkimäärä 90',
         ],
         'cta_description_field' => [
-            'title' => 'Toimintakehotteen kuvausteksti',
+            'title'        => 'Toimintakehotteen kuvausteksti',
             'instructions' => 'Enimmäismerkkimäärä 200',
         ],
-        'cta_link' => [
-            'title' => 'Linkki',
+        'cta_link'              => [
+            'title'        => 'Linkki',
             'instructions' => '',
         ],
     ];

@@ -42,12 +42,12 @@ class CallToActionFields extends Field\Group {
      */
     protected function sub_fields() : array {
         $strings = [
-            'rows'           => [
+            'rows' => [
                 'label'        => 'Nostot',
                 'instructions' => '',
                 'button'       => 'Lisää rivi',
             ],
-            'layout'         => [
+            'layout' => [
                 'label'        => 'Asettelu',
                 'instructions' => '',
             ],

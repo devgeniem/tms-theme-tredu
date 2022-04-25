@@ -10,11 +10,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-703: Add Sitemap layout.
+- TMS-708: Program Call to Action
 
 ## [2022-04-25] - 0.5.0
 
 ### Added
 
+
+- TMS-743: Hero layout for front page
+- TMS-697: Contacts
 - TMS-804: Add cap copy_posts to editors & authors #53
 - TMS-681: Add articles layout. #50
 - TMS-678: Image carousel #47

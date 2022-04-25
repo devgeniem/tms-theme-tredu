@@ -60,11 +60,9 @@ class ProgramCallToAction extends BaseBlock {
     public function filter_data( $data, $instance, $block, $content, $is_preview, $post_id ) : array { // phpcs:ignore
         $data = self::add_filter_attributes( $data, $instance, $block, $content, $is_preview, $post_id );
 
-        $data['title'] = Settings::get_setting( 'program_call_to_action_cta_title' ) ?? '';
+        $data['title']       = Settings::get_setting( 'program_call_to_action_cta_title' ) ?? '';
         $data['description'] = Settings::get_setting( 'program_call_to_action_cta_description' ) ?? '';
-        $data['link'] = Settings::get_setting( 'program_call_to_action_cta_link' ) ?? '';
-
-        error_log( print_r( $data['link'], true ) );
+        $data['link']        = Settings::get_setting( 'program_call_to_action_cta_link' ) ?? '';
 
         return apply_filters( 'tms/acf/block/' . self::KEY . '/data', $data );
     }

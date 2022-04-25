@@ -43,7 +43,7 @@ class ThemeColorTab extends \Geniem\ACF\Field\Tab {
      * @var array
      */
     public static array $available_themes = [
-        'tredu'            => 'Tredu',
+        'tredu' => 'Tredu',
     ];
 
     /**

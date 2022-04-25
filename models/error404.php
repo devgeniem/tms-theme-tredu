@@ -95,10 +95,10 @@ class Error404 extends BaseModel {
         return apply_filters(
             'tms/theme/error404/home_link',
             [
-                'title' => _x( 'Return to home', 'theme-frontend', 'tms-theme-tredu' ),
-                'url'   => $this->get_home_url(),
+                'title'   => _x( 'Return to home', 'theme-frontend', 'tms-theme-tredu' ),
+                'url'     => $this->get_home_url(),
                 'classes' => 'is-primary',
-                'icon'  => 'arrow-right',
+                'icon'    => 'arrow-right',
             ]
         );
     }

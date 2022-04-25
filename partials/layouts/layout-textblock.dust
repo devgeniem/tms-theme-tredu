@@ -3,7 +3,7 @@
         <div class="is-content-grid">
             <div class="textblock__inner keep-vertical-spacing{width_class|attr}">
                 {?title}
-                    <h2 class="mb-6">
+                    <h2 class="mb-6{text_color_class|attr}">
                         {title|html}
                     </h2>
                 {/title}

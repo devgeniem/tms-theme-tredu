@@ -30,13 +30,13 @@ class SitemapSettingsTab extends Tab {
      * @var array
      */
     protected $strings = [
-        'tab'                       => 'Sivukartta',
-        'sitemap_links'             => [
+        'tab'           => 'Sivukartta',
+        'sitemap_links' => [
             'title'        => 'Sivukartan linkit',
             'instructions' => 'Linkit jotka lisätään sivukarttaan Cookiebottia varten.',
             'button_label' => 'Lisää linkki',
         ],
-        'sitemap_link'              => [
+        'sitemap_link'  => [
             'title'        => 'Linkki',
             'instructions' => '',
         ],

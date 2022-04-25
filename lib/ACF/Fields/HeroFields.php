@@ -65,7 +65,7 @@ class HeroFields extends \Geniem\ACF\Field\Group {
                 'label'        => 'Teksti värilaatikossa',
                 'instructions' => '',
             ],
-            'links'     => [
+            'links' => [
                 'label'        => 'Linkit',
                 'instructions' => 'Lisää linkkipainikkeita',
                 'add_more_btn' => 'Lisää linkkirivi',

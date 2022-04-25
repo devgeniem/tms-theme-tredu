@@ -30,8 +30,8 @@ class PageSettingsTab extends Tab {
      * @var array
      */
     protected $strings = [
-        'tab'                       => 'Sisältösivut',
-        'enable_sibling_navigation' => [
+        'tab'                        => 'Sisältösivut',
+        'enable_sibling_navigation'  => [
             'title'        => 'Rinnakkaissivujen navigointi',
             'instructions' => 'Esitetään sivujen alasivuilla ennen alatunnistetta.',
         ],

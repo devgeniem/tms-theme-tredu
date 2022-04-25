@@ -41,22 +41,22 @@ class ProgramSettingsTab extends Tab {
             'instructions' => 'Sivu, jolle on valittu Koulutushaku-sivupohja. Käytetään pikahaussa hakulomakkeen lähettämisessä koulutusten hakusivulle', // phpcs:ignore
         ],
         'program_post_per_page' => [
-            'title' => 'Koulutusten määrä per sivu',
+            'title'        => 'Koulutusten määrä per sivu',
             'instructions' => '',
         ],
         'program_cta_group'     => [
             'title' => 'Koulutushaun asetukset',
         ],
         'cta_title_field'       => [
-            'title' => 'Toimintakehotteen otsikko',
+            'title'        => 'Toimintakehotteen otsikko',
             'instructions' => 'Enimmäismerkkimäärä 90',
         ],
         'cta_description_field' => [
-            'title' => 'Toimintakehotteen kuvausteksti',
+            'title'        => 'Toimintakehotteen kuvausteksti',
             'instructions' => 'Enimmäismerkkimäärä 200',
         ],
         'cta_link'              => [
-            'title' => 'Linkki',
+            'title'        => 'Linkki',
             'instructions' => '',
         ],
     ];

@@ -228,7 +228,7 @@ class ProgramGroup {
         return $tab;
     }
 
-     /**
+    /**
      * Get components tab
      *
      * @param string $key Field group key.
@@ -260,6 +260,7 @@ class ProgramGroup {
                 Layouts\IconLinksLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\TextBlockLayout::class,
+                Layouts\CallToActionLayout::class,
             ],
             $key
         );

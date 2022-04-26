@@ -239,7 +239,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Program::SLUG,
                 ],
             ],
-            
 
             'acf/material'               => [
                 'post_types' => [

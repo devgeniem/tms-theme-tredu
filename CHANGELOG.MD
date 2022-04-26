@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-703: Add Sitemap layout.
 - TMS-708: Program Call to Action
 
+### Fixed
+
+- TMS-734-hotfix-programs-layouts-and-blocks
+
 ## [2022-04-25] - 0.5.0
 
 ### Added

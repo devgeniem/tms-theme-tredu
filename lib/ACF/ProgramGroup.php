@@ -228,7 +228,7 @@ class ProgramGroup {
         return $tab;
     }
 
-     /**
+    /**
      * Get components tab
      *
      * @param string $key Field group key.

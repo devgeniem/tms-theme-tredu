@@ -232,14 +232,12 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            
             'acf/table'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
                 ],
             ],
-            
 
             'acf/material'               => [
                 'post_types' => [

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-04-26] - 0.6.0
+
 ### Added
 
 - TMS-688: Table block
@@ -14,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- TMS-805: Fix no results text logic
 - TMS-734-hotfix-programs-layouts-and-blocks
 
 ## [2022-04-25] - 0.5.0

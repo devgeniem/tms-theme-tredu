@@ -10,7 +10,7 @@
         </div>
 
         <div class="column is-6-desktop is-5-widescreen">
-            <div class="highlight-article__fields p-5 pt-9-desktop pr-6-desktop pb-9-desktop pl-9-desktop">
+            <div class="highlight-article__fields p-5-tablet pt-9-desktop pr-6-desktop pb-9-desktop pl-9-desktop">
                 {?highlight.post_title}
                     <h2 class="mt-0 mt-3-desktop mb-4 mb-5-desktop">
                         <a href="{highlight.permalink}" class="has-text-weight-semibold">
@@ -19,15 +19,12 @@
                     </h2>
                 {/highlight.post_title}
 
-                {?highlight.category}
-                    <a href="{category.permalink|url}" class="pill {category_link_classes}">
-                        {highlight.category.name|html}
-                    </a>
-                {/highlight.category}
-
                 <div class="entry__excerpt mt-4 mt-5-desktop mb-5-desktop">
-                    <span class="is-block has-text-weight-semibold has-text-xsmall is-family-secondary has-text-black">{@strtodate value=highlight.post_date /}</span>
-                    <p class="mt-1">{highlight.excerpt|html}</p>
+                        <span
+                            class="is-block has-text-weight-semibold has-text-xsmall is-family-secondary has-text-black">{@strtodate value=highlight.post_date /}</span>
+                    {?highlight.excerpt}
+                        <p class="mt-1">{highlight.excerpt|html}</p>
+                    {/highlight.excerpt}
                 </div>
             </div>
         </div>

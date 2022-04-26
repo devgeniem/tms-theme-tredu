@@ -465,6 +465,7 @@ class Roles implements Controller {
         // Other
         $role->add_caps( [
             'edit_theme_options', // Navigation changes
+            'copy_posts',
         ] );
 
         $role->add_caps( $this->gravity_forms_suppressed_capabilities );
@@ -513,7 +514,7 @@ class Roles implements Controller {
         $role->add_caps( [ 'assign_categories', 'assign_post_tags', 'assign_material_types' ] );
 
         // Other
-        $role->add_caps( [ 'edit_theme_options', 'unfiltered_html' ] );
+        $role->add_caps( [ 'edit_theme_options', 'unfiltered_html', 'copy_posts' ] );
 
         // Remove administration pages
         $role->remove_menu_pages( [

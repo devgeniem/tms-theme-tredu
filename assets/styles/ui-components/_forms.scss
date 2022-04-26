@@ -1,4 +1,4 @@
-/*!*
+/* !*
  * Copyright (c) 2021. Geniem Oy
  */
 $gravityform-input-focus: .125rem solid $color-black !default;
@@ -7,16 +7,19 @@ $gravityform-input-focus-offset: .25rem !default;
 form {
     label {
         margin-bottom: $theme-spacing-quarter;
+        color: $color-black;
     }
 
     select,
     input,
     textarea {
+        padding: $theme-spacing-half;
+        border: .125rem solid $secondary;
+        border-radius: $theme-spacing-quarter;
+        background-color: $white;
+        color: $color-black;
         font-family: $family-secondary;
         line-height: 1;
-        padding: $theme-spacing-half;
-        border: 1px solid $secondary;
-        border-radius: $theme-spacing-quarter;
 
         &::placeholder {
             color: lighten($black, 10%);
@@ -27,11 +30,10 @@ form {
         }
     }
 
-
     .is-checkradio {
-        &[type=checkbox]+label:before {
-            border-radius: 0;
+        &[type=checkbox] + label::before {
             border: 2px solid $black;
+            border-radius: 0;
         }
     }
 
@@ -80,8 +82,8 @@ form {
         }
 
         .gfield_required {
-            font-style: normal !important; // sass-lint:disable-line no-important
             color: $black;
+            font-style: normal !important; // sass-lint:disable-line no-important
         }
 
         .gchoice {
@@ -90,8 +92,24 @@ form {
             position: relative;
         }
 
-        button {
+        button:not(.gform_button_select_files) {
             @extend .is-primary;
+        }
+
+        .gform_button_select_files {
+            @extend .is-secondary;
+        }
+
+        .gform_drop_area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: .125rem dashed $secondary;
+            background-color: $color-white;
+
+            .gform_drop_instructions {
+                margin-bottom: 0;
+            }
         }
 
         select,

@@ -47,7 +47,9 @@ class IconLinksFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             }
 
             $layout['rows'][ $key ]['icon_classes'] = 'icon--medium is-inline-block';
-            $layout['rows'][ $key ]['link']['icon'] = $icon;
+            if ( ! empty( $layout['rows'][ $key ]['link'] ) ) {
+                $layout['rows'][ $key ]['link']['icon'] = $icon;
+            }
         }
 
         return $layout;

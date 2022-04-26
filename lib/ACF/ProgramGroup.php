@@ -228,7 +228,7 @@ class ProgramGroup {
         return $tab;
     }
 
-     /**
+    /**
      * Get components tab
      *
      * @param string $key Field group key.
@@ -257,6 +257,10 @@ class ProgramGroup {
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
                 Layouts\MapLayout::class,
+                Layouts\IconLinksLayout::class,
+                Layouts\ImageBannerLayout::class,
+                Layouts\TextBlockLayout::class,
+                Layouts\CallToActionLayout::class,
             ],
             $key
         );

@@ -3,6 +3,7 @@
  * Template Name: Koulutushaku
  */
 
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 use TMS\Theme\Tredu\Traits\Pagination;
 use TMS\Theme\Tredu\PostType\Program;
 use TMS\Theme\Tredu\Taxonomy\Location;
@@ -107,7 +108,7 @@ class PageProgram extends BaseModel {
      * @return mixed
      */
     protected static function get_posts_per_page() {
-        return Settings::get_setting( 'programs_per_page' ) ?? 20;
+        return Settings::get_setting( 'program_search_programs_per_page' ) ?? 20;
     }
 
     /**
@@ -174,6 +175,7 @@ class PageProgram extends BaseModel {
             Location::SLUG              => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
             EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
             DeliveryMethod::SLUG        => self::FILTER_DELIVERY_METHODS_QUERY_VAR,
+            ApplyMethod::SLUG           => ApplyMethod::SLUG,
         ];
 
         return $taxonomies_with_slugs;
@@ -225,15 +227,15 @@ class PageProgram extends BaseModel {
      * @return string[]
      */
     public function search() : array {
-        $this->search_data        = new stdClass();
-        $this->search_data->query = get_query_var( self::SEARCH_QUERY_VAR );
+        $this->search_data          = new stdClass();
+        $this->search_data->query   = get_query_var( self::SEARCH_QUERY_VAR );
         $this->search_data->ongoing = get_query_var( self::FILTER_ONGOING_QUERY_VAR );
         return [
-            'input_search_name' => self::SEARCH_QUERY_VAR,
-            'current_search'    => $this->search_data->query,
+            'input_search_name'    => self::SEARCH_QUERY_VAR,
+            'current_search'       => $this->search_data->query,
             'checkbox_search_name' => self::FILTER_ONGOING_QUERY_VAR,
-            'only_ongoing' => $this->search_data->ongoing,
-            'new_search_link'   => get_permalink(),
+            'only_ongoing'         => $this->search_data->ongoing,
+            'new_search_link'      => get_permalink(),
         ];
     }
 
@@ -257,10 +259,14 @@ class PageProgram extends BaseModel {
             );
 
             if ( ! empty( $terms ) ) {
+                if ( ! isset( $this->strings()['program'][ $tax_slug ] ) ) {
+                    continue;
+                }
+
                 $filters[] = [
                     'name'      => $this->strings()['program'][ $tax_slug ],
                     'query_var' => $qv,
-                    'terms'     => array_map( function( $term ) use ( $qv ) {
+                    'terms'     => array_map( function ( $term ) use ( $qv ) {
                         $active_terms = $this->get_filter_query_var( $qv );
 
                         if ( ! empty( $active_terms ) && is_array( $active_terms ) && in_array( $term->term_id, $active_terms ) ) { // phpcs:ignore
@@ -402,7 +408,7 @@ class PageProgram extends BaseModel {
                 if ( ! empty( $item->fields['apply_info'] ) ) {
                     $item->fields['apply_end'] = $item->fields['apply_info'];
                 }
-                else if ( ! empty( $item->fields['apply_end'] ) ) {
+                elseif ( ! empty( $item->fields['apply_end'] ) ) {
                     $item->fields['apply_end'] =  $this->strings()['program']['application-period-ends'] . ' ' . date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) ); // phpcs:ignore
                 }
             }
@@ -427,10 +433,10 @@ class PageProgram extends BaseModel {
                     }
                 }
 
-                if ( $tax_slug === ProgramType::SLUG ) {
-                    $program_type_color           = get_term_meta( $term_id, 'color', true ) ?? '';
-                    $item->program_type_color     = $program_type_color;
-                    $item->program_type_txt_color = $program_type_color === 'primary' ? 'white' : 'primary';
+                if ( $tax_slug === ApplyMethod::SLUG ) {
+                    $apply_method_color           = get_term_meta( $term_id, 'color', true ) ?? '';
+                    $item->apply_method_color     = $apply_method_color;
+                    $item->apply_method_txt_color = $apply_method_color === 'primary' ? 'white' : 'primary';
                 }
             }
 
@@ -496,7 +502,7 @@ class PageProgram extends BaseModel {
     protected function set_search_results_title( int $result_count = 0 ) : string {
 
         $search_strings = $this->strings()['program']['search'];
-        $suffix = ' ' . $search_strings['results'];
+        $suffix         = ' ' . $search_strings['results'];
 
         static::$search_results_title = $this->page_title() . ' - ' . $this->results_summary( $result_count ) . ' ' . $suffix;
 

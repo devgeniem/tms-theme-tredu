@@ -1,10 +1,10 @@
-<section class="section related-posts has-background-secondary has-background-secondary--opaque pt-10 pb-10">
+<section class="section related-posts pt-10 pb-10">
     <div class="container">
         {?related.title}
             <div class="columns">
-                <div class="column has-text-centered">
+                <div class="column">
                     <h2 class="mt-0 mb-6">
-                        {related.title|s}
+                        {related.title|html}
                     </h2>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                     <div class="related-posts__item mb-4 mb-0-tablet">
                         {?image_id}
                             <div class="image is-4by3">
-                                <a href="{permalink}" aria-hidden="true" tabindex="-1">
+                                <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
                                     {@image id=image_id size="large" class="objectfit-image" /}
                                 </a>
                             </div>
@@ -24,21 +24,17 @@
 
                         {?post_title}
                             <h3 class="h4 mt-5 mb-5">
-                                <a href="{permalink}" class="has-text-black">
-                                    {post_title|s}
+                                <a href="{permalink|url}" class="has-text-black">
+                                    {post_title|html}
                                 </a>
                             </h3>
                         {/post_title}
 
                         <div class="related-posts__excerpt mt-5">
-                            <span class="has-text-weight-bold">{@strtodate value=post_date /}</span>
-                            {post_excerpt|s}
+                            <span
+                                class="has-text-weight-semibold has-text-black has-text-small">{@strtodate value=post_date /}</span>
+                            {post_excerpt|kses}
                         </div>
-
-                        {?category}
-                            <a href="{category_link}"
-                               class="button is-secondary is-size-7 mt-5 pt-1 pr-4 pb-1 pl-4 has-border-radius-small">{category|s}</a>
-                        {/category}
                     </div>
                 </div>
             {/related.posts}
@@ -47,9 +43,10 @@
         {?related.link}
             <div class="columns">
                 <div class="column has-text-right-tablet">
-                    <a href="{related.link.url}" class="related-posts__read-more is-inline-flex is-align-items-center mt-4-tablet mt-6-desktop">
-                        {>"ui/icon" icon="chevron-right" class="icon--small is-primary mr-2" /}
-                        {related.link.title|s}
+                    <a href="{related.link.url|url}"
+                       class="related-posts__read-more is-inline-flex is-align-items-flex-start mt-4-tablet mt-6-desktop has-text-weight-semibold">
+                        {>"ui/icon" icon="chevron-right" class="icon--small is-secondary mt-2 mr-2" /}
+                        {related.link.title|html}
                     </a>
                 </div>
             </div>

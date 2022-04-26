@@ -5,6 +5,8 @@
 
 namespace TMS\Theme\Tredu\Formatters;
 
+use TMS\Theme\Tredu\Assets;
+
 /**
  * Class AccessibilityIconLinksFormatter
  *
@@ -44,12 +46,22 @@ class AccessibilityIconLinksFormatter implements \TMS\Theme\Tredu\Interfaces\For
             return $layout;
         }
 
+        // get icons list in order to give a title for
+        // items missing title
+        $icons = Assets::get_accessibility_icons();
+
+        // maybe add link icon and item title to row items
         foreach ( $layout['rows'] as $key => $row ) {
-            if ( empty( $layout['rows'][ $key ]['link'] ) ) {
-                continue;
+            if ( ! empty( $layout['rows'][ $key ]['link'] ) ) {
+                $layout['rows'][ $key ]['link']['icon'] = 'chevron-right';
             }
 
-            $layout['rows'][ $key ]['link']['icon'] = 'chevron-right';
+            $title = $layout['rows'][ $key ]['title'];
+            $icon  = $layout['rows'][ $key ]['acc_icon'];
+
+            if ( empty( $title ) && ! empty( $icon ) ) {
+                $layout['rows'][ $key ]['title'] = ! empty( $icons[ $icon ] ) ? $icons[ $icon ] : '';
+            }
         }
 
         return $layout;

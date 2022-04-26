@@ -11,13 +11,14 @@ use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 
 /**
  * Class CommentGroup
  *
  * @package TMS\Theme\Tredu\ACF
  */
-class ProgramTypeGroup {
+class ApplyMethodGroup {
 
     /**
      * CommentGroup constructor.
@@ -34,11 +35,11 @@ class ProgramTypeGroup {
      */
     protected function register_fields() : void {
         try {
-            $field_group = ( new Group( 'Koulutustyyppi' ) )
-                ->set_key( 'fg_program-type_fields' );
+            $field_group = ( new Group( 'Hakutapa' ) )
+                ->set_key( 'fg_apply-method_fields' );
 
             $rule_group = ( new RuleGroup() )
-                ->add_rule( 'taxonomy', '==', 'program-type' );
+                ->add_rule( 'taxonomy', '==', ApplyMethod::SLUG );
 
             $field_group
                 ->add_rule_group( $rule_group )
@@ -87,9 +88,9 @@ class ProgramTypeGroup {
             ->set_name( 'color' )
             ->set_choices( [
                 'primary' => 'Tumman sininen',
-                'blue'   => 'Sininen',
-                'green'  => 'Vihreä',
-                'red' => 'Punainen',
+                'blue'    => 'Sininen',
+                'green'   => 'Vihreä',
+                'red'     => 'Punainen',
             ] )
             ->set_default_value( 'primary' )
             ->set_wrapper_width( 30 )
@@ -99,4 +100,4 @@ class ProgramTypeGroup {
     }
 }
 
-( new ProgramTypeGroup() );
+( new ApplyMethodGroup() );

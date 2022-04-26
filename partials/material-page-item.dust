@@ -1,0 +1,47 @@
+<li class="column is-12 is-6-desktop">
+    <div class="is-flex p-4 p-6-desktop page-materials__item">
+        <div class="image is-180x180 is-hidden-touch is-flex is-align-items-center is-justify-content-center is-flex-shrink-0 mr-4 mr-6-desktop">
+            {?image}
+                {@image id=image size="medium" class="objectfit-image" alt="" /}
+            {:else}
+                {>"ui/icon" icon="file" class="icon--xlarge is-gray" /}
+            {/image}
+        </div>
+
+        <div class="has-width-100">
+            <div class="is-flex is-flex-wrap-wrap">
+                <div class="has-width-100-until-tablet">
+                    <a href="{url}"
+                       class="page-materials__result-title is-inline-flex is-align-items-center has-text-large has-text-weight-semibold is-family-secondary has-word-break-break-all {layout_classes.page_item_text|s}"
+                       download>
+                        {title|html}
+                        <span class="is-sr-only">{Strings.s.page_materials.title_sr_text|html}</span>
+                        {>"ui/icon" icon="download" class="ml-3 is-secondary icon--large" /}
+                    </a>
+
+                    <div
+                        class="mt-1 has-text-gray has-line-height-tight is-family-secondary has-text-weight-medium has-text-small has-divider-x-1 has-divider-x-1">
+                        <span class="is-inline-block pr-3 is-uppercase">{filetype|html}</span>
+                        <span class="is-inline-block ml-2">{filesize|html}</span>
+                    </div>
+                </div>
+            </div>
+
+            {?description}
+                <div class="mt-4 has-text-small keep-vertical-spacing">
+                    {description|kses}
+                </div>
+            {/description}
+
+            <a href="{url|url}"
+               class="button is-primary mt-4"
+               tabindex="-1"
+               aria-hidden="true"
+               download>
+                {button_text|kses}
+
+                {>"ui/icon" icon="download" /}
+            </a>
+        </div>
+    </div>
+</li>

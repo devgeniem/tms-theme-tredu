@@ -9,12 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-688: Table block
 - TMS-708: Program Call to Action
 
 ## [2022-04-25] - 0.5.0
 
 ### Added
-
 
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts

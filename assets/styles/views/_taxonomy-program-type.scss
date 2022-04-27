@@ -1,0 +1,39 @@
+.tax-program-type {
+    &__hero {
+        height: 500px;
+        overflow: hidden;
+    }
+
+    &__info {
+        background-color: $color-light-blueishgray;
+        color: $color-dark-blue;
+    }
+
+    &__info-item {
+        flex: 145px;
+        max-width: 195px;
+        padding: .5rem;
+        font-weight: 600;
+
+        @include from($tablet) {
+            flex: 185px;
+        }
+
+        .icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    &__info-item-label {
+        margin: .25rem 0;
+        color: $color-trout;
+        font-size: .77777rem;
+        letter-spacing: .04rem;
+    }
+
+    &__info-item-text {
+        font-size: .94444444rem;
+        line-height: 1.7;
+    }
+}

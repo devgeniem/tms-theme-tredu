@@ -12,6 +12,17 @@ use TMS\Theme\Tredu\Settings;
 class TaxonomyProgramType extends Archive {
 
     /**
+     * Get the hero image.
+     *
+     * @return mixed
+     */
+    public function hero() {
+        $hero_image = get_field( 'hero_image', get_queried_object() );
+
+        return ! empty( $hero_image ) ? $hero_image : null;
+    }
+
+    /**
      * Get the term description.
      *
      * @return string|null
@@ -23,10 +34,34 @@ class TaxonomyProgramType extends Archive {
     /**
      * Get the long description.
      *
-     * @return string|null
+     * @return mixed
      */
-    public function long_description() : ?string {
-        return get_field( 'long_description', get_queried_object() );
+    public function long_description() {
+        $long_description = get_field( 'long_description', get_queried_object() );
+
+        return ! empty( $long_description ) ? $long_description : null;
+    }
+
+    /**
+     * Get the scope.
+     *
+     * @return mixed
+     */
+    public function scope() {
+        $scope = get_field( 'scope', get_queried_object() );
+
+        return ! empty( $scope ) ? $scope : null;
+    }
+
+    /**
+     * Get the "who can apply" -text.
+     *
+     * @return mixed
+     */
+    public function who_can_apply() {
+        $who_can_apply = get_field( 'who_can_apply', get_queried_object() );
+
+        return ! empty( $who_can_apply ) ? $who_can_apply : null;
     }
 
     /**

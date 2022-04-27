@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+- TMS-736: Single program type term view #61
+
 ## [2022-04-26] - 0.6.0
 
 ### Added

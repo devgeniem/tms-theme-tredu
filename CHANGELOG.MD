@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+- TMS-736: Single program type term view #62
+
+## [2022-04-26] - 0.6.0
+
+### Added
 
 - TMS-703: Add Sitemap layout.
 - TMS-698: Add form
@@ -16,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
+- TMS-805: Fix no results text logic
 - TMS-734-hotfix-programs-layouts-and-blocks
 
 ## [2022-04-25] - 0.5.0

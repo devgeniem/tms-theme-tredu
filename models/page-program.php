@@ -386,7 +386,7 @@ class PageProgram extends BaseModel {
      *
      * @return array
      */
-    protected function format_posts( array $posts ) : array {
+    public function format_posts( array $posts ) : array {
 
         return array_map( function ( $item ) {
             if ( has_post_thumbnail( $item->ID ) ) {

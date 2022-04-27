@@ -1,0 +1,11 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content pb-8" id="main-content">
+        {#TaxonomyProgramType}
+            <div class="container">
+                {>"views/page-program/program-list" posts=articles /}
+            </div>
+        {/TaxonomyProgramType}
+    </main>
+{/content}

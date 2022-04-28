@@ -5,11 +5,14 @@
 
 use TMS\Theme\Tredu\Blocks\ProgramCallToAction;
 use TMS\Theme\Tredu\Settings;
+use TMS\Theme\Tredu\Traits\Pagination;
 
 /**
  * The TaxonomyProgramType class.
  */
 class TaxonomyProgramType extends Archive {
+
+    use Pagination;
 
     /**
      * Get the hero image.

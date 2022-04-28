@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
+
+- TMS-737: Project CPT and Portfolio taxonomy #63
 - TMS-736: Single program type term view #62
+
 
 ## [2022-04-26] - 0.6.0
 

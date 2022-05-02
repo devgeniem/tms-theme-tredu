@@ -85,6 +85,18 @@ class ProgramGroup {
             ],
             'search_keywords' => [
                 'title'        => 'Haun apusanat',
+                'instructions' => 'Käytetään ennakoivassa haussa',
+            ],
+            'search_box_title' => [
+                'title'        => 'Hakulaatikon otsikko',
+                'instructions' => '',
+            ],
+            'search_box_ingress' => [
+                'title'        => 'Hakulaatikon lyhyt ote',
+                'instructions' => '',
+            ],
+            'search_box_link' => [
+                'title'        => 'Hakulaatikon nappi',
                 'instructions' => '',
             ],
         ];
@@ -107,11 +119,31 @@ class ProgramGroup {
             ->set_name( 'search_keywords' )
             ->redipress_include_search()
             ->set_instructions( $strings['search_keywords']['instructions'] );
+        
+        $search_box_title = ( new Field\Text( $strings['search_box_title']['title'] ) )
+            ->set_key( "${key}_search_box_title" )
+            ->set_name( 'search_box_title' )
+            ->set_instructions( $strings['search_box_title']['instructions'] );
+
+        $search_box_ingress = ( new Field\Textarea( $strings['search_box_ingress']['title'] ) )
+            ->set_key( "${key}_search_box_ingress" )
+            ->set_name( 'search_box_ingress' )
+            ->set_maxlength( 200 )
+            ->set_instructions( $strings['search_box_ingress']['instructions'] );
+
+        $search_box_link = ( new Field\Link( $strings['search_box_link']['title'] ) )
+            ->set_key( "${key}_search_box_link" )
+            ->set_name( 'search_box_link' )
+            ->set_wrapper_width( 40 )
+            ->set_instructions( $strings['search_box_link']['instructions'] );
 
         $tab->add_fields( [
             $program_name_field,
             $ingress_field,
             $search_keywords_field,
+            $search_box_title,
+            $search_box_ingress,
+            $search_box_link
         ] );
 
         return $tab;

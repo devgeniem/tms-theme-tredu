@@ -204,4 +204,23 @@ class SingleProgram extends BaseModel {
         return $colors;
     }
 
+    /**
+     * Get apply method taxonomy
+     *
+     * 
+     */
+    public function search_box_default_strs() {
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+       $strs = [
+           'title' => _x( 'Apply now', 'program info', 'tms-theme-tredu' ) . '!',
+           'description' => _x( 'Apply period', 'program info', 'tms-theme-tredu' ) . ' ' . $this->get_apply_period( $fields ) ,
+        ];
+
+        return $strs;
+    }
+
+
 }

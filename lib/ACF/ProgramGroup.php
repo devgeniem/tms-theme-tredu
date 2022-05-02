@@ -74,20 +74,20 @@ class ProgramGroup {
      */
     protected function get_general_tab( string $key ) : Field\Tab {
         $strings = [
-            'tab'             => 'Yleiset tiedot',
-            'program_name'    => [
+            'tab'                => 'Yleiset tiedot',
+            'program_name'       => [
                 'title'        => 'Tutkinnon nimi',
                 'instructions' => 'esim. Sosiaali- ja terveysalan perustutkinto',
             ],
-            'ingress'         => [
+            'ingress'            => [
                 'title'        => 'Ingressi',
                 'instructions' => '',
             ],
-            'search_keywords' => [
+            'search_keywords'    => [
                 'title'        => 'Haun apusanat',
                 'instructions' => 'Käytetään ennakoivassa haussa',
             ],
-            'search_box_title' => [
+            'search_box_title'   => [
                 'title'        => 'Hakulaatikon otsikko',
                 'instructions' => '',
             ],
@@ -95,7 +95,7 @@ class ProgramGroup {
                 'title'        => 'Hakulaatikon lyhyt ote',
                 'instructions' => '',
             ],
-            'search_box_link' => [
+            'search_box_link'    => [
                 'title'        => 'Hakulaatikon nappi',
                 'instructions' => '',
             ],
@@ -119,7 +119,7 @@ class ProgramGroup {
             ->set_name( 'search_keywords' )
             ->redipress_include_search()
             ->set_instructions( $strings['search_keywords']['instructions'] );
-        
+
         $search_box_title = ( new Field\Text( $strings['search_box_title']['title'] ) )
             ->set_key( "${key}_search_box_title" )
             ->set_name( 'search_box_title' )
@@ -143,7 +143,7 @@ class ProgramGroup {
             $search_keywords_field,
             $search_box_title,
             $search_box_ingress,
-            $search_box_link
+            $search_box_link,
         ] );
 
         return $tab;

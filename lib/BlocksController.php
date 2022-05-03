@@ -281,7 +281,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'gravityforms/form'  => [
+            'gravityforms/form'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -289,7 +289,15 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            'acf/countdown'              => [
+            'acf/countdown' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+
+            'acf/place-of-business' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

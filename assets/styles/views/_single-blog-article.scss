@@ -13,6 +13,16 @@
     }
 }
 
+.entry__blog-description {
+    .button-toggle {
+        color: $black;
+    }
+}
+
+.entry__blog-subtitle {
+    color: $text !important;
+}
+
 .entry__blog-description-text {
     grid-column: 2 / 2;
 }

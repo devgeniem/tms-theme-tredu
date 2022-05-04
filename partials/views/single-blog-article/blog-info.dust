@@ -3,14 +3,15 @@
     <div class="container">
         <div class="columns">
             <div class="column is-10 is-offset-1">
-                <div class="entry__blog-info is-blog-info-grid p-5-tablet">
+                <div class="entry__blog-info is-blog-info-grid p-5-tablet pr-0-desktop pl-0-desktop">
                     {?blog_logo}
                         <div class="entry__blog-logo is-flex-shrink-0 mb-4 mb-0-desktop has-text-centered-mobile">
                             {@image id=blog_logo size="thumbnail" /}
                         </div>
                     {/blog_logo}
 
-                    <div class="entry__blog-description {^page_logo}is-offset-2 pl-5-desktop is-flex-grow-1{/page_logo}">
+                    <div
+                        class="entry__blog-description {^page_logo}is-offset-2 pl-7-desktop is-flex-grow-1{/page_logo}">
                         {?blog_title}
                             <p class="h4 mt-0 mb-5">
                                 {blog_title|s}
@@ -18,22 +19,22 @@
                         {/blog_title}
 
                         {?blog_subtitle}
-                            <p class="h5 mt-5 mb-5 mb-6-desktop">
+                            <p class="entry__blog-subtitle has-text-lead mt-5 mb-5 mb-6-desktop">
                                 {blog_subtitle|s}
                             </p>
                         {/blog_subtitle}
 
                         {@isset key1=blog_description key2=blog_authors method="or"}
-                            {>"ui/button-toggle" class="is-block-desktop mt-8-desktop" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
+                            {>"ui/button-toggle" class="is-block-desktop mt-6-desktop" text=Strings.s.blog_article.toggle_details target="js-archive-description-toggle-target" /}
                         {/isset}
                     </div>
 
                     {?archive_link}
-                        <div class="entry__blog-archive-link is-flex-shrink-0 mt-4 mt-0-desktop">
+                        <div class="entry__blog-archive-link is-flex-shrink-0 mt-4 mt-0-desktop has-text-right-desktop">
                             <a href="{archive_link}"
                                class="button button--icon {SingleBlogArticle.classes.info_section_button|s}">
                                 {Strings.s.blog_article.archive_link_text}
-                                {>"ui/icon" icon="chevron-right" class="icon--medium" /}
+                                {>"ui/icon" icon="arrow-right" class="icon--medium" /}
                             </a>
                         </div>
                     {/archive_link}
@@ -44,7 +45,7 @@
                          id="js-archive-description-toggle-target">
                         {?blog_description}
                             <div class="is-blog-info-grid pt-5">
-                                <div class="entry__blog-description-text pl-5-desktop">
+                                <div class="entry__blog-description-text pl-7-desktop">
                                     <p class="has-text-left-tablet mt-0 mb-5 mb-0-desktop">{blog_description|s}</p>
                                 </div>
                             </div>
@@ -54,13 +55,13 @@
                             <div class="{SingleBlogArticle.classes.info_section_authors|s}">
                                 {#blog_authors}
                                     <div
-                                        class="is-blog-info-grid blog-info-grid-row-0 mt-6 mt-4-tablet mb-6 mb-4-tablet">
+                                        class="is-blog-info-grid blog-info-grid-row-0 mt-6 mt-4-tablet mb-6 mb-4-tablet mt-6-desktop">
                                         {?featured_image}
                                             {@image class="entry__blog-author-thumbnail" id=featured_image size="thumbnail" /}
                                         {/featured_image}
 
-                                        <div class="entry__blog-author-text pl-5-desktop">
-                                            <p class="h5 mt-4 mt-0-desktop">{post_title|s}</p>
+                                        <div class="entry__blog-author-text pl-7-desktop">
+                                            <p class="h5 mt-4 mt-3-desktop">{post_title|s}</p>
 
                                             {?post_excerpt}
                                                 <p>{post_excerpt|s}</p>

@@ -1,0 +1,9 @@
+{?filled_contacts}
+    <div class="columns">
+        {#filled_contacts}
+            <div class="column is-6-desktop">
+                {>"shared/contact-item" /}
+            </div>
+        {/filled_contacts}
+    </div>
+{/filled_contacts}

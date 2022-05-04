@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-820: Add AccordionContacts layout
 - TMS-737: Project CPT and Portfolio taxonomy #63
 
 ## [2022-04-26] - 0.6.0

@@ -27,7 +27,7 @@
                                 <div class="column is-12 pt-0">
                                     {?post_title}
                                         <a href="{permalink|s}" aria-label="{post_title|s}">
-                                            <h2 class="h5 mt-4 mb-1 has-line-height-tight">{post_title|s}</h2>
+                                            <h2 class="h5 mt-4 mb-1 has-line-height-tight has-text-primary">{post_title|s}</h2>
                                         </a>
                                     {/post_title}
 

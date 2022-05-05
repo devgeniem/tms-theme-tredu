@@ -238,45 +238,42 @@ class SingleProgram extends BaseModel {
 
         $stories = [];
 
-        $single = $this->get_post();
-        $fields = $single->fields;
-        $amount = $fields['stories_amount'];
-        $category =  $fields['category'];
-        $link = $fields['link'];
+        $single               = $this->get_post();
+        $fields               = $single->fields;
+        $amount               = $fields['stories_amount'];
+        $category             = $fields['category'];
+        $link                 = $fields['link'];
         $stories['read_more'] = $link;
-      
 
-		$query = new WP_Query( 
-            [ 
-                'post_type'  => 'post',
+		$query = new WP_Query(
+            [
+                'post_type'      => 'post',
                 'posts_per_page' => $amount,
-                'tax_query' => [
+                'tax_query'      => [
                     'taxonomy' => Category::SLUG,
                     'terms'    => $category,
                 ],
-            ] 
+            ]
         );
         $posts = $query->get_posts();
 
         foreach ( $posts as $post ) {
 
-        $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
+			$image_id = get_post_thumbnail_id( $post->ID ) ?? false;
 
-        if ( ! $image_id || $image_id < 1 ) {
-            $image_id = Images::get_default_image_id();
-        }
+			if ( ! $image_id || $image_id < 1 ) {
+				$image_id = Images::get_default_image_id();
+			}
 
             $stories['posts'][] = [
-                'post_title' => $post->post_title,
+                'post_title'     => $post->post_title,
                 'featured_image' => $image_id,
-                'permalink' => get_permalink( $post->ID ),
-                'post_date' => $post->post_date,
-                'excerpt' => $post->post_excerpt,
+                'permalink'      => get_permalink( $post->ID ),
+                'post_date'      => $post->post_date,
+                'excerpt'        => $post->post_excerpt,
             ];
 
         }
-
-        
 
         return $stories;
     }

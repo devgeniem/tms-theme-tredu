@@ -108,9 +108,9 @@ trait Breadcrumbs {
 
         if ( ! empty( $primary_category ) ) {
             $breadcrumbs[] = [
-                'title'     => $primary_category->name,
-                'permalink' => $primary_category->permalink,
-                'icon'      => 'chevron-right',
+                'title'        => $primary_category->name,
+                'permalink'    => $primary_category->permalink,
+                'icon'         => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
             ];
         }
@@ -118,9 +118,9 @@ trait Breadcrumbs {
             $post_type = get_post_type_object( PostType\BlogArticle::SLUG );
 
             $breadcrumbs[] = [
-                'title'     => esc_html( $post_type->labels->singular_name ),
-                'permalink' => get_post_type_archive_link( PostType\BlogArticle::SLUG ),
-                'icon'      => 'chevron-right',
+                'title'        => esc_html( $post_type->labels->singular_name ),
+                'permalink'    => get_post_type_archive_link( PostType\BlogArticle::SLUG ),
+                'icon'         => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
             ];
         }
@@ -151,11 +151,11 @@ trait Breadcrumbs {
          */
         if ( trailingslashit( get_the_permalink( $current_id ) ) !== $home_url ) {
             $breadcrumbs[] = [
-                'title'     => get_the_title( $current_id ),
-                'permalink' => false,
-                'icon'      => 'chevron-right',
+                'title'        => get_the_title( $current_id ),
+                'permalink'    => false,
+                'icon'         => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
-                'is_active' => true,
+                'is_active'    => true,
             ];
         }
         else {
@@ -176,7 +176,7 @@ trait Breadcrumbs {
      */
     private function format_program( $current_id, string $home_url, array $breadcrumbs ) : array {
 
-        $breadcrumbs['home']['icon']      = 'chevron-right';
+        $breadcrumbs['home']['icon']         = 'chevron-right';
         $breadcrumbs['home']['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
 
         // Program search page
@@ -190,7 +190,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,
-                'icon'      => 'chevron-right',
+                'icon'         => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
                 'is_active'    => false,
             ];
@@ -215,7 +215,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,
-                'icon'      => 'chevron-right',
+                'icon'         => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
                 'is_active'    => false,
             ];
@@ -356,9 +356,9 @@ trait Breadcrumbs {
      */
     private function get_home_link() : array {
         return [
-            'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
-            'permalink' => trailingslashit( get_home_url() ),
-            'icon'      => 'chevron-right',
+            'title'        => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
+            'permalink'    => trailingslashit( get_home_url() ),
+            'icon'         => 'chevron-right',
             'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
         ];
     }

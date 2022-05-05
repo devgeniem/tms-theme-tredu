@@ -309,29 +309,29 @@ class ProgramGroup {
     }
 
      /**
-     * Get general tab
-     *
-     * @param string $key Field group key.
-     *
-     * @return Field\Tab
-     * @throws Exception In case of invalid option.
-     */
+      * Get general tab
+      *
+      * @param string $key Field group key.
+      *
+      * @return Field\Tab
+      * @throws Exception In case of invalid option.
+      */
     protected function get_stories_tab( string $key ) : Field\Tab {
         $strings = [
-            'tab' => 'Valmistuneiden tarinat',
-            'category' => [
-                'label' => 'Kategoria',
+            'tab'            => 'Valmistuneiden tarinat',
+            'category'       => [
+                'label'        => 'Kategoria',
                 'instructions' => '',
             ],
             'stories_amount' => [
-                'label' => 'Lukumäärä',
+                'label'        => 'Lukumäärä',
                 'instructions' => '',
             ],
-            'link' => [
-                'label' => 'Lue lisää -linkki',
+            'link'           => [
+                'label'        => 'Lue lisää -linkki',
                 'instructions' => '',
-            ]
-           
+            ],
+
         ];
 
         $tab = ( new Field\Tab( $strings['tab'] ) )
@@ -353,15 +353,13 @@ class ProgramGroup {
             ->set_default_value( 4 )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['stories_amount']['instructions'] );
-            
+
         $link_field = ( new Field\Link( $strings['link']['label'] ) )
             ->set_key( "${key}_link" )
             ->set_name( 'link' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['link']['instructions'] );
-    
 
-      
         $tab->add_fields( [
             $category_field,
             $amount_field,

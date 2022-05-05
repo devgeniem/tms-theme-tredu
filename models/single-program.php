@@ -15,13 +15,13 @@ class SingleProgram extends BaseModel {
     use Traits\Components;
 
      /**
-     * Setup hooks.
-     */
+      * Setup hooks.
+      */
     // public function hooks() {
-    //     add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
-    //         unset( $formatted, $original, $object );
-    //         return [];
-    //     }, 10, 3 );
+    // add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
+    // unset( $formatted, $original, $object );
+    // return [];
+    // }, 10, 3 );
 
 
     // }
@@ -228,5 +228,5 @@ class SingleProgram extends BaseModel {
 
         return $strs;
     }
-    
+
 }

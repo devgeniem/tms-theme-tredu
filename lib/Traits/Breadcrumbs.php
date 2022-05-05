@@ -172,27 +172,30 @@ trait Breadcrumbs {
      * @return array
      */
     private function format_program( $current_id, string $home_url, array $breadcrumbs ) : array {
-       
+
+        $breadcrumbs['home']['bc_icon']      = 'chevron-right';
+        $breadcrumbs['home']['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
+
         // Program search page
 
         $program_page = Settings::get_setting( 'program_search_program_page' );
 
         if ( is_int( $program_page ) ) {
-           $permalink = get_permalink( $program_page );
-           $title = get_the_title( $program_page );
+			$permalink = get_permalink( $program_page );
+			$title     = get_the_title( $program_page );
 
             $breadcrumbs[] = [
-                'title'     => $title,
-                'permalink' => $permalink,
-                'icon'      => false,
-                'is_active' => false,
+                'title'        => $title,
+                'permalink'    => $permalink,
+                'bc_icon'      => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+                'is_active'    => false,
             ];
         }
 
         // Program type taxonomy link
         $primary_term_id = get_post_meta( $current_id, '_primary_term_' . ProgramType::SLUG, true );
-        
-    
+
         if ( ! empty( $primary_term_id ) ) {
             $term = get_term( $primary_term_id );
         }
@@ -203,14 +206,15 @@ trait Breadcrumbs {
             }
         }
 
-        if( ! empty( $term ) ) {
-            $title = $term->name;
+        if ( ! empty( $term ) ) {
+            $title         = $term->name;
             $permalink = is_int( $program_page ) ? get_permalink( $program_page ) . '?' . ProgramType::SLUG . urlencode( '[]' ) . '=' . $term->term_id : false; // phpcs:ignore
             $breadcrumbs[] = [
-                'title'     => $title,
-                'permalink' => $permalink,
-                'icon'      => false,
-                'is_active' => false,
+                'title'        => $title,
+                'permalink'    => $permalink,
+                'bc_icon'      => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+                'is_active'    => false,
             ];
         }
 
@@ -221,7 +225,7 @@ trait Breadcrumbs {
                 'icon'      => false,
                 'is_active' => true,
             ];
-        return $breadcrumbs;
+			return $breadcrumbs;
     }
 
     /**

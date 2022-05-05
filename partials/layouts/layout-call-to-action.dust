@@ -10,12 +10,9 @@
                         <div class="image {image_class|attr}">
                             {@image id=image.id size="large" class="objectfit-image" /}
                         </div>
+
                         {?display_artist}
-                            {?author_name}
-                                <div class="pt-2 pr-5 pl-5 p-0-desktop">
-                                    <small class="author-text">{author_name|html}</small>
-                                </div>
-                            {/author_name}
+                            {>"ui/image/image-meta-minimal" /}
                         {/display_artist}
                     </div>
                 {/image}

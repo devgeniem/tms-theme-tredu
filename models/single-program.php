@@ -238,12 +238,19 @@ class SingleProgram extends BaseModel {
 
         $stories = [];
 
-        $single               = $this->get_post();
-        $fields               = $single->fields;
-        $amount               = $fields['stories_amount'];
-        $category             = $fields['category'];
-        $link                 = $fields['link'];
-        $stories['read_more'] = $link;
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+        $category = $fields['category'] ?? null;
+
+        if ( empty( $category ) ) {
+            return;
+        }
+
+        $stories['heading'] = _x( 'Graduation stories from Tredu', 'program info', 'tms-theme-tredu' );
+
+        $amount               = $fields['stories_amount'] ?? 4;
+        $stories['read_more'] = $fields['link'] ?? false;
 
 		$query = new WP_Query(
             [
@@ -259,24 +266,22 @@ class SingleProgram extends BaseModel {
 
         foreach ( $posts as $post ) {
 
-			$image_id = get_post_thumbnail_id( $post->ID ) ?? false;
+            $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
 
-			if ( ! $image_id || $image_id < 1 ) {
-				$image_id = Images::get_default_image_id();
-			}
+            if ( ! $image_id || $image_id < 1 ) {
+                $image_id = Images::get_default_image_id();
+            }
 
             $stories['posts'][] = [
-                'post_title'     => $post->post_title,
+                'post_title'     => $post->post_title ?? '',
                 'featured_image' => $image_id,
                 'permalink'      => get_permalink( $post->ID ),
-                'post_date'      => $post->post_date,
-                'excerpt'        => $post->post_excerpt,
+                'post_date'      => $post->post_date ?? '',
+                'excerpt'        => $post->post_excerpt ?? '',
             ];
 
         }
 
         return $stories;
     }
-
-
 }

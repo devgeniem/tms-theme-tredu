@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-05-05 13:01+0300\n"
-"PO-Revision-Date: 2022-05-05 13:02+0300\n"
+"POT-Creation-Date: 2022-05-05 20:47+0300\n"
+"PO-Revision-Date: 2022-05-05 20:48+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -58,7 +58,7 @@ msgstr "Sivun komponentit"
 
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:124
 #: lib/ACF/PageGroup.php:145 lib/ACF/PostGroup.php:173
-#: lib/ACF/ProgramGroup.php:275
+#: lib/ACF/ProgramGroup.php:277
 msgctxt "theme ACF"
 msgid "Components"
 msgstr "Komponentit"
@@ -375,7 +375,7 @@ msgstr ""
 msgid "Suositut avainsanat"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:288
+#: lib/Traits/Breadcrumbs.php:359
 msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr "Etusivu"
@@ -512,40 +512,45 @@ msgstr "Etsitkö tapahtumia? Käytä tapahtumahakua!"
 msgid "No search results"
 msgstr "Ei hakutuloksia"
 
-#: models/single-program.php:45 models/single-program.php:214
+#: models/single-program.php:59 models/single-program.php:228
 msgctxt "program info"
 msgid "Apply period"
 msgstr "Hakuaika"
 
-#: models/single-program.php:51
+#: models/single-program.php:65
 msgctxt "program info"
 msgid "Audience"
 msgstr "Kenelle"
 
-#: models/single-program.php:57
+#: models/single-program.php:71
 msgctxt "program info"
 msgid "Delivery method"
 msgstr "Toteutustapa"
 
-#: models/single-program.php:63
+#: models/single-program.php:77
 msgctxt "program info"
 msgid "Location"
 msgstr "Toimipiste"
 
-#: models/single-program.php:69
+#: models/single-program.php:83
 msgctxt "program info"
 msgid "Program starts"
 msgstr "Opinnot alkavat"
 
-#: models/single-program.php:75
+#: models/single-program.php:89
 msgctxt "program info"
 msgid "Price"
 msgstr "Hinta"
 
-#: models/single-program.php:213
+#: models/single-program.php:227
 msgctxt "program info"
 msgid "Apply now"
 msgstr "Hae nyt"
+
+#: models/single-program.php:250
+msgctxt "program info"
+msgid "Graduation stories from Tredu"
+msgstr "Tredusta valmistuneiden tarinoita"
 
 #: models/strings.php:42
 msgctxt "theme-frontend"

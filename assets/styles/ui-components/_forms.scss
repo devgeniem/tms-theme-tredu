@@ -1,4 +1,4 @@
-/*!*
+/* !*
  * Copyright (c) 2021. Geniem Oy
  */
 $gravityform-input-focus: .125rem solid $color-black !default;
@@ -7,16 +7,19 @@ $gravityform-input-focus-offset: .25rem !default;
 form {
     label {
         margin-bottom: $theme-spacing-quarter;
+        color: $color-black;
     }
 
     select,
     input,
     textarea {
+        padding: $theme-spacing-half;
+        border: .125rem solid $secondary;
+        border-radius: $theme-spacing-quarter;
+        background-color: $white;
+        color: $color-black;
         font-family: $family-secondary;
         line-height: 1;
-        padding: $theme-spacing-half;
-        border: 1px solid $secondary;
-        border-radius: $theme-spacing-quarter;
 
         &::placeholder {
             color: lighten($black, 10%);
@@ -26,12 +29,11 @@ form {
             @extend .button-state-focus;
         }
     }
-   
 
     .is-checkradio {
-        &[type=checkbox]+label:before {
-            border-radius: 0;
+        &[type=checkbox] + label::before {
             border: 2px solid $black;
+            border-radius: 0;
         }
     }
 
@@ -48,25 +50,7 @@ form {
 .container {
     // GForms inside a wrapper need a different layout
     .gform_wrapper {
-        @extend .is-align-wide;
-        margin: $theme-spacing-two -1 * $theme-spacing-oneandhalf;
-        padding: $theme-spacing-oneandhalf;
-        background: $secondary;
-
-        @include from($desktop) {
-            margin: $theme-spacing-two 0;
-            padding: 3rem 0;
-        }
-
-        > * {
-            @include from($desktop) {
-                padding: 0 3.95rem;
-            }
-
-            @include from($widescreen) {
-                padding: 0 3rem;
-            }
-        }
+        margin: $theme-spacing-two 0;
     }
 
     .gform {
@@ -98,14 +82,34 @@ form {
         }
 
         .gfield_required {
-            font-style: normal !important; // sass-lint:disable-line no-important
             color: $black;
+            font-style: normal !important; // sass-lint:disable-line no-important
         }
 
         .gchoice {
             display: flex;
             // To make checkradio click not lose position
             position: relative;
+        }
+
+        button:not(.gform_button_select_files) {
+            @extend .is-primary;
+        }
+
+        .gform_button_select_files {
+            @extend .is-secondary;
+        }
+
+        .gform_drop_area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: .125rem dashed $secondary;
+            background-color: $color-white;
+
+            .gform_drop_instructions {
+                margin-bottom: 0;
+            }
         }
 
         select,

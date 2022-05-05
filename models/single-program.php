@@ -5,6 +5,8 @@ use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Traits;
 use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
+use TMS\Theme\Tredu\Taxonomy\Category;
+use TMS\Theme\Tredu\Images;
 
 /**
  * The SingleProgram class.
@@ -228,5 +230,54 @@ class SingleProgram extends BaseModel {
 
         return $strs;
     }
+
+    /**
+     * Get selected category stories
+     */
+    public function stories() {
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+        $amount = $fields['stories_amount'];
+        $category =  $fields['category'];
+
+      
+
+		$query = new WP_Query( 
+            [ 
+                'post_type'  => 'post',
+                'posts_per_page' => $amount,
+                'tax_query' => [
+                    'taxonomy' => Category::SLUG,
+                    'terms'    => $category,
+                ],
+            ] 
+        );
+        $posts = $query->get_posts();
+
+        $stories = [];
+        foreach ( $posts as $post ) {
+
+        $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
+
+        if ( ! $image_id || $image_id < 1 ) {
+            $image_id = Images::get_default_image_id();
+        }
+
+            $stories[] = [
+                'post_title' => $post->post_title,
+                'featured_image' => $image_id,
+                'permalink' => get_permalink( $post->ID ),
+                'post_date' => $post->post_date,
+                'excerpt' => $post->post_excerpt,
+            ];
+
+        }
+
+        
+
+        return $stories;
+    }
+
 
 }

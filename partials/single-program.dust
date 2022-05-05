@@ -21,6 +21,24 @@
             </article>
 
             {>"ui/components" components=components /}
+           {?stories}
+            <section class="program-related-stories section has-background-light-blueishgray">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-8">
+                            <h2 class="layout-articles__title mt-0 mb-6">Tredun stoorit</h2>
+                        </div>
+                    </div>
+                </div>
+                    <div class="container">
+                        <div class="columns is-multiline">
+                                {#stories}
+                                    {>"views/home/home-grid-item"  /}
+                                {/stories}
+                        </div>
+                    </div>
+                </section>
+           {/stories}
         {/SingleProgram}
     </main>
 {/content}

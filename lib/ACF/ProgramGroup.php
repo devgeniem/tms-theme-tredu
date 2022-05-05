@@ -8,6 +8,7 @@ use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
+use TMS\Theme\Tredu\Taxonomy\Category;
 
 /**
  * Class ProgramGroup
@@ -48,6 +49,7 @@ class ProgramGroup {
                         $this->get_general_tab( $field_group->get_key() ),
                         $this->get_info_tab( $field_group->get_key() ),
                         $this->get_components_tab( $field_group->get_key() ),
+                        $this->get_stories_tab( $field_group->get_key() ),
                     ]
                 )
             );
@@ -302,6 +304,71 @@ class ProgramGroup {
         }
 
         $tab->add_field( $components_field );
+
+        return $tab;
+    }
+
+     /**
+     * Get general tab
+     *
+     * @param string $key Field group key.
+     *
+     * @return Field\Tab
+     * @throws Exception In case of invalid option.
+     */
+    protected function get_stories_tab( string $key ) : Field\Tab {
+        $strings = [
+            'tab' => 'Valmistuneiden tarinat',
+            'category' => [
+                'label' => 'Kategoria',
+                'instructions' => '',
+            ],
+            'stories_amount' => [
+                'label' => 'Lukumäärä',
+                'instructions' => '',
+            ],
+            'link' => [
+                'label' => 'Lue lisää -linkki',
+                'instructions' => '',
+            ]
+           
+        ];
+
+        $tab = ( new Field\Tab( $strings['tab'] ) )
+            ->set_placement( 'left' );
+
+        $category_field = ( new Field\Taxonomy( $strings['category']['label'] ) )
+            ->set_key( "${key}_category" )
+            ->set_name( 'category' )
+            ->set_taxonomy( Category::SLUG )
+            ->set_return_format( 'id' )
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['category']['instructions'] );
+
+        $amount_field = ( new Field\Number( $strings['stories_amount']['label'] ) )
+            ->set_key( "${key}_stories_amount" )
+            ->set_name( 'stories_amount' )
+            ->set_min( 1 )
+            ->set_max( 4 )
+            ->set_default_value( 4 )
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $strings['stories_amount']['instructions'] );
+            
+        $link_field = ( new Field\Link( $this->strings['link']['label'] ) )
+            ->set_key( $this->get_key() . '_link' )
+            ->set_name( 'link' )
+            ->set_wrapper_width( 50 )
+            ->set_instructions( $this->strings['link']['instructions'] );
+    
+
+        
+
+      
+        $tab->add_fields( [
+            $category_field,
+            $amount_field,
+            $link_field,
+        ] );
 
         return $tab;
     }

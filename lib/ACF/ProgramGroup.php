@@ -354,14 +354,12 @@ class ProgramGroup {
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['stories_amount']['instructions'] );
             
-        $link_field = ( new Field\Link( $this->strings['link']['label'] ) )
-            ->set_key( $this->get_key() . '_link' )
+        $link_field = ( new Field\Link( $strings['link']['label'] ) )
+            ->set_key( "${key}_link" )
             ->set_name( 'link' )
             ->set_wrapper_width( 50 )
-            ->set_instructions( $this->strings['link']['instructions'] );
+            ->set_instructions( $strings['link']['instructions'] );
     
-
-        
 
       
         $tab->add_fields( [

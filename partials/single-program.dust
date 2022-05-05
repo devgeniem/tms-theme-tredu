@@ -21,7 +21,7 @@
             </article>
 
             {>"ui/components" components=components /}
-           {?stories}
+           {?stories.posts}
             <section class="program-related-stories section has-background-light-blueishgray">
                 <div class="container">
                     <div class="columns">
@@ -32,13 +32,26 @@
                 </div>
                     <div class="container">
                         <div class="columns is-multiline">
-                                {#stories}
+                                {#stories.posts}
                                     {>"views/home/home-grid-item"  /}
-                                {/stories}
+                                {/stories.posts}
                         </div>
+                         {?stories.read_more.url}
+                            {?stories.read_more.title}
+                                <div class="has-text-right">
+                                    <a href="{stories.read_more.url}" 
+                                    target="{stories.read_more.target}" 
+                                    class="is-primary layout-articles__read-more">
+                                        {>"ui/icon" icon="chevron-right" class="icon--medium is-secondary mr-2" /}
+                                        {stories.read_more.title|s}
+                                    </a>
+                                </div>
+                            {/stories.read_more.title}
+                        {/stories.read_more.url}
                     </div>
                 </section>
-           {/stories}
+           {/stories.posts}
+          
         {/SingleProgram}
     </main>
 {/content}

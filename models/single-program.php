@@ -236,11 +236,14 @@ class SingleProgram extends BaseModel {
      */
     public function stories() {
 
+        $stories = [];
+
         $single = $this->get_post();
         $fields = $single->fields;
         $amount = $fields['stories_amount'];
         $category =  $fields['category'];
-
+        $link = $fields['link'];
+        $stories['read_more'] = $link;
       
 
 		$query = new WP_Query( 
@@ -255,7 +258,6 @@ class SingleProgram extends BaseModel {
         );
         $posts = $query->get_posts();
 
-        $stories = [];
         foreach ( $posts as $post ) {
 
         $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
@@ -264,7 +266,7 @@ class SingleProgram extends BaseModel {
             $image_id = Images::get_default_image_id();
         }
 
-            $stories[] = [
+            $stories['posts'][] = [
                 'post_title' => $post->post_title,
                 'featured_image' => $image_id,
                 'permalink' => get_permalink( $post->ID ),

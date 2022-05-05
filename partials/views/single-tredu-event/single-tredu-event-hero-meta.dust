@@ -1,0 +1,26 @@
+<div class="is-flex is-flex-wrap-wrap is-justify-content-space-between">
+    {?content.fields.start_date}
+        <div class="entry__info-meta is-flex is-align-items-center has-width-100-until-desktop mb-3 mb-0-desktop">
+            {>"ui/icon" icon="date" class="icon--xlarge mr-4 mr-6-desktop {template_classes.hero_icon|attr}" /}
+            {content.fields.start_date|html}
+
+            {?content.fields.end_date}
+                - {content.fields.end_date|html}
+            {/content.fields.end_date}
+        </div>
+    {/content.fields.start_date}
+
+    {?content.fields.time}
+        <div class="entry__info-meta is-flex is-align-items-center has-width-100-until-desktop mb-3 mb-0-desktop">
+            {>"ui/icon" icon="time" class="icon--xlarge mr-4 mr-6-desktop {template_classes.hero_icon|attr}" /}
+            {content.fields.time|html}
+        </div>
+    {/content.fields.time}
+
+    {?content.fields.location}
+        <div class="entry__info-meta is-flex is-align-items-center has-width-100-until-desktop">
+            {>"ui/icon" icon="location" class="icon--xlarge mr-4 mr-6-desktop {template_classes.hero_icon|attr}" /}
+            {content.fields.location|html}
+        </div>
+    {/content.fields.location}
+</div>

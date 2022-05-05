@@ -1,10 +1,29 @@
 {>"shared/base" /}
 
 {<content}
-    {#SingleDynamicEventCpt}
+    {#SingleTreduEventCpt}
         <main class="main-content" id="main-content">
             <article class="entry">
-                {>"views/single-dynamic-event/single-dynamic-event-hero" /}
+                <section class="section pb-6">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-10 is-offset-1">
+                                <h1 class="entry__title mt-0 mb-0 has-text-centered">
+                                    {@title /}
+                                </h1>
+
+                                {?hero_image}
+                                    <div
+                                        class="entry__hero-image mt-6 has-background-primary has-text-primary-invert has-background-cover" {@inlinebg id=hero_image size="fullhd" /}></div>
+                                {/hero_image}
+
+                                <div class="entry__hero-info section pt-6 pb-6 {template_classes.hero_info|s}">
+                                    {>"views/single-tredu-event/single-tredu-event-hero-meta" /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {?Header.breadcrumbs}
                     <div class="breadcrumbs-container section pt-4 pb-4 has-background-light-gray">
@@ -61,5 +80,5 @@
         </main>
 
         {>"ui/components" components=components /}
-    {/SingleDynamicEventCpt}
+    {/SingleTreduEventCpt}
 {/content}

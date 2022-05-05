@@ -216,6 +216,4 @@ class SingleProgram extends BaseModel {
 
         return $strs;
     }
-
-
 }

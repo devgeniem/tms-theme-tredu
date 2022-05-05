@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-06-05] - 0.8.0
+
+### Changed
+
+- TMS-816: Unify image meta #67
+
+### Added
+
+- TMS-703: Add Sitemap layout.
+- TMS-709: Program search box
+
 ## [2022-05-02] - 0.7.0
 
 ### Added

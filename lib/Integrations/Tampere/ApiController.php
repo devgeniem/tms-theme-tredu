@@ -88,13 +88,9 @@ abstract class ApiController {
         $cache_key = 'tampere-drupal-' . $this->get_slug();
         $results   = wp_cache_get( $cache_key );
 
-        error_log( 'CACHE HIT: ' . $cache_key );
-
         if ( $results ) {
             return $results;
         }
-
-        error_log( 'CACHE MISS: ' . $cache_key );
 
         $args = [
             'headers' => [],

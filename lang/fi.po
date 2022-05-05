@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-05-03 13:36+0300\n"
-"PO-Revision-Date: 2022-05-03 13:36+0300\n"
+"POT-Creation-Date: 2022-05-05 20:47+0300\n"
+"PO-Revision-Date: 2022-05-05 20:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: assets/dist/theme_tredu.js:4770
 msgctxt "text direction"
 msgid "ltr"
-msgstr ""
+msgstr "ltr"
 
 #: comments.php:14
 msgid "Comments"
@@ -58,7 +58,7 @@ msgstr "Sivun komponentit"
 
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:127
 #: lib/ACF/PageGroup.php:145 lib/ACF/PostGroup.php:173
-#: lib/ACF/ProgramGroup.php:275
+#: lib/ACF/ProgramGroup.php:277
 msgctxt "theme ACF"
 msgid "Components"
 msgstr "Komponentit"
@@ -210,7 +210,6 @@ msgid "Blog Article"
 msgstr "Blogiartikkeli"
 
 #: lib/PostType/BlogAuthor.php:60
-#, fuzzy
 msgctxt "theme CPT slugs"
 msgid "blog-author"
 msgstr "Blogin kirjoittaja"
@@ -241,7 +240,6 @@ msgid "contact"
 msgstr ""
 
 #: lib/PostType/Program.php:52
-#, fuzzy
 msgctxt "theme CPT"
 msgid "program"
 msgstr "Koulutustyyppi"
@@ -252,7 +250,6 @@ msgid "project"
 msgstr ""
 
 #: lib/PostType/Settings.php:60
-#, fuzzy
 msgctxt "theme CPT slugs"
 msgid "site-settings"
 msgstr "Sivuston asetukset"
@@ -279,10 +276,9 @@ msgid "Site Manager"
 msgstr "Sivuston asetukset"
 
 #: lib/Roles.php:533
-#, fuzzy
 msgctxt "wp-geniem-roles"
 msgid "Author"
-msgstr "Blogin kirjoittaja"
+msgstr "Kirjoittaja"
 
 #: lib/Roles.php:601
 msgctxt "wp-geniem-roles"
@@ -379,7 +375,7 @@ msgstr ""
 msgid "Suositut avainsanat"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:288
+#: lib/Traits/Breadcrumbs.php:359
 msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr "Etusivu"
@@ -516,40 +512,45 @@ msgstr "Etsitkö tapahtumia? Käytä tapahtumahakua!"
 msgid "No search results"
 msgstr "Ei hakutuloksia"
 
-#: models/single-program.php:45 models/single-program.php:214
+#: models/single-program.php:59 models/single-program.php:228
 msgctxt "program info"
 msgid "Apply period"
 msgstr "Hakuaika"
 
-#: models/single-program.php:51
+#: models/single-program.php:65
 msgctxt "program info"
 msgid "Audience"
 msgstr "Kenelle"
 
-#: models/single-program.php:57
+#: models/single-program.php:71
 msgctxt "program info"
 msgid "Delivery method"
 msgstr "Toteutustapa"
 
-#: models/single-program.php:63
+#: models/single-program.php:77
 msgctxt "program info"
 msgid "Location"
-msgstr "Sijainti"
+msgstr "Toimipiste"
 
-#: models/single-program.php:69
+#: models/single-program.php:83
 msgctxt "program info"
 msgid "Program starts"
 msgstr "Opinnot alkavat"
 
-#: models/single-program.php:75
+#: models/single-program.php:89
 msgctxt "program info"
 msgid "Price"
 msgstr "Hinta"
 
-#: models/single-program.php:213
+#: models/single-program.php:227
 msgctxt "program info"
 msgid "Apply now"
 msgstr "Hae nyt"
+
+#: models/single-program.php:250
+msgctxt "program info"
+msgid "Graduation stories from Tredu"
+msgstr "Tredusta valmistuneiden tarinoita"
 
 #: models/strings.php:42
 msgctxt "theme-frontend"
@@ -629,16 +630,14 @@ msgid "Skip video embed"
 msgstr "Ohita video"
 
 #: models/strings.php:70
-#, fuzzy
 msgctxt "theme-frontend"
 msgid "Play video"
-msgstr "Ohita video"
+msgstr "Toista video"
 
 #: models/strings.php:71
-#, fuzzy
 msgctxt "theme-frontend"
 msgid "Pause video"
-msgstr "Ohita video"
+msgstr "Pysäytä video"
 
 #: models/strings.php:74
 msgctxt "theme-frontend"
@@ -1181,9 +1180,8 @@ msgid "Add Row"
 msgstr ""
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
-#, fuzzy
 msgid "Multisite Post Object"
-msgstr "Multisite Post Objecti"
+msgstr "Multisite artikkelityyppi"
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
 msgid "Multisite Relationship"

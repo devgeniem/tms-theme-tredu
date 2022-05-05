@@ -253,6 +253,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/notice-banner'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
             */
@@ -286,6 +287,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 

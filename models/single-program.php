@@ -5,6 +5,8 @@ use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Traits;
 use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
+use TMS\Theme\Tredu\Taxonomy\Category;
+use TMS\Theme\Tredu\Images;
 
 /**
  * The SingleProgram class.
@@ -13,6 +15,18 @@ class SingleProgram extends BaseModel {
 
     use Traits\Sharing;
     use Traits\Components;
+
+     /**
+      * Setup hooks.
+      */
+    // public function hooks() {
+    // add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
+    // unset( $formatted, $original, $object );
+    // return [];
+    // }, 10, 3 );
+
+
+    // }
 
     /**
      * Content
@@ -215,5 +229,59 @@ class SingleProgram extends BaseModel {
 		];
 
         return $strs;
+    }
+
+    /**
+     * Get selected category stories
+     */
+    public function stories() {
+
+        $stories = [];
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+        $category = $fields['category'] ?? null;
+
+        if ( empty( $category ) ) {
+            return;
+        }
+
+        $stories['heading'] = _x( 'Graduation stories from Tredu', 'program info', 'tms-theme-tredu' );
+
+        $amount               = $fields['stories_amount'] ?? 4;
+        $stories['read_more'] = $fields['link'] ?? false;
+
+		$query = new WP_Query(
+            [
+                'post_type'      => 'post',
+                'posts_per_page' => $amount,
+                'tax_query'      => [
+                    'taxonomy' => Category::SLUG,
+                    'terms'    => $category,
+                ],
+            ]
+        );
+        $posts = $query->get_posts();
+
+        foreach ( $posts as $post ) {
+
+            $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
+
+            if ( ! $image_id || $image_id < 1 ) {
+                $image_id = Images::get_default_image_id();
+            }
+
+            $stories['posts'][] = [
+                'post_title'     => $post->post_title ?? '',
+                'featured_image' => $image_id,
+                'permalink'      => get_permalink( $post->ID ),
+                'post_date'      => $post->post_date ?? '',
+                'excerpt'        => $post->post_excerpt ?? '',
+            ];
+
+        }
+
+        return $stories;
     }
 }

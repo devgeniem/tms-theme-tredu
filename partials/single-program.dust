@@ -21,6 +21,39 @@
             </article>
 
             {>"ui/components" components=components /}
+           {?stories.posts}
+            <section class="program-related-stories section has-background-light-blueishgray">
+                {?stories.heading}
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-8">
+                                <h2 class="layout-articles__title mt-0 mb-6">{stories.heading|html}</h2>
+                            </div>
+                        </div>
+                    </div>
+                {/stories.heading}
+                    <div class="container">
+                        <div class="columns is-multiline">
+                                {#stories.posts}
+                                    {>"views/home/home-grid-item"  /}
+                                {/stories.posts}
+                        </div>
+                         {?stories.read_more.url}
+                            {?stories.read_more.title}
+                                <div class="has-text-right">
+                                    <a href="{stories.read_more.url|attr}" 
+                                    target="{stories.read_more.target|attr}" 
+                                    class="is-primary layout-articles__read-more">
+                                        {>"ui/icon" icon="chevron-right" class="icon--medium is-secondary mr-2" /}
+                                        {stories.read_more.title|html}
+                                    </a>
+                                </div>
+                            {/stories.read_more.title}
+                        {/stories.read_more.url}
+                    </div>
+                </section>
+           {/stories.posts}
+          
         {/SingleProgram}
     </main>
 {/content}

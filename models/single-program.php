@@ -14,6 +14,18 @@ class SingleProgram extends BaseModel {
     use Traits\Sharing;
     use Traits\Components;
 
+     /**
+     * Setup hooks.
+     */
+    // public function hooks() {
+    //     add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
+    //         unset( $formatted, $original, $object );
+    //         return [];
+    //     }, 10, 3 );
+
+
+    // }
+
     /**
      * Content
      *
@@ -216,4 +228,5 @@ class SingleProgram extends BaseModel {
 
         return $strs;
     }
+    
 }

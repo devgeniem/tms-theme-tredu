@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-05-02 19:12+0300\n"
-"PO-Revision-Date: 2022-05-02 19:14+0300\n"
+"POT-Creation-Date: 2022-05-05 13:01+0300\n"
+"PO-Revision-Date: 2022-05-05 13:02+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -24,11 +24,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
 #: assets/dist/theme_tredu.js:4770
-#, fuzzy
-#| msgid "Filter by date"
 msgctxt "text direction"
 msgid "ltr"
-msgstr "Rajaa päivämäärän mukaan"
+msgstr "ltr"
 
 #: comments.php:14
 msgid "Comments"
@@ -212,7 +210,6 @@ msgid "Blog Article"
 msgstr "Blogiartikkeli"
 
 #: lib/PostType/BlogAuthor.php:60
-#, fuzzy
 msgctxt "theme CPT slugs"
 msgid "blog-author"
 msgstr "Blogin kirjoittaja"
@@ -243,7 +240,6 @@ msgid "contact"
 msgstr ""
 
 #: lib/PostType/Program.php:52
-#, fuzzy
 msgctxt "theme CPT"
 msgid "program"
 msgstr "Koulutustyyppi"
@@ -254,7 +250,6 @@ msgid "project"
 msgstr ""
 
 #: lib/PostType/Settings.php:60
-#, fuzzy
 msgctxt "theme CPT slugs"
 msgid "site-settings"
 msgstr "Sivuston asetukset"
@@ -281,10 +276,9 @@ msgid "Site Manager"
 msgstr "Sivuston asetukset"
 
 #: lib/Roles.php:533
-#, fuzzy
 msgctxt "wp-geniem-roles"
 msgid "Author"
-msgstr "Blogin kirjoittaja"
+msgstr "Kirjoittaja"
 
 #: lib/Roles.php:601
 msgctxt "wp-geniem-roles"
@@ -518,7 +512,7 @@ msgstr "Etsitkö tapahtumia? Käytä tapahtumahakua!"
 msgid "No search results"
 msgstr "Ei hakutuloksia"
 
-#: models/single-program.php:45 models/single-program.php:219
+#: models/single-program.php:45 models/single-program.php:214
 msgctxt "program info"
 msgid "Apply period"
 msgstr "Hakuaika"
@@ -536,7 +530,7 @@ msgstr "Toteutustapa"
 #: models/single-program.php:63
 msgctxt "program info"
 msgid "Location"
-msgstr "Sijainti"
+msgstr "Toimipiste"
 
 #: models/single-program.php:69
 msgctxt "program info"
@@ -548,7 +542,7 @@ msgctxt "program info"
 msgid "Price"
 msgstr "Hinta"
 
-#: models/single-program.php:218
+#: models/single-program.php:213
 msgctxt "program info"
 msgid "Apply now"
 msgstr "Hae nyt"
@@ -631,16 +625,14 @@ msgid "Skip video embed"
 msgstr "Ohita video"
 
 #: models/strings.php:70
-#, fuzzy
 msgctxt "theme-frontend"
 msgid "Play video"
-msgstr "Ohita video"
+msgstr "Toista video"
 
 #: models/strings.php:71
-#, fuzzy
 msgctxt "theme-frontend"
 msgid "Pause video"
-msgstr "Ohita video"
+msgstr "Pysäytä video"
 
 #: models/strings.php:74
 msgctxt "theme-frontend"
@@ -1173,9 +1165,8 @@ msgid "Add Row"
 msgstr ""
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
-#, fuzzy
 msgid "Multisite Post Object"
-msgstr "Rajaa tyypin mukaan"
+msgstr "Multisite artikkelityyppi"
 
 #: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
 msgid "Multisite Relationship"

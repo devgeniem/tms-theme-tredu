@@ -4,6 +4,7 @@ use DustPress\Query;
 use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Traits;
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 
 /**
  * The SingleProgram class.
@@ -171,5 +172,48 @@ class SingleProgram extends BaseModel {
      */
     protected function get_post() {
         return Query::get_acf_post( get_queried_object_id() );
+    }
+
+    /**
+     * Get apply method taxonomy
+     */
+    public function apply_method_colors() {
+
+        $colors = [
+            'bg'   => 'blue',
+            'text' => 'primary',
+            'btn'  => 'is-primary',
+        ];
+
+        $this_post     = $this->get_post();
+        $apply_methods = get_the_terms( $this_post, ApplyMethod::SLUG );
+
+        if ( ! empty( $apply_methods[0]->term_id ) ) {
+            $apply_method_color = get_term_meta( $apply_methods[0]->term_id, 'color', true ) ?? '';
+
+            if ( ! empty( $apply_method_color ) ) {
+                $colors['bg']   = $apply_method_color;
+                $colors['text'] = $apply_method_color === 'primary' ? 'white' : 'primary';
+                $colors['btn']  = $apply_method_color === 'primary' ? 'is-secondary' : 'is-primary';
+            }
+		}
+
+        return $colors;
+    }
+
+    /**
+     * Get apply method taxonomy
+     */
+    public function search_box_default_strs() {
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+		$strs = [
+			'title'       => _x( 'Apply now', 'program info', 'tms-theme-tredu' ) . '!',
+			'description' => _x( 'Apply period', 'program info', 'tms-theme-tredu' ) . ' ' . $this->get_apply_period( $fields ),
+		];
+
+        return $strs;
     }
 }

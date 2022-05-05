@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Tredu;
 
+use DustPress\Model;
 use Geniem\ACF\Block as GeniemBlock;
 
 /**
@@ -136,6 +137,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/image-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
             'acf/grid'         => [
@@ -149,54 +151,61 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 
-            'acf/quote'         => [
+            'acf/quote'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
-            'acf/key-figures'   => [
+            'acf/key-figures'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
-            'acf/subpages'      => [
+            'acf/subpages'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
             ],
-            'acf/accordion'     => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-            'acf/video'         => [
+            'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
-            'acf/image'         => [
+            'acf/video'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
-            'acf/image-gallery' => [
+            'acf/image'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
+                ],
+            ],
+            'acf/image-gallery'  => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
             'acf/image-carousel' => [
@@ -206,25 +215,36 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/share-links' => [
+            'acf/share-links'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 
-            /*
-            'acf/table'          => [
+            'acf/program-call-to-action' => [
                 'post_types' => [
-                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+                'templates'  => [
+                    '',
                 ],
             ],
-            */
+
+            'acf/table' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Program::SLUG,
+                ],
+            ],
 
             'acf/material' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 
@@ -241,6 +261,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
             'acf/contacts' => [
@@ -248,6 +269,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 
@@ -269,7 +291,7 @@ class BlocksController implements Interfaces\Controller {
             ],
             */
 
-            'acf/countdown' => [
+            'acf/countdown'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

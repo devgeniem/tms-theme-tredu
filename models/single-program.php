@@ -119,7 +119,7 @@ class SingleProgram extends BaseModel {
         if ( ! empty( $fields['start_info'] ) ) {
             $start_info = $fields['start_info'];
         }
-        else if ( ! empty( $fields['start_date'] ) ) {
+        elseif ( ! empty( $fields['start_date'] ) ) {
             $start_info = $fields['start_date'];
         }
 

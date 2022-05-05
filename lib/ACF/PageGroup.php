@@ -165,7 +165,7 @@ class PageGroup {
                 Layouts\SocialMediaLayout::class,
                 Layouts\ImageCarouselLayout::class,
                 Layouts\SubpageLayout::class,
-                // Layouts\TextBlockLayout::class,
+                Layouts\TextBlockLayout::class,
                 // Layouts\EventsLayout::class,
                 Layouts\ArticlesLayout::class,
                 // Layouts\BlogArticlesLayout::class,

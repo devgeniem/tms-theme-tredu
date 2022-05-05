@@ -11,10 +11,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-703: Add Sitemap layout.
 
+## [2022-05-02] - 0.7.0
+
+### Added
+
+- TMS-737: Project CPT and Portfolio taxonomy #63
+
+## [2022-04-26] - 0.6.0
+
+### Added
+
+- TMS-688: Table block
+- TMS-708: Program Call to Action
+
+### Fixed
+
+- TMS-805: Fix no results text logic
+- TMS-734-hotfix-programs-layouts-and-blocks
+
 ## [2022-04-25] - 0.5.0
 
 ### Added
 
+- TMS-743: Hero layout for front page
+- TMS-697: Contacts
 - TMS-804: Add cap copy_posts to editors & authors #53
 - TMS-681: Add articles layout. #50
 - TMS-678: Image carousel #47

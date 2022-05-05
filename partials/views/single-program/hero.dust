@@ -11,7 +11,7 @@
                         </div>
                     {/content.fields.program_name}
 
-                    <h1 class="entry__title mt-5 mb-5 has-line-height-tight">
+                    <h1 class="entry__title mt-5 mb-5 has-line-height-tight has-text-white">
                         {@title /}
                     </h1>
 

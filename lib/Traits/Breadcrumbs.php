@@ -110,7 +110,8 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'     => $primary_category->name,
                 'permalink' => $primary_category->permalink,
-                'icon'      => false,
+                'icon'      => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
             ];
         }
         else {
@@ -119,7 +120,8 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'     => esc_html( $post_type->labels->singular_name ),
                 'permalink' => get_post_type_archive_link( PostType\BlogArticle::SLUG ),
-                'icon'      => false,
+                'icon'      => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
             ];
         }
 
@@ -151,7 +153,8 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'     => get_the_title( $current_id ),
                 'permalink' => false,
-                'icon'      => false,
+                'icon'      => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
                 'is_active' => true,
             ];
         }
@@ -173,7 +176,7 @@ trait Breadcrumbs {
      */
     private function format_program( $current_id, string $home_url, array $breadcrumbs ) : array {
 
-        $breadcrumbs['home']['bc_icon']      = 'chevron-right';
+        $breadcrumbs['home']['icon']      = 'chevron-right';
         $breadcrumbs['home']['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
 
         // Program search page
@@ -187,7 +190,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,
-                'bc_icon'      => 'chevron-right',
+                'icon'      => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
                 'is_active'    => false,
             ];
@@ -212,7 +215,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,
-                'bc_icon'      => 'chevron-right',
+                'icon'      => 'chevron-right',
                 'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
                 'is_active'    => false,
             ];
@@ -355,7 +358,8 @@ trait Breadcrumbs {
         return [
             'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
             'permalink' => trailingslashit( get_home_url() ),
-            'icon'      => '',
+            'icon'      => 'chevron-right',
+            'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
         ];
     }
 }

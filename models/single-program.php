@@ -70,7 +70,7 @@ class SingleProgram extends BaseModel {
                 'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
                 'text'  => $this->get_educational_background(),
             ];
-            
+
         }
 
         $info[] = [

@@ -1,17 +1,42 @@
 {>"shared/base" /}
 
 {<content}
-    <main class="main-content" id="main-content">
+    <main class="main-content has-text-black" id="main-content">
         {#SingleProgram}
             <article class="entry">
-                {>"views/single-program/hero" /}
+
+                {?content.image}
+                    {>"views/single-program/hero" /}
+                {/content.image}
+
                 {>"views/single-program/info" /}
 
                 <section class="section">
                     <div class="container">
                         <div class="columns">
                             <div class="column is-10 is-offset-1">
-                                <div class="entry__content is-content-grid keep-vertical-spacing">
+                                <div class="entry__content is-content-grid keep-vertical-spacing has-text-black">
+
+                                    {^content.image}
+
+                                        {?content.fields.program_name}
+                                            <div class="single-program__sub-title has-text-black">
+                                                {content.fields.program_name|html}
+                                            </div>
+                                        {/content.fields.program_name}
+
+                                        <h1 class="entry__title mt-5 mb-5 has-line-height-tight has-text-black">
+                                            {@title /}
+                                        </h1>
+
+                                        {?content.fields.ingress}
+                                            <p class="single-program__lead has-text-black">
+                                                {content.fields.ingress|html}
+                                            </p>
+                                        {/content.fields.ingress}
+                                        
+                                    {/content.image}    
+
                                     {@content /}
                                 </div>
                             </div>

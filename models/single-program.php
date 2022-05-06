@@ -242,7 +242,7 @@ class SingleProgram extends BaseModel {
         $fields = $single->fields;
 
         $category = $fields['category'] ?? null;
-        // var_dump($category);die;
+        
         if ( empty( $category ) ) {
             return;
         }
@@ -251,15 +251,17 @@ class SingleProgram extends BaseModel {
 
         $amount               = $fields['stories_amount'] ?? 4;
         $stories['read_more'] = $fields['link'] ?? false;
-        $args = [
+        $args                 = [
             'post_type'      => 'post',
             'posts_per_page' => $amount,
-            'cat' => array( implode(', ', $category ) ),
-            ];
-            
+            'orderby' => 'date',
+            'order'   => 'DESC',
+            'cat'            => [ implode( ', ', $category ) ],
+		];
+
 		$query = new WP_Query( $args );
 
-        $posts = $query->query($args);
+        $posts = $query->query( $args );
 
         foreach ( $posts as $post ) {
 

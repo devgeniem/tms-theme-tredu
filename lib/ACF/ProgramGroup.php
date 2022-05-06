@@ -349,7 +349,7 @@ class ProgramGroup {
             ->set_key( "${key}_stories_amount" )
             ->set_name( 'stories_amount' )
             ->set_min( 1 )
-            ->set_max( 4 )
+            ->set_max( 8 )
             ->set_default_value( 4 )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['stories_amount']['instructions'] );

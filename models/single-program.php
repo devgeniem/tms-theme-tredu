@@ -54,17 +54,21 @@ class SingleProgram extends BaseModel {
         $fields = $single->fields;
         $info   = [];
 
+		// var_dump(  $fields );die;
+
         $info[] = [
             'icon'  => 'prompt',
             'label' => _x( 'Apply period', 'program info', 'tms-theme-tredu' ),
             'text'  => $this->get_apply_period( $fields ),
         ];
 
-        $info[] = [
-            'icon'  => 'learning',
-            'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
-            'text'  => $fields['audience'],
-        ];
+        if ( ! isset( $fields['show_audience'] ) || ! empty( $fields['show_audience'] ) ) {
+            $info[] = [
+                'icon'  => 'learning',
+                'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
+                'text'  => $fields['audience'],
+            ];
+        }
 
         $info[] = [
             'icon'  => 'backpack',
@@ -242,7 +246,7 @@ class SingleProgram extends BaseModel {
         $fields = $single->fields;
 
         $category = $fields['category'] ?? null;
-        
+
         if ( empty( $category ) ) {
             return;
         }
@@ -254,8 +258,8 @@ class SingleProgram extends BaseModel {
         $args                 = [
             'post_type'      => 'post',
             'posts_per_page' => $amount,
-            'orderby' => 'date',
-            'order'   => 'DESC',
+            'orderby'        => 'date',
+            'order'          => 'DESC',
             'cat'            => [ implode( ', ', $category ) ],
 		];
 

@@ -1,10 +1,10 @@
 {>"shared/base" /}
 
 {<content}
-    {#SingleTreduEventCpt}
-        <main class="main-content" id="main-content">
-            <article class="entry">
-                <section class="section pb-6">
+    <main class="main-content" id="main-content">
+        <article class="entry">
+            {#SingleTreduEventCpt}
+                <section class="section pb-4">
                     <div class="container">
                         <div class="columns">
                             <div class="column">
@@ -30,23 +30,11 @@
                     </div>
                 </section>
 
-                {?Header.breadcrumbs}
-                    <div class="breadcrumbs-container section pt-4 pb-4 has-background-light-gray">
-                        <div class="container">
-                            <div class="columns">
-                                <div class="column">
-                                    {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs /}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {/Header.breadcrumbs}
-
-                <section class="section">
+                <section class="section pt-4">
                     <div class="container">
                         {?content.fields.excerpt}
                             <div class="columns">
-                                <div class="column is-8 is-offset-2 mb-6-desktop">
+                                <div class="column is-8 is-offset-2">
                                     <p class="has-text-lead">
                                         {content.fields.excerpt|html}
                                     </p>
@@ -59,13 +47,18 @@
                                 {?excerpt}
                                     <div class="columns mb-8">
                                         <div class="column is-6">
+                                            {excerpt|html}
                                         </div>
                                     </div>
                                 {/excerpt}
 
-                                <div class="entry__content is-content-grid mb-8 mb-10-desktop keep-vertical-spacing">
+                                <div class="entry__content is-content-grid mb-8 keep-vertical-spacing">
                                     <div class="is-align-wide">
                                         {@content /}
+
+                                        {?content.fields.enroll_link}
+                                            {>"ui/button-link" link=content.fields.enroll_link classes="is-primary mt-3" icon="arrow-right" icon_classes="icon--medium" /}
+                                        {/content.fields.enroll_link}
                                     </div>
                                 </div>
 
@@ -80,9 +73,9 @@
                         </div>
                     </div>
                 </section>
-            </article>
-        </main>
+            {/SingleTreduEventCpt}
+        </article>
+    </main>
 
-        {>"ui/components" components=components /}
-    {/SingleTreduEventCpt}
+    {>"ui/components" components=SingleTreduEventCpt.components /}
 {/content}

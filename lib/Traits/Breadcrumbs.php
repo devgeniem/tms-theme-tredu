@@ -7,6 +7,7 @@
 namespace TMS\Theme\Tredu\Traits;
 
 use TMS\Theme\Tredu\PostType;
+use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
 use TMS\Theme\Tredu\Taxonomy\Category;
 
@@ -51,6 +52,9 @@ trait Breadcrumbs {
                 break;
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
+                break;
+            case PostType\TreduEvent::SLUG:
+                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
                 break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_page( $current_id, $home_url, $breadcrumbs );
@@ -156,6 +160,37 @@ trait Breadcrumbs {
         else {
             unset( $breadcrumbs['home'] ); // Not showing frontpage on frontpage.
         }
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Tredu Event
+     *
+     * @param int   $current_id  Current page ID.
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $events_page = Settings::get_setting( 'tredu_events_page' );
+
+        if ( ! empty( $events_page ) ) {
+            $breadcrumbs[] = [
+                'permalink' => get_the_permalink( $events_page ),
+                'title'     => get_the_title( $events_page ),
+                'icon'      => false,
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
 
         return $breadcrumbs;
     }

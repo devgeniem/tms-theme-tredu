@@ -178,6 +178,12 @@ class ProgramGroup {
                 'title'        => 'Kenelle koulutus on suunnattu',
                 'instructions' => '',
             ],
+            'show_audience'               => [
+                'title'        => 'Kenelle koulutus on suunnattu',
+                'off'          => 'Piilota',
+                'on'           => 'Näytä',
+                'instructions' => 'Näytetäänkö kenelle koulutus on suunnattu koulutuksen sivulla',
+            ],
             'start_date'             => [
                 'title'        => 'Koulutuksen alkamisajankohta',
                 'instructions' => 'Päivämäärä',
@@ -222,7 +228,18 @@ class ProgramGroup {
             ->set_key( "${key}_audience" )
             ->set_name( 'audience' )
             ->redipress_include_search()
+            ->set_wrapper_width( 50 )
             ->set_instructions( $strings['audience']['instructions'] );
+            
+        $show_audience = ( new Field\TrueFalse( $strings['show_audience']['title'] ) )
+            ->set_key( "${key}_show_audience" )
+            ->set_name( 'show_audience' )
+            ->set_default_value( true )
+            ->set_wrapper_width( 50 )
+            ->use_ui()
+            ->set_ui_off_text( $strings['show_audience']['off'] )
+            ->set_ui_on_text( $strings['show_audience']['on'] )
+            ->set_instructions( $strings['show_audience']['instructions'] );    
 
         $start_date_field = ( new Field\DatePicker( $strings['start_date']['title'] ) )
             ->set_key( "${key}_start_date" )
@@ -254,6 +271,7 @@ class ProgramGroup {
             $apply_end_field,
             $apply_info_field,
             $audience_field,
+            $show_audience,
             $start_date_field,
             $start_info_field,
             $price_field,

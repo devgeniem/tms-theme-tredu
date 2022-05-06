@@ -221,6 +221,7 @@ class ProgramGroup {
         $audience_field = ( new Field\Text( $strings['audience']['title'] ) )
             ->set_key( "${key}_audience" )
             ->set_name( 'audience' )
+            ->redipress_include_search()
             ->set_instructions( $strings['audience']['instructions'] );
 
         $start_date_field = ( new Field\DatePicker( $strings['start_date']['title'] ) )
@@ -295,6 +296,7 @@ class ProgramGroup {
                 Layouts\ImageBannerLayout::class,
                 Layouts\TextBlockLayout::class,
                 Layouts\CallToActionLayout::class,
+                Layouts\GravityFormLayout::class,
             ],
             $key
         );

@@ -178,7 +178,7 @@ class ProgramGroup {
                 'title'        => 'Kenelle koulutus on suunnattu',
                 'instructions' => '',
             ],
-            'show_audience'               => [
+            'show_audience'          => [
                 'title'        => 'Kenelle koulutus on suunnattu',
                 'off'          => 'Piilota',
                 'on'           => 'Näytä',
@@ -230,7 +230,7 @@ class ProgramGroup {
             ->redipress_include_search()
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['audience']['instructions'] );
-            
+
         $show_audience = ( new Field\TrueFalse( $strings['show_audience']['title'] ) )
             ->set_key( "${key}_show_audience" )
             ->set_name( 'show_audience' )
@@ -239,7 +239,7 @@ class ProgramGroup {
             ->use_ui()
             ->set_ui_off_text( $strings['show_audience']['off'] )
             ->set_ui_on_text( $strings['show_audience']['on'] )
-            ->set_instructions( $strings['show_audience']['instructions'] );    
+            ->set_instructions( $strings['show_audience']['instructions'] );
 
         $start_date_field = ( new Field\DatePicker( $strings['start_date']['title'] ) )
             ->set_key( "${key}_start_date" )
@@ -341,7 +341,7 @@ class ProgramGroup {
             'tab'            => 'Valmistuneiden tarinat',
             'category'       => [
                 'label'        => 'Kategoria',
-                'instructions' => '',
+                'instructions' => 'Voit nostaa valmistuneiden tarinoita valitsemalla artikkeleita joilla on kyseinen kategoria',
             ],
             'stories_amount' => [
                 'label'        => 'Lukumäärä',

@@ -222,14 +222,9 @@ class ProgramGroup {
         $apply_info_field = ( new Field\Text( $strings['apply_info']['title'] ) )
             ->set_key( "${key}_apply_info" )
             ->set_name( 'apply_info' )
-            ->set_instructions( $strings['apply_info']['instructions'] );
-
-        $audience_field = ( new Field\Text( $strings['audience']['title'] ) )
-            ->set_key( "${key}_audience" )
-            ->set_name( 'audience' )
-            ->redipress_include_search()
+            ->set_maxlength( 80 )
             ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['audience']['instructions'] );
+            ->set_instructions( $strings['apply_info']['instructions'] );
 
         $show_audience = ( new Field\TrueFalse( $strings['show_audience']['title'] ) )
             ->set_key( "${key}_show_audience" )
@@ -252,25 +247,27 @@ class ProgramGroup {
             ->set_key( "${key}_start_info" )
             ->set_name( 'start_info' )
             ->set_wrapper_width( 50 )
+            ->set_maxlength( 80 )
             ->set_instructions( $strings['start_info']['instructions'] );
 
         $price_field = ( new Field\Text( $strings['price']['title'] ) )
             ->set_key( "${key}_price" )
             ->set_name( 'price' )
             ->set_wrapper_width( 50 )
+            ->set_maxlength( 80 )
             ->set_instructions( $strings['price']['instructions'] );
 
         $additional_information_field = ( new Field\Text( $strings['additional_information']['title'] ) )
             ->set_key( "${key}_additional_information" )
             ->set_name( 'additional_information' )
             ->set_wrapper_width( 50 )
+            ->set_maxlength( 80 )
             ->set_instructions( $strings['additional_information']['instructions'] );
 
         $tab->add_fields( [
             $apply_start_field,
             $apply_end_field,
             $apply_info_field,
-            $audience_field,
             $show_audience,
             $start_date_field,
             $start_info_field,

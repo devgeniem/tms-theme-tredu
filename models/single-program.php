@@ -7,6 +7,7 @@ use TMS\Theme\Tredu\Traits;
 use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 use TMS\Theme\Tredu\Taxonomy\Category;
 use TMS\Theme\Tredu\Images;
+use TMS\Theme\Tredu\Taxonomy\EducationalBackground;
 
 /**
  * The SingleProgram class.
@@ -63,11 +64,13 @@ class SingleProgram extends BaseModel {
         ];
 
         if ( ! isset( $fields['show_audience'] ) || ! empty( $fields['show_audience'] ) ) {
+
             $info[] = [
                 'icon'  => 'learning',
                 'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
-                'text'  => $fields['audience'],
+                'text'  => $this->get_educational_background(),
             ];
+            
         }
 
         $info[] = [
@@ -104,6 +107,21 @@ class SingleProgram extends BaseModel {
      */
     protected function get_delivery_method() : ?string {
         $terms = get_the_terms( get_queried_object(), DeliveryMethod::SLUG );
+
+        if ( empty( $terms ) || is_wp_error( $terms ) ) {
+            return null;
+        }
+
+        return implode( ', ', array_map( fn( $item ) => $item->name, $terms ) );
+    }
+
+    /**
+     * Get educational backgroud
+     *
+     * @return string|null
+     */
+    protected function get_educational_background() : ?string {
+        $terms = get_the_terms( get_queried_object(), EducationalBackground::SLUG );
 
         if ( empty( $terms ) || is_wp_error( $terms ) ) {
             return null;

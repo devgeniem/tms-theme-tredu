@@ -2,6 +2,18 @@
 
 {<content}
     <main class="main-content" id="main-content">
+        {?Header.breadcrumbs}
+            <div class="breadcrumbs-container section pt-4 pb-4 has-background-light-gray">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs bc_icon="chevron-right" icon_classes="icon--small is-secondary ml-2 mr-0" /}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/Header.breadcrumbs}
+
         <section class="section">
             <div class="container">
                 <div class="columns">

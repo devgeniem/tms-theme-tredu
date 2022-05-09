@@ -7,11 +7,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-06-05] - 0.8.0
+
+### Changed
+
+- TMS-816: Unify image meta #67
+
+### Added
+
+- TMS-703: Add Sitemap layout.
+- TMS-709: Program search box
+
+## [2022-05-02] - 0.7.0
+
+### Added
+
+- TMS-737: Project CPT and Portfolio taxonomy #63
+
+## [2022-04-26] - 0.6.0
+
 ### Added
 
 - TMS-698: Add form
 - TMS-688: Table block
 - TMS-708: Program Call to Action
+
+### Fixed
+
+- TMS-805: Fix no results text logic
+- TMS-734-hotfix-programs-layouts-and-blocks
 
 ## [2022-04-25] - 0.5.0
 

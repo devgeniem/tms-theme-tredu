@@ -47,6 +47,7 @@ class ProgramGroup {
                     [
                         $this->get_general_tab( $field_group->get_key() ),
                         $this->get_info_tab( $field_group->get_key() ),
+                        $this->get_components_tab( $field_group->get_key() ),
                     ]
                 )
             );
@@ -73,17 +74,29 @@ class ProgramGroup {
      */
     protected function get_general_tab( string $key ) : Field\Tab {
         $strings = [
-            'tab'             => 'Yleiset tiedot',
-            'program_name'    => [
+            'tab'                => 'Yleiset tiedot',
+            'program_name'       => [
                 'title'        => 'Tutkinnon nimi',
                 'instructions' => 'esim. Sosiaali- ja terveysalan perustutkinto',
             ],
-            'ingress'         => [
+            'ingress'            => [
                 'title'        => 'Ingressi',
                 'instructions' => '',
             ],
-            'search_keywords' => [
+            'search_keywords'    => [
                 'title'        => 'Haun apusanat',
+                'instructions' => 'Käytetään ennakoivassa haussa',
+            ],
+            'search_box_title'   => [
+                'title'        => 'Hakulaatikon otsikko',
+                'instructions' => '',
+            ],
+            'search_box_ingress' => [
+                'title'        => 'Hakulaatikon lyhyt ote',
+                'instructions' => '',
+            ],
+            'search_box_link'    => [
+                'title'        => 'Hakulaatikon nappi',
                 'instructions' => '',
             ],
         ];
@@ -107,10 +120,30 @@ class ProgramGroup {
             ->redipress_include_search()
             ->set_instructions( $strings['search_keywords']['instructions'] );
 
+        $search_box_title = ( new Field\Text( $strings['search_box_title']['title'] ) )
+            ->set_key( "${key}_search_box_title" )
+            ->set_name( 'search_box_title' )
+            ->set_instructions( $strings['search_box_title']['instructions'] );
+
+        $search_box_ingress = ( new Field\Textarea( $strings['search_box_ingress']['title'] ) )
+            ->set_key( "${key}_search_box_ingress" )
+            ->set_name( 'search_box_ingress' )
+            ->set_maxlength( 200 )
+            ->set_instructions( $strings['search_box_ingress']['instructions'] );
+
+        $search_box_link = ( new Field\Link( $strings['search_box_link']['title'] ) )
+            ->set_key( "${key}_search_box_link" )
+            ->set_name( 'search_box_link' )
+            ->set_wrapper_width( 40 )
+            ->set_instructions( $strings['search_box_link']['instructions'] );
+
         $tab->add_fields( [
             $program_name_field,
             $ingress_field,
             $search_keywords_field,
+            $search_box_title,
+            $search_box_ingress,
+            $search_box_link,
         ] );
 
         return $tab;
@@ -223,6 +256,52 @@ class ProgramGroup {
             $price_field,
             $additional_information_field,
         ] );
+
+        return $tab;
+    }
+
+    /**
+     * Get components tab
+     *
+     * @param string $key Field group key.
+     *
+     * @return Field\Tab
+     * @throws Exception In case of invalid option.
+     */
+    protected function get_components_tab( string $key ) : Field\Tab {
+        $strings = [
+            'tab'        => 'Komponentit',
+            'components' => [
+                'title'        => _x( 'Components', 'theme ACF', 'tms-theme-tredu' ),
+                'instructions' => '',
+            ],
+        ];
+
+        $tab = ( new Field\Tab( $strings['tab'] ) )
+            ->set_placement( 'left' );
+
+        $components_field = ( new Field\FlexibleContent( $strings['components']['title'] ) )
+            ->set_key( "${key}_components" )
+            ->set_name( 'components' )
+            ->set_instructions( $strings['components']['instructions'] );
+
+        $component_layouts = apply_filters(
+            'tms/acf/field/' . $components_field->get_key() . '/layouts',
+            [
+                Layouts\MapLayout::class,
+                Layouts\IconLinksLayout::class,
+                Layouts\ImageBannerLayout::class,
+                Layouts\TextBlockLayout::class,
+                Layouts\CallToActionLayout::class,
+            ],
+            $key
+        );
+
+        foreach ( $component_layouts as $component_layout ) {
+            $components_field->add_layout( new $component_layout( $key ) );
+        }
+
+        $tab->add_field( $components_field );
 
         return $tab;
     }

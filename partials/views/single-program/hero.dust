@@ -2,7 +2,7 @@
          class="single-program__hero section has-background-cover" {@inlinebg id=content.image.ID size="fullhd" /}>
     <div class="overlay"></div>
     <div class="container">
-        <div class="columns">
+        <div class="columns is-multiline">
             <div class="column is-12 is-6-desktop">
                 <div class="single-program__hero-box pt-8 pb-8">
                     {?content.fields.program_name}
@@ -11,7 +11,7 @@
                         </div>
                     {/content.fields.program_name}
 
-                    <h1 class="entry__title mt-5 mb-5 has-line-height-tight">
+                    <h1 class="entry__title mt-5 mb-5 has-line-height-tight has-text-white">
                         {@title /}
                     </h1>
 
@@ -20,6 +20,31 @@
                             {content.fields.ingress|html}
                         </p>
                     {/content.fields.ingress}
+                </div>
+            </div>
+            <div class="column is-12 is-5-desktop is-offset-1-desktop pt-8 pb-8" >
+
+                <div class="p-7 has-background-{apply_method_colors.bg|attr} has-text-{apply_method_colors.text|attr}">
+                <h2 class="h4 mt-0 has-text-{apply_method_colors.text|attr}">
+                {?content.fields.search_box_title}
+                    {content.fields.search_box_title|html}
+                {:else}    
+                    {search_box_default_strs.title|html}
+                {/content.fields.search_box_title}
+                 </h2>
+
+                 <p>
+                    {?content.fields.search_box_ingress}
+                        {content.fields.search_box_ingress|html}
+                    {:else}
+                         {search_box_default_strs.description|html}
+                    {/content.fields.search_box_ingress}
+                </p>
+
+                {?content.fields.search_box_link}
+                    {>"ui/button-link" link=content.fields.search_box_link classes="{apply_method_colors.btn|attr} ml-auto mr-auto mt-4 mb-0 mt-4-tablet" icon="arrow-right" icon_classes="icon--medium"  /}
+                {/content.fields.search_box_link}
+                   
                 </div>
             </div>
         </div>

@@ -23,6 +23,8 @@ class ArchiveBlogArticle extends Home {
             'pre_get_posts',
             [ __CLASS__, 'modify_query' ]
         );
+
+        add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', fn() => false );
     }
 
     /**

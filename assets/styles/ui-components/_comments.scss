@@ -4,7 +4,7 @@
     .comment__body {
         margin-bottom: $theme-spacing-oneandhalf;
         padding: $theme-spacing-oneandhalf;
-        border: 1px solid $secondary;
+        border: .125rem solid $color-grey;
 
         @include from($tablet) {
             padding: $theme-spacing-oneandhalf $theme-spacing-two;
@@ -24,16 +24,21 @@
         > label {
             display: block;
             margin-bottom: $theme-spacing-quarter;
+            color: $color-black;
         }
 
         input,
         textarea {
-            line-height: 1;
             width: 100%;
             padding: $theme-spacing-half;
-            border: 1px solid $secondary;
+            border: .125rem solid $secondary;
             border-radius: $theme-spacing-quarter;
+            line-height: 1;
         }
+    }
+
+    .acf-fg_comment_fields_author, {
+        color: $color-black;
     }
 
     .required {
@@ -46,15 +51,9 @@
     }
 
     .comment__author-badge {
-        font-size: .705rem;
-        vertical-align: top;
-
         &::before {
-            content: "[";
-        }
-
-        &::after {
-            content: "]";
+            content: "/";
+            margin-right: $theme-spacing-quarter;
         }
     }
 }

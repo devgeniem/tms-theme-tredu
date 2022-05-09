@@ -20,6 +20,13 @@ class Single extends BaseModel {
     use Traits\Components;
 
     /**
+     * Hooks
+     */
+    public function hooks() : void {
+        add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', fn() => false );
+    }
+
+    /**
      * Content
      *
      * @return array|object|WP_Post|null

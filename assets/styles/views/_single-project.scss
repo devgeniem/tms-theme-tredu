@@ -1,0 +1,37 @@
+.single-project {
+    &__logo-cloud-container {
+        background-color: $color-light-blueishgray;
+    }
+
+    &__info-group {
+        background-color: $color-semilight-gray;
+
+        .icon {
+            vertical-align: middle;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .entry__share-links {
+        @include from($desktop) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-links {
+            @include from($desktop) {
+                margin-left: $theme-spacing-two;
+            }
+        }
+    }
+}

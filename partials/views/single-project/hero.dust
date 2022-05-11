@@ -1,0 +1,7 @@
+{?hero}
+    <section class="single-project__hero">
+        <div class="image is-16by9">
+            {@image id=hero size="fullhd" class="objectfit-image" alt="" /}
+        </div>
+    </section>
+{/hero}

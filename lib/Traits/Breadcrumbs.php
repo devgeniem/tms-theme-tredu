@@ -7,6 +7,7 @@
 namespace TMS\Theme\Tredu\Traits;
 
 use TMS\Theme\Tredu\PostType;
+use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
 use TMS\Theme\Tredu\Taxonomy\Category;
 
@@ -51,6 +52,9 @@ trait Breadcrumbs {
                 break;
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
+                break;
+            case PostType\Project::SLUG:
+                $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_page( $current_id, $home_url, $breadcrumbs );
@@ -156,6 +160,38 @@ trait Breadcrumbs {
         else {
             unset( $breadcrumbs['home'] ); // Not showing frontpage on frontpage.
         }
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Project
+     *
+     * @param int    $current_id  Current page ID.
+     * @param string $home_url    Home URL.
+     * @param array  $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $projects_page = Settings::get_setting( 'tredu_projects_page' );
+
+        if ( ! empty( $projects_page ) ) {
+            $breadcrumbs[] = [
+                'permalink' => get_the_permalink( $projects_page ),
+                'title'     => get_the_title( $projects_page ),
+                'icon'      => false,
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
 
         return $breadcrumbs;
     }

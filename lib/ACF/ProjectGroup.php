@@ -46,6 +46,7 @@ class ProjectGroup {
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $this->get_general_tab( $field_group->get_key() ),
+                        $this->get_logo_cloud_tab( $field_group->get_key() ),
                         $this->get_info_tab( $field_group->get_key() ),
                         $this->get_components_tab( $field_group->get_key() ),
                         $this->get_related_posts_tab( $field_group->get_key() ),
@@ -75,16 +76,16 @@ class ProjectGroup {
      */
     protected function get_general_tab( string $key ) : Field\Tab {
         $strings = [
-            'tab'          => 'Yleiset tiedot',
-            'last_updated' => [
+            'tab'        => 'Yleiset tiedot',
+            'updated_on' => [
                 'title'        => 'Päivitetty',
                 'instructions' => 'Viimeisimmän päivityksen ajankohta',
             ],
-            'ingress'      => [
-                'title'        => 'Päivitetty',
+            'ingress'    => [
+                'title'        => 'Ingressi',
                 'instructions' => '',
             ],
-            'is_active'    => [
+            'is_active'  => [
                 'title'        => 'Aktiivinen',
                 'instructions' => '',
             ],
@@ -93,10 +94,15 @@ class ProjectGroup {
         $tab = ( new Field\Tab( $strings['tab'] ) )
             ->set_placement( 'left' );
 
-        $ingress_field = ( new Field\Text( $strings['ingress']['title'] ) )
+        $ingress_field = ( new Field\Textarea( $strings['ingress']['title'] ) )
             ->set_key( "${key}_ingress" )
             ->set_name( 'ingress' )
             ->set_instructions( $strings['ingress']['instructions'] );
+
+        $updated_on_field = ( new Field\Text( $strings['updated_on']['title'] ) )
+            ->set_key( "${key}_updated_on" )
+            ->set_name( 'updated_on' )
+            ->set_instructions( $strings['updated_on']['instructions'] );
 
         $is_active_field = ( new Field\TrueFalse( $strings['is_active']['title'] ) )
             ->set_key( "${key}_is_active" )
@@ -106,7 +112,71 @@ class ProjectGroup {
 
         $tab->add_fields( [
             $ingress_field,
+            $updated_on_field,
             $is_active_field,
+        ] );
+
+        return $tab;
+    }
+
+    /**
+     * Get logo cloud tab
+     *
+     * @param string $key Field group key.
+     *
+     * @return Field\Tab
+     * @throws Exception In case of invalid option.
+     */
+    protected function get_logo_cloud_tab( string $key ) : Field\Tab {
+        $strings = [
+            'tab'         => 'Logopilvi',
+            'title'       => [
+                'title'        => 'Otsikko',
+                'instructions' => '',
+            ],
+            'description' => [
+                'title'        => 'Kuvausteksti',
+                'instructions' => '',
+            ],
+            'logos'       => [
+                'title'        => 'Logot',
+                'instructions' => '',
+            ],
+            'logo'        => [
+                'title'        => 'Logo',
+                'instructions' => '',
+            ],
+        ];
+
+        $tab = ( new Field\Tab( $strings['tab'] ) )
+            ->set_placement( 'left' );
+
+        $title_field = ( new Field\Text( $strings['title']['title'] ) )
+            ->set_key( "${key}_logo_cloud_title" )
+            ->set_name( 'logo_cloud_title' )
+            ->set_instructions( $strings['title']['instructions'] );
+
+        $description_field = ( new Field\Text( $strings['description']['title'] ) )
+            ->set_key( "${key}_logo_cloud_description" )
+            ->set_name( 'logo_cloud_description' )
+            ->set_instructions( $strings['description']['instructions'] );
+
+        $logo_repeater_field = ( new Field\Repeater( $strings['logos']['title'] ) )
+            ->set_key( "${key}_logos" )
+            ->set_name( 'logos' )
+            ->set_instructions( $strings['logos']['instructions'] );
+
+        $logo_field = ( new Field\Image( $strings['logo']['title'] ) )
+            ->set_key( "${key}_logo" )
+            ->set_name( 'logo' )
+            ->set_instructions( $strings['logo']['instructions'] );
+
+        $logo_repeater_field->add_field( $logo_field );
+
+        $tab->add_fields( [
+            $title_field,
+            $description_field,
+            $logo_repeater_field,
         ] );
 
         return $tab;
@@ -123,7 +193,7 @@ class ProjectGroup {
     protected function get_info_tab( string $key ) : Field\Tab {
         $strings = [
             'tab'            => 'Projektin tiedot',
-            'group_title'          => [
+            'group_title'    => [
                 'title'        => 'Otsikko',
                 'instructions' => '',
             ],
@@ -160,7 +230,8 @@ class ProjectGroup {
         $tab = ( new Field\Tab( $strings['tab'] ) )
             ->set_placement( 'left' );
 
-        $website_group = ( new Field\Group( $strings['website']['title'] ) );
+        $website_group = ( new Field\Group( $strings['website']['title'] ) )
+            ->set_name( 'website' );
 
         $website_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
             ->set_key( "${key}_website_title" )
@@ -177,7 +248,8 @@ class ProjectGroup {
             $website_link_field,
         ] );
 
-        $duration_group = ( new Field\Group( $strings['duration']['title'] ) );
+        $duration_group = ( new Field\Group( $strings['duration']['title'] ) )
+            ->set_name( 'duration' );
 
         $duration_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
             ->set_key( "${key}_duration_title" )
@@ -194,7 +266,8 @@ class ProjectGroup {
             $duration_field,
         ] );
 
-        $portfolio_group = ( new Field\Group( $strings['portfolio']['title'] ) );
+        $portfolio_group = ( new Field\Group( $strings['portfolio']['title'] ) )
+            ->set_name( 'portfolio' );
 
         $portfolio_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
             ->set_key( "${key}_portfolio_title" )
@@ -204,6 +277,7 @@ class ProjectGroup {
         $portfolio_text_field = ( new Field\Textarea( $strings['portfolio_text']['title'] ) )
             ->set_key( "${key}_portfolio_text" )
             ->set_name( 'portfolio_text' )
+            ->set_rows( 3 )
             ->set_instructions( $strings['portfolio_text']['instructions'] );
 
         $portfolio_group->add_fields( [
@@ -211,23 +285,29 @@ class ProjectGroup {
             $portfolio_text_field,
         ] );
 
-        $contact_field = ( new Field\Text( $strings['contact']['title'] ) )
-            ->set_key( "${key}_contact" )
-            ->set_name( 'contact' )
-            ->set_instructions( $strings['contact']['instructions'] );
+        $contacts_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
+            ->set_key( "${key}_contacts_title" )
+            ->set_name( 'contacts_title' )
+            ->set_instructions( $strings['group_title']['instructions'] );
 
-        $contacts_repeater_field = ( new Field\Repeater( $strings['contacts']['title'] ) )
+        $contact_field = ( new Field\Textarea( $strings['contacts']['title'] ) )
             ->set_key( "${key}_contacts" )
             ->set_name( 'contacts' )
             ->set_instructions( $strings['contacts']['instructions'] );
 
-        $contacts_repeater_field->add_field( $contact_field );
+        $contacts_group_field = ( new Field\Group( $strings['contacts']['title'] ) )
+            ->set_name( 'contacts' );
+
+        $contacts_group_field->add_fields( [
+            $contacts_title_field,
+            $contact_field,
+        ] );
 
         $tab->add_fields( [
             $website_group,
             $duration_group,
             $portfolio_group,
-            $contacts_repeater_field,
+            $contacts_group_field,
         ] );
 
         return $tab;

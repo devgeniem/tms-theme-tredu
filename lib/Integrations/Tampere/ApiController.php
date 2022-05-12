@@ -86,15 +86,11 @@ abstract class ApiController {
      */
     public function get() {
         $cache_key = 'tampere-drupal-' . $this->get_slug();
-        $results   = wp_cache_get( $cache_key );
-
-        error_log( 'CACHE HIT: ' . $cache_key );
+        $results   = wp_cache_get( $cache_key, 'API' );
 
         if ( $results ) {
             return $results;
         }
-
-        error_log( 'CACHE MISS: ' . $cache_key );
 
         $args = [
             'headers' => [],
@@ -115,7 +111,7 @@ abstract class ApiController {
         $results = $this->do_get( $this->get_slug(), [], $params, $args );
 
         if ( $results ) {
-            wp_cache_set( $cache_key, $results, '', MINUTE_IN_SECONDS * 15 );
+            wp_cache_set( $cache_key, $results, 'API', HOUR_IN_SECONDS * 6 );
         }
 
         return $results;
@@ -155,7 +151,7 @@ abstract class ApiController {
      *
      * @return array
      */
-    private function get_link_query_parts( string $href ) : array {
+    protected function get_link_query_parts( string $href ) : array {
         $parts = wp_parse_url( $href );
 
         if ( ! isset( $parts['query'] ) ) {

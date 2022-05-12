@@ -211,7 +211,7 @@ trait Breadcrumbs {
 
         if ( ! empty( $term ) ) {
             $title         = $term->name;
-            $permalink = is_int( $program_page ) ? get_permalink( $program_page ) . '?' . ProgramType::SLUG . urlencode( '[]' ) . '=' . $term->term_id : false; // phpcs:ignore
+            $permalink = is_int( $program_page ) ? add_query_arg( ProgramType::SLUG . urlencode( '[]' ), $term->term_id,  get_permalink( $program_page ) ) : false; // phpcs:ignore
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,

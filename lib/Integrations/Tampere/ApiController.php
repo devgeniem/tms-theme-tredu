@@ -18,7 +18,15 @@ abstract class ApiController {
      * @return string|null
      */
     protected function get_api_base_url() : ?string {
-        return env( 'TAMPERE_API_URL' );
+        $url = env( 'TAMPERE_API_URL' );
+
+        if ( DPT_PLL_ACTIVE && pll_current_language() === 'en' ) {
+            $url .= '/en';
+        }
+
+        $url .= '/api/node';
+
+        return $url;
     }
 
     /**
@@ -86,7 +94,12 @@ abstract class ApiController {
      */
     public function get() {
         $cache_key = 'tampere-drupal-' . $this->get_slug();
-        $results   = wp_cache_get( $cache_key, 'API' );
+
+        if ( DPT_PLL_ACTIVE ) {
+            $cache_key .= '-' . pll_current_language();
+        }
+
+        $results = wp_cache_get( $cache_key, 'API' );
 
         if ( $results ) {
             return $results;

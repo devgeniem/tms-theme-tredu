@@ -30,7 +30,7 @@
                             <div>{phone_text|html}</div>
                             <div>
                                 <a href="tel:{phone_number|html}"
-                                   class="has-text-paragraph">
+                                   class="has-text-paragraph hyphenate">
                                     {phone_number|html}
                                 </a>
                             </div>
@@ -46,7 +46,7 @@
                     {>"ui/icon" icon="email" class="icon--large is-primary" /}
                 </div>
 
-                <a href="mailto:{email|html}" class="has-text-paragraph">
+                <a href="mailto:{email|html}" class="has-text-paragraph hyphenate">
                     {email|html}
                 </a>
             </div>

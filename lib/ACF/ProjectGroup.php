@@ -194,6 +194,10 @@ class ProjectGroup {
     protected function get_anchor_links_tab( string $key ) : Field\Tab {
         $strings = [
             'tab'               => 'Ankkurilinkit',
+            'anchors_title'     => [
+                'title'        => 'Otsikko',
+                'instructions' => '',
+            ],
             'anchors'           => [
                 'title'        => 'Ankkuri',
                 'instructions' => 'Ankkurin voit syöttää esimerkiksi Otsikko-lohkoon valitsemalla lohkon aktiiviseksi ja siirtymällä sivupalkista kohtaan Edistyneet asetukset.',
@@ -211,6 +215,12 @@ class ProjectGroup {
         $tab = ( new Field\Tab( $strings['tab'] ) )
             ->set_placement( 'left' );
 
+        $section_title_field = ( new Field\Text( $strings['anchors_title']['title'] ) )
+            ->set_key( "${key}_anchors_title" )
+            ->set_name( 'anchors_title' )
+            ->set_default_value( 'Klikkaa suoraan sisältöön:' )
+            ->set_instructions( $strings['anchors_title']['instructions'] );
+
         $anchor_repeater_field = ( new Field\Repeater( $strings['anchors']['title'] ) )
             ->set_key( "${key}_anchors" )
             ->set_name( 'anchors' )
@@ -226,9 +236,14 @@ class ProjectGroup {
             ->set_name( 'anchor_link' )
             ->set_instructions( $strings['anchor_link']['instructions'] );
 
-        $anchor_repeater_field->add_fields( [ $anchor_title_field, $anchor_link_field ] );
+        $anchor_repeater_field->add_fields(
+            [
+                $anchor_title_field,
+                $anchor_link_field,
+            ]
+        );
 
-        $tab->add_field( $anchor_repeater_field );
+        $tab->add_fields( [ $section_title_field, $anchor_repeater_field ] );
 
         return $tab;
     }

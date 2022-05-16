@@ -82,7 +82,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'     => $primary_category[0]->name,
                 'permalink' => $primary_category[0]->permalink,
-                'icon'      => false,
+                'icon'      => 'chevron-right',
             ];
         }
 

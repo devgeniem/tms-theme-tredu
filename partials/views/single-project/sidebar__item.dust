@@ -3,7 +3,7 @@
         {>"ui/icon" icon=sidebar_icon class="icon--xlarge is-black" /}
     </div>
 
-    <div class="single-project__info-description ml-5">
+    <div class="single-project__info-description ml-5 keep-vertical-spacing">
         <p class="h5 mt-0 mb-2">{sidebar_title|html}</p>
         <p class="mt-0 mb-2">{sidebar_content|html}</p>
 

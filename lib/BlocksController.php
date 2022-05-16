@@ -143,7 +143,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                 ],
             ],
             'acf/link-list'    => [
@@ -179,7 +178,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                 ],
@@ -252,6 +250,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/notice-banner'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
             */
@@ -281,17 +280,16 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            /*
-            'gravityforms/form'  => [
+            'gravityforms/form' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
-            */
 
-            'acf/countdown'    => [
+            'acf/countdown' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

@@ -1,17 +1,42 @@
 {>"shared/base" /}
 
 {<content}
-    <main class="main-content" id="main-content">
+    <main class="main-content has-text-black" id="main-content">
         {#SingleProgram}
             <article class="entry">
-                {>"views/single-program/hero" /}
+
+                {?content.image}
+                    {>"views/single-program/hero" /}
+                {/content.image}
+
                 {>"views/single-program/info" /}
 
                 <section class="section">
                     <div class="container">
                         <div class="columns">
                             <div class="column is-10 is-offset-1">
-                                <div class="entry__content is-content-grid keep-vertical-spacing">
+                                <div class="entry__content is-content-grid keep-vertical-spacing has-text-black">
+
+                                    {^content.image}
+
+                                        {?content.fields.program_name}
+                                            <div class="single-program__sub-title has-text-black">
+                                                {content.fields.program_name|html}
+                                            </div>
+                                        {/content.fields.program_name}
+
+                                        <h1 class="entry__title mt-5 mb-5 has-line-height-tight has-text-black">
+                                            {@title /}
+                                        </h1>
+
+                                        {?content.fields.ingress}
+                                            <p class="single-program__lead has-text-black">
+                                                {content.fields.ingress|html}
+                                            </p>
+                                        {/content.fields.ingress}
+                                        
+                                    {/content.image}    
+
                                     {@content /}
                                 </div>
                             </div>
@@ -21,6 +46,39 @@
             </article>
 
             {>"ui/components" components=components /}
+           {?stories.posts}
+            <section class="program-related-stories section has-background-light-blueishgray">
+                {?stories.heading}
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-8">
+                                <h2 class="layout-articles__title mt-0 mb-6">{stories.heading|html}</h2>
+                            </div>
+                        </div>
+                    </div>
+                {/stories.heading}
+                    <div class="container">
+                        <div class="columns is-multiline">
+                                {#stories.posts}
+                                    {>"views/home/home-grid-item"  /}
+                                {/stories.posts}
+                        </div>
+                         {?stories.read_more.url}
+                            {?stories.read_more.title}
+                                <div class="has-text-right">
+                                    <a href="{stories.read_more.url|attr}" 
+                                    target="{stories.read_more.target|attr}" 
+                                    class="is-primary layout-articles__read-more">
+                                        {>"ui/icon" icon="chevron-right" class="icon--medium is-secondary mr-2" /}
+                                        {stories.read_more.title|html}
+                                    </a>
+                                </div>
+                            {/stories.read_more.title}
+                        {/stories.read_more.url}
+                    </div>
+                </section>
+           {/stories.posts}
+          
         {/SingleProgram}
     </main>
 {/content}

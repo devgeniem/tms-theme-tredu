@@ -1,0 +1,13 @@
+.program-call-to-action {
+
+    &__btn-column {
+        padding-left: 1.5rem;
+        padding-top: 0;
+        padding-bottom: 1.5rem;
+        
+        @include from($og-tablet) {
+            padding: .75rem;
+            justify-content: center !important;
+        }
+    }
+}

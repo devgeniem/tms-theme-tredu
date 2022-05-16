@@ -69,8 +69,7 @@ class HeroFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
      * @return string
      */
     private function form_action() : string {
-
-        $program_page = Settings::get_setting( 'program_page' );
+        $program_page = Settings::get_setting( 'program_search_program_page' );
 
         if ( is_int( $program_page ) ) {
             return get_permalink( $program_page );

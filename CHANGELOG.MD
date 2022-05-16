@@ -7,10 +7,67 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-06-12] - 0.9.0
+
+### Changed
+
+- TMS-734: Single program
+
+## [2022-06-05] - 0.8.0
+
+### Changed
+
+- TMS-817: Display API contacts #70
+- TMS-816: Unify image meta #67
+
+### Added
+
+- TMS-703: Add Sitemap layout.
+- TMS-709: Program search box
+
+## [2022-05-02] - 0.7.0
+
+### Added
+
+- TMS-737: Project CPT and Portfolio taxonomy #63
+
+## [2022-04-26] - 0.6.0
+
+### Added
+
+- TMS-698: Add form
+- TMS-688: Table block
+- TMS-708: Program Call to Action
+
+### Fixed
+
+- TMS-805: Fix no results text logic
+- TMS-734-hotfix-programs-layouts-and-blocks
+
+## [2022-04-25] - 0.5.0
+
 ### Added
 
 - TMS-680: Notice banner
+- TMS-743: Hero layout for front page
 - TMS-697: Contacts
+- TMS-804: Add cap copy_posts to editors & authors #53
+- TMS-681: Add articles layout. #50
+- TMS-678: Image carousel #47
+- TMS-695: Related posts. #42
+- TMS-669: Materials page template #43
+- TMS-702: Accessibility icons #41
+- TMS-735: Program Search #38
+- TMS-801: Add ApplyType tax #52
+
+## [2022-04-21] - 0.4.1
+
+- TMS-743: Hero layout for front page #49
+- TMS-697: Contacts #36
+
+### Fixed
+
+- TMS-223-API: Load choices with ajax #51
 
 ## [2022-04-12] - 0.4.0
 
@@ -51,9 +108,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-660: Header, Footer, Navgation
 - TMS-661: Siblings navigation for page
 - TMS-662: Breadcrumb in header
-- TMS-673: Content page hero
-- TMS-662: Breadcrumb in header
+- TMS-665: Add article archive.
 - TMS-672: 404 Page styles
+- TMS-673: Content page hero
+- TMS-686: Accordion block
 
 ## [2021-03-16] - 0.1.0
 

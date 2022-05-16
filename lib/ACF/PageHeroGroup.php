@@ -1,7 +1,4 @@
 <?php
-/**
- * Copyright (c) 2021. Geniem Oy
- */
 
 namespace TMS\Theme\Tredu\ACF;
 
@@ -43,6 +40,7 @@ class PageHeroGroup {
 
             $page_hero_rule_group = ( new RuleGroup() )
                 ->add_rule( 'post_type', '==', PostType\Page::SLUG )
+                ->add_rule( 'page_template', '!=', \PageFrontPage::TEMPLATE )
                 ->add_rule( 'page_template', '!=', \PageProgram::TEMPLATE );
 
             $field_group
@@ -79,8 +77,8 @@ class PageHeroGroup {
                 'label'        => 'Heron tummennus',
                 'instructions' => 'Jos kuvalla on tummennus, sivun otsikko on heron päällä. Muutoin otsikko näytetään heron alla.
                 ',
-                'off' => 'Pois',
-                'on' => 'Päällä',
+                'off'          => 'Pois',
+                'on'           => 'Päällä',
             ],
         ];
 

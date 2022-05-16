@@ -4,6 +4,10 @@ use DustPress\Query;
 use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Traits;
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
+use TMS\Theme\Tredu\Taxonomy\Category;
+use TMS\Theme\Tredu\Images;
+use TMS\Theme\Tredu\Taxonomy\EducationalBackground;
 
 /**
  * The SingleProgram class.
@@ -45,11 +49,15 @@ class SingleProgram extends BaseModel {
             'text'  => $this->get_apply_period( $fields ),
         ];
 
-        $info[] = [
-            'icon'  => 'learning',
-            'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
-            'text'  => $fields['audience'],
-        ];
+        if ( ! isset( $fields['show_audience'] ) || ! empty( $fields['show_audience'] ) ) {
+
+            $info[] = [
+                'icon'  => 'learning',
+                'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
+                'text'  => $this->get_educational_background(),
+            ];
+
+        }
 
         $info[] = [
             'icon'  => 'backpack',
@@ -94,6 +102,21 @@ class SingleProgram extends BaseModel {
     }
 
     /**
+     * Get educational backgroud
+     *
+     * @return string|null
+     */
+    protected function get_educational_background() : ?string {
+        $terms = get_the_terms( get_queried_object(), EducationalBackground::SLUG );
+
+        if ( empty( $terms ) || is_wp_error( $terms ) ) {
+            return null;
+        }
+
+        return implode( ', ', array_map( fn( $item ) => $item->name, $terms ) );
+    }
+
+    /**
      * Get location
      *
      * @return string|null
@@ -119,7 +142,7 @@ class SingleProgram extends BaseModel {
         if ( ! empty( $fields['start_info'] ) ) {
             $start_info = $fields['start_info'];
         }
-        else if ( ! empty( $fields['start_date'] ) ) {
+        elseif ( ! empty( $fields['start_date'] ) ) {
             $start_info = $fields['start_date'];
         }
 
@@ -171,5 +194,101 @@ class SingleProgram extends BaseModel {
      */
     protected function get_post() {
         return Query::get_acf_post( get_queried_object_id() );
+    }
+
+    /**
+     * Get apply method taxonomy
+     */
+    public function apply_method_colors() {
+
+        $colors = [
+            'bg'   => 'blue',
+            'text' => 'primary',
+            'btn'  => 'is-primary',
+        ];
+
+        $this_post     = $this->get_post();
+        $apply_methods = get_the_terms( $this_post, ApplyMethod::SLUG );
+
+        if ( ! empty( $apply_methods[0]->term_id ) ) {
+            $apply_method_color = get_term_meta( $apply_methods[0]->term_id, 'color', true ) ?? '';
+
+            if ( ! empty( $apply_method_color ) ) {
+                $colors['bg']   = $apply_method_color;
+                $colors['text'] = $apply_method_color === 'primary' ? 'white' : 'primary';
+                $colors['btn']  = $apply_method_color === 'primary' ? 'is-secondary' : 'is-primary';
+            }
+		}
+
+        return $colors;
+    }
+
+    /**
+     * Get apply method taxonomy
+     */
+    public function search_box_default_strs() {
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+		$strs = [
+			'title'       => _x( 'Apply now', 'program info', 'tms-theme-tredu' ) . '!',
+			'description' => _x( 'Apply period', 'program info', 'tms-theme-tredu' ) . ' ' . $this->get_apply_period( $fields ),
+		];
+
+        return $strs;
+    }
+
+    /**
+     * Get selected category stories
+     */
+    public function stories() {
+
+        $stories = [];
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+        $category = $fields['category'] ?? null;
+
+        if ( empty( $category ) ) {
+            return;
+        }
+
+        $stories['heading'] = _x( 'Graduation stories from Tredu', 'program info', 'tms-theme-tredu' );
+
+        $amount               = $fields['stories_amount'] ?? 4;
+        $stories['read_more'] = $fields['link'] ?? false;
+        $args                 = [
+            'post_type'      => 'post',
+            'posts_per_page' => $amount,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'cat'            => [ implode( ', ', $category ) ],
+		];
+
+		$query = new WP_Query( $args );
+
+        $posts = $query->query( $args );
+
+        foreach ( $posts as $post ) {
+
+            $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
+
+            if ( ! $image_id || $image_id < 1 ) {
+                $image_id = Images::get_default_image_id();
+            }
+
+            $stories['posts'][] = [
+                'post_title'     => $post->post_title ?? '',
+                'featured_image' => $image_id,
+                'permalink'      => get_permalink( $post->ID ),
+                'post_date'      => $post->post_date ?? '',
+                'excerpt'        => $post->post_excerpt ?? '',
+            ];
+
+        }
+
+        return $stories;
     }
 }

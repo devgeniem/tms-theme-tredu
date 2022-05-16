@@ -5,5 +5,22 @@
 .textblock {
     &__inner {
         word-break: break-word;
+        p,
+        a,
+        h1,
+        h2,
+        h3,
+        h4,
+        strong {
+            color: inherit;
+        }
+
+        a {
+            text-decoration: underline;
+            font-weight: 700;
+            &:focus {
+                outline-color: inherit;
+            }
+        }
     }
 }

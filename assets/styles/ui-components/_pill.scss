@@ -137,6 +137,10 @@ $pill-hover-shadow-color: rgba(0, 0, 0, .15) !default;
                 background-color: $pill-background-active-focus;
             }
         }
+
+        .icon {
+            fill: $secondary;
+        }
     }
 
     &.is-outlined {

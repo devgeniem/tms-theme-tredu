@@ -7,6 +7,7 @@ namespace TMS\Theme\Tredu\ACF\Fields;
 
 use Geniem\ACF\Exception;
 use Geniem\ACF\Field;
+use TMS\Theme\Tredu\ACF\Layouts\AccordionContactLayout;
 use TMS\Theme\Tredu\ACF\Layouts\AccordionImageLayout;
 use TMS\Theme\Tredu\ACF\Layouts\AccordionTableLayout;
 use TMS\Theme\Tredu\ACF\Layouts\AccordionVideoLayout;
@@ -14,7 +15,7 @@ use TMS\Theme\Tredu\ACF\Layouts\AccordionWysiwygLayout;
 use TMS\Theme\Tredu\Logger;
 
 /**
- * Class AccordionFields
+ * Class AccordionFieldsl
  *
  * @package TMS\Theme\Tredu\ACF\Fields
  */
@@ -108,6 +109,7 @@ class AccordionFields extends Field\Group {
             AccordionWysiwygLayout::class,
             AccordionImageLayout::class,
             AccordionVideoLayout::class,
+            AccordionContactLayout::class,
         ];
 
         if ( is_plugin_active( 'tablepress/tablepress.php' ) ) {

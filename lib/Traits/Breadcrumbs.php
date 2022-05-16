@@ -7,9 +7,9 @@
 namespace TMS\Theme\Tredu\Traits;
 
 use TMS\Theme\Tredu\PostType;
-use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
 use TMS\Theme\Tredu\Taxonomy\Category;
+use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Taxonomy\ProgramType;
 
 /**
@@ -54,8 +54,8 @@ trait Breadcrumbs {
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
                 break;
-            case PostType\TreduEvent::SLUG:
-                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
+            case PostType\Project::SLUG:
+                $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_program( $current_id, $home_url, $breadcrumbs );
@@ -214,7 +214,7 @@ trait Breadcrumbs {
 
         if ( ! empty( $term ) ) {
             $title         = $term->name;
-            $permalink     = is_int( $program_page ) ? get_permalink( $program_page ) . '?' . ProgramType::SLUG . urlencode( '[]' ) . '=' . $term->term_id : false; // phpcs:ignore
+            $permalink     = is_int( $program_page ) ? add_query_arg( ProgramType::SLUG . urlencode( '[]' ), $term->term_id, get_permalink( $program_page ) ) : false; // phpcs:ignore
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,
@@ -236,22 +236,23 @@ trait Breadcrumbs {
     }
 
     /**
-     * Format breadcrumbs for: Tredu Event
+     * Format breadcrumbs for: Project
      *
-     * @param int   $current_id  Current page ID.
-     * @param array $breadcrumbs Breadcrumbs array.
+     * @param int    $current_id  Current page ID.
+     * @param string $home_url    Home URL.
+     * @param array  $breadcrumbs Breadcrumbs array.
      *
      * @return array
      */
-    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+    private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs['home'] = $this->get_home_link();
 
-        $events_page = Settings::get_setting( 'tredu_events_page' );
+        $projects_page = Settings::get_setting( 'tredu_projects_page' );
 
-        if ( ! empty( $events_page ) ) {
+        if ( ! empty( $projects_page ) ) {
             $breadcrumbs[] = [
-                'permalink' => get_the_permalink( $events_page ),
-                'title'     => get_the_title( $events_page ),
+                'permalink' => get_the_permalink( $projects_page ),
+                'title'     => get_the_title( $projects_page ),
                 'icon'      => false,
             ];
         }

@@ -1,0 +1,15 @@
+{?sidebar.website}
+    {>"views/single-project/sidebar__item" icon="link" sidebar_title=sidebar.website.website_title sidebar_link=sidebar.website.website_link /}
+{/sidebar.website}
+
+{?sidebar.duration}
+    {>"views/single-project/sidebar__item" icon="date-range" sidebar_title=sidebar.duration.duration_title sidebar_content=sidebar.duration.duration /}
+{/sidebar.duration}
+
+{?sidebar.portfolio}
+    {>"views/single-project/sidebar__item" icon="save" sidebar_title=sidebar.portfolio.portfolio_title sidebar_content=sidebar.portfolio.portfolio_text /}
+{/sidebar.portfolio}
+
+{?sidebar.contacts}
+    {>"views/single-project/sidebar__item" icon="user" sidebar_title=sidebar.contacts.contacts_title sidebar_content=sidebar.contacts.contacts /}
+{/sidebar.contacts}

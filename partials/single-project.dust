@@ -1,0 +1,82 @@
+{>"shared/base" /}
+
+{<content}
+    {#SingleProject}
+        <main class="main-content" id="main-content">
+            <article class="entry">
+                {>"views/single-project/hero" /}
+
+                {?Header.breadcrumbs}
+                    <div class="breadcrumbs-container section pt-4 pb-4 has-background-light-gray">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column">
+                                    {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs bc_icon="chevron-right" icon_classes="icon--small is-secondary ml-2 mr-0" /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/Header.breadcrumbs}
+
+                {>"views/single-project/logo-cloud" /}
+
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="columns is-multiline is-variable is-8 mb-8-desktop">
+                                    <div class="column is-12 is-7-desktop is-8-fullhd keep-vertical-spacing">
+                                        <header
+                                            class="single-project__entry-header mb-5 pb-5 has-border-bottom-1 has-border-grey keep-vertical-spacing">
+                                            <h1 class="entry__title mb-0">
+                                                {@title /}
+                                            </h1>
+
+                                            {?content.fields.ingress}
+                                                <p class="mt-5 mb-5 has-text-lead is-black">
+                                                    {content.fields.ingress|html}
+                                                </p>
+                                            {/content.fields.ingress}
+
+                                            {?content.fields.updated_on}
+                                                <p class="has-text-small mt-5">
+                                                    {content.fields.updated_on|html}
+                                                </p>
+                                            {/content.fields.updated_on}
+                                        </header>
+
+                                        {>"views/single-project/anchor-links" anchors=content.fields.anchors anchors_title=content.fields.anchors_title /}
+
+                                        {@content /}
+                                    </div>
+
+                                    <div
+                                        class="column is-10-tablet is-offset-1-tablet is-offset-0-desktop is-5-desktop is-4-fullhd">
+                                        {>"views/single-project/sidebar" sidebar=.sidebar /}
+                                    </div>
+                                </div>
+
+                                {?share_links}
+                                    <div class="columns is-variable is-8">
+                                        <div class="column is-offset-1-desktop">
+                                            <div class="entry__share-links">
+                                                <h2 class="h6 mt-6 mb-6 has-text-secondary-invert">
+                                                    {Strings.s.share.share_to_social_media|html}
+                                                </h2>
+
+                                                {>"ui/share-links" ul_class="is-justify-content-flex-start" li_class="mr-4" /}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {/share_links}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {>"ui/components" components=Page.components /}
+            </article>
+        </main>
+    {/SingleProject}
+{/content}
+

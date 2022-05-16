@@ -110,3 +110,5 @@ import './update.svg';
 import './remove.svg';
 import './place.svg';
 import './date-range.svg';
+import './save.svg';
+import './user.svg';

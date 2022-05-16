@@ -7,7 +7,6 @@ namespace TMS\Theme\Tredu;
 
 use DustPress\Model;
 use Geniem\ACF\Block as GeniemBlock;
-use PageContacts;
 
 /**
  * Class BlocksController
@@ -103,127 +102,137 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'                 => [],
-            'core/template'              => [],
-            'core/list'                  => [
+            'core/block'       => [],
+            'core/template'    => [],
+            'core/list'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
                 'templates'  => [
                     '',
                 ],
             ],
-            'core/heading'               => [
+            'core/heading'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Project::SLUG,
                 ],
                 'templates'  => [
                     '',
                 ],
             ],
-            'core/paragraph'             => [
+            'core/paragraph'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Project::SLUG,
                 ],
                 'templates'  => [
                     '',
                 ],
             ],
-            'acf/image-banner'           => [
+            'acf/image-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/grid'                   => [
+            'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/link-list'              => [
+            'acf/link-list'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
 
-            'acf/quote'                  => [
+            'acf/quote'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/key-figures'            => [
+            'acf/key-figures'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/subpages'               => [
+            'acf/subpages'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
             ],
-            'acf/accordion'              => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                    PostType\Program::SLUG,
-                ],
-            ],
-            'acf/video'                  => [
+            'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/image'                  => [
+            'acf/video'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/image-gallery'          => [
+            'acf/image'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/image-carousel'         => [
+            'acf/image-gallery'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/share-links'            => [
+            'acf/image-carousel' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\Project::SLUG,
+                ],
+            ],
+            'acf/share-links'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
 
@@ -231,26 +240,28 @@ class BlocksController implements Interfaces\Controller {
                 'post_types' => [
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
                 'templates'  => [
                     '',
                 ],
             ],
 
-            'acf/table'                  => [
+            'acf/table' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
 
-            'acf/material'               => [
+            'acf/material' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
 
@@ -263,51 +274,44 @@ class BlocksController implements Interfaces\Controller {
             ],
             */
 
-            'acf/map'                    => [
+            'acf/map'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            'acf/contacts'               => [
+            'acf/contacts' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
 
-            'acf/acc-icon-links'         => [
+            'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
-            'gravityforms/form'          => [
+
+            'gravityforms/form' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
                     PostType\Program::SLUG,
-                    PostType\TreduEvent::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
 
             'acf/countdown' => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                ],
-            ],
-
-            'acf/place-of-business' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

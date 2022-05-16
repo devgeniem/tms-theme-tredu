@@ -46,8 +46,9 @@ class ProjectGroup {
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $this->get_general_tab( $field_group->get_key() ),
-                        $this->get_logo_cloud_tab( $field_group->get_key() ),
                         $this->get_info_tab( $field_group->get_key() ),
+                        $this->get_logo_cloud_tab( $field_group->get_key() ),
+                        $this->get_anchor_links_tab( $field_group->get_key() ),
                         $this->get_components_tab( $field_group->get_key() ),
                         $this->get_related_posts_tab( $field_group->get_key() ),
                     ]
@@ -178,6 +179,56 @@ class ProjectGroup {
             $description_field,
             $logo_repeater_field,
         ] );
+
+        return $tab;
+    }
+
+    /**
+     * Get logo cloud tab
+     *
+     * @param string $key Field group key.
+     *
+     * @return Field\Tab
+     * @throws Exception In case of invalid option.
+     */
+    protected function get_anchor_links_tab( string $key ) : Field\Tab {
+        $strings = [
+            'tab'               => 'Ankkurilinkit',
+            'anchors'           => [
+                'title'        => 'Ankkuri',
+                'instructions' => 'Ankkurin voit syöttää esimerkiksi Otsikko-lohkoon valitsemalla lohkon aktiiviseksi ja siirtymällä sivupalkista kohtaan Edistyneet asetukset.',
+            ],
+            'anchor_link_title' => [
+                'title'        => 'Otsikko',
+                'instructions' => '',
+            ],
+            'anchor_link'       => [
+                'title'        => 'Ankkurilinkki',
+                'instructions' => '',
+            ],
+        ];
+
+        $tab = ( new Field\Tab( $strings['tab'] ) )
+            ->set_placement( 'left' );
+
+        $anchor_repeater_field = ( new Field\Repeater( $strings['anchors']['title'] ) )
+            ->set_key( "${key}_anchors" )
+            ->set_name( 'anchors' )
+            ->set_instructions( $strings['anchors']['instructions'] );
+
+        $anchor_title_field = ( new Field\Text( $strings['anchor_link_title']['title'] ) )
+            ->set_key( "${key}_anchor_link_title" )
+            ->set_name( 'anchor_link_title' )
+            ->set_instructions( $strings['anchor_link_title']['instructions'] );
+
+        $anchor_link_field = ( new Field\Text( $strings['anchor_link']['title'] ) )
+            ->set_key( "${key}_anchor_link" )
+            ->set_name( 'anchor_link' )
+            ->set_instructions( $strings['anchor_link']['instructions'] );
+
+        $anchor_repeater_field->add_fields( [ $anchor_title_field, $anchor_link_field ] );
+
+        $tab->add_field( $anchor_repeater_field );
 
         return $tab;
     }

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-664: Remove Grid & Acc icons blocks from Post #79
+
 ## [2022-06-12] - 0.9.0
 
 ### Changed

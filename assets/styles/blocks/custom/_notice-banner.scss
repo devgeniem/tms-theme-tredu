@@ -19,15 +19,19 @@
     &.has-background-primary {
         background-color: $primary;
         color: $color-white;
+
+        .notice-banner__title {
+            color: inherit !important;
+        }
     }
 
     &.has-background-secondary {
         background-color: $color-light-blueishgray !important;
         color: $color-black;
-    }
 
-    &__title {
-        color: inherit !important;
+        .notice-banner__title {
+            color: $primary !important;
+        }
     }
 
     &__content {

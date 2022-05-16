@@ -171,7 +171,6 @@ class PageGroup {
                 // Layouts\BlogArticlesLayout::class,
                 Layouts\SitemapLayout::class,
                 Layouts\NoticeBannerLayout::class,
-                // Layouts\NoticeBannerLayout::class,
                 Layouts\GravityFormLayout::class,
                 Layouts\ContactsLayout::class,
                 Layouts\AccessibilityIconLinksLayout::class,

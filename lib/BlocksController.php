@@ -263,16 +263,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
-
-            /*
             'acf/notice-banner'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
-            */
-
             'acf/map'      => [
                 'post_types' => [
                     PostType\Page::SLUG,

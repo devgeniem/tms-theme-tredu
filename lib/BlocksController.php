@@ -147,7 +147,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                     PostType\Project::SLUG,
                 ],
             ],
@@ -296,7 +295,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],

@@ -15,13 +15,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-810: Separate url for English requests #78
+- TMS-817: Display API contacts #70
 - TMS-734: Single program
 
 ## [2022-06-05] - 0.8.0
 
 ### Changed
 
-- TMS-817: Display API contacts #70
 - TMS-816: Unify image meta #67
 
 ### Added

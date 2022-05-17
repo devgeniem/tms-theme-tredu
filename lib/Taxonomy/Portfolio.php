@@ -3,19 +3,19 @@
 namespace TMS\Theme\Tredu\Taxonomy;
 
 use \TMS\Theme\Tredu\Interfaces\Taxonomy;
-use TMS\Theme\Tredu\PostType\Program;
+use \TMS\Theme\Tredu\PostType\Project;
 
 /**
  * This class defines the taxonomy.
  *
  * @package TMS\Theme\Tredu\Taxonomy
  */
-class Location implements Taxonomy {
+class Portfolio implements Taxonomy {
 
     /**
      * This defines the slug of this taxonomy.
      */
-    const SLUG = 'location';
+    const SLUG = 'portfolio';
 
     /**
      * Add hooks and filters from this controller
@@ -33,20 +33,20 @@ class Location implements Taxonomy {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Sijainnit',
-            'singular_name'         => 'Toimipiste',
-            'menu_name'             => 'Toimipisteet',
-            'all_items'             => 'Kaikki toimipiste',
-            'new_item_name'         => 'Lisää uusi toimipiste',
-            'add_new_item'          => 'Lisää uusi toimipiste',
-            'edit_item'             => 'Muokkaa toimipiste',
-            'update_item'           => 'Päivitä toimipiste',
-            'view_item'             => 'Näytä toimipiste',
-            'search_items'          => 'Etsi toimipistettä',
+            'name'                  => 'Salkut',
+            'singular_name'         => 'Salkku',
+            'menu_name'             => 'Salkut',
+            'all_items'             => 'Kaikki salkut',
+            'new_item_name'         => 'Lisää uusi salkku',
+            'add_new_item'          => 'Lisää uusi salkku',
+            'edit_item'             => 'Muokkaa salkkua',
+            'update_item'           => 'Päivitä salkku',
+            'view_item'             => 'Näytä salkku',
+            'search_items'          => 'Etsi salkkua',
             'not_found'             => 'Ei tuloksia',
             'no_terms'              => 'Ei tuloksia',
-            'items_list'            => 'Sijannit',
-            'items_list_navigation' => 'Sijannit',
+            'items_list'            => 'Salkut',
+            'items_list_navigation' => 'Salkut',
         ];
 
         $args = [
@@ -60,6 +60,6 @@ class Location implements Taxonomy {
             'show_in_rest'      => true,
         ];
 
-        register_taxonomy( self::SLUG, [ Program::SLUG ], $args );
+        register_taxonomy( self::SLUG, [ Project::SLUG ], $args );
     }
 }

@@ -11,6 +11,7 @@ use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
 use PageProject;
+use TMS\Theme\Tredu\ACF\Layouts\TreduEventsLayout;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\Taxonomy\Portoflio;
 
@@ -31,8 +32,8 @@ class PageProjectGroup {
         );
 
         add_filter(
-            'tms/acf/group/fg_page_components/fields',
-            Closure::fromCallable( [ $this, 'alter_component_fields' ] )
+            'tms/acf/field/fg_page_components_components/layouts',
+            Closure::fromCallable( [ $this, 'alter_component_layouts' ] )
         );
     }
 
@@ -89,15 +90,15 @@ class PageProjectGroup {
     }
 
     /**
-     * Hide components from PageArtist
+     * Allow only Tredu Events layout.
      *
-     * @param array $rules ACF group rules.
+     * @param array $layouts Allowed layouts.
      *
      * @return array
      */
-    protected function alter_component_fields( array $rules ) : array {
+    protected function alter_component_layouts( array $layouts ) : array {
         return [
-            // TreduEvents...
+            TreduEventsLayout::class,
         ];
     }
 }

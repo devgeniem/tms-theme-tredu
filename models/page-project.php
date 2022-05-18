@@ -4,7 +4,7 @@
  */
 
 use DustPress\Query;
-use TMS\Theme\Tredu\Traits\Pagination;
+use TMS\Theme\Tredu\Traits;
 use TMS\Theme\Tredu\PostType\Project;
 use TMS\Theme\Tredu\Taxonomy\Portfolio;
 
@@ -13,7 +13,8 @@ use TMS\Theme\Tredu\Taxonomy\Portfolio;
  */
 class PageProject extends BaseModel {
 
-    use Pagination;
+    use Traits\Pagination;
+    use Traits\Components;
 
     /**
      * Template

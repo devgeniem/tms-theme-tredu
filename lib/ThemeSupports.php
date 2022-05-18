@@ -9,6 +9,7 @@ use Closure;
 use PageContacts;
 use PageEventsSearch;
 use PageProgram;
+use PageProject;
 use Search;
 use function add_action;
 use function add_filter;
@@ -141,6 +142,10 @@ class ThemeSupports implements Interfaces\Controller {
         $vars[] = PageProgram::FILTER_PROGRAM_TYPE_QUERY_VAR;
         $vars[] = PageProgram::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR;
         $vars[] = PageProgram::FILTER_ONGOING_QUERY_VAR;
+
+        $vars[] = PageProject::FILTER_QUERY_VAR;
+        $vars[] = PageProject::SEARCH_QUERY_VAR;
+        $vars[] = PageProject::ACTIVE_ONLY_QUERY_VAR;
 
         return $vars;
     }

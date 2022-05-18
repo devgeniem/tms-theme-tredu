@@ -1,0 +1,48 @@
+.page-template-page-project {
+    .page-project {
+        &__filters {
+            width: 100%;
+        }
+
+        &__submit,
+        &__input {
+            width: 100%;
+            padding: $theme-spacing $theme-spacing-three-quarters;
+        }
+
+        &__input {
+            border-radius: 0;
+            border-color: $black;
+
+            &--portfolio {
+                font-weight: $weight-semibold;
+            }
+        }
+
+        &__active-only {
+            display: inline-grid;
+            place-content: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin: 0;
+            border: .125rem solid currentColor;
+            border-radius: 0;
+            background-color: $white;
+            color: currentColor;
+            font: inherit;
+            appearance: none;
+
+            &::before {
+                content: "";
+                visibility: hidden;
+                width: .75rem;
+                height: .75rem;
+                box-shadow: inset 1rem 1rem $secondary;
+            }
+
+            &:checked::before {
+                visibility: visible;
+            }
+        }
+    }
+}

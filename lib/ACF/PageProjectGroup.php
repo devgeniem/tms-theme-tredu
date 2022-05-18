@@ -30,11 +30,6 @@ class PageProjectGroup {
             'init',
             Closure::fromCallable( [ $this, 'register_fields' ] )
         );
-
-        add_filter(
-            'tms/acf/field/fg_page_components_components/layouts',
-            Closure::fromCallable( [ $this, 'alter_component_layouts' ] )
-        );
     }
 
     /**
@@ -42,7 +37,7 @@ class PageProjectGroup {
      */
     protected function register_fields() : void {
         try {
-            $group_title = 'Sivun asetukset';
+            $group_title = 'Sivun sisältökentät';
 
             $field_group = ( new Group( $group_title ) )
                 ->set_key( 'fg_page_project_settings' );
@@ -57,8 +52,12 @@ class PageProjectGroup {
             $key = $field_group->get_key();
 
             $strings = [
-                'ingress' => [
+                'ingress'    => [
                     'title'        => 'Ingressi',
+                    'instructions' => '',
+                ],
+                'components' => [
+                    'title'        => _x( 'Components', 'theme ACF', 'tms-theme-tredu' ),
                     'instructions' => '',
                 ],
             ];
@@ -68,11 +67,29 @@ class PageProjectGroup {
                 ->set_name( 'ingress' )
                 ->set_instructions( $strings['ingress']['instructions'] );
 
+            $components_field = ( new Field\FlexibleContent( $strings['components']['title'] ) )
+                ->set_key( "${key}_components" )
+                ->set_name( 'components' )
+                ->set_instructions( $strings['components']['instructions'] );
+
+            $component_layouts = apply_filters(
+                'tms/acf/field/' . $components_field->get_key() . '/layouts',
+                [
+                    Layouts\TreduEventsLayout::class,
+                ],
+                $key
+            );
+
+            foreach ( $component_layouts as $component_layout ) {
+                $components_field->add_layout( new $component_layout( $key ) );
+            }
+
             $field_group->add_fields(
                 apply_filters(
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $ingress_field,
+                        $components_field,
                     ]
                 )
             );
@@ -87,19 +104,6 @@ class PageProjectGroup {
         catch ( Exception $e ) {
             ( new Logger() )->error( $e->getMessage(), $e->getTraceAsString() );
         }
-    }
-
-    /**
-     * Allow only Tredu Events layout.
-     *
-     * @param array $layouts Allowed layouts.
-     *
-     * @return array
-     */
-    protected function alter_component_layouts( array $layouts ) : array {
-        return [
-            TreduEventsLayout::class,
-        ];
     }
 }
 

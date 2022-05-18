@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-736: Single program type term view #62
 
+### Changed
+
+- TMS-823: Remove EventFields sort field
+
 ## [2022-05-16] - 0.10.0
 
 ### Changed

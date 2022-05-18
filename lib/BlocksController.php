@@ -149,8 +149,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\Project::SLUG,
                 ],
             ],
             'acf/link-list'    => [
@@ -315,6 +313,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Contact::SLUG,
                     PostType\Project::SLUG,
                     PostType\TreduEvent::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 

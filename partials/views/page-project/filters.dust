@@ -18,13 +18,9 @@
                        placeholder="{strings.search.input_placeholder|html}">
             </div>
 
-            {?active_filter_data}
-                <input type="hidden" name="{active_filter_data.name|attr}"
-                       value="{active_filter_data.value|html}">
-            {/active_filter_data}
-
             <div class="mt-4 mt-5-desktop">
-                <input type="checkbox" id="active-only" name="active-only" class="page-project__active-only">
+                <input type="checkbox" id="active-only" name="active-only" class="page-project__active-only"
+                       {?search.active_only}checked{/search.active_only}>
                 <label class="is-inline-block ml-2" for="active-only">{strings.search.active_only|html}</label>
             </div>
         </div>
@@ -38,7 +34,7 @@
                 <select name="portfolio" id="portfolio"
                         class="page-project__input page-project__input--portfolio">
                     {#filters}
-                        <option value="{slug|html}">
+                        <option value="{term_id|html}" {?selected}selected{/selected}>
                             {name|html}
                         </option>
                     {/filters}

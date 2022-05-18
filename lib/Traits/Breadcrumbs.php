@@ -55,6 +55,7 @@ trait Breadcrumbs {
                 break;
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
+                break;
             case PostType\TreduEvent::SLUG:
                 $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
                 break;
@@ -178,7 +179,7 @@ trait Breadcrumbs {
     private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs['home'] = $this->get_home_link();
 
-        $projects_page = Settings::get_setting( 'tredu_projects_page' );
+        $projects_page = Settings::get_setting( 'projects_page' );
 
         if ( ! empty( $projects_page ) ) {
             $breadcrumbs[] = [

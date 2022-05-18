@@ -29,7 +29,7 @@ class PageProject extends BaseModel {
     /**
      * Project category filter name.
      */
-    const FILTER_QUERY_VAR = 'project-filter';
+    const PORTFOLIO_QUERY_VAR = 'portfolio';
 
     /**
      * Project category active only input name.
@@ -79,12 +79,21 @@ class PageProject extends BaseModel {
     }
 
     /**
+     * Get active only query var value
+     *
+     * @return mixed
+     */
+    protected static function get_active_only_query_var() {
+        return get_query_var( self::ACTIVE_ONLY_QUERY_VAR, false );
+    }
+
+    /**
      * Get filter query var value
      *
      * @return int|null
      */
     protected static function get_filter_query_var() {
-        $value = get_query_var( self::FILTER_QUERY_VAR, false );
+        $value = get_query_var( self::PORTFOLIO_QUERY_VAR, false );
 
         return ! $value
             ? null
@@ -146,22 +155,9 @@ class PageProject extends BaseModel {
         return [
             'input_search_name' => self::SEARCH_QUERY_VAR,
             'current_search'    => $this->search_data->query,
-            'action'            => get_post_type_archive_link( Project::SLUG ),
+            'action'            => get_permalink( get_the_ID() ),
+            'active_only'       => self::get_active_only_query_var(),
         ];
-    }
-
-    /**
-     * Supply data for active filter hidden input.
-     *
-     * @return string[]
-     */
-    public function active_filter_data() : ?array {
-        $active_filter = self::get_filter_query_var();
-
-        return $active_filter ? [
-            'name'  => self::FILTER_QUERY_VAR,
-            'value' => $active_filter,
-        ] : null;
     }
 
     /**
@@ -178,6 +174,16 @@ class PageProject extends BaseModel {
         if ( empty( $portfolios ) || is_wp_error( $portfolios ) ) {
             return [];
         }
+
+        $active_filter = self::get_filter_query_var();
+
+        $portfolios = array_map( function ( $portfolio ) use ( $active_filter ) {
+            if ( $portfolio->term_id === $active_filter ) {
+                $portfolio->selected = true;
+            }
+
+            return $portfolio;
+        }, $portfolios );
 
         array_unshift(
             $portfolios,
@@ -197,35 +203,29 @@ class PageProject extends BaseModel {
      */
     public function results() {
         $args = [
-            'post_type'     => Project::SLUG,
-            'paged'         => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
-            'post_per_page' => 12,
+            'post_type'      => Project::SLUG,
+            'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
+            'posts_per_page' => 12,
         ];
 
-        $portfolios = self::get_filter_query_var();
+        $active_only = self::get_active_only_query_var();
 
-        if ( ! empty( $portfolios ) ) {
-            $args['tax_query'] = [
+        if ( ! empty( $active_only ) ) {
+            $args['meta_query'] = [
                 [
-                    'taxonomy' => Portfolio::SLUG,
-                    'terms'    => $portfolios,
+                    'key'   => 'is_active',
+                    'value' => '1',
                 ],
             ];
         }
 
-        $s = self::get_search_query_var();
+        $portfolio = self::get_filter_query_var();
 
-        if ( ! empty( $s ) ) {
-            $args['s'] = $s;
-        }
-
-        $portfolio_filter = self::get_filter_query_var();
-
-        if ( ! empty( $portfolio_filter ) ) {
+        if ( ! empty( $portfolio ) ) {
             $args['tax_query'] = [
                 [
                     'taxonomy' => Portfolio::SLUG,
-                    'terms'    => $portfolio_filter,
+                    'terms'    => $portfolio,
                 ],
             ];
         }
@@ -240,12 +240,11 @@ class PageProject extends BaseModel {
 
         $this->set_pagination_data( $the_query );
 
-        $search_clause = self::get_search_query_var();
-        $is_filtered   = $search_clause || self::get_filter_query_var();
+        $is_filtered = $s || $portfolio;
 
         return [
             'posts'   => $this->format_posts( $the_query->posts ),
-            'summary' => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
+            'summary' => $is_filtered ? $this->results_summary( $the_query->found_posts, $s ) : false,
         ];
     }
 
@@ -279,7 +278,7 @@ class PageProject extends BaseModel {
      * @return void
      */
     protected function set_pagination_data( $wp_query ) : void {
-        $per_page = get_option( 'posts_per_page' );
+        $per_page = '12';
         $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
         $this->pagination           = new stdClass();

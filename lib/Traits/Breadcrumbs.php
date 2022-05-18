@@ -55,6 +55,8 @@ trait Breadcrumbs {
                 break;
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
+            case PostType\TreduEvent::SLUG:
+                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
                 break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_page( $current_id, $home_url, $breadcrumbs );
@@ -182,6 +184,37 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'permalink' => get_the_permalink( $projects_page ),
                 'title'     => get_the_title( $projects_page ),
+                'icon'      => false,
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Tredu Event
+     *
+     * @param int   $current_id  Current page ID.
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $events_page = Settings::get_setting( 'tredu_events_page' );
+
+        if ( ! empty( $events_page ) ) {
+            $breadcrumbs[] = [
+                'permalink' => get_the_permalink( $events_page ),
+                'title'     => get_the_title( $events_page ),
                 'icon'      => false,
             ];
         }

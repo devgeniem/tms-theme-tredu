@@ -176,6 +176,7 @@ class PageGroup {
                 // Layouts\AccessibilityIconLinksLayout::class,
                 Layouts\CountdownLayout::class,
                 Layouts\ShareLinksLayout::class,
+                Layouts\TreduEventsLayout::class,
             ],
             $key
         );

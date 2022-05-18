@@ -132,7 +132,7 @@
         @include from($desktop) {
             height: 43.7rem;
         }
-    
+
         .hero__inner {
             transform: none;
             position: static;
@@ -199,7 +199,7 @@
                 padding-right: 0;
                 text-overflow: ellipsis;
 
-                &::placeholder { 
+                &::placeholder {
                     color: transparent;
                     @include from($desktop) {
                         color: $black;

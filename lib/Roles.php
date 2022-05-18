@@ -131,6 +131,27 @@ class Roles implements Controller {
     ];
 
     /**
+     * Tredu Event / tredu-event-cpt.
+     *
+     * @var array
+     */
+    private $tredu_event_all_capabilities = [
+        'edit_tredu_event',
+        'read_tredu_event',
+        'delete_tredu_event',
+        'edit_others_tredu_events',
+        'delete_tredu_events',
+        'publish_tredu_events',
+        'read_private_tredu_events',
+        'delete_private_tredu_events',
+        'delete_published_tredu_events',
+        'delete_others_tredu_events',
+        'edit_private_tredu_events',
+        'edit_published_tredu_events',
+        'edit_tredu_events',
+    ];
+
+    /**
      * Program / program-cpt
      *
      * @var array
@@ -399,6 +420,7 @@ class Roles implements Controller {
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
         $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -456,6 +478,7 @@ class Roles implements Controller {
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
         $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -509,6 +532,7 @@ class Roles implements Controller {
         $role->add_caps( $this->materials_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
         $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
 
         // Taxonomies
         $role->add_caps( [ 'assign_categories', 'assign_post_tags', 'assign_material_types' ] );

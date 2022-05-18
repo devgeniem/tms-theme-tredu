@@ -1,4 +1,8 @@
 .single-project {
+    &__hero .image {
+        aspect-ratio: 32 / 9;
+    }
+
     &__logo-cloud-container {
         background-color: $color-light-blueishgray;
     }

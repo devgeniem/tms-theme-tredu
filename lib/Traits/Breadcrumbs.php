@@ -7,10 +7,9 @@
 namespace TMS\Theme\Tredu\Traits;
 
 use TMS\Theme\Tredu\PostType;
+use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
 use TMS\Theme\Tredu\Taxonomy\Category;
-use TMS\Theme\Tredu\Settings;
-use TMS\Theme\Tredu\Taxonomy\ProgramType;
 
 /**
  * Trait Breadcrumbs
@@ -57,8 +56,11 @@ trait Breadcrumbs {
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
+            case PostType\TreduEvent::SLUG:
+                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
+                break;
             case PostType\Program::SLUG:
-                $breadcrumbs = $this->format_program( $current_id, $home_url, $breadcrumbs );
+                $breadcrumbs = $this->format_page( $current_id, $home_url, $breadcrumbs );
                 break;
         }
 
@@ -82,7 +84,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'     => $primary_category[0]->name,
                 'permalink' => $primary_category[0]->permalink,
-                'icon'      => 'chevron-right',
+                'icon'      => false,
             ];
         }
 
@@ -111,20 +113,18 @@ trait Breadcrumbs {
 
         if ( ! empty( $primary_category ) ) {
             $breadcrumbs[] = [
-                'title'        => $primary_category->name,
-                'permalink'    => $primary_category->permalink,
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+                'title'     => $primary_category->name,
+                'permalink' => $primary_category->permalink,
+                'icon'      => false,
             ];
         }
         else {
             $post_type = get_post_type_object( PostType\BlogArticle::SLUG );
 
             $breadcrumbs[] = [
-                'title'        => esc_html( $post_type->labels->singular_name ),
-                'permalink'    => get_post_type_archive_link( PostType\BlogArticle::SLUG ),
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+                'title'     => esc_html( $post_type->labels->singular_name ),
+                'permalink' => get_post_type_archive_link( PostType\BlogArticle::SLUG ),
+                'icon'      => false,
             ];
         }
 
@@ -154,83 +154,15 @@ trait Breadcrumbs {
          */
         if ( trailingslashit( get_the_permalink( $current_id ) ) !== $home_url ) {
             $breadcrumbs[] = [
-                'title'        => get_the_title( $current_id ),
-                'permalink'    => false,
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
-                'is_active'    => true,
+                'title'     => get_the_title( $current_id ),
+                'permalink' => false,
+                'icon'      => false,
+                'is_active' => true,
             ];
         }
         else {
             unset( $breadcrumbs['home'] ); // Not showing frontpage on frontpage.
         }
-
-        return $breadcrumbs;
-    }
-
-    /**
-     * Format breadcrumbs for: Program
-     *
-     * @param int    $current_id  Current page ID.
-     * @param string $home_url    Home URL.
-     * @param array  $breadcrumbs Breadcrumbs array.
-     *
-     * @return array
-     */
-    private function format_program( $current_id, string $home_url, array $breadcrumbs ) : array {
-
-        $breadcrumbs['home']['icon']         = 'chevron-right';
-        $breadcrumbs['home']['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
-
-        // Program search page
-
-        $program_page = Settings::get_setting( 'program_search_program_page' );
-
-        if ( is_int( $program_page ) ) {
-            $permalink = get_permalink( $program_page );
-            $title     = get_the_title( $program_page );
-
-            $breadcrumbs[] = [
-                'title'        => $title,
-                'permalink'    => $permalink,
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
-                'is_active'    => false,
-            ];
-        }
-
-        // Program type taxonomy link
-        $primary_term_id = get_post_meta( $current_id, '_primary_term_' . ProgramType::SLUG, true );
-
-        if ( ! empty( $primary_term_id ) ) {
-            $term = get_term( $primary_term_id );
-        }
-        else {
-            $terms = wp_get_post_terms( $current_id, ProgramType::SLUG );
-            if ( ! empty( $terms ) ) {
-                $term = $terms[0];
-            }
-        }
-
-        if ( ! empty( $term ) ) {
-            $title         = $term->name;
-            $permalink     = is_int( $program_page ) ? add_query_arg( ProgramType::SLUG . urlencode( '[]' ), $term->term_id, get_permalink( $program_page ) ) : false; // phpcs:ignore
-            $breadcrumbs[] = [
-                'title'        => $title,
-                'permalink'    => $permalink,
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
-                'is_active'    => false,
-            ];
-        }
-
-        // Current program
-        $breadcrumbs[] = [
-            'title'     => get_the_title( $current_id ),
-            'permalink' => false,
-            'icon'      => false,
-            'is_active' => true,
-        ];
 
         return $breadcrumbs;
     }
@@ -247,12 +179,43 @@ trait Breadcrumbs {
     private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs['home'] = $this->get_home_link();
 
-        $projects_page = Settings::get_setting( 'tredu_projects_page' );
+        $projects_page = Settings::get_setting( 'projects_page' );
 
         if ( ! empty( $projects_page ) ) {
             $breadcrumbs[] = [
                 'permalink' => get_the_permalink( $projects_page ),
                 'title'     => get_the_title( $projects_page ),
+                'icon'      => false,
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Tredu Event
+     *
+     * @param int   $current_id  Current page ID.
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $events_page = Settings::get_setting( 'tredu_events_page' );
+
+        if ( ! empty( $events_page ) ) {
+            $breadcrumbs[] = [
+                'permalink' => get_the_permalink( $events_page ),
+                'title'     => get_the_title( $events_page ),
                 'icon'      => false,
             ];
         }
@@ -392,10 +355,9 @@ trait Breadcrumbs {
      */
     private function get_home_link() : array {
         return [
-            'title'        => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
-            'permalink'    => trailingslashit( get_home_url() ),
-            'icon'         => 'chevron-right',
-            'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+            'title'     => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
+            'permalink' => trailingslashit( get_home_url() ),
+            'icon'      => '',
         ];
     }
 }

@@ -110,6 +110,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
                 'templates'  => [
                     '',
@@ -142,11 +143,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Post::SLUG,
                     PostType\Project::SLUG,
                 ],
             ],
@@ -192,13 +195,14 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
-            'acf/video'          => [
+            'acf/video'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/image'          => [
@@ -227,11 +231,12 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
-            'acf/share-links'    => [
+            'acf/share-links'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
@@ -240,6 +245,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
                 'templates'  => [
                     '',
@@ -263,13 +269,15 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
+
+            /*
             'acf/notice-banner'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Program::SLUG,
-                    PostType\Project::SLUG,
                 ],
             ],
+            */
+
             'acf/map'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
@@ -277,6 +285,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/contacts' => [
@@ -286,13 +295,16 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
@@ -301,8 +313,8 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
-                    PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
 

@@ -149,8 +149,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\Project::SLUG,
                 ],
             ],
             'acf/link-list'    => [
@@ -189,7 +187,6 @@ class BlocksController implements Interfaces\Controller {
             'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
@@ -274,6 +271,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/notice-banner'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
             */
@@ -315,6 +313,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Contact::SLUG,
                     PostType\Project::SLUG,
                     PostType\TreduEvent::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
 

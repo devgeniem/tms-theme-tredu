@@ -5,6 +5,9 @@ use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Traits;
 use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
+use TMS\Theme\Tredu\Taxonomy\Category;
+use TMS\Theme\Tredu\Images;
+use TMS\Theme\Tredu\Taxonomy\EducationalBackground;
 
 /**
  * The SingleProgram class.
@@ -46,11 +49,15 @@ class SingleProgram extends BaseModel {
             'text'  => $this->get_apply_period( $fields ),
         ];
 
-        $info[] = [
-            'icon'  => 'learning',
-            'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
-            'text'  => $fields['audience'],
-        ];
+        if ( ! isset( $fields['show_audience'] ) || ! empty( $fields['show_audience'] ) ) {
+
+            $info[] = [
+                'icon'  => 'learning',
+                'label' => _x( 'Audience', 'program info', 'tms-theme-tredu' ),
+                'text'  => $this->get_educational_background(),
+            ];
+
+        }
 
         $info[] = [
             'icon'  => 'backpack',
@@ -86,6 +93,21 @@ class SingleProgram extends BaseModel {
      */
     protected function get_delivery_method() : ?string {
         $terms = get_the_terms( get_queried_object(), DeliveryMethod::SLUG );
+
+        if ( empty( $terms ) || is_wp_error( $terms ) ) {
+            return null;
+        }
+
+        return implode( ', ', array_map( fn( $item ) => $item->name, $terms ) );
+    }
+
+    /**
+     * Get educational backgroud
+     *
+     * @return string|null
+     */
+    protected function get_educational_background() : ?string {
+        $terms = get_the_terms( get_queried_object(), EducationalBackground::SLUG );
 
         if ( empty( $terms ) || is_wp_error( $terms ) ) {
             return null;
@@ -215,5 +237,58 @@ class SingleProgram extends BaseModel {
 		];
 
         return $strs;
+    }
+
+    /**
+     * Get selected category stories
+     */
+    public function stories() {
+
+        $stories = [];
+
+        $single = $this->get_post();
+        $fields = $single->fields;
+
+        $category = $fields['category'] ?? null;
+
+        if ( empty( $category ) ) {
+            return;
+        }
+
+        $stories['heading'] = _x( 'Graduation stories from Tredu', 'program info', 'tms-theme-tredu' );
+
+        $amount               = $fields['stories_amount'] ?? 4;
+        $stories['read_more'] = $fields['link'] ?? false;
+        $args                 = [
+            'post_type'      => 'post',
+            'posts_per_page' => $amount,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+            'cat'            => [ implode( ', ', $category ) ],
+		];
+
+		$query = new WP_Query( $args );
+
+        $posts = $query->query( $args );
+
+        foreach ( $posts as $post ) {
+
+            $image_id = get_post_thumbnail_id( $post->ID ) ?? false;
+
+            if ( ! $image_id || $image_id < 1 ) {
+                $image_id = Images::get_default_image_id();
+            }
+
+            $stories['posts'][] = [
+                'post_title'     => $post->post_title ?? '',
+                'featured_image' => $image_id,
+                'permalink'      => get_permalink( $post->ID ),
+                'post_date'      => $post->post_date ?? '',
+                'excerpt'        => $post->post_excerpt ?? '',
+            ];
+
+        }
+
+        return $stories;
     }
 }

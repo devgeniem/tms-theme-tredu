@@ -162,10 +162,10 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
         }
 
         foreach ( $contacts as $contact ) {
-            $field['choices'][ $contact->id ] = sprintf(
+            $field['choices'][ $contact['id'] ] = sprintf(
                 '%s %s',
-                $contact->field_first_names,
-                $contact->field_last_name
+                $contact['first_name'],
+                $contact['last_name']
             );
         }
 

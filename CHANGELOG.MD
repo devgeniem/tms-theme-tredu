@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-736: Single program type term view #62
+
+### Changed
+
+- TMS-823: Remove EventFields sort field
+
 ## [2022-05-16] - 0.10.0
 
 ### Changed
@@ -40,7 +46,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-820: Add AccordionContacts layout
 - TMS-737: Project CPT and Portfolio taxonomy #63
 - TMS-736: Single program type term view #62
-
 
 ## [2022-04-26] - 0.6.0
 

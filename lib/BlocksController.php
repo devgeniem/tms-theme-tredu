@@ -102,9 +102,9 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'       => [],
-            'core/template'    => [],
-            'core/list'        => [
+            'core/block'     => [],
+            'core/template'  => [],
+            'core/list'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -114,7 +114,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/heading'     => [
+            'core/heading'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -124,7 +124,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/paragraph'   => [
+            'core/paragraph' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -140,7 +140,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Program::SLUG,
                 ],
             ],
-            'acf/grid'         => [
+            'acf/grid'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                 ],
@@ -237,7 +237,7 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            'acf/material' => [
+            'acf/material'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -245,17 +245,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Program::SLUG,
                 ],
             ],
-
-            /*
-            'acf/notice-banner'  => [
+            'acf/notice-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
                 ],
             ],
-            */
-
-            'acf/map'      => [
+            'acf/map'           => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -263,7 +259,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Program::SLUG,
                 ],
             ],
-            'acf/contacts' => [
+            'acf/contacts'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -289,7 +285,7 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            'acf/countdown' => [
+            'acf/countdown'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

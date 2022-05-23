@@ -16,6 +16,7 @@ import './close.svg';
 import './date.svg';
 import './document.svg';
 import './download.svg';
+import './drawing.svg';
 import './droplet.svg';
 import './email.svg';
 import './euro.svg';

@@ -54,6 +54,7 @@ h6,
 .h6 {
     overflow-wrap: break-word;
     word-wrap: break-word;
+    word-break: break-word;
     hyphens: auto;
 
     &,
@@ -134,6 +135,16 @@ h6,
         font-family: $font-family-header;
         font-weight: $weight-semibold;
         line-height: 1.22;
+    }
+}
+
+.has-text-align-left {
+    text-align: left;
+}
+
+.has-text-align-left-desktop {
+    @include from($desktop) {
+        text-align: left;
     }
 }
 

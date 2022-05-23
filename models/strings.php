@@ -192,6 +192,10 @@ class Strings extends \DustPress\Model {
                 'application-period-ends' => _x( 'Application period ends', 'theme-frontend', 'tms-theme-tredu' ),
                 'start-date'              => _x( 'Starts', 'theme-frontend', 'tms-theme-tredu' ),
             ],
+            'program_type' => [
+                'scope'         => _x( 'Scope', 'theme-frontend', 'tms-theme-tredu' ),
+                'who_can_apply' => _x( 'Who can apply?', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
             'search'             => [
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),

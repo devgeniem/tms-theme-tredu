@@ -58,7 +58,7 @@ class Comments implements Interfaces\Controller {
      * @return string
      */
     public function amend_reply_link_class( string $link ) : string {
-        return str_replace( 'comment-reply-link', 'comment-reply-link button button-primary', $link );
+        return str_replace( 'comment-reply-link', 'comment-reply-link button is-primary', $link );
     }
 
     /**
@@ -70,8 +70,8 @@ class Comments implements Interfaces\Controller {
         return sprintf(
             '<button name="submit" type="submit" id="submit" class="button button--icon is-primary" >%s %s</button>',
             __( 'Send Comment', 'tms-theme-tredu' ),
-            '<svg class="icon icon--chevron-right icon--large is-primary-invert">
-                <use xlink:href="#icon-chevron-right"></use>
+            '<svg class="icon icon--chevron-right icon--medium">
+                <use xlink:href="#icon-arrow-right"></use>
             </svg>'
         );
     }
@@ -130,13 +130,13 @@ class Comments implements Interfaces\Controller {
                         ?>
 
                         <?php if ( ! empty( self::get_author_override_id( $comment->comment_ID ) ) ) : ?>
-                            <div class="comment__author-badge is-inline-flex ml-2">
+                            <div class="comment__author-badge is-inline-flex ml-1">
                                 <?php esc_html_e( 'Blog author', 'tms-theme-tredu' ); ?>
                             </div>
                         <?php endif; ?>
                     </div>
 
-                    <p class="comment__date mt-2 mb-0">
+                    <p class="comment__date mt-2 mb-0 has-text-weight-semibold has-text-black has-text-small">
                         <time datetime="<?php get_comment_time( 'c' ); ?>">
                             <?php
                             echo esc_html(

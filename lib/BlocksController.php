@@ -7,6 +7,7 @@ namespace TMS\Theme\Tredu;
 
 use DustPress\Model;
 use Geniem\ACF\Block as GeniemBlock;
+use TMS\Theme\Tredu\PostType\TreduEvent;
 
 /**
  * Class BlocksController
@@ -102,9 +103,9 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'       => [],
-            'core/template'    => [],
-            'core/list'        => [
+            'core/block'      => [],
+            'core/template'   => [],
+            'core/list'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -115,7 +116,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/heading'     => [
+            'core/heading'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -125,7 +126,7 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/paragraph'   => [
+            'core/paragraph'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -142,10 +143,9 @@ class BlocksController implements Interfaces\Controller {
                     PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/grid'         => [
+            'acf/grid'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                 ],
             ],
             'acf/link-list'    => [
@@ -181,12 +181,11 @@ class BlocksController implements Interfaces\Controller {
             'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                 ],
             ],
-            'acf/video'        => [
+            'acf/video'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -195,12 +194,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/image'          => [
+            'acf/image'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/image-gallery'  => [
@@ -218,7 +218,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/share-links'  => [
+            'acf/share-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
@@ -244,7 +244,7 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            'acf/material' => [
+            'acf/material'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -252,16 +252,14 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Program::SLUG,
                 ],
             ],
-
-            /*
-            'acf/notice-banner'  => [
+            'acf/notice-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Program::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
-            */
-
-            'acf/map'      => [
+            'acf/map'           => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -270,7 +268,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/contacts' => [
+            'acf/contacts'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -294,6 +292,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
+                    PostType\Program::SLUG,
                     PostType\TreduEvent::SLUG,
                 ],
             ],

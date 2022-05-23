@@ -1,7 +1,7 @@
-<button class="button-toggle js-toggle is-unstyled {?class}{class}{/class}"
+<button class="button-toggle js-toggle has-text-decoration-underline is-unstyled {?class}{class|attr}{/class}"
         aria-expanded="false"
-        aria-controls={target}
-        {?duration}data-duration={duration}{/duration}>
-    {>"ui/icon" icon="chevron-down" class="icon--medium mr-3 has-text-accent" /}
-    {text|s}
+    aria-controls={target|attr}
+    {?duration}data-duration={duration|attr}{/duration}>
+    {>"ui/icon" icon="chevron-down" class="icon--medium mr-3 is-secondary" /}
+    {text|html}
 </button>

@@ -1,5 +1,5 @@
 <div
-    class="entry__blog-info-container section pt-6 pb-6 mb-8 has-text-centered-mobile {SingleBlogArticle.classes.info_section|s}">
+    class="entry__blog-info-container section pt-6 pb-6 mb-8 has-text-centered-mobile {SingleBlogArticle.classes.info_section|attr}">
     <div class="container">
         <div class="columns">
             <div class="column is-10 is-offset-1">
@@ -14,13 +14,13 @@
                         class="entry__blog-description {^page_logo}is-offset-2 pl-7-desktop is-flex-grow-1{/page_logo}">
                         {?blog_title}
                             <p class="h4 mt-0 mb-5">
-                                {blog_title|s}
+                                {blog_title|html}
                             </p>
                         {/blog_title}
 
                         {?blog_subtitle}
                             <p class="entry__blog-subtitle has-text-lead mt-5 mb-5 mb-6-desktop">
-                                {blog_subtitle|s}
+                                {blog_subtitle|html}
                             </p>
                         {/blog_subtitle}
 
@@ -32,7 +32,7 @@
                     {?archive_link}
                         <div class="entry__blog-archive-link is-flex-shrink-0 mt-4 mt-0-desktop has-text-right-desktop">
                             <a href="{archive_link}"
-                               class="button button--icon {SingleBlogArticle.classes.info_section_button|s}">
+                               class="button button--icon {SingleBlogArticle.classes.info_section_button|attr}">
                                 {Strings.s.blog_article.archive_link_text}
                                 {>"ui/icon" icon="arrow-right" class="icon--medium" /}
                             </a>
@@ -46,13 +46,13 @@
                         {?blog_description}
                             <div class="is-blog-info-grid pt-5">
                                 <div class="entry__blog-description-text pl-7-desktop">
-                                    <p class="has-text-left-tablet mt-0 mb-5 mb-0-desktop">{blog_description|s}</p>
+                                    <p class="has-text-left-tablet mt-0 mb-5 mb-0-desktop">{blog_description|html}</p>
                                 </div>
                             </div>
                         {/blog_description}
 
                         {?blog_authors}
-                            <div class="{SingleBlogArticle.classes.info_section_authors|s}">
+                            <div class="{SingleBlogArticle.classes.info_section_authors|html}">
                                 {#blog_authors}
                                     <div
                                         class="is-blog-info-grid blog-info-grid-row-0 mt-6 mt-4-tablet mb-6 mb-4-tablet mt-6-desktop">
@@ -61,10 +61,10 @@
                                         {/featured_image}
 
                                         <div class="entry__blog-author-text pl-7-desktop">
-                                            <p class="h5 mt-4 mt-3-desktop">{post_title|s}</p>
+                                            <p class="h5 mt-4 mt-3-desktop">{post_title|html}</p>
 
                                             {?post_excerpt}
-                                                <p>{post_excerpt|s}</p>
+                                                <p>{post_excerpt|kses}</p>
                                             {/post_excerpt}
                                         </div>
                                     </div>

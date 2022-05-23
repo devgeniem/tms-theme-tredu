@@ -12,7 +12,7 @@
                                     {label|html}
                                 </div>
 
-                                <div class="single-program__info-item-text">
+                                <div class="single-program__info-item-text hyphenate">
                                     {text|html}
                                 </div>
                             </div>

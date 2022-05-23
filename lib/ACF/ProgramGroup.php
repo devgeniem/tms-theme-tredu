@@ -265,7 +265,7 @@ class ProgramGroup {
             ->set_key( "${key}_price" )
             ->set_name( 'price' )
             ->set_wrapper_width( 50 )
-            ->set_maxlength( 80 )
+            ->set_maxlength( 160 )
             ->set_instructions( $strings['price']['instructions'] );
 
         $additional_information_field = ( new Field\Text( $strings['additional_information']['title'] ) )

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-832: Add option to hide single program Apply info #83
+- TMS-833: Double the program price character limit & hyphenate program info
 - TMS-666: Single blog #60
 - TMS-736: Single program type term view #62
 

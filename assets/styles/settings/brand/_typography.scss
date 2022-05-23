@@ -148,26 +148,6 @@ h6,
     }
 }
 
-.has-text-align-center {
-    text-align: center;
-}
-
-.has-text-align-center-desktop {
-    @include from($desktop) {
-        text-align: center;
-    }
-}
-
-.has-text-align-right {
-    text-align: right;
-}
-
-.has-text-align-right-desktop {
-    @include from($desktop) {
-        text-align: right;
-    }
-}
-
 @each $base-size-breakpoint, $base-size-values in $base-sizes {
     $calc-base_size: map-get($base-size-values, "base_size");
     $calc-scale_value: map-get($base-size-values, "scale_value");

@@ -58,10 +58,6 @@ class NoticeBannerFields extends Field\Group {
                 'label'        => 'Taustaväri',
                 'instructions' => '',
             ],
-            'icon'             => [
-                'label'        => 'Ikoni',
-                'instructions' => '',
-            ],
         ];
 
         $key = $this->get_key();
@@ -94,26 +90,14 @@ class NoticeBannerFields extends Field\Group {
                 'secondary' => 'Toissijainen väri',
             ] )
             ->set_wrapper_width( 50 )
-            ->set_default_value( 'has-background-black' )
+            ->set_default_value( 'primary' )
             ->set_instructions( $strings['background_color']['instructions'] );
-
-        $icons = apply_filters( 'tms/theme/icons', [] );
-        $icons = apply_filters( 'tms/acf/field/' . $key . '_icon/choices', $icons );
-
-        $icon_field = ( new Field\Select( $strings['icon']['label'] ) )
-            ->set_key( "${key}_icon" )
-            ->set_name( 'icon' )
-            ->set_choices( $icons )
-            ->allow_null()
-            ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['icon']['instructions'] );
 
         return [
             $title_field,
             $description_field,
             $link_field,
             $background_color_field,
-            $icon_field,
         ];
     }
 }

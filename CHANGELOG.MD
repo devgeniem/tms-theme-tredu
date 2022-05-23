@@ -7,17 +7,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [2022-06-12] - 0.9.0
+### Added
+
+- TMS-736: Single program type term view #62
+
+## [2022-05-16] - 0.10.0
 
 ### Changed
 
+- TMS-820: Add AccordionContacts layout #68
+- TMS-664: Remove Grid & Acc icons blocks from Post #79
+
+## [2022-05-12] - 0.9.0
+
+### Changed
+
+- TMS-810: Separate url for English requests #78
+- TMS-817: Display API contacts #70
 - TMS-734: Single program
 
-## [2022-06-05] - 0.8.0
+## [2022-05-05] - 0.8.0
 
 ### Changed
 
-- TMS-817: Display API contacts #70
 - TMS-816: Unify image meta #67
 
 ### Added
@@ -29,6 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-820: Add AccordionContacts layout
 - TMS-737: Project CPT and Portfolio taxonomy #63
 
 ## [2022-04-26] - 0.6.0
@@ -48,6 +61,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-680: Notice banner
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 - TMS-804: Add cap copy_posts to editors & authors #53

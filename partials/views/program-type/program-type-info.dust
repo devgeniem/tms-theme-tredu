@@ -1,0 +1,49 @@
+<div class="section tax-program-type__info">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-6-tablet is-8-widescreen">
+                {?page_title}
+                    <h1 class="mt-0">{page_title|html}</h1>
+                {/page_title}
+
+                {?term_description}
+                    {term_description|kses}
+                {/term_description}
+            </div>
+
+            {@isset key1=scope key2=who_can_apply}
+                <div class="column is-6-tablet is-4-widescreen">
+                    <div class="tax-program-type__info-container has-text-centered is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
+                        {?scope}
+                            <div class="tax-program-type__info-item is-flex is-flex-direction-column is-align-items-center">
+                                {>"ui/icon" icon="drawing" /}
+
+                                <div class="tax-program-type__info-item-label">
+                                    {Strings.s.program_type.scope|html}
+                                </div>
+
+                                <div class="tax-program-type__info-item-text">
+                                    {scope|html}
+                                </div>
+                            </div>
+                        {/scope}
+
+                        {?who_can_apply}
+                            <div class="tax-program-type__info-item is-flex is-flex-direction-column is-align-items-center">
+                                {>"ui/icon" icon="learning" /}
+
+                                <div class="tax-program-type__info-item-label">
+                                    {Strings.s.program_type.who_can_apply|html}
+                                </div>
+
+                                <div class="tax-program-type__info-item-text">
+                                    {who_can_apply|html}
+                                </div>
+                            </div>
+                        {/who_can_apply}
+                    </div>
+                </div>
+            {/isset}
+        </div>
+    </div>
+</div>

@@ -4,7 +4,7 @@
             {@strtodate value=content.post_date /}
         </div>
 
-        <div class="has-width-100-until-tablet mt-3 mt-0-tablet ml-auto-tablet has-text-align-right-desktop">
+        <div class="has-width-100-until-tablet mt-3 mt-0-tablet ml-auto-tablet has-text-right-desktop">
             {?content.fields.writing_credits}
                 <div>
                     {Strings.s.single.writing_credits|html}

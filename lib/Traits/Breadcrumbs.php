@@ -250,9 +250,10 @@ trait Breadcrumbs {
 
         if ( ! empty( $events_page ) ) {
             $breadcrumbs[] = [
-                'permalink' => get_the_permalink( $events_page ),
-                'title'     => get_the_title( $events_page ),
-                'icon'      => false,
+                'permalink'    => get_the_permalink( $events_page ),
+                'title'        => get_the_title( $events_page ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
             ];
         }
 

@@ -1,57 +1,63 @@
 <div class="column is-6 is-4-desktop mb-4 mb-0-desktop">
     <div class="tredu-events__item has-height-100">
-        {?image}
+        {?event.image}
             <div class="image is-16by9" aria-hidden="true">
-                <a href="{url|url}" aria-hidden="true" tabindex="-1">
-                    <img src="{image|url}" loading="lazy" alt="" class="objectfit-image">
+                <a href="{event.url|url}" aria-hidden="true" tabindex="-1">
+                    <img src="{event.image|url}" loading="lazy" alt="" class="objectfit-image">
                 </a>
             </div>
-        {/image}
+        {/event.image}
 
         <div class="tredu-events__item-inner pt-5 pr-6 pb-6 pl-6">
             <h3 class="h5 mt-0 mb-5">
-                <a href="{url|url}" class="has-text-black">
-                    {title|html}
+                <a href="{event.url|url}" class="has-text-black">
+                    {event.post_title|html}
                 </a>
             </h3>
 
             {?type}
                 <span class="tredu-events__primary-term pill mb-4">
-                    {type|html}
+                    {event.type|html}
                 </span>
             {/type}
 
             <div class="is-flex is-align-items-center mt-2 mb-2">
-                <span class="is-flex" aria-label="{Strings.s.event.date|html}">
+                <span class="is-flex">
                     {>"ui/icon" icon="date" class="icon--large is-secondary mr-4" /}
                 </span>
 
-                {date|html}
+                <span class="is-sr-only">{Strings.s.event.date|html}</span>
+
+                {event.date|html}
             </div>
 
             <div class="is-flex is-align-items-center mt-2 mb-2">
-                <span class="is-flex" aria-label="{Strings.s.event.time|html}">
+                <span class="is-flex">
                     {>"ui/icon" icon="time" class="icon--large is-secondary mr-4" /}
                 </span>
 
-                {time|html}
+                <span class="is-sr-only">{Strings.s.event.time|html}</span>
+
+                {event.time|html}
             </div>
 
-            {?location}
+            {?event.location}
                 <div class="is-flex is-align-items-center mt-2 mb-2">
-                    <span class="is-flex" aria-label="{Strings.s.event.location|html}">
+                    <span class="is-flex">
                         {>"ui/icon" icon="globe" class="icon--large is-secondary mr-4" /}
                     </span>
 
-                    {location|html}
-                </div>
-            {/location}
+                    <span class="is-sr-only">{Strings.s.event.location|html}</span>
 
-            {?url}
-                <a href="{url|url}" class="button is-primary is-outlined is-small is-hidden-desktop mt-4">
+                    {event.location|html}
+                </div>
+            {/event.location}
+
+            {?event.url}
+                <a href="{event.url|url}" class="button is-primary is-outlined is-small is-hidden-desktop mt-4">
                     {Strings.s.common.read_more|html}
                 </a>
-            {/url}
+            {/event.url}
         </div>
     </div>
 </div>

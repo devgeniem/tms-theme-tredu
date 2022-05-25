@@ -13,6 +13,16 @@ use TMS\Theme\Tredu\Logger;
 abstract class ApiController {
 
     /**
+     * Output file path.
+     */
+    const OUTPUT_PATH = '/tmp/';
+
+    /**
+     * Output file name.
+     */
+    const OUTPUT_FILE_NAME = 'Tampere_API_response.json';
+
+    /**
      * Get API base url
      *
      * @return string|null
@@ -104,6 +114,15 @@ abstract class ApiController {
         if ( $results ) {
             return $results;
         }
+        else {
+            $file_results = $this->read_from_file();
+
+            if ( ! empty( $file_results ) ) {
+                wp_cache_set( $cache_key, $file_results, 'API', HOUR_IN_SECONDS * 6 );
+
+                return $file_results;
+            }
+        }
 
         $args = [
             'headers' => [],
@@ -123,8 +142,10 @@ abstract class ApiController {
 
         $results = $this->do_get( $this->get_slug(), [], $params, $args );
 
-        if ( $results ) {
+        if ( ! empty( $results ) ) {
             wp_cache_set( $cache_key, $results, 'API', HOUR_IN_SECONDS * 6 );
+
+            $this->save_to_file( $results );
         }
 
         return $results;
@@ -174,5 +195,33 @@ abstract class ApiController {
         parse_str( $parts['query'], $query_parts );
 
         return $query_parts;
+    }
+
+    /**
+     * Attempt to read response from file.
+     *
+     * @return false|mixed
+     */
+    protected function read_from_file() {
+        $file_contents = file_get_contents( self::OUTPUT_PATH . self::OUTPUT_FILE_NAME );
+
+        return $file_contents ? json_decode( $file_contents, true ) : false;
+    }
+
+    /**
+     * Encode data to JSON & write to file.
+     *
+     * @param array $data Data.
+     *
+     * @return bool True on success.
+     */
+    protected function save_to_file( $data ) : bool {
+        $success = ! empty( file_put_contents( self::OUTPUT_PATH . self::OUTPUT_FILE_NAME, json_encode( $data ) ) );
+
+        if ( ! $success ) {
+            ( new Logger() )->error( 'TMS\Theme\Tredu\Integrations\Tampere\ApiController: Failed to write JSON file.' );
+        }
+
+        return $success;
     }
 }

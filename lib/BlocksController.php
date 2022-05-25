@@ -305,7 +305,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
-                    PostType\Project::SLUG,
                 ],
             ],
 

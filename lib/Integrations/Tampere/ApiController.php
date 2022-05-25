@@ -126,7 +126,7 @@ abstract class ApiController {
             return $results;
         }
         else {
-            $file_results = $this->read_from_file();
+            $file_results = $this->read_from_file( "$cache_key.json" );
 
             if ( ! empty( $file_results ) ) {
                 wp_cache_set( $cache_key, $file_results, 'API', HOUR_IN_SECONDS * 6 );
@@ -156,7 +156,7 @@ abstract class ApiController {
         if ( ! empty( $results ) ) {
             wp_cache_set( $cache_key, $results, 'API', HOUR_IN_SECONDS * 6 );
 
-            $this->save_to_file( $results );
+            $this->save_to_file( $results, $filename );
         }
 
         return $results;
@@ -211,10 +211,12 @@ abstract class ApiController {
     /**
      * Attempt to read response from file.
      *
+     * @param string $filename File name.
+     *
      * @return false|mixed
      */
-    protected function read_from_file() {
-        $file = self::OUTPUT_PATH . self::OUTPUT_FILE_NAME;
+    protected function read_from_file( $filename ) {
+        $file = self::OUTPUT_PATH . $filename;
 
         if ( ! file_exists( $file ) ) {
             return false;
@@ -228,12 +230,13 @@ abstract class ApiController {
     /**
      * Encode data to JSON & write to file.
      *
-     * @param array $data Data.
+     * @param array  $data     Data.
+     * @param string $filename File name.
      *
      * @return bool True on success.
      */
-    protected function save_to_file( $data ) : bool {
-        $success = ! empty( file_put_contents( self::OUTPUT_PATH . self::OUTPUT_FILE_NAME, json_encode( $data ) ) );
+    protected function save_to_file( $data, $filename ) : bool {
+        $success = ! empty( file_put_contents( self::OUTPUT_PATH . $filename, json_encode( $data ) ) );
 
         if ( ! $success ) {
             ( new Logger() )->error( 'TMS\Theme\Tredu\Integrations\Tampere\ApiController: Failed to write JSON file.' );

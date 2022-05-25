@@ -75,6 +75,13 @@ abstract class ApiController {
             )
         );
 
+        $cache_key = "tampere-drupal-query-$request_url";
+        $response  = \wp_cache_get( $cache_key, 'API' );
+
+        if ( ! empty( $response ) ) {
+            return $response;
+        }
+
         $response = \wp_remote_get( $request_url, $request_args );
 
         if ( 200 !== \wp_remote_retrieve_response_code( $response ) ) {
@@ -83,7 +90,11 @@ abstract class ApiController {
             return false;
         }
 
-        return json_decode( \wp_remote_retrieve_body( $response ) );
+        $response_body_json = \json_decode( wp_remote_retrieve_body( $response ) );
+
+        wp_cache_set( $cache_key, $response_body_json, 'API', MINUTE_IN_SECONDS * 15 );
+
+        return $response_body_json;
     }
 
     /**
@@ -162,13 +173,6 @@ abstract class ApiController {
      * @return array
      */
     protected function do_get( string $slug, array $data = [], array $params = [], array $args = [] ) {
-        $cache_key       = $this->get_request_cache_key( [ $slug ], $data, $params, $args );
-        $cached_response = wp_cache_get( $cache_key, 'API' );
-
-        if ( ! empty( $cached_response ) ) {
-            return $cached_response;
-        }
-
         $response = $this->do_request( $slug, $params, $args );
 
         if ( ! $this->is_valid_response( $response ) ) {
@@ -179,10 +183,6 @@ abstract class ApiController {
         $query_parts = $this->get_link_query_parts(
             $response->links->next->href ?? ''
         );
-
-        if ( ! empty( $data ) ) {
-            wp_cache_set( $cache_key, $data, 'API', MINUTE_IN_SECONDS * 15 );
-        }
 
         return empty( $query_parts )
             ? $data
@@ -240,19 +240,5 @@ abstract class ApiController {
         }
 
         return $success;
-    }
-
-    /**
-     * Generate request cache key based on $args.
-     *
-     * @param array ...$args Arguments.
-     *
-     * @return string Cache key.
-     */
-    protected function get_request_cache_key( ...$args ) {
-        $args_checksum = md5( serialize( array_merge( ...$args ) ) );
-        $cache_key     = 'tampere-drupal-query-part-' . $args_checksum;
-
-        return $cache_key;
     }
 }

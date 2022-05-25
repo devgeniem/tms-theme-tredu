@@ -214,9 +214,15 @@ abstract class ApiController {
      * @return false|mixed
      */
     protected function read_from_file() {
-        $file_contents = file_get_contents( self::OUTPUT_PATH . self::OUTPUT_FILE_NAME );
+        $file = self::OUTPUT_PATH . self::OUTPUT_FILE_NAME;
 
-        return $file_contents ? json_decode( $file_contents, true ) : false;
+        if ( ! file_exists( $file ) ) {
+            return false;
+        }
+
+        $file_contents = file_get_contents( $file );
+
+        return ! empty( $file_contents ) ? json_decode( $file_contents, true ) : false;
     }
 
     /**

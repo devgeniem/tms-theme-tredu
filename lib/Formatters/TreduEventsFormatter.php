@@ -5,6 +5,7 @@
 
 namespace TMS\Theme\Tredu\Formatters;
 
+use DateTime;
 use Geniem\LinkedEvents\LinkedEventsClient;
 use Geniem\LinkedEvents\LinkedEventsException;
 use TMS\Theme\Tredu\LinkedEvents;
@@ -15,6 +16,7 @@ use TMS\Theme\Tredu\Taxonomy\DeliveryMethod;
 use TMS\Theme\Tredu\Taxonomy\Location;
 use TMS\Theme\Tredu\Taxonomy\Profession;
 use TMS\Theme\Tredu\Taxonomy\ProgramType;
+use WP_Query;
 
 /**
  * Class TreduEventsFormatter
@@ -60,7 +62,8 @@ class TreduEventsFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
     /**
      * Format events
      *
-     * @param array $events Array of events.
+     * @param array $events      Array of events.
+     * @param bool  $show_images Whether to show images.
      *
      * @return array
      */
@@ -111,14 +114,15 @@ class TreduEventsFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             'post_type'              => TreduEvent::SLUG,
             'update_post_meta_cache' => false,
             'no_found_rows'          => true,
-            'orderby'                => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
-            'posts_per_page'         => $layout['page_size'] ?? 4,
+            'orderby'                => [ 'start_date' => 'DESC', 'title' => 'ASC' ],
+            'posts_per_page'         => 100,
+//            'posts_per_page'         => $layout['page_size'] ?? 4,
         ];
 
         $date_query = $this->get_date_query( $layout );
 
         if ( ! empty( $date_query ) ) {
-            $args['meta_query'] = $date_query;
+            $args = array_merge( $args, $date_query );
         }
 
         $tax_query = $this->get_tax_query( $layout );
@@ -127,7 +131,15 @@ class TreduEventsFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             $args['tax_query'] = $tax_query;
         }
 
-        return ( new \WP_Query( $args ) )->get_posts();
+        $results = ( new WP_Query( $args ) )->get_posts();
+        $today   = array_filter( $results, [ $this, 'is_today' ] );
+        var_dump( $today );
+        $current  = array_filter( $results, [ $this, 'is_current' ] );
+        $upcoming = array_filter( $results, [ $this, 'is_upcoming' ] );
+
+        $current_and_upcoming = array_merge( $today, $current, $upcoming );
+
+        return $current_and_upcoming;
     }
 
     /**
@@ -170,26 +182,68 @@ class TreduEventsFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
      * @return array
      */
     private function get_date_query( array $layout ) : array {
-        $meta_query = [];
+        $args = [
+            'orderby'    => [ 'start_date_clause' => 'ASC', 'title' => 'ASC' ],
+            'meta_query' => [
+                'relation'          => 'AND',
+                'start_date_clause' => [
+                    'key'     => 'start_date',
+                    'compare' => 'EXISTS',
+                ],
+            ],
+        ];
 
-        if ( ! empty( $layout['start_date'] ) ) {
-            $meta_query[] = [
-                'key'     => 'start_date',
-                'compare' => '>=',
-                'type'    => 'DATE',
-                'value'   => $layout['start_date'],
-            ];
-        }
+        return $args;
+    }
 
-        if ( ! empty( $layout['end_date'] ) ) {
-            $meta_query[] = [
-                'key'     => 'end_date',
-                'compare' => '<=',
-                'type'    => 'DATE',
-                'value'   => $layout['end_date'],
-            ];
-        }
+    /**
+     * Is the item due today?
+     *
+     * @param WP_Post $item Item object.
+     *
+     * @return bool
+     */
+    protected function is_today( $item ) {
+        $format = 'Ymd';
+        $today  = ( new DateTime( 'now' ) )->setTime( 0, 0 );
 
-        return $meta_query;
+        $start_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'start_date', true ) );
+        $end_date   = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+
+        return $today === $start_date && $today <= $end_date;
+    }
+
+    /**
+     * Is the item currently running?
+     *
+     * @param WP_Post $item Item object.
+     *
+     * @return bool
+     */
+    protected function is_current( $item ) {
+        $format = 'Ymd';
+        $today  = new DateTime( 'now' );
+
+        $start_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'start_date', true ) );
+        $end_date   = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+
+        return $today > $start_date && $today <= $end_date;
+    }
+
+    /**
+     * Is the items' start date in the future?
+     *
+     * @param WP_Post $item Item object.
+     *
+     * @return bool
+     */
+    protected function is_upcoming( $item ) {
+        $format = 'Ymd';
+        $today  = new DateTime( 'now' );
+
+        $start_date = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'start_date', true ) );
+        $end_date   = DateTime::createFromFormat( $format, get_post_meta( $item->ID, 'end_date', true ) );
+
+        return $start_date > $today && $today >= $end_date;
     }
 }

@@ -284,8 +284,14 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Program::SLUG,
                 ],
             ],
-
-            'acf/countdown'  => [
+            'acf/countdown' => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/place-of-business' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

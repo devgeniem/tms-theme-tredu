@@ -1,0 +1,10 @@
+.place-of-business {
+    &__item-inner {
+        padding: $theme-spacing;
+        background-color: $color-light-gray;
+
+        @include from($desktop) {
+            padding: $theme-spacing-two $theme-spacing-oneandhalf;
+        }
+    }
+}

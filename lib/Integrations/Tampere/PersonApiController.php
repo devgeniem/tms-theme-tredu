@@ -75,6 +75,13 @@ class PersonApiController extends ApiController {
      * @return array
      */
     protected function do_get( string $slug, array $data = [], array $params = [], array $args = [] ) {
+        $cache_key       = $this->get_request_cache_key( [ $slug ], $data, $params, $args );
+        $cached_response = wp_cache_get( $cache_key, 'API' );
+
+        if ( ! empty( $cached_response ) ) {
+            return $cached_response;
+        }
+
         $response = $this->do_request( $slug, $params, $args );
 
         if ( ! $this->is_valid_response( $response ) ) {
@@ -85,6 +92,10 @@ class PersonApiController extends ApiController {
             $data,
             $this->result_set_callback( $response->data ?? [] )
         );
+
+        if ( ! empty( $data ) ) {
+            wp_cache_set( $cache_key, $data, 'API', MINUTE_IN_SECONDS * 15 );
+        }
 
         $query_parts = $this->get_link_query_parts(
             $response->links->next->href ?? ''

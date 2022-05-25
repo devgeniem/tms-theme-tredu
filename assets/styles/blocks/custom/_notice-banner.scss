@@ -1,4 +1,39 @@
 .notice-banner {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        @include from($desktop) {
+            content: "";
+            position: absolute;
+            top: -11rem;
+            right: -9rem;
+            width: 17.75rem;
+            height: 17.75rem;
+            background-image: url('../images/hero-stripes.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &.has-background-primary {
+        background-color: $primary;
+        color: $color-white;
+
+        .notice-banner__title {
+            color: inherit !important;
+        }
+    }
+
+    &.has-background-secondary {
+        background-color: $color-light-blueishgray !important;
+        color: $color-black;
+
+        .notice-banner__title {
+            color: $primary !important;
+        }
+    }
+
     &__content {
         display: flex;
         flex-direction: column-reverse;
@@ -21,16 +56,15 @@
         }
     }
 
-    &__link-icon {
-        margin-bottom: 0 !important; // sass-lint:disable-line no-important
-        transition: transform $easing $speed;
-    }
-
     &__link {
-        &:hover,
+        color: inherit;
+
         &:focus {
-            .notice-banner__link-icon {
-                transform: translateX(0.118rem);
+            outline: none;
+
+            > p {
+                outline: .125rem dashed currentColor !important;
+                outline-offset: .25rem;
             }
         }
     }

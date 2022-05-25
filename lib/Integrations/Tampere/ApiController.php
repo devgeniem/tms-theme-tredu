@@ -18,11 +18,6 @@ abstract class ApiController {
     const OUTPUT_PATH = '/tmp/';
 
     /**
-     * Output file name.
-     */
-    const OUTPUT_FILE_NAME = 'Tampere_API_response.json';
-
-    /**
      * Get API base url
      *
      * @return string|null
@@ -75,8 +70,8 @@ abstract class ApiController {
             )
         );
 
-        $cache_key = "tampere-drupal-query-$request_url";
-        $response  = \wp_cache_get( $cache_key, 'API' );
+        $cache_key = 'tampere-drupal-' . md5( $request_url );
+        $response  = \wp_cache_get( $cache_key, 'API', true );
 
         if ( ! empty( $response ) ) {
             return $response;
@@ -92,7 +87,9 @@ abstract class ApiController {
 
         $response_body_json = \json_decode( wp_remote_retrieve_body( $response ) );
 
-        wp_cache_set( $cache_key, $response_body_json, 'API', MINUTE_IN_SECONDS * 15 );
+        if ( ! empty( $response_body_json ) ) {
+            wp_cache_set( $cache_key, $response_body_json, 'API', MINUTE_IN_SECONDS * 15 );
+        }
 
         return $response_body_json;
     }
@@ -120,7 +117,7 @@ abstract class ApiController {
             $cache_key .= '-' . pll_current_language();
         }
 
-        $results = wp_cache_get( $cache_key, 'API' );
+        $results = \wp_cache_get( $cache_key, 'API' );
 
         if ( $results ) {
             return $results;
@@ -129,7 +126,7 @@ abstract class ApiController {
             $file_results = $this->read_from_file( "$cache_key.json" );
 
             if ( ! empty( $file_results ) ) {
-                wp_cache_set( $cache_key, $file_results, 'API', HOUR_IN_SECONDS * 6 );
+                \wp_cache_set( $cache_key, $file_results, 'API', HOUR_IN_SECONDS * 6 );
 
                 return $file_results;
             }
@@ -156,7 +153,7 @@ abstract class ApiController {
         if ( ! empty( $results ) ) {
             wp_cache_set( $cache_key, $results, 'API', HOUR_IN_SECONDS * 6 );
 
-            $this->save_to_file( $results, $filename );
+            $this->save_to_file( $results, "$cache_key.json" );
         }
 
         return $results;

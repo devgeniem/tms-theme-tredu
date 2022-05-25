@@ -18,11 +18,6 @@ abstract class ApiController {
     const OUTPUT_PATH = '/tmp/';
 
     /**
-     * Output file name.
-     */
-    const OUTPUT_FILE_NAME = 'Tampere_API_response.json';
-
-    /**
      * Get API base url
      *
      * @return string|null
@@ -75,6 +70,13 @@ abstract class ApiController {
             )
         );
 
+        $cache_key = 'tampere-drupal-' . md5( $request_url );
+        $response  = \wp_cache_get( $cache_key, 'API', true );
+
+        if ( ! empty( $response ) ) {
+            return $response;
+        }
+
         $response = \wp_remote_get( $request_url, $request_args );
 
         if ( 200 !== \wp_remote_retrieve_response_code( $response ) ) {
@@ -83,7 +85,13 @@ abstract class ApiController {
             return false;
         }
 
-        return json_decode( \wp_remote_retrieve_body( $response ) );
+        $response_body_json = \json_decode( wp_remote_retrieve_body( $response ) );
+
+        if ( ! empty( $response_body_json ) ) {
+            wp_cache_set( $cache_key, $response_body_json, 'API', MINUTE_IN_SECONDS * 15 );
+        }
+
+        return $response_body_json;
     }
 
     /**
@@ -109,16 +117,16 @@ abstract class ApiController {
             $cache_key .= '-' . pll_current_language();
         }
 
-        $results = wp_cache_get( $cache_key, 'API' );
+        $results = \wp_cache_get( $cache_key, 'API' );
 
         if ( $results ) {
             return $results;
         }
         else {
-            $file_results = $this->read_from_file();
+            $file_results = $this->read_from_file( "$cache_key.json" );
 
             if ( ! empty( $file_results ) ) {
-                wp_cache_set( $cache_key, $file_results, 'API', HOUR_IN_SECONDS * 6 );
+                \wp_cache_set( $cache_key, $file_results, 'API', HOUR_IN_SECONDS * 6 );
 
                 return $file_results;
             }
@@ -145,7 +153,7 @@ abstract class ApiController {
         if ( ! empty( $results ) ) {
             wp_cache_set( $cache_key, $results, 'API', HOUR_IN_SECONDS * 6 );
 
-            $this->save_to_file( $results );
+            $this->save_to_file( $results, "$cache_key.json" );
         }
 
         return $results;
@@ -162,13 +170,6 @@ abstract class ApiController {
      * @return array
      */
     protected function do_get( string $slug, array $data = [], array $params = [], array $args = [] ) {
-        $cache_key       = $this->get_request_cache_key( [ $slug ], $data, $params, $args );
-        $cached_response = wp_cache_get( $cache_key, 'API' );
-
-        if ( ! empty( $cached_response ) ) {
-            return $cached_response;
-        }
-
         $response = $this->do_request( $slug, $params, $args );
 
         if ( ! $this->is_valid_response( $response ) ) {
@@ -179,10 +180,6 @@ abstract class ApiController {
         $query_parts = $this->get_link_query_parts(
             $response->links->next->href ?? ''
         );
-
-        if ( ! empty( $data ) ) {
-            wp_cache_set( $cache_key, $data, 'API', MINUTE_IN_SECONDS * 15 );
-        }
 
         return empty( $query_parts )
             ? $data
@@ -211,10 +208,12 @@ abstract class ApiController {
     /**
      * Attempt to read response from file.
      *
+     * @param string $filename File name.
+     *
      * @return false|mixed
      */
-    protected function read_from_file() {
-        $file = self::OUTPUT_PATH . self::OUTPUT_FILE_NAME;
+    protected function read_from_file( $filename ) {
+        $file = self::OUTPUT_PATH . $filename;
 
         if ( ! file_exists( $file ) ) {
             return false;
@@ -228,31 +227,18 @@ abstract class ApiController {
     /**
      * Encode data to JSON & write to file.
      *
-     * @param array $data Data.
+     * @param array  $data     Data.
+     * @param string $filename File name.
      *
      * @return bool True on success.
      */
-    protected function save_to_file( $data ) : bool {
-        $success = ! empty( file_put_contents( self::OUTPUT_PATH . self::OUTPUT_FILE_NAME, json_encode( $data ) ) );
+    protected function save_to_file( $data, $filename ) : bool {
+        $success = ! empty( file_put_contents( self::OUTPUT_PATH . $filename, json_encode( $data ) ) );
 
         if ( ! $success ) {
             ( new Logger() )->error( 'TMS\Theme\Tredu\Integrations\Tampere\ApiController: Failed to write JSON file.' );
         }
 
         return $success;
-    }
-
-    /**
-     * Generate request cache key based on $args.
-     *
-     * @param array ...$args Arguments.
-     *
-     * @return string Cache key.
-     */
-    protected function get_request_cache_key( ...$args ) {
-        $args_checksum = md5( serialize( array_merge( ...$args ) ) );
-        $cache_key     = 'tampere-drupal-query-part-' . $args_checksum;
-
-        return $cache_key;
     }
 }

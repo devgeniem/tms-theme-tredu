@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-05-23] - 0.11.0
+
 ### Added
 
 - TMS-832: Add option to hide single program Apply info #83
@@ -16,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- TMS-823: Remove EventFields sort field
+- TMS-823: Remove EventFields sort field #81
 
 ## [2022-05-16] - 0.10.0
 

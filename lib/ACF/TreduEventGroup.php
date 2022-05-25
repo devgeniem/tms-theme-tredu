@@ -9,8 +9,6 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
-use Geniem\LinkedEvents\LinkedEventsClient;
-use Geniem\LinkedEvents\LinkedEventsException;
 use TMS\Theme\Tredu\ACF\Layouts;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
@@ -226,7 +224,7 @@ class TreduEventGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
-                Layouts\EventsLayout::class,
+                // Layouts\EventsLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\GravityFormLayout::class,
                 Layouts\ImageBannerLayout::class,

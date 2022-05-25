@@ -12,7 +12,7 @@
 
         <div class="columns is-multiline">
             {#events}
-                {>"ui/tredu-event" /}
+                {>"ui/tredu-event" event=. /}
             {/events}
         </div>
 

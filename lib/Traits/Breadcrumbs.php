@@ -234,6 +234,7 @@ trait Breadcrumbs {
             'icon'      => false,
             'is_active' => true,
         ];
+
         return $breadcrumbs;
     }
 

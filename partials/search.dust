@@ -7,8 +7,8 @@
                 <div class="section pb-0">
                     <div class="container">
                         <div class="columns">
-                            <div class="column is-10 is-offset-1 has-text-centered">
-                                <h1>
+                            <div class="column is-10 is-offset-1">
+                                <h1 class="mb-0">
                                     {page_title|s}
                                 </h1>
                             </div>

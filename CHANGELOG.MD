@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - TMS-836: Tampere API Performance optimizations #86
+- TMS-838: Disable navigation top level parent links #87
 
 ## [2022-05-23] - 0.11.0
 

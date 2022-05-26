@@ -59,13 +59,13 @@ $navbar-item-dropdown-accent-color: $primary !default;
         padding-left: 1.1764rem;
         color: $navbar-item-navbar-link-color !important; // sass-lint:disable-line no-important
         background-color: transparent !important; // sass-lint:disable-line no-important
-        
+
         &:hover {
             text-decoration: underline;
         }
 
         &:active,
-        &:focus{
+        &:focus {
             outline-offset: 0;
         }
     }
@@ -87,7 +87,7 @@ $navbar-item-dropdown-accent-color: $primary !default;
 
         .dropdown-toggler {
             margin-right: 0 !important; // sass-lint:disable-line no-important
-            &:focus{
+            &:focus {
                 text-decoration: underline;
                 outline: .125rem solid $color-black;
                 outline-offset: .25rem;
@@ -96,14 +96,12 @@ $navbar-item-dropdown-accent-color: $primary !default;
         }
 
         .navbar-dropdown {
-            padding: 3rem 0 2rem;
+            padding: 1.5rem 0 2rem;
             border-radius: 0;
             border-top: 0;
+
             &__parent-link {
-                font-weight: 600;
-                color: $navbar-item-dropdown-accent-color !important; // sass-lint:disable-line no-important
-                text-transform: none;
-                border-bottom: 1px solid $navbar-item-grid-item-border-color;
+                display: none !important;
             }
 
             .icon {

@@ -25,6 +25,8 @@ class Header extends Model {
             10,
             2
         );
+
+        add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
     }
 
     /**

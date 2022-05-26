@@ -1,7 +1,2 @@
-{?hero}
-    <section class="single-project__hero">
-        <div class="image">
-            {@image id=hero size="fullhd" class="objectfit-image" alt="" /}
-        </div>
-    </section>
-{/hero}
+<section
+    class="page__hero section is-relative pt-0 pb-0 has-background-cover" {@inlinebg id=hero size="fullhd" /}></section>

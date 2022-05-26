@@ -407,12 +407,12 @@ class ProjectGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
-                // TODO: Lisätään tapahtumanostot
+                // Layouts\EventsLayout::class,
+                Layouts\ImageCarouselLayout::class,
                 Layouts\CallToActionLayout::class,
                 Layouts\LogoWallLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\SocialMediaLayout::class,
-                Layouts\ImageCarouselLayout::class,
                 Layouts\MapLayout::class,
                 Layouts\GridLayout::class,
                 Layouts\ImageBannerLayout::class,

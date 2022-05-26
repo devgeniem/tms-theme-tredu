@@ -56,7 +56,7 @@ class PageProject extends BaseModel {
      * @return false|int
      */
     public function hero() {
-        return get_post_thumbnail_id();
+        return has_post_thumbnail() ? get_post_thumbnail_id() : false;
     }
 
     /**

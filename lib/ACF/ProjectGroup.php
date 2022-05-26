@@ -408,6 +408,7 @@ class ProjectGroup {
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
                 // Layouts\EventsLayout::class,
+                Layouts\ImageCarouselLayout::class,
                 Layouts\CallToActionLayout::class,
                 Layouts\LogoWallLayout::class,
                 Layouts\IconLinksLayout::class,

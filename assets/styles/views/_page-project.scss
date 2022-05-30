@@ -15,7 +15,15 @@
             border-color: $black;
 
             &--portfolio {
+                height: 3.25rem;
+                padding-top: 0;
+                padding-bottom: 0;
                 font-weight: $weight-semibold;
+
+                @include from($tablet) {
+                    height: 100%;
+                    max-height: 3.7rem;
+                }
             }
         }
 

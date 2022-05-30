@@ -285,6 +285,8 @@ class TreduEventGroup {
             [
                 // Layouts\EventsLayout::class,
                 Layouts\IconLinksLayout::class,
+                Layouts\ShareLinksLayout::class,
+                Layouts\ContactsLayout::class,
                 Layouts\GravityFormLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\TextBlockLayout::class,

@@ -65,7 +65,7 @@
                                         <div class="contacts is-align-wide mt-8">
                                             <div class="columns is-tablet is-multiline is-variable is-6">
                                                 {#contacts}
-                                                    {>"shared/contact" /}
+                                                    {>"shared/contact" column_class="is-6-tablet is-offset-0-tablet is-4-desktop" /}
                                                 {/contacts}
                                             </div>
                                         </div>

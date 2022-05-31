@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- TMS-843: Fix contact block & & layout alignment #89
+
+## [2022-05-30] - 0.12.0
+
 ### Added
 
 - TMS-671: Add PlaceOfBusiness block #66

@@ -54,6 +54,9 @@ trait Breadcrumbs {
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
                 break;
+            case 'search':
+                $breadcrumbs = $this->format_search( $breadcrumbs );
+                break;
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
@@ -277,6 +280,27 @@ trait Breadcrumbs {
             'permalink' => get_term_link( $queried_object->term_id ),
             'icon'      => false,
             'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Search
+     *
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_search( array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $breadcrumbs[] = [
+            'title'        => __( 'Search from site', 'tms-theme-tredu' ),
+            'permalink'    => false,
+            'icon'         => 'chevron-right',
+            'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
+            'is_active'    => true,
         ];
 
         return $breadcrumbs;

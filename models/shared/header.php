@@ -187,7 +187,7 @@ class Header extends Model {
     public function breadcrumbs() : array {
         $current_object = get_queried_object();
 
-        if ( $current_object === null || empty( $current_object ) ) {
+        if ( ( $current_object === null || empty( $current_object ) ) && ! is_search() ) {
             return [];
         }
 
@@ -207,6 +207,9 @@ class Header extends Model {
         }
         elseif ( is_post_type_archive() ) {
             $current_type = 'post-type-archive';
+        }
+        elseif ( is_search() ) {
+            $current_type = 'search';
         }
 
         $breadcrumbs = $this->prepare_by_type( $current_type, $current_id, $home_url, $breadcrumbs );

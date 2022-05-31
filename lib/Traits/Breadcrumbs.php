@@ -54,6 +54,9 @@ trait Breadcrumbs {
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
                 break;
+            case 'search':
+                $breadcrumbs = $this->format_search( $breadcrumbs );
+                break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_program( $current_id, $home_url, $breadcrumbs );
                 break;
@@ -211,7 +214,7 @@ trait Breadcrumbs {
 
         if ( ! empty( $term ) ) {
             $title         = $term->name;
-            $permalink = is_int( $program_page ) ? add_query_arg( ProgramType::SLUG . urlencode( '[]' ), $term->term_id,  get_permalink( $program_page ) ) : false; // phpcs:ignore
+            $permalink     = is_int( $program_page ) ? add_query_arg( ProgramType::SLUG . urlencode( '[]' ), $term->term_id, get_permalink( $program_page ) ) : false; // phpcs:ignore
             $breadcrumbs[] = [
                 'title'        => $title,
                 'permalink'    => $permalink,
@@ -222,13 +225,14 @@ trait Breadcrumbs {
         }
 
         // Current program
-            $breadcrumbs[] = [
-                'title'     => get_the_title( $current_id ),
-                'permalink' => false,
-                'icon'      => false,
-                'is_active' => true,
-            ];
-			return $breadcrumbs;
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
     }
 
     /**
@@ -270,6 +274,27 @@ trait Breadcrumbs {
             'permalink' => get_term_link( $queried_object->term_id ),
             'icon'      => false,
             'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Search
+     *
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_search( array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $breadcrumbs[] = [
+            'title'        => __( 'Search from site', 'tms-theme-tredu' ),
+            'permalink'    => false,
+            'icon'         => 'chevron-right',
+            'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
+            'is_active'    => true,
         ];
 
         return $breadcrumbs;

@@ -28,6 +28,13 @@ class Search extends BaseModel {
     const SEARCH_END_DATE = 'search_end_date';
 
     /**
+     * This holds the search results title.
+     *
+     * @var string
+     */
+    private static $search_results_title = '';
+
+    /**
      * Hooks
      *
      * @return void
@@ -37,6 +44,14 @@ class Search extends BaseModel {
         add_filter( 'redipress/scorer', [ __CLASS__, 'set_search_scorer' ], 10, 1 );
         add_filter( 'redipress/schema_fields', [ __CLASS__, 'set_fields_weight' ], 10, 1 );
         add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
+        add_filter( 'the_seo_framework_title_from_generation', Closure::fromCallable( [ __CLASS__, 'alter_title' ] ) );
+    }
+
+    /**
+     * Alter head section title.
+     */
+    private static function alter_title() : string {
+        return self::$search_results_title;
     }
 
     /**
@@ -83,6 +98,7 @@ class Search extends BaseModel {
             'filter_start_date'   => __( 'Start date', 'tms-theme-tredu' ),
             'filter_end_date'     => __( 'End date', 'tms-theme-tredu' ),
             'filter_results'      => __( 'Filter results', 'tms-theme-tredu' ),
+            'search'              => __( 'Search from site', 'tms-theme-tredu' ),
         ];
     }
 
@@ -99,8 +115,12 @@ class Search extends BaseModel {
         }
 
         return [
-            'title' => __( 'Looking for events? Use the event search!', 'tms-theme-tredu' ),
-            'url'   => get_the_permalink( $page ),
+            'title' => Settings::get_setting( 'events_search_title' ),
+            'text'  => Settings::get_setting( 'events_search_text' ),
+            'link'  => [
+                'url'   => get_post_permalink( $page ),
+                'title' => __( 'Program search', 'tms-theme-tredu' ),
+            ],
         ];
     }
 
@@ -227,10 +247,23 @@ class Search extends BaseModel {
         global $wp_query;
 
         $search_clause = get_search_query();
-        $result_count  = $wp_query->found_posts;
+        $result_count  = $wp_query->have_posts() ? $wp_query->found_posts : 0;
 
-        if ( $wp_query->have_posts() ) {
-            $results_text = sprintf(
+        return [
+            'summary'    => $this->search_results_title( $result_count, $search_clause ),
+            'posts'      => $wp_query->have_posts() ? $this->enrich_results( $wp_query->posts ) : [],
+            'pagination' => [
+                'paged'          => $wp_query->query_vars['paged'] > 1 ? $wp_query->query_vars['paged'] : 1,
+                'posts_per_page' => $wp_query->query_vars['posts_per_page'],
+                'found_posts'    => $wp_query->found_posts,
+                'max_num_pages'  => $wp_query->max_num_pages,
+            ],
+        ];
+    }
+
+    private function search_results_title( $result_count, $search_clause ) {
+        if ( $result_count > 0 ) {
+            $summary = self::$search_results_title = sprintf(
             // translators: 1. placeholder is number of search results, 2. placeholder contains the search term(s).
                 _nx(
                     '%1$1s result found for "%2$2s"',
@@ -244,19 +277,10 @@ class Search extends BaseModel {
             );
         }
         else {
-            $results_text = __( 'No search results', 'tms-theme-tredu' );
+            $summary = self::$search_results_title = __( 'No search results', 'tms-theme-tredu' );
         }
 
-        return [
-            'summary'    => $results_text,
-            'posts'      => $wp_query->have_posts() ? $this->enrich_results( $wp_query->posts ) : [],
-            'pagination' => [
-                'paged'          => $wp_query->query_vars['paged'] > 1 ? $wp_query->query_vars['paged'] : 1,
-                'posts_per_page' => $wp_query->query_vars['posts_per_page'],
-                'found_posts'    => $wp_query->found_posts,
-                'max_num_pages'  => $wp_query->max_num_pages,
-            ],
-        ];
+        return $summary;
     }
 
     /**

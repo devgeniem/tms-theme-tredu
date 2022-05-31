@@ -6,6 +6,10 @@ $search-item-hover: $primary-dark !default;
         border-radius: 0;
         border-color: $black;
     }
+
+    &__events-column {
+        background-color: $color-light-blueishgray;
+    }
 }
 
 .search-filters {
@@ -35,6 +39,8 @@ $search-item-hover: $primary-dark !default;
 }
 
 .search-item {
+    background-color: $color-light-gray;
+
     &__inner {
         @include from($desktop) {
             margin-right: 8.06rem;
@@ -54,14 +60,9 @@ $search-item-hover: $primary-dark !default;
         }
     }
 
-    &__title {
-        a {
-            text-decoration: underline;
-        }
-    }
-
     &__meta-item {
-        font-size: $size-7;
+        color: $black;
+        font-size: 90%;
         font-weight: $weight-medium;
 
         &:not(:first-child) {
@@ -75,6 +76,10 @@ $search-item-hover: $primary-dark !default;
 
     &__meta-container {
         .breadcrumbs__nav {
+            .icon {
+                fill: $black !important;
+            }
+
             li {
                 a {
                     padding-right: .25rem;

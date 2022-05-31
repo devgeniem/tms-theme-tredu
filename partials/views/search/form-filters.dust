@@ -55,7 +55,7 @@
 
                                 <button type="submit"
                                         class="search-form__button button button--icon pt-4 pr-7 pb-4 pl-7 is-pulled-right-desktop is-secondary">
-                                    {Strings.s.header.search|s}
+                                    {form.search|html}
                                     {>"ui/icon" icon="search" class="icon--medium"  /}
                                 </button>
                             </div>

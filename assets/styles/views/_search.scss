@@ -12,9 +12,13 @@ $search-item-hover: $primary-dark !default;
     }
 
     &__submit-wrapper {
-        @include until($tablet) {
-            width: 100%;
-            margin-top: $theme-spacing;
+        width: 100%;
+        margin-top: $theme-spacing;
+
+        @include from($tablet) {
+            display: inline;
+            width: auto;
+            margin-top: 0;
         }
     }
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
 "POT-Creation-Date: 2022-05-31 13:29+0300\n"
-"PO-Revision-Date: 2022-05-31 13:30+0300\n"
+"PO-Revision-Date: 2022-05-31 16:39+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -377,7 +377,7 @@ msgstr ""
 
 #: lib/Traits/Breadcrumbs.php:293 models/search.php:101
 msgid "Search from site"
-msgstr "Hae sivustolta"
+msgstr "Etsi sivustolta"
 
 #: lib/Traits/Breadcrumbs.php:384
 msgctxt "Breadcrumbs"
@@ -470,11 +470,11 @@ msgstr[1] "%1$1s tulosta haulle “%2$2s”"
 
 #: models/page-program.php:192
 msgid "Search for program"
-msgstr "Hae opintoa"
+msgstr "Etsi opintoa"
 
 #: models/page-program.php:193
 msgid "Search"
-msgstr "Hae"
+msgstr "Etsi"
 
 #: models/page-program.php:194
 msgid "Search query"
@@ -599,7 +599,7 @@ msgstr "Valittu kieli: "
 #: models/strings.php:50 models/strings.php:158 models/strings.php:159
 msgctxt "theme-frontend"
 msgid "Search"
-msgstr "Hae"
+msgstr "Etsi"
 
 #: models/strings.php:51 models/strings.php:52 models/strings.php:53
 #: models/strings.php:54

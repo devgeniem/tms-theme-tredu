@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="search-filters__filter">
-                                <div class="is-inline-block">
+                                <div class="is-inline-block mb-2">
                                     <label for="start-date">
                                         <span class="is-sr-only">{form.filter_start_date|s}</span>
                                     </label>
@@ -39,7 +39,7 @@
                                                 data-locale="{Header.site_locale}"></duet-date-picker>
                                         </span>
                                 </div>
-                                <div class="is-inline-block">
+                                <div class="is-inline-block mb-2">
                                     <label for="end-date">
                                         <span class="is-sr-only">{form.filter_end_date|s}</span>
                                     </label>
@@ -52,12 +52,13 @@
                                         </span>
                                 </div>
 
-
-                                <button type="submit"
-                                        class="search-form__button button button--icon pt-4 pr-7 pb-4 pl-7 is-pulled-right-desktop is-secondary">
-                                    {form.search|html}
-                                    {>"ui/icon" icon="search" class="icon--medium"  /}
-                                </button>
+                                <div class="search__submit-wrapper">
+                                    <button type="submit"
+                                            class="search-form__button button button--icon pt-4 pr-7 pb-4 pl-7 is-pulled-right-desktop is-secondary">
+                                        {form.search|html}
+                                        {>"ui/icon" icon="search" class="icon--medium"  /}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

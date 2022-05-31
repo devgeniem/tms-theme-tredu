@@ -8,7 +8,8 @@
                     </label>
 
                     <div class="is-flex">
-                        <input type="text" name="s" id="search-input" value="{form.search_term|s}"
+                        <input type="text" name="s" id="search-input" value="{form.search_term|html}"
+                               placeholder="{Strings.s.header.search_input_placeholder|html}"
                                class="search__term"
                                autocomplete="off">
                     </div>

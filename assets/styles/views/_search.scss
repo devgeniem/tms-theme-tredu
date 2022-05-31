@@ -5,6 +5,17 @@ $search-item-hover: $primary-dark !default;
         width: 60%;
         border-radius: 0;
         border-color: $black;
+
+        &::placeholder {
+            color: $text;
+        }
+    }
+
+    &__submit-wrapper {
+        @include until($tablet) {
+            width: 100%;
+            margin-top: $theme-spacing;
+        }
     }
 
     &__events-column {

@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-843: Fix contact
+### Changed
+
+- TMS-843: Fix contact block & & layout alignment #89
 
 ## [2022-05-30] - 0.12.0
 

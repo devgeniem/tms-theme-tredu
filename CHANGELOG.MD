@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- TMS-847: Prevent double slashes on api url #90
 - TMS-843: Fix contact block & layout alignment, restore Gutenberg text align classes #89
 - TMS-850: Reduce padding on quote with white background #91
 

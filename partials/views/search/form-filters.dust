@@ -1,11 +1,11 @@
-<div class="section pt-6 pb-6 {template_classes.search_form|s}">
+<div class="section pt-0 pb-6">
     <div class="container">
         <div class="columns">
             <div class="column is-10 is-offset-1">
                 <div class="search-filters">
                     <div class="search-filters">
                         <div class="search-filters__group">
-                            <div class="search-filters__label h6 mb-2">
+                            <div class="search-filters__label has-text-black has-text-weight-normal mb-2">
                                 {form.filter_by_post_type}
                             </div>
                             <div class="is-flex is-flex-wrap-wrap">
@@ -22,12 +22,12 @@
                         </div>
 
                         <div class="search-filters__group mt-4">
-                            <div class="search-filters__label h6 mb-2">
+                            <div class="search-filters__label has-text-black has-text-weight-normal mb-2">
                                 {form.filter_by_date}
                             </div>
 
                             <div class="search-filters__filter">
-                                <div class="is-inline-block">
+                                <div class="is-inline-block mb-2">
                                     <label for="start-date">
                                         <span class="is-sr-only">{form.filter_start_date|s}</span>
                                     </label>
@@ -39,7 +39,7 @@
                                                 data-locale="{Header.site_locale}"></duet-date-picker>
                                         </span>
                                 </div>
-                                <div class="is-inline-block">
+                                <div class="is-inline-block mb-2">
                                     <label for="end-date">
                                         <span class="is-sr-only">{form.filter_end_date|s}</span>
                                     </label>
@@ -52,10 +52,13 @@
                                         </span>
                                 </div>
 
-                                <button type="submit"
-                                        class="search-form__button button is-pulled-right-desktop {template_classes.search_filter_button|s}">
-                                    {form.filter_results|s}
-                                </button>
+                                <div class="search__submit-wrapper">
+                                    <button type="submit"
+                                            class="search-form__button button button--icon pt-4 pr-7 pb-4 pl-7 is-pulled-right-desktop is-secondary">
+                                        {form.search|html}
+                                        {>"ui/icon" icon="search" class="icon--medium"  /}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

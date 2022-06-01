@@ -1,4 +1,15 @@
 .quote {
+    &.has-background-white {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+
+        .quote__content {
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+
     &.has-background-primary {
         .quote__content {
             color: $color-blue;

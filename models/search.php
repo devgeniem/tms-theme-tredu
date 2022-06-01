@@ -263,9 +263,17 @@ class Search extends BaseModel {
         ];
     }
 
+    /**
+     * Search results summary/title.
+     *
+     * @param int    $result_count  Result count.
+     * @param string $search_clause Search clause.
+     *
+     * @return string|void
+     */
     private function search_results_title( $result_count, $search_clause ) {
         if ( $result_count > 0 ) {
-            $summary = self::$search_results_title = sprintf(
+            $summary = sprintf(
             // translators: 1. placeholder is number of search results, 2. placeholder contains the search term(s).
                 _nx(
                     '%1$1s result found for "%2$2s"',
@@ -279,8 +287,10 @@ class Search extends BaseModel {
             );
         }
         else {
-            $summary = self::$search_results_title = __( 'No search results', 'tms-theme-tredu' );
+            $summary = __( 'No search results', 'tms-theme-tredu' );
         }
+
+        self::$search_results_title = $summary;
 
         return $summary;
     }

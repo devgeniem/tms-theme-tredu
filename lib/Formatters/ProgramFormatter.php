@@ -74,7 +74,8 @@ class ProgramFormatter implements Formatter {
         $date_query = $this->get_date_query( $layout );
 
         if ( ! empty( $date_query ) ) {
-            $args['meta_query'] = $date_query;
+            $args['update_post_meta_cache'] = true;
+            $args['meta_query']             = $date_query;
         }
 
         $tax_query = $this->get_tax_query( $layout );
@@ -147,7 +148,7 @@ class ProgramFormatter implements Formatter {
     private function get_date_query( array $layout ) : array {
         $meta_query = [];
 
-        if ( ! empty( $layout['start_date'] ) ) {
+        if ( ! empty( $layout['apply_start'] ) ) {
             $meta_query[] = [
                 'key'     => 'apply_start',
                 'compare' => '>=',

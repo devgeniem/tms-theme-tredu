@@ -183,6 +183,7 @@ class PageGroup {
                 Layouts\ShareLinksLayout::class,
                 Layouts\CountdownLayout::class,
                 Layouts\TreduEventsLayout::class,
+                Layouts\ProgramLayout::class,
             ],
             $key
         );

@@ -4,6 +4,7 @@ namespace TMS\Theme\Tredu\PostType;
 
 use Strings;
 use \TMS\Theme\Tredu\Interfaces\PostType;
+use TMS\Theme\Tredu\Images;
 use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 
 /**

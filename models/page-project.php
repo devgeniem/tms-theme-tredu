@@ -44,10 +44,25 @@ class PageProject extends BaseModel {
     protected object $pagination;
 
     /**
+     * This holds the summary text.
+     *
+     * @var string
+     */
+    private static $summary = '';
+
+    /**
      * Hooks
      */
     public function hooks() : void {
         add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', fn() => false );
+        add_filter( 'the_seo_framework_title_from_generation', Closure::fromCallable( [ __CLASS__, 'alter_title' ] ) );
+    }
+
+    /**
+     * Alter head section title.
+     */
+    private static function alter_title() : string {
+        return self::$summary;
     }
 
     /**
@@ -325,6 +340,8 @@ class PageProject extends BaseModel {
                 $search_clause
             );
         }
+
+        self::$summary = $results_text;
 
         return $results_text;
     }

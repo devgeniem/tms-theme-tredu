@@ -48,6 +48,9 @@ trait Breadcrumbs {
             case PostType\BlogArticle::SLUG:
                 $breadcrumbs = $this->format_blog_article( $current_id, $breadcrumbs );
                 break;
+            case PostType\Project::SLUG:
+                $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
+                break;
             case 'post-type-archive':
                 $breadcrumbs = $this->format_post_type_archive( $breadcrumbs );
                 break;
@@ -187,8 +190,8 @@ trait Breadcrumbs {
         $program_page = Settings::get_setting( 'program_search_program_page' );
 
         if ( is_int( $program_page ) ) {
-			$permalink = get_permalink( $program_page );
-			$title     = get_the_title( $program_page );
+            $permalink = get_permalink( $program_page );
+            $title     = get_the_title( $program_page );
 
             $breadcrumbs[] = [
                 'title'        => $title,
@@ -225,6 +228,38 @@ trait Breadcrumbs {
         }
 
         // Current program
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Project
+     *
+     * @param int    $current_id  Current page ID.
+     * @param string $home_url    Home URL.
+     * @param array  $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $projects_page = Settings::get_setting( 'tredu_projects_page' );
+
+        if ( ! empty( $projects_page ) ) {
+            $breadcrumbs[] = [
+                'permalink' => get_the_permalink( $projects_page ),
+                'title'     => get_the_title( $projects_page ),
+                'icon'      => false,
+            ];
+        }
+
         $breadcrumbs[] = [
             'title'     => get_the_title( $current_id ),
             'permalink' => false,

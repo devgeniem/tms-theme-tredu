@@ -6,11 +6,14 @@
 use TMS\Theme\Tredu\PostType\BlogArticle;
 use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Taxonomy\BlogCategory;
+use TMS\Theme\Tredu\Traits\Pagination;
 
 /**
  * The TaxonomyBlogCategory class.
  */
 class TaxonomyBlogCategory extends Archive {
+
+    use Pagination;
 
     /**
      * Get articles

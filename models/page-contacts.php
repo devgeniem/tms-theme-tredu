@@ -77,7 +77,7 @@ class PageContacts extends BaseModel {
 
         return $formatter->map_keys(
             $contacts,
-            get_field( 'fields' ),
+            get_field( 'fields' ) ?? [],
             Settings::get_setting( 'contacts_default_image' )
         );
     }

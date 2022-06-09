@@ -23,8 +23,6 @@ abstract class ApiController {
      * @return string|null
      */
     protected function get_api_base_url() : ?string {
-        return '';
-
         $url = env( 'TAMPERE_API_URL' );
         $url = trailingslashit( $url );
 

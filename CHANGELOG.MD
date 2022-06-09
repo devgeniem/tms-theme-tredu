@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-744: Single Project #76
-- TMS-859: Convert PageProgram textarea to wysiwyg
+- TMS-859: Convert PageProgram textarea to wysiwyg #92
 
 ## [2022-06-01] - 1.0.0
 

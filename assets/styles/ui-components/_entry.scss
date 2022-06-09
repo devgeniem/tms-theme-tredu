@@ -1,0 +1,9 @@
+.entry {
+    &__content {
+        > p {
+            > a {
+                text-decoration: underline;
+            }
+        }
+    }
+}

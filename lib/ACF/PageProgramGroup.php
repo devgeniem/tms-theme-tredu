@@ -38,7 +38,7 @@ class PageProgramGroup {
      */
     protected function register_fields() : void {
         try {
-            $field_group = ( new Group( 'Ingressi' ) )
+            $field_group = ( new Group( 'Kuvaus' ) )
                 ->set_key( 'fg_page_program_fields' );
 
             $page_program_rule_group = ( new RuleGroup() )
@@ -74,12 +74,12 @@ class PageProgramGroup {
 
         $strings = [
             'page_program_fields' => [
-                'label'        => 'Ingressi',
+                'label'        => 'Kuvausteksti',
                 'instructions' => '',
             ],
         ];
 
-        $page_program_fields = ( new Field\TextArea( $strings['page_program_fields']['label'] ) )
+        $page_program_fields = ( new Field\Wysiwyg( $strings['page_program_fields']['label'] ) )
             ->set_key( "${key}_page_program_description" )
             ->set_name( 'page_program_description' )
             ->set_wrapper_width( 50 )

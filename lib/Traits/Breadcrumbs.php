@@ -48,17 +48,23 @@ trait Breadcrumbs {
             case PostType\BlogArticle::SLUG:
                 $breadcrumbs = $this->format_blog_article( $current_id, $breadcrumbs );
                 break;
-            case 'post-type-archive':
-                $breadcrumbs = $this->format_post_type_archive( $breadcrumbs );
-                break;
-            case 'tax-archive':
-                $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
+            case PostType\Project::SLUG:
+                $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
             case PostType\TreduEvent::SLUG:
                 $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
+                break;
+            case 'post-type-archive':
+                $breadcrumbs = $this->format_post_type_archive( $breadcrumbs );
+                break;
+            case 'tax-archive':
+                $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
+                break;
+            case 'search':
+                $breadcrumbs = $this->format_search( $breadcrumbs );
                 break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_program( $current_id, $home_url, $breadcrumbs );
@@ -85,7 +91,7 @@ trait Breadcrumbs {
             $breadcrumbs[] = [
                 'title'     => $primary_category[0]->name,
                 'permalink' => $primary_category[0]->permalink,
-                'icon'      => false,
+                'icon'      => 'chevron-right',
             ];
         }
 
@@ -234,49 +240,6 @@ trait Breadcrumbs {
             'icon'      => false,
             'is_active' => true,
         ];
-        return $breadcrumbs;
-    }
-
-    /**
-     * Format breadcrumbs for: Post Type Archive
-     *
-     * @param array $breadcrumbs Breadcrumbs array.
-     *
-     * @return array
-     */
-    private function format_post_type_archive( array $breadcrumbs ) : array {
-        $breadcrumbs['home'] = $this->get_home_link();
-
-        $queried_object = get_queried_object();
-
-        $breadcrumbs[] = [
-            'title'     => $queried_object->label,
-            'permalink' => get_post_type_archive_link( $queried_object->name ),
-            'icon'      => false,
-            'is_active' => true,
-        ];
-
-        return $breadcrumbs;
-    }
-
-    /**
-     * Format breadcrumbs for: Archive
-     *
-     * @param array $breadcrumbs Breadcrumbs array.
-     *
-     * @return array
-     */
-    private function format_tax_archive( array $breadcrumbs ) : array {
-        $breadcrumbs['home'] = $this->get_home_link();
-
-        $queried_object = get_queried_object();
-
-        $breadcrumbs[] = [
-            'title'     => $queried_object->name,
-            'permalink' => get_term_link( $queried_object->term_id ),
-            'icon'      => false,
-            'is_active' => true,
-        ];
 
         return $breadcrumbs;
     }
@@ -341,6 +304,71 @@ trait Breadcrumbs {
             'permalink' => false,
             'icon'      => false,
             'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Post Type Archive
+     *
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_post_type_archive( array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $queried_object = get_queried_object();
+
+        $breadcrumbs[] = [
+            'title'     => $queried_object->label,
+            'permalink' => get_post_type_archive_link( $queried_object->name ),
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Archive
+     *
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_tax_archive( array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $queried_object = get_queried_object();
+
+        $breadcrumbs[] = [
+            'title'     => $queried_object->name,
+            'permalink' => get_term_link( $queried_object->term_id ),
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Search
+     *
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_search( array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $breadcrumbs[] = [
+            'title'        => __( 'Search from site', 'tms-theme-tredu' ),
+            'permalink'    => false,
+            'icon'         => 'chevron-right',
+            'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
+            'is_active'    => true,
         ];
 
         return $breadcrumbs;

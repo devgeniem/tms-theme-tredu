@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-04-14 13:42+0300\n"
+"POT-Creation-Date: 2022-05-31 13:29+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/theme_tredu.js:4770
+#: assets/dist/theme_tredu.js:4770 assets/dist/vendor.js:4873
 msgctxt "text direction"
 msgid "ltr"
 msgstr ""
@@ -58,6 +58,7 @@ msgstr ""
 
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:124
 #: lib/ACF/PageGroup.php:145 lib/ACF/PostGroup.php:173
+#: lib/ACF/ProgramGroup.php:304
 msgctxt "theme ACF"
 msgid "Components"
 msgstr ""
@@ -81,7 +82,7 @@ msgstr ""
 msgid "Related posts"
 msgstr ""
 
-#: lib/ACF/SettingsGroup.php:51
+#: lib/ACF/SettingsGroup.php:53
 msgctxt "theme ACF"
 msgid "Site settings"
 msgstr ""
@@ -243,6 +244,11 @@ msgctxt "theme CPT"
 msgid "program"
 msgstr ""
 
+#: lib/PostType/Project.php:52
+msgctxt "theme CPT"
+msgid "project"
+msgstr ""
+
 #: lib/PostType/Settings.php:60
 msgctxt "theme CPT slugs"
 msgid "site-settings"
@@ -263,22 +269,22 @@ msgctxt "wp-geniem-roles"
 msgid "Administrator"
 msgstr ""
 
-#: lib/Roles.php:486
+#: lib/Roles.php:487
 msgctxt "wp-geniem-roles"
 msgid "Site Manager"
 msgstr ""
 
-#: lib/Roles.php:532
+#: lib/Roles.php:533
 msgctxt "wp-geniem-roles"
 msgid "Author"
 msgstr ""
 
-#: lib/Roles.php:600
+#: lib/Roles.php:601
 msgctxt "wp-geniem-roles"
 msgid "Contributor"
 msgstr ""
 
-#: lib/Roles.php:620
+#: lib/Roles.php:621
 msgctxt "wp-geniem-roles"
 msgid "Subscriber"
 msgstr ""
@@ -362,7 +368,11 @@ msgstr ""
 msgid "Suositut avainsanat"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:288
+#: lib/Traits/Breadcrumbs.php:293 models/search.php:101
+msgid "Search from site"
+msgstr ""
+
+#: lib/Traits/Breadcrumbs.php:384
 msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr ""
@@ -404,7 +414,7 @@ msgid "Share on Line"
 msgstr ""
 
 #: models/archive-blog-article.php:167 models/archive.php:116
-#: models/home.php:269 models/search.php:70
+#: models/home.php:269 models/search.php:85
 msgid "All"
 msgstr ""
 
@@ -419,7 +429,7 @@ msgid "Return to home"
 msgstr ""
 
 #: models/page-events-calendar.php:39 models/page-events-search.php:118
-#: models/page-program.php:197
+#: models/page-program.php:199
 msgid "No results"
 msgstr ""
 
@@ -431,11 +441,11 @@ msgstr ""
 msgid "Events from"
 msgstr ""
 
-#: models/page-events-search.php:53 models/search.php:83
+#: models/page-events-search.php:53 models/search.php:98
 msgid "Start date"
 msgstr ""
 
-#: models/page-events-search.php:54 models/search.php:84
+#: models/page-events-search.php:54 models/search.php:99
 msgid "End date"
 msgstr ""
 
@@ -443,7 +453,7 @@ msgstr ""
 msgid "No search term given"
 msgstr ""
 
-#: models/page-events-search.php:190 models/search.php:236
+#: models/page-events-search.php:190 models/search.php:269
 #, php-format
 msgctxt "search results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -451,82 +461,92 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-program.php:190
+#: models/page-program.php:192
 msgid "Search for program"
 msgstr ""
 
-#: models/page-program.php:191
+#: models/page-program.php:193
 msgid "Search"
 msgstr ""
 
-#: models/page-program.php:192
+#: models/page-program.php:194
 msgid "Search query"
 msgstr ""
 
-#: models/page-program.php:195
+#: models/page-program.php:197
 msgid "Show All"
 msgstr ""
 
-#: models/page-program.php:198
+#: models/page-program.php:200
 msgid "Filter"
 msgstr ""
 
-#: models/page-program.php:199
+#: models/page-program.php:201
 msgid "Sort"
 msgstr ""
 
-#: models/search.php:46
+#: models/search.php:61
 msgid "Search results"
 msgstr ""
 
-#: models/search.php:81
+#: models/search.php:96
 msgid "Filter by post type"
 msgstr ""
 
-#: models/search.php:82
+#: models/search.php:97
 msgid "Filter by date"
 msgstr ""
 
-#: models/search.php:85
+#: models/search.php:100
 msgid "Filter results"
 msgstr ""
 
-#: models/search.php:102
-msgid "Looking for events? Use the event search!"
+#: models/search.php:122
+msgid "Program search"
 msgstr ""
 
-#: models/search.php:247
+#: models/search.php:280
 msgid "No search results"
 msgstr ""
 
-#: models/single-program.php:44
+#: models/single-program.php:48 models/single-program.php:236
 msgctxt "program info"
 msgid "Apply period"
 msgstr ""
 
-#: models/single-program.php:50
+#: models/single-program.php:56
 msgctxt "program info"
 msgid "Audience"
 msgstr ""
 
-#: models/single-program.php:56
+#: models/single-program.php:64
 msgctxt "program info"
 msgid "Delivery method"
 msgstr ""
 
-#: models/single-program.php:62
+#: models/single-program.php:70
 msgctxt "program info"
 msgid "Location"
 msgstr ""
 
-#: models/single-program.php:68
+#: models/single-program.php:76
 msgctxt "program info"
 msgid "Program starts"
 msgstr ""
 
-#: models/single-program.php:74
+#: models/single-program.php:82
 msgctxt "program info"
 msgid "Price"
+msgstr ""
+
+#: models/single-program.php:235
+msgctxt "program info"
+msgid "Apply now"
+msgstr ""
+
+#: models/single-program.php:258
+msgctxt "program info"
+msgid "Graduation stories from Tredu"
 msgstr ""
 
 #: models/strings.php:42
@@ -716,12 +736,12 @@ msgctxt "theme-frontend"
 msgid "Text:"
 msgstr ""
 
-#: models/strings.php:107 models/strings.php:209
+#: models/strings.php:107 models/strings.php:215
 msgctxt "theme-frontend"
 msgid "Month"
 msgstr ""
 
-#: models/strings.php:108 models/strings.php:210
+#: models/strings.php:108 models/strings.php:216
 msgctxt "theme-frontend"
 msgid "Year"
 msgstr ""
@@ -736,62 +756,62 @@ msgctxt "theme-frontend"
 msgid "Filter by Category"
 msgstr ""
 
-#: models/strings.php:113 models/strings.php:223
+#: models/strings.php:113 models/strings.php:229
 msgctxt "theme-frontend"
 msgid "January"
 msgstr ""
 
-#: models/strings.php:114 models/strings.php:224
+#: models/strings.php:114 models/strings.php:230
 msgctxt "theme-frontend"
 msgid "February"
 msgstr ""
 
-#: models/strings.php:115 models/strings.php:225
+#: models/strings.php:115 models/strings.php:231
 msgctxt "theme-frontend"
 msgid "March"
 msgstr ""
 
-#: models/strings.php:116 models/strings.php:226
+#: models/strings.php:116 models/strings.php:232
 msgctxt "theme-frontend"
 msgid "April"
 msgstr ""
 
-#: models/strings.php:117 models/strings.php:227 models/strings.php:241
+#: models/strings.php:117 models/strings.php:233 models/strings.php:247
 msgctxt "theme-frontend"
 msgid "May"
 msgstr ""
 
-#: models/strings.php:118 models/strings.php:228
+#: models/strings.php:118 models/strings.php:234
 msgctxt "theme-frontend"
 msgid "June"
 msgstr ""
 
-#: models/strings.php:119 models/strings.php:229
+#: models/strings.php:119 models/strings.php:235
 msgctxt "theme-frontend"
 msgid "July"
 msgstr ""
 
-#: models/strings.php:120 models/strings.php:230
+#: models/strings.php:120 models/strings.php:236
 msgctxt "theme-frontend"
 msgid "August"
 msgstr ""
 
-#: models/strings.php:121 models/strings.php:231
+#: models/strings.php:121 models/strings.php:237
 msgctxt "theme-frontend"
 msgid "September"
 msgstr ""
 
-#: models/strings.php:122 models/strings.php:232
+#: models/strings.php:122 models/strings.php:238
 msgctxt "theme-frontend"
 msgid "October"
 msgstr ""
 
-#: models/strings.php:123 models/strings.php:233
+#: models/strings.php:123 models/strings.php:239
 msgctxt "theme-frontend"
 msgid "November"
 msgstr ""
 
-#: models/strings.php:124 models/strings.php:234
+#: models/strings.php:124 models/strings.php:240
 msgctxt "theme-frontend"
 msgid "December"
 msgstr ""
@@ -928,197 +948,220 @@ msgctxt "theme-frontend"
 msgid "Selecting filter commits new search"
 msgstr ""
 
-#: models/strings.php:185
+#: models/strings.php:184
 msgctxt "theme-frontend"
-msgid "Profession"
+msgid "Write search term, profession or program name"
 msgstr ""
 
-#: models/strings.php:186
+#: models/strings.php:185
 msgctxt "theme-frontend"
-msgid "Program type"
+msgid ""
+"Write three or more letter to get results. When results are available, use "
+"up and down arrows to inspect and select. For touchscreen users, inspect by "
+"touching or swiping."
 msgstr ""
 
 #: models/strings.php:187
 msgctxt "theme-frontend"
-msgid "Location"
+msgid "Profession"
 msgstr ""
 
 #: models/strings.php:188
 msgctxt "theme-frontend"
-msgid "Educational background"
+msgid "Program type"
 msgstr ""
 
 #: models/strings.php:189
 msgctxt "theme-frontend"
-msgid "Delivery method"
+msgid "Location"
 msgstr ""
 
 #: models/strings.php:190
 msgctxt "theme-frontend"
-msgid "Application period ends"
+msgid "Educational background"
 msgstr ""
 
 #: models/strings.php:191
 msgctxt "theme-frontend"
+msgid "Delivery method"
+msgstr ""
+
+#: models/strings.php:192
+msgctxt "theme-frontend"
+msgid "Application period ends"
+msgstr ""
+
+#: models/strings.php:193
+msgctxt "theme-frontend"
 msgid "Starts"
-msgstr ""
-
-#: models/strings.php:194
-msgctxt "theme-frontend"
-msgid "Filter by type"
-msgstr ""
-
-#: models/strings.php:195
-msgctxt "theme-frontend"
-msgid "Publish date"
 msgstr ""
 
 #: models/strings.php:196
 msgctxt "theme-frontend"
-msgid "Write search terms"
+msgid "Scope"
 msgstr ""
 
-#: models/strings.php:199
+#: models/strings.php:197
 msgctxt "theme-frontend"
-msgid "Filter"
+msgid "Who can apply?"
 msgstr ""
 
 #: models/strings.php:200
 msgctxt "theme-frontend"
-msgid "Clicking the link will download file"
+msgid "Filter by type"
 msgstr ""
 
-#: models/strings.php:204 models/strings.php:212
+#: models/strings.php:201
 msgctxt "theme-frontend"
-msgid "Pick a date"
+msgid "Publish date"
+msgstr ""
+
+#: models/strings.php:202
+msgctxt "theme-frontend"
+msgid "Write search terms"
 msgstr ""
 
 #: models/strings.php:205
 msgctxt "theme-frontend"
-msgid "dd.mm.yyyy"
+msgid "Filter"
 msgstr ""
 
 #: models/strings.php:206
 msgctxt "theme-frontend"
-msgid "The chosen date is"
+msgid "Clicking the link will download file"
 msgstr ""
 
-#: models/strings.php:207
+#: models/strings.php:210 models/strings.php:218
 msgctxt "theme-frontend"
-msgid "Previous month"
-msgstr ""
-
-#: models/strings.php:208
-msgctxt "theme-frontend"
-msgid "Next month"
+msgid "Pick a date"
 msgstr ""
 
 #: models/strings.php:211
 msgctxt "theme-frontend"
-msgid "Close window"
+msgid "dd.mm.yyyy"
+msgstr ""
+
+#: models/strings.php:212
+msgctxt "theme-frontend"
+msgid "The chosen date is"
+msgstr ""
+
+#: models/strings.php:213
+msgctxt "theme-frontend"
+msgid "Previous month"
 msgstr ""
 
 #: models/strings.php:214
 msgctxt "theme-frontend"
-msgid "Sunday"
-msgstr ""
-
-#: models/strings.php:215
-msgctxt "theme-frontend"
-msgid "Monday"
-msgstr ""
-
-#: models/strings.php:216
-msgctxt "theme-frontend"
-msgid "Tuesday"
+msgid "Next month"
 msgstr ""
 
 #: models/strings.php:217
 msgctxt "theme-frontend"
-msgid "Wednesday"
-msgstr ""
-
-#: models/strings.php:218
-msgctxt "theme-frontend"
-msgid "Thursday"
-msgstr ""
-
-#: models/strings.php:219
-msgctxt "theme-frontend"
-msgid "Friday"
+msgid "Close window"
 msgstr ""
 
 #: models/strings.php:220
 msgctxt "theme-frontend"
+msgid "Sunday"
+msgstr ""
+
+#: models/strings.php:221
+msgctxt "theme-frontend"
+msgid "Monday"
+msgstr ""
+
+#: models/strings.php:222
+msgctxt "theme-frontend"
+msgid "Tuesday"
+msgstr ""
+
+#: models/strings.php:223
+msgctxt "theme-frontend"
+msgid "Wednesday"
+msgstr ""
+
+#: models/strings.php:224
+msgctxt "theme-frontend"
+msgid "Thursday"
+msgstr ""
+
+#: models/strings.php:225
+msgctxt "theme-frontend"
+msgid "Friday"
+msgstr ""
+
+#: models/strings.php:226
+msgctxt "theme-frontend"
 msgid "Saturday"
-msgstr ""
-
-#: models/strings.php:237
-msgctxt "theme-frontend"
-msgid "Jan"
-msgstr ""
-
-#: models/strings.php:238
-msgctxt "theme-frontend"
-msgid "Feb"
-msgstr ""
-
-#: models/strings.php:239
-msgctxt "theme-frontend"
-msgid "Mar"
-msgstr ""
-
-#: models/strings.php:240
-msgctxt "theme-frontend"
-msgid "Apr"
-msgstr ""
-
-#: models/strings.php:242
-msgctxt "theme-frontend"
-msgid "Jun"
 msgstr ""
 
 #: models/strings.php:243
 msgctxt "theme-frontend"
-msgid "Jul"
+msgid "Jan"
 msgstr ""
 
 #: models/strings.php:244
 msgctxt "theme-frontend"
-msgid "Aug"
+msgid "Feb"
 msgstr ""
 
 #: models/strings.php:245
 msgctxt "theme-frontend"
-msgid "Sept"
+msgid "Mar"
 msgstr ""
 
 #: models/strings.php:246
 msgctxt "theme-frontend"
-msgid "Oct"
-msgstr ""
-
-#: models/strings.php:247
-msgctxt "theme-frontend"
-msgid "Nov"
+msgid "Apr"
 msgstr ""
 
 #: models/strings.php:248
 msgctxt "theme-frontend"
-msgid "Dec"
+msgid "Jun"
+msgstr ""
+
+#: models/strings.php:249
+msgctxt "theme-frontend"
+msgid "Jul"
+msgstr ""
+
+#: models/strings.php:250
+msgctxt "theme-frontend"
+msgid "Aug"
+msgstr ""
+
+#: models/strings.php:251
+msgctxt "theme-frontend"
+msgid "Sept"
 msgstr ""
 
 #: models/strings.php:252
 msgctxt "theme-frontend"
-msgid "Dialog Window - Close (Press escape to close)"
+msgid "Oct"
 msgstr ""
 
 #: models/strings.php:253
 msgctxt "theme-frontend"
+msgid "Nov"
+msgstr ""
+
+#: models/strings.php:254
+msgctxt "theme-frontend"
+msgid "Dec"
+msgstr ""
+
+#: models/strings.php:258
+msgctxt "theme-frontend"
+msgid "Dialog Window - Close (Press escape to close)"
+msgstr ""
+
+#: models/strings.php:259
+msgctxt "theme-frontend"
 msgid "Close (Press escape to close)"
 msgstr ""
 
-#: models/strings.php:266
+#: models/strings.php:272
 msgid "Pagination"
 msgstr ""
 

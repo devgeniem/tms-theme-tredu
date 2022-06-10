@@ -93,6 +93,10 @@ class ProgramGroup {
                 'title'        => 'Hakulaatikon otsikko',
                 'instructions' => '',
             ],
+            'hide_apply_info'    => [
+                'title'        => 'Piilota hakulaatikko',
+                'instructions' => '',
+            ],
             'search_box_ingress' => [
                 'title'        => 'Hakulaatikon lyhyt ote',
                 'instructions' => '',
@@ -122,6 +126,12 @@ class ProgramGroup {
             ->redipress_include_search()
             ->set_instructions( $strings['search_keywords']['instructions'] );
 
+        $hide_apply_info_field = ( new Field\TrueFalse( $strings['hide_apply_info']['title'] ) )
+            ->set_key( "${key}_hide_apply_info" )
+            ->set_name( 'hide_apply_info' )
+            ->use_ui()
+            ->set_instructions( $strings['hide_apply_info']['instructions'] );
+
         $search_box_title = ( new Field\Text( $strings['search_box_title']['title'] ) )
             ->set_key( "${key}_search_box_title" )
             ->set_name( 'search_box_title' )
@@ -143,6 +153,7 @@ class ProgramGroup {
             $program_name_field,
             $ingress_field,
             $search_keywords_field,
+            $hide_apply_info_field,
             $search_box_title,
             $search_box_ingress,
             $search_box_link,
@@ -254,7 +265,7 @@ class ProgramGroup {
             ->set_key( "${key}_price" )
             ->set_name( 'price' )
             ->set_wrapper_width( 50 )
-            ->set_maxlength( 80 )
+            ->set_maxlength( 160 )
             ->set_instructions( $strings['price']['instructions'] );
 
         $additional_information_field = ( new Field\Text( $strings['additional_information']['title'] ) )

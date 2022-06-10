@@ -7,6 +7,43 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-744: Single Project #76
+- TMS-859: Convert PageProgram textarea to wysiwyg #92
+
+## [2022-06-01] - 1.0.0
+
+### Changed
+
+- TMS-847: Prevent double slashes on api url #90
+- TMS-843: Fix contact block & layout alignment, restore Gutenberg text align classes #89
+- TMS-850: Reduce padding on quote with white background #91
+
+## [2022-05-30] - 0.12.0
+
+### Added
+
+- TMS-671: Add PlaceOfBusiness block #66
+
+### Changed
+
+- TMS-836: Tampere API Performance optimizations #86
+- TMS-838: Disable navigation top level parent links #87
+
+## [2022-05-23] - 0.11.0
+
+### Added
+
+- TMS-833: Double the program price character limit & hyphenate program info
+- TMS-832: Add option to hide single program Apply info #83
+- TMS-666: Single blog #60
+- TMS-736: Single program type term view #62
+
+### Changed
+
+- TMS-823: Remove EventFields sort field #81
+
 ## [2022-05-16] - 0.10.0
 
 ### Changed
@@ -57,6 +94,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-680: Notice banner
 - TMS-743: Hero layout for front page
 - TMS-697: Contacts
 - TMS-804: Add cap copy_posts to editors & authors #53

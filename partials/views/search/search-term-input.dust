@@ -2,20 +2,16 @@
     <div class="container">
         <div class="columns">
             <div class="column is-10 is-offset-1">
-                <div class="search-input-container mt-6 mb-6">
-                    <label for="search-input" class="is-block h6 mb-4">
+                <div class="search-input-container">
+                    <label for="search-input" class="is-sr-only">
                         {Strings.s.header.search}
                     </label>
 
                     <div class="is-flex">
-                        <input type="text" name="s" id="search-input" value="{form.search_term|s}"
+                        <input type="text" name="s" id="search-input" value="{form.search_term|html}"
+                               placeholder="{Strings.s.header.search_input_placeholder|html}"
                                class="search__term"
                                autocomplete="off">
-
-                        <button type="submit" class="search-form__button button button--icon ml-2 {button_class|s}">
-                            {Strings.s.header.search|s}
-                            {>"ui/icon" icon="search" class="icon--medium"  /}
-                        </button>
                     </div>
                 </div>
             </div>

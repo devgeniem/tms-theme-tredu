@@ -5,110 +5,15 @@
         <main class="main-content section" id="main-content">
             <div class="container">
 
-                <h1 class="h1">{Strings.s.program.search.search_studies|s}</h1>
+                <h1 class="h1">{Strings.s.program.search.search_studies|html}</h1>
 
                 {?page_description}
-                    <p class="has-text-black mb-6">{page_description}</p>
+                    <div class="page-program__description mb-6">{page_description|kses}</div>
                 {/page_description}
 
                 {>"ui/program-search-filters" /}
 
-                <div class="program-list">
-                    {?results.posts}
-                        {#results.posts}
-
-                                <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold has-height-100 is-family-secondary">
-                                    <div class="columns has-width-100 mt-0 mr-0 mb-0 ml-0">
-
-                                            <div class="column is-5 program-list__image-container is-relative image is-3by2-until-desktop">
-                                                {?image}
-                                                <a href="{permalink|s}" aria-label="{post_title|s}" class="is-block is-absolute has-top-0 has-left-0 has-bottom-0 has-right-0" aria-hidden="true" tabindex="-1">
-                                                    <div class="program-list__image has-background-cover is-absolute has-top-0 has-bottom-0 has-right-0 has-left-0" {@inlinebg id=image size="large" /}>
-                                                    {?program-type}
-                                                        <span
-                                                            class="is-relative is-inline-block has-background-primary has-text-white is-uppercase has-line-height-1 p-2">
-                                                            {program-type|s}
-                                                        </span>
-                                                    {/program-type}
-                                                    </div>
-                                                </a>
-                                                {/image}
-                                            </div>
-
-                                        <div class="column is-7 has-background-light-gray pl-4 pr-4">
-                                            <div class="inner columns is-multiline has-text-primary m-0">
-                                                <span class="is-sr-only">
-                                                    {Strings.s.program.program-type} {program-type|s}
-                                                </span>
-                                                <div class="column is-12 pt-0">
-                                                    {?post_title}
-                                                        <a href="{permalink|s}" aria-label="{post_title|s}">
-                                                            <h2 class="h5 mt-4 mb-1 has-line-height-tight">{post_title|s}</h2>
-                                                        </a>
-                                                    {/post_title}
-
-                                                    {?fields.program_name}
-                                                        <span class="is-block has-text-xsmall has-line-height-tight has-text-trout has-text-weight-medium">
-                                                            {fields.program_name|s}
-                                                        </span>
-                                                    {/fields.program_name}
-                                                </div>
-
-                                                <div class="column is-6 is-flex is-align-items-center">
-                                                    {?fields.start_date}
-                                                        {>"ui/icon" icon="date-range" class="icon--xlarge is-primary mr-2"  /}
-                                                        <span class="is-sr-only">
-                                                            {Strings.s.program.start-date|s} {fields.start_date|s}
-                                                        </span>
-                                                        <span class="is-inline-block has-text-small has-line-height-1" aria-hidden="true">
-                                                            {fields.start_date|s}
-                                                        </span>
-                                                    {/fields.start_date}
-                                                </div>
-
-                                                <div class="column is-6 is-flex is-align-items-center">
-                                                    {?location}
-                                                        {>"ui/icon" icon="place" class="icon--xlarge is-primary mr-2"  /}
-                                                        <span class="is-sr-only">
-                                                            {Strings.s.program.location|s} {location|s}
-                                                        </span>
-                                                        <span class="is-inline-block has-text-small has-line-height-1"
-                                                              aria-hidden="true">
-                                                            {location|s}
-                                                        </span>
-                                                    {/location}
-                                                </div>
-
-                                                <div class="column">
-                                                    {?apply-method}
-                                                        <span
-                                                            class="has-text-xsmall pt-2 pb-2 is-inline-block has-background-{apply_method_color|attr} has-text-{apply_method_txt_color|attr} is-uppercase has-line-height-1 p-2">
-                                                            {apply-method|s}
-                                                        </span>
-                                                    {/apply-method}
-
-                                                    {?fields.apply_end}
-                                                        <span
-                                                            class="is-inline-block has-text-xsmall has-line-height-tight">
-                                                            {fields.apply_end|s}
-                                                        </span>
-                                                    {/fields.apply_end}
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                        {:else}
-                            <div class="column pt-8 pb-8 is-text-centered is-size-5">
-                                <h2 class="no-results-title">
-                                    {Strings.s.home.no_results|s}
-                                </h2>
-                            </div>
-                        {/results.posts}
-                    {/results.posts}
-                </div>
+                {>"views/page-program/program-list" posts=results.posts /}
 
                 {>"shared/archive-pagination" /}
             </div>

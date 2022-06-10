@@ -54,7 +54,7 @@ class OnepagerGroup {
                 'tredu_events'   => Layouts\TreduEventsLayout::class,
                 // 'events'          => Layouts\EventsLayout::class,
                 // 'articles'        => Layouts\ArticlesLayout::class,
-                // 'notice_banner'   => Layouts\NoticeBannerLayout::class,
+                'notice_banner'  => Layouts\NoticeBannerLayout::class,
                 'gravityform'    => Layouts\GravityFormLayout::class,
                 // 'textblock'       => false,
             ]

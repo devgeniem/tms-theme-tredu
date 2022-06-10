@@ -102,21 +102,9 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'       => [],
-            'core/template'    => [],
-            'core/list'        => [
-                'post_types' => [
-                    PostType\Page::SLUG,
-                    PostType\Post::SLUG,
-                    PostType\BlogArticle::SLUG,
-                    PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
-                ],
-                'templates'  => [
-                    '',
-                ],
-            ],
-            'core/heading'     => [
+            'core/block'     => [],
+            'core/template'  => [],
+            'core/list'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -127,7 +115,18 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/paragraph'   => [
+            'core/heading'   => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\Project::SLUG,
+                ],
+                'templates'  => [
+                    '',
+                ],
+            ],
+            'core/paragraph' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -143,12 +142,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/grid'         => [
+            'acf/grid'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\Project::SLUG,
                 ],
             ],
             'acf/link-list'    => [
@@ -192,14 +192,13 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
-            'acf/video'        => [
+            'acf/video'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/image'          => [
@@ -227,12 +226,11 @@ class BlocksController implements Interfaces\Controller {
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/share-links'  => [
+            'acf/share-links'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
@@ -241,7 +239,6 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
                 'templates'  => [
                     '',
@@ -256,7 +253,7 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            'acf/material' => [
+            'acf/material'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
@@ -265,34 +262,27 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
-
-            /*
-            'acf/notice-banner'  => [
+            'acf/notice-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
-                    PostType\Program::SLUG,
                 ],
             ],
-            */
-
-            'acf/map'      => [
+            'acf/map'           => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/contacts' => [
+            'acf/contacts'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
@@ -301,22 +291,24 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
-                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
-            'gravityforms/form' => [
+            'gravityforms/form'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
-                    PostType\Project::SLUG,
-                    PostType\TreduEvent::SLUG,
-                    PostType\Program::SLUG,
                 ],
             ],
-
-            'acf/countdown' => [
+            'acf/countdown'         => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                ],
+            ],
+            'acf/place-of-business' => [
                 'post_types' => [
                     PostType\Page::SLUG,
                     PostType\Post::SLUG,

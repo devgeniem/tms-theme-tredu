@@ -59,7 +59,7 @@ class TreduEventsSettingsTab extends Tab {
      *
      * @param string $key Field tab key.
      */
-    public function sub_fields( $key ) {
+    public function sub_fields() {
         $strings = $this->strings;
 
         try {

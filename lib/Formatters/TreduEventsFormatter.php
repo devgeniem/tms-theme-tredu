@@ -60,7 +60,8 @@ class TreduEventsFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
     /**
      * Format events
      *
-     * @param array $events Array of events.
+     * @param array $events      Array of events.
+     * @param bool  $show_images Show images?
      *
      * @return array
      */

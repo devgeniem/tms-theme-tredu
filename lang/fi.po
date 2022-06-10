@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
 "POT-Creation-Date: 2022-05-31 13:29+0300\n"
-"PO-Revision-Date: 2022-05-31 16:39+0300\n"
+"PO-Revision-Date: 2022-06-10 10:43+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -1002,7 +1002,7 @@ msgstr "Toteutustapa"
 #: models/strings.php:192
 msgctxt "theme-frontend"
 msgid "Application period ends"
-msgstr "Hakuaika päätyy"
+msgstr "Hakuaika päättyy"
 
 #: models/strings.php:193
 msgctxt "theme-frontend"

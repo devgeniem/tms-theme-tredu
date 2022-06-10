@@ -9,8 +9,6 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
-use Geniem\LinkedEvents\LinkedEventsClient;
-use Geniem\LinkedEvents\LinkedEventsException;
 use TMS\Theme\Tredu\ACF\Layouts;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
@@ -117,6 +115,29 @@ class TreduEventGroup {
             'contacts'    => [
                 'title'        => 'Yhteystiedot',
                 'instructions' => '',
+                'subfields'    =>
+                    [
+                        'name'  => [
+                            'title'        => 'Nimi',
+                            'instructions' => '',
+                        ],
+                        'title' => [
+                            'title'        => 'Titteli',
+                            'instructions' => '',
+                        ],
+                        'email' => [
+                            'title'        => 'Sähköposti',
+                            'instructions' => '',
+                        ],
+                        'phone' => [
+                            'title'        => 'Puhelinnumero',
+                            'instructions' => '',
+                        ],
+                        'info'  => [
+                            'title'        => 'Lisätiedot',
+                            'instructions' => '',
+                        ],
+                    ],
             ],
         ];
 
@@ -169,15 +190,51 @@ class TreduEventGroup {
                 ->set_wrapper_width( 33 )
                 ->set_instructions( $strings['enroll_link']['instructions'] );
 
-            $contacts_field = ( new Field\PostObject( $strings['contacts']['title'] ) )
+            $contacts_repeater = ( new Field\Repeater( $strings['contacts']['title'] ) )
                 ->set_key( "${key}_contacts" )
                 ->set_name( 'contacts' )
-                ->set_post_types( [ PostType\Contact::SLUG ] )
-                ->allow_multiple()
-                ->set_default_value( null )
-                ->allow_null()
-                ->set_wrapper_width( 33 )
+                ->set_layout( 'block' )
                 ->set_instructions( $strings['contacts']['instructions'] );
+
+            $name_field = ( new Field\Text( $strings['contacts']['subfields']['name']['title'] ) )
+                ->set_key( "${key}_name" )
+                ->set_name( 'name' )
+                ->set_wrapper_width( 50 )
+                ->set_instructions( $strings['contacts']['subfields']['name']['instructions'] );
+
+            $title_field = ( new Field\Text( $strings['contacts']['subfields']['title']['title'] ) )
+                ->set_key( "${key}_title" )
+                ->set_name( 'title' )
+                ->set_wrapper_width( 50 )
+                ->set_instructions( $strings['contacts']['subfields']['title']['instructions'] );
+
+            $email_field = ( new Field\Text( $strings['contacts']['subfields']['email']['title'] ) )
+                ->set_key( "${key}_email" )
+                ->set_name( 'email' )
+                ->set_wrapper_width( 50 )
+                ->set_instructions( $strings['contacts']['subfields']['email']['instructions'] );
+
+            $phone_field = ( new Field\Text( $strings['contacts']['subfields']['phone']['title'] ) )
+                ->set_key( "${key}_phone" )
+                ->set_name( 'phone' )
+                ->set_wrapper_width( 50 )
+                ->set_instructions( $strings['contacts']['subfields']['phone']['instructions'] );
+
+            $info_field = ( new Field\Textarea( $strings['contacts']['subfields']['info']['title'] ) )
+                ->set_key( "${key}_info" )
+                ->set_name( 'info' )
+                ->set_rows( 4 )
+                ->set_instructions( $strings['contacts']['subfields']['info']['instructions'] );
+
+            $contacts_repeater->add_fields(
+                [
+                    $name_field,
+                    $title_field,
+                    $email_field,
+                    $phone_field,
+                    $info_field,
+                ]
+            );
 
             $tab->add_fields( [
                 $excerpt_field,
@@ -185,8 +242,8 @@ class TreduEventGroup {
                 $end_date_field,
                 $time_field,
                 $location_field,
-                $contacts_field,
                 $enroll_link,
+                $contacts_repeater,
             ] );
 
             return $tab;
@@ -226,8 +283,10 @@ class TreduEventGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
-                Layouts\EventsLayout::class,
+                // Layouts\EventsLayout::class,
                 Layouts\IconLinksLayout::class,
+                Layouts\ShareLinksLayout::class,
+                Layouts\ContactsLayout::class,
                 Layouts\GravityFormLayout::class,
                 Layouts\ImageBannerLayout::class,
                 Layouts\TextBlockLayout::class,

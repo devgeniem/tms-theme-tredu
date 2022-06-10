@@ -38,4 +38,27 @@ class SingleTreduEventCpt extends BaseModel {
             ? get_post_thumbnail_id()
             : false;
     }
+
+    /**
+     * Contacts
+     *
+     * @return array
+     */
+    public function contacts() {
+        $contacts_field = get_field( 'contacts' );
+
+        if ( empty( $contacts_field ) ) {
+            return [];
+        }
+
+        return array_map( function ( $contact ) {
+            return [
+                'first_name'             => $contact['name'],
+                'email'                  => $contact['email'],
+                'phone_repeater'         => [ [ 'phone_number' => $contact['phone'] ] ],
+                'title'                  => $contact['title'],
+                'additional_info_bottom' => $contact['info'],
+            ];
+        }, $contacts_field );
+    }
 }

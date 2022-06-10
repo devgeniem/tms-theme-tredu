@@ -5,10 +5,10 @@
         <main class="main-content section" id="main-content">
             <div class="container">
 
-                <h1 class="h1">{Strings.s.program.search.search_studies|s}</h1>
+                <h1 class="h1">{Strings.s.program.search.search_studies|html}</h1>
 
                 {?page_description}
-                    <p class="has-text-black mb-6">{page_description}</p>
+                    <div class="page-program__description mb-6">{page_description|kses}</div>
                 {/page_description}
 
                 {>"ui/program-search-filters" /}

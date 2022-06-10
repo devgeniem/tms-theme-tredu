@@ -4,6 +4,7 @@ namespace TMS\Theme\Tredu\Taxonomy;
 
 use \TMS\Theme\Tredu\Interfaces\Taxonomy;
 use TMS\Theme\Tredu\PostType\Program;
+use TMS\Theme\Tredu\PostType\TreduEvent;
 
 /**
  * This class defines the taxonomy.
@@ -60,6 +61,6 @@ class Profession implements Taxonomy {
             'show_in_rest'      => true,
         ];
 
-        register_taxonomy( self::SLUG, [ Program::SLUG ], $args );
+        register_taxonomy( self::SLUG, [ Program::SLUG, TreduEvent::SLUG ], $args );
     }
 }

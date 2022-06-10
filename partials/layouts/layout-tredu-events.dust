@@ -1,0 +1,29 @@
+<section {?anchor}id="{anchor|attr}"{/anchor} class="tredu-events section">
+    <div class="container">
+        {?title}
+            <div class="columns">
+                <div class="column is-8">
+                    <h2 class="mt-0 mb-6">
+                        {title|html}
+                    </h2>
+                </div>
+            </div>
+        {/title}
+
+        <div class="columns is-multiline">
+            {#events}
+                {>"ui/tredu-event" event=. /}
+            {/events}
+        </div>
+
+        {?all_events_link}
+            <div class="columns">
+                <div class="column is-12 has-text-right">
+                    <div class="mt-0 mb-6">
+                        {>"ui/button-link" link=all_events_link classes="is-primary events__more" icon="chevron-right" icon_classes="icon--medium"  /}
+                    </div>
+                </div>
+            </div>
+        {/all_events_link}
+    </div>
+</section>

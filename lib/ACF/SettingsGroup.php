@@ -24,6 +24,7 @@ use TMS\Theme\Tredu\ACF\Fields\Settings\ThemeColorTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SitemapSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\ProgramSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\TreduEventsSettingsTab;
+use TMS\Theme\Tredu\ACF\Fields\Settings\SearchSettingsTab;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
 
@@ -89,6 +90,7 @@ class SettingsGroup {
                         new ContactsSettingsTab( '', $field_group->get_key() ),
                         new SitemapSettingsTab( '', $field_group->get_key() ),
                         new ProgramSettingsTab( '', $field_group->get_key() ),
+                        new SearchSettingsTab( '', $field_group->get_key() ),
                     ],
                     $field_group->get_key()
                 )

@@ -48,14 +48,20 @@ trait Breadcrumbs {
             case PostType\BlogArticle::SLUG:
                 $breadcrumbs = $this->format_blog_article( $current_id, $breadcrumbs );
                 break;
+            case PostType\Project::SLUG:
+                $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
+                break;
+            case PostType\TreduEvent::SLUG:
+                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
+                break;
             case 'post-type-archive':
                 $breadcrumbs = $this->format_post_type_archive( $breadcrumbs );
                 break;
             case 'tax-archive':
                 $breadcrumbs = $this->format_tax_archive( $breadcrumbs );
                 break;
-            case PostType\TreduEvent::SLUG:
-                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
+            case 'search':
+                $breadcrumbs = $this->format_search( $breadcrumbs );
                 break;
             case PostType\Program::SLUG:
                 $breadcrumbs = $this->format_program( $current_id, $home_url, $breadcrumbs );
@@ -236,24 +242,24 @@ trait Breadcrumbs {
     }
 
     /**
-     * Format breadcrumbs for: Tredu Event
+     * Format breadcrumbs for: Project
      *
-     * @param int   $current_id  Current page ID.
-     * @param array $breadcrumbs Breadcrumbs array.
+     * @param int    $current_id  Current page ID.
+     * @param string $home_url    Home URL.
+     * @param array  $breadcrumbs Breadcrumbs array.
      *
      * @return array
      */
-    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+    private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs['home'] = $this->get_home_link();
 
-        $events_page = Settings::get_setting( 'tredu_events_page' );
+        $projects_page = Settings::get_setting( 'tredu_projects_page' );
 
-        if ( ! empty( $events_page ) ) {
+        if ( ! empty( $projects_page ) ) {
             $breadcrumbs[] = [
-                'permalink'    => get_the_permalink( $events_page ),
-                'title'        => get_the_title( $events_page ),
-                'icon'         => 'chevron-right',
-                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+                'permalink' => get_the_permalink( $projects_page ),
+                'title'     => get_the_title( $projects_page ),
+                'icon'      => false,
             ];
         }
 
@@ -312,90 +318,144 @@ trait Breadcrumbs {
     }
 
     /**
-     * Get Object Ancestors.
+     * Format breadcrumbs for: Search
      *
-     * @param int|null $queried_object_id Ancestors of this ID.
-     * @param string   $object_type       Type of ancestors to get.
-     * @param array    $breadcrumbs       Array where the results should be added to.
+     * @param array $breadcrumbs Breadcrumbs array.
      *
      * @return array
      */
-    public function get_ancestors( int $queried_object_id = null, string $object_type = 'page', array $breadcrumbs = [] ) : array { // phpcs:ignore
-        $home_url          = trailingslashit( get_home_url() );
-        $ancestors         = get_ancestors( $queried_object_id, $object_type );
-        $ancestors_reverse = array_reverse( $ancestors );
+    private function format_search( array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
 
-        /**
-         * Add all page ancestors to breadcrumbs.
-         */
-        foreach ( $ancestors_reverse as $ancestor ) {
-            $permalink = trailingslashit( get_permalink( $ancestor ) );
-
-            if ( $permalink === $home_url ) {
-                continue;
-            }
-
-            $breadcrumbs[] = [
-                'title'     => get_the_title( $ancestor ),
-                'permalink' => $permalink,
-            ];
-        }
+        $breadcrumbs[] = [
+            'title'        => __( 'Search from site', 'tms-theme-tredu' ),
+            'permalink'    => false,
+            'icon'         => 'chevron-right',
+            'icon_classes' => 'icon--small is-secondary ml-0 mr-0',
+            'is_active'    => true,
+        ];
 
         return $breadcrumbs;
     }
 
     /**
-     * Breadcrumbs formatter: One place to format them all.
+     * Format breadcrumbs for: Tredu Event
      *
-     * @param array $breadcrumbs Array of breadcrumbs to format.
-     *
-     * @return array Formatted breadcrumbs.
-     */
-    public function format_breadcrumbs( array $breadcrumbs = [] ) : array {
-        $count = count( $breadcrumbs );
-
-        if ( $count < 2 ) { // No need to show the first level, or empty.
-            return [];
-        }
-
-        $first      = array_shift( $breadcrumbs );
-        $last_three = array_splice( $breadcrumbs, - 3, 3 ); // Last 3 available.
-
-        $prefix = [ $first ];
-
-        // Add padding (...) between the first and last 3, if we had more than 4 breadcrumbs.
-        if ( $count > 4 ) {
-            $prefix[] = [
-                'title'     => '...',
-                'permalink' => false,
-                'icon'      => false,
-                'class'     => 'pl-1 pr-2',
-            ];
-        }
-
-        $breadcrumbs = array_merge( $prefix, $last_three ); // First, padding ... (if needed), and 3 last items.
-        $breadcrumbs = array_filter( $breadcrumbs );
-
-        return array_map( static function ( $crumb ) {
-            $crumb['class']      = $crumb['class'] ?? [];
-            $crumb['icon']       = $crumb['icon'] ?? false;
-            $crumb['icon_class'] = $crumb['icon_class'] ?? 'icon--large';
-
-            return $crumb;
-        }, $breadcrumbs ?? [] );
-    }
-
-    /**
-     * Generates the most used link.
+     * @param int   $current_id  Current page ID.
+     * @param array $breadcrumbs Breadcrumbs array.
      *
      * @return array
      */
-    private function get_home_link() : array {
-        return [
-            'title'        => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
-            'permalink'    => trailingslashit( get_home_url() ),
-            'icon'         => 'chevron-right',
-            'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $events_page = Settings::get_setting( 'tredu_events_page' );
+
+        if ( ! empty( $events_page ) ) {
+            $breadcrumbs[] = [
+                'permalink'    => get_the_permalink( $events_page ),
+                'title'        => get_the_title( $events_page ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
         ];
+
+
+        /**
+         * Get Object Ancestors.
+         *
+         * @param int|null $queried_object_id Ancestors of this ID.
+         * @param string   $object_type       Type of ancestors to get.
+         * @param array    $breadcrumbs       Array where the results should be added to.
+         *
+         * @return array
+         */
+        public
+        function get_ancestors( int $queried_object_id = null, string $object_type = 'page', array $breadcrumbs = [] ) : array { // phpcs:ignore
+            $home_url          = trailingslashit( get_home_url() );
+            $ancestors         = get_ancestors( $queried_object_id, $object_type );
+            $ancestors_reverse = array_reverse( $ancestors );
+
+            /**
+             * Add all page ancestors to breadcrumbs.
+             */
+            foreach ( $ancestors_reverse as $ancestor ) {
+                $permalink = trailingslashit( get_permalink( $ancestor ) );
+
+                if ( $permalink === $home_url ) {
+                    continue;
+                }
+
+                $breadcrumbs[] = [
+                    'title'     => get_the_title( $ancestor ),
+                    'permalink' => $permalink,
+                ];
+            }
+
+            return $breadcrumbs;
+        }
+
+        /**
+         * Breadcrumbs formatter: One place to format them all.
+         *
+         * @param array $breadcrumbs Array of breadcrumbs to format.
+         *
+         * @return array Formatted breadcrumbs.
+         */
+        public
+        function format_breadcrumbs( array $breadcrumbs = [] ) : array {
+            $count = count( $breadcrumbs );
+
+            if ( $count < 2 ) { // No need to show the first level, or empty.
+                return [];
+            }
+
+            $first      = array_shift( $breadcrumbs );
+            $last_three = array_splice( $breadcrumbs, - 3, 3 ); // Last 3 available.
+
+            $prefix = [ $first ];
+
+            // Add padding (...) between the first and last 3, if we had more than 4 breadcrumbs.
+            if ( $count > 4 ) {
+                $prefix[] = [
+                    'title'     => '...',
+                    'permalink' => false,
+                    'icon'      => false,
+                    'class'     => 'pl-1 pr-2',
+                ];
+            }
+
+            $breadcrumbs = array_merge( $prefix, $last_three ); // First, padding ... (if needed), and 3 last items.
+            $breadcrumbs = array_filter( $breadcrumbs );
+
+            return array_map( static function ( $crumb ) {
+                $crumb['class']      = $crumb['class'] ?? [];
+                $crumb['icon']       = $crumb['icon'] ?? false;
+                $crumb['icon_class'] = $crumb['icon_class'] ?? 'icon--large';
+
+                return $crumb;
+            }, $breadcrumbs ?? [] );
+        }
+
+        /**
+         * Generates the most used link.
+         *
+         * @return array
+         */
+        private
+        function get_home_link() : array {
+            return [
+                'title'        => _x( 'Home', 'Breadcrumbs', 'tms-theme-tredu' ),
+                'permalink'    => trailingslashit( get_home_url() ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+            ];
+        }
     }
-}

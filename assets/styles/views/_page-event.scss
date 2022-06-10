@@ -21,5 +21,17 @@
                 font-size: 1.23rem;
             }
         }
+
+        &__hero-meta {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 48.75rem;
+            font-weight: $weight-semibold;
+            color: $black;
+
+            .icon {
+                fill: $secondary !important;
+            }
+        }
     }
 }

@@ -51,6 +51,7 @@ class OnepagerGroup {
                 'image_carousel' => Layouts\ImageCarouselLayout::class,
                 'text_block'     => Layouts\TextBlockLayout::class,
                 'grid'           => Layouts\GridLayout::class,
+                'tredu_events'   => Layouts\TreduEventsLayout::class,
                 // 'events'          => Layouts\EventsLayout::class,
                 // 'articles'        => Layouts\ArticlesLayout::class,
                 'notice_banner'  => Layouts\NoticeBannerLayout::class,

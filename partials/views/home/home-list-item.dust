@@ -3,8 +3,18 @@
         {?featured_image}
             <div class="column is-4">
                 <div class="image is-4by3">
-                    <a href="{permalink}" aria-hidden="true" tabindex="-1">
+                    <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
                         {@image id=featured_image size="medium_large" class="objectfit-image" /}
+                    </a>
+                </div>
+            </div>
+        {/featured_image}
+
+        {?featured_image}
+            <div class="column is-4">
+                <div class="image is-4by3">
+                    <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
+                        <img class="api_image objectfit-image" src="{api_image_url|url}" loading="lazy"/>
                     </a>
                 </div>
             </div>
@@ -12,19 +22,19 @@
 
         <div class="column">
             <h2 class="entry__title h4 mt-0 mb-5">
-                <a href="{permalink}" class="has-text-black">
-                    {post_title|s}
+                <a href="{permalink|url}" class="has-text-black">
+                    {post_title|html}
                 </a>
             </h2>
 
             <div class="entry__excerpt mt-5 mb-5 has-text-small">
                 <span class="has-text-weight-bold">{@strtodate value=post_date /}</span>
-                {excerpt|s}
+                {excerpt|html}
             </div>
 
             {?category}
                 <span class="pill">
-                    {category.name|s}
+                    {category.name|html}
                 </span>
             {/category}
         </div>

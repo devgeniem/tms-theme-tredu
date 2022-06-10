@@ -1,4 +1,4 @@
-<section {?anchor}id="{anchor|s}"{/anchor} class="section layout-program">
+<section {?anchor}id="{anchor|attr}"{/anchor} class="section layout-program">
     <div class="container">
         <div class="columns">
             <div class="column is-8">
@@ -25,7 +25,7 @@
                 <div class="has-text-right mt-6">
                     <a href="{link.url}" target="{link.target}" class="is-primary layout-articles__read-more">
                         {>"ui/icon" icon="chevron-right" class="icon--medium is-secondary mr-2" /}
-                        {link.title|s}
+                        {link.title|html}
                     </a>
                 </div>
             {/link.title}

@@ -23,6 +23,7 @@ use TMS\Theme\Tredu\ACF\Fields\Settings\SocialMediaSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\ThemeColorTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SitemapSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\ProgramSettingsTab;
+use TMS\Theme\Tredu\ACF\Fields\Settings\TreduEventsSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SearchSettingsTab;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
@@ -82,6 +83,7 @@ class SettingsGroup {
                         new Error404SettingsTab( '', $field_group->get_key() ),
                         new ArchiveSettingsTab( '', $field_group->get_key() ),
                         new EventsSettingsTab( '', $field_group->get_key() ),
+                        new TreduEventsSettingsTab( '', $field_group->get_key() ),
                         new PageSettingsTab( '', $field_group->get_key() ),
                         new ExceptionNoticeSettingsTab( '', $field_group->get_key() ),
                         new BlogArticleSettingsTab( '', $field_group->get_key() ),

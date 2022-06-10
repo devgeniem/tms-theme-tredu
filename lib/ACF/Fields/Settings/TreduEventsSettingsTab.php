@@ -56,8 +56,6 @@ class TreduEventsSettingsTab extends Tab {
 
     /**
      * Register sub fields.
-     *
-     * @param string $key Field tab key.
      */
     public function sub_fields() {
         $strings = $this->strings;

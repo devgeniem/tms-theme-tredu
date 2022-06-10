@@ -283,7 +283,7 @@ class TreduEventGroup {
         $component_layouts = apply_filters(
             'tms/acf/field/' . $components_field->get_key() . '/layouts',
             [
-                // Layouts\EventsLayout::class,
+                Layouts\EventsLayout::class,
                 Layouts\IconLinksLayout::class,
                 Layouts\ShareLinksLayout::class,
                 Layouts\ContactsLayout::class,

@@ -145,7 +145,8 @@ class Program implements PostType {
     /**
      * Format posts for view
      *
-     * @param array $posts Array of WP_Post instances.
+     * @param array $posts      Array of WP_Post instances.
+     * @param array $taxonomies Array of related taxonomies.
      *
      * @return array
      */

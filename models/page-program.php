@@ -416,8 +416,10 @@ class PageProgram extends BaseModel {
 
         $count_posts = wp_count_posts( Program::SLUG )->publish;
         if ( function_exists( 'pll_count_posts' ) ) {
-            $count_posts = pll_count_posts( pll_current_language(),
-                [ 'post_type' => Program::SLUG ] );
+            $count_posts = pll_count_posts(
+                pll_current_language(),
+                [ 'post_type' => Program::SLUG ]
+            );
         }
         else {
             $count_posts = wp_count_posts( Program::SLUG )->publish;

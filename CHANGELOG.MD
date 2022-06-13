@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-745: Project page template #80
 - TMS-707: Tredu Events #71
 - TMS-744: Single Project #76
 - TMS-859: Convert PageProgram textarea to wysiwyg #92

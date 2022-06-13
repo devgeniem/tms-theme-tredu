@@ -1,0 +1,35 @@
+<section {?anchor}id="{anchor|attr}"{/anchor} class="section layout-program">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-8">
+                {?title}
+                    <h2 class="layout-articles__title mt-0 mb-6">
+                        {title|html}
+                    </h2>
+                {/title}
+
+                {?description}
+                    <div class="layout-articles__description mb-6 has-text-weight-semibold">
+                        {description|html}
+                    </div>
+                {/description}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {>"views/page-program/program-list" posts=posts /}
+
+        {?link.url}
+            {?link.title}
+                <div class="has-text-right mt-6">
+                    <a href="{link.url}" target="{link.target}" class="is-primary layout-articles__read-more">
+                        {>"ui/icon" icon="chevron-right" class="icon--medium is-secondary mr-2" /}
+                        {link.title|html}
+                    </a>
+                </div>
+            {/link.title}
+        {/link.url}
+    </div>
+
+</section>

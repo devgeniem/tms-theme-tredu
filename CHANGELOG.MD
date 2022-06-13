@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-873: Show drupal image on home result card
 - TMS-821: Events
 - TMS-705: Setup user roles & permissions #98
+- TMS-131: Add Readspeaker
+- TMS-745: Project page template #80
+- TMS-682: Blog archive #94
 - TMS-707: Tredu Events #71
 - TMS-744: Single Project #76
 - TMS-859: Convert PageProgram textarea to wysiwyg #92

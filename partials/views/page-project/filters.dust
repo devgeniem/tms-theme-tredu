@@ -1,0 +1,52 @@
+<form class="page-project__filters pt-2 is-pulled-right-desktop" action="{search.action|html}" method="get"
+      role="search">
+    <h2 class="page-project__title">
+        {strings.search.title|html}
+    </h2>
+
+    <div class="columns filters">
+        <div class="column is-4-desktop">
+            <label for="filters-search" class="is-sr-only">
+                {strings.search.label|html}
+            </label>
+
+            <div class="filters--search-container">
+                <input id="filters-search"
+                       class="page-project__input page-project__input--search"
+                       type="text" name="{search.input_search_name|html}"
+                       value="{search.current_search|html}"
+                       placeholder="{strings.search.input_placeholder|html}">
+            </div>
+
+            <div class="mt-4 mt-5-desktop">
+                <input type="checkbox" id="active-only" name="active-only" class="page-project__active-only"
+                       {?search.active_only}checked{/search.active_only}>
+                <label class="is-inline-block ml-2" for="active-only">{strings.search.active_only|html}</label>
+            </div>
+        </div>
+
+        {?filters}
+            <div class="column is-4-desktop">
+                <label for="portfolio" class="is-sr-only">
+                    {strings.search.portfolio_label|html}
+                </label>
+
+                <select name="portfolio" id="portfolio"
+                        class="page-project__input page-project__input--portfolio">
+                    {#filters}
+                        <option value="{term_id|html}" {?selected}selected{/selected}>
+                            {name|html}
+                        </option>
+                    {/filters}
+                </select>
+            </div>
+        {/filters}
+
+        <div class="column is-4-desktop">
+            <button class="button is-secondary button--icon page-project__submit" type="submit">
+                {strings.search.submit_value|html}
+                {>"ui/icon" icon="search" class="icon--medium" /}
+            </button>
+        </div>
+    </div>
+</form>

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-131: Add Readspeaker
 - TMS-745: Project page template #80
 - TMS-682: Blog archive #94
 - TMS-707: Tredu Events #71

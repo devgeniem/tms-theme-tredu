@@ -2,7 +2,9 @@
 
 {<content}
     {#PageContacts}
-        <main class="main-content section" id="main-content">
+        {>"ui/readspeaker" /}
+
+        <main class="main-content section {Readspeaker.config.class|attr}" id="main-content">
             <div class="container">
                 <div class="columns mb-8">
                     <div class="column is-10 is-offset-1 pt-0 pb-0 has-text-centered">

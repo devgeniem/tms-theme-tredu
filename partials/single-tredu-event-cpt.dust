@@ -1,7 +1,9 @@
 {>"shared/base" /}
 
 {<content}
-    <main class="main-content" id="main-content">
+    {>"ui/readspeaker" class="pt-3 pt-5-desktop pr-5 pl-5 pr-0-desktop pl-0-desktop" /}
+
+    <main class="main-content {Readspeaker.config.class|attr}" id="main-content">
         <article class="entry">
             {#SingleTreduEventCpt}
                 <section class="section pb-4">

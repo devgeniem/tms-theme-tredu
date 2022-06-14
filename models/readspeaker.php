@@ -4,6 +4,7 @@
  */
 
 use TMS\Theme\Tredu\Localization;
+use TMS\Theme\Tredu\Settings;
 
 /**
  * Class Readspeaker
@@ -18,6 +19,10 @@ class Readspeaker extends \DustPress\Model {
      * @return array
      */
     public function config() {
+        if ( ! Settings::get_setting( 'readspeaker_active' ) ) {
+            return;
+        }
+
         $lang_slugs = [
             'fi' => 'fi_fi',
             'en' => 'en_uk',

@@ -4,7 +4,7 @@ namespace TMS\Theme\Tredu\ACF\Fields;
 
 use Exception;
 use Geniem\ACF\Field;
-use TMS\Theme\Tredu\Integrations\Tampere\PlaceOfBusinessApiController;
+use TMS\Plugin\ContactImporter;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType\Contact;
 
@@ -47,15 +47,15 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
      */
     protected function sub_fields() : array {
         $strings = [
-            'title'        => [
+            'title'       => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
             ],
-            'description'  => [
+            'description' => [
                 'label'        => 'Kuvaus',
                 'instructions' => '',
             ],
-            'contacts'     => [
+            'contacts'    => [
                 'label'        => 'Yhteystiedot',
                 'instructions' => '',
             ],
@@ -105,17 +105,36 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
      * @return array
      */
     public function fill_place_of_business_choices( array $field ) : array {
-        $api     = new PlaceOfBusinessApiController();
-        $results = $api->get();
+        $places_of_business = $this->get_places_of_business();
 
-        if ( empty( $results ) ) {
+        if ( empty( $places_of_business ) ) {
             return $field;
         }
 
-        foreach ( $results as $result ) {
-            $field['choices'][ $result->id ] = $result->title;
+        foreach ( $places_of_business as $item ) {
+            $field['choices'][ $item['id'] ] = $item['title'];
         }
 
         return $field;
+    }
+
+    /**
+     * Fill API contacts field choices
+     *
+     * @param array $field ACF field.
+     *
+     * @return array
+     */
+    public function get_places_of_business() : array {
+        $api  = new ContactImporter\PlaceOfBusinessApiController();
+        $file = $api->get_file();
+
+        if ( ! file_exists( $file ) ) {
+            return false;
+        }
+
+        $file_contents = file_get_contents( $file );
+
+        return ! empty( $file_contents ) ? json_decode( $file_contents, true ) : false;
     }
 }

@@ -6,7 +6,6 @@ use Exception;
 use Geniem\ACF\Field;
 use TMS\Plugin\ContactImporter;
 use TMS\Theme\Tredu\Logger;
-use TMS\Theme\Tredu\PostType\Contact;
 
 /**
  * Class PlaceOfBusinessFields
@@ -105,7 +104,7 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
      * @return array
      */
     public function fill_place_of_business_choices( array $field ) : array {
-        $places_of_business = $this->get_places_of_business();
+        $places_of_business = ( new ContactImporter\PlaceOfBusinessApiController() )->get_results();
 
         if ( empty( $places_of_business ) ) {
             return $field;
@@ -116,25 +115,5 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
         }
 
         return $field;
-    }
-
-    /**
-     * Fill API contacts field choices
-     *
-     * @param array $field ACF field.
-     *
-     * @return array
-     */
-    public function get_places_of_business() : array {
-        $api  = new ContactImporter\PlaceOfBusinessApiController();
-        $file = $api->get_file();
-
-        if ( ! file_exists( $file ) ) {
-            return false;
-        }
-
-        $file_contents = file_get_contents( $file );
-
-        return ! empty( $file_contents ) ? json_decode( $file_contents, true ) : false;
     }
 }

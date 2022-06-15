@@ -154,7 +154,7 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
      * @return array
      */
     public function fill_api_contacts_field_choices( array $field ) : array {
-        $contacts = $this->get_contacts();
+        $contacts = ( new ContactImporter\PersonApiController() )->get_results();
 
         if ( empty( $contacts ) ) {
             return $field;
@@ -169,25 +169,5 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
         }
 
         return $field;
-    }
-
-    /**
-     * Attempt to get contacts from file.
-     *
-     * @return false|array
-     */
-    protected function get_contacts() {
-        $api = new ContactImporter\PersonApiController;
-        $api->set_language( DPT_PLL_ACTIVE ? pll_current_language() : 'fi' );
-
-        $file = $api->get_file();
-
-        if ( ! file_exists( $file ) ) {
-            return false;
-        }
-
-        $file_contents = file_get_contents( $file );
-
-        return ! empty( $file_contents ) ? $api->validate_result_set( json_decode( $file_contents, true ) ) : false;
     }
 }

@@ -2,7 +2,9 @@
 
 {<content}
     {#PageProgram}
-        <main class="main-content section" id="main-content">
+        {>"ui/readspeaker" /}
+
+        <main class="main-content section {Readspeaker.config.class|attr}" id="main-content">
             <div class="container">
 
                 <h1 class="h1">{Strings.s.program.search.search_studies|html}</h1>

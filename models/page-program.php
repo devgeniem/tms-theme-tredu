@@ -74,6 +74,7 @@ class PageProgram extends BaseModel {
     public function hooks() {
         add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
             unset( $formatted, $original, $object );
+
             return [];
         }, 10, 3 );
 
@@ -93,6 +94,7 @@ class PageProgram extends BaseModel {
      * This is hooked to TSF's actions.
      *
      * @param string $title original title.
+     *
      * @return string Modified title.
      */
     protected static function alter_title( $title ) : string {
@@ -126,6 +128,7 @@ class PageProgram extends BaseModel {
         $vars[] = self::FILTER_PROGRAM_TYPE_QUERY_VAR;
         $vars[] = self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR;
         $vars[] = self::FILTER_ONGOING_QUERY_VAR;
+
         return $vars;
     }
 
@@ -157,9 +160,10 @@ class PageProgram extends BaseModel {
     protected static function get_filter_query_var( $query_var = '' ) {
         $values = get_query_var( $query_var, false );
         $values = is_array( $values ) ? array_filter( $values ) : false;
+
         return empty( $values )
-        ? null
-        : $values;
+            ? null
+            : $values;
     }
 
     /**
@@ -230,6 +234,7 @@ class PageProgram extends BaseModel {
         $this->search_data          = new stdClass();
         $this->search_data->query   = get_query_var( self::SEARCH_QUERY_VAR );
         $this->search_data->ongoing = get_query_var( self::FILTER_ONGOING_QUERY_VAR );
+
         return [
             'input_search_name'    => self::SEARCH_QUERY_VAR,
             'current_search'       => $this->search_data->query,
@@ -275,6 +280,7 @@ class PageProgram extends BaseModel {
                         else {
                             $is_active = false;
                         }
+
                         return [
                             'term_id' => $term->term_id,
                             'name'    => $term->name,
@@ -363,8 +369,10 @@ class PageProgram extends BaseModel {
 
         $this->set_search_results_title( $the_query->found_posts );
 
+        $posts = Program::format_posts( $the_query->get_posts(), array_keys( self::get_taxonomies_with_slugs() ) );
+
         return [
-            'posts'       => $this->format_posts( $the_query->get_posts() ),
+            'posts'       => $posts,
             'is_filtered' => $is_filtered,
             'summary'     => $this->results_summary( $the_query->found_posts ),
         ];
@@ -378,72 +386,6 @@ class PageProgram extends BaseModel {
     public function sort_options() {
         return [];
     }
-
-    /**
-     * Format posts for view
-     *
-     * @param array $posts Array of WP_Post instances.
-     *
-     * @return array
-     */
-    public function format_posts( array $posts ) : array {
-
-        return array_map( function ( $item ) {
-            if ( has_post_thumbnail( $item->ID ) ) {
-                $item->image = get_post_thumbnail_id( $item->ID );
-            }
-            else {
-                $item->image = Images::get_default_image_id();
-            }
-
-            $item->permalink = get_the_permalink( $item->ID );
-            $item->fields    = get_fields( $item->ID );
-
-            if ( ! empty( $item->fields ) ) {
-
-                if ( ! empty( $item->fields['start_info'] ) ) {
-                    $item->fields['start_date'] = $item->fields['start_info'];
-                }
-
-                if ( ! empty( $item->fields['apply_info'] ) ) {
-                    $item->fields['apply_end'] = $item->fields['apply_info'];
-                }
-                elseif ( ! empty( $item->fields['apply_end'] ) ) {
-                    $item->fields['apply_end'] =  $this->strings()['program']['application-period-ends'] . ' ' . date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) ); // phpcs:ignore
-                }
-            }
-
-            $taxonomies = $this->get_taxonomies_with_slugs();
-
-            foreach ( $taxonomies as $tax_slug => $qv ) {
-
-                $primary_term_id = get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
-
-                $term_id = 0;
-                if ( ! empty( $primary_term_id ) ) {
-                    $primary_term      = get_term( $primary_term_id );
-                    $item->{$tax_slug} = $primary_term->name;
-                    $term_id           = $primary_term_id;
-                }
-                else {
-                    $terms = wp_get_post_terms( $item->ID, $tax_slug );
-                    if ( ! empty( $terms ) ) {
-                        $item->{$tax_slug} = $terms[0]->name;
-                        $term_id           = $terms[0]->term_id;
-                    }
-                }
-
-                if ( $tax_slug === ApplyMethod::SLUG ) {
-                    $apply_method_color           = get_term_meta( $term_id, 'color', true ) ?? '';
-                    $item->apply_method_color     = $apply_method_color;
-                    $item->apply_method_txt_color = $apply_method_color === 'primary' ? 'white' : 'primary';
-                }
-            }
-
-            return $item;
-        }, $posts );
-    }
-
 
     /**
      * Set pagination data
@@ -466,7 +408,7 @@ class PageProgram extends BaseModel {
     /**
      * Get results summary text.
      *
-     * @param int $result_count  Result count.
+     * @param int $result_count Result count.
      *
      * @return string|bool
      */
@@ -474,8 +416,10 @@ class PageProgram extends BaseModel {
 
         $count_posts = wp_count_posts( Program::SLUG )->publish;
         if ( function_exists( 'pll_count_posts' ) ) {
-            $count_posts = pll_count_posts( pll_current_language(),
-            [ 'post_type' => Program::SLUG ] );
+            $count_posts = pll_count_posts(
+                pll_current_language(),
+                [ 'post_type' => Program::SLUG ]
+            );
         }
         else {
             $count_posts = wp_count_posts( Program::SLUG )->publish;

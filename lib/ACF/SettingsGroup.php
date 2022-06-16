@@ -19,6 +19,7 @@ use TMS\Theme\Tredu\ACF\Fields\Settings\ExceptionNoticeSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\FooterSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\MapSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\PageSettingsTab;
+use TMS\Theme\Tredu\ACF\Fields\Settings\ProjectSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SocialMediaSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\ThemeColorTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SitemapSettingsTab;
@@ -84,6 +85,7 @@ class SettingsGroup {
                         new ArchiveSettingsTab( '', $field_group->get_key() ),
                         new EventsSettingsTab( '', $field_group->get_key() ),
                         new TreduEventsSettingsTab( '', $field_group->get_key() ),
+                        new ProjectSettingsTab( '', $field_group->get_key() ),
                         new PageSettingsTab( '', $field_group->get_key() ),
                         new ExceptionNoticeSettingsTab( '', $field_group->get_key() ),
                         new BlogArticleSettingsTab( '', $field_group->get_key() ),

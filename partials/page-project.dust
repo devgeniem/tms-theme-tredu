@@ -1,0 +1,107 @@
+{>"shared/base" /}
+
+{<content}
+    {#PageProject}
+        <main class="main-content page-project" id="main-content">
+            <article class="entry">
+                {?hero}
+                    {>"views/single-project/hero" /}
+                {/hero}
+
+                {?Header.breadcrumbs}
+                    <div class="breadcrumbs-container section pt-4 pb-4 has-background-light-gray">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column">
+                                    {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs bc_icon="chevron-right" icon_classes="icon--small is-secondary ml-2 mr-0" /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/Header.breadcrumbs}
+
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-8 is-offset-2">
+                                <header
+                                    class="page-project__entry-header mb-5 pb-5 has-text-centered keep-vertical-spacing">
+                                    <h1 class="entry__title mb-0">
+                                        {@title /}
+                                    </h1>
+
+                                    {?content.fields.ingress}
+                                        <p class="mt-5 mb-5 has-text-lead is-black">
+                                            {content.fields.ingress|html}
+                                        </p>
+                                    {/content.fields.ingress}
+
+                                    {?content.fields.updated_on}
+                                        <p class="has-text-small mt-5">
+                                            {content.fields.updated_on|html}
+                                        </p>
+                                    {/content.fields.updated_on}
+                                </header>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column is-12">
+                                {>"views/page-project/filters" /}
+                            </div>
+                        </div>
+
+                        <div class="columns is-multiline">
+                            {?results.summary}
+                                <div class="column is-12">
+                                    <p class="mb-0" role="status">{results.summary|html}</p>
+                                </div>
+                            {/results.summary}
+
+                            {#results.posts}
+                                <div class="column is-12 page-project__result-item">
+                                    <div class="columns is-mobile is-variable is-4-desktop">
+                                        <div class="column">
+                                            <div
+                                                class="inner pt-4 pb-4 pt-5-desktop pb-5-desktop keep-vertical-spacing has-border-bottom-1 has-border-grey">
+                                                <h3 class="h4 mt-4 mb-4 has-line-height-tight">
+                                                    <a href="{permalink|url}">
+                                                        {post_title|html}
+                                                    </a>
+                                                </h3>
+
+                                                <div class="page-project__result-item-meta">
+                                                    {?duration.duration}
+                                                        <span
+                                                            class="is-inline-block mr-3">{duration.duration|html}</span>
+                                                    {/duration.duration}
+
+                                                    {?portfolio}
+                                                        <span
+                                                            class="pill is-inline-block mr-3">{portfolio.name|html}</span>
+                                                    {/portfolio}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {:else}
+                                <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                                    <h2 class="no-results-title">
+                                        {Strings.s.home.no_results|html}
+                                    </h2>
+                                </div>
+                            {/results.posts}
+                        </div>
+                    </div>
+
+                    {>"shared/archive-pagination" /}
+                </section>
+
+                {>"ui/components" components=Page.components /}
+            </article>
+        </main>
+    {/PageProject}
+{/content}
+
+

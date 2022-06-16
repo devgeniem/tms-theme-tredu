@@ -2,7 +2,7 @@
 
 {<content}
     {#PageProject}
-        <main class="main-content page-project {Readspeaker.config.class|attr}" id="main-content">
+        <main class="main-content page-project" id="main-content">
             <article class="entry">
                 {?hero}
                     {>"views/single-project/hero" /}
@@ -19,8 +19,6 @@
                         </div>
                     </div>
                 {/Header.breadcrumbs}
-
-                {>"ui/readspeaker" /}
 
                 <section class="section">
                     <div class="container">

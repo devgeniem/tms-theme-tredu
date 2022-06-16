@@ -1,63 +1,67 @@
 <section {?anchor}id="{anchor|s}"{/anchor}
-         class="hero hero__layout is-relative has-background-cover {container_class|s}" 
-         {@inlinebg id=image size="fullhd" /}>
+         class="hero hero__layout is-relative has-background-cover {container_class|s}"
+    {@inlinebg id=image size="fullhd" /}>
     <div class="hero__inner">
         <div class="container p-3">
             <div class="columns is-multiline">
-                <div class="hero__box-wrapper column is-6-desktop is-12 pb-3-desktop pt-3-desktop pb-10 pt-10" {@inlinebg id=image size="fullhd" /}>
+                <div
+                    class="hero__box-wrapper column is-6-desktop is-12 pb-3-desktop pt-3-desktop pb-10 pt-10">
                     <div class="hero__box is-relative has-text-white is-left p-6">
                         <div class="overlay overlay--primary-30"></div>
-                            {?title}
-                                <h1 class="mt-0 h1 no-hyphens has-text-white is-relative">
-                                    {title|s}
-                                </h1>
-                            {/title}
-                            <div class="is-relative">
-                                {description|s}
-                            </div>
-                            <div class="is-relative">
-                                <form role="search" method="get" class="search-form " action="{form_action|s}">
+                        {?title}
+                            <h1 class="mt-0 h1 no-hyphens has-text-white is-relative">
+                                {title|s}
+                            </h1>
+                        {/title}
+                        <div class="is-relative">
+                            {description|s}
+                        </div>
+                        <div class="is-relative">
+                            <form role="search" method="get" class="search-form " action="{form_action|s}">
                                 <label for="hero-search" class="mb-0 is-flex-grow-1">
-                                <span aria-hidden="true" class="is-hidden-desktop">{Strings.s.program.search.write_term_profession_program_name|s}:</span>
-                                <span class="is-sr-only">
-                                    {Strings.s.program.search.write_term_profession_program_name|s}. 
-                                    {Strings.s.program.search.sr_autocomplete_instructions|s}
+                                    <span aria-hidden="true"
+                                          class="is-hidden-desktop has-text-white">{Strings.s.program.search.write_term_profession_program_name|s}
+                                        :</span>
+                                    <span class="is-sr-only">
+                                    {Strings.s.program.search.write_term_profession_program_name|s}.
+                                        {Strings.s.program.search.sr_autocomplete_instructions|s}
                                 </span>
                                 </label>
-                                    <div class="is-flex is-align-items-stretch">
-                                        <input type="search" 
-                                               class="search-form__input program-search has-background-light has-width-100 is-family-primary has-text-weight-semibold"
-                                               placeholder="{Strings.s.program.search.write_term_profession_program_name|s}" 
-                                               value="{search_query|s}" 
-                                               name="program-search" 
-                                               autocomplete="off"
-                                               id="hero-search">
-                                        <button type="submit" class="search-form__button button button--icon is-secondary is-family-secondary">
-                                            {Strings.s.header.search|s}
-                                            {>"ui/icon" icon="search" class="icon icon--medium is-white"  /}
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>    
-                    </div>
-                </div>
-                {?rows}
-                <div class="hero__links column is-6-desktop is-12">
-                    <div class="columns is-justify-content-end">
-                        <div class="column is-9-widescreen is-11-desktop is-12">
-                        {#rows}
-                            {?link.title}{?link.url}
-                                <a href="{link.url|s}" 
-                                   target="{link.target|s}" 
-                                   class="pill is-block is-primary is-flex is-justify-content-space-between is-align-items-center has-border-radius-small has-text-left mb-4 mt-0-desktop mt-4 p-5">
-                                    {link.title|s}
-                                     {>"ui/icon" icon="arrow-right" class="icon is-secondary ml-4" /}
-                                </a>
-                            {/link.url}{/link.title}
-                        {/rows}
+                                <div class="is-flex is-align-items-stretch">
+                                    <input type="search"
+                                           class="search-form__input program-search has-background-light has-width-100 is-family-primary has-text-weight-semibold"
+                                           placeholder="{Strings.s.program.search.write_term_profession_program_name|s}"
+                                           value="{search_query|s}"
+                                           name="program-search"
+                                           autocomplete="off"
+                                           id="hero-search">
+                                    <button type="submit"
+                                            class="search-form__button button button--icon is-secondary is-family-secondary">
+                                        {Strings.s.header.search|s}
+                                        {>"ui/icon" icon="search" class="icon icon--medium is-white"  /}
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+                {?rows}
+                    <div class="hero__links column is-6-desktop is-12">
+                        <div class="columns is-justify-content-end">
+                            <div class="column is-9-widescreen is-11-desktop is-12">
+                                {#rows}
+                                    {?link.title}{?link.url}
+                                        <a href="{link.url|s}"
+                                           target="{link.target|s}"
+                                           class="pill is-block is-primary is-flex is-justify-content-space-between is-align-items-center has-border-radius-small has-text-left mb-4 mt-0-desktop mt-4 p-5">
+                                            {link.title|s}
+                                            {>"ui/icon" icon="arrow-right" class="icon is-secondary ml-4" /}
+                                        </a>
+                                    {/link.url}{/link.title}
+                                {/rows}
+                            </div>
+                        </div>
+                    </div>
                 {/rows}
             </div>
         </div>

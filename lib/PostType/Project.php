@@ -131,7 +131,7 @@ class Project implements PostType {
             'exclude_from_search' => false,
             'publicly_queryable'  => true,
             'rewrite'             => $rewrite,
-            'capability_type'     => 'program',
+            'capability_type'     => 'project',
             'map_meta_cap'        => true,
             'show_in_rest'        => true,
         ];

@@ -2,7 +2,9 @@
 
 {<content}
     {#PageEvent}
-        <main class="main-content" id="main-content">
+        {>"ui/readspeaker" /}
+
+        <main class="main-content {Readspeaker.config.class|attr}" id="main-content">
             <article class="entry">
                 <section class="section pb-6">
                     <div class="container">

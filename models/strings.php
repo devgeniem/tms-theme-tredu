@@ -168,7 +168,7 @@ class Strings extends \DustPress\Model {
                 'related_art'     => _x( 'Artwork by the same artist', 'theme-frontend', 'tms-theme-tredu' ),
                 'related_artwork' => _x( 'Related artwork', 'theme-frontend', 'tms-theme-tredu' ),
             ],
-            'program' => [
+            'program'    => [
                 'search'                  => [
                     'search_studies'                     => _x( 'Search studies', 'theme-frontend', 'tms-theme-tredu' ),
                     'results_shown'                      => _x( 'Results shown', 'theme-frontend', 'tms-theme-tredu' ),
@@ -206,7 +206,7 @@ class Strings extends \DustPress\Model {
                 'title_sr_text' => _x( 'Clicking the link will download file', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             // Use the Duet Date Picker keys for strings
-            'datepicker'         => [
+            'datepicker' => [
                 'buttonLabel'         => _x( 'Pick a date', 'theme-frontend', 'tms-theme-tredu' ),
                 'placeholder'         => _x( 'dd.mm.yyyy', 'theme-frontend', 'tms-theme-tredu' ),
                 'selectedDateMessage' => _x( 'The chosen date is', 'theme-frontend', 'tms-theme-tredu' ),
@@ -254,7 +254,7 @@ class Strings extends \DustPress\Model {
                     _x( 'Dec', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
             ],
-            'modaal'             => [
+            'modaal'     => [
                 'accessible_title' => _x( 'Dialog Window - Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
                 'close'            => _x( 'Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
             ],

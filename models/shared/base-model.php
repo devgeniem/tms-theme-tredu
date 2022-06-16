@@ -3,6 +3,7 @@
  * Tredu model
  */
 
+
 /**
  * Class BaseModel
  *
@@ -39,12 +40,13 @@ abstract class BaseModel extends \DustPress\Model {
      * Bind the submodels
      *
      * @return void
-     * @throws \Exception If provided submodel name is not a string.
+     * @throws Exception If provided submodel name is not a string.
      */
     public function submodels() : void {
         $this->bind_sub( 'Header' );
         $this->bind_sub( 'Footer' );
         $this->bind_sub( 'Strings' );
+        $this->bind_sub( 'Readspeaker' );
     }
 
     /**

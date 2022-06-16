@@ -1,0 +1,58 @@
+.read-speaker-wrapper {
+    padding: 0;
+}
+
+.rsbtn.rsdetached {
+    position: static !important;
+}
+
+#rsbtn_detach_clone {
+    display: none !important;
+}
+
+.rsbtn {
+    &.rsexpanded {
+        .icon--readspeaker,
+        .listen-text {
+            display: none !important;
+        }
+    }
+
+    &:not(.rsexpanded) {
+        .rsimg,
+        .rsplay {
+            display: none;
+        }
+
+        .rsbtn_play {
+            display: flex !important;
+            align-items: center;
+            border: 0;
+            background-color: transparent !important;
+            color: $primary;
+
+            &:focus,
+            &:hover {
+                .listen-text {
+                    text-decoration: underline !important;
+                }
+            }
+
+            &:focus {
+                outline: 2px dotted $primary;
+                outline-offset: .5rem;
+            }
+        }
+
+        .listen-text {
+            align-self: center !important;
+            color: inherit !important;
+            font-family: $family-primary !important;
+            font-size: 1rem !important;
+        }
+
+        .rsbtn_tooltoggle {
+            display: none !important;
+        }
+    }
+}

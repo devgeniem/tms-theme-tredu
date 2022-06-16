@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-06-16] - 1.1.0
+
 ### Added
 
+- TMS-877: Handle imports with tms-plugin-contact-importer #100
 - TMS-821: Events #97
 - TMS-873: Show drupal image on home result card #95
 - TMS-131: Add Readspeaker #99

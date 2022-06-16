@@ -25,7 +25,8 @@
                                 </div>
 
                                 {?hero_image_credits}
-                                    <div class="pt-6 pr-6 has-text-right is-size-7">
+                                    <div
+                                        class="pt-3 pt-4-desktop pr-4-desktop has-text-right is-size-6 is-size-7-desktop">
                                         {hero_image_credits|s}
                                     </div>
                                 {/hero_image_credits}

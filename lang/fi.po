@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
 "POT-Creation-Date: 2022-06-16 14:30+0300\n"
-"PO-Revision-Date: 2022-06-16 14:39+0300\n"
+"PO-Revision-Date: 2022-06-16 14:49+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -546,7 +546,7 @@ msgstr "ReadSpeaker webReader: Kuuntele WebReaderillä"
 #: models/readspeaker.php:51
 msgctxt "readspeaker"
 msgid "Listen"
-msgstr "Kuuntele sivun sisältö"
+msgstr "Kuuntele"
 
 #: models/search.php:63
 msgid "Search results"

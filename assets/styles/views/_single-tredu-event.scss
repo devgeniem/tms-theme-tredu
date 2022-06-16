@@ -1,0 +1,24 @@
+.single-tredu-event-cpt {
+    .entry {
+        &__hero-image {
+            aspect-ratio: 705 / 319;
+        }
+
+        &__hero-info {
+            background-color: $color-light-gray;
+
+            @include from($tablet) {
+                font-size: 1.23rem;
+            }
+
+            .icon {
+                fill: $secondary;
+            }
+        }
+
+        &__info-meta {
+            color: $black;
+            font-weight: $weight-semibold;
+        }
+    }
+}

@@ -1,23 +1,23 @@
 <?php
+/**
+ * Copyright (c) 2021. Geniem Oy
+ */
 
 namespace TMS\Theme\Tredu\PostType;
 
-use Strings;
 use \TMS\Theme\Tredu\Interfaces\PostType;
-use TMS\Theme\Tredu\Images;
-use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 
 /**
- * Program CPT
+ * Tredu Event CPT
  *
  * @package TMS\Theme\Tredu\PostType
  */
-class Program implements PostType {
+class TreduEvent implements PostType {
 
     /**
      * This defines the slug of this post type.
      */
-    public const SLUG = 'program';
+    public const SLUG = 'tredu-event-cpt';
 
     /**
      * This defines what is shown in the url. This can
@@ -25,7 +25,7 @@ class Program implements PostType {
      *
      * @var string
      */
-    private $url_slug = 'program';
+    private $url_slug = 'event';
 
     /**
      * Define the CPT description
@@ -52,7 +52,7 @@ class Program implements PostType {
      * Constructor
      */
     public function __construct() {
-        $this->description = _x( 'program', 'theme CPT', 'tms-theme-tredu' );
+        $this->description = _x( 'Tredu Event', 'theme CPT', 'tms-theme-tredu' );
     }
 
     /**
@@ -80,10 +80,10 @@ class Program implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => 'Koulutukset',
-            'singular_name'         => 'Koulutus',
-            'menu_name'             => 'Koulutukset',
-            'name_admin_bar'        => 'Koulutukset',
+            'name'                  => _x( 'Tredu Event', 'theme CPT', 'tms-theme-tredu' ),
+            'singular_name'         => 'Tredun tapahtuma',
+            'menu_name'             => 'Tredun tapahtumat',
+            'name_admin_bar'        => 'Tredun tapahtumat',
             'archives'              => 'Arkistot',
             'attributes'            => 'Ominaisuudet',
             'parent_item_colon'     => 'Vanhempi:',
@@ -120,7 +120,7 @@ class Program implements PostType {
             'label'               => $labels['name'],
             'description'         => '',
             'labels'              => $labels,
-            'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes' ],
+            'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions' ],
             'hierarchical'        => true,
             'public'              => true,
             'show_ui'             => true,
@@ -134,75 +134,11 @@ class Program implements PostType {
             'exclude_from_search' => false,
             'publicly_queryable'  => true,
             'rewrite'             => $rewrite,
-            'capability_type'     => 'program',
+            'capability_type'     => 'tredu_event',
             'map_meta_cap'        => true,
             'show_in_rest'        => true,
         ];
 
         register_post_type( static::SLUG, $args );
-    }
-
-    /**
-     * Format posts for view
-     *
-     * @param array $posts      Array of WP_Post instances.
-     * @param array $taxonomies Array of related taxonomies.
-     *
-     * @return array
-     */
-    public static function format_posts( array $posts, array $taxonomies ) : array {
-
-        return array_map( function ( $item ) use ( $taxonomies ) {
-            if ( has_post_thumbnail( $item->ID ) ) {
-                $item->image = get_post_thumbnail_id( $item->ID );
-            }
-            else {
-                $item->image = Images::get_default_image_id();
-            }
-
-            $item->permalink = get_the_permalink( $item->ID );
-            $item->fields    = get_fields( $item->ID );
-
-            if ( ! empty( $item->fields ) ) {
-
-                if ( ! empty( $item->fields['start_info'] ) ) {
-                    $item->fields['start_date'] = $item->fields['start_info'];
-                }
-
-                if ( ! empty( $item->fields['apply_info'] ) ) {
-                    $item->fields['apply_end'] = $item->fields['apply_info'];
-                }
-                elseif ( ! empty( $item->fields['apply_end'] ) ) {
-                    $item->fields['apply_end'] = ( new Strings() )->s()['program']['application-period-ends'] . ' ' . date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) ); // phpcs:ignore
-                }
-            }
-
-            foreach ( $taxonomies as $tax_slug ) {
-
-                $primary_term_id = get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
-
-                $term_id = 0;
-                if ( ! empty( $primary_term_id ) ) {
-                    $primary_term      = get_term( $primary_term_id );
-                    $item->{$tax_slug} = $primary_term->name;
-                    $term_id           = $primary_term_id;
-                }
-                else {
-                    $terms = wp_get_post_terms( $item->ID, $tax_slug );
-                    if ( ! empty( $terms ) ) {
-                        $item->{$tax_slug} = $terms[0]->name;
-                        $term_id           = $terms[0]->term_id;
-                    }
-                }
-
-                if ( $tax_slug === ApplyMethod::SLUG ) {
-                    $apply_method_color           = get_term_meta( $term_id, 'color', true ) ?? '';
-                    $item->apply_method_color     = $apply_method_color;
-                    $item->apply_method_txt_color = $apply_method_color === 'primary' ? 'white' : 'primary';
-                }
-            }
-
-            return $item;
-        }, $posts );
     }
 }

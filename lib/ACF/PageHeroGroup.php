@@ -6,6 +6,8 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
+use PageProgram;
+use PageProject;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
 
@@ -41,7 +43,8 @@ class PageHeroGroup {
             $page_hero_rule_group = ( new RuleGroup() )
                 ->add_rule( 'post_type', '==', PostType\Page::SLUG )
                 ->add_rule( 'page_template', '!=', \PageFrontPage::TEMPLATE )
-                ->add_rule( 'page_template', '!=', \PageProgram::TEMPLATE );
+                ->add_rule( 'page_template', '!=', PageProgram::TEMPLATE )
+                ->add_rule( 'page_template', '!=', PageProject::TEMPLATE );
 
             $field_group
                 ->add_rule_group( $page_hero_rule_group )

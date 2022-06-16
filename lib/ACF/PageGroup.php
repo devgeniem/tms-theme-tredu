@@ -9,6 +9,7 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
+use PageProject;
 use TMS\Theme\Tredu\ACF\Layouts;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
@@ -79,6 +80,11 @@ class PageGroup {
                         'param'    => 'page_template',
                         'operator' => '!=',
                         'value'    => \PageProgram::TEMPLATE,
+                    ],
+                    [
+                        'param'    => 'page_template',
+                        'operator' => '!=',
+                        'value'    => PageProject::TEMPLATE,
                     ],
                     [
                         'param'    => 'page_type',
@@ -166,7 +172,7 @@ class PageGroup {
                 Layouts\ImageCarouselLayout::class,
                 Layouts\SubpageLayout::class,
                 Layouts\TextBlockLayout::class,
-                // Layouts\EventsLayout::class,
+                Layouts\EventsLayout::class,
                 Layouts\ArticlesLayout::class,
                 // Layouts\BlogArticlesLayout::class,
                 Layouts\SitemapLayout::class,
@@ -176,6 +182,8 @@ class PageGroup {
                 // Layouts\AccessibilityIconLinksLayout::class,
                 Layouts\CountdownLayout::class,
                 Layouts\ShareLinksLayout::class,
+                Layouts\ProgramLayout::class,
+                Layouts\TreduEventsLayout::class,
             ],
             $key
         );

@@ -7,18 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-06-16] - 1.1.0
+
 ### Added
 
-- TMS-682: Blog archive
-- TMS-873: Show drupal image on home result card
-- TMS-821: Events
-- TMS-705: Setup user roles & permissions #98
-- TMS-131: Add Readspeaker
-- TMS-745: Project page template #80
+- TMS-131: Add Readspeaker #99
 - TMS-682: Blog archive #94
+- TMS-705: Setup user roles & permissions #98
 - TMS-707: Tredu Events #71
 - TMS-744: Single Project #76
+- TMS-745: Project page template #80
+- TMS-821: Events #97
 - TMS-859: Convert PageProgram textarea to wysiwyg #92
+- TMS-873: Show drupal image on home result card #95
+- TMS-877: Handle imports with tms-plugin-contact-importer #100
 
 ## [2022-06-01] - 1.0.0
 

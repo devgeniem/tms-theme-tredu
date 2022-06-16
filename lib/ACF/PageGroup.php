@@ -179,7 +179,7 @@ class PageGroup {
                 Layouts\NoticeBannerLayout::class,
                 Layouts\GravityFormLayout::class,
                 Layouts\ContactsLayout::class,
-                // Layouts\AccessibilityIconLinksLayout::class,
+                Layouts\AccessibilityIconLinksLayout::class,
                 Layouts\CountdownLayout::class,
                 Layouts\ShareLinksLayout::class,
                 Layouts\ProgramLayout::class,

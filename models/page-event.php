@@ -153,7 +153,7 @@ class PageEvent extends BaseModel {
      */
     protected function seo_image_generator() {
         $event = $this->get_event();
-        $image = $event->images[0];
+        $image = $event->images[0] ?? false;
 
         if ( $image ) {
             yield [
@@ -325,19 +325,19 @@ class PageEvent extends BaseModel {
         $info_group_title = apply_filters(
             'tms/theme/event/group_title',
             [
-                'title' => 'has-background-secondary',
-                'icon'  => 'is-accent',
+                'title' => 'has-background-secondary-light',
+                'icon'  => 'is-secondary',
             ]
         );
 
         $info_group_classes = apply_filters(
             'tms/theme/event/info_group_classes',
-            'has-background-secondary--opaque has-text-secondary-invert'
+            'has-background-secondary-light'
         );
 
         $info_button_classes = apply_filters(
             'tms/theme/event/info_button_classes',
-            ''
+            'is-primary'
         );
 
         return [

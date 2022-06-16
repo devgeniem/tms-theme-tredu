@@ -64,15 +64,15 @@ class PageEventsSearch extends BaseModel {
     public function item_classes() : array {
         return apply_filters( 'tms/theme/page_events_search/item_classes', [
             'list' => [
-                'item'        => 'has-background-secondary',
+                'item'        => 'has-background-secondary-light',
                 'item_inner'  => '',
-                'icon'        => 'is-accent',
+                'icon'        => 'is-secondary',
                 'description' => '',
             ],
             'grid' => [
-                'item'       => 'has-background-secondary',
+                'item'       => 'has-background-secondary-light',
                 'item_inner' => '',
-                'icon'       => 'is-accent',
+                'icon'       => 'is-secondary',
             ],
         ] );
     }

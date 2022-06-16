@@ -11,10 +11,10 @@
                 <span class="listen-text has-text-weight-semibold mr-3">{Readspeaker.strings.button_text|html}</span>
 
                 <span class="rsbtn_left rsimg rspart">
-                <span class="rsbtn_text">
-´                    <span>{Readspeaker.strings.button_text|html}</span>
+                    <span class="rsbtn_text is-flex">
+    ´                    <span>{Readspeaker.strings.button_text|html}</span>
+                    </span>
                 </span>
-            </span>
 
                 <span class="rsbtn_right rsimg rsplay rspart"></span>
             </a>

@@ -2,8 +2,8 @@
 
 namespace TMS\Theme\Tredu\Formatters;
 
-use TMS\Theme\Tredu\Integrations\Tampere\PlaceOfBusinessApiController;
-use TMS\Theme\Tredu\Integrations\Tampere\PlaceOfBusinessFacade;
+use TMS\Plugin\ContactImporter\PlaceOfBusinessApiController;
+use TMS\Plugin\ContactImporter\PlaceOfBusinessFacade;
 
 /**
  * Class PlaceOfBusinessFormatter
@@ -65,8 +65,7 @@ class PlaceOfBusinessFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter 
             return [];
         }
 
-        $api     = new PlaceOfBusinessApiController();
-        $results = $api->get();
+        $results = ( new PlaceOfBusinessApiController() )->get_results();
 
         if ( empty( $results ) ) {
             return [];

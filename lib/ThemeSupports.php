@@ -63,7 +63,9 @@ class ThemeSupports implements Interfaces\Controller {
 
         \add_action( 'wp_head', \Closure::fromCallable( [ $this, 'detect_js' ] ), 0 );
 
-        \add_filter( 'tms/theme/settings/material_default_image', [ $this, 'get_material_default_image' ] );
+        add_filter( 'tms/theme/settings/material_default_image', [ $this, 'get_material_default_image' ] );
+
+        add_filter( 'tms/plugin-contact-importer/placeholder_image', [ $this, 'get_contact_default_image' ] );
     }
 
     /**
@@ -166,5 +168,14 @@ class ThemeSupports implements Interfaces\Controller {
      */
     public function get_material_default_image() {
         return Settings::get_setting( 'material_default_image' );
+    }
+
+    /**
+     * Get contact default image
+     *
+     * @return mixed
+     */
+    public function get_contact_default_image() {
+        return Settings::get_setting( 'contacts_default_image' );
     }
 }

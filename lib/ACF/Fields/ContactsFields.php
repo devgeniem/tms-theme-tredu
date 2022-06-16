@@ -7,7 +7,7 @@ namespace TMS\Theme\Tredu\ACF\Fields;
 
 use Exception;
 use Geniem\ACF\Field;
-use TMS\Theme\Tredu\Integrations\Tampere\PersonApiController;
+use TMS\Plugin\ContactImporter;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType\Contact;
 
@@ -154,8 +154,7 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
      * @return array
      */
     public function fill_api_contacts_field_choices( array $field ) : array {
-        $api      = new PersonApiController();
-        $contacts = $api->validate_result_set( $api->get() );
+        $contacts = ( new ContactImporter\PersonApiController() )->get_results();
 
         if ( empty( $contacts ) ) {
             return $field;

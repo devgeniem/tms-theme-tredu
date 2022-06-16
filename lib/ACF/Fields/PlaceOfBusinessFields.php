@@ -4,9 +4,8 @@ namespace TMS\Theme\Tredu\ACF\Fields;
 
 use Exception;
 use Geniem\ACF\Field;
-use TMS\Theme\Tredu\Integrations\Tampere\PlaceOfBusinessApiController;
+use TMS\Plugin\ContactImporter;
 use TMS\Theme\Tredu\Logger;
-use TMS\Theme\Tredu\PostType\Contact;
 
 /**
  * Class PlaceOfBusinessFields
@@ -47,15 +46,15 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
      */
     protected function sub_fields() : array {
         $strings = [
-            'title'        => [
+            'title'       => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
             ],
-            'description'  => [
+            'description' => [
                 'label'        => 'Kuvaus',
                 'instructions' => '',
             ],
-            'contacts'     => [
+            'contacts'    => [
                 'label'        => 'Yhteystiedot',
                 'instructions' => '',
             ],
@@ -105,15 +104,14 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
      * @return array
      */
     public function fill_place_of_business_choices( array $field ) : array {
-        $api     = new PlaceOfBusinessApiController();
-        $results = $api->get();
+        $places_of_business = ( new ContactImporter\PlaceOfBusinessApiController() )->get_results();
 
-        if ( empty( $results ) ) {
+        if ( empty( $places_of_business ) ) {
             return $field;
         }
 
-        foreach ( $results as $result ) {
-            $field['choices'][ $result->id ] = $result->title;
+        foreach ( $places_of_business as $item ) {
+            $field['choices'][ $item['id'] ] = $item['title'];
         }
 
         return $field;

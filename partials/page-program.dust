@@ -2,16 +2,10 @@
 
 {<content}
     {#PageProgram}
-        <main class="main-content section {Readspeaker.config.class|attr}" id="main-content">
+        <main class="main-content section" id="main-content">
             <div class="container">
 
                 <h1 class="h1">{Strings.s.program.search.search_studies|html}</h1>
-
-                {?Readspeaker}
-                    <div class="mb-4">
-                        {>"ui/readspeaker" /}
-                    </div>
-                {/Readspeaker}
 
                 {?page_description}
                     <div class="page-program__description mb-6">{page_description|kses}</div>

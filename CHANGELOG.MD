@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- TMS-821: Events
+- TMS-821: Events #97
+- TMS-873: Show drupal image on home result card #95
+- TMS-131: Add Readspeaker #99
 - TMS-705: Setup user roles & permissions #98
 - TMS-745: Project page template #80
 - TMS-682: Blog archive #94

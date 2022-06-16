@@ -2,7 +2,7 @@
 
 {<content}
     {#SingleProject}
-        <main class="main-content" id="main-content">
+        <main class="main-content {Readspeaker.config.class|attr}" id="main-content">
             <article class="entry">
                 {?hero}
                     {>"views/single-project/hero" /}
@@ -19,6 +19,12 @@
                         </div>
                     </div>
                 {/Header.breadcrumbs}
+
+                {?Readspeaker}
+                    <div class="has-background-light-blueishgray">
+                        {>"ui/readspeaker" class="pt-3 pt-5-desktop pr-5 pl-5 pr-0-desktop pl-0-desktop" /}
+                    </div>
+                {/Readspeaker}
 
                 {>"views/single-project/logo-cloud" /}
 

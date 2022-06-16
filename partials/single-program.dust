@@ -1,7 +1,7 @@
 {>"shared/base" /}
 
 {<content}
-    <main class="main-content has-text-black" id="main-content">
+    <main class="main-content has-text-black {Readspeaker.config.class|attr}" id="main-content">
         {#SingleProgram}
             <article class="entry">
 
@@ -9,7 +9,14 @@
                     {>"views/single-program/hero" /}
                 {/content.image}
 
+                {?Readspeaker}
+                    <div class="has-background-light-blueishgray">
+                        {>"ui/readspeaker" /}
+                    </div>
+                {/Readspeaker}
+
                 {>"views/single-program/info" /}
+
 
                 <section class="section">
                     <div class="container">
@@ -34,8 +41,8 @@
                                                 {content.fields.ingress|html}
                                             </p>
                                         {/content.fields.ingress}
-                                        
-                                    {/content.image}    
+
+                                    {/content.image}
 
                                     {@content /}
                                 </div>
@@ -46,29 +53,29 @@
             </article>
 
             {>"ui/components" components=components /}
-           {?stories.posts}
-            <section class="program-related-stories section has-background-light-blueishgray">
-                {?stories.heading}
-                    <div class="container">
-                        <div class="columns">
-                            <div class="column is-8">
-                                <h2 class="layout-articles__title mt-0 mb-6">{stories.heading|html}</h2>
+            {?stories.posts}
+                <section class="program-related-stories section has-background-light-blueishgray">
+                    {?stories.heading}
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-8">
+                                    <h2 class="layout-articles__title mt-0 mb-6">{stories.heading|html}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                {/stories.heading}
+                    {/stories.heading}
                     <div class="container">
                         <div class="columns is-multiline">
-                                {#stories.posts}
-                                    {>"views/home/home-grid-item"  /}
-                                {/stories.posts}
+                            {#stories.posts}
+                                {>"views/home/home-grid-item"  /}
+                            {/stories.posts}
                         </div>
-                         {?stories.read_more.url}
+                        {?stories.read_more.url}
                             {?stories.read_more.title}
                                 <div class="has-text-right">
-                                    <a href="{stories.read_more.url|attr}" 
-                                    target="{stories.read_more.target|attr}" 
-                                    class="is-primary layout-articles__read-more">
+                                    <a href="{stories.read_more.url|attr}"
+                                       target="{stories.read_more.target|attr}"
+                                       class="is-primary layout-articles__read-more">
                                         {>"ui/icon" icon="chevron-right" class="icon--medium is-secondary mr-2" /}
                                         {stories.read_more.title|html}
                                     </a>
@@ -77,8 +84,8 @@
                         {/stories.read_more.url}
                     </div>
                 </section>
-           {/stories.posts}
-          
+            {/stories.posts}
+
         {/SingleProgram}
     </main>
 {/content}

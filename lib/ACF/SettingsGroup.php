@@ -20,6 +20,7 @@ use TMS\Theme\Tredu\ACF\Fields\Settings\FooterSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\MapSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\PageSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\ProjectSettingsTab;
+use TMS\Theme\Tredu\ACF\Fields\Settings\ReadspeakerSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SocialMediaSettingsTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\ThemeColorTab;
 use TMS\Theme\Tredu\ACF\Fields\Settings\SitemapSettingsTab;
@@ -78,6 +79,7 @@ class SettingsGroup {
                     [
                         new HeaderSettingsTab( '', $field_group->get_key() ),
                         new FooterSettingsTab( '', $field_group->get_key() ),
+                        new ReadspeakerSettingsTab( '', $field_group->get_key() ),
                         new ThemeColorTab( '', $field_group->get_key() ),
                         new MapSettingsTab( '', $field_group->get_key() ),
                         new SocialMediaSettingsTab( '', $field_group->get_key() ),

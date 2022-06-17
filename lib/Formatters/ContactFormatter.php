@@ -5,8 +5,7 @@
 
 namespace TMS\Theme\Tredu\Formatters;
 
-use TMS\Theme\Tredu\Integrations\Tampere\PersonApiController;
-use TMS\Theme\Tredu\Integrations\Tampere\PersonFacade;
+use TMS\Plugin\ContactImporter;
 use TMS\Theme\Tredu\PostType\Contact;
 use TMS\Theme\Tredu\Settings;
 
@@ -105,8 +104,7 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             return [];
         }
 
-        $api      = new PersonApiController();
-        $contacts = $api->validate_result_set( $api->get() );
+        $contacts = ( new ContactImporter\PersonApiController() )->get_results();
 
         if ( empty( $contacts ) ) {
             return [];

@@ -159,7 +159,7 @@ trait Breadcrumbs {
     private function format_page( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs = array_map( function ( $item ) {
             $item['icon']         = 'chevron-right';
-            $item['icon_classes'] = 'icon--small is-secondary ml-0 mr-0';
+            $item['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
 
             return $item;
         }, $breadcrumbs );

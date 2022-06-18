@@ -157,6 +157,12 @@ trait Breadcrumbs {
      * @return array
      */
     private function format_page( $current_id, string $home_url, array $breadcrumbs ) : array {
+        $breadcrumbs = array_map( function ( $item ) {
+            $item['icon']         = 'chevron-right';
+            $item['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
+
+            return $item;
+        }, $breadcrumbs );
         /**
          * Add current page to breadcrumbs and set its
          * link status to false, unless it's the front page, then remove it.
@@ -422,7 +428,7 @@ trait Breadcrumbs {
         }
 
         $first      = array_shift( $breadcrumbs );
-        $last_three = array_splice( $breadcrumbs, - 3, 3 ); // Last 3 available.
+        $last_three = array_splice( $breadcrumbs, -3, 3 ); // Last 3 available.
 
         $prefix = [ $first ];
 

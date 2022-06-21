@@ -37,9 +37,9 @@
                                 </header>
 
                                 <div class="entry__content is-content-grid keep-vertical-spacing">
-                                    {^content.image}
+                                    {^content.has_image}
                                         {>"views/single/single-meta" spacing_class="mt-6 mb-6" /}
-                                    {/content.image}
+                                    {/content.has_image}
 
                                     {?content.post_excerpt}
                                         <p class="entry__lead">

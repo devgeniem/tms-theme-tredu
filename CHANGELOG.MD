@@ -7,10 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-06-21] - 1.2.0
+
 ### Added
 
 - TMS-872: Add icons to to breadcrumbs #104
 - TMS-807: Add Favicon to settings #103
+- TMS-785: Announce success message for screen readers #108
+
+### Changed
+
+- TMS-825: Hide result info #106
+- TMS-881: Improve drupal news support #109
+- TMS-880: Display drupal image on single-post view #107
 
 ## [2022-06-16] - 1.1.0
 

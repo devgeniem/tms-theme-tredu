@@ -1,5 +1,6 @@
 .entry {
-    &__content {
+    &__content,
+    .topical-content .field-body {
         > p {
             > a {
                 text-decoration: underline;

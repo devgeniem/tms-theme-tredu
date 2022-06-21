@@ -39,6 +39,9 @@ class Single extends BaseModel {
             ? false
             : $single->image;
 
+        $single->api_image_url = empty( $single->image ) ? get_field( 'image_url' ) : false;
+        $single->has_image     = ! empty( $single->image ) || ! empty( $single->api_image_url );
+
         if ( 'blog-article' === $single->post_type ) {
             $single->categories = BlogCategory::get_post_categories( $single->ID );
             $single->tags       = BlogTag::get_post_categories( $single->ID );

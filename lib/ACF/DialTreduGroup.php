@@ -438,52 +438,6 @@ class DialTreduGroup {
 
         return $tab;
     }
-
-    /**
-     * Get related posts tab
-     *
-     * @param string $key Field group key.
-     *
-     * @return Field\Tab
-     * @throws Exception In case of invalid option.
-     */
-    protected function get_related_posts_tab( string $key ) : Field\Tab {
-        $strings = [
-            'tab'   => 'Suositellut sisällöt',
-            'title' => [
-                'title'         => 'Otsikko',
-                'instructions'  => 'Suositellut sisällöt noston otsikko',
-                'default_value' => __( 'Related posts', 'tms-theme-tredu' ),
-            ],
-            'link'  => [
-                'title'        => 'Arkistolinkki',
-                'instructions' => 'Suositellut sisällöt noston linkki',
-            ],
-        ];
-
-        $tab = ( new Field\Tab( $strings['tab'] ) )
-            ->set_placement( 'left' );
-
-        $title_field = ( new Field\Text( $strings['title']['title'] ) )
-            ->set_key( "${key}_related_title" )
-            ->set_name( 'related_title' )
-            ->set_default_value( $strings['title']['default_value'] )
-            ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['title']['instructions'] );
-
-        $link_field = ( new Field\Link( $strings['link']['title'] ) )
-            ->set_key( "${key}_related_link" )
-            ->set_name( 'related_link' )
-            ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['link']['instructions'] );
-
-        $tab->add_fields( [
-            $title_field,
-            $link_field,
-        ] );
-
-        return $tab;
-    }
 }
 
 ( new DialTreduGroup() );

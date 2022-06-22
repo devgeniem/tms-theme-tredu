@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-884: Dial tredu CPT & single view
+
 ## [2022-06-21] - 1.2.0
 
 ### Added

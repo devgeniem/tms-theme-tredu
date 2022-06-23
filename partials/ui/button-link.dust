@@ -1,14 +1,14 @@
 {?link.url}
     {?link.title}
-        <a href="{link.url}" {?link.target}target="{link.target}"{/link.target} class="button {?icon}button--icon{/icon} {classes|s}">
+        <a href="{link.url|url}" {?link.target}target="{link.target}"{/link.target}
+           class="button {?icon}button--icon{/icon} {classes|attr}">
             <span class="has-width-100">
-                {link.title|s}
+                {link.title|html}
             </span>
 
-
-            {?icon}
+            {?.icon}
                 {>"ui/icon" class=icon_classes /}
-            {/icon}
+            {/.icon}
         </a>
     {/link.title}
 {/link.url}

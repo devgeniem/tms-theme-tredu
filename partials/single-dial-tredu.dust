@@ -1,31 +1,33 @@
 {>"shared/base" /}
 
 {<content}
-    <main class="main-content" id="main-content">
-        <section class="section pt-10">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-8 is-offset-2">
-                        {?SingleDialTredu.content.icon}
-                            <div class="entry__figure pt-2 has-text-align-center">
-                                {@image id=SingleDialTredu.content.icon size="thumbnail" /}
-                            </div>
-                        {/SingleDialTredu.content.icon}
+    {#SingleDialTredu}
+        <main class="main-content" id="main-content">
+            <section class="section pt-10">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            {?.content.icon}
+                                <div class="entry__figure pt-2 has-text-align-center">
+                                    {@image id=.content.icon size="thumbnail" /}
+                                </div>
+                            {/.content.icon}
 
-                        <article class="entry">
-                            <h1 class="entry__title has-text-align-center">Missä ON työpaikkoja?</h1>
+                            <article class="entry">
+                                <h1 class="entry__title has-text-align-center">{.content.title|html}</h1>
 
-                            <div class="entry__content keep-vertical-spacing has-text-lead">
-                                On aloja, joilla on paljon kilpailua työpaikoista, ja aloja, joilla tarvitaan kipeästi
-                                työntekijöitä. Vaikka ammatinvalinnassa on tärkeä pohtia omia kiinnostuksen kohteita ja
-                                valita itselle mieluinen ala, on hyvä miettiä myös kuinka helposti alalla saa työpaikan.
-                            </div>
-                        </article>
+                                {?.content.ingress}
+                                    <div class="entry__content keep-vertical-spacing has-text-lead">
+                                        {content.ingress|html}
+                                    </div>
+                                {/.content.ingress}
+                            </article>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        {>"ui/components" components=SingleDialTredu.components /}
-    </main>
+            {>"ui/components" components=.components /}
+        </main>
+    {/SingleDialTredu}
 {/content}

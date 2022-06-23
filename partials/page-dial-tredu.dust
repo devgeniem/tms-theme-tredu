@@ -1,0 +1,67 @@
+{>"shared/base" /}
+
+{<content}
+    {#PageDialTredu}
+        <main class="main-content" id="main-content">
+            <section class="section pt-10">
+                <div class="container">
+                    <div class="columns is-multiline">
+                        {?.content.image}
+                            <div class="column is-12">
+                                <div
+                                    class="page-dial-tredu__hero is-relative pt-0 pb-0 has-background-cover" {@inlinebg id=.content.image size="fullhd" /}>
+                                </div>
+                            </div>
+                        {/.content.image}
+
+                        <div class="column is-8 is-offset-2">
+                            <div class="page-dial-tredu__content">
+                                <h1 class="entry__title has-text-align-center">{.content.post_title|html}</h1>
+
+                                {?.content.fields.ingress}
+                                    <div class="entry__content keep-vertical-spacing has-text-lead">
+                                        {content.fields.ingress|html}
+                                    </div>
+                                {/.content.fields.ingress}
+                            </div>
+                        </div>
+
+                        {?.content.results}
+                            <div class="column is-12 page-dial-tredu__results">
+                                {#.content.results}
+                                    <article class="page-dial-tredu__item">
+                                        <button data-duration="300" class="page-dial-tredu__item-header js-toggle"
+                                                aria-expanded="false" aria-controls="dial-tredu-{$idx}">
+                                            <div class="page-dial-tredu__item-header-content js-tredu-item-accordion">
+                                                {?.icon}
+                                                    {@image id=.icon size="thumbnail" /}
+                                                {/.icon}
+
+                                                <h2 class="h4 page-dial-tredu__item-title">{.title|html}</h2>
+                                            </div>
+
+                                            {>"ui/icon" class="page-dial-tredu__item-toggle-icon icon--medium is-secondary" icon="chevron-down" /}
+                                        </button>
+
+                                        <div id="dial-tredu-{$idx}"
+                                             class="page-dial-tredu__item-content keep-vertical-spacing is-hidden">
+                                            {?.ingress}
+                                                <p>
+                                                    {.ingress|html}
+                                                </p>
+                                            {/.ingress}
+
+                                            {>"ui/button-link" classes="is-secondary" link=.link /}
+                                        </div>
+                                    </article>
+                                {/.content.results}
+                            </div>
+                        {/.content.results}
+                    </div>
+                </div>
+            </section>
+
+            {>"ui/components" components=.components /}
+        </main>
+    {/PageDialTredu}
+{/content}

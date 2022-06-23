@@ -1,0 +1,33 @@
+{>"shared/base" /}
+
+{<content}
+    {#SingleDialTredu}
+        <main class="main-content" id="main-content">
+            <section class="section pt-10">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            {?.content.icon}
+                                <div class="entry__figure pt-2 has-text-align-center">
+                                    {@image id=.content.icon size="thumbnail" /}
+                                </div>
+                            {/.content.icon}
+
+                            <article class="entry">
+                                <h1 class="entry__title has-text-align-center">{.content.title|html}</h1>
+
+                                {?.content.ingress}
+                                    <div class="entry__content keep-vertical-spacing has-text-lead">
+                                        {content.ingress|html}
+                                    </div>
+                                {/.content.ingress}
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {>"ui/components" components=.components /}
+        </main>
+    {/SingleDialTredu}
+{/content}

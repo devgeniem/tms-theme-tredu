@@ -51,8 +51,8 @@ trait Breadcrumbs {
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
-            case PostType\Project::SLUG:
-                $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
+            case PostType\DialTredu::SLUG:
+                $breadcrumbs = $this->format_dial_tredu( $current_id, $home_url, $breadcrumbs );
                 break;
             case PostType\TreduEvent::SLUG:
                 $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
@@ -284,6 +284,39 @@ trait Breadcrumbs {
     }
 
     /**
+     * Format breadcrumbs for: Dial Tredu
+     *
+     * @param int    $current_id  Current page ID.
+     * @param string $home_url    Home URL.
+     * @param array  $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_dial_tredu( $current_id, string $home_url, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $dial_tredu_page = Settings::get_setting( 'dial_tredu_page' );
+
+        if ( ! empty( $dial_tredu_page ) ) {
+            $breadcrumbs[] = [
+                'permalink'    => get_the_permalink( $dial_tredu_page ),
+                'title'        => get_the_title( $dial_tredu_page ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
      * Format breadcrumbs for: Tredu Event
      *
      * @param int   $current_id  Current page ID.
@@ -428,7 +461,7 @@ trait Breadcrumbs {
         }
 
         $first      = array_shift( $breadcrumbs );
-        $last_three = array_splice( $breadcrumbs, -3, 3 ); // Last 3 available.
+        $last_three = array_splice( $breadcrumbs, - 3, 3 ); // Last 3 available.
 
         $prefix = [ $first ];
 

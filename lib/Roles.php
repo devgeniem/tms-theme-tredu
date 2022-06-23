@@ -194,6 +194,27 @@ class Roles implements Controller {
     ];
 
     /**
+     * Dial Tredu / dial_tredu-cpt
+     *
+     * @var array
+     */
+    private $dial_tredu_all_capabilities = [
+        'edit_dial_tredu',
+        'read_dial_tredu',
+        'delete_dial_tredu',
+        'edit_others_dial_tredus',
+        'delete_dial_tredus',
+        'publish_dial_tredus',
+        'read_private_dial_tredus',
+        'delete_private_dial_tredus',
+        'delete_published_dial_tredus',
+        'delete_others_dial_tredus',
+        'edit_private_dial_tredus',
+        'edit_published_dial_tredus',
+        'edit_dial_tredus',
+    ];
+
+    /**
      * Base taxonomy capabilities, only for admins.
      *
      * @var string[]
@@ -495,6 +516,7 @@ class Roles implements Controller {
         $role->add_caps( $this->program_all_capabilities );
         $role->add_caps( $this->project_all_capabilities );
         $role->add_caps( $this->tredu_event_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -537,6 +559,7 @@ class Roles implements Controller {
         $role->add_caps( $this->program_all_capabilities );
         $role->add_caps( $this->tredu_event_all_capabilities );
         $role->add_caps( $this->project_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -603,6 +626,7 @@ class Roles implements Controller {
         $role->add_caps( $this->program_all_capabilities );
         $role->add_caps( $this->tredu_event_all_capabilities );
         $role->add_caps( $this->project_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
@@ -770,6 +794,19 @@ class Roles implements Controller {
         ] );
 
         $role->add_caps( [
+            'edit_dial_tredu',
+            'read_dial_tredu',
+            'delete_dial_tredu',
+            'delete_dial_tredus',
+            'read_private_dial_tredus',
+            'delete_private_dial_tredus',
+            'delete_published_dial_tredus',
+            'edit_private_dial_tredus',
+            'edit_published_dial_tredus',
+            'edit_dial_tredus',
+        ] );
+
+        $role->add_caps( [
             'edit_tredu_event',
             'read_tredu_event',
             'delete_tredu_event',
@@ -793,6 +830,19 @@ class Roles implements Controller {
             'edit_private_programs',
             'edit_published_programs',
             'edit_programs',
+        ] );
+
+        $role->add_caps( [
+            'edit_dial_tredu',
+            'read_dial_tredu',
+            'delete_dial_tredu',
+            'delete_dial_tredus',
+            'read_private_dial_tredus',
+            'delete_private_dial_tredus',
+            'delete_published_dial_tredus',
+            'edit_private_dial_tredus',
+            'edit_published_dial_tredus',
+            'edit_dial_tredus',
         ] );
 
         // Taxonomies

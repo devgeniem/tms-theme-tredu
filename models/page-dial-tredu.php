@@ -52,7 +52,7 @@ class PageDialTredu extends BaseModel {
 
                 if ( empty( $link ) ) {
                     $link = [
-                        'title' => __( 'Read more', 'tms-theme-tredu' ),
+                        'title' => __( 'Read more here', 'tms-theme-tredu' ),
                         'url'   => get_post_permalink( $item->ID ),
                     ];
                 }

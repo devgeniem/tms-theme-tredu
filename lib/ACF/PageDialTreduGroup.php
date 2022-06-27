@@ -46,7 +46,6 @@ class PageDialTreduGroup {
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $this->get_general_tab( $field_group->get_key() ),
-                        $this->get_video_tab( $field_group->get_key() ),
                     ]
                 )
             );
@@ -78,10 +77,6 @@ class PageDialTreduGroup {
                 'title'        => 'Ingressi',
                 'instructions' => 'Maks. 600 merkkiä',
             ],
-            'items'   => [
-                'title'        => 'Haitarit',
-                'instructions' => '',
-            ],
         ];
 
         $tab = ( new Field\Tab( $strings['tab'] ) )
@@ -93,61 +88,8 @@ class PageDialTreduGroup {
             ->set_maxlength( 600 )
             ->set_instructions( $strings['ingress']['instructions'] );
 
-        $results_field = ( new Field\PostObject( $strings['items']['title'] ) )
-            ->set_key( "${key}_items" )
-            ->set_name( 'items' )
-            ->set_post_types( [ PostType\DialTredu::SLUG ] )
-            ->allow_null()
-            ->allow_multiple()
-            ->set_instructions( $strings['items']['instructions'] );
-
         $tab->add_fields( [
             $ingress_field,
-            $results_field,
-        ] );
-
-        return $tab;
-    }
-
-    /**
-     * Get general tab
-     *
-     * @param string $key Field group key.
-     *
-     * @return Field\Tab
-     * @throws Exception In case of invalid option.
-     */
-    protected function get_video_tab( string $key ) : Field\Tab {
-        $strings = [
-            'tab'      => 'Video',
-            'video'    => [
-                'label'        => 'Video',
-                'instructions' => '',
-            ],
-            'alt_text' => [
-                'label'        => 'Alt-teksti ruudunlukijoille',
-                'instructions' => '',
-            ],
-        ];
-
-        $tab = ( new Field\Tab( $strings['tab'] ) )
-            ->set_placement( 'left' );
-
-        $video_field = ( new Field\Oembed( $strings['video']['label'] ) )
-            ->set_key( "${key}_video" )
-            ->set_name( 'video' )
-            ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['video']['instructions'] );
-
-        $alt_text_field = ( new Field\Textarea( $strings['alt_text']['label'] ) )
-            ->set_key( "${key}_video_alt_text" )
-            ->set_name( 'video_alt_text' )
-            ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['alt_text']['instructions'] );
-
-        $tab->add_fields( [
-            $video_field,
-            $alt_text_field,
         ] );
 
         return $tab;

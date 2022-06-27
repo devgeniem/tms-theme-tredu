@@ -1,0 +1,47 @@
+.dial-tredu-accordion {
+    &__item {
+        padding-right: $theme-spacing-quarter;
+        padding-left: $theme-spacing-quarter;
+        border-bottom: 1px solid $secondary;
+    }
+
+    &__item-content {
+        padding-bottom: $theme-spacing-oneandhalf;
+
+        @include from($widescreen) {
+            max-width: $widescreen;
+            padding-right: $theme-spacing-four;
+            padding-left: $theme-spacing-fourandhalf;
+        }
+    }
+
+    &__item-header-content {
+        display: flex;
+        align-items: center;
+
+        img {
+            max-width: $theme-spacing-three;
+            margin-right: $theme-spacing;
+        }
+    }
+
+    &__item-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        .page-dial-tredu__item-toggle-icon {
+            transition: $speed transform ease-out;
+        }
+
+        &.is-active {
+            .page-dial-tredu__item-toggle-icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

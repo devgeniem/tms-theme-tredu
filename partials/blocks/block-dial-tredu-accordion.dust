@@ -1,0 +1,42 @@
+{?items}
+    <div class="column is-12 dial-tredu-accordion is-align-full">
+        {?title}
+            <h2 class="h4 countdown__title mt-0 mb-6 has-text-primary">
+                {title|html}
+            </h2>
+        {/title}
+
+        {?description}
+            <p class="has-text-lead">{description|html}</p>
+        {/description}
+
+        {#items}
+            <article class="dial-tredu-accordion__item">
+                <button data-duration="300" class="dial-tredu-accordion__item-header js-toggle"
+                        aria-expanded="false" aria-controls="dial-tredu-{$idx}">
+                    <div
+                        class="dial-tredu-accordion__item-header-content js-tredu-item-accordion pt-3 pb-3 pt-4-desktop pb-4-desktop">
+                        {?.icon}
+                            {@image id=.icon size="thumbnail" /}
+                        {/.icon}
+
+                        <h2 class="h4 dial-tredu-accordion__item-title">{.title|html}</h2>
+                    </div>
+
+                    {>"ui/icon" class="dial-tredu-accordion__item-toggle-icon icon--medium is-secondary" icon="chevron-down" /}
+                </button>
+
+                <div id="dial-tredu-{$idx}"
+                     class="dial-tredu-accordion__item-content keep-vertical-spacing is-hidden">
+                    {?.ingress}
+                        <p>
+                            {.ingress|html}
+                        </p>
+                    {/.ingress}
+
+                    {>"ui/button-link" classes="is-secondary" link=.link /}
+                </div>
+            </article>
+        {/items}
+    </div>
+{/items}

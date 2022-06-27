@@ -7,6 +7,7 @@ namespace TMS\Theme\Tredu;
 
 use DustPress\Model;
 use Geniem\ACF\Block as GeniemBlock;
+use PageDialTredu;
 
 /**
  * Class BlocksController
@@ -363,6 +364,10 @@ class BlocksController implements Interfaces\Controller {
         $post_type      = \get_post_type( $context->post->ID );
         $page_template  = \get_page_template_slug( $context->post->ID );
 
+        if ( $page_template === PageDialTredu::TEMPLATE ) {
+            return $this->page_dial_tredu_blocks();
+        }
+
         foreach ( $blocks as $block => $rules ) {
             if ( empty( $rules ) ) {
                 $allowed_blocks[] = $block;
@@ -387,5 +392,18 @@ class BlocksController implements Interfaces\Controller {
         }
 
         return $allowed_blocks;
+    }
+
+    /**
+     * Page Template: page-dial-tredu.php blocks.
+     *
+     * @param $context
+     * @param $blocks
+     */
+    public function page_dial_tredu_blocks() {
+        return [
+            'acf/video',
+            'acf/dial-tredu-accordion',
+        ];
     }
 }

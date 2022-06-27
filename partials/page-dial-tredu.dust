@@ -19,59 +19,17 @@
                                 <h1 class="entry__title has-text-align-center">{.content.post_title|html}</h1>
 
                                 {?.content.fields.ingress}
-                                    <div class="entry__content keep-vertical-spacing has-text-lead mb-5">
+                                    <div
+                                        class="entry__content keep-vertical-spacing has-text-lead has-text-centered mb-5">
                                         {content.fields.ingress|html}
                                     </div>
                                 {/.content.fields.ingress}
                             </div>
                         </div>
+                    </div>
 
-                        {?.content.results}
-                            <div class="column is-12 page-dial-tredu__results">
-                                {#.content.results}
-                                    <article class="page-dial-tredu__item">
-                                        <button data-duration="300" class="page-dial-tredu__item-header js-toggle"
-                                                aria-expanded="false" aria-controls="dial-tredu-{$idx}">
-                                            <div
-                                                class="page-dial-tredu__item-header-content js-tredu-item-accordion pt-3 pb-3 pt-4-desktop pb-4-desktop">
-                                                {?.icon}
-                                                    {@image id=.icon size="thumbnail" /}
-                                                {/.icon}
-
-                                                <h2 class="h4 page-dial-tredu__item-title">{.title|html}</h2>
-                                            </div>
-
-                                            {>"ui/icon" class="page-dial-tredu__item-toggle-icon icon--medium is-secondary" icon="chevron-down" /}
-                                        </button>
-
-                                        <div id="dial-tredu-{$idx}"
-                                             class="page-dial-tredu__item-content keep-vertical-spacing is-hidden">
-                                            {?.ingress}
-                                                <p>
-                                                    {.ingress|html}
-                                                </p>
-                                            {/.ingress}
-
-                                            {>"ui/button-link" classes="is-secondary" link=.link /}
-                                        </div>
-                                    </article>
-                                {/.content.results}
-                            </div>
-                        {/.content.results}
-
-                        {?.content.fields.video}
-                            <div class="column is-12">
-                                <section class="video pt-6 pt-8-desktop">
-                                    {?.content.fields.video_alt_text}
-                                        <span class="is-sr-only">{.content.fields.video_alt_text|kses}</span>
-                                    {/.content.fields.video_alt_text}
-
-                                    <div class="image is-16by9 is-embed-container">
-                                        {.content.fields.video|s}
-                                    </div>
-                                </section>
-                            </div>
-                        {/.content.fields.video}
+                    <div class="column is-12 is-content-grid">
+                        {@content /}
                     </div>
                 </div>
             </section>

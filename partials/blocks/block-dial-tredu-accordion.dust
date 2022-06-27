@@ -1,7 +1,7 @@
 {?items}
     <div class="column is-12 dial-tredu-accordion is-align-full">
         {?title}
-            <h2 class="h4 countdown__title mt-0 mb-6 has-text-primary">
+            <h2 class="h4 countdown__title mt-0 mb-6 has-text-black">
                 {title|html}
             </h2>
         {/title}

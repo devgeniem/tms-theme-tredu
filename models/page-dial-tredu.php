@@ -48,11 +48,20 @@ class PageDialTredu extends BaseModel {
 
         if ( ! empty( $content->fields['items'] ) ) {
             $content->results = array_map( function ( $item ) {
+                $link = get_field( 'link', $item->ID );
+
+                if ( empty( $link ) ) {
+                    $link = [
+                        'title' => __( 'Read more', 'tms-theme-tredu' ),
+                        'url'   => get_post_permalink( $item->ID ),
+                    ];
+                }
+
                 return [
                     'title'   => $item->post_title,
                     'ingress' => get_field( 'ingress', $item->ID ),
                     'icon'    => get_field( 'icon', $item->ID ),
-                    'link'    => get_field( 'link', $item->ID ),
+                    'link'    => $link,
                 ];
             }, $content->fields['items'] );
         }

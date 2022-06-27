@@ -103,7 +103,7 @@ class PageDialTreduGroup {
 
         $tab->add_fields( [
             $ingress_field,
-            $results_field
+            $results_field,
         ] );
 
         return $tab;
@@ -119,7 +119,7 @@ class PageDialTreduGroup {
      */
     protected function get_video_tab( string $key ) : Field\Tab {
         $strings = [
-            'tab'    => 'Video',
+            'tab'      => 'Video',
             'video'    => [
                 'label'        => 'Video',
                 'instructions' => '',
@@ -140,8 +140,8 @@ class PageDialTreduGroup {
             ->set_instructions( $strings['video']['instructions'] );
 
         $alt_text_field = ( new Field\Textarea( $strings['alt_text']['label'] ) )
-            ->set_key( "${key}_alt_text" )
-            ->set_name( 'alt_text' )
+            ->set_key( "${key}_video_alt_text" )
+            ->set_name( 'video_alt_text' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $strings['alt_text']['instructions'] );
 

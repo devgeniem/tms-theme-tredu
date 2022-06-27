@@ -117,7 +117,7 @@ class DialTredu implements PostType {
             'label'               => $labels['name'],
             'description'         => '',
             'labels'              => $labels,
-            'supports'            => [ 'title', 'revisions', 'page-attributes' ],
+            'supports'            => [ 'title', 'revisions', 'editor', 'page-attributes' ],
             'hierarchical'        => true,
             'public'              => true,
             'show_ui'             => true,

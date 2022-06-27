@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-06-16 14:30+0300\n"
+"POT-Creation-Date: 2022-06-27 12:44+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -51,13 +51,13 @@ msgid "Open map"
 msgstr ""
 
 #: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:72
-#: lib/ACF/PageGroup.php:40
+#: lib/ACF/PageGroup.php:41
 msgctxt "theme ACF"
 msgid "Page Components"
 msgstr ""
 
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:125
-#: lib/ACF/PageGroup.php:151 lib/ACF/PageProjectGroup.php:60
+#: lib/ACF/PageGroup.php:157 lib/ACF/PageProjectGroup.php:60
 #: lib/ACF/PostGroup.php:173 lib/ACF/ProgramGroup.php:304
 #: lib/ACF/ProjectGroup.php:394
 msgctxt "theme ACF"
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Related posts"
 msgstr ""
 
-#: lib/ACF/SettingsGroup.php:56
+#: lib/ACF/SettingsGroup.php:57
 msgctxt "theme ACF"
 msgid "Site settings"
 msgstr ""
@@ -183,7 +183,7 @@ msgstr ""
 msgid "Additional info"
 msgstr ""
 
-#: lib/LinkedEvents.php:343
+#: lib/LinkedEvents.php:337
 msgid "Virtual event"
 msgstr ""
 
@@ -245,6 +245,11 @@ msgctxt "theme CPT"
 msgid "contact"
 msgstr ""
 
+#: lib/PostType/DialTredu.php:52
+msgctxt "theme CPT"
+msgid "dial_tredu"
+msgstr ""
+
 #: lib/PostType/Program.php:55
 msgctxt "theme CPT"
 msgid "program"
@@ -270,32 +275,32 @@ msgctxt "theme CPT"
 msgid "Tredu Event"
 msgstr ""
 
-#: lib/Roles.php:466
+#: lib/Roles.php:487
 msgctxt "wp-geniem-roles"
 msgid "Super Administrator"
 msgstr ""
 
-#: lib/Roles.php:578
+#: lib/Roles.php:601
 msgctxt "wp-geniem-roles"
 msgid "Administrator"
 msgstr ""
 
-#: lib/Roles.php:641
+#: lib/Roles.php:665
 msgctxt "wp-geniem-roles"
 msgid "Site Manager"
 msgstr ""
 
-#: lib/Roles.php:700
+#: lib/Roles.php:724
 msgctxt "wp-geniem-roles"
 msgid "Author"
 msgstr ""
 
-#: lib/Roles.php:818
+#: lib/Roles.php:868
 msgctxt "wp-geniem-roles"
 msgid "Contributor"
 msgstr ""
 
-#: lib/Roles.php:838
+#: lib/Roles.php:888
 msgctxt "wp-geniem-roles"
 msgid "Subscriber"
 msgstr ""
@@ -379,11 +384,11 @@ msgstr ""
 msgid "Suositut avainsanat"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:367 models/search.php:103
+#: lib/Traits/Breadcrumbs.php:406 models/search.php:103
 msgid "Search from site"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:458
+#: lib/Traits/Breadcrumbs.php:497
 msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr ""
@@ -437,6 +442,10 @@ msgstr ""
 #: models/error404.php:98
 msgctxt "theme-frontend"
 msgid "Return to home"
+msgstr ""
+
+#: models/page-dial-tredu.php:55
+msgid "Read more here"
 msgstr ""
 
 #: models/page-events-calendar.php:39 models/page-events-search.php:118

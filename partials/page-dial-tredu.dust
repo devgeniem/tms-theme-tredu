@@ -19,7 +19,7 @@
                                 <h1 class="entry__title has-text-align-center">{.content.post_title|html}</h1>
 
                                 {?.content.fields.ingress}
-                                    <div class="entry__content keep-vertical-spacing has-text-lead">
+                                    <div class="entry__content keep-vertical-spacing has-text-lead mb-5">
                                         {content.fields.ingress|html}
                                     </div>
                                 {/.content.fields.ingress}
@@ -57,11 +57,23 @@
                                 {/.content.results}
                             </div>
                         {/.content.results}
+
+                        {?.content.fields.video}
+                            <div class="column is-12">
+                                <section class="video pt-6 pt-8-desktop">
+                                    {?.content.fields.video_alt_text}
+                                        <span class="is-sr-only">{.content.fields.video_alt_text|kses}</span>
+                                    {/.content.fields.video_alt_text}
+
+                                    <div class="image is-16by9 is-embed-container">
+                                        {.content.fields.video|s}
+                                    </div>
+                                </section>
+                            </div>
+                        {/.content.fields.video}
                     </div>
                 </div>
             </section>
-
-            {>"ui/components" components=.components /}
         </main>
     {/PageDialTredu}
 {/content}

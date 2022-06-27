@@ -107,6 +107,7 @@ class BlocksController implements Interfaces\Controller {
             'core/list'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
@@ -118,6 +119,7 @@ class BlocksController implements Interfaces\Controller {
             'core/heading'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
@@ -129,6 +131,7 @@ class BlocksController implements Interfaces\Controller {
             'core/paragraph'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
@@ -140,6 +143,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/image-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
                     PostType\TreduEvent::SLUG,
@@ -148,6 +152,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\Project::SLUG,
                 ],
@@ -155,6 +160,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/link-list'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -162,18 +168,20 @@ class BlocksController implements Interfaces\Controller {
                 ],
             ],
 
-            'acf/quote'         => [
+            'acf/quote'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
                 ],
             ],
-            'acf/key-figures'   => [
+            'acf/key-figures'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -183,19 +191,22 @@ class BlocksController implements Interfaces\Controller {
             'acf/subpages'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                 ],
             ],
-            'acf/accordion'     => [
+            'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
                 ],
             ],
-            'acf/video'         => [
+            'acf/video'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -203,9 +214,10 @@ class BlocksController implements Interfaces\Controller {
                     PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/image'         => [
+            'acf/image'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -213,9 +225,10 @@ class BlocksController implements Interfaces\Controller {
                     PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/image-gallery' => [
+            'acf/image-gallery'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -225,13 +238,15 @@ class BlocksController implements Interfaces\Controller {
             'acf/image-carousel' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
             ],
-            'acf/share-links'   => [
+            'acf/share-links'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
                     PostType\TreduEvent::SLUG,
@@ -253,6 +268,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/table' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
                 ],
@@ -261,6 +277,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/material'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -270,6 +287,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/notice-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Project::SLUG,
                     PostType\Program::SLUG,
                     PostType\TreduEvent::SLUG,
@@ -278,6 +296,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/map'           => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -288,6 +307,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/contacts'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -299,6 +319,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
@@ -307,6 +328,7 @@ class BlocksController implements Interfaces\Controller {
             'gravityforms/form'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
                     PostType\TreduEvent::SLUG,
@@ -315,6 +337,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/countdown'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\TreduEvent::SLUG,
@@ -323,6 +346,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/place-of-business' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],

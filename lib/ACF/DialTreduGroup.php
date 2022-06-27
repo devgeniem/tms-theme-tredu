@@ -46,7 +46,6 @@ class DialTreduGroup {
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $this->get_general_tab( $field_group->get_key() ),
-                        $this->get_components_tab( $field_group->get_key() ),
                     ]
                 )
             );
@@ -113,69 +112,6 @@ class DialTreduGroup {
             $icon_field,
             $link_field,
         ] );
-
-        return $tab;
-    }
-
-    /**
-     * Get components tab
-     *
-     * @param string $key Field group key.
-     *
-     * @return Field\Tab
-     * @throws Exception In case of invalid option.
-     */
-    protected function get_components_tab( string $key ) : Field\Tab {
-        $strings = [
-            'tab'        => 'Komponentit',
-            'components' => [
-                'title'        => _x( 'Components', 'theme ACF', 'tms-theme-tredu' ),
-                'instructions' => '',
-            ],
-        ];
-
-        $tab = ( new Field\Tab( $strings['tab'] ) )
-            ->set_placement( 'left' );
-
-        $components_field = ( new Field\FlexibleContent( $strings['components']['title'] ) )
-            ->set_key( "${key}_components" )
-            ->set_name( 'components' )
-            ->set_instructions( $strings['components']['instructions'] );
-
-        $component_layouts = apply_filters(
-            'tms/acf/field/' . $components_field->get_key() . '/layouts',
-            [
-
-                Layouts\CallToActionLayout::class,
-                Layouts\ImageBannerLayout::class,
-                Layouts\GridLayout::class,
-                Layouts\LogoWallLayout::class,
-                Layouts\IconLinksLayout::class,
-                Layouts\MapLayout::class,
-                Layouts\SocialMediaLayout::class,
-                Layouts\ImageCarouselLayout::class,
-                Layouts\SubpageLayout::class,
-                Layouts\TextBlockLayout::class,
-                Layouts\EventsLayout::class,
-                Layouts\ArticlesLayout::class,
-                Layouts\SitemapLayout::class,
-                Layouts\NoticeBannerLayout::class,
-                Layouts\GravityFormLayout::class,
-                Layouts\ContactsLayout::class,
-                Layouts\AccessibilityIconLinksLayout::class,
-                Layouts\CountdownLayout::class,
-                Layouts\ShareLinksLayout::class,
-                Layouts\ProgramLayout::class,
-                Layouts\TreduEventsLayout::class,
-            ],
-            $key
-        );
-
-        foreach ( $component_layouts as $component_layout ) {
-            $components_field->add_layout( new $component_layout( $key ) );
-        }
-
-        $tab->add_field( $components_field );
 
         return $tab;
     }

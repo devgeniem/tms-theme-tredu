@@ -23,12 +23,6 @@
         }
     }
 
-    &__item {
-        &:focus-within {
-            border-bottom: none;
-        }
-    }
-
     &__item-header {
         display: flex;
         align-items: center;

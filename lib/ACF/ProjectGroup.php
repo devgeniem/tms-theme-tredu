@@ -352,8 +352,8 @@ class ProjectGroup {
         ] );
 
         $contacts_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
-            ->set_key( "${key}_contacts_title" )
-            ->set_name( 'contacts_title' )
+            ->set_key( "${key}_meta_contacts_title" )
+            ->set_name( 'meta_contacts_title' )
             ->set_instructions( $strings['group_title']['instructions'] );
 
         $contact_field = ( new Field\Textarea( $strings['contacts']['title'] ) )

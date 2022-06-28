@@ -13,7 +13,7 @@
         {#items}
             <article class="dial-tredu-accordion__item">
                 <button data-duration="300" class="dial-tredu-accordion__item-header js-toggle"
-                        aria-expanded="false" aria-controls="dial-tredu-{$idx}">
+                        aria-expanded="false" aria-controls="{id|attr}">
                     <div
                         class="dial-tredu-accordion__item-header-content js-tredu-item-accordion pt-3 pb-3 pt-4-desktop pb-4-desktop">
                         {?.icon}
@@ -26,15 +26,26 @@
                     {>"ui/icon" class="dial-tredu-accordion__item-toggle-icon icon--medium is-secondary" icon="chevron-down" /}
                 </button>
 
-                <div id="dial-tredu-{$idx}"
+                <div id="{id|attr}"
                      class="dial-tredu-accordion__item-content keep-vertical-spacing is-hidden">
-                    {?.ingress}
-                        <p>
-                            {.ingress|html}
-                        </p>
-                    {/.ingress}
+                    <div class="is-flex">
+                        <div>
+                            {?.ingress}
+                                <p class="mt-0">
+                                    {.ingress|html}
+                                </p>
+                            {/.ingress}
 
-                    {>"ui/button-link" classes="is-secondary" link=.link /}
+                            {>"ui/button-link" classes="is-primary" icon="arrow-right" link=.link /}
+                        </div>
+
+                        {?.icon}
+                            <div
+                                class="dial-tredu-accordion__inner-image mr-3-desktop ml-3-desktop is-flex-shrink-0 is-hidden-touch">
+                                {@image id=.icon size="medium" /}
+                            </div>
+                        {/.icon}
+                    </div>
                 </div>
             </article>
         {/items}

@@ -9,8 +9,6 @@
         padding-bottom: $theme-spacing-oneandhalf;
 
         @include from($widescreen) {
-            max-width: $widescreen;
-            padding-right: $theme-spacing-four;
             padding-left: $theme-spacing-fourandhalf;
         }
     }
@@ -22,6 +20,12 @@
         img {
             max-width: $theme-spacing-three;
             margin-right: $theme-spacing;
+        }
+    }
+
+    &__item {
+        &:focus-within {
+            border-bottom: none;
         }
     }
 
@@ -42,6 +46,18 @@
             .page-dial-tredu__item-toggle-icon {
                 transform: rotate(180deg);
             }
+        }
+
+        &:focus {
+            outline: .175rem dashed $secondary;
+        }
+    }
+
+    &__inner-image {
+        max-width: 150px;
+
+        @include from($fullhd) {
+            max-width: 200px;
         }
     }
 }

@@ -56,6 +56,7 @@ class DialTreduAccordionFormatter implements Formatter {
                 'ingress' => get_field( 'ingress', $item->ID ),
                 'icon'    => get_field( 'icon', $item->ID ),
                 'link'    => $link,
+                'id'      => wp_unique_id( 'dial-tredu-accordion-' ),
             ];
         }, $data['items'] );
 

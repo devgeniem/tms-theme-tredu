@@ -28,13 +28,24 @@
 
                 <div id="dial-tredu-{$idx}"
                      class="dial-tredu-accordion__item-content keep-vertical-spacing is-hidden">
-                    {?.ingress}
-                        <p>
-                            {.ingress|html}
-                        </p>
-                    {/.ingress}
+                    <div class="is-flex">
+                        <div>
+                            {?.ingress}
+                                <p class="mt-0">
+                                    {.ingress|html}
+                                </p>
+                            {/.ingress}
 
-                    {>"ui/button-link" classes="is-secondary" link=.link /}
+                            {>"ui/button-link" classes="is-primary" icon="arrow-right" link=.link /}
+                        </div>
+
+                        {?.icon}
+                            <div
+                                class="dial-tredu-accordion__inner-image mr-3-desktop ml-3-desktop is-flex-shrink-0 is-hidden-touch">
+                                {@image id=.icon size="medium" /}
+                            </div>
+                        {/.icon}
+                    </div>
                 </div>
             </article>
         {/items}

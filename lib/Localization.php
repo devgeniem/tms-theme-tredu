@@ -118,6 +118,7 @@ class Localization implements Interfaces\Controller {
         $post_types[ PostType\BlogAuthor::SLUG ]  = PostType\BlogAuthor::SLUG;
         $post_types[ PostType\Program::SLUG ]     = PostType\Program::SLUG;
         $post_types[ PostType\Project::SLUG ]     = PostType\Project::SLUG;
+        $post_types[ PostType\DialTredu::SLUG ]   = PostType\DialTredu::SLUG;
 
         return $post_types;
     }

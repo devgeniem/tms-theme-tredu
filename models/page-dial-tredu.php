@@ -43,7 +43,7 @@ class PageDialTredu extends BaseModel {
         $content = Query::get_acf_post( get_queried_object_id() );
 
         if ( has_post_thumbnail() ) {
-            $content->image = get_post_thumbnail_id();
+            $content->image = get_the_post_thumbnail_url( null, 'full' );
         }
 
         if ( ! empty( $content->fields['items'] ) ) {

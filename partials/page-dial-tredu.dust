@@ -3,17 +3,18 @@
 {<content}
     {#PageDialTredu}
         <main class="main-content" id="main-content">
-            <section class="section pt-10">
+            {?.content.image}
+                <div class="">
+                    <div
+                        class="page-dial-tredu__hero has-text-centered pt-10 pb-0">
+                        <img src="{.content.image|url}" alt="">
+                    </div>
+                </div>
+            {/.content.image}
+
+            <section class="section pt-4">
                 <div class="container">
                     <div class="columns is-multiline">
-                        {?.content.image}
-                            <div class="column is-12">
-                                <div
-                                    class="page-dial-tredu__hero is-relative pt-0 pb-0 has-background-cover" {@inlinebg id=.content.image size="fullhd" /}>
-                                </div>
-                            </div>
-                        {/.content.image}
-
                         <div class="column is-8 is-offset-2">
                             <div class="page-dial-tredu__content">
                                 <h1 class="entry__title has-text-align-center">{.content.post_title|html}</h1>

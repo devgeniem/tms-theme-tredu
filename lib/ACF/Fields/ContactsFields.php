@@ -8,6 +8,7 @@ namespace TMS\Theme\Tredu\ACF\Fields;
 use Exception;
 use Geniem\ACF\Field;
 use TMS\Plugin\ContactImporter;
+use TMS\Theme\Tredu\Formatters\ContactFormatter;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType\Contact;
 
@@ -121,11 +122,52 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
             ->allow_null()
             ->use_ajax()
             ->use_ui()
+            ->redipress_include_search( function ( $contacts ) {
+                if ( empty( $contacts ) ) {
+                    return '';
+                }
+
+                $contacts_map = ( new ContactFormatter() )->map_api_contacts(
+                    $contacts,
+                    [
+                        'first_name',
+                        'last_name',
+                    ]
+                );
+
+                $results = [];
+
+                foreach ( $contacts_map as $contact ) {
+                    if ( isset( $contact['first_name'] ) ) {
+                        $results[] = $contact['first_name'];
+                    }
+
+                    if ( isset( $contact['last_name'] ) ) {
+                        $results[] = $contact['last_name'];
+                    }
+                }
+
+                return implode( ' ', $results );
+            } )
             ->set_instructions( $strings['api_contacts']['instructions'] );
 
         $contacts_field = ( new Field\Relationship( $strings['contacts']['label'] ) )
             ->set_key( "${key}_contacts" )
             ->set_name( 'contacts' )
+            ->redipress_include_search( function ( $contacts ) {
+                if ( empty( $contacts ) ) {
+                    return '';
+                }
+
+                $results = [];
+
+                foreach ( $contacts as $contact_id ) {
+                    $results[] = get_field( 'first_name', $contact_id );
+                    $results[] = get_field( 'last_name', $contact_id );
+                }
+
+                return implode( ' ', $results );
+            } )
             ->set_post_types( [ Contact::SLUG ] )
             ->set_return_format( 'id' )
             ->set_instructions( $strings['contacts']['instructions'] );

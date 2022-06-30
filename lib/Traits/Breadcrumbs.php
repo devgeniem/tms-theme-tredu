@@ -295,7 +295,6 @@ trait Breadcrumbs {
     private function format_dial_tredu( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs['home'] = $this->get_home_link();
 
-        // TODO: Finish this on TMS-885
         $dial_tredu_page = Settings::get_setting( 'dial_tredu_page' );
 
         if ( ! empty( $dial_tredu_page ) ) {

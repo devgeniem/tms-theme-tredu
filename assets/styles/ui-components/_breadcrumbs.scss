@@ -4,16 +4,18 @@
 
 $tms-breadcrumb-item-color-link: $primary !default;
 $tms-breadcrumb-item-color-hover: bulmaDarken($primary, 15) !default;
-$tms-breadcrumb-item-color-active: $primary-light !default;
+$tms-breadcrumb-item-color-active: $tms-breadcrumb-item-color-hover !default;
 $tms-breadcrumb-item-color-separator: $secondary !default;
 
 .breadcrumb {
     hyphens: auto;
     white-space: normal;
     color: $black;
+
     a,
     button {
-        position:relative;
+        position: relative;
+
         &:focus,
         &.is-focused {
             @extend .button-state-focus;

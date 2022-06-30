@@ -20,13 +20,6 @@ class PageDialTredu extends BaseModel {
     const TEMPLATE = 'models/page-dial-tredu.php';
 
     /**
-     * This holds the summary text.
-     *
-     * @var string
-     */
-    private static $summary = '';
-
-    /**
      * Hooks
      */
     public function hooks() : void {
@@ -46,35 +39,6 @@ class PageDialTredu extends BaseModel {
             $content->image = get_the_post_thumbnail_url( null, 'full' );
         }
 
-        if ( ! empty( $content->fields['items'] ) ) {
-            $content->results = array_map( function ( $item ) {
-                $link = get_field( 'link', $item->ID );
-
-                if ( empty( $link ) ) {
-                    $link = [
-                        'title' => __( 'Read more here', 'tms-theme-tredu' ),
-                        'url'   => get_post_permalink( $item->ID ),
-                    ];
-                }
-
-                return [
-                    'title'   => $item->post_title,
-                    'ingress' => get_field( 'ingress', $item->ID ),
-                    'icon'    => get_field( 'icon', $item->ID ),
-                    'link'    => $link,
-                ];
-            }, $content->fields['items'] );
-        }
-
         return $content;
-    }
-
-    /**
-     * Page description
-     *
-     * @return string
-     */
-    public function page_description() : string {
-        return get_field( 'description' ) ?? '';
     }
 }

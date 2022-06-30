@@ -27,18 +27,12 @@
                 }
             }
 
-            .author-text {
-                @include until($tablet) {
-                    color: $primary-invert;
-                }
-            }
-
             .image-meta__image-title,
             .image-meta__author-name {
                 color: $primary-invert;
 
-                @include from($tablet) {
-                    color: $white;
+                @include from(769px) {
+                    color: $text;
                 }
             }
         }

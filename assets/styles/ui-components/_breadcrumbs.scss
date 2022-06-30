@@ -7,6 +7,18 @@ $tms-breadcrumb-item-color-hover: bulmaDarken($primary, 15) !default;
 $tms-breadcrumb-item-color-active: $tms-breadcrumb-item-color-hover !default;
 $tms-breadcrumb-item-color-separator: $secondary !default;
 
+.breadcrumbs-container {
+    display: flex;
+    align-items: center;
+
+    + .readspeaker-container {
+        @include from(769px) {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
 .breadcrumb {
     hyphens: auto;
     white-space: normal;

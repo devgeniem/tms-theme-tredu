@@ -2,7 +2,10 @@
 
 namespace TMS\Theme\Tredu\PostType;
 
+use Strings;
 use \TMS\Theme\Tredu\Interfaces\PostType;
+use TMS\Theme\Tredu\Images;
+use TMS\Theme\Tredu\Taxonomy\ApplyMethod;
 
 /**
  * Program CPT
@@ -137,5 +140,69 @@ class Program implements PostType {
         ];
 
         register_post_type( static::SLUG, $args );
+    }
+
+    /**
+     * Format posts for view
+     *
+     * @param array $posts      Array of WP_Post instances.
+     * @param array $taxonomies Array of related taxonomies.
+     *
+     * @return array
+     */
+    public static function format_posts( array $posts, array $taxonomies ) : array {
+
+        return array_map( function ( $item ) use ( $taxonomies ) {
+            if ( has_post_thumbnail( $item->ID ) ) {
+                $item->image = get_post_thumbnail_id( $item->ID );
+            }
+            else {
+                $item->image = Images::get_default_image_id();
+            }
+
+            $item->permalink = get_the_permalink( $item->ID );
+            $item->fields    = get_fields( $item->ID );
+
+            if ( ! empty( $item->fields ) ) {
+
+                if ( ! empty( $item->fields['start_info'] ) ) {
+                    $item->fields['start_date'] = $item->fields['start_info'];
+                }
+
+                if ( ! empty( $item->fields['apply_info'] ) ) {
+                    $item->fields['apply_end'] = $item->fields['apply_info'];
+                }
+                elseif ( ! empty( $item->fields['apply_end'] ) ) {
+                    $item->fields['apply_end'] = ( new Strings() )->s()['program']['application-period-ends'] . ' ' . date( 'd.m.Y', strtotime( $item->fields['apply_end'] ) ); // phpcs:ignore
+                }
+            }
+
+            foreach ( $taxonomies as $tax_slug ) {
+
+                $primary_term_id = get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
+
+                $term_id = 0;
+                if ( ! empty( $primary_term_id ) ) {
+                    $primary_term      = get_term( $primary_term_id );
+                    $item->{$tax_slug} = $primary_term->name;
+                    $term_id           = $primary_term_id;
+                }
+                else {
+                    $terms = wp_get_post_terms( $item->ID, $tax_slug );
+                    if ( ! empty( $terms ) ) {
+                        $item->{$tax_slug} = $terms[0]->name;
+                        $term_id           = $terms[0]->term_id;
+                    }
+                }
+
+                if ( $tax_slug === ApplyMethod::SLUG ) {
+                    $apply_method_color           = get_term_meta( $term_id, 'color', true ) ?? '';
+                    $item->apply_method_color     = $apply_method_color;
+                    $item->apply_method_txt_color = $apply_method_color === 'primary' ? 'white' : 'primary';
+                }
+            }
+
+            return $item;
+        }, $posts );
     }
 }

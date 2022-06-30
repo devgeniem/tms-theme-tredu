@@ -64,15 +64,15 @@ class PageEventsSearch extends BaseModel {
     public function item_classes() : array {
         return apply_filters( 'tms/theme/page_events_search/item_classes', [
             'list' => [
-                'item'        => 'has-background-secondary',
+                'item'        => 'has-background-secondary-light',
                 'item_inner'  => '',
-                'icon'        => 'is-accent',
+                'icon'        => 'is-secondary',
                 'description' => '',
             ],
             'grid' => [
-                'item'       => 'has-background-secondary',
+                'item'       => 'has-background-secondary-light',
                 'item_inner' => '',
-                'icon'       => 'is-accent',
+                'icon'       => 'is-secondary',
             ],
         ] );
     }
@@ -183,7 +183,7 @@ class PageEventsSearch extends BaseModel {
     protected function get_results_text( $event_count ) : ?string {
         $event_search_text = get_query_var( self::EVENT_SEARCH_TEXT );
 
-        if ( $event_count > 0 ) {
+        if ( $event_count > 0 && ! empty( $event_search_text ) ) {
             $results_text = sprintf(
             // translators: 1. placeholder is number of search results, 2. placeholder contains the search term(s).
                 _nx(

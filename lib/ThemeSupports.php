@@ -9,6 +9,7 @@ use Closure;
 use PageContacts;
 use PageEventsSearch;
 use PageProgram;
+use PageProject;
 use Search;
 use function add_action;
 use function add_filter;
@@ -62,7 +63,9 @@ class ThemeSupports implements Interfaces\Controller {
 
         \add_action( 'wp_head', \Closure::fromCallable( [ $this, 'detect_js' ] ), 0 );
 
-        \add_filter( 'tms/theme/settings/material_default_image', [ $this, 'get_material_default_image' ] );
+        add_filter( 'tms/theme/settings/material_default_image', [ $this, 'get_material_default_image' ] );
+
+        add_filter( 'tms/plugin-contact-importer/placeholder_image', [ $this, 'get_contact_default_image' ] );
     }
 
     /**
@@ -110,6 +113,13 @@ class ThemeSupports implements Interfaces\Controller {
      * @return string
      */
     private function favicon_url() : string {
+        $settings = Settings::get_settings();
+        $icon_id  = $settings['favicon'] ?? false;
+
+        if ( ! empty( $icon_id ) ) {
+            return \wp_get_attachment_url( $icon_id );
+        }
+
         return DPT_ASSETS_URI . '/images/favicon.png';
     }
 
@@ -142,6 +152,10 @@ class ThemeSupports implements Interfaces\Controller {
         $vars[] = PageProgram::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR;
         $vars[] = PageProgram::FILTER_ONGOING_QUERY_VAR;
 
+        $vars[] = PageProject::PORTFOLIO_QUERY_VAR;
+        $vars[] = PageProject::SEARCH_QUERY_VAR;
+        $vars[] = PageProject::ACTIVE_ONLY_QUERY_VAR;
+
         return $vars;
     }
 
@@ -161,5 +175,14 @@ class ThemeSupports implements Interfaces\Controller {
      */
     public function get_material_default_image() {
         return Settings::get_setting( 'material_default_image' );
+    }
+
+    /**
+     * Get contact default image
+     *
+     * @return mixed
+     */
+    public function get_contact_default_image() {
+        return Settings::get_setting( 'contacts_default_image' );
     }
 }

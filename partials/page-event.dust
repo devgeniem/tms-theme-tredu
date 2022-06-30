@@ -2,12 +2,13 @@
 
 {<content}
     {#PageEvent}
+
         <main class="main-content" id="main-content">
             <article class="entry">
                 <section class="section pb-6">
                     <div class="container">
                         <div class="columns">
-                            <div class="column is-10 is-offset-1">
+                            <div class="column">
                                 <h1 class="entry__title mt-0 mb-0 has-text-centered">
                                     {event.normalized.name|s}
                                 </h1>
@@ -17,12 +18,14 @@
                                         class="entry__hero-image mt-6 has-background-primary has-text-primary-invert has-background-cover" {@inlinebg url=hero_image /}></div>
                                 {/hero_image}
 
-                                <div class="entry__hero-info section pt-6 pb-6 {template_classes.hero_info|s}">
+                                <div
+                                    class="entry__hero-info section pt-6 pt-8-desktop pt-9-fullhd pb-6 pb-8-desktop pb-9-fullhd has-background-secondary-light">
                                     {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
                                 </div>
 
                                 {?hero_image_credits}
-                                    <div class="pt-6 pr-6 has-text-right is-size-7">
+                                    <div
+                                        class="pt-3 pt-4-desktop pr-4-desktop has-text-right is-size-6 is-size-7-desktop">
                                         {hero_image_credits|s}
                                     </div>
                                 {/hero_image_credits}
@@ -37,7 +40,7 @@
                             <div class="column">
                                 {?event.normalized.short_description}
                                     <div class="entry__content is-content-grid mb-8">
-                                        <p class="mt-6 mb-6 has-text-large">
+                                        <p class="mt-6 mb-6 has-text-large has-text-weight-semibold">
                                             {event.normalized.short_description|s}
                                         </p>
                                     </div>

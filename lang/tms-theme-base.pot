@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2022-05-31 13:29+0300\n"
+"POT-Creation-Date: 2022-06-27 12:44+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/theme_tredu.js:4770 assets/dist/vendor.js:4873
+#: assets/dist/theme_tredu.js:4625 assets/dist/vendor.js:4873
 msgctxt "text direction"
 msgid "ltr"
 msgstr ""
@@ -50,15 +50,16 @@ msgstr ""
 msgid "Open map"
 msgstr ""
 
-#: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:71
-#: lib/ACF/PageGroup.php:39
+#: lib/ACF/FrontPageGroup.php:38 lib/ACF/OnepagerGroup.php:72
+#: lib/ACF/PageGroup.php:41
 msgctxt "theme ACF"
 msgid "Page Components"
 msgstr ""
 
-#: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:124
-#: lib/ACF/PageGroup.php:145 lib/ACF/PostGroup.php:173
-#: lib/ACF/ProgramGroup.php:304
+#: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:125
+#: lib/ACF/PageGroup.php:157 lib/ACF/PageProjectGroup.php:60
+#: lib/ACF/PostGroup.php:173 lib/ACF/ProgramGroup.php:304
+#: lib/ACF/ProjectGroup.php:394
 msgctxt "theme ACF"
 msgid "Components"
 msgstr ""
@@ -78,13 +79,18 @@ msgctxt "theme ACF"
 msgid "Asetukset"
 msgstr ""
 
-#: lib/ACF/PostGroup.php:129
+#: lib/ACF/PostGroup.php:129 lib/ACF/ProjectGroup.php:448
 msgid "Related posts"
 msgstr ""
 
-#: lib/ACF/SettingsGroup.php:53
+#: lib/ACF/SettingsGroup.php:57
 msgctxt "theme ACF"
 msgid "Site settings"
+msgstr ""
+
+#: lib/ACF/TreduEventGroup.php:38
+msgctxt "theme ACF"
+msgid "Tiedot"
 msgstr ""
 
 #: lib/Admin.php:94
@@ -177,7 +183,7 @@ msgstr ""
 msgid "Additional info"
 msgstr ""
 
-#: lib/LinkedEvents.php:343
+#: lib/LinkedEvents.php:337
 msgid "Virtual event"
 msgstr ""
 
@@ -239,7 +245,12 @@ msgctxt "theme CPT"
 msgid "contact"
 msgstr ""
 
-#: lib/PostType/Program.php:52
+#: lib/PostType/DialTredu.php:52
+msgctxt "theme CPT"
+msgid "dial_tredu"
+msgstr ""
+
+#: lib/PostType/Program.php:55
 msgctxt "theme CPT"
 msgid "program"
 msgstr ""
@@ -259,32 +270,37 @@ msgctxt "theme CPT"
 msgid "Site settings"
 msgstr ""
 
-#: lib/Roles.php:340
-msgctxt "wp-geniem-roles"
-msgid "Super Administrator"
-msgstr ""
-
-#: lib/Roles.php:433
-msgctxt "wp-geniem-roles"
-msgid "Administrator"
+#: lib/PostType/TreduEvent.php:55 lib/PostType/TreduEvent.php:83
+msgctxt "theme CPT"
+msgid "Tredu Event"
 msgstr ""
 
 #: lib/Roles.php:487
 msgctxt "wp-geniem-roles"
-msgid "Site Manager"
-msgstr ""
-
-#: lib/Roles.php:533
-msgctxt "wp-geniem-roles"
-msgid "Author"
+msgid "Super Administrator"
 msgstr ""
 
 #: lib/Roles.php:601
 msgctxt "wp-geniem-roles"
+msgid "Administrator"
+msgstr ""
+
+#: lib/Roles.php:665
+msgctxt "wp-geniem-roles"
+msgid "Site Manager"
+msgstr ""
+
+#: lib/Roles.php:724
+msgctxt "wp-geniem-roles"
+msgid "Author"
+msgstr ""
+
+#: lib/Roles.php:868
+msgctxt "wp-geniem-roles"
 msgid "Contributor"
 msgstr ""
 
-#: lib/Roles.php:621
+#: lib/Roles.php:888
 msgctxt "wp-geniem-roles"
 msgid "Subscriber"
 msgstr ""
@@ -368,11 +384,11 @@ msgstr ""
 msgid "Suositut avainsanat"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:293 models/search.php:101
+#: lib/Traits/Breadcrumbs.php:406 models/search.php:103
 msgid "Search from site"
 msgstr ""
 
-#: lib/Traits/Breadcrumbs.php:384
+#: lib/Traits/Breadcrumbs.php:497
 msgctxt "Breadcrumbs"
 msgid "Home"
 msgstr ""
@@ -414,7 +430,7 @@ msgid "Share on Line"
 msgstr ""
 
 #: models/archive-blog-article.php:167 models/archive.php:116
-#: models/home.php:269 models/search.php:85
+#: models/home.php:269 models/search.php:87
 msgid "All"
 msgstr ""
 
@@ -428,8 +444,12 @@ msgctxt "theme-frontend"
 msgid "Return to home"
 msgstr ""
 
+#: models/page-dial-tredu.php:55
+msgid "Read more here"
+msgstr ""
+
 #: models/page-events-calendar.php:39 models/page-events-search.php:118
-#: models/page-program.php:199
+#: models/page-program.php:203 models/page-project.php:154
 msgid "No results"
 msgstr ""
 
@@ -441,11 +461,11 @@ msgstr ""
 msgid "Events from"
 msgstr ""
 
-#: models/page-events-search.php:53 models/search.php:98
+#: models/page-events-search.php:53 models/search.php:100
 msgid "Start date"
 msgstr ""
 
-#: models/page-events-search.php:54 models/search.php:99
+#: models/page-events-search.php:54 models/search.php:101
 msgid "End date"
 msgstr ""
 
@@ -453,7 +473,7 @@ msgstr ""
 msgid "No search term given"
 msgstr ""
 
-#: models/page-events-search.php:190 models/search.php:269
+#: models/page-events-search.php:190 models/search.php:279
 #, php-format
 msgctxt "search results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -461,51 +481,93 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-program.php:192
+#: models/page-program.php:196
 msgid "Search for program"
 msgstr ""
 
-#: models/page-program.php:193
+#: models/page-program.php:197 models/page-project.php:146
 msgid "Search"
 msgstr ""
 
-#: models/page-program.php:194
+#: models/page-program.php:198 models/page-project.php:147
 msgid "Search query"
 msgstr ""
 
-#: models/page-program.php:197
+#: models/page-program.php:201 models/page-project.php:152
 msgid "Show All"
 msgstr ""
 
-#: models/page-program.php:200
+#: models/page-program.php:204 models/page-project.php:155
 msgid "Filter"
 msgstr ""
 
-#: models/page-program.php:201
+#: models/page-program.php:205 models/page-project.php:156
 msgid "Sort"
 msgstr ""
 
-#: models/search.php:61
+#: models/page-project.php:144
+msgid "Search for projects"
+msgstr ""
+
+#: models/page-project.php:145
+msgid "Search for project"
+msgstr ""
+
+#: models/page-project.php:148 models/page-project.php:206
+msgid "Choose a portfolio"
+msgstr ""
+
+#: models/page-project.php:149
+msgid "Active projects only"
+msgstr ""
+
+#: models/page-project.php:319
+#, php-format
+msgctxt "filter with search clause results summary"
+msgid "%1$1s result found for \"%2$2s\""
+msgid_plural "%1$1s results found for \"%2$2s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: models/page-project.php:333
+#, php-format
+msgctxt "filter results summary"
+msgid "%1$1s result found"
+msgid_plural "%1$1s results found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: models/readspeaker.php:50
+msgctxt "readspeaker"
+msgid "Listen with ReadSpeaker webReader"
+msgstr ""
+
+#: models/readspeaker.php:51
+msgctxt "readspeaker"
+msgid "Listen"
+msgstr ""
+
+#: models/search.php:63
 msgid "Search results"
 msgstr ""
 
-#: models/search.php:96
+#: models/search.php:98
 msgid "Filter by post type"
 msgstr ""
 
-#: models/search.php:97
+#: models/search.php:99
 msgid "Filter by date"
 msgstr ""
 
-#: models/search.php:100
+#: models/search.php:102
 msgid "Filter results"
 msgstr ""
 
-#: models/search.php:122
+#: models/search.php:124
 msgid "Program search"
 msgstr ""
 
-#: models/search.php:280
+#: models/search.php:290
 msgid "No search results"
 msgstr ""
 

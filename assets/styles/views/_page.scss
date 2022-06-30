@@ -6,14 +6,4 @@
             height: 32rem;
         }
     }
-
-    .entry {
-        &__content {
-            > p {
-                > a {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
 }

@@ -1,6 +1,14 @@
+.page-program {
+    &__description {
+        > p > a {
+            text-decoration: underline;
+        }
+    }
+}
+
 .program-list {
     display: grid;
-    
+
     // grid-template-columns: 50% 50%;
     grid-gap: rem(24);
 
@@ -21,25 +29,28 @@
     button,
     a {
         &:focus {
-            text-decoration: underline;
             outline: .125rem solid $color-black;
             outline-offset: .25rem;
             box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-        }
-        &:hover {
-            cursor: pointer;
             text-decoration: underline;
         }
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
     }
+
     select {
         appearance: none;
     }
+
     .select-wrapper {
-       .icon{
-           transform: translateY(-50%);
-           top: 50%;
-           right: 10px;
-           pointer-events: none;
-       }
+        .icon {
+            transform: translateY(-50%);
+            top: 50%;
+            right: 10px;
+            pointer-events: none;
+        }
     }
 }

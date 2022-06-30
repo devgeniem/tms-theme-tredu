@@ -7,9 +7,38 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-882: Fix field name conflict #112
+- TMS-884: Dial Tredu CPT & Single view #110
+- TMS-885: Dial Tredu page template #111
+
+## [2022-06-21] - 1.2.0
+
 ### Added
 
+- TMS-872: Add icons to to breadcrumbs #104
+- TMS-807: Add Favicon to settings #103
+- TMS-785: Announce success message for screen readers #108
+
+### Changed
+
+- TMS-825: Hide result info #106
+- TMS-881: Improve drupal news support #109
+- TMS-880: Display drupal image on single-post view #107
+
+## [2022-06-16] - 1.1.0
+
+### Added
+
+- TMS-877: Handle imports with tms-plugin-contact-importer #100
+- TMS-821: Events #97
+- TMS-873: Show drupal image on home result card #95
+- TMS-131: Add Readspeaker #99
+- TMS-705: Setup user roles & permissions #98
+- TMS-745: Project page template #80
+- TMS-682: Blog archive #94
+- TMS-707: Tredu Events #71
 - TMS-744: Single Project #76
+- TMS-859: Convert PageProgram textarea to wysiwyg #92
 
 ## [2022-06-01] - 1.0.0
 
@@ -80,6 +109,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
+- TMS-852: Program layout #96
 - TMS-698: Add form
 - TMS-688: Table block
 - TMS-708: Program Call to Action

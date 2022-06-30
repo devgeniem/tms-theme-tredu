@@ -1,0 +1,39 @@
+{>"shared/base" /}
+
+{<content}
+    {#PageDialTredu}
+        <main class="main-content" id="main-content">
+            {?.content.image}
+                <div class="">
+                    <div
+                        class="page-dial-tredu__hero has-text-centered pt-10 pb-0">
+                        <img src="{.content.image|url}" alt="">
+                    </div>
+                </div>
+            {/.content.image}
+
+            <section class="section pt-4">
+                <div class="container">
+                    <div class="columns is-multiline">
+                        <div class="column is-8 is-offset-2">
+                            <div class="page-dial-tredu__content">
+                                <h1 class="entry__title has-text-align-center">{.content.post_title|html}</h1>
+
+                                {?.content.fields.ingress}
+                                    <div
+                                        class="entry__content keep-vertical-spacing has-text-lead has-text-centered mb-5">
+                                        {content.fields.ingress|html}
+                                    </div>
+                                {/.content.fields.ingress}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-12 is-content-grid">
+                        {@content /}
+                    </div>
+                </div>
+            </section>
+        </main>
+    {/PageDialTredu}
+{/content}

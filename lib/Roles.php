@@ -131,6 +131,27 @@ class Roles implements Controller {
     ];
 
     /**
+     * Tredu Event / tredu-event-cpt.
+     *
+     * @var array
+     */
+    private $tredu_event_all_capabilities = [
+        'edit_tredu_event',
+        'read_tredu_event',
+        'delete_tredu_event',
+        'edit_others_tredu_events',
+        'delete_tredu_events',
+        'publish_tredu_events',
+        'read_private_tredu_events',
+        'delete_private_tredu_events',
+        'delete_published_tredu_events',
+        'delete_others_tredu_events',
+        'edit_private_tredu_events',
+        'edit_published_tredu_events',
+        'edit_tredu_events',
+    ];
+
+    /**
      * Program / program-cpt
      *
      * @var array
@@ -149,6 +170,48 @@ class Roles implements Controller {
         'edit_private_programs',
         'edit_published_programs',
         'edit_programs',
+    ];
+
+    /**
+     * Project / project-cpt
+     *
+     * @var array
+     */
+    private $project_all_capabilities = [
+        'edit_project',
+        'read_project',
+        'delete_project',
+        'edit_others_projects',
+        'delete_projects',
+        'publish_projects',
+        'read_private_projects',
+        'delete_private_projects',
+        'delete_published_projects',
+        'delete_others_projects',
+        'edit_private_projects',
+        'edit_published_projects',
+        'edit_projects',
+    ];
+
+    /**
+     * Dial Tredu / dial_tredu-cpt
+     *
+     * @var array
+     */
+    private $dial_tredu_all_capabilities = [
+        'edit_dial_tredu',
+        'read_dial_tredu',
+        'delete_dial_tredu',
+        'edit_others_dial_tredus',
+        'delete_dial_tredus',
+        'publish_dial_tredus',
+        'read_private_dial_tredus',
+        'delete_private_dial_tredus',
+        'delete_published_dial_tredus',
+        'delete_others_dial_tredus',
+        'edit_private_dial_tredus',
+        'edit_published_dial_tredus',
+        'edit_dial_tredus',
     ];
 
     /**
@@ -185,6 +248,90 @@ class Roles implements Controller {
         'edit_material_types',
         'delete_material_types',
         'assign_material_types',
+    ];
+
+    /**
+     * Delivery Method taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_delivery_method_all_capabilities = [
+        'manage_delivery_methods',
+        'edit_delivery_methods',
+        'delete_delivery_methods',
+        'assign_delivery_methods',
+    ];
+
+    /**
+     * Apply Method taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_apply_method_all_capabilities = [
+        'manage_apply_methods',
+        'edit_apply_methods',
+        'delete_apply_methods',
+        'assign_apply_methods',
+    ];
+
+    /**
+     * Educational Background taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_educational_background_all_capabilities = [
+        'manage_educational_backgrounds',
+        'edit_educational_backgrounds',
+        'delete_educational_backgrounds',
+        'assign_educational_backgrounds',
+    ];
+
+    /**
+     * Location taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_location_all_capabilities = [
+        'manage_locations',
+        'edit_locations',
+        'delete_locations',
+        'assign_locations',
+    ];
+
+    /**
+     * Portfolio taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_portfolio_all_capabilities = [
+        'manage_portfolios',
+        'edit_portfolios',
+        'delete_portfolios',
+        'assign_portfolios',
+    ];
+
+    /**
+     * Profession taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_profession_all_capabilities = [
+        'manage_professions',
+        'edit_professions',
+        'delete_professions',
+        'assign_professions',
+    ];
+
+    /**
+     * ProgramType taxonomy
+     *
+     * @var string[]
+     */
+    private $taxonomy_program_type_all_capabilities = [
+        'manage_program_types',
+        'edit_program_types',
+        'delete_program_types',
+        'assign_program_types',
     ];
 
     /**
@@ -366,11 +513,22 @@ class Roles implements Controller {
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->materials_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
+        $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->project_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
         $role->add_caps( $this->taxonomy_post_tag_all_capabilities );
         $role->add_caps( $this->taxonomy_material_type_all_capabilities );
+        $role->add_caps( $this->taxonomy_delivery_method_all_capabilities );
+        $role->add_caps( $this->taxonomy_apply_method_all_capabilities );
+        $role->add_caps( $this->taxonomy_educational_background_all_capabilities );
+        $role->add_caps( $this->taxonomy_location_all_capabilities );
+        $role->add_caps( $this->taxonomy_portfolio_all_capabilities );
+        $role->add_caps( $this->taxonomy_profession_all_capabilities );
+        $role->add_caps( $this->taxonomy_program_type_all_capabilities );
 
         $role->remove_caps( $this->remove_from_all );
 
@@ -399,11 +557,21 @@ class Roles implements Controller {
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
         $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
+        $role->add_caps( $this->project_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
         $role->add_caps( $this->taxonomy_post_tag_all_capabilities );
         $role->add_caps( $this->taxonomy_material_type_all_capabilities );
+        $role->add_caps( $this->taxonomy_delivery_method_all_capabilities );
+        $role->add_caps( $this->taxonomy_apply_method_all_capabilities );
+        $role->add_caps( $this->taxonomy_educational_background_all_capabilities );
+        $role->add_caps( $this->taxonomy_location_all_capabilities );
+        $role->add_caps( $this->taxonomy_portfolio_all_capabilities );
+        $role->add_caps( $this->taxonomy_profession_all_capabilities );
+        $role->add_caps( $this->taxonomy_program_type_all_capabilities );
 
         // Other
         $role->add_caps( [
@@ -456,11 +624,21 @@ class Roles implements Controller {
         $role->add_caps( $this->site_settings_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
         $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
+        $role->add_caps( $this->project_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( $this->taxonomy_category_all_capabilities );
         $role->add_caps( $this->taxonomy_post_tag_all_capabilities );
         $role->add_caps( $this->taxonomy_material_type_all_capabilities );
+        $role->add_caps( $this->taxonomy_delivery_method_all_capabilities );
+        $role->add_caps( $this->taxonomy_apply_method_all_capabilities );
+        $role->add_caps( $this->taxonomy_educational_background_all_capabilities );
+        $role->add_caps( $this->taxonomy_location_all_capabilities );
+        $role->add_caps( $this->taxonomy_portfolio_all_capabilities );
+        $role->add_caps( $this->taxonomy_profession_all_capabilities );
+        $role->add_caps( $this->taxonomy_program_type_all_capabilities );
 
         // Other
         $role->add_caps( [
@@ -509,9 +687,22 @@ class Roles implements Controller {
         $role->add_caps( $this->materials_all_capabilities );
         $role->add_caps( $this->contact_all_capabilities );
         $role->add_caps( $this->program_all_capabilities );
+        $role->add_caps( $this->tredu_event_all_capabilities );
+        $role->add_caps( $this->project_all_capabilities );
 
         // Taxonomies
-        $role->add_caps( [ 'assign_categories', 'assign_post_tags', 'assign_material_types' ] );
+        $role->add_caps( [
+            'assign_categories',
+            'assign_post_tags',
+            'assign_material_types',
+            'assign_delivery_methods',
+            'assign_apply_methods',
+            'assign_educational_backgrounds',
+            'assign_locations',
+            'assign_portfolios',
+            'assign_professions',
+            'assign_program_types',
+        ] );
 
         // Other
         $role->add_caps( [ 'edit_theme_options', 'unfiltered_html', 'copy_posts' ] );
@@ -589,8 +780,84 @@ class Roles implements Controller {
             'edit_contacts',
         ] );
 
+        $role->add_caps( [
+            'edit_project',
+            'read_project',
+            'delete_project',
+            'delete_projects',
+            'read_private_projects',
+            'delete_private_projects',
+            'delete_published_projects',
+            'edit_private_projects',
+            'edit_published_projects',
+            'edit_projects',
+        ] );
+
+        $role->add_caps( [
+            'edit_dial_tredu',
+            'read_dial_tredu',
+            'delete_dial_tredu',
+            'delete_dial_tredus',
+            'read_private_dial_tredus',
+            'delete_private_dial_tredus',
+            'delete_published_dial_tredus',
+            'edit_private_dial_tredus',
+            'edit_published_dial_tredus',
+            'edit_dial_tredus',
+        ] );
+
+        $role->add_caps( [
+            'edit_tredu_event',
+            'read_tredu_event',
+            'delete_tredu_event',
+            'delete_tredu_events',
+            'read_private_tredu_events',
+            'delete_private_tredu_events',
+            'delete_published_tredu_events',
+            'edit_private_tredu_events',
+            'edit_published_tredu_events',
+            'edit_tredu_events',
+        ] );
+
+        $role->add_caps( [
+            'edit_program',
+            'read_program',
+            'delete_program',
+            'delete_programs',
+            'read_private_programs',
+            'delete_private_programs',
+            'delete_published_programs',
+            'edit_private_programs',
+            'edit_published_programs',
+            'edit_programs',
+        ] );
+
+        $role->add_caps( [
+            'edit_dial_tredu',
+            'read_dial_tredu',
+            'delete_dial_tredu',
+            'delete_dial_tredus',
+            'read_private_dial_tredus',
+            'delete_private_dial_tredus',
+            'delete_published_dial_tredus',
+            'edit_private_dial_tredus',
+            'edit_published_dial_tredus',
+            'edit_dial_tredus',
+        ] );
+
         // Taxonomies
-        $role->add_caps( [ 'assign_categories', 'assign_post_tags', 'assign_material_types' ] );
+        $role->add_caps( [
+            'assign_categories',
+            'assign_post_tags',
+            'assign_material_types',
+            'assign_delivery_methods',
+            'assign_apply_methods',
+            'assign_educational_backgrounds',
+            'assign_locations',
+            'assign_portfolios',
+            'assign_professions',
+            'assign_program_types',
+        ] );
 
         // Other
         $role->add_caps( [ 'unfiltered_html' ] );
@@ -634,9 +901,9 @@ class Roles implements Controller {
         if (
             $cap === 'unfiltered_html' &&
             ( user_can( $user_id, 'administrator' ) ||
-            user_can( $user_id, 'editor' ) ||
-            user_can( $user_id, 'author' ) ||
-            user_can( $user_id, 'contributor' ) )
+              user_can( $user_id, 'editor' ) ||
+              user_can( $user_id, 'author' ) ||
+              user_can( $user_id, 'contributor' ) )
         ) {
             $caps = [ 'unfiltered_html' ];
         }

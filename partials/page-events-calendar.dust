@@ -11,8 +11,8 @@
                         </h1>
 
                         {?description}
-                            <div class="mt-5">
-                                {description|s}
+                            <div class="mt-5 has-text-lead has-text-centered">
+                                {description|kses}
                             </div>
                         {/description}
                     </div>
@@ -22,10 +22,10 @@
                     <div class="columns is-multiline mt-7 mb-7">
                         {#calendar_pages}
                             <div class="column is-6 is-4-widescreen">
-                                <a href="{url}"
+                                <a href="{url|url}"
                                    class="is-flex is-align-items-center has-height-100 p-4 p-8-desktop has-background-secondary">
                                     <span class="h6 pr-4 has-text-secondary-invert">
-                                        {title|s}
+                                        {title|html}
                                     </span>
 
                                     <span class="ml-auto">
@@ -58,7 +58,7 @@
                 {^events}
                     <div class="columns">
                         <div class="column is-6 is-offset-3 has-text-centered is-size-4">
-                            {no_results|s}
+                            {no_results|html}
                         </div>
                     </div>
                 {/events}

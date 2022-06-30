@@ -51,6 +51,12 @@ trait Breadcrumbs {
             case PostType\Project::SLUG:
                 $breadcrumbs = $this->format_project( $current_id, $home_url, $breadcrumbs );
                 break;
+            case PostType\DialTredu::SLUG:
+                $breadcrumbs = $this->format_dial_tredu( $current_id, $home_url, $breadcrumbs );
+                break;
+            case PostType\TreduEvent::SLUG:
+                $breadcrumbs = $this->format_tredu_event( $current_id, $breadcrumbs );
+                break;
             case 'post-type-archive':
                 $breadcrumbs = $this->format_post_type_archive( $breadcrumbs );
                 break;
@@ -151,6 +157,12 @@ trait Breadcrumbs {
      * @return array
      */
     private function format_page( $current_id, string $home_url, array $breadcrumbs ) : array {
+        $breadcrumbs = array_map( function ( $item ) {
+            $item['icon']         = 'chevron-right';
+            $item['icon_classes'] = 'icon--small is-secondary ml-2 mr-0';
+
+            return $item;
+        }, $breadcrumbs );
         /**
          * Add current page to breadcrumbs and set its
          * link status to false, unless it's the front page, then remove it.
@@ -250,13 +262,79 @@ trait Breadcrumbs {
     private function format_project( $current_id, string $home_url, array $breadcrumbs ) : array {
         $breadcrumbs['home'] = $this->get_home_link();
 
-        $projects_page = Settings::get_setting( 'tredu_projects_page' );
+        $projects_page = Settings::get_setting( 'projects_page' );
 
         if ( ! empty( $projects_page ) ) {
             $breadcrumbs[] = [
-                'permalink' => get_the_permalink( $projects_page ),
-                'title'     => get_the_title( $projects_page ),
-                'icon'      => false,
+                'permalink'    => get_the_permalink( $projects_page ),
+                'title'        => get_the_title( $projects_page ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Dial Tredu
+     *
+     * @param int    $current_id  Current page ID.
+     * @param string $home_url    Home URL.
+     * @param array  $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_dial_tredu( $current_id, string $home_url, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $dial_tredu_page = Settings::get_setting( 'dial_tredu_page' );
+
+        if ( ! empty( $dial_tredu_page ) ) {
+            $breadcrumbs[] = [
+                'permalink'    => get_the_permalink( $dial_tredu_page ),
+                'title'        => get_the_title( $dial_tredu_page ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
+            ];
+        }
+
+        $breadcrumbs[] = [
+            'title'     => get_the_title( $current_id ),
+            'permalink' => false,
+            'icon'      => false,
+            'is_active' => true,
+        ];
+
+        return $breadcrumbs;
+    }
+
+    /**
+     * Format breadcrumbs for: Tredu Event
+     *
+     * @param int   $current_id  Current page ID.
+     * @param array $breadcrumbs Breadcrumbs array.
+     *
+     * @return array
+     */
+    private function format_tredu_event( $current_id, array $breadcrumbs ) : array {
+        $breadcrumbs['home'] = $this->get_home_link();
+
+        $events_page = Settings::get_setting( 'tredu_events_page' );
+
+        if ( ! empty( $events_page ) ) {
+            $breadcrumbs[] = [
+                'permalink'    => get_the_permalink( $events_page ),
+                'title'        => get_the_title( $events_page ),
+                'icon'         => 'chevron-right',
+                'icon_classes' => 'icon--small is-secondary ml-2 mr-0',
             ];
         }
 

@@ -1,5 +1,5 @@
 {?primary_keyword}
-    <span class="pill mb-4 {classes.event_item_pill|s}">
+    <span class="pill mb-4  has-background-white is-secondary">
         {primary_keyword|s}
     </span>
 {/primary_keyword}

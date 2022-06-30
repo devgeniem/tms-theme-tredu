@@ -1,0 +1,93 @@
+{>"shared/base" /}
+
+{<content}
+    {>"ui/readspeaker" class="pt-3 pt-5-desktop pr-5 pl-5 pr-0-desktop pl-0-desktop" /}
+
+    <main class="main-content {Readspeaker.config.class|attr}" id="main-content">
+        <article class="entry">
+            {#SingleTreduEventCpt}
+                <section class="section pb-4">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                <h1 class="entry__title mt-0 mb-6 has-text-centered">
+                                    {@title /}
+                                </h1>
+
+                                {?hero_image}
+                                    <div
+                                        class="entry__hero-image mt-6 has-background-primary has-text-primary-invert has-background-cover" {@inlinebg id=hero_image size="fullhd" /}></div>
+                                {/hero_image}
+
+                                <div
+                                    class="entry__hero-info section pt-6 pb-6 pt-8-desktop pb-8-desktop pt-9-fullhd pb-9-fullhd">
+                                    <div class="columns">
+                                        <div class="column is-8 is-offset-2">
+                                            {>"views/single-tredu-event/single-tredu-event-hero-meta" /}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section pt-4">
+                    <div class="container">
+                        {?content.fields.excerpt}
+                            <div class="columns">
+                                <div class="column is-8 is-offset-2">
+                                    <p class="entry__exceprt has-text-lead">
+                                        {content.fields.excerpt|html}
+                                    </p>
+                                </div>
+                            </div>
+                        {/content.fields.excerpt}
+
+                        <div class="columns">
+                            <div class="column">
+                                {?excerpt}
+                                    <div class="columns mb-8">
+                                        <div class="column is-6">
+                                            {excerpt|html}
+                                        </div>
+                                    </div>
+                                {/excerpt}
+
+                                <div class="entry__content is-content-grid keep-vertical-spacing">
+                                    <div class="is-align-wide">
+                                        {@content /}
+
+                                        {?content.fields.enroll_link}
+                                            {>"ui/button-link" link=content.fields.enroll_link classes="is-primary mt-3" icon="arrow-right" icon_classes="icon--medium" /}
+                                        {/content.fields.enroll_link}
+                                    </div>
+
+                                    {?contacts}
+                                        <div class="contacts is-align-wide mt-8">
+                                            <div class="columns is-tablet is-multiline is-variable is-6">
+                                                {#contacts}
+                                                    {>"shared/contact" column_class="is-6-tablet is-offset-0-tablet is-4-desktop" /}
+                                                {/contacts}
+                                            </div>
+                                        </div>
+                                    {/contacts}
+                                </div>
+
+                                {?share_links}
+                                    <div class="columns">
+                                        <div class="column is-10-desktop is-offset-1-desktop">
+                                            {>"ui/entry-share-links" /}
+                                        </div>
+                                    </div>
+                                {/share_links}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {/SingleTreduEventCpt}
+        </article>
+    </main>
+
+    {>"ui/components" components=SingleTreduEventCpt.components /}
+{/content}

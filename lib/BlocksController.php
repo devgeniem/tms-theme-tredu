@@ -7,6 +7,7 @@ namespace TMS\Theme\Tredu;
 
 use DustPress\Model;
 use Geniem\ACF\Block as GeniemBlock;
+use PageDialTredu;
 
 /**
  * Class BlocksController
@@ -102,11 +103,12 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
-            'core/block'     => [],
-            'core/template'  => [],
-            'core/list'      => [
+            'core/block'       => [],
+            'core/template'    => [],
+            'core/list'        => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
@@ -115,9 +117,10 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/heading'   => [
+            'core/heading'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
@@ -126,9 +129,10 @@ class BlocksController implements Interfaces\Controller {
                     '',
                 ],
             ],
-            'core/paragraph' => [
+            'core/paragraph'   => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
@@ -140,13 +144,16 @@ class BlocksController implements Interfaces\Controller {
             'acf/image-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
-            'acf/grid'       => [
+            'acf/grid'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\Project::SLUG,
                 ],
@@ -154,6 +161,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/link-list'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -164,6 +172,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/quote'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -173,6 +182,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/key-figures'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -182,11 +192,13 @@ class BlocksController implements Interfaces\Controller {
             'acf/subpages'       => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                 ],
             ],
             'acf/accordion'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
@@ -195,24 +207,29 @@ class BlocksController implements Interfaces\Controller {
             'acf/video'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/image'          => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/image-gallery'  => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -222,6 +239,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/image-carousel' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
@@ -229,8 +247,10 @@ class BlocksController implements Interfaces\Controller {
             'acf/share-links'    => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
@@ -239,6 +259,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
                 'templates'  => [
                     '',
@@ -248,6 +269,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/table' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
                 ],
@@ -256,6 +278,7 @@ class BlocksController implements Interfaces\Controller {
             'acf/material'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
@@ -265,30 +288,39 @@ class BlocksController implements Interfaces\Controller {
             'acf/notice-banner' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
+                    PostType\Project::SLUG,
+                    PostType\Program::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/map'           => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/contacts'      => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                     PostType\Program::SLUG,
                     PostType\Project::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
 
             'acf/acc-icon-links' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
@@ -297,20 +329,25 @@ class BlocksController implements Interfaces\Controller {
             'gravityforms/form'     => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\Contact::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/countdown'         => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\TreduEvent::SLUG,
                 ],
             ],
             'acf/place-of-business' => [
                 'post_types' => [
                     PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
                 ],
@@ -326,6 +363,10 @@ class BlocksController implements Interfaces\Controller {
         $allowed_blocks = [];
         $post_type      = \get_post_type( $context->post->ID );
         $page_template  = \get_page_template_slug( $context->post->ID );
+
+        if ( $page_template === PageDialTredu::TEMPLATE ) {
+            return $this->page_dial_tredu_blocks();
+        }
 
         foreach ( $blocks as $block => $rules ) {
             if ( empty( $rules ) ) {
@@ -351,5 +392,18 @@ class BlocksController implements Interfaces\Controller {
         }
 
         return $allowed_blocks;
+    }
+
+    /**
+     * Page Template: page-dial-tredu.php blocks.
+     *
+     * @param $context
+     * @param $blocks
+     */
+    public function page_dial_tredu_blocks() {
+        return [
+            'acf/video',
+            'acf/dial-tredu-accordion',
+        ];
     }
 }

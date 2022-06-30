@@ -6,15 +6,17 @@
             <div class="breadcrumbs-container section pt-4 pb-4 has-background-light-gray">
                 <div class="container">
                     <div class="columns">
-                        <div class="column">
+                        <div class="column breadcrumbs-container">
                             {>"ui/breadcrumbs" breadcrumbs=Header.breadcrumbs bc_icon="chevron-right" icon_classes="icon--small is-secondary ml-2 mr-0" /}
+                        </div>
+
+                        <div class="column readspeaker-container">
+                            {>"ui/readspeaker" /}
                         </div>
                     </div>
                 </div>
             </div>
         {/Header.breadcrumbs}
-
-        {>"ui/readspeaker" /}
 
         <section class="section">
             <div class="container">

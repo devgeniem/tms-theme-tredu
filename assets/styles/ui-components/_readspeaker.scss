@@ -11,6 +11,8 @@
 }
 
 .rsbtn {
+    display: flex;
+
     &.rsexpanded {
         .icon--readspeaker,
         .listen-text {

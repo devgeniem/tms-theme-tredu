@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-855: Redipress search includes #113
 - TMS-855-2: Allow cpts in search #114
 - TMS-885: Dial Tredu page template #111
+- TMS-883: Allow PlaceOfBusiness block in Program CPT
 
 ## [2022-06-21] - 1.2.0
 

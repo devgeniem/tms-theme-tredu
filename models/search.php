@@ -4,10 +4,12 @@
  */
 
 use TMS\Theme\Tredu\PostType\BlogArticle;
+use TMS\Theme\Tredu\PostType\DialTredu;
 use TMS\Theme\Tredu\PostType\Page;
 use TMS\Theme\Tredu\PostType\Post;
 use TMS\Theme\Tredu\PostType\Program;
 use TMS\Theme\Tredu\PostType\Project;
+use TMS\Theme\Tredu\PostType\TreduEvent;
 use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Traits\Breadcrumbs;
 use TMS\Theme\Tredu\Traits\Links;
@@ -391,7 +393,8 @@ class Search extends BaseModel {
             BlogArticle::SLUG,
             Program::SLUG,
             Project::SLUG,
-            // TreduEvent::SLUG
+            TreduEvent::SLUG,
+            DialTredu::SLUG,
         ];
 
         $ret_post_types = [];

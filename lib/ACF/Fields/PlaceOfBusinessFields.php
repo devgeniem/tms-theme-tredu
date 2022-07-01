@@ -98,7 +98,7 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
                 $results = [];
 
                 foreach ( $places_map as $place ) {
-                    if ( isset( $place['title'] ) ) {
+                    if ( ! empty( $place['title'] ) ) {
                         $results[] = $place['title'];
                     }
                 }

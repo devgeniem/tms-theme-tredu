@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-884: Dial Tredu CPT & Single view #110
 - TMS-855: Redipress search includes #113
 - TMS-885: Dial Tredu page template #111
-- TMS-822: Fix contrast #93
+- TMS-822: Fix layout call to action image meta contrast #93
 
 ## [2022-06-21] - 1.2.0
 

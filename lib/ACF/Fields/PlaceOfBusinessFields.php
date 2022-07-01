@@ -5,6 +5,7 @@ namespace TMS\Theme\Tredu\ACF\Fields;
 use Exception;
 use Geniem\ACF\Field;
 use TMS\Plugin\ContactImporter;
+use TMS\Theme\Tredu\Formatters\PlaceOfBusinessFormatter;
 use TMS\Theme\Tredu\Logger;
 
 /**
@@ -87,6 +88,23 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
             ->allow_null()
             ->use_ajax()
             ->use_ui()
+            ->redipress_include_search( function ( $places ) {
+                if ( empty( $places ) ) {
+                    return '';
+                }
+
+                $places_map = ( new PlaceOfBusinessFormatter() )->map_api_results( $places );
+
+                $results = [];
+
+                foreach ( $places_map as $place ) {
+                    if ( ! empty( $place['title'] ) ) {
+                        $results[] = $place['title'];
+                    }
+                }
+
+                return implode( ' ', $results );
+            } )
             ->set_instructions( $strings['place_of_business']['instructions'] );
 
         return [

@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-885: Dial Tredu page template #111
 - TMS-882: Fix field name conflict #112
 - TMS-855: Redipress search includes #113
+- TMS-855: Redipress search includes #113
+- TMS-885: Dial Tredu page template #111
 
 ## [2022-06-21] - 1.2.0
 

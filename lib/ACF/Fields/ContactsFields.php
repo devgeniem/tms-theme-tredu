@@ -138,11 +138,11 @@ class ContactsFields extends \Geniem\ACF\Field\Group {
                 $results = [];
 
                 foreach ( $contacts_map as $contact ) {
-                    if ( isset( $contact['first_name'] ) ) {
+                    if ( ! empty( $contact['first_name'] ) ) {
                         $results[] = $contact['first_name'];
                     }
 
-                    if ( isset( $contact['last_name'] ) ) {
+                    if ( ! empty( $contact['last_name'] ) ) {
                         $results[] = $contact['last_name'];
                     }
                 }

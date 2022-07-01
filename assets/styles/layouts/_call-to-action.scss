@@ -1,4 +1,16 @@
 .call-to-action {
+    .image-meta__image-title,
+    .image-meta__author-name {
+        @include until($desktop) {
+            padding-right: $theme-spacing;
+            padding-left: $theme-spacing;
+        }
+    }
+
+    .image-meta__author-name {
+        color: $text;
+    }
+
     &__item {
         .author-text {
             color: $color-black;
@@ -15,9 +27,12 @@
                 }
             }
 
-            .author-text {
-                @include until($tablet) {
-                    color: $primary-invert;
+            .image-meta__image-title,
+            .image-meta__author-name {
+                color: $primary-invert;
+
+                @include from(769px) {
+                    color: $text;
                 }
             }
         }

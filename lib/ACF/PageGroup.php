@@ -9,6 +9,7 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
+use PageDialTredu;
 use PageProject;
 use TMS\Theme\Tredu\ACF\Layouts;
 use TMS\Theme\Tredu\Logger;
@@ -85,6 +86,11 @@ class PageGroup {
                         'param'    => 'page_template',
                         'operator' => '!=',
                         'value'    => PageProject::TEMPLATE,
+                    ],
+                    [
+                        'param'    => 'page_template',
+                        'operator' => '!=',
+                        'value'    => PageDialTredu::TEMPLATE,
                     ],
                     [
                         'param'    => 'page_type',

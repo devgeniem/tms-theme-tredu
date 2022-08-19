@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-882: Fix field name conflict
+- TMS-893: Fix Tredu events order #117
+- TMS-882: Fix field name conflict #112
 - TMS-884: Dial Tredu CPT & Single view #110
 - TMS-885: Dial Tredu page template #111
 - TMS-882: Fix field name conflict #112

@@ -113,7 +113,10 @@ class TreduEventsFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             'update_post_meta_cache' => false,
             'no_found_rows'          => true,
             'meta_key'               => 'start_date',
-            'orderby'                => [ 'meta_value_num' => 'ASC', 'title' => 'ASC' ],
+            'orderby'                => [
+                'meta_value_num' => 'ASC',
+                'title'          => 'ASC',
+            ],
             'posts_per_page'         => $layout['page_size'] ?? 4,
         ];
 

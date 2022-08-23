@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-891: Add chat #119
 - TMS-893: Fix Tredu events order #117
 - TMS-882: Fix field name conflict #112
 - TMS-884: Dial Tredu CPT & Single view #110

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-08-23] - 1.3.0
+
+- TMS-894: Fix composer
 - TMS-891: Add chat #119
 - TMS-893: Fix Tredu events order #117
 - TMS-882: Fix field name conflict #112

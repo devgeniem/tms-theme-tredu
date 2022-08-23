@@ -31,7 +31,7 @@ class ProjectGroup {
      */
     protected function register_fields() : void {
         try {
-            $field_group = ( new Group( 'Koulutuksen tiedot' ) )
+            $field_group = ( new Group( 'Projektin tiedot' ) )
                 ->set_key( 'fg_project_fields' );
 
             $rule_group = ( new RuleGroup() )

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-822: Fix layout call to action image meta contrast #93
+- TMS-883: Allow PlaceOfBusiness block in Program CPT
+
 ## [2022-08-23] - 1.3.0
 
 - TMS-894: Fix composer
@@ -17,8 +20,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-855: Redipress search includes #113
 - TMS-855-2: Allow cpts in search #114
 - TMS-885: Dial Tredu page template #111
-- TMS-822: Fix layout call to action image meta contrast #93
-- TMS-883: Allow PlaceOfBusiness block in Program CPT
 
 ## [2022-06-21] - 1.2.0
 

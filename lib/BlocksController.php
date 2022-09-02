@@ -350,6 +350,7 @@ class BlocksController implements Interfaces\Controller {
                     PostType\DialTredu::SLUG,
                     PostType\Post::SLUG,
                     PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
                 ],
             ],
         ];

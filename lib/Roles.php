@@ -689,6 +689,7 @@ class Roles implements Controller {
         $role->add_caps( $this->program_all_capabilities );
         $role->add_caps( $this->tredu_event_all_capabilities );
         $role->add_caps( $this->project_all_capabilities );
+        $role->add_caps( $this->dial_tredu_all_capabilities );
 
         // Taxonomies
         $role->add_caps( [

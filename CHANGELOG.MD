@@ -7,11 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-09-07] - 1.4.0
+
 ### Added
 
 - TMS-903: Add dial tredu cpt caps to author role #122
-
-## [2022-09-07] - 1.4.0
 
 ### Fixed
 

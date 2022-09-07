@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2022-09-07] - 1.4.0
+
 ### Fixed
 
 - PIEN-7508: Fix drupal contacts on contact page template. #121

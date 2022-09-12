@@ -190,6 +190,7 @@ class PageGroup {
                 Layouts\ShareLinksLayout::class,
                 Layouts\ProgramLayout::class,
                 Layouts\TreduEventsLayout::class,
+                Layouts\VideoLayout::class,
             ],
             $key
         );

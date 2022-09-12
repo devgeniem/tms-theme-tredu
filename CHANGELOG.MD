@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-897: Add video component & block video align option
+
 ## [2022-09-07] - 1.4.0
 
 ### Added

@@ -56,6 +56,7 @@ class OnepagerGroup {
                 'articles'        => Layouts\ArticlesLayout::class,
                 'notice_banner'   => Layouts\NoticeBannerLayout::class,
                 'gravityform'     => Layouts\GravityFormLayout::class,
+                'video'           => Layouts\VideoLayout::class,
                 // 'textblock'       => false,
             ]
         );

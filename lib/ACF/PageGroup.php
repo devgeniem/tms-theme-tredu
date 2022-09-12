@@ -191,6 +191,7 @@ class PageGroup {
                 Layouts\CountdownLayout::class,
                 Layouts\TreduEventsLayout::class,
                 Layouts\ProgramLayout::class,
+                Layouts\VideoLayout::class,
             ],
             $key
         );

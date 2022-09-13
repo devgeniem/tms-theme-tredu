@@ -52,6 +52,7 @@ class ThemeController {
             ThemeSupports::class,
             Comments::class,
             ProgramSearch::class,
+            EmbedController::class,
         ];
 
         $classes = apply_filters(

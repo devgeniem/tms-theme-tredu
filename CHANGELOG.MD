@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.5.0] - 2022-09-20
+
+### Fixed
+
+- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
+
+### Added
+
 - TMS-910: Add play.quickchannel.com embed support
 
 ## [2022-09-07] - 1.4.0
@@ -20,10 +28,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - PIEN-7508: Fix drupal contacts on contact page template. #121
 - TMS-822: Fix layout call to action image meta contrast #93
 - TMS-883: Allow PlaceOfBusiness block in Program CPT
-
-### Fixed
-
-- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
 
 ## [2022-08-23] - 1.3.0
 

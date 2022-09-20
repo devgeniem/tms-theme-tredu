@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-910: Add play.quickchannel.com embed support
+- TMS-897: Add video component & block video align option
+
+## [2022-09-07] - 1.4.0
+
+### Added
+
+- TMS-903: Add dial tredu cpt caps to author role #122
+
+### Fixed
+
+- PIEN-7508: Fix drupal contacts on contact page template. #121
 - TMS-822: Fix layout call to action image meta contrast #93
 - TMS-883: Allow PlaceOfBusiness block in Program CPT
 

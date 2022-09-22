@@ -7,15 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [1.5.0] - 2022-09-22
+## [1.6.0] - 2022-09-22
 
 ### Added
 
 - TMS-903: Add dial tredu cpt caps to author role #122
+- TMS-897: Add video component & block video align option
 
 ### Fixed
 
 - PIEN-7639: Fix events sharing link.
+
+## [1.5.0] - 2022-09-20
+
+### Fixed
+
+- PIEN-7610: Handle api_image_url and fix case where featured image doesn't exist.
+
+### Added
+
+- TMS-910: Add play.quickchannel.com embed support
 
 ## [2022-09-07] - 1.4.0
 

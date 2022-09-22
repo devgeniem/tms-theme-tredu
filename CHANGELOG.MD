@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-910: Add play.quickchannel.com embed support
+## [1.5.0] - 2022-09-22
+
+### Added
+
+- TMS-903: Add dial tredu cpt caps to author role #122
+
+### Fixed
+
+- PIEN-7639: Fix events sharing link.
 
 ## [2022-09-07] - 1.4.0
 

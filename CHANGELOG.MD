@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- TMS-916: Fix order of selected api contacts.
+- TMS-916: Fix order of selected api contacts. #130
 
 ## [1.7.1] - 2022-10-17
 

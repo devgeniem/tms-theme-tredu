@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- PIEN-8045: Change subpage-block to work with all post types that use it.
+
 ## [1.7.2] - 2022-02-11
 
 ### Fixed

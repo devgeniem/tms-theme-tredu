@@ -9,7 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- TMS-916: Fix order of selected api contacts.
+- PIEN-8045: Change subpage-block to work with all post types that use it.
+
+## [1.7.2] - 2022-02-11
+
+### Fixed
+
+- TMS-916: Fix order of selected api contacts. #130
 
 ### Added
 

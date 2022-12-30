@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- PIEN-8047: Change build process back to Webpack instead of Laravel Mix.
+
 ## [1.7.2] - 2022-02-11
 
 ### Fixed

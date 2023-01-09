@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.7.4] - 2023-01-09
+
 ### Fixed
 
 - PIEN-8047: Change build process back to Webpack instead of Laravel Mix.
+
+## [1.7.3] - 2022-12-29
+
+### Fixed
+
+- PIEN-8045: Change subpage-block to work with all post types that use it.
 
 ## [1.7.2] - 2022-02-11
 

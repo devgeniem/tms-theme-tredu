@@ -60,7 +60,7 @@ class SubpagesFormatter implements Formatter {
      */
     private function get_subpages( array $data ) : array {
         $args = [
-            'post_type'              => get_post_type(),
+            'post_type'              => \get_post_type(),
             'posts_per_page'         => 100,
             'post_parent'            => get_the_ID(),
             'update_post_meta_cache' => false,

@@ -69,6 +69,7 @@ class ProgramFormatter implements Formatter {
             'no_found_rows'          => true,
             'orderby'                => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
             'posts_per_page'         => $layout['number'] ?? 4,
+            'offset'                 => $layout['offset'] ?? 0,
         ];
 
         $date_query = $this->get_date_query( $layout );
@@ -94,7 +95,7 @@ class ProgramFormatter implements Formatter {
      *
      * @return array
      */
-    private function get_tax_query( array $layout ) : array {
+    public function get_tax_query( array $layout ) : array {
         $taxonomies = $this->get_tax_map();
 
         $tax_query = [];
@@ -128,7 +129,7 @@ class ProgramFormatter implements Formatter {
      *
      * @return array
      */
-    private function get_tax_map() : array {
+    public function get_tax_map() : array {
         return [
             'apply_method'           => ApplyMethod::SLUG,
             'program_type'           => ProgramType::SLUG,
@@ -145,7 +146,7 @@ class ProgramFormatter implements Formatter {
      *
      * @return array
      */
-    private function get_date_query( array $layout ) : array {
+    public function get_date_query( array $layout ) : array {
         $meta_query = [];
 
         if ( ! empty( $layout['apply_start'] ) ) {

@@ -82,6 +82,10 @@ class ProgramFields extends \Geniem\ACF\Field\Group {
                 'label'        => 'Linkki',
                 'instructions' => '',
             ],
+            'load_more_toggle'       => [
+                'label'        => 'Näytä "Lataa lisää"-painike',
+                'instructions' => '',
+            ],
         ];
 
         try {
@@ -176,6 +180,13 @@ class ProgramFields extends \Geniem\ACF\Field\Group {
             ->set_wrapper_width( 50 )
             ->set_instructions( $this->strings['limit']['instructions'] );
 
+        $load_more_toggle = ( new Field\TrueFalse( $this->strings['load_more_toggle']['label'] ) )
+            ->set_key( "${key}_load_more_toggle" )
+            ->set_name( 'load_more_toggle' )
+            ->use_ui()
+            ->set_wrapper_width( 100 )
+            ->set_instructions( $this->strings['load_more_toggle']['instructions'] );
+
         return [
             $title_field,
             $description_field,
@@ -187,6 +198,7 @@ class ProgramFields extends \Geniem\ACF\Field\Group {
             $educational_background_field,
             $limit_field,
             $link_field,
+            $load_more_toggle,
         ];
     }
 }

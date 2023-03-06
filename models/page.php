@@ -49,7 +49,6 @@ class Page extends PageExtend {
         $args = [
             'post_type'              => Program::SLUG,
             'update_post_meta_cache' => false,
-            // 'no_found_rows'          => true,
             'orderby'                => [ 'start_date' => 'ASC', 'title' => 'ASC' ],
             'posts_per_page'         => $posts_per_page ?? 4,
             'offset'                 => $offset,
@@ -110,10 +109,6 @@ class Page extends PageExtend {
         }
 
         $data['posts'] = $programs;
-
-        $query = new \WP_Query( $args );
-        $data['found_posts'] = $query->found_posts ?? '';
-        $data['posts_per_page'] = $query->post_count ?? '';
 
         return $data;
     }

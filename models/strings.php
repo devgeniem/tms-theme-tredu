@@ -258,6 +258,10 @@ class Strings extends \DustPress\Model {
                 'accessible_title' => _x( 'Dialog Window - Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
                 'close'            => _x( 'Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
             ],
+            'load_more' => [
+                'load_more_text'   => _x( 'Load more', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_loaded' => _x( 'More results loaded', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
         ];
     }
 

@@ -44,7 +44,7 @@ class Expirator {
             // If end_date field is empty, use start_date + 1 day as the expiration date
             if ( empty( $end_time ) ) {
                 $end_time = \get_post_meta( $post, 'start_date', true );
-                $end_time = date('Ymd', strtotime($end_time . ' +1 days'));
+                $end_time = date( 'Ymd', strtotime( $end_time . ' +1 days' ) );
             }
 
             if ( ! empty( $end_time ) ) {

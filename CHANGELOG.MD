@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- TMS-902: Add cron job to draft TreduEvent posts based on custom end_date field
+
 ## [1.7.4] - 2023-01-09
 
 ### Fixed

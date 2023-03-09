@@ -17,7 +17,7 @@ class Page extends PageExtend {
      * @var array
      */
     public $api = [
-        'Programslist'
+        'Programslist',
     ];
 
     /**
@@ -102,7 +102,7 @@ class Page extends PageExtend {
             $args['tax_query'] = $tax_query;
         }
 
-        $programs = (new \WP_Query( $args ))->get_posts();
+        $programs = ( new \WP_Query( $args ) )->get_posts();
 
         if ( ! empty( $programs ) ) {
             $programs = Program::format_posts( $programs, $programformatter->get_tax_map() );

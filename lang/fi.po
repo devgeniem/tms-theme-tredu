@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2023-03-02 14:08+0200\n"
-"PO-Revision-Date: 2023-03-02 14:09+0200\n"
+"POT-Creation-Date: 2023-03-09 11:52+0200\n"
+"PO-Revision-Date: 2023-03-09 11:52+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -23,10 +23,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4873
-msgctxt "text direction"
-msgid "ltr"
-msgstr "ltr"
+#: assets/dist/theme_tredu.js:1
+#, fuzzy
+#| msgid "Program search"
+msgid "#program-search-words"
+msgstr "Koulutushaku"
+
+#: assets/dist/theme_tredu.js:1
+msgid "input[type=\"search\"].program-search"
+msgstr ""
 
 #: comments.php:14
 msgid "Comments"
@@ -578,8 +583,8 @@ msgid "No search results"
 msgstr "Ei hakutuloksia"
 
 #: models/single-dial-tredu.php:42
-msgid "Back to the top level"
-msgstr "Takaisin ylätasolle"
+msgid "Go back"
+msgstr "Takaisin"
 
 #: models/single-program.php:48 models/single-program.php:236
 msgctxt "program info"
@@ -1246,10 +1251,15 @@ msgstr "Lataa lisää"
 
 #: models/strings.php:263
 msgctxt "theme-frontend"
+msgid "Load more programs"
+msgstr "Lataa lisää koulutuksia"
+
+#: models/strings.php:264
+msgctxt "theme-frontend"
 msgid "More results loaded"
 msgstr "Lisää tuloksia ladattu"
 
-#: models/strings.php:276
+#: models/strings.php:277
 msgid "Pagination"
 msgstr "Sivutus"
 
@@ -1309,6 +1319,13 @@ msgstr "Geniem"
 #. Author URI of the plugin/theme
 msgid "https://geniem.fi"
 msgstr ""
+
+#~ msgctxt "text direction"
+#~ msgid "ltr"
+#~ msgstr "ltr"
+
+#~ msgid "Back to the top level"
+#~ msgstr "Takaisin ylätasolle"
 
 #~ msgid "Looking for events? Use the event search!"
 #~ msgstr "Etsitkö tapahtumia? Käytä tapahtumahakua!"

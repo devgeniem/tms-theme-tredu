@@ -259,8 +259,9 @@ class Strings extends \DustPress\Model {
                 'close'            => _x( 'Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'load_more' => [
-                'load_more_text'   => _x( 'Load more', 'theme-frontend', 'tms-theme-tredu' ),
-                'load_more_loaded' => _x( 'More results loaded', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_text'          => _x( 'Load more', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_programs_text' => _x( 'Load more programs', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_loaded'        => _x( 'More results loaded', 'theme-frontend', 'tms-theme-tredu' ),
             ],
         ];
     }

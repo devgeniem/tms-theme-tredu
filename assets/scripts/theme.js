@@ -27,6 +27,7 @@ import DatePicker from './date-picker';
 import GravityFormsPatch from './gravity-forms-patch';
 import Countdown from './countdown';
 import ProgramSearch from './program-search';
+import LoadMore from './load-more';
 
 const globalControllers = {
     Common,
@@ -53,6 +54,7 @@ const globalControllers = {
     GravityFormsPatch,
     Countdown,
     ProgramSearch,
+    LoadMore,
 };
 
 const templateControllers = {

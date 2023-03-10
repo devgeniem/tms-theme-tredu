@@ -1,5 +1,6 @@
-<div class="program-list">
-    {?posts}
+
+{?posts}
+    <div id="archive-articles" class="program-list"{?load_more_toggle} aria-live="polite" aria-atomic="true"{/load_more_toggle}>
         {#posts}
                 <div class="program-list__item is-flex is-align-items-stretch is-justify-content has-text-weight-semibold has-height-100 is-family-secondary">
                     <div class="columns has-width-100 mt-0 mr-0 mb-0 ml-0">
@@ -91,5 +92,17 @@
                 </h2>
             </div>
         {/posts}
-    {/posts}
-</div>
+    </div>
+{/posts}
+
+{?load_more_toggle}
+    {! Check that there's enough posts to show load more button !}
+    {@gt key=found_posts value=posts_per_page}
+        <div class="has-text-centered mt-4 mb-4">
+            <button id="js-load-more" class="button is-primary is-rounded" type="button" rel="next" aria-label="{Strings.s.load_more.load_more_programs_text|s}">
+                <span id="js-load-more-text" class="load-more-text">{Strings.s.load_more.load_more_text|s}</span>
+                <span id="js-load-more-spinner" class="load-more-spinner searchform__spinner is-hidden"></span>
+            </button>
+        </div>
+    {/gt}
+{/load_more_toggle}

@@ -397,9 +397,6 @@ class BlocksController implements Interfaces\Controller {
 
     /**
      * Page Template: page-dial-tredu.php blocks.
-     *
-     * @param $context
-     * @param $blocks
      */
     public function page_dial_tredu_blocks() {
         return [

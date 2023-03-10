@@ -168,7 +168,7 @@ class Strings extends \DustPress\Model {
                 'related_art'     => _x( 'Artwork by the same artist', 'theme-frontend', 'tms-theme-tredu' ),
                 'related_artwork' => _x( 'Related artwork', 'theme-frontend', 'tms-theme-tredu' ),
             ],
-            'program'    => [
+            'program' => [
                 'search'                  => [
                     'search_studies'                     => _x( 'Search studies', 'theme-frontend', 'tms-theme-tredu' ),
                     'results_shown'                      => _x( 'Results shown', 'theme-frontend', 'tms-theme-tredu' ),
@@ -254,13 +254,14 @@ class Strings extends \DustPress\Model {
                     _x( 'Dec', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
             ],
-            'modaal'     => [
+            'modaal' => [
                 'accessible_title' => _x( 'Dialog Window - Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
                 'close'            => _x( 'Close (Press escape to close)', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'load_more' => [
-                'load_more_text'   => _x( 'Load more', 'theme-frontend', 'tms-theme-tredu' ),
-                'load_more_loaded' => _x( 'More results loaded', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_text'          => _x( 'Load more', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_programs_text' => _x( 'Load more programs', 'theme-frontend', 'tms-theme-tredu' ),
+                'load_more_loaded'        => _x( 'More results loaded', 'theme-frontend', 'tms-theme-tredu' ),
             ],
         ];
     }
@@ -273,7 +274,7 @@ class Strings extends \DustPress\Model {
      * @return object
      */
     public function add_pagination_translations( $data ) {
-        $data->S->aria_label = __( 'Pagination', 'tms-theme-tredu' );
+        $data->S->aria_label = __( 'Pagination', 'tms-theme-tredu' ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
         return $data;
     }

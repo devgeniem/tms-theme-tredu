@@ -31,8 +31,8 @@ class PageHeroGroup {
         );
     }
 
-    /**ttred
-     * Register fields
+    /**
+     * Register fields.
      *
      * @return void
      */

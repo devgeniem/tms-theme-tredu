@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- PIEN-8157: PHP 8.1
+## [1.7.5] - 2023-03-09
+
 ### Added
 
+- TMS-923: Load more -functionality added to program-lift component
+- TMS-889: "Go back"-link added to single Dial Tredu pages
 - TMS-902: Add cron job to draft TreduEvent posts based on custom end_date field
 
 ## [1.7.4] - 2023-01-09

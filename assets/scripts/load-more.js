@@ -76,6 +76,11 @@ export default class LoadMore {
             // Append posts to the wrapping element.
             this.postsUl.append( response.success );
 
+            // Focus on the first new element
+            this.postsUl.find( '.program-list__item' )
+                .eq( ( totalNumOfPosts - this.postsPerPage ) )
+                .find( 'a' ).focus();
+
             // Set new value to data-attribute data-current.
             this.postsWrapper.attr( 'data-current-set', added );
 

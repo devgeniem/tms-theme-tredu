@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2023-03-02 14:08+0200\n"
+"POT-Creation-Date: 2023-03-09 11:52+0200\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,9 +23,12 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4873
-msgctxt "text direction"
-msgid "ltr"
+#: assets/dist/theme_tredu.js:1
+msgid "#program-search-words"
+msgstr ""
+
+#: assets/dist/theme_tredu.js:1
+msgid "input[type=\"search\"].program-search"
 msgstr ""
 
 #: comments.php:14
@@ -572,7 +575,7 @@ msgid "No search results"
 msgstr ""
 
 #: models/single-dial-tredu.php:42
-msgid "Back to the top level"
+msgid "Go back"
 msgstr ""
 
 #: models/single-program.php:48 models/single-program.php:236
@@ -1234,10 +1237,15 @@ msgstr ""
 
 #: models/strings.php:263
 msgctxt "theme-frontend"
+msgid "Load more programs"
+msgstr ""
+
+#: models/strings.php:264
+msgctxt "theme-frontend"
 msgid "More results loaded"
 msgstr ""
 
-#: models/strings.php:276
+#: models/strings.php:277
 msgid "Pagination"
 msgstr ""
 

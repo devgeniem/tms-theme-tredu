@@ -57,9 +57,9 @@ class DustPressController implements Interfaces\Controller {
             $data->hellip_end = false;
         }
 
-        $data->S->page_aria_label = _x( 'Go to Page', 'pagination', 'tms-theme-tredu' );
-        $data->S->next            = _x( 'Next', 'pagination', 'tms-theme-tredu' );
-        $data->S->prev            = _x( 'Previous', 'pagination', 'tms-theme-tredu' );
+        $data->S->page_aria_label = _x( 'Go to Page', 'pagination', 'tms-theme-tredu' ); // phpcs:ignore
+        $data->S->next            = _x( 'Next', 'pagination', 'tms-theme-tredu' ); // phpcs:ignore
+        $data->S->prev            = _x( 'Previous', 'pagination', 'tms-theme-tredu' ); // phpcs:ignore
 
         return $data;
     }

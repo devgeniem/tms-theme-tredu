@@ -38,9 +38,9 @@ class SingleDialTredu extends BaseModel {
 
         if ( ! empty( $dial_tredu_page ) ) {
             $dial_tredu_link[] = [
-                'permalink'    => get_the_permalink( $dial_tredu_page ),
-                'text'         => __( 'Back to the top level', 'tms-theme-tredu' ),
-                'icon'         => 'chevron-left',
+                'permalink' => get_the_permalink( $dial_tredu_page ),
+                'text'      => __( 'Go back', 'tms-theme-tredu' ),
+                'icon'      => 'chevron-left',
             ];
         }
 

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- PIEN-8439: Add pageID meta tag #151
+
 ## [1.7.5] - 2023-03-09
 
 ### Added

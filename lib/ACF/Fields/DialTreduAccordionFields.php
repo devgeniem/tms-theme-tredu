@@ -42,7 +42,7 @@ class DialTreduAccordionFields extends \Geniem\ACF\Field\Group {
      */
     protected function sub_fields() : array {
         $strings = [
-            'title'    => [
+            'title' => [
                 'label'        => 'Otsikko',
                 'instructions' => '',
             ],

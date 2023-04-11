@@ -32,16 +32,16 @@ class Page extends PageExtend {
         $offset           = $posts_per_page;
 
         if ( $js_args ) {
-            $current_set     = (int) $js_args->currentSet;
-            $posts_per_page  = $js_args->postsPerPage;
-            $apply_start     = $js_args->applyStart;
+            $current_set     = (int) $js_args->currentSet; //phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+            $posts_per_page  = $js_args->postsPerPage; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+            $apply_start     = $js_args->applyStart; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
             $offset          = ( $current_set - 1 ) * $posts_per_page;
             $data_attributes = [
-                'apply_method'           => $js_args->applyMethod ?? '',
-                'program_type'           => $js_args->programType ?? '',
+                'apply_method'           => $js_args->applyMethod ?? '', // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+                'program_type'           => $js_args->programType ?? '', // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
                 'profession'             => $js_args->profession ?? '',
                 'location'               => $js_args->location ?? '',
-                'educational_background' => $js_args->educationalBackground ?? '',
+                'educational_background' => $js_args->educationalBackground ?? '', // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
             ];
         }
 

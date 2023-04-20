@@ -16,14 +16,14 @@
                     <div class="related-posts__item mb-4 mb-0-tablet">
                         {?api_image_url}
                             <div class="image is-4by3">
-                                <a href="{permalink}" aria-hidden="true" tabindex="-1">
+                                <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
                                     <img src="{api_image_url|url}" class="objectfit-image" loading="lazy" alt=""/>
                                 </a>
                             </div>
                         {:else}
                             {?image_id}
                                 <div class="image is-4by3">
-                                    <a href="{permalink}" aria-hidden="true" tabindex="-1">
+                                    <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
                                         {@image id=image_id size="large" class="objectfit-image" /}
                                     </a>
                                 </div>

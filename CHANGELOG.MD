@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.1] - 2023-04-27
+
 ### Fixed
 
 - PIEN-8524: Display API image #152

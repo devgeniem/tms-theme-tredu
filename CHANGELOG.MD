@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.2] - 2023-04-28
+
 ### Fixed
 
 PIEN-8585: Check empty links #153

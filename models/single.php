@@ -67,7 +67,7 @@ class Single extends BaseModel {
         if ( $image_url ) {
             yield [
                 'url' => $image_url ?? '',
-                'id'  => null,,
+                'id'  => null,
             ];
         }
     }

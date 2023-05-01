@@ -42,7 +42,7 @@ class Single extends BaseModel {
     protected function alter_image( $params ) {
         $image_url = get_field( 'image_url' ) ?? false;
 
-        if ( $event ) {
+        if ( $image_url ) {
             // Ensure our custom generator is ran first.
             $params['cbs'] = array_merge(
                 [ 'tms' => Closure::fromCallable( [ $this, 'seo_image_generator' ] ) ],

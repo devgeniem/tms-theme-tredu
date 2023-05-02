@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Fixed
+
+- PIEN-8394: Add API image to og:image tag #154
+
 ## [1.8.2] - 2023-04-28
 
 ### Fixed
 
-PIEN-8585: Check empty links #153
+- PIEN-8585: Check empty links #153
 
 ## [1.8.1] - 2023-04-27
 

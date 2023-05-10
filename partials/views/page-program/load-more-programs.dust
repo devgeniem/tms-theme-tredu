@@ -18,15 +18,16 @@
 
             <div class="column is-7 has-background-light-gray pl-4 pr-4">
                 <div class="inner columns is-multiline has-text-primary m-0">
-                    <span class="is-sr-only">
-                        {Strings.s.program.program-type} {program-type|s}
-                    </span>
                     <div class="column is-12 pt-0">
                         {?post_title}
-                            <a href="{permalink|s}" aria-label="{post_title|s}">
+                            <a href="{permalink|s}">
                                 <h2 class="h5 mt-4 mb-1 has-line-height-tight has-text-primary">{post_title|s}</h2>
                             </a>
                         {/post_title}
+
+                        <span class="is-sr-only">
+                            {Strings.s.program.program-type|s} {program-type|s}
+                        </span>
 
                         {?fields.program_name}
                             <span class="is-block has-text-xsmall has-line-height-tight has-text-trout has-text-weight-medium">

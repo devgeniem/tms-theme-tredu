@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2023-04-28 17:10+0300\n"
-"PO-Revision-Date: 2023-04-28 17:10+0300\n"
+"POT-Creation-Date: 2023-05-09 16:32+0300\n"
+"PO-Revision-Date: 2023-05-09 16:33+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -818,12 +818,12 @@ msgctxt "theme-frontend"
 msgid "Text:"
 msgstr "Teksti:"
 
-#: models/strings.php:109 models/strings.php:217
+#: models/strings.php:107 models/strings.php:217
 msgctxt "theme-frontend"
 msgid "Month"
 msgstr "Kuukausi"
 
-#: models/strings.php:110 models/strings.php:218
+#: models/strings.php:108 models/strings.php:218
 msgctxt "theme-frontend"
 msgid "Year"
 msgstr "Vuosi"
@@ -838,62 +838,62 @@ msgctxt "theme-frontend"
 msgid "Filter by Category"
 msgstr "Rajaa tyypin mukaan"
 
-#: models/strings.php:115 models/strings.php:231
+#: models/strings.php:113 models/strings.php:231
 msgctxt "theme-frontend"
 msgid "January"
 msgstr "tammikuu"
 
-#: models/strings.php:116 models/strings.php:232
+#: models/strings.php:114 models/strings.php:232
 msgctxt "theme-frontend"
 msgid "February"
 msgstr "helmikuu"
 
-#: models/strings.php:117 models/strings.php:233
+#: models/strings.php:115 models/strings.php:233
 msgctxt "theme-frontend"
 msgid "March"
 msgstr "maaliskuu"
 
-#: models/strings.php:118 models/strings.php:234
+#: models/strings.php:116 models/strings.php:234
 msgctxt "theme-frontend"
 msgid "April"
 msgstr "huhtikuu"
 
-#: models/strings.php:119 models/strings.php:235 models/strings.php:249
+#: models/strings.php:117 models/strings.php:235 models/strings.php:249
 msgctxt "theme-frontend"
 msgid "May"
 msgstr "toukokuu"
 
-#: models/strings.php:120 models/strings.php:236
+#: models/strings.php:118 models/strings.php:236
 msgctxt "theme-frontend"
 msgid "June"
 msgstr "kesäkuu"
 
-#: models/strings.php:121 models/strings.php:237
+#: models/strings.php:119 models/strings.php:237
 msgctxt "theme-frontend"
 msgid "July"
 msgstr "heinäkuu"
 
-#: models/strings.php:122 models/strings.php:238
+#: models/strings.php:120 models/strings.php:238
 msgctxt "theme-frontend"
 msgid "August"
 msgstr "elokuu"
 
-#: models/strings.php:123 models/strings.php:239
+#: models/strings.php:121 models/strings.php:239
 msgctxt "theme-frontend"
 msgid "September"
 msgstr "syyskuu"
 
-#: models/strings.php:124 models/strings.php:240
+#: models/strings.php:122 models/strings.php:240
 msgctxt "theme-frontend"
 msgid "October"
 msgstr "lokakuu"
 
-#: models/strings.php:125 models/strings.php:241
+#: models/strings.php:123 models/strings.php:241
 msgctxt "theme-frontend"
 msgid "November"
 msgstr "marraskuu"
 
-#: models/strings.php:126 models/strings.php:242
+#: models/strings.php:124 models/strings.php:242
 msgctxt "theme-frontend"
 msgid "December"
 msgstr "joulukuu"
@@ -994,50 +994,55 @@ msgstr "Tee uusi haku"
 
 #: models/strings.php:178
 msgctxt "theme-frontend"
+msgid "Clear the search terms"
+msgstr "Tyhjennä hakurajaukset"
+
+#: models/strings.php:177
+msgctxt "theme-frontend"
 msgid "Show only programs that can be applied now"
 msgstr "Näytä vain nyt haussa olevat"
 
-#: models/strings.php:179
+#: models/strings.php:178
 msgctxt "theme-frontend"
 msgid "Select"
 msgstr "Valitse"
 
-#: models/strings.php:180
+#: models/strings.php:179
 msgctxt "theme-frontend"
 msgid "Results"
 msgstr "tulosta"
 
-#: models/strings.php:181
+#: models/strings.php:180
 msgctxt "theme-frontend"
 msgid "Result"
 msgstr "tulos"
 
-#: models/strings.php:182
+#: models/strings.php:181
 msgctxt "theme-frontend"
 msgid "Remove filter"
 msgstr "Poista rajaus"
 
-#: models/strings.php:183
+#: models/strings.php:182
 msgctxt "theme-frontend"
 msgid "Use arrow key to navigate"
 msgstr "Käytä nuolinäppäimiä tulosten valitsemiseen"
 
-#: models/strings.php:184
+#: models/strings.php:183
 msgctxt "theme-frontend"
 msgid "Add filter"
 msgstr "Lisää suodatin"
 
-#: models/strings.php:185
+#: models/strings.php:184
 msgctxt "theme-frontend"
 msgid "Selecting filter commits new search"
 msgstr "Rajauksen valinta suorittaa haun"
 
-#: models/strings.php:186
+#: models/strings.php:185
 msgctxt "theme-frontend"
 msgid "Write search term, profession or program name"
 msgstr "Kirjoita hakusana, ammatti tai tutkintonimike"
 
-#: models/strings.php:187
+#: models/strings.php:186
 msgctxt "theme-frontend"
 msgid ""
 "Write three or more letter to get results. When results are available, use "
@@ -1048,6 +1053,11 @@ msgstr ""
 "täydennyksen hakutuloksia on saatavilla, käytä ylös- ja alasnuolinäppäimiä "
 "tarkasteluun ja valintaan. Kosketuslaitteiden käyttäjille, tutki "
 "koskettamalla tai pyyhkäisyeleillä."
+
+#: models/strings.php:189
+msgctxt "theme-frontend"
+msgid "More search filters"
+msgstr "Lisää hakuehtoja"
 
 #: models/strings.php:189
 msgctxt "theme-frontend"

@@ -59,6 +59,22 @@
             pointer-events: none;
         }
     }
+
+    ul.ui-menu {
+        .ui-menu-item-wrapper {
+            &.ui-state-active {
+                background-color: $color-grey;
+            }
+        }
+    }
+
+    .bulmally-accordion {
+        .accordion__title-button {
+            @include from($mobile) {
+                width: auto;
+            }
+        }
+    }
 }
 
 .load-more-spinner {

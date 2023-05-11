@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## Fixed
+
+- TMS-932: Moved program search filters into an accordion
+- TMS-932: Removed autoatic form submit when selecting program filters
+- TMS-932: Fixed program-page elements labels and screen-reader texts & element orders
+
 ## [1.8.3] - 2023-05-02
 
 ## Fixed

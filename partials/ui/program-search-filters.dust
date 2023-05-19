@@ -50,7 +50,7 @@
                                         class="accordion__content">
                                         <div class="columns p-1 is-multiline mt-4">
                                             {#filters}
-                                                <div class="column p-2 is-one-fifth-widescreen is-4-desktop is-6-tablet is-12-mobile">
+                                                <div class="column p-2 is-4-desktop is-6-tablet is-12-mobile">
                                                     <div class="select-wrapper is-relative">
                                                         <label>
                                                             <select name="{query_var}[]" 

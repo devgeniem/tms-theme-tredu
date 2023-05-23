@@ -54,7 +54,7 @@ export default class ExternalLinks {
         } );
 
         // Add screen reader text that informs if the link is an external website
-        $( '#main-content a[href*="//"]:not(.button, .logo-wall__link, .link-list a, [href*="' + domain + '"])' ).append( `<span class="is-sr-only external-info">(${ translations.external_link })</span>` ); // eslint-disable-line
+        $( '#main-content a[href*="//"]:not([href*="' + domain + '"])' ).append( `<span class="is-sr-only external-info">(${ translations.external_link })</span>` ); // eslint-disable-line
 
         // Add instructional text for screen readers on links which open a new window/tab
         if ( $( 'a[target="_blank"]' ).children( '.external-info' ).length > 0 ) {

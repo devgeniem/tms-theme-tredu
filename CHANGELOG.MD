@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.4] - 2023-05-24
+
+## Fixed
+
+- TMS-931: Change back-to-top button to focus main-content
+- TMS-931: Add screen-reader info for links that go to external sites
+- TMS-931: Remove entry__content containers display: grid and add a max-width & centering margins to prevent overflow with zoomed in browsers
+- TMS-931: Navigation accessibility fixes
+- TMS-931: Program search accessibility fixes for zoomed in browsers
+- TMS-931: Added description-list element to single programs info-component
+
 ## [1.8.3] - 2023-05-02
 
 ## Fixed
@@ -23,12 +34,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Fixed
 
-- TMS-931: Change back-to-top button to focus main-content
-- TMS-931: Add screen-reader info for links that go to external sites
-- TMS-931: Remove entry__content containers display: grid and add a max-width & centering margins to prevent overflow with zoomed in browsers
-- TMS-931: Navigation accessibility fixes
-- TMS-931: Program search accessibility fixes for zoomed in browsers
-- TMS-931: Added description-list element to single programs info-component
 - PIEN-8524: Display API image #152
 
 ## [1.8.0] - 2023-04-11

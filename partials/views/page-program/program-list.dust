@@ -40,7 +40,7 @@
                                     {/fields.program_name}
                                 </div>
 
-                                <div class="column is-6 is-flex is-align-items-center">
+                                <div class="column is-12 info-column is-flex is-align-items-center">
                                     {?fields.start_date}
                                         {>"ui/icon" icon="date-range" class="icon--xlarge is-primary mr-2"  /}
                                         <span class="is-sr-only">
@@ -52,7 +52,7 @@
                                     {/fields.start_date}
                                 </div>
 
-                                <div class="column is-6 is-flex is-align-items-center">
+                                <div class="column is-12 info-column is-flex is-align-items-center">
                                     {?location}
                                         {>"ui/icon" icon="place" class="icon--xlarge is-primary mr-2"  /}
                                         <span class="is-sr-only">

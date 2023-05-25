@@ -16,6 +16,12 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    &__item {
+        .info-column {
+            max-width: 100%;
+        }
+    }
+
     a {
         &:focus {
             @extend .button-state-focus;

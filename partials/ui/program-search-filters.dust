@@ -1,4 +1,4 @@
-<form id="program-search" role="search" method="get" class="search-form" action="{search.new_search_link|s}">
+<form id="program-search" role="search" method="get" class="search-form" action="{search.new_search_link|attr}">
     <div class="columns is-multiline has-background-light-gray m-0 p-6">
         <div class="column is-10">
                 <div class="columns is-multiline">
@@ -6,24 +6,24 @@
                         <label class="mr-2 has-width-100">
                             <input type="search" 
                                 class="search-form__input program-search has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
-                                placeholder="{Strings.s.search.write_search_terms|s}" 
-                                value="{search.current_search|s}" 
-                                name="{search.input_search_name|s}" 
-                                aria-label="{Strings.s.search.write_search_terms|s}" 
+                                placeholder="{Strings.s.search.write_search_terms|attr}" 
+                                value="{search.current_search|attr}" 
+                                name="{search.input_search_name|attr}" 
+                                aria-label="{Strings.s.search.write_search_terms|attr}" 
                                 aria-describedby="autocomplete-instructions" 
                                 autocomplete="off" lang="{WP.language}">
                                 <span id="autocomplete-instructions" class="is-sr-only">
-                                {Strings.s.program.search.sr_autocomplete_instructions|s}
+                                {Strings.s.program.search.sr_autocomplete_instructions|html}
                             </span>
                         </label>
                     </div>
                     <div class="column is-6">
-                        <input type="checkbox" name="{search.checkbox_search_name|s}"
+                        <input type="checkbox" name="{search.checkbox_search_name|attr}"
                                 class="is-checkradio" value="true"
-                                id="{search.checkbox_search_name|s}"
+                                id="{search.checkbox_search_name|attr}"
                                 {?search.only_ongoing}checked{/search.only_ongoing}>
-                        <label class="is-block mr-4 ml-0 mb-2 has-text-weight-semibold has-text-black" for="{search.checkbox_search_name|s}">
-                            {Strings.s.program.search.show_only_ongoing}
+                        <label class="is-block mr-4 ml-0 mb-2 has-text-weight-semibold has-text-black" for="{search.checkbox_search_name|attr}">
+                            {Strings.s.program.search.show_only_ongoing|html}
                         </label>
                     </div>
                     {?filters}
@@ -37,7 +37,7 @@
                                                 aria-expanded="false"
                                                 aria-controls="accordion-content-search">
                                             <span class="accordion__row-title-text has-text-left has-text-black">
-                                                {Strings.s.program.search.more_search_filters|s}
+                                                {Strings.s.program.search.more_search_filters|html}
                                             </span>
 
                                             <span class="accordion__title-icon is-flex ml-auto" aria-hidden="true">
@@ -55,10 +55,10 @@
                                                         <label>
                                                             <select name="{query_var}[]" 
                                                             class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black has-line-height-tight pr-2 pl-2 pt-3 pb-3">
-                                                                <option selected="true" value="" class="has-text-black">{name|s}</option>
+                                                                <option selected="true" value="" class="has-text-black">{name|html}</option>
                                                                 {#terms}
                                                                     {^active}
-                                                                        <option value="{term_id}" class="has-text-black">{name|s}</option>
+                                                                        <option value="{term_id}" class="has-text-black">{name|html}</option>
                                                                     {/active}
                                                                 {/terms}
                                                             </select>
@@ -78,7 +78,7 @@
 
         <div class="column is-2 is-align-items-center">
             <button type="submit" class="search-form__button button button--icon is-secondary has-border-radius-small has-width-100">
-                {Strings.s.header.search|s}
+                {Strings.s.header.search|html}
                 {>"ui/icon" icon="search" class="icon--medium is-white" /}
             </button>
         </div>
@@ -86,7 +86,7 @@
 
      <div class="is-flex is-flex-wrap-wrap is-justify-content-space-between is-align-items-center pt-4 pb-4">
         {?results.summary}
-            <p class="has-text-weight-semibold has-text-black">{results.summary|s}</p>
+            <p class="has-text-weight-semibold has-text-black">{results.summary|html}</p>
         {/results.summary}
         {?filters}
             <div id="active-filters" class="is-flex-grow-1 pt-4 pb-4 pl-6 pr-6">
@@ -97,9 +97,9 @@
                         has-border-radius-large has-line-height-1 has-text-weight-semibold 
                         has-text-primary has-text-small has-border-0 is-family-secondary">
                         {>"ui/icon" icon="remove" class="icon--large mr-1" /}
-                        <span class="is-sr-only">{Strings.s.program.search.remove_filter|s}</span>
-                        <span>{name}</span>
-                        <input type="hidden" name="{query_var|s}[]" value="{term_id}" />
+                        <span class="is-sr-only">{Strings.s.program.search.remove_filter|html}</span>
+                        <span>{name|html}</span>
+                        <input type="hidden" name="{query_var|attr}[]" value="{term_id}" />
                     </button>    
                     {/active}
                 {/terms}
@@ -108,7 +108,7 @@
         {/filters}
         <div class="is-flex is-justify-content-end is-flex-grow-1">
             <a class="is-inline-flex is-align-items-center pill has-border-radius-small is-primary pr-4 pl-4 pt-3 pb-3 mt-4 mb-4 ml-auto" href="{search.new_search_link}">
-                {Strings.s.program.search.clear_search_terms}
+                {Strings.s.program.search.clear_search_terms|html}
                 {>"ui/icon" icon="update" class="icon--medium ml-2" /}
             </a>
         </div>

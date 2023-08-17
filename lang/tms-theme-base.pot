@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2023-05-25 11:17+0300\n"
+"POT-Creation-Date: 2023-08-17 11:08+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -667,7 +667,7 @@ msgid "Search from site"
 msgstr ""
 
 #: models/strings.php:56 models/strings.php:83 models/strings.php:143
-#: models/strings.php:156 models/strings.php:165
+#: models/strings.php:156 models/strings.php:165 models/strings.php:263
 msgctxt "theme-frontend"
 msgid "Close"
 msgstr ""
@@ -1234,12 +1234,7 @@ msgstr ""
 
 #: models/strings.php:262
 msgctxt "theme-frontend"
-msgid "Dialog Window - Close (Press escape to close)"
-msgstr ""
-
-#: models/strings.php:263
-msgctxt "theme-frontend"
-msgid "Close (Press escape to close)"
+msgid "Enlarged image"
 msgstr ""
 
 #: models/strings.php:266
@@ -1259,47 +1254,6 @@ msgstr ""
 
 #: models/strings.php:281
 msgid "Pagination"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
-#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
-msgid "Add Row"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
-msgid "Multisite Post Object"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
-msgid "Multisite Relationship"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteTaxonomy.php:23
-msgid "Multisite taxonomy"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:23
-msgid "Multitaxonomy"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:516
-#, php-format
-msgctxt "No terms"
-msgid "No %s"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:18
-msgid "PHP"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:48
-msgid "Instructions"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
-msgid ""
-"This field can only be used with ACF Codifier. Doesn't do anything if "
-"defined in the admin side."
 msgstr ""
 
 #. Theme Name of the plugin/theme

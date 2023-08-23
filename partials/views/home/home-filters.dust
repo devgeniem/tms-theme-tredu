@@ -1,13 +1,13 @@
 <div class="archive-filters columns is-multiline mt-6">
-    <div class="column is-12 is-8-desktop">
-        <div class="h6 mb-4">
+    <nav class="column is-12 is-8-desktop" aria-labelledby="filter">
+        <div class="h6 mb-4" id="filter">
             {Strings.s.home.filter_by_category|s}
         </div>
 
-        <div class="is-flex is-flex-wrap-wrap">
+        <div class="is-flex is-flex-wrap-wrap" id="filter">
             {#filters.categories}
                 <div>
-                    <a href="{url}" class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
+                    <a href="{url}" class="pill mr-2 mb-2 {?is_active}is-active{/is_active}" {?is_active}aria-current="true"{/is_active}>
                         {?is_active}
                             {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-secondary" /}
                         {/is_active}
@@ -17,7 +17,7 @@
                 </div>
             {/filters.categories}
         </div>
-    </div>
+    </nav>
 
     <div class="column is-12 is-4-desktop">
         <form action="" method="get" class="is-flex is-justify-content-flex-end archive-filters__form">
@@ -25,7 +25,12 @@
                 <input name="filter-category" type="hidden" value="{filters.active_category|s}">
             {/filters.active_category}
 
-            <div class="archive-filters__select-container">
+            <div class="archive-filters__select-container" aria-describedby="archive-filters-description">
+
+                <p class="archive-filters__description" id="archive-filters-description">
+                    {Strings.s.home.description|s}
+                </p>
+
                 <div class="archive-filters__dropdown-item">
                     <label for="filter-year" class="is-block h6 mb-4">
                         {Strings.s.home.year|s}

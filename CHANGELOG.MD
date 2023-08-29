@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-964: Add new Eventz api and remove old one.
+
 ## [1.8.4] - 2023-05-24
 
 ## Fixed

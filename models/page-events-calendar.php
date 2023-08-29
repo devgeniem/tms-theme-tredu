@@ -9,6 +9,7 @@ use TMS\Theme\Tredu\Settings;
 use TMS\Theme\Tredu\Traits\Components;
 use TMS\Theme\Tredu\Traits\Pagination;
 use TMS\Theme\Tredu\Logger;
+use TMS\Theme\Base\Formatters\EventzFormatter;
 
 /**
  * The PageEventsCalendar class.
@@ -83,27 +84,35 @@ class PageEventsCalendar extends PageEventsSearch {
      * @return array
      */
     protected function get_events() : array {
-        $params = [
-            'start'       => get_field( 'start' ),
-            'end'         => get_field( 'end' ),
-            'keyword'     => get_field( 'keyword' ),
-            'location'    => get_field( 'location' ),
-            'publisher'   => get_field( 'publisher' ),
-            'sort'        => get_field( 'sort' ),
-            'page_size'   => get_option( 'posts_per_page' ),
-            'text'        => get_field( 'text' ),
-            'show_images' => get_field( 'show_images' ),
-            'page'        => get_query_var( 'paged', 1 ),
-            'include'     => 'organization,location,keywords',
-        ];
 
-        if ( ! empty( get_field( 'starts_today' ) ) && true === get_field( 'starts_today' ) ) {
-            $params['start'] = 'today';
+        $paged = get_query_var( 'paged', 1 );
+        $skip  = 0;
+
+        if ( $paged > 1 ) {
+            $skip = ( $paged - 1 ) * get_option( 'posts_per_page' );
         }
 
-        $formatter         = new EventsFormatter();
+        $params = [
+            'q'           => get_field( 'text' ),
+            'start'       => get_field( 'start' ),
+            'end'         => get_field( 'end' ),
+            'category_id' => get_field( 'category' ),
+            'areas'       => get_field( 'area' ),
+            'targets'     => get_field( 'target' ),
+            'tags'        => get_field( 'tag' ),
+            'sort'        => 'startDate',
+            'size'        => get_option( 'posts_per_page' ),
+            'skip'        => $skip,
+            'show_images' => get_field( 'show_images' ),
+        ];
+
+        // Start date must be at least current date.
+        if ( $params['start'] < date( 'Y-m-d' ) ) {
+            $params['start'] = date( 'Y-m-d' );
+        }
+
+        $formatter         = new EventzFormatter();
         $params            = $formatter->format_query_params( $params );
-        $params['include'] = 'organization,location,keywords';
 
         $cache_group = 'page-events-calendar';
         $cache_key   = md5( wp_json_encode( $params ) );
@@ -122,7 +131,9 @@ class PageEventsCalendar extends PageEventsSearch {
             }
         }
 
-        $this->set_pagination_data( $response['meta']->count );
+        if ( ! empty( $response['meta'] ) ) {
+            $this->set_pagination_data( $response['meta']->total );
+        }
 
         return $response;
     }

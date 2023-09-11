@@ -7,8 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-970: Add image caption text to call-to-action and content-columns blocks.
+
+## [1.8.4] - 2023-05-24
+
 ## Fixed
 
+- TMS-931: Change back-to-top button to focus main-content
+- TMS-931: Add screen-reader info for links that go to external sites
+- TMS-931: Remove entry__content containers display: grid and add a max-width & centering margins to prevent overflow with zoomed in browsers
+- TMS-931: Navigation accessibility fixes
+- TMS-931: Program search accessibility fixes for zoomed in browsers
+- TMS-931: Added description-list element to single programs info-component
 - TMS-932: Moved program search filters into an accordion
 - TMS-932: Removed autoatic form submit when selecting program filters
 - TMS-932: Fixed program-page elements labels and screen-reader texts & element orders

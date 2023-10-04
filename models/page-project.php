@@ -221,6 +221,8 @@ class PageProject extends BaseModel {
             'post_type'      => Project::SLUG,
             'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
             'posts_per_page' => 12,
+            'order'          => 'ASC',
+            'orderby'        => 'title',
         ];
 
         $active_only = self::get_active_only_query_var();

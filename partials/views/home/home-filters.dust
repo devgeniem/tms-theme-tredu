@@ -4,7 +4,7 @@
             {Strings.s.home.filter_by_category|s}
         </div>
 
-        <div class="is-flex is-flex-wrap-wrap" id="filter">
+        <div class="is-flex is-flex-wrap-wrap">
             {#filters.categories}
                 <div>
                     <a href="{url}" class="pill mr-2 mb-2 {?is_active}is-active{/is_active}" {?is_active}aria-current="true"{/is_active}>

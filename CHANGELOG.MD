@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-934: Add screen-reader info for article categories.
 - TMS-936: Image carousel accessibility fixes
 - TMS-900: Order projects by title
 - TMS-933: Modaal accessibility fixes

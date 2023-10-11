@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2023-08-17 11:08+0300\n"
+"POT-Creation-Date: 2023-08-17 14:09+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -666,8 +666,8 @@ msgctxt "theme-frontend"
 msgid "Search from site"
 msgstr ""
 
-#: models/strings.php:56 models/strings.php:83 models/strings.php:143
-#: models/strings.php:156 models/strings.php:165 models/strings.php:263
+#: models/strings.php:56 models/strings.php:83 models/strings.php:144
+#: models/strings.php:157 models/strings.php:166
 msgctxt "theme-frontend"
 msgid "Close"
 msgstr ""
@@ -809,7 +809,7 @@ msgstr ""
 
 #: models/strings.php:107
 msgctxt "theme-frontend"
-msgid "Text:"
+msgid "Articletype:"
 msgstr ""
 
 #: models/strings.php:110 models/strings.php:220
@@ -1239,7 +1239,12 @@ msgstr ""
 
 #: models/strings.php:263
 msgctxt "theme-frontend"
-msgid "Enlarged image"
+msgid "Dialog Window - Close (Press escape to close)"
+msgstr ""
+
+#: models/strings.php:264
+msgctxt "theme-frontend"
+msgid "Close (Press escape to close)"
 msgstr ""
 
 #: models/strings.php:267
@@ -1248,6 +1253,11 @@ msgid "Load more"
 msgstr ""
 
 #: models/strings.php:268
+msgctxt "theme-frontend"
+msgid "Load more"
+msgstr ""
+
+#: models/strings.php:269
 msgctxt "theme-frontend"
 msgid "Load more programs"
 msgstr ""

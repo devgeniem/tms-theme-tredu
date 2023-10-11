@@ -513,10 +513,10 @@ msgid "Choose a portfolio"
 msgstr ""
 
 #: models/page-project.php:149
-msgid "Active projects only"
+msgid "Ongoing projects only"
 msgstr ""
 
-#: models/page-project.php:319
+#: models/page-project.php:321
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -524,7 +524,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-project.php:333
+#: models/page-project.php:335
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"
@@ -764,47 +764,47 @@ msgstr ""
 
 #: models/strings.php:92
 msgctxt "theme-frontend"
-msgid "Main image carousel"
+msgid "Browsing images"
 msgstr ""
 
-#: models/strings.php:95
+#: models/strings.php:93
 msgctxt "theme-frontend"
-msgid "Move to tampere.fi"
+msgid "Main image carousel"
 msgstr ""
 
 #: models/strings.php:96
 msgctxt "theme-frontend"
-msgid "Back to top"
+msgid "Move to tampere.fi"
 msgstr ""
 
-#: models/strings.php:99
+#: models/strings.php:97
 msgctxt "theme-frontend"
-msgid "Opens in a new window"
+msgid "Back to top"
 msgstr ""
 
 #: models/strings.php:100
 msgctxt "theme-frontend"
-msgid "The link takes you to an external website"
+msgid "Opens in a new window"
 msgstr ""
 
 #: models/strings.php:101
 msgctxt "theme-frontend"
-msgid "All"
+msgid "The link takes you to an external website"
 msgstr ""
 
 #: models/strings.php:102
 msgctxt "theme-frontend"
-msgid "Read more"
+msgid "All"
 msgstr ""
 
-#: models/strings.php:105
+#: models/strings.php:103
 msgctxt "theme-frontend"
-msgid "Image:"
+msgid "Read more"
 msgstr ""
 
 #: models/strings.php:106
 msgctxt "theme-frontend"
-msgid "Text:"
+msgid "Image:"
 msgstr ""
 
 #: models/strings.php:107
@@ -1253,6 +1253,11 @@ msgid "Load more"
 msgstr ""
 
 #: models/strings.php:268
+msgctxt "theme-frontend"
+msgid "Load more"
+msgstr ""
+
+#: models/strings.php:269
 msgctxt "theme-frontend"
 msgid "Load more programs"
 msgstr ""

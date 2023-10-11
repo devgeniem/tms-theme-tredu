@@ -519,10 +519,10 @@ msgid "Choose a portfolio"
 msgstr "Valitse salkku"
 
 #: models/page-project.php:149
-msgid "Active projects only"
-msgstr "Näytä vain aktiiviset projektit"
+msgid "Ongoing projects only"
+msgstr "Näytä vain käynnissä olevat projektit"
 
-#: models/page-project.php:319
+#: models/page-project.php:321
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -530,7 +530,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] "%1$1s tulos haulle “%2$2s”"
 msgstr[1] "%1$1s tulosta haulle “%2$2s”"
 
-#: models/page-project.php:333
+#: models/page-project.php:335
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"
@@ -770,45 +770,50 @@ msgstr "Modaalikuvakaruselli"
 
 #: models/strings.php:92
 msgctxt "theme-frontend"
+msgid "Browsing images"
+msgstr "Kuvien selaus"
+
+#: models/strings.php:93
+msgctxt "theme-frontend"
 msgid "Main image carousel"
 msgstr "Pääkuvakaruselli"
 
-#: models/strings.php:95
+#: models/strings.php:96
 msgctxt "theme-frontend"
 msgid "Move to tampere.fi"
 msgstr "Siirry tampere.fi"
 
-#: models/strings.php:96
+#: models/strings.php:97
 msgctxt "theme-frontend"
 msgid "Back to top"
 msgstr "Takaisin ylös"
 
-#: models/strings.php:99
+#: models/strings.php:100
 msgctxt "theme-frontend"
 msgid "Opens in a new window"
 msgstr "Avautuu uudessa ikkunassa"
 
-#: models/strings.php:100
+#: models/strings.php:101
 msgctxt "theme-frontend"
 msgid "The link takes you to an external website"
 msgstr "Linkki vie ulkopuoliselle sivustolle"
 
-#: models/strings.php:101
+#: models/strings.php:102
 msgctxt "theme-frontend"
 msgid "All"
 msgstr "Kaikki"
 
-#: models/strings.php:102
+#: models/strings.php:103
 msgctxt "theme-frontend"
 msgid "Read more"
 msgstr "Lue lisää"
 
-#: models/strings.php:105
+#: models/strings.php:106
 msgctxt "theme-frontend"
 msgid "Image:"
 msgstr "Kuva:"
 
-#: models/strings.php:106
+#: models/strings.php:107
 msgctxt "theme-frontend"
 msgid "Text:"
 msgstr "Teksti:"
@@ -1256,8 +1261,8 @@ msgstr "Dialogi-ikkuna - sulje (Sulje painamalla Esc -näppäintä)"
 
 #: models/strings.php:264
 msgctxt "theme-frontend"
-msgid "Close (Press escape to close)"
-msgstr "Sulje (Sulje painamalla Esc -näppäintä)"
+msgid "Enlarged image"
+msgstr "Suurennettu kuva"
 
 #: models/strings.php:267
 msgctxt "theme-frontend"

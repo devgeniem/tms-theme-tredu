@@ -44,7 +44,15 @@
                                 </header>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="entry__content">
+                        {@content /}
+                    </div>
+
+                    {>"ui/components" components=Page.components /}
+
+                    <div class="container">
                         <div class="columns">
                             <div class="column is-12">
                                 {>"views/page-project/filters" /}
@@ -97,8 +105,6 @@
 
                     {>"shared/archive-pagination" /}
                 </section>
-
-                {>"ui/components" components=Page.components /}
             </article>
         </main>
     {/PageProject}

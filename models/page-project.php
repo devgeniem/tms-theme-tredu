@@ -146,7 +146,7 @@ class PageProject extends BaseModel {
                 'submit_value'      => __( 'Search', 'tms-theme-tredu' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-tredu' ),
                 'portfolio_label'   => __( 'Choose a portfolio', 'tms-theme-tredu' ),
-                'active_only'       => __( 'Active projects only', 'tms-theme-tredu' ),
+                'active_only'       => __( 'Ongoing projects only', 'tms-theme-tredu' ),
             ],
             'terms'      => [
                 'show_all' => __( 'Show All', 'tms-theme-tredu' ),

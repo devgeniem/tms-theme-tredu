@@ -519,10 +519,10 @@ msgid "Choose a portfolio"
 msgstr "Valitse salkku"
 
 #: models/page-project.php:149
-msgid "Active projects only"
-msgstr "Näytä vain aktiiviset projektit"
+msgid "Ongoing projects only"
+msgstr "Näytä vain käynnissä olevat projektit"
 
-#: models/page-project.php:319
+#: models/page-project.php:321
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -530,7 +530,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] "%1$1s tulos haulle “%2$2s”"
 msgstr[1] "%1$1s tulosta haulle “%2$2s”"
 
-#: models/page-project.php:333
+#: models/page-project.php:335
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-900: Order projects by title
 - TMS-933: Modaal accessibility fixes
 - TMS-926: Add components & blocks to projects-page
 

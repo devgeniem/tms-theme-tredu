@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-950: Empty check for phone repeater.
+- TMS-950:
+    - Empty check for phone repeater.
+    - Place of business posts to block
+    - Contacts styles & accessibility
 
 ## [1.8.4] - 2023-05-24
 

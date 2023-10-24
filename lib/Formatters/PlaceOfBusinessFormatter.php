@@ -109,9 +109,7 @@ class PlaceOfBusinessFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter 
     /**
      * Map keys to posts
      *
-     * @param array $posts         Array of WP_Post instances.
-     * @param array $field_keys    Array of field keys to be displayed.
-     * @param null  $default_image Default image.
+     * @param array $posts Array of WP_Post instances.
      *
      * @return array
      */

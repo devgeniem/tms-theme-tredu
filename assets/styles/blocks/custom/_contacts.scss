@@ -3,6 +3,30 @@
  */
 
 .contacts {
+    &__item {
+        flex: 1 0 auto;
+
+        @include from($widescreen) {
+            max-width: calc(25% - 0.75rem);
+            width: calc(25% - 0.75rem);
+        }
+
+        @include from($desktop) {
+            max-width: calc(33% - 0.75rem);
+            width: calc(33% - 0.75rem);
+        }
+
+        @include from($tablet) {
+            max-width: calc(50% - 0.75rem);
+            width: calc(50% - 0.75rem);
+        }
+
+        @include until($tablet) {
+            max-width: calc(100% - 0.75rem);
+            width: calc(100% - 0.75rem);
+        }
+    }
+
     &__icon-container {
         display: flex;
         justify-content: center;

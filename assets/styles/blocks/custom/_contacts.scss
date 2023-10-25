@@ -36,6 +36,8 @@
     }
 
     &__inner-columns {
+        height: 100%;
+
         @include until($desktop) {
             background-color: $color-light-gray;
         }

@@ -58,11 +58,7 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
                 'fields'         => 'ids',
                 'post__in'       => array_map( 'absint', $data['contacts'] ),
                 'no_found_rows'  => true,
-                'meta_key'       => 'last_name',
-                'orderby'        => [
-                    'menu_order' => 'ASC',
-                    'meta_value' => 'ASC', // phpcs:ignore
-                ],
+                'orderby'        => 'post__in',
             ] );
 
             $filled_contacts = $this->map_keys(
@@ -84,8 +80,6 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
             $filled_contacts ?? [],
             $filled_api_contacts ?? []
         );
-
-        $data['column_class'] = '';
 
         return $data;
     }

@@ -64,15 +64,17 @@ class PageContacts extends BaseModel {
             ],
         ];
 
-        $s = \get_query_var( self::SEARCH_QUERY_VAR, false );
+        if ( ! \is_admin() ) {
+            $s = \get_query_var( self::SEARCH_QUERY_VAR, false );
 
-        if ( ! empty( $s ) ) {
-            $args['s'] = $s;
+            if ( ! empty( $s ) ) {
+                $args['s']         = $s;
+                $the_query             = new \WP_Query( $args );
+                $selected_contacts = $the_query->posts;
+            }
         }
 
-        $the_query = new WP_Query( $args );
-
-        return $the_query->posts;
+        return $selected_contacts;
     }
 
     /**

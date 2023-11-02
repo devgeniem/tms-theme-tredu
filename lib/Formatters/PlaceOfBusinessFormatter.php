@@ -107,12 +107,7 @@ class PlaceOfBusinessFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter 
         }
 
         return array_map( function ( $id ) {
-
-            foreach( \get_field_objects( $id ) as $field ) {
-                $item[ $field['name'] ] = \get_field( $field['name'], $id );
-            }
-
-            return $item;
+            return \get_fields( $id );
         }, $posts );
     }
 }

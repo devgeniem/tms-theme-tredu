@@ -84,7 +84,7 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
      *
      * @return array|array[]
      */
-    public function map_api_contacts( array $ids = [], array $field_keys = [], $default_image = null ) {
+    public function map_api_contacts( array $ids = [], array $field_keys = [], $default_image = null ) { // phpcs:ignore
         if ( empty( $ids ) ) {
             return [];
         }

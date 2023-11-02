@@ -52,17 +52,8 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
         $default_image = Settings::get_setting( 'contacts_default_image' );
 
         if ( ! empty( $data['contacts'] ) ) {
-            $the_query = new \WP_Query( [
-                'post_type'      => Contact::SLUG,
-                'posts_per_page' => 100,
-                'fields'         => 'ids',
-                'post__in'       => array_map( 'absint', $data['contacts'] ),
-                'no_found_rows'  => true,
-                'orderby'        => 'post__in',
-            ] );
-
             $filled_contacts = $this->map_keys(
-                $the_query->posts,
+                $data['contacts'],
                 $field_keys,
                 $default_image
             );

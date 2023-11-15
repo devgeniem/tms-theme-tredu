@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-935: Filter accessibility fixes
+- TMS-935: Archive filter accessibility fixes
 
 ## [1.8.4] - 2023-05-24
 

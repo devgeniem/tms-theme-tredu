@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-994: Add missing list-item block to use
+
 ## [1.8.6] - 2023-11-07
 
 ### Added

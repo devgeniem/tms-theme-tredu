@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - TMS-901: Add logo-wall & image-carousel components to single programs
+- TMS-994: Add missing list-item block to use
 
 ## [1.8.6] - 2023-11-07
 

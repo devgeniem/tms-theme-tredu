@@ -7,7 +7,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.7] - 2023-11-21
+
+### Fixed
+
 - TMS-935: Archive filter accessibility fixes
+
+## [1.8.6] - 2023-11-07
+
+### Added
+
+- TMS-950:
+    - Empty check for phone repeater.
+    - Place of business posts to block
+    - Contacts styles & accessibility
+
+## [1.8.5] - 2023-10-12
+
+### Fixed
+
+- TMS-934: Add screen-reader info for article categories.
+- TMS-936: Image carousel accessibility fixes
+- TMS-933: Modaal accessibility fixes
+
+### Changed
+
+- TMS-900: Order projects by title
+
+### Added
+
+- TMS-926: Add components & blocks to projects-page
 
 ## [1.8.4] - 2023-05-24
 

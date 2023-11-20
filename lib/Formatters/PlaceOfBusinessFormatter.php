@@ -45,20 +45,8 @@ class PlaceOfBusinessFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter 
         }
 
         if ( ! empty( $data['place_of_business_post'] ) ) {
-            $the_query = new \WP_Query( [
-                'post_type'      => 'placeofbusiness-cpt',
-                'posts_per_page' => 100,
-                'post__in'       => array_map( 'absint', $data['place_of_business_post'] ),
-                'no_found_rows'  => true,
-                'meta_key'       => 'title',
-                'orderby'        => [
-                    'menu_order' => 'ASC',
-                    'meta_value' => 'ASC', // phpcs:ignore
-                ],
-            ] );
-
             $filled_places = $this->map_keys(
-                $the_query->posts,
+                $data['place_of_business_post'],
             );
         }
 
@@ -109,24 +97,17 @@ class PlaceOfBusinessFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter 
     /**
      * Map keys to posts
      *
-     * @param array $posts         Array of WP_Post instances.
-     * @param array $field_keys    Array of field keys to be displayed.
-     * @param null  $default_image Default image.
+     * @param array $posts Array of WP_Post instances.
      *
      * @return array
      */
     public function map_keys( array $posts ) : array {
-        if( ! \is_plugin_active( 'tms-plugin-place-of-business-sync/plugin.php' ) ) {
+        if ( ! \is_plugin_active( 'tms-plugin-place-of-business-sync/plugin.php' ) ) {
             return [];
         }
 
         return array_map( function ( $id ) {
-
-            foreach( \get_field_objects($id) as $field ) {
-                $item[ $field['name'] ] = \get_field( $field['name'], $id );
-            }
-
-            return $item;
+            return \get_fields( $id );
         }, $posts );
     }
 }

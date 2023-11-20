@@ -111,7 +111,7 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
             } )
             ->set_instructions( $strings['place_of_business']['instructions'] );
 
-            $place_of_business_post_field = ( new Field\Relationship( $strings['place_of_business_post']['label'] ) )
+        $place_of_business_post_field = ( new Field\Relationship( $strings['place_of_business_post']['label'] ) )
             ->set_key( "{$key}_place_of_business_post" )
             ->set_name( 'place_of_business_post' )
             ->set_filters( [ 'search' ] )
@@ -129,7 +129,7 @@ class PlaceOfBusinessFields extends \Geniem\ACF\Field\Group {
                 return implode( ' ', $results );
             } )
             ->set_post_types( [ 'placeofbusiness-cpt' ] )
-            ->set_return_format( 'id' )
+            ->set_return_format( 'object' )
             ->set_instructions( $strings['place_of_business_post']['instructions'] );
 
         return [

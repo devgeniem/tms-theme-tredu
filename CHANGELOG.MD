@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Empty check for phone repeater.
     - Place of business posts to block
     - Contacts styles & accessibility
+- TMS-935: Archive filter accessibility fixes
 
 ## [1.8.4] - 2023-05-24
 

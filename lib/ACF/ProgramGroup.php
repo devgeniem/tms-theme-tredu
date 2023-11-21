@@ -323,6 +323,8 @@ class ProgramGroup {
                 Layouts\TextBlockLayout::class,
                 Layouts\CallToActionLayout::class,
                 Layouts\GravityFormLayout::class,
+                Layouts\LogoWallLayout::class,
+                Layouts\ImageCarouselLayout::class,
             ],
             $key
         );

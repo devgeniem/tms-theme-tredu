@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - TMS-901: Add logo-wall & image-carousel components to single programs
+- TMS-994: Add missing list-item block to use
 
 ### Fixed
 

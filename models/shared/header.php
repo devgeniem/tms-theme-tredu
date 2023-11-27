@@ -88,8 +88,17 @@ class Header extends Model {
             'hide_empty' => 0,
         ];
 
-        $languages = pll_the_languages( $args );
+        $languages = \pll_the_languages( $args );
         $lang_data = [ 'all' => $languages ];
+
+        // If there are two languages, show only one in mobile view
+        if ( count( $languages ) === 2 ) {
+            $args['hide_current'] = 1;
+            $without_current      = \pll_the_languages( $args );
+            $lang_data_mobile     = [
+                'all' => $without_current,
+            ];
+        }
 
         foreach ( $languages as $lang ) {
             if ( ! empty( $lang['current_lang'] ) ) {
@@ -101,10 +110,11 @@ class Header extends Model {
         }
 
         return [
-            'partial' => 'dropdown' === $lang_nav_display
+            'partial'               => 'dropdown' === $lang_nav_display
                 ? 'ui/menu/language-nav-dropdown'
                 : 'ui/menu/language-nav',
-            'links'   => $lang_data,
+            'links'                 => $lang_data,
+            'links_without_current' => $lang_data_mobile,
         ];
     }
 
@@ -393,6 +403,13 @@ class Header extends Model {
         }
 
         $current_page = \get_queried_object();
+
+        // Check if current page is in a dropdown and add aria-current to the top-level link
+        if ( in_array($current_page->ID, array_column($item->sub_menu, 'object_id')) ) {
+            $classes['is_current_parent'] = true;
+        }
+
+        // Add current link class
         if ( ! empty( $current_page->ID ) && (int) $item->object_id === $current_page->ID ) {
             $classes['is_current'] = 'is-current';
         }

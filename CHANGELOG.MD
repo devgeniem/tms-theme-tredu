@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-940:
+    - Change mobile menu dropdown links to a single button-element
+    - Hide current language on mobile header if only 2 languages in use
+
 ## [1.8.7] - 2023-11-21
 
 ### Added

@@ -139,6 +139,11 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
                 $fields['phone_repeater'] = array_filter( $fields['phone_repeater'], function ( $item ) {
                     return ! empty( $item['phone_text'] ) || ! empty( $item['phone_number'] );
                 } );
+
+                // Remove whitespaces from phone_number to use on the href
+                $fields['trimmed_number'] = array_map( function( $item ) {
+                    return str_replace( ' ', '', $item['phone_number'] );
+                }, $fields['phone_repeater'] );
             }
 
             return $fields;

@@ -5,6 +5,10 @@
 $contacts-gap: .75rem;
 
 .contacts {
+    &__name {
+        overflow: hidden !important; // sass-lint:disable no-important
+    }
+
     &__item {
         flex: 1 0 auto;
         max-width: calc(100% - $contacts-gap);

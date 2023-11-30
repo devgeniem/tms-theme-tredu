@@ -405,7 +405,7 @@ class Header extends Model {
         $current_page = \get_queried_object();
 
         // Check if current page is in a dropdown and add aria-current to the top-level link
-        if ( in_array($current_page->ID, array_column($item->sub_menu, 'object_id')) ) {
+        if ( in_array( $current_page->ID, array_column( $item->sub_menu, 'object_id' ) ) ) {
             $classes['is_current_parent'] = true;
         }
 

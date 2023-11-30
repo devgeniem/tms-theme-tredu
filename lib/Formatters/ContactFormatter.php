@@ -141,8 +141,8 @@ class ContactFormatter implements \TMS\Theme\Tredu\Interfaces\Formatter {
                 } );
 
                 // Remove whitespaces from phone_number to use on the href
-                foreach( $fields['phone_repeater'] as $i => $single_phone ) {
-                    $fields['phone_repeater'][$i]['trimmed_number'] = str_replace( ' ', '', $single_phone['phone_number'] );
+                foreach ( $fields['phone_repeater'] as $i => $single_phone ) {
+                    $fields['phone_repeater'][ $i ]['trimmed_number'] = str_replace( ' ', '', $single_phone['phone_number'] );
                 }
             }
 

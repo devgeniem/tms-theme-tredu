@@ -61,9 +61,13 @@
     }
 
     ul.ui-menu {
-        .ui-menu-item-wrapper {
-            &.ui-state-active {
-                background-color: $color-grey;
+        .ui-menu-item {
+            margin-bottom: .5rem;
+
+            .ui-menu-item-wrapper {
+                &.ui-state-active {
+                    background-color: $color-grey;
+                }
             }
         }
     }

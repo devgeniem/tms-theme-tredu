@@ -7,11 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.8] - 2023-12-04
+
+- TMS-939:
+    - Search-page form accessibility fixes
+    - Header search accessibility fixes
+    - Added focus on input when opening header search
+- TMS-940:
+    - Change mobile menu dropdown links to a single button-element
+    - Hide current language on mobile header if only 2 languages in use
 - TMS-942:
     - Check / uncheck search filter checkboxes depending on choices
     - Trim contact phone number in href
     - Increase fly-out-nav z-index to prevent chatbot from overlapping elements
     - Add margin for program text-search suggestions
+- TMS-995: Show project-listing component images in projects-page
 
 ## [1.8.7] - 2023-11-21
 

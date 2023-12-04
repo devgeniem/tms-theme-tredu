@@ -29,6 +29,7 @@ import Countdown from './countdown';
 import ProgramSearch from './program-search';
 import LoadMore from './load-more';
 import SearchFilters from './search-filters';
+import FocusOnSearch from './focus-on-search';
 
 const globalControllers = {
     Common,
@@ -57,6 +58,7 @@ const globalControllers = {
     ProgramSearch,
     LoadMore,
     SearchFilters,
+    FocusOnSearch,
 };
 
 const templateControllers = {

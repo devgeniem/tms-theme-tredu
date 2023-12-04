@@ -207,6 +207,7 @@ class Strings extends \DustPress\Model {
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),
                 'write_search_terms'  => _x( 'Write search terms', 'theme-frontend', 'tms-theme-tredu' ),
+                'breadcrumbs'         => _x( 'Page location:', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'page_materials'     => [
                 'filter'        => _x( 'Filter', 'theme-frontend', 'tms-theme-tredu' ),

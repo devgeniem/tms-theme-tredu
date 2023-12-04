@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.8] - 2023-12-04
+
+- TMS-939:
+    - Search-page form accessibility fixes
+    - Header search accessibility fixes
+    - Added focus on input when opening header search
 - TMS-940:
     - Change mobile menu dropdown links to a single button-element
     - Hide current language on mobile header if only 2 languages in use
+- TMS-995: Show project-listing component images in projects-page
 
 ## [1.8.7] - 2023-11-21
 

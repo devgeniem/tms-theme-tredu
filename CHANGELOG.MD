@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+
+## [1.8.8] - 2023-12-04
+
 - TMS-939:
     - Search-page form accessibility fixes
     - Header search accessibility fixes
@@ -20,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Trim contact phone number in href
     - Increase fly-out-nav z-index to prevent chatbot from overlapping elements
     - Add margin for program text-search suggestions
+- TMS-995: Show project-listing component images in projects-page
 
 ## [1.8.7] - 2023-11-21
 

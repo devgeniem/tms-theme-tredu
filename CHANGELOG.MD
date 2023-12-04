@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.8] - 2023-12-04
+
+- TMS-995: Show project-listing component images in projects-page
+
 ## [1.8.7] - 2023-11-21
 
 ### Added

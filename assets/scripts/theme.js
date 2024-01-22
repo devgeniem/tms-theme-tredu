@@ -28,8 +28,8 @@ import GravityFormsPatch from './gravity-forms-patch';
 import Countdown from './countdown';
 import ProgramSearch from './program-search';
 import LoadMore from './load-more';
-import FocusOnSearch from './focus-on-search';
 import SearchFilters from './search-filters';
+import FocusOnSearch from './focus-on-search';
 
 const globalControllers = {
     Common,
@@ -57,8 +57,8 @@ const globalControllers = {
     Countdown,
     ProgramSearch,
     LoadMore,
-    FocusOnSearch,
     SearchFilters,
+    FocusOnSearch,
 };
 
 const templateControllers = {

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - TMS-1015: Header accessibility fixes
+- TMS-1017: Add image alt-text to imported news
 
 ## [1.8.9] - 2024-02-01
 

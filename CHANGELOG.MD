@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.10] - 2024-03-18
+
+- TMS-1015: Header accessibility fixes
 - TMS-1017: Add image alt-text to imported news
 
 ## [1.8.9] - 2024-02-01

@@ -156,7 +156,7 @@ class ThemeSupports implements Interfaces\Controller {
 
         $vars[] = PageProject::PORTFOLIO_QUERY_VAR;
         $vars[] = PageProject::SEARCH_QUERY_VAR;
-        $vars[] = PageProject::ACTIVE_ONLY_QUERY_VAR;
+        $vars[] = PageProject::SHOW_ALL_PROJECTS_QUERY_VAR;
 
         return $vars;
     }

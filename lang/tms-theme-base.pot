@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2023-11-21 23:09+0200\n"
+"POT-Creation-Date: 2024-03-25 14:09+0200\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -22,11 +22,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
-
-#: assets/dist/vendor.js:4873
-msgctxt "text direction"
-msgid "ltr"
-msgstr ""
 
 #: comments.php:14
 msgid "Comments"
@@ -518,10 +513,10 @@ msgid "Choose a portfolio"
 msgstr ""
 
 #: models/page-project.php:149
-msgid "Ongoing projects only"
+msgid "Also show completed projects"
 msgstr ""
 
-#: models/page-project.php:321
+#: models/page-project.php:322
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -529,7 +524,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-project.php:335
+#: models/page-project.php:336
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"

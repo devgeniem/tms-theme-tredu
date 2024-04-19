@@ -1,4 +1,4 @@
-<div class="contacts">
+<div class="contacts is-align-wide">
     <div class="columns">
         <div class="column is-12">
             {?title}

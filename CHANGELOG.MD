@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1029: Change contacts-blocks width
+
+## [1.8.11] - 2024-04-18
+
 - TMS-1020: Change project listing logic to show only active projects by default
 
 ## [1.8.10] - 2024-03-18

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-937: Add title language-field for projects
+
 ## [1.8.11] - 2024-04-18
 
 - TMS-1020: Change project listing logic to show only active projects by default

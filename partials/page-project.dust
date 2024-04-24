@@ -72,7 +72,7 @@
                                         <div class="column">
                                             <div
                                                 class="inner pt-4 pb-4 pt-5-desktop pb-5-desktop keep-vertical-spacing has-border-bottom-1 has-border-grey">
-                                                <h3 class="h4 mt-4 mb-4 has-line-height-tight">
+                                                <h3 class="h4 mt-4 mb-4 has-line-height-tight" {?title_lang}lang="{title_lang|attr}"{/title_lang}>
                                                     <a href="{permalink|url}">
                                                         {post_title|html}
                                                     </a>

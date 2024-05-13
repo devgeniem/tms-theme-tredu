@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1029: Change contacts-blocks width
 - TMS-937: Add title language-field for projects
 
 ## [1.8.11] - 2024-04-18

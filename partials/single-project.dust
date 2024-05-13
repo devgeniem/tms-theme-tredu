@@ -34,7 +34,7 @@
                             <div class="column is-12 is-7-desktop is-8-fullhd keep-vertical-spacing">
                                 <header
                                     class="single-project__entry-header mb-5 pb-5 has-border-bottom-1 has-border-grey keep-vertical-spacing">
-                                    <h1 class="entry__title mb-0">
+                                    <h1 class="entry__title mb-0" {?content.fields.title_lang}lang="{content.fields.title_lang|attr}"{/content.fields.title_lang}>
                                         {@title /}
                                     </h1>
 

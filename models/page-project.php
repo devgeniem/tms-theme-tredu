@@ -275,8 +275,9 @@ class PageProject extends BaseModel {
      */
     protected function format_posts( array $posts ) : array {
         return array_map( function ( $item ) {
-            $item->permalink = \get_the_permalink( $item->ID );
-            $item->duration  = \get_field( 'duration', $item->ID );
+            $item->permalink  = \get_the_permalink( $item->ID );
+            $item->duration   = \get_field( 'duration', $item->ID );
+            $item->title_lang = \get_field( 'title_lang', $item->ID );
 
             $terms = \wp_get_post_terms( $item->ID, Portfolio::SLUG );
 

@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1028: Add social media link-list block, component & footer section
+
+## [1.8.12] - 2024-05-14
+
 - TMS-1029: Change contacts-blocks width
 - TMS-937: Add title language-field for projects
 

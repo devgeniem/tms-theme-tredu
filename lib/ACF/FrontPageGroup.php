@@ -124,6 +124,7 @@ class PageFrontPageGroup {
                 Layouts\ShareLinksLayout::class,
                 Layouts\TreduEventsLayout::class,
                 Layouts\VideoLayout::class,
+                Layouts\SomeLinkListLayout::class,
             ],
             $key
         );

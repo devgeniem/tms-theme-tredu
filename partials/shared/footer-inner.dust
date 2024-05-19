@@ -50,7 +50,7 @@
                 {?some_link_columns}
                     <div class="column {column_class|attr}">
                         {?some_link_columns.column_title}
-                            <h2 class="h4 mt-4 mb-4">
+                            <h2 class="h4 mt-4 mb-4 has-text-white">
                                 {some_link_columns.column_title|html}
                             </h2>
                         {/some_link_columns.column_title}

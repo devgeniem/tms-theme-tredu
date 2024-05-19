@@ -191,6 +191,7 @@ class PageGroup {
                 Layouts\ProgramLayout::class,
                 Layouts\TreduEventsLayout::class,
                 Layouts\VideoLayout::class,
+                Layouts\SomeLinkListLayout::class,
             ],
             $key
         );

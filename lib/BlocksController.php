@@ -180,7 +180,16 @@ class BlocksController implements Interfaces\Controller {
                     PostType\Project::SLUG,
                 ],
             ],
-
+            'acf/some-link-list'    => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\Program::SLUG,
+                    PostType\Project::SLUG,
+                ],
+            ],
             'acf/quote'                  => [
                 'post_types' => [
                     PostType\Page::SLUG,

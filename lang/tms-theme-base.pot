@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2024-03-25 14:09+0200\n"
+"POT-Creation-Date: 2024-05-29 12:12+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgstr ""
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:126
 #: lib/ACF/PageGroup.php:157 lib/ACF/PageProjectGroup.php:60
 #: lib/ACF/PostGroup.php:173 lib/ACF/ProgramGroup.php:304
-#: lib/ACF/ProjectGroup.php:394
+#: lib/ACF/ProjectGroup.php:425
 msgctxt "theme ACF"
 msgid "Components"
 msgstr ""
@@ -74,7 +74,7 @@ msgctxt "theme ACF"
 msgid "Asetukset"
 msgstr ""
 
-#: lib/ACF/PostGroup.php:129 lib/ACF/ProjectGroup.php:448
+#: lib/ACF/PostGroup.php:129 lib/ACF/ProjectGroup.php:479
 msgid "Related posts"
 msgstr ""
 
@@ -125,6 +125,26 @@ msgstr ""
 #: lib/DustPressController.php:62
 msgctxt "pagination"
 msgid "Previous"
+msgstr ""
+
+#: lib/Formatters/AccordionFormatter.php:57
+msgctxt "theme-frontend"
+msgid "Expand"
+msgstr ""
+
+#: lib/Formatters/AccordionFormatter.php:58
+msgctxt "theme-frontend"
+msgid "Collapse"
+msgstr ""
+
+#: lib/Formatters/AccordionFormatter.php:59
+msgctxt "theme-frontend"
+msgid "Expand all sections"
+msgstr ""
+
+#: lib/Formatters/AccordionFormatter.php:60
+msgctxt "theme-frontend"
+msgid "Collapse all sections"
 msgstr ""
 
 #: lib/Formatters/CountdownFormatter.php:80
@@ -516,7 +536,7 @@ msgstr ""
 msgid "Also show completed projects"
 msgstr ""
 
-#: models/page-project.php:322
+#: models/page-project.php:323
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -524,7 +544,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-project.php:336
+#: models/page-project.php:337
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"

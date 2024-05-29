@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1044: Accordion-block changes
+    - Add open all & close all -buttons & js functionalities
+    - Add open / close text next to accordion toggler icon
+
+## [1.8.13] - 2024-05-20
+
 - TMS-1028: Add social media link-list block, component & footer section
 
 ## [1.8.12] - 2024-05-14

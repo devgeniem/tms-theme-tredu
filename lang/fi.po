@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2024-03-25 14:09+0200\n"
-"PO-Revision-Date: 2024-03-25 14:10+0200\n"
+"POT-Creation-Date: 2024-05-29 12:12+0300\n"
+"PO-Revision-Date: 2024-05-29 12:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -54,7 +54,7 @@ msgstr "Sivun komponentit"
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:126
 #: lib/ACF/PageGroup.php:157 lib/ACF/PageProjectGroup.php:60
 #: lib/ACF/PostGroup.php:173 lib/ACF/ProgramGroup.php:304
-#: lib/ACF/ProjectGroup.php:394
+#: lib/ACF/ProjectGroup.php:425
 msgctxt "theme ACF"
 msgid "Components"
 msgstr "Komponentit"
@@ -74,7 +74,7 @@ msgctxt "theme ACF"
 msgid "Asetukset"
 msgstr ""
 
-#: lib/ACF/PostGroup.php:129 lib/ACF/ProjectGroup.php:448
+#: lib/ACF/PostGroup.php:129 lib/ACF/ProjectGroup.php:479
 msgid "Related posts"
 msgstr "Luitko jo nämä?"
 
@@ -126,6 +126,26 @@ msgstr "Seuraava"
 msgctxt "pagination"
 msgid "Previous"
 msgstr "Edellinen"
+
+#: lib/Formatters/AccordionFormatter.php:57
+msgctxt "theme-frontend"
+msgid "Expand"
+msgstr "Avaa"
+
+#: lib/Formatters/AccordionFormatter.php:58
+msgctxt "theme-frontend"
+msgid "Collapse"
+msgstr "Sulje"
+
+#: lib/Formatters/AccordionFormatter.php:59
+msgctxt "theme-frontend"
+msgid "Expand all sections"
+msgstr "Avaa kaikki sisällöt"
+
+#: lib/Formatters/AccordionFormatter.php:60
+msgctxt "theme-frontend"
+msgid "Collapse all sections"
+msgstr "Sulje kaikki sisällöt"
 
 #: lib/Formatters/CountdownFormatter.php:80
 msgctxt "theme-frontend"
@@ -522,7 +542,7 @@ msgstr "Valitse salkku"
 msgid "Also show completed projects"
 msgstr "Näytä myös päättyneet projektit"
 
-#: models/page-project.php:322
+#: models/page-project.php:323
 #, php-format
 msgctxt "filter with search clause results summary"
 msgid "%1$1s result found for \"%2$2s\""
@@ -530,7 +550,7 @@ msgid_plural "%1$1s results found for \"%2$2s\""
 msgstr[0] "%1$1s tulos haulle “%2$2s”"
 msgstr[1] "%1$1s tulosta haulle “%2$2s”"
 
-#: models/page-project.php:336
+#: models/page-project.php:337
 #, php-format
 msgctxt "filter results summary"
 msgid "%1$1s result found"

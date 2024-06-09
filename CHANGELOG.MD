@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1050: Add if-statements into accordion script to prevent breaking other elements functionality
+
+## [1.8.14] - 2024-06-04
+
 - TMS-1044: Accordion-block changes
     - Add open all & close all -buttons & js functionalities
     - Add open / close text next to accordion toggler icon

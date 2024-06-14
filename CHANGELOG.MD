@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-925: Change program-search results order
+
+## [1.8.15] - 2024-06-11
+
 - TMS-1050: Add if-statements into accordion script to prevent breaking other elements functionality
 
 ## [1.8.14] - 2024-06-04

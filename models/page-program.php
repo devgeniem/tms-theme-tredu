@@ -72,21 +72,21 @@ class PageProgram extends BaseModel {
      * Setup hooks.
      */
     public function hooks() {
-        add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
+        \add_filter( 'tms/theme/breadcrumbs/page', function ( $formatted, $original, $object ) {
             unset( $formatted, $original, $object );
 
             return [];
         }, 10, 3 );
 
-        add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', function ( $status, $context ) {
+        \add_filter( 'tms/theme/breadcrumbs/show_breadcrumbs_in_header', function ( $status, $context ) {
             unset( $context, $status );
 
             return false;
         }, 10, 2 );
 
-        add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
+        \add_filter( 'redipress/ignore_query_vars', [ __CLASS__, 'set_ignored_query_vars' ], 10, 1 );
 
-        add_filter( 'the_seo_framework_title_from_generation', Closure::fromCallable( [ __CLASS__, 'alter_title' ] ) );
+        \add_filter( 'the_seo_framework_title_from_generation', Closure::fromCallable( [ __CLASS__, 'alter_title' ] ) );
 
     }
 
@@ -138,7 +138,7 @@ class PageProgram extends BaseModel {
      * @return mixed
      */
     protected static function get_search_query_var() {
-        return get_query_var( self::SEARCH_QUERY_VAR, false );
+        return \get_query_var( self::SEARCH_QUERY_VAR, false );
     }
 
     /**
@@ -147,7 +147,7 @@ class PageProgram extends BaseModel {
      * @return mixed
      */
     protected static function get_ongoing_query_var() {
-        return get_query_var( self::FILTER_ONGOING_QUERY_VAR, false );
+        return \get_query_var( self::FILTER_ONGOING_QUERY_VAR, false );
     }
 
     /**
@@ -158,7 +158,7 @@ class PageProgram extends BaseModel {
      * @return array|null
      */
     protected static function get_filter_query_var( $query_var = '' ) {
-        $values = get_query_var( $query_var, false );
+        $values = \get_query_var( $query_var, false );
         $values = is_array( $values ) ? array_filter( $values ) : false;
 
         return empty( $values )
@@ -213,7 +213,7 @@ class PageProgram extends BaseModel {
      * @return string
      */
     public function page_title() : string {
-        return get_the_title();
+        return \get_the_title();
     }
 
     /**
@@ -222,7 +222,7 @@ class PageProgram extends BaseModel {
      * @return string
      */
     public function page_description() : string {
-        return get_field( 'page_program_description' ) ?? '';
+        return \get_field( 'page_program_description' ) ?? '';
     }
 
     /**
@@ -232,15 +232,15 @@ class PageProgram extends BaseModel {
      */
     public function search() : array {
         $this->search_data          = new stdClass();
-        $this->search_data->query   = get_query_var( self::SEARCH_QUERY_VAR );
-        $this->search_data->ongoing = get_query_var( self::FILTER_ONGOING_QUERY_VAR );
+        $this->search_data->query   = \get_query_var( self::SEARCH_QUERY_VAR );
+        $this->search_data->ongoing = \get_query_var( self::FILTER_ONGOING_QUERY_VAR );
 
         return [
             'input_search_name'    => self::SEARCH_QUERY_VAR,
             'current_search'       => $this->search_data->query,
             'checkbox_search_name' => self::FILTER_ONGOING_QUERY_VAR,
             'only_ongoing'         => $this->search_data->ongoing,
-            'new_search_link'      => get_permalink(),
+            'new_search_link'      => \get_permalink(),
         ];
     }
 
@@ -256,7 +256,7 @@ class PageProgram extends BaseModel {
         $taxonomies = $this->get_taxonomies_with_slugs();
         foreach ( $taxonomies as $tax_slug => $qv ) {
 
-            $terms = get_terms(
+            $terms = \get_terms(
                 [
                     'taxonomy'   => $tax_slug,
                     'hide_empty' => true,
@@ -303,11 +303,8 @@ class PageProgram extends BaseModel {
     public function results() {
         $args = [
             'post_type'      => Program::SLUG,
-            'orderby'        => [
-                'menu_order' => 'ASC',
-                'title'      => 'ASC',
-            ],
-            'paged'          => ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1,
+            'orderby'        => 'relevance',
+            'paged'          => ( \get_query_var( 'paged' ) ) ? \get_query_var( 'paged' ) : 1,
             'posts_per_page' => $this->get_posts_per_page(),
         ];
 
@@ -396,7 +393,7 @@ class PageProgram extends BaseModel {
      */
     protected function set_pagination_data( $wp_query ) : void {
         $per_page = $this->get_posts_per_page();
-        $paged    = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        $paged    = ( \get_query_var( 'paged' ) ) ? \get_query_var( 'paged' ) : 1;
 
         $this->pagination           = new stdClass();
         $this->pagination->page     = $paged;
@@ -414,15 +411,15 @@ class PageProgram extends BaseModel {
      */
     protected function results_summary( $result_count ) {
 
-        $count_posts = wp_count_posts( Program::SLUG )->publish;
+        $count_posts = \wp_count_posts( Program::SLUG )->publish;
         if ( function_exists( 'pll_count_posts' ) ) {
-            $count_posts = pll_count_posts(
-                pll_current_language(),
+            $count_posts = \pll_count_posts(
+                \pll_current_language(),
                 [ 'post_type' => Program::SLUG ]
             );
         }
         else {
-            $count_posts = wp_count_posts( Program::SLUG )->publish;
+            $count_posts = \wp_count_posts( Program::SLUG )->publish;
         }
 
         $shown_txt = $this->strings()['program']['search']['results_shown'];

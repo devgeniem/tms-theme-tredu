@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-925:
     - Change program-search results order
-    - Add taxonomy weights to program query-args
     - Show all program apply-methods in listing
 
 ## [1.8.15] - 2024-06-11

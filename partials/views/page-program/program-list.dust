@@ -66,12 +66,14 @@
                                 </div>
 
                                 <div class="column">
-                                    {?apply-method}
-                                        <span
-                                            class="has-text-xsmall pt-2 pb-2 is-inline-block has-background-{apply_method_color|attr} has-text-{apply_method_txt_color|attr} is-uppercase has-line-height-1 p-2">
-                                            {apply-method|html}
-                                        </span>
-                                    {/apply-method}
+                                    {?fields.apply_method}
+                                        {#fields.apply_method}
+                                            <span
+                                                class="has-text-xsmall pt-2 pb-2 is-inline-block has-background-{apply_method_color|attr} has-text-{apply_method_txt_color|attr} is-uppercase has-line-height-1 p-2">
+                                                {apply_method_name|html}
+                                            </span>
+                                        {/fields.apply_method}
+                                    {/fields.apply_method}
 
                                     {?fields.apply_end}
                                         <span

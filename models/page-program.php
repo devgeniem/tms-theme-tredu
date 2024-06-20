@@ -304,15 +304,6 @@ class PageProgram extends BaseModel {
         $args = [
             'post_type'      => Program::SLUG,
             'orderby'        => 'relevance',
-            'weight'    => [
-                'taxonomy' => [
-                    'apply-method' => [
-                        'jatkuva-haku' => 3.0,
-                        'yhteishaku'   => 2.0,
-                        'oppisopimus'  => 1.0,
-                    ],
-                ],
-            ],
             'paged'          => ( \get_query_var( 'paged' ) ) ? \get_query_var( 'paged' ) : 1,
             'posts_per_page' => $this->get_posts_per_page(),
         ];

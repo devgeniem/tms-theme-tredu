@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.8.16] - 2024-06-26
+
 - TMS-925:
     - Change program-search results order
     - Show all program apply-methods in listing

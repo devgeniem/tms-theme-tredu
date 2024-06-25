@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1057: Increase articles lead-text font-size
+
+## [1.8.16] - 2024-06-26
+
 - TMS-925:
     - Change program-search results order
     - Show all program apply-methods in listing

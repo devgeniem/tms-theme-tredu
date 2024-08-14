@@ -198,6 +198,7 @@ class Strings extends \DustPress\Model {
                 'delivery-method'         => _x( 'Delivery method', 'theme-frontend', 'tms-theme-tredu' ),
                 'application-period-ends' => _x( 'Application period ends', 'theme-frontend', 'tms-theme-tredu' ),
                 'start-date'              => _x( 'Starts', 'theme-frontend', 'tms-theme-tredu' ),
+                'print'                   => _x( 'Print page', 'theme-frontend', 'tms-theme-tredu' ),
             ],
             'program_type' => [
                 'scope'         => _x( 'Scope', 'theme-frontend', 'tms-theme-tredu' ),

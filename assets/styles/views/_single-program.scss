@@ -74,4 +74,45 @@
         font-size: .94444444rem;
         line-height: 1.7;
     }
+
+    // Print styles
+    @media print {
+        #rs-button,
+        .print-button,
+        .site-header,
+        footer,
+        .icon--external,
+        .icon--arrow-right,
+        [aria-hidden="true"] {
+            display: none !important;
+        }
+
+        .breadcrumb svg {
+            order: 1;
+        }
+
+        * {
+            color: $black !important;
+        }
+
+        .entry__content > * {
+            padding: 0 !important;
+        }
+
+        .icon {
+            fill: $black !important;
+        }
+
+        a::after {
+            content: "\00a0(" attr(href) ")\00a0";
+        }
+
+        .single-program__hero {
+            .pt-8,
+            .pb-8,
+            .p-7 {
+                padding: .5rem !important;
+            }
+        }
+    }
 }

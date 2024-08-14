@@ -22,6 +22,11 @@
                     <div class="container">
                         <div class="columns">
                             <div class="column is-10 is-offset-1">
+                                <div class="entry__content">
+                                    <button onclick="window.print();" class="print-button button is-secondary is-inverted is-outlined mb-5 pt-1 pb-1 pr-2 pl-2">
+                                            {Strings.s.program.print|html}
+                                    </button>
+                                </div>
                                 <div class="entry__content is-content-grid keep-vertical-spacing has-text-black">
 
                                     {^content.image}

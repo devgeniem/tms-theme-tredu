@@ -11,7 +11,7 @@
 
             <span class="rsbtn_left rsimg rspart">
                     <span class="rsbtn_text is-flex">
-    ´                    <span>{Readspeaker.strings.button_text|html}</span>
+                         <span>{Readspeaker.strings.button_text|html}</span>
                     </span>
                 </span>
 

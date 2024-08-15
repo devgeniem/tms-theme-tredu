@@ -83,7 +83,10 @@
         footer,
         .icon--external,
         .icon--arrow-right,
-        [aria-hidden="true"] {
+        [aria-hidden="true"],
+        .section.map,
+        .video,
+        .accordion__open-all {
             display: none !important;
         }
 
@@ -103,14 +106,17 @@
             fill: $black !important;
         }
 
+        .button {
+            border-color: $black !important;
+        }
+
         a::after {
             content: "\00a0(" attr(href) ")\00a0";
         }
 
         .single-program {
             &__hero {
-                .pt-8,
-                .pb-8,
+                .column,
                 .p-7 {
                     padding: 0 !important;
                 }
@@ -119,6 +125,21 @@
             &__hero-box {
                 text-align: left;
                 padding: 0 !important;
+            }
+        }
+
+        .accordion {
+            &__title-button,
+            &__content {
+                padding: rem(8px) 0 !important;
+            }
+
+            &__title-icon {
+                display: none !important;
+            }
+
+            &__content {
+                display: block !important;
             }
         }
     }

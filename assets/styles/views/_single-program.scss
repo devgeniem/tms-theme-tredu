@@ -107,11 +107,18 @@
             content: "\00a0(" attr(href) ")\00a0";
         }
 
-        .single-program__hero {
-            .pt-8,
-            .pb-8,
-            .p-7 {
-                padding: .5rem !important;
+        .single-program {
+            &__hero {
+                .pt-8,
+                .pb-8,
+                .p-7 {
+                    padding: 0 !important;
+                }
+            }
+
+            &__hero-box {
+                text-align: left;
+                padding: 0 !important;
             }
         }
     }

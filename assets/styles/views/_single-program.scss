@@ -95,12 +95,13 @@
             color: $black !important;
         }
 
+        // Blocks container
         .column.is-10.is-offset-1 {
             width: 100% !important;
             margin: 0 !important;
         }
 
-        .entry__content > * {
+        .entry__content > *:not(ul) {
             padding: 0 !important;
         }
 
@@ -112,8 +113,24 @@
             border-color: $black !important;
         }
 
-        a::after {
-            content: "\00a0(" attr(href) ")\00a0";
+        .mt-6,
+        .mb-6,
+        .mt-5,
+        .mb-5,
+        .mt-4,
+        .mb-4m
+        h2,
+        h3,
+        h4 {
+            margin: .5rem 0 !important;
+        }
+
+        a {
+            text-decoration: underline;
+
+            &::after {
+                content: "\00a0(" attr(href) ")\00a0";
+            }
         }
 
         .single-program {

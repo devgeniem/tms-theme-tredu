@@ -75,6 +75,30 @@
         line-height: 1.7;
     }
 
+    &__add-favorite {
+        .button {
+            padding: 0;
+            background-color: transparent;
+            border-color: transparent;
+
+            .icon-wrapper {
+                margin-left: .5rem;
+
+                svg {
+                    height: 1rem;
+                    width: 1.5rem;
+                }
+            }
+
+            // Active favorite
+            &[aria-pressed="true"] {
+                svg path {
+                    fill: $color-red;
+                }
+            }
+        }
+    }
+
     // Print styles
     @media print {
         #rs-button,

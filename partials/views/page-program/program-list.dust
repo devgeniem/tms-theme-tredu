@@ -23,9 +23,14 @@
                         <div class="column is-7 has-background-light-gray pl-4 pr-4">
                             <div class="inner columns is-multiline has-text-primary m-0">
                                 <div class="column is-12 pt-0">
+
+                                    <div class="single-program__add-favorite">
+                                        {>"shared/program-favorite-button" program_id=ID /}
+                                    </div>
+
                                     {?post_title}
                                         <a href="{permalink|url}">
-                                            <h2 class="h5 mt-4 mb-1 has-line-height-tight has-text-primary">{post_title|html}</h2>
+                                            <h2 class="h5 mt-2 mb-1 has-line-height-tight has-text-primary">{post_title|html}</h2>
                                         </a>
                                     {/post_title}
 

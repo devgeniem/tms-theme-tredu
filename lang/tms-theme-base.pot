@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2024-05-29 12:12+0300\n"
+"POT-Creation-Date: 2024-08-19 14:48+0300\n"
 "PO-Revision-Date: 2022-01-12 10:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -22,6 +22,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: assets/dist/vendor.js:4873
+msgctxt "text direction"
+msgid "ltr"
+msgstr ""
 
 #: comments.php:14
 msgid "Comments"
@@ -53,7 +58,7 @@ msgstr ""
 
 #: lib/ACF/FrontPageGroup.php:90 lib/ACF/OnepagerGroup.php:126
 #: lib/ACF/PageGroup.php:157 lib/ACF/PageProjectGroup.php:60
-#: lib/ACF/PostGroup.php:173 lib/ACF/ProgramGroup.php:304
+#: lib/ACF/PostGroup.php:173 lib/ACF/ProgramGroup.php:306
 #: lib/ACF/ProjectGroup.php:425
 msgctxt "theme ACF"
 msgid "Components"
@@ -586,6 +591,16 @@ msgstr ""
 msgid "No search results"
 msgstr ""
 
+#: models/shared/header.php:68 models/strings.php:213
+msgctxt "theme-frontend"
+msgid "Remove from favorites"
+msgstr ""
+
+#: models/shared/header.php:69
+msgctxt "theme-frontend"
+msgid "Go to program"
+msgstr ""
+
 #: models/single-dial-tredu.php:42
 msgid "Go back"
 msgstr ""
@@ -687,7 +702,7 @@ msgid "Search from site"
 msgstr ""
 
 #: models/strings.php:56 models/strings.php:83 models/strings.php:146
-#: models/strings.php:159 models/strings.php:168 models/strings.php:267
+#: models/strings.php:159 models/strings.php:168 models/strings.php:276
 msgctxt "theme-frontend"
 msgid "Close"
 msgstr ""
@@ -837,12 +852,12 @@ msgctxt "theme-frontend"
 msgid "Articletype:"
 msgstr ""
 
-#: models/strings.php:111 models/strings.php:223
+#: models/strings.php:111 models/strings.php:232
 msgctxt "theme-frontend"
 msgid "Month"
 msgstr ""
 
-#: models/strings.php:112 models/strings.php:224
+#: models/strings.php:112 models/strings.php:233
 msgctxt "theme-frontend"
 msgid "Year"
 msgstr ""
@@ -862,62 +877,62 @@ msgctxt "theme-frontend"
 msgid "The page reloads after the selection."
 msgstr ""
 
-#: models/strings.php:118 models/strings.php:237
+#: models/strings.php:118 models/strings.php:246
 msgctxt "theme-frontend"
 msgid "January"
 msgstr ""
 
-#: models/strings.php:119 models/strings.php:238
+#: models/strings.php:119 models/strings.php:247
 msgctxt "theme-frontend"
 msgid "February"
 msgstr ""
 
-#: models/strings.php:120 models/strings.php:239
+#: models/strings.php:120 models/strings.php:248
 msgctxt "theme-frontend"
 msgid "March"
 msgstr ""
 
-#: models/strings.php:121 models/strings.php:240
+#: models/strings.php:121 models/strings.php:249
 msgctxt "theme-frontend"
 msgid "April"
 msgstr ""
 
-#: models/strings.php:122 models/strings.php:241 models/strings.php:255
+#: models/strings.php:122 models/strings.php:250 models/strings.php:264
 msgctxt "theme-frontend"
 msgid "May"
 msgstr ""
 
-#: models/strings.php:123 models/strings.php:242
+#: models/strings.php:123 models/strings.php:251
 msgctxt "theme-frontend"
 msgid "June"
 msgstr ""
 
-#: models/strings.php:124 models/strings.php:243
+#: models/strings.php:124 models/strings.php:252
 msgctxt "theme-frontend"
 msgid "July"
 msgstr ""
 
-#: models/strings.php:125 models/strings.php:244
+#: models/strings.php:125 models/strings.php:253
 msgctxt "theme-frontend"
 msgid "August"
 msgstr ""
 
-#: models/strings.php:126 models/strings.php:245
+#: models/strings.php:126 models/strings.php:254
 msgctxt "theme-frontend"
 msgid "September"
 msgstr ""
 
-#: models/strings.php:127 models/strings.php:246
+#: models/strings.php:127 models/strings.php:255
 msgctxt "theme-frontend"
 msgid "October"
 msgstr ""
 
-#: models/strings.php:128 models/strings.php:247
+#: models/strings.php:128 models/strings.php:256
 msgctxt "theme-frontend"
 msgid "November"
 msgstr ""
 
-#: models/strings.php:129 models/strings.php:248
+#: models/strings.php:129 models/strings.php:257
 msgctxt "theme-frontend"
 msgid "December"
 msgstr ""
@@ -1124,217 +1139,206 @@ msgstr ""
 
 #: models/strings.php:207
 msgctxt "theme-frontend"
-msgid "Filter by type"
+msgid "Favorites"
 msgstr ""
 
 #: models/strings.php:208
 msgctxt "theme-frontend"
-msgid "Publish date"
+msgid "No favorites found"
 msgstr ""
 
 #: models/strings.php:209
 msgctxt "theme-frontend"
-msgid "Write search terms"
+msgid "Open or close favorites"
 msgstr ""
 
 #: models/strings.php:210
 msgctxt "theme-frontend"
-msgid "Page location:"
+msgid "Close favorites"
 msgstr ""
 
-#: models/strings.php:213
+#: models/strings.php:211
 msgctxt "theme-frontend"
-msgid "Filter"
+msgid "Add or remove from favorites"
 msgstr ""
 
-#: models/strings.php:214
+#: models/strings.php:212
 msgctxt "theme-frontend"
-msgid "Clicking the link will download file"
+msgid "Add to favorites"
 msgstr ""
 
-#: models/strings.php:218 models/strings.php:226
+#: models/strings.php:216
 msgctxt "theme-frontend"
-msgid "Pick a date"
+msgid "Filter by type"
+msgstr ""
+
+#: models/strings.php:217
+msgctxt "theme-frontend"
+msgid "Publish date"
+msgstr ""
+
+#: models/strings.php:218
+msgctxt "theme-frontend"
+msgid "Write search terms"
 msgstr ""
 
 #: models/strings.php:219
 msgctxt "theme-frontend"
-msgid "dd.mm.yyyy"
-msgstr ""
-
-#: models/strings.php:220
-msgctxt "theme-frontend"
-msgid "The chosen date is"
-msgstr ""
-
-#: models/strings.php:221
-msgctxt "theme-frontend"
-msgid "Previous month"
+msgid "Page location:"
 msgstr ""
 
 #: models/strings.php:222
 msgctxt "theme-frontend"
-msgid "Next month"
+msgid "Filter"
 msgstr ""
 
-#: models/strings.php:225
+#: models/strings.php:223
 msgctxt "theme-frontend"
-msgid "Close window"
+msgid "Clicking the link will download file"
+msgstr ""
+
+#: models/strings.php:227 models/strings.php:235
+msgctxt "theme-frontend"
+msgid "Pick a date"
 msgstr ""
 
 #: models/strings.php:228
 msgctxt "theme-frontend"
-msgid "Sunday"
+msgid "dd.mm.yyyy"
 msgstr ""
 
 #: models/strings.php:229
 msgctxt "theme-frontend"
-msgid "Monday"
+msgid "The chosen date is"
 msgstr ""
 
 #: models/strings.php:230
 msgctxt "theme-frontend"
-msgid "Tuesday"
+msgid "Previous month"
 msgstr ""
 
 #: models/strings.php:231
 msgctxt "theme-frontend"
-msgid "Wednesday"
-msgstr ""
-
-#: models/strings.php:232
-msgctxt "theme-frontend"
-msgid "Thursday"
-msgstr ""
-
-#: models/strings.php:233
-msgctxt "theme-frontend"
-msgid "Friday"
+msgid "Next month"
 msgstr ""
 
 #: models/strings.php:234
 msgctxt "theme-frontend"
+msgid "Close window"
+msgstr ""
+
+#: models/strings.php:237
+msgctxt "theme-frontend"
+msgid "Sunday"
+msgstr ""
+
+#: models/strings.php:238
+msgctxt "theme-frontend"
+msgid "Monday"
+msgstr ""
+
+#: models/strings.php:239
+msgctxt "theme-frontend"
+msgid "Tuesday"
+msgstr ""
+
+#: models/strings.php:240
+msgctxt "theme-frontend"
+msgid "Wednesday"
+msgstr ""
+
+#: models/strings.php:241
+msgctxt "theme-frontend"
+msgid "Thursday"
+msgstr ""
+
+#: models/strings.php:242
+msgctxt "theme-frontend"
+msgid "Friday"
+msgstr ""
+
+#: models/strings.php:243
+msgctxt "theme-frontend"
 msgid "Saturday"
-msgstr ""
-
-#: models/strings.php:251
-msgctxt "theme-frontend"
-msgid "Jan"
-msgstr ""
-
-#: models/strings.php:252
-msgctxt "theme-frontend"
-msgid "Feb"
-msgstr ""
-
-#: models/strings.php:253
-msgctxt "theme-frontend"
-msgid "Mar"
-msgstr ""
-
-#: models/strings.php:254
-msgctxt "theme-frontend"
-msgid "Apr"
-msgstr ""
-
-#: models/strings.php:256
-msgctxt "theme-frontend"
-msgid "Jun"
-msgstr ""
-
-#: models/strings.php:257
-msgctxt "theme-frontend"
-msgid "Jul"
-msgstr ""
-
-#: models/strings.php:258
-msgctxt "theme-frontend"
-msgid "Aug"
-msgstr ""
-
-#: models/strings.php:259
-msgctxt "theme-frontend"
-msgid "Sept"
 msgstr ""
 
 #: models/strings.php:260
 msgctxt "theme-frontend"
-msgid "Oct"
+msgid "Jan"
 msgstr ""
 
 #: models/strings.php:261
 msgctxt "theme-frontend"
-msgid "Nov"
+msgid "Feb"
 msgstr ""
 
 #: models/strings.php:262
 msgctxt "theme-frontend"
-msgid "Dec"
+msgid "Mar"
+msgstr ""
+
+#: models/strings.php:263
+msgctxt "theme-frontend"
+msgid "Apr"
+msgstr ""
+
+#: models/strings.php:265
+msgctxt "theme-frontend"
+msgid "Jun"
 msgstr ""
 
 #: models/strings.php:266
 msgctxt "theme-frontend"
-msgid "Enlarged image"
+msgid "Jul"
+msgstr ""
+
+#: models/strings.php:267
+msgctxt "theme-frontend"
+msgid "Aug"
+msgstr ""
+
+#: models/strings.php:268
+msgctxt "theme-frontend"
+msgid "Sept"
+msgstr ""
+
+#: models/strings.php:269
+msgctxt "theme-frontend"
+msgid "Oct"
 msgstr ""
 
 #: models/strings.php:270
 msgctxt "theme-frontend"
-msgid "Load more"
+msgid "Nov"
 msgstr ""
 
 #: models/strings.php:271
 msgctxt "theme-frontend"
+msgid "Dec"
+msgstr ""
+
+#: models/strings.php:275
+msgctxt "theme-frontend"
+msgid "Enlarged image"
+msgstr ""
+
+#: models/strings.php:279
+msgctxt "theme-frontend"
+msgid "Load more"
+msgstr ""
+
+#: models/strings.php:280
+msgctxt "theme-frontend"
 msgid "Load more programs"
 msgstr ""
 
-#: models/strings.php:272
+#: models/strings.php:281
 msgctxt "theme-frontend"
 msgid "More results loaded"
 msgstr ""
 
-#: models/strings.php:285
+#: models/strings.php:294
 msgid "Pagination"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
-#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
-msgid "Add Row"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
-msgid "Multisite Post Object"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
-msgid "Multisite Relationship"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteTaxonomy.php:23
-msgid "Multisite taxonomy"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:23
-msgid "Multitaxonomy"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:516
-#, php-format
-msgctxt "No terms"
-msgid "No %s"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:18
-msgid "PHP"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:48
-msgid "Instructions"
-msgstr ""
-
-#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
-msgid ""
-"This field can only be used with ACF Codifier. Doesn't do anything if "
-"defined in the admin side."
 msgstr ""
 
 #. Theme Name of the plugin/theme

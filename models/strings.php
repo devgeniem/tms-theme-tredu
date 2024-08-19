@@ -203,6 +203,15 @@ class Strings extends \DustPress\Model {
                 'scope'         => _x( 'Scope', 'theme-frontend', 'tms-theme-tredu' ),
                 'who_can_apply' => _x( 'Who can apply?', 'theme-frontend', 'tms-theme-tredu' ),
             ],
+            'program_favorite' => [
+                'favorites_title'              => _x( 'Favorites', 'theme-frontend', 'tms-theme-tredu' ),
+                'no_favorites_text'            => _x( 'No favorites found', 'theme-frontend', 'tms-theme-tredu' ),
+                'open_or_close_favorites_text' => _x( 'Open or close favorites', 'theme-frontend', 'tms-theme-tredu' ),
+                'close_favorites_text'         => _x( 'Close favorites', 'theme-frontend', 'tms-theme-tredu' ),
+                'add_to_favorites_aria_label'  => _x( 'Add or remove from favorites', 'theme-frontend', 'tms-theme-tredu' ),
+                'add_to_favorites_text'        => _x( 'Add to favorites', 'theme-frontend', 'tms-theme-tredu' ),
+                'remove_from_favorites_text'   => _x( 'Remove from favorites', 'theme-frontend', 'tms-theme-tredu' ),
+            ],
             'search'             => [
                 'filter_by_post_type' => _x( 'Filter by type', 'theme-frontend', 'tms-theme-tredu' ),
                 'filter_by_date'      => _x( 'Publish date', 'theme-frontend', 'tms-theme-tredu' ),

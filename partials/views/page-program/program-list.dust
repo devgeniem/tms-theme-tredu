@@ -25,7 +25,7 @@
                                 <div class="column is-12 pt-0">
 
                                     <div class="single-program__add-favorite">
-                                        {>"shared/program-favorite-button" program_id=ID /}
+                                        {>"shared/program-favorite-button" program_id=ID program_title=post_title /}
                                     </div>
 
                                     {?post_title}

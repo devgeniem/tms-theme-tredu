@@ -1,5 +1,5 @@
 <button data-program-id={program_id|attr}
-    aria-pressed="false" aria-label="{@title /} - {Strings.s.program_favorite.add_to_favorites_aria_label|attr}"
+    aria-pressed="false" aria-label="{program_title|attr} - {Strings.s.program_favorite.add_to_favorites_aria_label|attr}"
     class="button js-toggle-favorite">
     <span class="text-favorite-inactive">{Strings.s.program_favorite.add_to_favorites_text|html}</span>
     <span class="text-favorite-active is-hidden">{Strings.s.program_favorite.remove_from_favorites_text|html}</span>

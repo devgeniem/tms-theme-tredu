@@ -77,7 +77,6 @@ export default class FavoritePrograms {
                     ids: this.favorites,
                 },
             } ).then( ( response ) => {
-                console.log( response );
                 if ( ! response.success ) {
                     this.showNoResults();
                     return;

@@ -26,7 +26,7 @@ export default class FavoritePrograms {
         // Init functionalities common to all templates.
         this.initCommon();
 
-        // Init functionalities related to page-favorites template.
+        // Init functionalities for favorite-listing.
         this.initFavorites();
 
         // Favorite popup functionalities
@@ -235,7 +235,7 @@ export default class FavoritePrograms {
     }
 
     /**
-     * Show "no results" content.
+     * Hide "no results" content.
      */
     hideNoResults() {
         this.favoritesContent.removeClass( this.classes.hide );

@@ -87,12 +87,18 @@ $navbar-item-dropdown-accent-color: $primary !default;
     }
 
     &--dropdown {
+        .navbar-link.dropdown-trigger {
+            padding-right: .75rem !important; // sass-lint:disable-line no-important
+        }
+
         .has-dropdown {
             position: static;
         }
 
         .dropdown-toggler {
             margin-right: 0 !important; // sass-lint:disable-line no-important
+            padding: .625rem;
+
             &:focus {
                 text-decoration: underline;
                 outline: .125rem solid $color-black;

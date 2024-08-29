@@ -10,7 +10,7 @@
         <div class="button-container">
             <a href="{permalink|url}" class="button is-primary">{go_to_program_text|html}</a>
             <button
-                data-program-id={ID|attr}
+                data-program-id="{ID|attr}"
                 aria-pressed="false"
                 aria-label="{title|attr} - {remove_favorite_text|attr}"
                 class="button js-remove-favorite">

@@ -1,15 +1,18 @@
 /* eslint-disable no-console */
 /**
- * Load more functionality for koulutusnosto-component.
+ * Favorites-functionality for programs.
  */
 
 // Use jQuery as $ within this file scope.
 const $ = jQuery;
 
 /**
- * Class LoadMore
+ * Class FavoritePrograms
  */
 export default class FavoritePrograms {
+    /**
+     * Execute on page load
+     */
     docReady() {
         // Bail if browser does not support localStorage.
         if ( typeof Storage === 'undefined' ) {
@@ -33,6 +36,9 @@ export default class FavoritePrograms {
         this.favoritePopup();
     }
 
+    /**
+     * Cache selectors
+     */
     cache() {
         this.classes = {
             hasFavorites: 'has-favorites',
@@ -175,7 +181,7 @@ export default class FavoritePrograms {
     /**
      * Changes favorite-status of the selected favorite.
      *
-     * @param {Object} selectedItem The button element to be toggled.
+     * @param {Element} selectedItem The button element to be toggled.
      * @return {void}
      */
     toggleFavorite( selectedItem ) {
@@ -204,7 +210,7 @@ export default class FavoritePrograms {
     /**
      * Remove favorite.
      *
-     * @param {Object} selectedItem The button element to be toggled.
+     * @param {Element} selectedItem The button element to be toggled.
      * @return {void}
      */
     removeFavorite( selectedItem ) {
@@ -216,10 +222,12 @@ export default class FavoritePrograms {
             this.toggleFavoriteButton = $( '.js-toggle-favorite[data-program-id="' + programId + '"]' );
 
             // Remove toggle-buttons attributes and texts
-            this.toggleFavoriteButton.removeClass( this.classes.isFavorite );
-            this.toggleFavoriteButton.attr( 'aria-pressed', 'false' );
-            this.toggleFavoriteButton.find( '.text-favorite-active' ).addClass( this.classes.hide );
-            this.toggleFavoriteButton.find( '.text-favorite-inactive' ).removeClass( this.classes.hide );
+            if ( this.toggleFavoriteButton.length > 0 ) {
+                this.toggleFavoriteButton.removeClass( this.classes.isFavorite );
+                this.toggleFavoriteButton.attr( 'aria-pressed', 'false' );
+                this.toggleFavoriteButton.find( '.text-favorite-active' ).addClass( this.classes.hide );
+                this.toggleFavoriteButton.find( '.text-favorite-inactive' ).removeClass( this.classes.hide );
+            }
         }
 
         // Save to localStorage.

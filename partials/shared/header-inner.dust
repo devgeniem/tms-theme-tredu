@@ -29,8 +29,10 @@
                 {>"ui/menu/language-nav-dropdown" links=Header.language_nav.links /}
             {/Header.lang_nav_horizontal}
 
+            {>"shared/header-favorite-toggle" /}
+
             {^Header.hide_search}
-                {>"shared/header-search-toggle"  /}
+                {>"shared/header-search-toggle" /}
             {/Header.hide_search}
 
             {?Header.has_nav_menu}
@@ -44,6 +46,8 @@
             {>"shared/header-brand" /}
         </div>
     </div>
+
+    {>"shared/header-favorites-container" /}
 
     {^Header.hide_search}
         <div id="js-search-toggle-target"

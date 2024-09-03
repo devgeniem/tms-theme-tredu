@@ -98,4 +98,92 @@
             }
         }
     }
+
+    // Print styles
+    @media print {
+        #rs-button,
+        .print-button,
+        .site-header,
+        footer,
+        .breadcrumbs-container,
+        .icon--external,
+        .icon--arrow-right,
+        [aria-hidden="true"],
+        .section.map,
+        .video,
+        .accordion__open-all {
+            display: none !important;
+        }
+
+        * {
+            color: $black !important;
+        }
+
+        // Blocks container
+        .column.is-10.is-offset-1 {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        .entry__content > *:not(ul) {
+            padding: 0 !important;
+        }
+
+        .icon {
+            fill: $black !important;
+        }
+
+        .button {
+            border-color: $black !important;
+        }
+
+        .mt-6,
+        .mb-6,
+        .mt-5,
+        .mb-5,
+        .mt-4,
+        .mb-4m
+        h2,
+        h3,
+        h4 {
+            margin: .5rem 0 !important;
+        }
+
+        a {
+            text-decoration: underline;
+
+            &::after {
+                content: "\00a0(" attr(href) ")\00a0";
+            }
+        }
+
+        .single-program {
+            &__hero {
+                .column,
+                .p-7 {
+                    padding: 0 !important;
+                }
+            }
+
+            &__hero-box {
+                text-align: left;
+                padding: 0 !important;
+            }
+        }
+
+        .accordion {
+            &__title-button,
+            &__content {
+                padding: rem(8px) 0 !important;
+            }
+
+            &__title-icon {
+                display: none !important;
+            }
+
+            &__content {
+                display: block !important;
+            }
+        }
+    }
 }

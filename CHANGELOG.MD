@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1052: Favorite programs-functionalities
+- TMS-1051: Add "Print page"-button to single program
+
+## [1.8.17] - 2024-08-21
+
+- TMS-1057: Increase articles lead-text font-size
 
 ## [1.8.16] - 2024-06-26
 

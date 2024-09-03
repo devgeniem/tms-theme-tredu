@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1052: Favorite programs-functionalities
 - TMS-1051: Add "Print page"-button to single program
 
 ## [1.8.17] - 2024-08-21

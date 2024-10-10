@@ -24,13 +24,13 @@ class ContactGroup {
      * PageGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             \Closure::fromCallable( [ $this, 'register_fields' ] )
         );
 
-        add_filter(
-            'redipress/schema_fields',
+        \add_filter(
+            'redipress/index/posts/schema_fields',
             \Closure::fromCallable( [ $this, 'add_redipress_fields' ] )
         );
     }

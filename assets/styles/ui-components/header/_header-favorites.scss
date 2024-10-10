@@ -25,7 +25,7 @@
 
             .button-container {
                 display: flex;
-                gap: 2rem;
+                gap: $theme-spacing-two;
 
                 .button.js-remove-favorite {
                     padding: 0;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2024-08-19 15:35+0300\n"
-"PO-Revision-Date: 2024-08-19 15:35+0300\n"
+"POT-Creation-Date: 2024-09-03 08:27+0300\n"
+"PO-Revision-Date: 2024-10-10 14:43+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -597,12 +597,12 @@ msgstr "Koulutushaku"
 msgid "No search results"
 msgstr "Ei hakutuloksia"
 
-#: models/shared/program-favorites.php:63 models/strings.php:214
+#: models/shared/program-favorites.php:53 models/strings.php:214
 msgctxt "theme-frontend"
 msgid "Remove from favorites"
 msgstr "Poista suosikeista"
 
-#: models/shared/program-favorites.php:64
+#: models/shared/program-favorites.php:54
 msgctxt "theme-frontend"
 msgid "Go to program"
 msgstr "Siirry koulutukseen"

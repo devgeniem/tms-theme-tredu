@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1075: Redipress 2 filters
+
 ## [1.8.18] - 2024-08-21
 - TMS-1062: Increase menu-dropdown button size
 - TMS-1052: Favorite programs-functionalities

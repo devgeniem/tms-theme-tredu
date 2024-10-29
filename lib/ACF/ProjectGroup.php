@@ -113,7 +113,8 @@ class ProjectGroup {
             ->set_key( "{$key}_is_active" )
             ->set_name( 'is_active' )
             ->use_ui()
-            ->set_instructions( $strings['is_active']['instructions'] );
+            ->set_instructions( $strings['is_active']['instructions'] )
+            ->redipress_add_queryable( 'is_active' );
 
         $title_lang_field = ( new Field\Select( $strings['title_lang']['title'] ) )
             ->set_key( "{$key}_title_lang" )

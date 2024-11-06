@@ -228,11 +228,13 @@ class PageProject extends BaseModel {
         $show_all_projects = self::get_show_all_projects_query_var();
 
         // Show only active projects on default
-        if ( empty( $show_all_projects ) ) {
+        if ( $show_all_projects === false ) {
             $args['meta_query'] = [
-                [
-                    'key'   => 'is_active',
-                    'value' => '1',
+                'active_project_clause' => [
+                    [
+                        'key'   => 'is_active',
+                        'value' => '1',
+                    ],
                 ],
             ];
         }

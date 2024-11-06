@@ -87,7 +87,7 @@ class ProgramGroup {
             ],
             'search_keywords'    => [
                 'title'        => 'Haun apusanat',
-                'instructions' => 'Käytetään ennakoivassa haussa',
+                'instructions' => 'Lisää tähän hakusanoja, joilla tämän koulutuksen halutaan löytyvän haussa',
             ],
             'search_box_title'   => [
                 'title'        => 'Hakulaatikon otsikko',

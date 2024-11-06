@@ -21,9 +21,7 @@ class Expirator {
      * @return void
      */
     public static function expirate() {
-
         $args = [
-            'fields'                 => 'ids',
             'post_type'              => TreduEvent::SLUG,
             'post_status'            => 'publish',
             'update_post_term_cache' => false,
@@ -31,6 +29,7 @@ class Expirator {
         ];
 
         $query = new \WP_Query( $args );
+        $ids = \wp_list_pluck( $query->posts, 'ID' );
 
         // Current time.
         $now           = \current_time( 'mysql' );
@@ -58,7 +57,7 @@ class Expirator {
                     \wp_update_post( $post_object );
                 }
             }
-        }, $query->posts );
+        }, $ids );
     }
 }
 

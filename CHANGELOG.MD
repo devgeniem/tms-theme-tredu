@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.1] - 2024-11-06
+
 - TMS-1075-fix: Program page query fix
 - TMS-1075: Fix expirator bug
 

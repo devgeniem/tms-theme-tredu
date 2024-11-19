@@ -223,14 +223,16 @@ class ProgramGroup {
             ->set_name( 'apply_start' )
             ->set_return_format( 'Y-m-d' )
             ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['apply_start']['instructions'] );
+            ->set_instructions( $strings['apply_start']['instructions'] )
+            ->redipress_add_queryable();
 
         $apply_end_field = ( new Field\DatePicker( $strings['apply_end']['title'] ) )
             ->set_key( "{$key}_apply_end" )
             ->set_name( 'apply_end' )
             ->set_return_format( 'Y-m-d' )
             ->set_wrapper_width( 50 )
-            ->set_instructions( $strings['apply_end']['instructions'] );
+            ->set_instructions( $strings['apply_end']['instructions'] )
+            ->redipress_add_queryable();
 
         $apply_info_field = ( new Field\Text( $strings['apply_info']['title'] ) )
             ->set_key( "{$key}_apply_info" )

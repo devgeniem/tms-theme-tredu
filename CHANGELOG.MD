@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1088: Change program dates to be queryable by redipress
+
 ## [1.9.1] - 2024-11-06
 
 - TMS-1075-fix: Program page query fix

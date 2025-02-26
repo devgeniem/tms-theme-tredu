@@ -8,7 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1109: Change ContentColumns & CallToAction TextArea fields to Wysiwyg
+
+## [1.9.2] - 2024-11-19
+
+- TMS-1088: Change program dates to be queryable by redipress
+
+## [1.9.1] - 2024-11-06
+
 - TMS-1075-fix: Program page query fix
+- TMS-1075: Fix expirator bug
 
 ## [1.9.0] - 2024-10-24
 

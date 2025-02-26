@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1109: Change ContentColumns & CallToAction TextArea fields to Wysiwyg
+
 ## [1.9.2] - 2024-11-19
 
 - TMS-1088: Change program dates to be queryable by redipress

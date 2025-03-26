@@ -25,23 +25,6 @@
             </div>
         </div>
 
-        {?filters}
-            <div class="column is-4-desktop">
-                <label for="portfolio" class="is-sr-only">
-                    {strings.search.portfolio_label|html}
-                </label>
-
-                <select name="portfolio" id="portfolio"
-                        class="page-project__input page-project__input--portfolio">
-                    {#filters}
-                        <option value="{term_id|html}" {?selected}selected{/selected}>
-                            {name|html}
-                        </option>
-                    {/filters}
-                </select>
-            </div>
-        {/filters}
-
         <div class="column is-4-desktop">
             <button class="button is-secondary button--icon page-project__submit" type="submit">
                 {strings.search.submit_value|html}

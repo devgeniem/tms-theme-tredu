@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.4] - 2025-04-02
+
 - TMS-1125: Remove portfolio filters & info from front-end
 
 ## [1.9.3] - 2025-03-03

@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1139: Add another link-button to CTA-component
+
+## [1.9.4] - 2025-04-02
+
 - TMS-1125: Remove portfolio filters & info from front-end
 
 ## [1.9.3] - 2025-03-03

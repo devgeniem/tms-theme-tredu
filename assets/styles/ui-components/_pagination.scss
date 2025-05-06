@@ -35,8 +35,8 @@ $pagination-item-transition-speed: $speed !default;
                 background-color: $pagination-item-background-color-focus;
                 border-color: transparent;
                 outline-style: dashed;
-                outline-offset: -2px;
-                outline-color: $secondary;
+                outline-offset: 2px;
+                outline-color: $primary;
                 outline-width: 2px;
                 text-decoration: none;
             }

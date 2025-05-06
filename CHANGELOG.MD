@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1144: Change aria-attribute for menu-item
+
+## [1.9.5] - 2025-04-30
+
 - TMS-1139: Add another link-button to CTA-component
 
 ## [1.9.4] - 2025-04-02

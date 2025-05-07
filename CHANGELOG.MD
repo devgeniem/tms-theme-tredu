@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1150: Move header chat script from head to header
+
 ## [1.9.5] - 2025-04-30
 
 - TMS-1139: Add another link-button to CTA-component

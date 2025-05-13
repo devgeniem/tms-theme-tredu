@@ -174,10 +174,10 @@
                 border: 1px solid $secondary;
 
                 &:focus {
-                    outline-color: $white;
-                    .icon {
-                        fill: $primary !important;
-                    }
+                    background-color: $primary;
+                    color: $white;
+                    outline-color: transparent;
+                    box-shadow: 0 0 0 3px $white inset;
                 }
             }
         }

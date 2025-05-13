@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1149: Accessibility fixes for focus-styles
+- TMS-1150: Move header chat script from head to header
+- TMS-1151: Change hero-links focus-styles
+- TMS-1155: Fix screen-reader text for mobile-nav dropdowns
 
 ## [1.9.5] - 2025-04-30
 

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1144: Change aria-attribute for menu-item
 - TMS-1148: Responsiveness fixes for zoomed in browsers
 - TMS-1149: Accessibility fixes for focus-styles
 - TMS-1150: Move header chat script from head to header

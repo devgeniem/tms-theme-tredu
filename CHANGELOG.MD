@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.6] - 2025-05-14
+
 - TMS-1144: Change aria-attribute for menu-item
 - TMS-1148: Responsiveness fixes for zoomed in browsers
 - TMS-1149: Accessibility fixes for focus-styles

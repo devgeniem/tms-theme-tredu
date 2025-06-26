@@ -58,7 +58,16 @@ class Archive extends Home {
      * @return string|null
      */
     public function page_title() : ?string {
-        return single_term_title( '', false );
+        return \single_term_title( '', false );
+    }
+
+    /**
+     * Get the page description.
+     *
+     * @return string|null
+     */
+    public function page_description() : ?string {
+        return \term_description( \get_queried_object() );
     }
 
     /**

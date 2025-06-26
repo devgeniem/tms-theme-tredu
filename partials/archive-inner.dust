@@ -3,8 +3,12 @@
         <div class="columns">
             <div class="column has-text-centered">
                 <h1 class="mt-0 mb-8">
-                    {page_title|s}
+                    {page_title|html}
                 </h1>
+
+                {?page_description}
+                    {page_description|kses}
+                {/page_description}
             </div>
         </div>
 
@@ -20,7 +24,7 @@
             {:else}
                 <div class="column">
                     <div class="pt-6 pb-6 h4 has-text-centered">
-                        {Strings.s.home.no_results|s}
+                        {Strings.s.home.no_results|html}
                     </div>
                 </div>
             {/articles}

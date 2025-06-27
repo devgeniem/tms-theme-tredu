@@ -71,6 +71,22 @@ class Archive extends Home {
     }
 
     /**
+     * Get the blog-category image.
+     *
+     * @return string|null
+     */
+    public function blog_category_image() {
+        $queried_object = \get_queried_object();
+        $image_field    = \get_field( 'image', $queried_object );
+
+        if ( ! $image_field ) {
+            return null;
+        }
+
+        return $image_field['ID'];
+    }
+
+    /**
      * Get highlight item
      *
      * @return object|null

@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-1148: Responsiveness fixes for zoomed in browsers
 - TMS-1150: Move header chat script from head to header
 - TMS-1176: Add homepage-selection for some-linklist fields
+- TMS-1173:
+    - Add hero-image field for blog-category taxonomy
+    - Add hero-layout for blog-article archive & blog-category taxonomy archive
 
 ## [1.9.6] - 2025-05-14
 

@@ -58,7 +58,32 @@ class Archive extends Home {
      * @return string|null
      */
     public function page_title() : ?string {
-        return single_term_title( '', false );
+        return \single_term_title( '', false );
+    }
+
+    /**
+     * Get the page description.
+     *
+     * @return string|null
+     */
+    public function page_description() : ?string {
+        return \term_description( \get_queried_object() );
+    }
+
+    /**
+     * Get the blog-category image.
+     *
+     * @return string|null
+     */
+    public function blog_category_image() {
+        $queried_object = \get_queried_object();
+        $image_field    = \get_field( 'image', $queried_object );
+
+        if ( ! $image_field ) {
+            return null;
+        }
+
+        return $image_field['ID'];
     }
 
     /**

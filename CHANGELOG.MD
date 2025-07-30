@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-1173:
     - Add hero-image field for blog-category taxonomy
     - Add hero-layout for blog-article archive & blog-category taxonomy archive
+- TMS-1174: Change icon colors to improve accessibility
 
 ## [1.9.6] - 2025-05-14
 

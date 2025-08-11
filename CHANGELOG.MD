@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1174: Change icon colors to improve accessibility
+- TMS-1176: Add homepage-selection for some-linklist fields
 
 ## [1.9.6] - 2025-05-14
 

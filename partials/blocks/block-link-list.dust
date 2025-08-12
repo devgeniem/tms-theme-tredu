@@ -24,7 +24,7 @@
                         <span>{link.title|html}</span>
 
                         {?link.is_external}
-                            {>"ui/icon" icon="external" class="icon--medium is-secondary ml-1" /}
+                            {>"ui/icon" icon="external" class="icon--medium ml-1" /}
                         {/link.is_external}
                     </a>
                 </li>

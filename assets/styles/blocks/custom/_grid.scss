@@ -60,6 +60,13 @@
                     fill: $color-white !important;
                 }
             }
+
+            // Use different aspect ratio for mobile to support more content for zoomed in browsers
+            @include until($tablet) {
+                #{$item}__image {
+                    padding-top: 125% !important;
+                }
+            }
         }
 
         &.has-colors-primary {
@@ -69,7 +76,7 @@
                 color: $color-black !important;
 
                 .icon {
-                    fill: $color-white !important;
+                    fill: $color-black !important;
                 }
             }
         }
@@ -82,7 +89,7 @@
                 color: $white !important;
 
                 .icon {
-                    fill: $color-semidark-blue !important;
+                    fill: $white !important;
                 }
             }
         }

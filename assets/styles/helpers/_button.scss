@@ -95,13 +95,13 @@ $button-transition-speed: $speed !default;
                 border-color: $color-blue !important;
 
                 .icon {
-                    fill: $color-blue !important;
+                    fill: $white !important;
                 }
             }
         }
 
         .icon {
-            fill: $color-semidark-blue;
+            fill: $color-white;
         }
     }
 
@@ -118,7 +118,7 @@ $button-transition-speed: $speed !default;
         }
 
         .icon {
-            fill: $white;
+            fill: $primary;
         }
     }
 

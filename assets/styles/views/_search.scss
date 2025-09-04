@@ -58,7 +58,7 @@ $search-item-hover: $primary-dark !default;
 
     &__inner {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
 
         @include from($desktop) {
             margin-right: 8.06rem;
@@ -69,10 +69,6 @@ $search-item-hover: $primary-dark !default;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
-        .search-item__meta-container {
-            order: -1;
-        }
     }
 
     &__meta-item,

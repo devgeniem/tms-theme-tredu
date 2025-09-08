@@ -58,11 +58,17 @@ $search-item-hover: $primary-dark !default;
 
     &__inner {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
 
         @include from($desktop) {
             margin-right: 8.06rem;
         }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     &__meta-item,

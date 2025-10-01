@@ -18,7 +18,7 @@ class BlogCategoryGroup {
      * BlogCategoryGroup constructor.
      */
     public function __construct() {
-        add_action(
+        \add_action(
             'init',
             \Closure::fromCallable( [ $this, 'register_fields' ] )
         );

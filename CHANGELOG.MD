@@ -8,11 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1201: Add iframe-field for video fields
+
+## [1.10.1] - 2025-09-08
+
+- TMS-1163: Search results breadcrumbs accessibility fixes
+
+## [1.10.0] - 2025-08-13
+
+- TMS-1158: Remove micromodal close attribute from mobile-nav container
 - TMS-1173:
     - Add hero-image field for blog-category taxonomy
     - Add hero-layout for blog-article archive & blog-category taxonomy archive
-- TMS-1158: Remove micromodal close attribute from mobile-nav container
-- TMS-1163: Search results breadcrumbs accessibility fixes
 
 ## [1.9.7] - 2025-08-11
 

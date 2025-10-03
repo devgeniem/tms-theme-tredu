@@ -53,7 +53,7 @@
                                     {?link.title}{?link.url}
                                         <a href="{link.url|url}"
                                            target="{link.target|attr}"
-                                           class="pill is-block is-primary is-flex is-justify-content-space-between is-align-items-center has-border-radius-small has-text-left mb-4 mt-0-desktop mt-4 p-5">
+                                           class="pill is-block is-primary is-flex is-align-items-center has-border-radius-small has-text-left mb-4 mt-0-desktop mt-4 p-5">
                                             {link.title|html}
                                             {>"ui/icon" icon="arrow-right" class="icon ml-4" /}
                                         </a>

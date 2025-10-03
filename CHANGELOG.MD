@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1175: Realign hero button icons
+
+## [1.11.0] - 2025-10-01
+
 - TMS-1201: Add iframe-field for video fields
 
 ## [1.10.1] - 2025-09-08

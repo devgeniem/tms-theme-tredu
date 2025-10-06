@@ -54,8 +54,8 @@
                                         <a href="{link.url|url}"
                                            target="{link.target|attr}"
                                            class="pill is-block is-primary is-flex is-align-items-center has-border-radius-small has-text-left mb-4 mt-0-desktop mt-4 p-5">
+                                            {>"ui/icon" icon="arrow-right" class="icon mr-4" /}
                                             {link.title|html}
-                                            {>"ui/icon" icon="arrow-right" class="icon ml-4" /}
                                         </a>
                                     {/link.url}{/link.title}
                                 {/rows}

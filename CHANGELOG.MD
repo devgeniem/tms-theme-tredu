@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1202:
+    - Add apply-method radio-button filters for program-search
+    - Add apply-method filter selection field to page settings
+
 ## [1.11.0] - 2025-10-01
 
 - TMS-1201: Add iframe-field for video fields

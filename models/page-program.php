@@ -62,6 +62,11 @@ class PageProgram extends BaseModel {
     const FILTER_ONGOING_QUERY_VAR = 'ongoing';
 
     /**
+     * Ongoing filter name.
+     */
+    const FILTER_APPLY_METHOD_QUERY_VAR = 'apply-method';
+
+    /**
      * This holds the search results title.
      *
      * @var string
@@ -128,6 +133,7 @@ class PageProgram extends BaseModel {
         $vars[] = self::FILTER_PROGRAM_TYPE_QUERY_VAR;
         $vars[] = self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR;
         $vars[] = self::FILTER_ONGOING_QUERY_VAR;
+        $vars[] = self::FILTER_APPLY_METHOD_QUERY_VAR;
 
         return $vars;
     }
@@ -148,6 +154,15 @@ class PageProgram extends BaseModel {
      */
     protected static function get_ongoing_query_var() {
         return \get_query_var( self::FILTER_ONGOING_QUERY_VAR, false );
+    }
+
+    /**
+     * Get apply-method query var value
+     *
+     * @return mixed
+     */
+    protected static function get_apply_method_query_var() {
+        return \get_query_var( self::FILTER_APPLY_METHOD_QUERY_VAR, false );
     }
 
     /**
@@ -179,7 +194,7 @@ class PageProgram extends BaseModel {
             Location::SLUG              => self::FILTER_PROGRAM_LOCATION_QUERY_VAR,
             EducationalBackground::SLUG => self::FILTER_EDUCATIONAL_BACKGROUND_QUERY_VAR,
             DeliveryMethod::SLUG        => self::FILTER_DELIVERY_METHODS_QUERY_VAR,
-            ApplyMethod::SLUG           => ApplyMethod::SLUG,
+            ApplyMethod::SLUG           => self::FILTER_APPLY_METHOD_QUERY_VAR,
         ];
 
         return $taxonomies_with_slugs;
@@ -239,6 +254,7 @@ class PageProgram extends BaseModel {
             'input_search_name'    => self::SEARCH_QUERY_VAR,
             'current_search'       => $this->search_data->query,
             'checkbox_search_name' => self::FILTER_ONGOING_QUERY_VAR,
+            'apply_method_radios'  => self::FILTER_APPLY_METHOD_QUERY_VAR,
             'only_ongoing'         => $this->search_data->ongoing,
             'new_search_link'      => \get_permalink(),
         ];
@@ -291,6 +307,52 @@ class PageProgram extends BaseModel {
                 ];
             }
         }
+
+        return $filters;
+    }
+
+    /**
+     * Apply method radio-button filters
+     *
+     * @return array
+     */
+    public function apply_method_radio_buttons() {
+
+        $filters = [];
+
+        $apply_methods = Settings::get_setting( 'program_apply_methods' );
+
+        if ( empty( $apply_methods ) || ! is_array( $apply_methods ) ) {
+            return $filters;
+        }
+
+        $filters = array_map( function ( $term_id ) {
+            $term = \get_term( $term_id );
+
+            $active_term = $this->get_apply_method_query_var();
+
+            if ( ! empty( $active_term ) && is_array( $active_term ) && in_array( $term->term_id, $active_term ) ) { // phpcs:ignore
+                $is_active = true;
+            }
+            else {
+                $is_active = false;
+            }
+
+            return [
+                'term_id' => $term->term_id,
+                'name'    => $term->name,
+                'slug'    => $term->slug,
+                'active'  => $is_active,
+            ];
+        }, $apply_methods );
+
+        // Add the "All" option at the beginning of the filters array
+        array_unshift( $filters, [
+            'term_id' => 0,
+            'name'    => \__( 'All', 'tms-theme-tredu' ),
+            'slug'    => 'all',
+            'active'  => empty( $this->get_apply_method_query_var() ),
+        ]);
 
         return $filters;
     }

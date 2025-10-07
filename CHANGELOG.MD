@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - TMS-1175: Realign hero button icons
+- TMS-1202:
+    - Add apply-method radio-button filters for program-search
+    - Add apply-method filter selection field to page settings
 
 ## [1.11.0] - 2025-10-01
 

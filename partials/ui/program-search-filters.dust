@@ -30,7 +30,7 @@
                         {?apply_method_radio_buttons}
                         <div>
                             <fieldset class="p-0">
-                                <legend>Valitse hakutapa</legend>
+                                <legend>{Strings.s.program.search.choose_apply_method|html}</legend>
                                 <div class="is-flex is-flex-wrap-wrap">
                                     {#apply_method_radio_buttons}
                                         <div class="mr-3 mb-1">

@@ -45,10 +45,16 @@
         }
 
         .listen-text {
+            display: flex;
+            align-items: center;
             align-self: center !important;
             color: inherit !important;
             font-family: $family-primary !important;
             font-size: 1rem !important;
+
+            .icon {
+                stroke: currentColor !important;
+            }
         }
 
         .rsbtn_tooltoggle {

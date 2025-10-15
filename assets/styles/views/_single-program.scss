@@ -17,6 +17,22 @@
         .overlay {
             background: linear-gradient(0deg, rgba(4, 37, 70, .55), rgba(4, 37, 70, .55));
         }
+
+        .has-background-green {
+            background-color: $color-spruce-green !important;
+
+            h2, p {
+                color: $white !important;
+            }
+        }
+
+        .has-background-red {
+            background-color: $color-fuchsia !important;
+
+            h2, p {
+                color: $white !important;
+            }
+        }
     }
 
     &__hero-box {

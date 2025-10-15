@@ -13,6 +13,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Add apply-method radio-button filters for program-search
     - Add apply-method filter selection field to page settings
 - TMS-1205: Rework grid-components featured section to be responsive
+- TMS-1203: Style changes:
+    - Change text color to black
+    - Change text links to be underlined by default
+    - Add icon to readspeaker button
+    - Change secondary-button colors
+    - Change color-light-gray variables color
+    - Change quote- & key-figures-blocks font-family
+    - Change key-figures color combinations
+    - Change notice-banner color combination
+    - Remove image-banner & notice-banner pseudo-elements
+    - Change subpages-components layout
+    - Change apply-method categories colors
 
 ## [1.11.0] - 2025-10-01
 

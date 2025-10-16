@@ -30,16 +30,16 @@
                         {?apply_method_radio_buttons}
                         <div>
                             <fieldset class="p-0">
-                                <legend>{Strings.s.program.search.choose_apply_method|html}</legend>
+                                <legend class="has-text-black">{Strings.s.program.search.choose_apply_method|html}</legend>
                                 <div class="is-flex is-flex-wrap-wrap">
                                     {#apply_method_radio_buttons}
                                         <div class="mr-3 mb-1">
                                             <input type="radio" name="{search.apply_method_radios|attr}[]"
                                                 value="{term_id|attr}"
                                                 id="apply-method-{slug|attr}"
-                                                class="is-radio"
+                                                class="is-checkradio"
                                                 {?active}checked{/active}>
-                                            <label for="apply-method-{slug|attr}" class="has-text-weight-semibold has-text-black">
+                                            <label for="apply-method-{slug|attr}" class="has-text-weight-semibold has-text-black is-flex is-align-items-center pl-6 p-0 mt-0 mb-0">
                                                 {name|html}
                                             </label>
                                         </div>

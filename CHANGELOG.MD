@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Remove image-banner & notice-banner pseudo-elements
     - Change subpages-components layout
     - Change apply-method categories colors
+- TMS-1201: Add iframe-field for accordion-blocks video field
 
 ## [1.11.0] - 2025-10-01
 

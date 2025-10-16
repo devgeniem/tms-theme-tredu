@@ -1,24 +1,26 @@
 {?Readspeaker.config}
-    <div id="rs-button" class="rs_skip rsbtn rs_preserve mb-0">
-        <a
-            rel="nofollow"
-            class="rsbtn_play"
-            accesskey="L"
-            title="{Readspeaker.strings.button_title|html}"
-            href="//app-eu.readspeaker.com/cgi-bin/rsent?customerid=8380&amp;lang={Readspeaker.config.lang|attr}&amp;readclass={Readspeaker.config.class|attr}&amp;url={Readspeaker.config.url|s}">
+    <div class="container pt-3 pt-5-desktop pr-5 pl-5 pr-0-desktop pl-0-desktop">
+        <div id="rs-button" class="rs_skip rsbtn rs_preserve mb-0">
+            <a
+                rel="nofollow"
+                class="rsbtn_play"
+                accesskey="L"
+                title="{Readspeaker.strings.button_title|html}"
+                href="//app-eu.readspeaker.com/cgi-bin/rsent?customerid=8380&amp;lang={Readspeaker.config.lang|attr}&amp;readclass={Readspeaker.config.class|attr}&amp;url={Readspeaker.config.url|s}">
 
-            <span class="listen-text has-text-weight-semibold mr-3">
-                {Readspeaker.strings.button_text|html}
-                {>"ui/icon" icon="readspeaker" class="icon--large ml-2" /}
-            </span>
-
-            <span class="rsbtn_left rsimg rspart">
-                <span class="rsbtn_text is-flex">
-                        <span>{Readspeaker.strings.button_text|html}</span>
+                <span class="listen-text has-text-weight-semibold mr-3">
+                    {Readspeaker.strings.button_text|html}
+                    {>"ui/icon" icon="readspeaker" class="icon--large ml-2" /}
                 </span>
-            </span>
 
-            <span class="rsbtn_right rsimg rsplay rspart"></span>
-        </a>
+                <span class="rsbtn_left rsimg rspart">
+                    <span class="rsbtn_text is-flex">
+                            <span>{Readspeaker.strings.button_text|html}</span>
+                    </span>
+                </span>
+
+                <span class="rsbtn_right rsimg rsplay rspart"></span>
+            </a>
+        </div>
     </div>
 {/Readspeaker.config}

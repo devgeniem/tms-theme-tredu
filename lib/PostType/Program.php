@@ -197,9 +197,21 @@ class Program implements PostType {
 
                 if ( $tax_slug === ApplyMethod::SLUG ) {
                     foreach ( $terms as $key => $term ) {
-                        $apply_method_color                                             = \get_term_meta( $term->term_id, 'color', true ) ?? '';
+                        $apply_method_color = \get_term_meta( $term->term_id, 'color', true ) ?? '';
+
+                        // Replace specific colors to new ones.
+                        if ( $apply_method_color === 'green' ) {
+                            $apply_method_color = 'spruce-green';
+                        }
+                        elseif ( $apply_method_color === 'red' ) {
+                            $apply_method_color = 'fuchsia';
+                        }
+                        elseif ( $apply_method_color === 'blue' ) {
+                            $apply_method_color = 'secondary';
+                        }
+
                         $item->fields['apply_method'][ $key ]['apply_method_color']     = $apply_method_color;
-                        $item->fields['apply_method'][ $key ]['apply_method_txt_color'] = $apply_method_color === 'primary' ? 'white' : 'primary';
+                        $item->fields['apply_method'][ $key ]['apply_method_txt_color'] = in_array( $apply_method_color, [ 'fuchsia', 'spruce-green', 'primary' ], true ) ? 'white' : 'black';
                         $item->fields['apply_method'][ $key ]['apply_method_name']      = $term->name;
                     }
                 }

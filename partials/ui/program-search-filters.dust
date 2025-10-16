@@ -4,13 +4,13 @@
                 <div class="columns is-multiline">
                     <div class="column is-6 search-form is-flex is-flex-wrap-wrap is-align-items-center ui-front">
                         <label class="mr-2 has-width-100">
-                            <input type="search" 
+                            <input type="search"
                                 class="search-form__input program-search has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
-                                placeholder="{Strings.s.search.write_search_terms|attr}" 
-                                value="{search.current_search|attr}" 
-                                name="{search.input_search_name|attr}" 
-                                aria-label="{Strings.s.search.write_search_terms|attr}" 
-                                aria-describedby="autocomplete-instructions" 
+                                placeholder="{Strings.s.search.write_search_terms|attr}"
+                                value="{search.current_search|attr}"
+                                name="{search.input_search_name|attr}"
+                                aria-label="{Strings.s.search.write_search_terms|attr}"
+                                aria-describedby="autocomplete-instructions"
                                 autocomplete="off" lang="{WP.language}">
                                 <span id="autocomplete-instructions" class="is-sr-only">
                                 {Strings.s.program.search.sr_autocomplete_instructions|html}
@@ -32,16 +32,16 @@
                                 <div class="accordion__row mb-2 mb-4-tablet">
                                     <h3 class="accordion__row-title m-0">
                                         <button id="accordion-title-button-search"
-                                                class="accordion__title-button button button--icon is-secondary"
+                                                class="accordion__title-button button button--icon is-primary"
                                                 type="button"
                                                 aria-expanded="false"
                                                 aria-controls="accordion-content-search">
-                                            <span class="accordion__row-title-text has-text-left has-text-black">
+                                            <span class="accordion__row-title-text has-text-left">
                                                 {Strings.s.program.search.more_search_filters|html}
                                             </span>
 
                                             <span class="accordion__title-icon is-flex ml-auto" aria-hidden="true">
-                                                {>"ui/icon" icon="chevron-down" class="icon--medium is-primary" /}
+                                                {>"ui/icon" icon="chevron-down" class="icon--medium" /}
                                             </span>
                                         </button>
                                     </h3>
@@ -53,7 +53,7 @@
                                                 <div class="column p-2 is-4-desktop is-6-tablet is-12-mobile">
                                                     <div class="select-wrapper is-relative">
                                                         <label>
-                                                            <select name="{query_var}[]" 
+                                                            <select name="{query_var}[]"
                                                             class="search-filter is-block has-width-100 has-border has-border-primary has-border-2 has-border-radius-none has-text-weight-semibold has-text-black has-line-height-tight pr-2 pl-2 pt-3 pb-3">
                                                                 <option selected="true" value="" class="has-text-black">{name|html}</option>
                                                                 {#terms}
@@ -100,7 +100,7 @@
                         <span class="is-sr-only">{Strings.s.program.search.remove_filter|html}</span>
                         <span>{name|html}</span>
                         <input type="hidden" name="{query_var|attr}[]" value="{term_id}" />
-                    </button>    
+                    </button>
                     {/active}
                 {/terms}
             {/filters}

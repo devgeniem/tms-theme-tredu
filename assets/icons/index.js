@@ -113,7 +113,6 @@ import './place.svg';
 import './date-range.svg';
 import './save.svg';
 import './user.svg';
-import './readspeaker.svg';
 import './instagram.svg';
 import './youtube.svg';
 import './tiktok.svg';

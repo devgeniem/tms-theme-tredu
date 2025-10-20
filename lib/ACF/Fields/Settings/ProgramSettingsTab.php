@@ -143,7 +143,7 @@ class ProgramSettingsTab extends Tab {
                 ->set_name( 'program_search' );
 
             $apply_method_radios = ( new Field\Taxonomy( $strings['apply_method_radios']['title'] ) )
-                ->set_key( '{$key}_program_apply_methods' )
+                ->set_key( "{$key}_program_apply_methods" )
                 ->set_name( 'program_apply_methods' )
                 ->set_taxonomy( ApplyMethod::SLUG )
                 ->allow_null( true )

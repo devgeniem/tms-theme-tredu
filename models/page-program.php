@@ -62,7 +62,7 @@ class PageProgram extends BaseModel {
     const FILTER_ONGOING_QUERY_VAR = 'ongoing';
 
     /**
-     * Ongoing filter name.
+     * Apply method filter name.
      */
     const FILTER_APPLY_METHOD_QUERY_VAR = 'apply-method';
 

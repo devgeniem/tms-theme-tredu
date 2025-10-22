@@ -84,7 +84,7 @@ class ApplyMethodGroup {
         ];
 
         $color_field = ( new Field\Select( $strings['color']['label'] ) )
-            ->set_key( "${key}_color" )
+            ->set_key( "{$key}_color" )
             ->set_name( 'color' )
             ->set_choices( [
                 'primary' => 'Tumman sininen',

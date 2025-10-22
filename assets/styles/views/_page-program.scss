@@ -47,6 +47,10 @@
         }
     }
 
+    .is-checkradio + label {
+        line-height: inherit;
+    }
+
     select {
         appearance: none;
     }

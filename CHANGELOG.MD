@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1202:
+    - Add apply-method radio-button filters for program-search
+    - Add apply-method filter selection field to page settings
 - TMS-1201: Add iframe-field for accordion-blocks video field
 - TMS-1205: Rework grid-components featured section to be responsive
 - TMS-1175: Realign hero button icons

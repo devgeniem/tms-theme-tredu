@@ -331,7 +331,7 @@ class PageProgram extends BaseModel {
 
             $active_term = $this->get_apply_method_query_var();
 
-            if ( ! empty( $active_term ) && is_array( $active_term ) && in_array( $term->term_id, $active_term ) ) { // phpcs:ignore
+            if ( ! empty( $active_term ) && is_array( $active_term ) && in_array( $term->term_id, $active_term, true ) ) { // phpcs:ignore
                 $is_active = true;
             }
             else {

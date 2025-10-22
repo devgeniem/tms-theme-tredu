@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.12.0] - 2025-10-22
+
 - TMS-1202:
     - Add apply-method radio-button filters for program-search
     - Add apply-method filter selection field to page settings

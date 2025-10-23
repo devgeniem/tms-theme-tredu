@@ -9,10 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - TMS-1175: Realign hero button icons
-- TMS-1202:
-    - Add apply-method radio-button filters for program-search
-    - Add apply-method filter selection field to page settings
-- TMS-1205: Rework grid-components featured section to be responsive
 - TMS-1203: Style changes:
     - Change text color to black
     - Change text links to be underlined by default
@@ -25,7 +21,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Remove image-banner & notice-banner pseudo-elements
     - Change subpages-components layout
     - Change apply-method categories colors
+- TMS-1202: Allow type mistmatch for radio-button active check
+
+## [1.12.0] - 2025-10-22
+
+- TMS-1202:
+    - Add apply-method radio-button filters for program-search
+    - Add apply-method filter selection field to page settings
 - TMS-1201: Add iframe-field for accordion-blocks video field
+- TMS-1205: Rework grid-components featured section to be responsive
+- TMS-1175: Realign hero button icons
 
 ## [1.11.0] - 2025-10-01
 

@@ -8,6 +8,11 @@ $table-row-background-color-even-hover: darken($table-row-background-color-odd, 
 $table-row-background-color-odd-hover: darken($table-row-background-color-even, 1) !default;
 
 .tablepress {
+    --even-bg-color: #{$table-row-background-color-even};
+    --odd-bg-color: #{$table-row-background-color-odd};
+}
+
+.tablepress {
     font-size: .9375rem;
     @include from($tablet) {
         font-size: .88235rem;

@@ -100,7 +100,7 @@
         </div>
 
         <div class="column is-2 is-align-items-center">
-            <button type="submit" class="search-form__button button button--icon is-secondary has-border-radius-small has-width-100">
+            <button type="submit" class="search-form__button button button--icon is-primary has-border-radius-small has-width-100">
                 {Strings.s.header.search|html}
                 {>"ui/icon" icon="search" class="icon--medium is-white" /}
             </button>

@@ -93,8 +93,8 @@
             {#filters}
                 {#terms}
                     {?active}
-                    <button type="button" class="remove-filter is-inline-flex is-align-items-center pt-2 pl-2 pr-3 pb-2 has-background-light-blueishgray
-                        has-border-radius-large has-line-height-1 has-text-weight-semibold 
+                    <button type="button" class="remove-filter is-inline-flex is-align-items-center pt-2 pl-2 pr-3 pb-2 has-background-light-gray
+                        has-border-radius-large has-line-height-1 has-text-weight-semibold
                         has-text-primary has-text-small has-border-0 is-family-secondary">
                         {>"ui/icon" icon="remove" class="icon--large mr-1" /}
                         <span class="is-sr-only">{Strings.s.program.search.remove_filter|html}</span>

@@ -21,7 +21,7 @@
                 {/Header.breadcrumbs}
 
                 {?Readspeaker}
-                    <div class="has-background-light-blueishgray">
+                    <div class="has-background-light-gray">
                         {>"ui/readspeaker" class="pt-3 pt-5-desktop pr-5 pl-5 pr-0-desktop pl-0-desktop" /}
                     </div>
                 {/Readspeaker}

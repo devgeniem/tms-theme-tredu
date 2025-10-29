@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Remove image-banner & notice-banner pseudo-elements
     - Change subpages-components layout
     - Change apply-method categories colors
+- TMS-1204: Add expand-icon for image gallery item if it is expandable
+
+## [1.12.1] - 2025-10-23
+
 - TMS-1202: Allow type mistmatch for radio-button active check
 
 ## [1.12.0] - 2025-10-22

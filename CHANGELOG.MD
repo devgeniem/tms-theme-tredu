@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1204: Add expand-icon for image gallery item if it is expandable
+
 ## [1.12.1] - 2025-10-23
 
 - TMS-1202: Allow type mistmatch for radio-button active check

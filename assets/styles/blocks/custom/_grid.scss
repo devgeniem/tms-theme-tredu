@@ -73,7 +73,7 @@
         &.has-colors-primary {
             color: $color-white;
 
-            .button {
+            .button:not(.is-secondary) {
                 color: $color-black !important;
 
                 .icon {

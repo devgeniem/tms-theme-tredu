@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1203: Style changes:
+    - Change text color to black
+    - Change text links to be underlined by default
+    - Add icon to readspeaker button
+    - Change secondary-button colors
+    - Change color-light-gray variables color
+    - Change quote- & key-figures-blocks font-family
+    - Change key-figures color combinations
+    - Change notice-banner color combination
+    - Remove image-banner & notice-banner pseudo-elements
+    - Change subpages-components layout
+    - Change apply-method categories colors
+
 ## [1.12.1] - 2025-10-23
 
 - TMS-1202: Allow type mistmatch for radio-button active check

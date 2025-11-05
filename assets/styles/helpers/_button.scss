@@ -106,8 +106,9 @@ $button-transition-speed: $speed !default;
     }
 
     &.is-secondary {
-        background-color: $secondary;
-        color: $primary;
+        background-color: $primary;
+        color: $primary-invert;
+        border-color: $secondary;
 
         &.is-outlined {
             color: $primary;
@@ -118,7 +119,7 @@ $button-transition-speed: $speed !default;
         }
 
         .icon {
-            fill: $primary;
+            fill: $primary-invert;
         }
     }
 

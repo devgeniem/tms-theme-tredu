@@ -10,7 +10,7 @@
                 {/content.image}
 
                 {?Readspeaker}
-                    <div class="has-background-light-blueishgray">
+                    <div class="has-background-light-gray">
                         {>"ui/readspeaker" /}
                     </div>
                 {/Readspeaker}
@@ -65,7 +65,7 @@
 
             {>"ui/components" components=components /}
             {?stories.posts}
-                <section class="program-related-stories section has-background-light-blueishgray">
+                <section class="program-related-stories section has-background-light-gray">
                     {?stories.heading}
                         <div class="container">
                             <div class="columns">

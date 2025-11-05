@@ -20,6 +20,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Change subpages-components layout
     - Change apply-method categories colors
 
+## [1.12.1] - 2025-10-23
+
+- TMS-1202: Allow type mistmatch for radio-button active check
+
+## [1.12.0] - 2025-10-22
+
+- TMS-1202:
+    - Add apply-method radio-button filters for program-search
+    - Add apply-method filter selection field to page settings
+- TMS-1201: Add iframe-field for accordion-blocks video field
+- TMS-1205: Rework grid-components featured section to be responsive
+- TMS-1175: Realign hero button icons
+
 ## [1.11.0] - 2025-10-01
 
 - TMS-1201: Add iframe-field for video fields

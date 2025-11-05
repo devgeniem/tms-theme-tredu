@@ -190,6 +190,7 @@ class Strings extends \DustPress\Model {
                     'write_term_profession_program_name' => _x( 'Write search term, profession or program name', 'theme-frontend', 'tms-theme-tredu' ),
                     'sr_autocomplete_instructions'       => _x( 'Write three or more letter to get results. When results are available, use up and down arrows to inspect and select. For touchscreen users, inspect by touching or swiping.', 'theme-frontend', 'tms-theme-tredu' ),
                     'more_search_filters'                => _x( 'More search filters', 'theme-frontend', 'tms-theme-tredu' ),
+                    'choose_apply_method'                => _x( 'Choose apply method', 'theme-frontend', 'tms-theme-tredu' ),
                 ],
                 'profession'              => _x( 'Profession', 'theme-frontend', 'tms-theme-tredu' ),
                 'program-type'            => _x( 'Program type', 'theme-frontend', 'tms-theme-tredu' ),

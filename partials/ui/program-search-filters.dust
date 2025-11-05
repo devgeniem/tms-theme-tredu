@@ -2,7 +2,7 @@
     <div class="columns is-multiline has-background-light-gray m-0 p-6">
         <div class="column is-10">
                 <div class="columns is-multiline">
-                    <div class="column is-6 search-form is-flex is-flex-wrap-wrap is-align-items-center ui-front">
+                    <div class="column is-6 search-form is-flex is-flex-wrap-wrap is-align-items-start ui-front">
                         <label class="mr-2 has-width-100">
                             <input type="search"
                                 class="search-form__input program-search has-background-light p-3 has-width-100 has-border-radius-none has-border-2 has-border-primary has-text-weight-semibold"
@@ -17,14 +17,37 @@
                             </span>
                         </label>
                     </div>
-                    <div class="column is-6">
-                        <input type="checkbox" name="{search.checkbox_search_name|attr}"
-                                class="is-checkradio" value="true"
-                                id="{search.checkbox_search_name|attr}"
-                                {?search.only_ongoing}checked{/search.only_ongoing}>
-                        <label class="is-block mr-4 ml-0 mb-2 has-text-weight-semibold has-text-black" for="{search.checkbox_search_name|attr}">
-                            {Strings.s.program.search.show_only_ongoing|html}
-                        </label>
+                    <div class="column is-6 is-flex is-flex-direction-column is-justify-content-center is-align-items-flex-start">
+                        <div>
+                            <input type="checkbox" name="{search.checkbox_search_name|attr}"
+                                    class="is-checkradio" value="true"
+                                    id="{search.checkbox_search_name|attr}"
+                                    {?search.only_ongoing}checked{/search.only_ongoing}>
+                            <label class="is-block mr-4 ml-0 mb-2 has-text-weight-semibold has-text-black" for="{search.checkbox_search_name|attr}">
+                                {Strings.s.program.search.show_only_ongoing|html}
+                            </label>
+                        </div>
+                        {?apply_method_radio_buttons}
+                        <div>
+                            <fieldset class="p-0">
+                                <legend class="has-text-black">{Strings.s.program.search.choose_apply_method|html}</legend>
+                                <div class="is-flex is-flex-wrap-wrap">
+                                    {#apply_method_radio_buttons}
+                                        <div class="mr-3 mb-1">
+                                            <input type="radio" name="{search.apply_method_radios|attr}[]"
+                                                value="{term_id|attr}"
+                                                id="apply-method-{slug|attr}"
+                                                class="is-checkradio"
+                                                {?active}checked{/active}>
+                                            <label for="apply-method-{slug|attr}" class="has-text-weight-semibold has-text-black is-flex is-align-items-center pl-6 p-0 mt-0 mb-0">
+                                                {name|html}
+                                            </label>
+                                        </div>
+                                    {/apply_method_radio_buttons}
+                                </div>
+                            </fieldset>
+                        </div>
+                        {/apply_method_radio_buttons}
                     </div>
                     {?filters}
                         <div class="accordion__inner bulmally-accordion column is-12">

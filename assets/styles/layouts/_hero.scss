@@ -219,6 +219,12 @@
                 border-bottom-right-radius: .25rem;
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
+                background-color: $secondary;
+                color: $primary;
+
+                .icon {
+                    fill: $primary !important;
+                }
 
                 &:focus {
                     outline-color: $white;

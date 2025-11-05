@@ -108,6 +108,7 @@ import './veistospuisto.svg';
 import './vkontakte.svg';
 import './whatsapp.svg';
 import './update.svg';
+import './readspeaker.svg';
 import './remove.svg';
 import './place.svg';
 import './date-range.svg';

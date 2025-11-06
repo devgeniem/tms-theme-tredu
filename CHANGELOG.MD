@@ -21,7 +21,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Remove image-banner & notice-banner pseudo-elements
     - Change subpages-components layout
     - Change apply-method categories colors
+- TMS-1213: Prevent grid contents from overflowing
+
+## [1.13.0] - 2025-11-05
+
 - TMS-1204: Add expand-icon for image gallery item if it is expandable
+- TMS-1203: Style changes:
+    - Change text color to black
+    - Change text links to be underlined by default
+    - Add icon to readspeaker button
+    - Change secondary-button colors
+    - Change color-light-gray variables color
+    - Change quote- & key-figures-blocks font-family
+    - Change key-figures color combinations
+    - Change notice-banner color combination
+    - Remove image-banner & notice-banner pseudo-elements
+    - Change subpages-components layout
+    - Change apply-method categories colors
 
 ## [1.12.1] - 2025-10-23
 

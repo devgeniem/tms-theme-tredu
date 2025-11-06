@@ -19,6 +19,7 @@
                 object-fit: contain;
                 overflow: hidden;
                 aspect-ratio: 1 / 1;
+                max-width: 100%;
 
                 p {
                     // Addition lines for 2 line or multiline ellipsis

@@ -63,12 +63,12 @@ class PageProjectGroup {
             ];
 
             $ingress_field = ( new Field\Textarea( $strings['ingress']['title'] ) )
-                ->set_key( "${key}_ingress" )
+                ->set_key( "{$key}_ingress" )
                 ->set_name( 'ingress' )
                 ->set_instructions( $strings['ingress']['instructions'] );
 
             $components_field = ( new Field\FlexibleContent( $strings['components']['title'] ) )
-                ->set_key( "${key}_components" )
+                ->set_key( "{$key}_components" )
                 ->set_name( 'components' )
                 ->set_instructions( $strings['components']['instructions'] );
 

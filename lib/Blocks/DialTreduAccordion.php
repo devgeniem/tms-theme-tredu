@@ -37,6 +37,13 @@ class DialTreduAccordion extends BaseBlock {
     protected $icon = 'format-status';
 
     /**
+     * The block title.
+     *
+     * @var string
+     */
+    protected string $title;
+
+    /**
      * Create the layout.
      */
     public function __construct() {

@@ -93,7 +93,7 @@ class PageFrontPageGroup {
         ];
 
         $components_field = ( new Field\FlexibleContent( $strings['components']['title'] ) )
-            ->set_key( "${key}_components" )
+            ->set_key( "{$key}_components" )
             ->set_name( 'components' )
             ->set_instructions( $strings['components']['instructions'] );
 

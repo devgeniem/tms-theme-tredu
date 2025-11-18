@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- Fix PHP deprecations
+
+## [1.14.0] - 2025-11-10
+
 - TMS-1213: Prevent grid contents from overflowing
 
 ## [1.13.0] - 2025-11-05

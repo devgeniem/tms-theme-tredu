@@ -103,6 +103,15 @@ class BlocksController implements Interfaces\Controller {
      */
     private function allowed_block_types( $allowed_blocks, $context ) {
         $blocks = [
+            'core/audio'                 => [
+                'post_types' => [
+                    PostType\Page::SLUG,
+                    PostType\DialTredu::SLUG,
+                    PostType\Post::SLUG,
+                    PostType\BlogArticle::SLUG,
+                    PostType\Project::SLUG,
+                ],
+            ],
             'core/block'                 => [],
             'core/template'              => [],
             'core/list'                  => [

@@ -180,6 +180,7 @@ class Program implements PostType {
             foreach ( $taxonomies as $tax_slug ) {
 
                 $primary_term_id = \get_post_meta( $item->ID, '_primary_term_' . $tax_slug, true );
+                $terms           = \wp_get_post_terms( $item->ID, $tax_slug );
 
                 $term_id = 0;
                 if ( ! empty( $primary_term_id ) ) {
@@ -188,7 +189,6 @@ class Program implements PostType {
                     $term_id           = $primary_term_id;
                 }
                 else {
-                    $terms = \wp_get_post_terms( $item->ID, $tax_slug );
                     if ( ! empty( $terms ) ) {
                         $item->{$tax_slug} = $terms[0]->name;
                         $term_id           = $terms[0]->term_id;

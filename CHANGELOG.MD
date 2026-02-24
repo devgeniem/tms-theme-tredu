@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
+- TMS-1254: Fix for showing apply methods in page-program
+
+## [1.16.0] - 2025-12-17
+
 - TMS-1230: Allow audio-block
 
 ## [1.15.0] - 2025-11-18

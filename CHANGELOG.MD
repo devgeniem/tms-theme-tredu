@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1259: Disable link underline in theme.json
+
 ## [1.16.1] - 2025-12-25
 
 - TMS-1254: Fix for showing apply methods in page-program

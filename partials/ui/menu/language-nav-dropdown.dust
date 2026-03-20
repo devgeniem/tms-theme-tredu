@@ -17,7 +17,7 @@
             </div>
 
             <div class="dropdown-menu" id="lang-dropdown-menu" role="menu" aria-hidden="true">
-                <div class="dropdown-content is-uppercase">
+                <div class="dropdown-content is-uppercase pt-1 pb-1">
                     {#links.others}
                         <a href="{url|url}" class="dropdown-item">
                             {slug|html}

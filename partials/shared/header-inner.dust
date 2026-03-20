@@ -31,6 +31,10 @@
 
             {>"shared/header-favorite-toggle" /}
 
+            {?Header.gtranslate_menu}
+                {>"ui/menu/gtranslate-dropdown"  /}
+            {/Header.gtranslate_menu}
+
             {^Header.hide_search}
                 {>"shared/header-search-toggle" /}
             {/Header.hide_search}

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1237: Add a custom Google Translate functionality to navigation
+
 ## [1.16.1] - 2025-12-25
 
 - TMS-1254: Fix for showing apply methods in page-program

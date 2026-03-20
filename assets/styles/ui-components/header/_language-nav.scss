@@ -24,6 +24,11 @@
 
 .language-nav {
     .dropdown {
+        .button {
+            padding-left: $theme-spacing;
+            padding-right: $theme-spacing;
+        }
+
         &.is-active {
             .icon {
                 transform: rotate(180deg);

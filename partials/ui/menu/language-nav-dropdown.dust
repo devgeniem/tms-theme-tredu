@@ -12,7 +12,7 @@
                         {links.current.slug|html}
                     </span>
                     <span class="is-sr-only">{Strings.s.header.open_lang_nav|html}</span>
-                    {>"ui/icon" icon="chevron-down" class="icon--medium" /}
+                    {>"ui/icon" icon="chevron-down" class="icon--medium is-primary" /}
                 </button>
             </div>
 

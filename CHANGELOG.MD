@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - TMS-1259: Disable link underline in theme.json
+- TMS-1237: Add a custom Google Translate functionality to navigation
 
 ## [1.16.1] - 2025-12-25
 

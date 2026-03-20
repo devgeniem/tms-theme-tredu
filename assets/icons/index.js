@@ -88,6 +88,7 @@ import './icon-tehtava.svg';
 import './icon-teltta.svg';
 import './icon-timantti.svg';
 import './icon-tori.svg';
+import './icon-translate.svg';
 import './icon-wifi.svg';
 import './learning.svg';
 import './line.svg';

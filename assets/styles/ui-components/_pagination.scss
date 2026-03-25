@@ -33,19 +33,15 @@ $pagination-item-transition-speed: $speed !default;
             &:focus {
                 color: $pagination-item-color-focus;
                 background-color: $pagination-item-background-color-focus;
-                border-color: transparent;
                 outline-style: dashed;
                 outline-offset: 2px;
                 outline-color: $primary;
                 outline-width: 2px;
-                text-decoration: none;
             }
 
             &:hover {
                 color: $pagination-item-color-hover;
                 background-color: $pagination-item-background-color-hover;
-                border-color: transparent;
-                text-decoration: none;
             }
 
             &:active {

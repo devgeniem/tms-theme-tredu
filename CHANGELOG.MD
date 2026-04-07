@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - TMS-1263: Fix pagination hover colors
+- TMS-1260: Add missing alt-text for enlargened images in image-block
 
 ## [1.16.2] - 2026-03-16
 

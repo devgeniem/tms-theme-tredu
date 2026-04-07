@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Base\n"
-"POT-Creation-Date: 2025-10-29 12:22+0200\n"
-"PO-Revision-Date: 2025-10-29 12:23+0200\n"
+"POT-Creation-Date: 2026-04-07 14:21+0300\n"
+"PO-Revision-Date: 2026-04-07 14:21+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -21,11 +21,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
-
-#: assets/dist/vendor.js:4505
-msgctxt "text direction"
-msgid "ltr"
-msgstr "ltr"
 
 #: comments.php:14
 msgid "Comments"
@@ -104,6 +99,11 @@ msgstr "Tekstikappale"
 #: lib/Admin.php:95
 msgid "Header"
 msgstr "Ylätunniste"
+
+#: lib/Blocks/ImageBlock.php:84
+msgctxt "theme-frontend"
+msgid "Open large image"
+msgstr "Avaa kuva suurennettuna"
 
 #: lib/Comments.php:72
 msgid "Send Comment"
@@ -1418,6 +1418,10 @@ msgstr "Geniem"
 #. Author URI of the plugin/theme
 msgid "https://geniem.fi"
 msgstr ""
+
+#~ msgctxt "text direction"
+#~ msgid "ltr"
+#~ msgstr "ltr"
 
 #~ msgid "Ongoing projects only"
 #~ msgstr "Näytä vain käynnissä olevat projektit"

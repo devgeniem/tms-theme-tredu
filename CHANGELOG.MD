@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1260: Add missing alt-text for enlargened images in image-block
 - TMS-1263: Fix pagination hover colors
 
 ## [1.16.2] - 2026-03-16

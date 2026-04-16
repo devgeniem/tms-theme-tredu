@@ -77,12 +77,6 @@ class CallToActionFields extends Field\Group {
                 'on'           => 'Näytetään',
                 'off'          => 'Ei näytetä',
             ],
-            'display_caption' => [
-                'label'        => 'Kuvateksti',
-                'instructions' => 'Näytetäänkö kuvan alla kuvateksti?',
-                'on'           => 'Näytetään',
-                'off'          => 'Ei näytetä',
-            ],
             'background_color' => [
                 'label'        => 'Taustaväri',
                 'instructions' => '',
@@ -152,15 +146,6 @@ class CallToActionFields extends Field\Group {
             ->set_ui_on_text( $strings['display_artist']['on'] )
             ->set_instructions( $strings['display_artist']['instructions'] );
 
-        $display_caption_field = ( new Field\TrueFalse( $strings['display_caption']['label'] ) )
-            ->set_key( "{$key}_display_caption" )
-            ->set_name( 'display_caption' )
-            ->set_wrapper_width( 50 )
-            ->use_ui()
-            ->set_ui_off_text( $strings['display_caption']['off'] )
-            ->set_ui_on_text( $strings['display_caption']['on'] )
-            ->set_instructions( $strings['display_caption']['instructions'] );
-
         $background_color_field = ( new Field\Select( $strings['background_color']['label'] ) )
             ->set_key( "{$key}_background_color" )
             ->set_name( 'background_color' )
@@ -180,7 +165,6 @@ class CallToActionFields extends Field\Group {
             $link_second_field,
             $layout_field,
             $display_artist_field,
-            $display_caption_field,
             $background_color_field,
         ] );
 

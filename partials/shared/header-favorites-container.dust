@@ -3,7 +3,7 @@
     <div class="container">
         <div class="columns">
             <div class="column is-10 is-offset-1-tablet is-8-desktop is-offset-2-desktop">
-                <div class="pt-6 pb-6 pt-8-desktop pb-8-desktop pr-2 pl-2">
+                <div class="pt-6 pb-6 pt-8-desktop pb-8-desktop">
                     <div id="header-favorites-title" class="popup__label h4 mb-6">
                         <h2>{Strings.s.program_favorite.favorites_title|html}</h2>
                     </div>

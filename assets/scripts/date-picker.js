@@ -3,6 +3,8 @@
  * Date Picker controller.
  */
 
+import { defineCustomElements } from '@duetds/date-picker/dist/loader';
+
 /**
  * Export the class reference.
  */
@@ -64,3 +66,5 @@ export default class DatePicker {
         } );
     }
 }
+
+defineCustomElements( window );

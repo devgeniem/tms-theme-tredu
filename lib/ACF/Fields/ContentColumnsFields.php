@@ -73,12 +73,6 @@ class ContentColumnsFields extends Field\Group {
                 'on'           => 'Näytetään',
                 'off'          => 'Ei näytetä',
             ],
-            'display_caption' => [
-                'label'        => 'Kuvateksti',
-                'instructions' => 'Näytetäänkö kuvan alla kuvateksti?',
-                'on'           => 'Näytetään',
-                'off'          => 'Ei näytetä',
-            ],
         ];
 
         $key = $this->get_key();
@@ -121,7 +115,7 @@ class ContentColumnsFields extends Field\Group {
                 'is-image-first' => 'Kuva ensin',
                 'is-text-first'  => 'Teksti ensin',
             ] )
-            ->set_wrapper_width( 25 )
+            ->set_wrapper_width( 33 )
             ->set_instructions( $strings['layout']['instructions'] );
 
         $aspect_ratio_field = ( new Field\Radio( $strings['aspect_ratio']['label'] ) )
@@ -132,26 +126,17 @@ class ContentColumnsFields extends Field\Group {
                 '30-70' => '30/70',
                 '70-30' => '70/30',
             ] )
-            ->set_wrapper_width( 25 )
+            ->set_wrapper_width( 33 )
             ->set_instructions( $strings['aspect_ratio']['instructions'] );
 
         $display_artist_field = ( new Field\TrueFalse( $strings['display_artist']['label'] ) )
             ->set_key( "{$key}_display_artist" )
             ->set_name( 'display_artist' )
-            ->set_wrapper_width( 25 )
+            ->set_wrapper_width( 33 )
             ->use_ui()
             ->set_ui_off_text( $strings['display_artist']['off'] )
             ->set_ui_on_text( $strings['display_artist']['on'] )
             ->set_instructions( $strings['display_artist']['instructions'] );
-
-        $display_caption_field = ( new Field\TrueFalse( $strings['display_caption']['label'] ) )
-            ->set_key( "{$key}_display_caption" )
-            ->set_name( 'display_caption' )
-            ->set_wrapper_width( 25 )
-            ->use_ui()
-            ->set_ui_off_text( $strings['display_caption']['off'] )
-            ->set_ui_on_text( $strings['display_caption']['on'] )
-            ->set_instructions( $strings['display_caption']['instructions'] );
 
         $rows_field->add_fields( [
             $title_field,
@@ -160,7 +145,6 @@ class ContentColumnsFields extends Field\Group {
             $layout_field,
             $aspect_ratio_field,
             $display_artist_field,
-            $display_caption_field,
         ] );
 
         return [

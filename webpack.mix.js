@@ -1,7 +1,6 @@
 const mix = require( 'laravel-mix' );
 require( 'laravel-mix-svg-sprite' );
 require( 'laravel-mix-eslint' );
-require( 'laravel-mix-eslint-config' );
 
 // TODO: extract() shoud be fixed. Polyfills, aliases. Different setup for dev and prod builds
 

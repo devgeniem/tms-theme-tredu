@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1237: Add a custom Google Translate functionality to navigation
 
+## [1.17.0] - 2026-04-12
+
+- TMS-1260: Add missing alt-text for enlargened images in image-block
+- TMS-1263: Fix pagination hover colors
+
+## [1.16.2] - 2026-03-16
+
+- TMS-1259: Disable link underline in theme.json
+
 ## [1.16.1] - 2025-12-25
 
 - TMS-1254: Fix for showing apply methods in page-program

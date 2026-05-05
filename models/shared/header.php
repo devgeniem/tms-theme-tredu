@@ -19,14 +19,14 @@ class Header extends Model {
      * Hooks.
      */
     public function hooks() {
-        add_filter(
+        \add_filter(
             'dustpress/menu/item/classes',
             Closure::fromCallable( [ $this, 'menu_item_classes' ] ),
             10,
             2
         );
 
-        add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
+        \add_filter( 'tms/theme/nav_parent_link_is_trigger_only', '__return_true' );
     }
 
     /**
@@ -455,5 +455,27 @@ class Header extends Model {
      */
     public function strings() {
         return ( new Strings() )->s()['header'];
+    }
+
+    /**
+     * Get gtranslate dropdown menu
+     *
+     * @return array|null
+     */
+    public function gtranslate_menu() : ?array {
+        // Check if the menu is enabled in site settings
+        if ( ! Settings::get_setting( 'enable_gtranslate_menu' ) ) {
+            return null;
+        }
+
+        $current_lang = DPT_PLL_ACTIVE ? \pll_current_language() : \get_locale();
+
+        return [
+            'current_language' => $current_lang,
+            'select_text'      => \__( 'Select language', 'tms-theme-tredu' ),
+            'disclaimer_text'  => \__( 'The City of Tampere is not responsible for translations made by Google Translate.', 'tms-theme-tredu' ),
+            'cookies_disabled' => \__( "Unfortunately you are not able to use the translation option since you haven't accepted related cookies. You can accept cookies by clicking the Accept cookies button below.", 'tms-theme-tredu' ),
+            'accept_cookies'   => \__( 'Accept cookies', 'tms-theme-tredu' ),
+        ];
     }
 }

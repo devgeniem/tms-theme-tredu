@@ -29,6 +29,10 @@
                 {>"ui/menu/language-nav-dropdown" links=Header.language_nav.links /}
             {/Header.lang_nav_horizontal}
 
+            {?Header.gtranslate_menu}
+                {>"ui/menu/gtranslate-dropdown"  /}
+            {/Header.gtranslate_menu}
+
             {>"shared/header-favorite-toggle" /}
 
             {^Header.hide_search}

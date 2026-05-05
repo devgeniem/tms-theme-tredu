@@ -31,6 +31,7 @@ import LoadMore from './load-more';
 import SearchFilters from './search-filters';
 import FocusOnSearch from './focus-on-search';
 import FavoritePrograms from './program-favorite';
+import GtranslateDropdown from './gtranslate-dropdown';
 
 const globalControllers = {
     Common,
@@ -61,6 +62,7 @@ const globalControllers = {
     SearchFilters,
     FocusOnSearch,
     FavoritePrograms,
+    GtranslateDropdown,
 };
 
 const templateControllers = {

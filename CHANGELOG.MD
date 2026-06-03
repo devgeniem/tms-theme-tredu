@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-970: Add image caption text to call-to-action and content-columns blocks.
 - Update Node, webpack & dependency versions
 - TMS-1275: Change gtranslate dropdown text
+- TMS-1278: Add anchor to block-link-list
 
 ## [1.18.0] - 2026-05-05
 

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1278: Add anchor to block-link-list
+- TMS-1275: Change gtranslate dropdown text
 
 ## [1.18.0] - 2026-05-05
 

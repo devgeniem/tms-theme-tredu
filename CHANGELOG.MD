@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Update Node, webpack & dependency versions
 - TMS-1280:
     - Add button border-style
-    - Force ACF block version to 3
     - Add gutenberg block styles
 
 ## [1.18.1] - 2026-06-22

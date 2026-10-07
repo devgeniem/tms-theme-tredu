@@ -6,6 +6,7 @@ use Geniem\ACF\Exception;
 use Geniem\ACF\Group;
 use Geniem\ACF\RuleGroup;
 use Geniem\ACF\Field;
+use TMS\Theme\Tredu\ACF\Fields\ContactsFields;
 use TMS\Theme\Tredu\Logger;
 use TMS\Theme\Tredu\PostType;
 
@@ -401,11 +402,26 @@ class ProjectGroup {
             $contact_field,
         ] );
 
+        $project_contacts_title_field = ( new Field\Text( $strings['contacts']['title'] ) )
+            ->set_key( "{$key}_project_contacts_title" )
+            ->set_name( 'project_contacts_title' )
+            ->set_instructions( '' );
+
+        $project_contacts_fields = new ContactsFields(
+            $strings['contacts']['title'],
+            "{$key}_project_contacts",
+            'project_contacts'
+        );
+        $project_contacts_fields->remove_field( 'title' );
+        $project_contacts_fields->remove_field( 'description' );
+
         $tab->add_fields( [
             $website_group,
             $duration_group,
             $portfolio_group,
             $contacts_group_field,
+            $project_contacts_title_field,
+            $project_contacts_fields,
         ] );
 
         return $tab;

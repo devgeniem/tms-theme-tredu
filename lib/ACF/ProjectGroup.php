@@ -324,6 +324,22 @@ class ProjectGroup {
                 'title'        => 'Yhteyshenkilö',
                 'instructions' => '',
             ],
+            'funder'      => [
+                'title'        => 'Rahoittaja',
+                'instructions' => '',
+            ],
+            'funder_text' => [
+                'title'        => 'Lisätieto',
+                'instructions' => '',
+            ],
+            'producer'      => [
+                'title'        => 'Projektin tuottaja',
+                'instructions' => '',
+            ],
+            'producer_text' => [
+                'title'        => 'Lisätieto',
+                'instructions' => '',
+            ],
         ];
 
         $tab = ( new Field\Tab( $strings['tab'] ) )
@@ -415,6 +431,44 @@ class ProjectGroup {
         $project_contacts_fields->remove_field( 'title' );
         $project_contacts_fields->remove_field( 'description' );
 
+        $funder_group = ( new Field\Group( $strings['funder']['title'] ) )
+            ->set_name( 'funder' );
+
+        $funder_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
+            ->set_key( "{$key}_funder_title" )
+            ->set_name( 'funder_title' )
+            ->set_instructions( $strings['group_title']['instructions'] );
+
+        $funder_text_field = ( new Field\Textarea( $strings['funder_text']['title'] ) )
+            ->set_key( "{$key}_funder_text" )
+            ->set_name( 'funder_text' )
+            ->set_rows( 3 )
+            ->set_instructions( $strings['funder_text']['instructions'] );
+
+        $funder_group->add_fields( [
+            $funder_title_field,
+            $funder_text_field,
+        ] );
+
+        $producer_group = ( new Field\Group( $strings['producer']['title'] ) )
+            ->set_name( 'producer' );
+
+        $producer_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
+            ->set_key( "{$key}_producer_title" )
+            ->set_name( 'producer_title' )
+            ->set_instructions( $strings['group_title']['instructions'] );
+
+        $producer_text_field = ( new Field\Textarea( $strings['producer_text']['title'] ) )
+            ->set_key( "{$key}_producer_text" )
+            ->set_name( 'producer_text' )
+            ->set_rows( 3 )
+            ->set_instructions( $strings['producer_text']['instructions'] );
+
+        $producer_group->add_fields( [
+            $producer_title_field,
+            $producer_text_field,
+        ] );
+
         $tab->add_fields( [
             $website_group,
             $duration_group,
@@ -422,6 +476,8 @@ class ProjectGroup {
             $contacts_group_field,
             $project_contacts_title_field,
             $project_contacts_fields,
+            $funder_group,
+            $producer_group,
         ] );
 
         return $tab;

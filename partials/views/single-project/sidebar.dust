@@ -25,3 +25,11 @@
         </div>
     </div>
 {/isset}
+
+{@isset key1=sidebar.funder.funder_title key2=sidebar.funder.funder_text method="AND" }
+    {>"views/single-project/sidebar__item" icon="euro" sidebar_title=sidebar.funder.funder_title sidebar_content=sidebar.funder.funder_text /}
+{/isset}
+
+{@isset key1=sidebar.producer.producer_title key2=sidebar.producer.producer_text method="AND" }
+    {>"views/single-project/sidebar__item" icon="building" sidebar_title=sidebar.producer.producer_title sidebar_content=sidebar.producer.producer_text /}
+{/isset}

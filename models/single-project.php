@@ -66,14 +66,16 @@ class SingleProject extends BaseModel {
      */
     public function sidebar() {
         return [
-            'website'   => \get_field( 'website' ),
-            'duration'  => \get_field( 'duration' ),
-            'portfolio' => \get_field( 'portfolio' ),
-            'contacts'  => \get_field( 'contacts' ),
+            'website'          => \get_field( 'website' ),
+            'duration'         => \get_field( 'duration' ),
+            'portfolio'        => \get_field( 'portfolio' ),
+            'contacts'         => \get_field( 'contacts' ),
             'project_contacts' => [
                 'project_contacts_title' => \get_field( 'project_contacts_title' ),
                 'contacts'               => $this->contacts(),
             ],
+            'funder'           => \get_field( 'funder' ),
+            'producer'         => \get_field( 'producer' ),
         ];
     }
 

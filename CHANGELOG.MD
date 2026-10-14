@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Update Node, webpack & dependency versions
 - TMS-1295: Project-CPT additions:
     - Add more advanced contact-fields to sidebar
-    - Add funder & producer sections to sidebar
+    - Add funder & implementer sections to sidebar
     - Add a flex rule to logo-cloud so there are 6 logos side by side on desktop
 
 ## [1.18.2] - 2026-08-31

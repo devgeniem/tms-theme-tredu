@@ -332,11 +332,11 @@ class ProjectGroup {
                 'title'        => 'Lisätieto',
                 'instructions' => '',
             ],
-            'producer'      => [
-                'title'        => 'Projektin tuottaja',
+            'implementer'      => [
+                'title'        => 'Projektin toteuttaja',
                 'instructions' => '',
             ],
-            'producer_text' => [
+            'implementer_text' => [
                 'title'        => 'Lisätieto',
                 'instructions' => '',
             ],
@@ -450,23 +450,23 @@ class ProjectGroup {
             $funder_text_field,
         ] );
 
-        $producer_group = ( new Field\Group( $strings['producer']['title'] ) )
-            ->set_name( 'producer' );
+        $implementer_group = ( new Field\Group( $strings['implementer']['title'] ) )
+            ->set_name( 'implementer' );
 
-        $producer_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
-            ->set_key( "{$key}_producer_title" )
-            ->set_name( 'producer_title' )
+        $implementer_title_field = ( new Field\Text( $strings['group_title']['title'] ) )
+            ->set_key( "{$key}_implementer_title" )
+            ->set_name( 'implementer_title' )
             ->set_instructions( $strings['group_title']['instructions'] );
 
-        $producer_text_field = ( new Field\Textarea( $strings['producer_text']['title'] ) )
-            ->set_key( "{$key}_producer_text" )
-            ->set_name( 'producer_text' )
+        $implementer_text_field = ( new Field\Textarea( $strings['implementer_text']['title'] ) )
+            ->set_key( "{$key}_implementer_text" )
+            ->set_name( 'implementer_text' )
             ->set_rows( 3 )
-            ->set_instructions( $strings['producer_text']['instructions'] );
+            ->set_instructions( $strings['implementer_text']['instructions'] );
 
-        $producer_group->add_fields( [
-            $producer_title_field,
-            $producer_text_field,
+        $implementer_group->add_fields( [
+            $implementer_title_field,
+            $implementer_text_field,
         ] );
 
         $tab->add_fields( [
@@ -477,7 +477,7 @@ class ProjectGroup {
             $project_contacts_title_field,
             $project_contacts_fields,
             $funder_group,
-            $producer_group,
+            $implementer_group,
         ] );
 
         return $tab;

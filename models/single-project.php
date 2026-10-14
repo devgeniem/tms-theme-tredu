@@ -75,7 +75,7 @@ class SingleProject extends BaseModel {
                 'contacts'               => $this->contacts(),
             ],
             'funder'           => \get_field( 'funder' ),
-            'producer'         => \get_field( 'producer' ),
+            'implementer'      => \get_field( 'implementer' ),
         ];
     }
 

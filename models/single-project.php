@@ -85,10 +85,10 @@ class SingleProject extends BaseModel {
      * @return array
      */
     public function contacts() : array {
-        $project_contacts      = \get_field( 'project_contacts' ) ?? [];
-        $selected_contacts     = $project_contacts['contacts'] ?? [];
-        $selected_api_contacts = $project_contacts['api_contacts'] ?? [];
-        $selected_fields       = $project_contacts['fields'] ?? [ 'first_name', 'last_name' ];
+        $project_contacts      = \get_field( 'project_contacts' ) ?: [];
+        $selected_contacts     = ! empty( $project_contacts['contacts'] ) ? $project_contacts['contacts'] : [];
+        $selected_api_contacts = ! empty( $project_contacts['api_contacts'] ) ? $project_contacts['api_contacts'] : [];
+        $selected_fields       = ! empty( $project_contacts['fields'] ) ? $project_contacts['fields'] : [ 'first_name', 'last_name' ];
         $formatter             = new ContactFormatter();
 
         $contacts = $formatter->map_keys(

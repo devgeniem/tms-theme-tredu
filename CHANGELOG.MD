@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.19.1] - 2026-10-26
+
 - TMS-1295: Error fix for project contacts
 
 ## [1.19.0] - 2026-10-26

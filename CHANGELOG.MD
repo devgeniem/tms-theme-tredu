@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1295: Remove old contacts-field from projects
+
 ## [1.19.2] - 2026-11-09
 
 - TMS-1295: Add a check for the contact post status
